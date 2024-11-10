@@ -39,9 +39,18 @@ static const char *TAG = "DEMO_LVGL";
  */
 #define LVGL_PORT_ROTATION_DEGREE (90)
 
+uint8_t stratagemCode[8];
+
+void setStratagemCode(uint8_t sequence[8])
+{
+  for (uint8_t c = 0; c < 8; c++)
+  {
+    stratagemCode[c] = sequence[c];
+  }
+}
+
 static uint16_t hid_conn_id = 0;
 static bool sec_conn = false;
-static bool send_volum_up = false;
 #define CHAR_DECLARATION_SIZE (sizeof(uint8_t))
 
 static void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *param);
@@ -182,25 +191,33 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
 void hid_demo_task(void *pvParameters)
 {
   vTaskDelay(1000 / portTICK_PERIOD_MS);
+
   while (1)
   {
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
-    if (sec_conn)
+    vTaskDelay(100 / portTICK_PERIOD_MS);
+
+    if (sec_conn && stratagemCode[0] > 0)
     {
-      ESP_LOGI(TAG, "Send the volume");
-      send_volum_up = true;
-      // uint8_t key_vaule = {HID_KEY_A};
-      // esp_hidd_send_keyboard_value(hid_conn_id, 0, &key_vaule, 1);
-      esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_UP, true);
-      vTaskDelay(3000 / portTICK_PERIOD_MS);
-      if (send_volum_up)
+      ESP_LOGI(TAG, "Send command");
+
+      uint8_t cmdIndex = 0;
+
+      while (stratagemCode[cmdIndex] > 0 && cmdIndex < 8)
       {
-        send_volum_up = false;
-        esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_UP, false);
-        esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_DOWN, true);
-        vTaskDelay(3000 / portTICK_PERIOD_MS);
-        esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_DOWN, false);
+        esp_hidd_send_keyboard_value(hid_conn_id, 0, &stratagemCode[cmdIndex], true);
+        vTaskDelay(100 / portTICK_PERIOD_MS);
+
+        esp_hidd_send_keyboard_value(hid_conn_id, 0, &stratagemCode[cmdIndex], false);
+        vTaskDelay(100 / portTICK_PERIOD_MS);
+
+        ESP_LOGI(TAG, "CMD Index: %c", (char)(cmdIndex + '0'));
+        ESP_LOGI(TAG, "CMD Value: %d", stratagemCode[cmdIndex]);
+
+        stratagemCode[cmdIndex] = 0;
+        cmdIndex++;
       }
+
+      ESP_LOGI(TAG, "Finish command");
     }
   }
 }

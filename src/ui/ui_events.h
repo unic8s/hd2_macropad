@@ -14,6 +14,7 @@ void deselectStratagem(lv_event_t * e);
 void selectStratagem(lv_event_t * e);
 void resetStratagems(lv_event_t * e);
 void updateStratagemSelection();
+extern void setStratagemCode(uint8_t[8]);
 
 #ifdef __cplusplus
 } /*extern "C"*/

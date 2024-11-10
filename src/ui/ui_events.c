@@ -4,19 +4,21 @@
 // Project name: SquareLine_Project
 
 #include "ui.h"
+#include "hid_dev.h"
 
 uint8_t strategemsAmount = 0;
 lv_obj_t *buttons[4];
 
 void deselectStratagem(lv_event_t *e)
 {
-	if(strategemsAmount > 0){
-		strategemsAmount--;	
+	if (strategemsAmount > 0)
+	{
+		strategemsAmount--;
 	}
 
-	for(uint8_t c = 0; c < 4; c++)
+	for (uint8_t c = 0; c < 4; c++)
 	{
-		if(buttons[c] == e->target)
+		if (buttons[c] == e->target)
 		{
 			buttons[c] = NULL;
 		}
@@ -27,15 +29,26 @@ void deselectStratagem(lv_event_t *e)
 
 void selectStratagem(lv_event_t *e)
 {
-	for(uint8_t c = 0; c < 4; c++)
+	for (uint8_t c = 0; c < 4; c++)
 	{
-		if(buttons[c] == NULL)
+		if (buttons[c] == NULL)
 		{
 			buttons[c] = e->target;
 
 			break;
 		}
 	}
+
+	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
+						   HID_KEY_DOWN_ARROW,
+						   HID_KEY_RIGHT_ARROW,
+						   HID_KEY_LEFT_ARROW,
+						   HID_KEY_UP_ARROW,
+						   0,
+						   0,
+						   0};
+
+	setStratagemCode(sequence);
 
 	strategemsAmount++;
 
@@ -46,7 +59,7 @@ void updateStratagemSelection()
 {
 	lv_bar_set_value(uic_Amount, strategemsAmount, LV_ANIM_OFF);
 
-	char textAmount = (char) (strategemsAmount + '0');
+	char textAmount = (char)(strategemsAmount + '0');
 
 	lv_label_set_text(ui_Label1, &textAmount);
 
@@ -60,7 +73,7 @@ void resetStratagems(lv_event_t *e)
 {
 	strategemsAmount = 0;
 
-	for(uint8_t c = 0; c < 4; c++)
+	for (uint8_t c = 0; c < 4; c++)
 	{
 		lv_obj_clear_state(buttons[c], LV_STATE_CHECKED);
 

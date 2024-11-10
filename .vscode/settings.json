@@ -34,6 +34,8 @@
         "esp_hidd_prf_api.h": "c",
         "esp_err.h": "c",
         "esp_bt_defs.h": "c",
-        "esp_bt.h": "c"
+        "esp_bt.h": "c",
+        "esp_bt_device.h": "c",
+        "hid_dev.h": "c"
     }
 }

@@ -39,17 +39,6 @@ void selectStratagem(lv_event_t *e)
 		}
 	}
 
-	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
-						   HID_KEY_DOWN_ARROW,
-						   HID_KEY_RIGHT_ARROW,
-						   HID_KEY_LEFT_ARROW,
-						   HID_KEY_UP_ARROW,
-						   0,
-						   0,
-						   0};
-
-	setStratagemCode(sequence);
-
 	strategemsAmount++;
 
 	updateStratagemSelection();
@@ -83,4 +72,60 @@ void resetStratagems(lv_event_t *e)
 	updateStratagemSelection();
 
 	_ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, &ui_Setup_screen_init);
+}
+
+void triggerStratagem1(lv_event_t * e)
+{
+	uint8_t sequence[8] = {HID_KEY_H,
+						   HID_KEY_E,
+						   HID_KEY_L,
+						   HID_KEY_L,
+						   HID_KEY_O,
+						   0,
+						   0,
+						   0};
+
+	setStratagemCode(sequence);
+}
+
+void triggerStratagem2(lv_event_t * e)
+{
+	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
+						   HID_KEY_DOWN_ARROW,
+						   HID_KEY_RIGHT_ARROW,
+						   HID_KEY_LEFT_ARROW,
+						   HID_KEY_UP_ARROW,
+						   0,
+						   0,
+						   0};
+
+	setStratagemCode(sequence);
+}
+
+void triggerStratagem3(lv_event_t * e)
+{
+	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
+						   HID_KEY_DOWN_ARROW,
+						   HID_KEY_RIGHT_ARROW,
+						   HID_KEY_LEFT_ARROW,
+						   HID_KEY_UP_ARROW,
+						   0,
+						   0,
+						   0};
+
+	setStratagemCode(sequence);
+}
+
+void triggerStratagem4(lv_event_t * e)
+{
+	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
+						   HID_KEY_DOWN_ARROW,
+						   HID_KEY_RIGHT_ARROW,
+						   HID_KEY_LEFT_ARROW,
+						   HID_KEY_UP_ARROW,
+						   0,
+						   0,
+						   0};
+
+	setStratagemCode(sequence);
 }

@@ -12,6 +12,10 @@ extern "C" {
 
 void deselectStratagem(lv_event_t * e);
 void selectStratagem(lv_event_t * e);
+void triggerStratagem1(lv_event_t * e);
+void triggerStratagem2(lv_event_t * e);
+void triggerStratagem3(lv_event_t * e);
+void triggerStratagem4(lv_event_t * e);
 void resetStratagems(lv_event_t * e);
 void updateStratagemSelection();
 extern void setStratagemCode(uint8_t[8]);

@@ -9,14 +9,6 @@
 ///////////////////// VARIABLES ////////////////////
 
 
-// SCREEN: ui_Intro
-void ui_Intro_screen_init(void);
-void ui_event_Intro(lv_event_t * e);
-lv_obj_t * ui_Intro;
-lv_obj_t * ui_Image1;
-// CUSTOM VARIABLES
-
-
 // SCREEN: ui_Setup
 void ui_Setup_screen_init(void);
 lv_obj_t * ui_Setup;
@@ -87,8 +79,8 @@ void ui_event_Button30(lv_event_t * e);
 lv_obj_t * ui_Button30;
 void ui_event_Button31(lv_event_t * e);
 lv_obj_t * ui_Button31;
-void ui_event_Button53(lv_event_t * e);
-lv_obj_t * ui_Button53;
+void ui_event_Button38(lv_event_t * e);
+lv_obj_t * ui_Button38;
 lv_obj_t * ui_Strikes;
 lv_obj_t * ui_Container4;
 void ui_event_Button54(lv_event_t * e);
@@ -158,77 +150,75 @@ lv_obj_t * ui_Label3;
 lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
-const char * ui_imgset_hmg_emplacement_[2] = {"S:assets/stratagems/Bridge/HMG Emplacement_128.png", "S:assets/stratagems/Bridge/HMG Emplacement_64.png"};
-const char * ui_imgset_orbital_ems_strike_[2] = {"S:assets/stratagems/Bridge/Orbital EMS Strike_128.png", "S:assets/stratagems/Bridge/Orbital EMS Strike_64.png"};
-const char * ui_imgset_orbital_gas_strike_[2] = {"S:assets/stratagems/Bridge/Orbital Gas Strike_128.png", "S:assets/stratagems/Bridge/Orbital Gas Strike_64.png"};
-const char * ui_imgset_orbital_precision_strike_[2] = {"S:assets/stratagems/Bridge/Orbital Precision Strike_128.png", "S:assets/stratagems/Bridge/Orbital Precision Strike_64.png"};
-const char * ui_imgset_orbital_smoke_strike_[2] = {"S:assets/stratagems/Bridge/Orbital Smoke Strike_128.png", "S:assets/stratagems/Bridge/Orbital Smoke Strike_64.png"};
-const char * ui_imgset_shield_generator_relay_[2] = {"S:assets/stratagems/Bridge/Shield Generator Relay_128.png", "S:assets/stratagems/Bridge/Shield Generator Relay_64.png"};
-const char * ui_imgset_tesla_tower_[2] = {"S:assets/stratagems/Bridge/Tesla Tower_128.png", "S:assets/stratagems/Bridge/Tesla Tower_64.png"};
-const char * ui_imgset_guard_dog_breath_[2] = {"S:assets/stratagems/Chemical Agents/Guard Dog Breath_128.png", "S:assets/stratagems/Chemical Agents/Guard Dog Breath_64.png"};
-const char * ui_imgset_sterilizer_[2] = {"S:assets/stratagems/Chemical Agents/Sterilizer_128.png", "S:assets/stratagems/Chemical Agents/Sterilizer_64.png"};
-const char * ui_imgset_906324259[2] = {"S:assets/stratagems/Engineering Bay/Anti-Personnel Minefield_128.png", "S:assets/stratagems/Engineering Bay/Anti-Personnel Minefield_64.png"};
-const char * ui_imgset_1818789982[2] = {"S:assets/stratagems/Engineering Bay/Anti-Tank Mines_128.png", "S:assets/stratagems/Engineering Bay/Anti-Tank Mines_64.png"};
-const char * ui_imgset_arc_thrower_[2] = {"S:assets/stratagems/Engineering Bay/Arc Thrower_128.png", "S:assets/stratagems/Engineering Bay/Arc Thrower_64.png"};
-const char * ui_imgset_ballistic_shield_backpack_[2] = {"S:assets/stratagems/Engineering Bay/Ballistic Shield Backpack_128.png", "S:assets/stratagems/Engineering Bay/Ballistic Shield Backpack_64.png"};
-const char * ui_imgset_grenade_launcher_[2] = {"S:assets/stratagems/Engineering Bay/Grenade Launcher_128.png", "S:assets/stratagems/Engineering Bay/Grenade Launcher_64.png"};
-const char * ui_imgset_guard_dog_rover_[2] = {"S:assets/stratagems/Engineering Bay/Guard Dog Rover_128.png", "S:assets/stratagems/Engineering Bay/Guard Dog Rover_64.png"};
-const char * ui_imgset_incendiary_mines_[2] = {"S:assets/stratagems/Engineering Bay/Incendiary Mines_128.png", "S:assets/stratagems/Engineering Bay/Incendiary Mines_64.png"};
-const char * ui_imgset_laser_cannon_[2] = {"S:assets/stratagems/Engineering Bay/Laser Cannon_128.png", "S:assets/stratagems/Engineering Bay/Laser Cannon_64.png"};
-const char * ui_imgset_quasar_cannon_[2] = {"S:assets/stratagems/Engineering Bay/Quasar Cannon_128.png", "S:assets/stratagems/Engineering Bay/Quasar Cannon_64.png"};
-const char * ui_imgset_shield_generator_pack_[2] = {"S:assets/stratagems/Engineering Bay/Shield Generator Pack_128.png", "S:assets/stratagems/Engineering Bay/Shield Generator Pack_64.png"};
-const char * ui_imgset_supply_pack_[2] = {"S:assets/stratagems/Engineering Bay/Supply Pack_128.png", "S:assets/stratagems/Engineering Bay/Supply Pack_64.png"};
-const char * ui_imgset_dark_fluid_vessel_[2] = {"S:assets/stratagems/General Stratagems/Dark Fluid Vessel_128.png", "S:assets/stratagems/General Stratagems/Dark Fluid Vessel_64.png"};
-const char * ui_imgset_hellbomb_[2] = {"S:assets/stratagems/General Stratagems/Hellbomb_128.png", "S:assets/stratagems/General Stratagems/Hellbomb_64.png"};
-const char * ui_imgset_hive_breaker_drill_[2] = {"S:assets/stratagems/General Stratagems/Hive Breaker Drill_128.png", "S:assets/stratagems/General Stratagems/Hive Breaker Drill_64.png"};
-const char * ui_imgset_orbital_illumination_flare_[2] = {"S:assets/stratagems/General Stratagems/Orbital Illumination Flare_128.png", "S:assets/stratagems/General Stratagems/Orbital Illumination Flare_64.png"};
-const char * ui_imgset_prospecting_drill_[2] = {"S:assets/stratagems/General Stratagems/Prospecting Drill_128.png", "S:assets/stratagems/General Stratagems/Prospecting Drill_64.png"};
-const char * ui_imgset_reinforce_[2] = {"S:assets/stratagems/General Stratagems/Reinforce_128.png", "S:assets/stratagems/General Stratagems/Reinforce_64.png"};
-const char * ui_imgset_resupply_[2] = {"S:assets/stratagems/General Stratagems/Resupply_128.png", "S:assets/stratagems/General Stratagems/Resupply_64.png"};
-const char * ui_imgset_seaf_artillery_[2] = {"S:assets/stratagems/General Stratagems/SEAF Artillery_128.png", "S:assets/stratagems/General Stratagems/SEAF Artillery_64.png"};
-const char * ui_imgset_seismic_probe_[2] = {"S:assets/stratagems/General Stratagems/Seismic Probe_128.png", "S:assets/stratagems/General Stratagems/Seismic Probe_64.png"};
-const char * ui_imgset_sos_beacon_[2] = {"S:assets/stratagems/General Stratagems/SOS Beacon_128.png", "S:assets/stratagems/General Stratagems/SOS Beacon_64.png"};
-const char * ui_imgset_super_earth_flag_[2] = {"S:assets/stratagems/General Stratagems/Super Earth Flag_128.png", "S:assets/stratagems/General Stratagems/Super Earth Flag_64.png"};
-const char * ui_imgset_tectonic_drill_[2] = {"S:assets/stratagems/General Stratagems/Tectonic Drill_128.png", "S:assets/stratagems/General Stratagems/Tectonic Drill_64.png"};
-const char * ui_imgset_upload_data_[2] = {"S:assets/stratagems/General Stratagems/Upload Data_128.png", "S:assets/stratagems/General Stratagems/Upload Data_64.png"};
-const char * ui_imgset_eagle_110mm_rocket_pods_[2] = {"S:assets/stratagems/Hangar/Eagle 110MM Rocket Pods_128.png", "S:assets/stratagems/Hangar/Eagle 110MM Rocket Pods_64.png"};
-const char * ui_imgset_eagle_500kg_bomb_[2] = {"S:assets/stratagems/Hangar/Eagle 500KG Bomb_128.png", "S:assets/stratagems/Hangar/Eagle 500KG Bomb_64.png"};
-const char * ui_imgset_eagle_airstrike_[2] = {"S:assets/stratagems/Hangar/Eagle Airstrike_128.png", "S:assets/stratagems/Hangar/Eagle Airstrike_64.png"};
-const char * ui_imgset_eagle_cluster_bomb_[2] = {"S:assets/stratagems/Hangar/Eagle Cluster Bomb_128.png", "S:assets/stratagems/Hangar/Eagle Cluster Bomb_64.png"};
-const char * ui_imgset_eagle_napalm_airstrike_[2] = {"S:assets/stratagems/Hangar/Eagle Napalm Airstrike_128.png", "S:assets/stratagems/Hangar/Eagle Napalm Airstrike_64.png"};
-const char * ui_imgset_eagle_rearm_[2] = {"S:assets/stratagems/Hangar/Eagle Rearm_128.png", "S:assets/stratagems/Hangar/Eagle Rearm_64.png"};
-const char * ui_imgset_eagle_smoke_strike_[2] = {"S:assets/stratagems/Hangar/Eagle Smoke Strike_128.png", "S:assets/stratagems/Hangar/Eagle Smoke Strike_64.png"};
-const char * ui_imgset_eagle_strafing_run_[2] = {"S:assets/stratagems/Hangar/Eagle Strafing Run_128.png", "S:assets/stratagems/Hangar/Eagle Strafing Run_64.png"};
-const char * ui_imgset_jump_pack_[2] = {"S:assets/stratagems/Hangar/Jump Pack_128.png", "S:assets/stratagems/Hangar/Jump Pack_64.png"};
-const char * ui_imgset_orbital_120mm_he_barrage_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital 120MM HE Barrage_128.png", "S:assets/stratagems/Orbital Cannons/Orbital 120MM HE Barrage_64.png"};
-const char * ui_imgset_orbital_380mm_he_barrage_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital 380MM HE Barrage_128.png", "S:assets/stratagems/Orbital Cannons/Orbital 380MM HE Barrage_64.png"};
-const char * ui_imgset_orbital_airburst_strike_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Airburst Strike_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Airburst Strike_64.png"};
-const char * ui_imgset_orbital_gatling_barrage_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Gatling Barrage_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Gatling Barrage_64.png"};
-const char * ui_imgset_orbital_laser_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Laser_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Laser_64.png"};
-const char * ui_imgset_orbital_napalm_barrage_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Napalm Barrage_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Napalm Barrage_64.png"};
-const char * ui_imgset_orbital_railcannon_strike_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Railcannon Strike_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Railcannon Strike_64.png"};
-const char * ui_imgset_orbital_walking_barrage_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Walking Barrage_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Walking Barrage_64.png"};
-const char * ui_imgset_airburst_rocket_launcher_[2] = {"S:assets/stratagems/Patriotic Administration Center/Airburst Rocket Launcher_128.png", "S:assets/stratagems/Patriotic Administration Center/Airburst Rocket Launcher_64.png"};
-const char * ui_imgset_1495394437[2] = {"S:assets/stratagems/Patriotic Administration Center/Anti-Materiel Rifle_128.png", "S:assets/stratagems/Patriotic Administration Center/Anti-Materiel Rifle_64.png"};
-const char * ui_imgset_autocannon_[2] = {"S:assets/stratagems/Patriotic Administration Center/Autocannon_128.png", "S:assets/stratagems/Patriotic Administration Center/Autocannon_64.png"};
-const char * ui_imgset_commando_[2] = {"S:assets/stratagems/Patriotic Administration Center/Commando_128.png", "S:assets/stratagems/Patriotic Administration Center/Commando_64.png"};
-const char * ui_imgset_683967390[2] = {"S:assets/stratagems/Patriotic Administration Center/Expendable Anti-Tank_128.png", "S:assets/stratagems/Patriotic Administration Center/Expendable Anti-Tank_64.png"};
-const char * ui_imgset_flamethrower_[2] = {"S:assets/stratagems/Patriotic Administration Center/Flamethrower_128.png", "S:assets/stratagems/Patriotic Administration Center/Flamethrower_64.png"};
-const char * ui_imgset_heavy_machine_gun_[2] = {"S:assets/stratagems/Patriotic Administration Center/Heavy Machine Gun_128.png", "S:assets/stratagems/Patriotic Administration Center/Heavy Machine Gun_64.png"};
-const char * ui_imgset_machine_gun_[2] = {"S:assets/stratagems/Patriotic Administration Center/Machine Gun_128.png", "S:assets/stratagems/Patriotic Administration Center/Machine Gun_64.png"};
-const char * ui_imgset_railgun_[2] = {"S:assets/stratagems/Patriotic Administration Center/Railgun_128.png", "S:assets/stratagems/Patriotic Administration Center/Railgun_64.png"};
-const char * ui_imgset_recoilless_rifle_[2] = {"S:assets/stratagems/Patriotic Administration Center/Recoilless Rifle_128.png", "S:assets/stratagems/Patriotic Administration Center/Recoilless Rifle_64.png"};
-const char * ui_imgset_spear_[2] = {"S:assets/stratagems/Patriotic Administration Center/Spear_128.png", "S:assets/stratagems/Patriotic Administration Center/Spear_64.png"};
-const char * ui_imgset_stalwart_[2] = {"S:assets/stratagems/Patriotic Administration Center/Stalwart_128.png", "S:assets/stratagems/Patriotic Administration Center/Stalwart_64.png"};
-const char * ui_imgset_autocannon_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/Autocannon Sentry_128.png", "S:assets/stratagems/Robotics Workshop/Autocannon Sentry_64.png"};
-const char * ui_imgset_emancipator_exosuit_[2] = {"S:assets/stratagems/Robotics Workshop/Emancipator Exosuit_128.png", "S:assets/stratagems/Robotics Workshop/Emancipator Exosuit_64.png"};
-const char * ui_imgset_ems_mortar_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/EMS Mortar Sentry_128.png", "S:assets/stratagems/Robotics Workshop/EMS Mortar Sentry_64.png"};
-const char * ui_imgset_gatling_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/Gatling Sentry_128.png", "S:assets/stratagems/Robotics Workshop/Gatling Sentry_64.png"};
-const char * ui_imgset_guard_dog_[2] = {"S:assets/stratagems/Robotics Workshop/Guard Dog_128.png", "S:assets/stratagems/Robotics Workshop/Guard Dog_64.png"};
-const char * ui_imgset_machine_gun_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/Machine Gun Sentry_128.png", "S:assets/stratagems/Robotics Workshop/Machine Gun Sentry_64.png"};
-const char * ui_imgset_mortar_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/Mortar Sentry_128.png", "S:assets/stratagems/Robotics Workshop/Mortar Sentry_64.png"};
-const char * ui_imgset_patriot_exosuit_[2] = {"S:assets/stratagems/Robotics Workshop/Patriot Exosuit_128.png", "S:assets/stratagems/Robotics Workshop/Patriot Exosuit_64.png"};
-const char * ui_imgset_rocket_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/Rocket Sentry_128.png", "S:assets/stratagems/Robotics Workshop/Rocket Sentry_64.png"};
+const char * ui_imgset_[4] = {"S:assets/sg/1201.png", "S:assets/sg/1202.png", "S:assets/sg/3801.png", "S:assets/sg/3802.png"};
+const char * ui_imgset_ac[2] = {"S:assets/sg/AC1.png", "S:assets/sg/AC2.png"};
+const char * ui_imgset_acs[2] = {"S:assets/sg/ACS1.png", "S:assets/sg/ACS2.png"};
+const char * ui_imgset_amr[2] = {"S:assets/sg/AMR1.png", "S:assets/sg/AMR2.png"};
+const char * ui_imgset_apm[2] = {"S:assets/sg/APM1.png", "S:assets/sg/APM2.png"};
+const char * ui_imgset_arl[2] = {"S:assets/sg/ARL1.png", "S:assets/sg/ARL2.png"};
+const char * ui_imgset_at[2] = {"S:assets/sg/AT1.png", "S:assets/sg/AT2.png"};
+const char * ui_imgset_atm[2] = {"S:assets/sg/ATM1.png", "S:assets/sg/ATM2.png"};
+const char * ui_imgset_bsb[2] = {"S:assets/sg/BSB1.png", "S:assets/sg/BSB2.png"};
+const char * ui_imgset_c[2] = {"S:assets/sg/C1.png", "S:assets/sg/C2.png"};
+const char * ui_imgset_dfv[2] = {"S:assets/sg/DFV1.png", "S:assets/sg/DFV2.png"};
+const char * ui_imgset_e[4] = {"S:assets/sg/E1101.png", "S:assets/sg/E1102.png", "S:assets/sg/E5001.png", "S:assets/sg/E5002.png"};
+const char * ui_imgset_ea[2] = {"S:assets/sg/EA1.png", "S:assets/sg/EA2.png"};
+const char * ui_imgset_eat[2] = {"S:assets/sg/EAT1.png", "S:assets/sg/EAT2.png"};
+const char * ui_imgset_ecb[2] = {"S:assets/sg/ECB1.png", "S:assets/sg/ECB2.png"};
+const char * ui_imgset_ee[2] = {"S:assets/sg/EE1.png", "S:assets/sg/EE2.png"};
+const char * ui_imgset_ems[2] = {"S:assets/sg/EMS1.png", "S:assets/sg/EMS2.png"};
+const char * ui_imgset_ena[2] = {"S:assets/sg/ENA1.png", "S:assets/sg/ENA2.png"};
+const char * ui_imgset_er[2] = {"S:assets/sg/ER1.png", "S:assets/sg/ER2.png"};
+const char * ui_imgset_esr[2] = {"S:assets/sg/ESR1.png", "S:assets/sg/ESR2.png"};
+const char * ui_imgset_ess[2] = {"S:assets/sg/ESS1.png", "S:assets/sg/ESS2.png"};
+const char * ui_imgset_ft[2] = {"S:assets/sg/FT1.png", "S:assets/sg/FT2.png"};
+const char * ui_imgset_gd[2] = {"S:assets/sg/GD1.png", "S:assets/sg/GD2.png"};
+const char * ui_imgset_gdb[2] = {"S:assets/sg/GDB1.png", "S:assets/sg/GDB2.png"};
+const char * ui_imgset_gdr[2] = {"S:assets/sg/GDR1.png", "S:assets/sg/GDR2.png"};
+const char * ui_imgset_gl[2] = {"S:assets/sg/GL1.png", "S:assets/sg/GL2.png"};
+const char * ui_imgset_gs[2] = {"S:assets/sg/GS1.png", "S:assets/sg/GS2.png"};
+const char * ui_imgset_hb[2] = {"S:assets/sg/HB1.png", "S:assets/sg/HB2.png"};
+const char * ui_imgset_hbd[2] = {"S:assets/sg/HBD1.png", "S:assets/sg/HBD2.png"};
+const char * ui_imgset_hmg[2] = {"S:assets/sg/HMG1.png", "S:assets/sg/HMG2.png"};
+const char * ui_imgset_hmge[2] = {"S:assets/sg/HMGE1.png", "S:assets/sg/HMGE2.png"};
+const char * ui_imgset_im[2] = {"S:assets/sg/IM1.png", "S:assets/sg/IM2.png"};
+const char * ui_imgset_jp[2] = {"S:assets/sg/JP1.png", "S:assets/sg/JP2.png"};
+const char * ui_imgset_lc[2] = {"S:assets/sg/LC1.png", "S:assets/sg/LC2.png"};
+const char * ui_imgset_mg[2] = {"S:assets/sg/MG1.png", "S:assets/sg/MG2.png"};
+const char * ui_imgset_mgs[2] = {"S:assets/sg/MGS1.png", "S:assets/sg/MGS2.png"};
+const char * ui_imgset_ms[2] = {"S:assets/sg/MS1.png", "S:assets/sg/MS2.png"};
+const char * ui_imgset_oas[2] = {"S:assets/sg/OAS1.png", "S:assets/sg/OAS2.png"};
+const char * ui_imgset_oes[2] = {"S:assets/sg/OES1.png", "S:assets/sg/OES2.png"};
+const char * ui_imgset_ogb[2] = {"S:assets/sg/OGB1.png", "S:assets/sg/OGB2.png"};
+const char * ui_imgset_ogs[2] = {"S:assets/sg/OGS1.png", "S:assets/sg/OGS2.png"};
+const char * ui_imgset_oif[2] = {"S:assets/sg/OIF1.png", "S:assets/sg/OIF2.png"};
+const char * ui_imgset_ol[2] = {"S:assets/sg/OL1.png", "S:assets/sg/OL2.png"};
+const char * ui_imgset_onb[2] = {"S:assets/sg/ONB1.png", "S:assets/sg/ONB2.png"};
+const char * ui_imgset_ops[2] = {"S:assets/sg/OPS1.png", "S:assets/sg/OPS2.png"};
+const char * ui_imgset_ors[2] = {"S:assets/sg/ORS1.png", "S:assets/sg/ORS2.png"};
+const char * ui_imgset_oss[2] = {"S:assets/sg/OSS1.png", "S:assets/sg/OSS2.png"};
+const char * ui_imgset_owb[2] = {"S:assets/sg/OWB1.png", "S:assets/sg/OWB2.png"};
+const char * ui_imgset_pd[2] = {"S:assets/sg/PD1.png", "S:assets/sg/PD2.png"};
+const char * ui_imgset_pe[2] = {"S:assets/sg/PE1.png", "S:assets/sg/PE2.png"};
+const char * ui_imgset_qc[2] = {"S:assets/sg/QC1.png", "S:assets/sg/QC2.png"};
+const char * ui_imgset_res[2] = {"S:assets/sg/RES1.png", "S:assets/sg/RES2.png"};
+const char * ui_imgset_rf[2] = {"S:assets/sg/RF1.png", "S:assets/sg/RF2.png"};
+const char * ui_imgset_rg[2] = {"S:assets/sg/RG1.png", "S:assets/sg/RG2.png"};
+const char * ui_imgset_rr[2] = {"S:assets/sg/RR1.png", "S:assets/sg/RR2.png"};
+const char * ui_imgset_rs[2] = {"S:assets/sg/RS1.png", "S:assets/sg/RS2.png"};
+const char * ui_imgset_seaf[2] = {"S:assets/sg/SEAF1.png", "S:assets/sg/SEAF2.png"};
+const char * ui_imgset_sef[2] = {"S:assets/sg/SEF1.png", "S:assets/sg/SEF2.png"};
+const char * ui_imgset_sgp[2] = {"S:assets/sg/SGP1.png", "S:assets/sg/SGP2.png"};
+const char * ui_imgset_sgr[2] = {"S:assets/sg/SGR1.png", "S:assets/sg/SGR2.png"};
+const char * ui_imgset_sos[2] = {"S:assets/sg/SOS1.png", "S:assets/sg/SOS2.png"};
+const char * ui_imgset_sp[2] = {"S:assets/sg/SP1.png", "S:assets/sg/SP2.png"};
+const char * ui_imgset_spr[2] = {"S:assets/sg/SPR1.png", "S:assets/sg/SPR2.png"};
+const char * ui_imgset_ste[2] = {"S:assets/sg/STE1.png", "S:assets/sg/STE2.png"};
+const char * ui_imgset_sup[2] = {"S:assets/sg/SUP1.png", "S:assets/sg/SUP2.png"};
+const char * ui_imgset_sw[2] = {"S:assets/sg/SW1.png", "S:assets/sg/SW2.png"};
+const char * ui_imgset_td[2] = {"S:assets/sg/TD1.png", "S:assets/sg/TD2.png"};
+const char * ui_imgset_tt[2] = {"S:assets/sg/TT1.png", "S:assets/sg/TT2.png"};
+const char * ui_imgset_ud[2] = {"S:assets/sg/UD1.png", "S:assets/sg/UD2.png"};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16
@@ -241,15 +231,6 @@ const char * ui_imgset_rocket_sentry_[2] = {"S:assets/stratagems/Robotics Worksh
 ///////////////////// ANIMATIONS ////////////////////
 
 ///////////////////// FUNCTIONS ////////////////////
-void ui_event_Intro(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    if(event_code == LV_EVENT_SCREEN_LOADED) {
-        _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_OVER_BOTTOM, 1000, 2000, &ui_Setup_screen_init);
-    }
-}
-
 void ui_event_Button6(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -640,7 +621,7 @@ void ui_event_Button31(lv_event_t * e)
     }
 }
 
-void ui_event_Button53(lv_event_t * e)
+void ui_event_Button38(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -904,9 +885,8 @@ void ui_init(void)
     lv_theme_t * theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED),
                                                true, LV_FONT_DEFAULT);
     lv_disp_set_theme(dispp, theme);
-    ui_Intro_screen_init();
     ui_Setup_screen_init();
     ui_Game_screen_init();
     ui____initial_actions0 = lv_obj_create(NULL);
-    lv_disp_load_scr(ui_Intro);
+    lv_disp_load_scr(ui_Setup);
 }

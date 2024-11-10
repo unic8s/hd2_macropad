@@ -51,8 +51,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button65, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button65, ui_img_stratagems_general_stratagems_reinforce_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button65, ui_img_sg_rf1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button66 = lv_btn_create(ui_Container5);
     lv_obj_set_width(ui_Button66, 72);
@@ -66,8 +65,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button66, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button66, ui_img_stratagems_general_stratagems_resupply_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button66, ui_img_sg_res1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button67 = lv_btn_create(ui_Container5);
     lv_obj_set_width(ui_Button67, 72);
@@ -81,8 +79,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button67, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button67, ui_img_stratagems_general_stratagems_sos_beacon_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button67, ui_img_sg_sos1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button68 = lv_btn_create(ui_Container5);
     lv_obj_set_width(ui_Button68, 72);
@@ -96,7 +93,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button68, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button68, ui_img_stratagems_hangar_eagle_rearm_64_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button68, ui_img_sg_er1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Container6 = lv_obj_create(ui_Game);
     lv_obj_remove_style_all(ui_Container6);
@@ -127,8 +124,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button69, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button69, ui_img_stratagems_bridge_orbital_ems_strike_128_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button69, ui_img_sg_ecb1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button70 = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_Button70, 152);
@@ -142,8 +138,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button70, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button70, ui_img_stratagems_engineering_bay_quasar_cannon_128_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button70, ui_img_sg_ogs1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button71 = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_Button71, 152);
@@ -157,8 +152,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button71, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button71, ui_img_stratagems_hangar_eagle_strafing_run_128_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button71, ui_img_sg_ee1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button72 = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_Button72, 152);
@@ -172,8 +166,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button72, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button72, ui_img_stratagems_engineering_bay_supply_pack_128_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button72, ui_img_sg_sgr1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label3 = lv_label_create(ui_Game);
     lv_obj_set_width(ui_Label3, LV_SIZE_CONTENT);   /// 1

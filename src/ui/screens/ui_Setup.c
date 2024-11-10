@@ -43,8 +43,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button6, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button6, ui_img_stratagems_patriotic_administration_center_machine_gun_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button6, ui_img_sg_mg1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button6, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button6, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -59,7 +58,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button1, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button1, ui_img_818786715, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button1, ui_img_sg_amr1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button1, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button1, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -74,8 +73,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button2, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button2, ui_img_stratagems_patriotic_administration_center_stalwart_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button2, ui_img_sg_sw1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button2, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button2, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -90,8 +88,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button3, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button3, ui_img_stratagems_patriotic_administration_center_flamethrower_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button3, ui_img_sg_ft1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button3, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button3, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -106,8 +103,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button4, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button4, ui_img_stratagems_engineering_bay_laser_cannon_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button4, ui_img_sg_lc1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button4, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button4, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -122,8 +118,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button5, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button5, ui_img_stratagems_engineering_bay_grenade_launcher_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button5, ui_img_sg_gl1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button5, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button5, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -138,8 +133,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button7, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button7, ui_img_stratagems_engineering_bay_arc_thrower_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button7, ui_img_sg_at1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button7, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button7, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -154,8 +148,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button8, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button8, ui_img_stratagems_patriotic_administration_center_railgun_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button8, ui_img_sg_rg1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button8, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button8, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -170,7 +163,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button9, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button9, ui_img_1055777086, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button9, ui_img_sg_eat1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button9, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button9, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -185,8 +178,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button10, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button10, ui_img_stratagems_patriotic_administration_center_recoilless_rifle_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button10, ui_img_sg_rr1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button10, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button10, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -201,8 +193,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button11, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button11, ui_img_stratagems_patriotic_administration_center_autocannon_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button11, ui_img_sg_ac1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button11, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button11, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -217,8 +208,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button12, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button12, ui_img_stratagems_patriotic_administration_center_spear_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button12, ui_img_sg_spr1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button12, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button12, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -251,7 +241,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button16, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button16, ui_img_stratagems_hangar_jump_pack_64_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button16, ui_img_sg_sup1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button16, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button16, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -266,8 +256,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button13, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button13, ui_img_stratagems_engineering_bay_supply_pack_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button13, ui_img_sg_bsb1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button13, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button13, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -282,8 +271,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button14, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button14, ui_img_stratagems_engineering_bay_ballistic_shield_backpack_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button14, ui_img_sg_jp1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button14, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button14, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -298,8 +286,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button17, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button17, ui_img_stratagems_engineering_bay_shield_generator_pack_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button17, ui_img_sg_sgp1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button17, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button17, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -314,8 +301,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button18, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button18, ui_img_stratagems_robotics_workshop_guard_dog_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button18, ui_img_sg_gd1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button18, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button18, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -330,8 +316,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button19, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button19, ui_img_stratagems_engineering_bay_guard_dog_rover_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button19, ui_img_sg_gdr1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button19, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button19, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -346,8 +331,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button20, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button20, ui_img_stratagems_chemical_agents_guard_dog_breath_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button20, ui_img_sg_gdb1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button20, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button20, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -380,8 +364,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button21, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button21, ui_img_stratagems_robotics_workshop_machine_gun_sentry_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button21, ui_img_sg_mgs1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button21, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button21, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -396,8 +379,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button22, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button22, ui_img_stratagems_robotics_workshop_gatling_sentry_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button22, ui_img_sg_gs1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button22, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button22, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -412,8 +394,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button23, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button23, ui_img_stratagems_robotics_workshop_mortar_sentry_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button23, ui_img_sg_ms1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button23, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button23, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -428,8 +409,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button24, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button24, ui_img_stratagems_robotics_workshop_ems_mortar_sentry_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button24, ui_img_sg_ems1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button24, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button24, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -444,8 +424,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button25, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button25, ui_img_stratagems_robotics_workshop_autocannon_sentry_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button25, ui_img_sg_acs1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button25, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button25, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -460,8 +439,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button26, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button26, ui_img_stratagems_robotics_workshop_rocket_sentry_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button26, ui_img_sg_rs1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button26, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button26, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -476,8 +454,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button27, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button27, ui_img_stratagems_bridge_hmg_emplacement_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button27, ui_img_sg_hmge1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button27, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button27, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -492,8 +469,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button28, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button28, ui_img_stratagems_bridge_shield_generator_relay_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button28, ui_img_sg_sgr1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button28, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button28, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -508,7 +484,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button29, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button29, ui_img_1071012764, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button29, ui_img_sg_apm1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button29, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button29, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -523,7 +499,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button30, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button30, ui_img_1617680711, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button30, ui_img_sg_atm1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button30, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button30, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -538,26 +514,25 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button31, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button31, ui_img_stratagems_engineering_bay_incendiary_mines_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button31, ui_img_sg_im1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button31, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button31, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_Button53 = lv_btn_create(ui_Container3);
-    lv_obj_set_width(ui_Button53, 82);
-    lv_obj_set_height(ui_Button53, 82);
-    lv_obj_add_flag(ui_Button53, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_Button53, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    ui_object_set_themeable_style_property(ui_Button53, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR,
+    ui_Button38 = lv_btn_create(ui_Container3);
+    lv_obj_set_width(ui_Button38, 82);
+    lv_obj_set_height(ui_Button38, 82);
+    lv_obj_add_flag(ui_Button38, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button38, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_object_set_themeable_style_property(ui_Button38, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_Button53, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
+    ui_object_set_themeable_style_property(ui_Button38, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button53, ui_img_stratagems_bridge_tesla_tower_64_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_Button53, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
+    lv_obj_set_style_bg_img_src(ui_Button38, ui_img_sg_tt1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_Button38, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
-    ui_object_set_themeable_style_property(ui_Button53, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
+    ui_object_set_themeable_style_property(ui_Button38, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorActive);
 
     ui_Strikes = lv_tabview_add_tab(ui_TabView1, "Strikes");
@@ -587,8 +562,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button54, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button54, ui_img_stratagems_bridge_orbital_precision_strike_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button54, ui_img_sg_ops1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button54, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button54, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -603,8 +577,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button55, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button55, ui_img_stratagems_orbital_cannons_orbital_airburst_strike_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button55, ui_img_sg_oas1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button55, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button55, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -619,8 +592,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button56, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button56, ui_img_stratagems_orbital_cannons_orbital_railcannon_strike_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button56, ui_img_sg_ors1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button56, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button56, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -635,8 +607,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button57, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button57, ui_img_stratagems_orbital_cannons_orbital_laser_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button57, ui_img_sg_ol1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button57, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button57, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -651,8 +622,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button58, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button58, ui_img_stratagems_orbital_cannons_orbital_gatling_barrage_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button58, ui_img_sg_ogb1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button58, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button58, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -667,8 +637,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button59, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button59, ui_img_stratagems_orbital_cannons_orbital_walking_barrage_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button59, ui_img_sg_owb1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button59, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button59, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -683,8 +652,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button60, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button60, ui_img_stratagems_orbital_cannons_orbital_120mm_he_barrage_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button60, ui_img_sg_1201_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button60, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button60, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -699,8 +667,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button61, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button61, ui_img_stratagems_orbital_cannons_orbital_380mm_he_barrage_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button61, ui_img_sg_3801_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button61, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button61, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -715,8 +682,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button62, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button62, ui_img_stratagems_bridge_orbital_smoke_strike_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button62, ui_img_sg_oss1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button62, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button62, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -731,8 +697,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button63, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button63, ui_img_stratagems_bridge_orbital_gas_strike_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button63, ui_img_sg_ogs1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button63, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button63, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -747,8 +712,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button73, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button73, ui_img_stratagems_bridge_orbital_ems_strike_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button73, ui_img_sg_oes1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button73, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button73, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -781,8 +745,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button15, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button15, ui_img_stratagems_hangar_eagle_strafing_run_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button15, ui_img_sg_esr1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button15, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button15, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -797,8 +760,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button32, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button32, ui_img_stratagems_hangar_eagle_airstrike_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button32, ui_img_sg_ea1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button32, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button32, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -813,8 +775,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button33, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button33, ui_img_stratagems_hangar_eagle_cluster_bomb_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button33, ui_img_sg_ecb1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button33, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button33, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -829,8 +790,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button34, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button34, ui_img_stratagems_hangar_eagle_110mm_rocket_pods_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button34, ui_img_sg_e1101_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button34, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button34, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -845,8 +805,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button35, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button35, ui_img_stratagems_hangar_eagle_500kg_bomb_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button35, ui_img_sg_e5001_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button35, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button35, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -861,8 +820,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button36, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button36, ui_img_stratagems_hangar_eagle_smoke_strike_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button36, ui_img_sg_ess1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button36, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button36, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -877,8 +835,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button37, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button37, ui_img_stratagems_hangar_eagle_napalm_airstrike_64_png,
-                                LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button37, ui_img_sg_ena1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button37, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button37, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
@@ -945,7 +902,7 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_Button29, ui_event_Button29, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button30, ui_event_Button30, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button31, ui_event_Button31, LV_EVENT_ALL, NULL);
-    lv_obj_add_event_cb(ui_Button53, ui_event_Button53, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button38, ui_event_Button38, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button54, ui_event_Button54, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button55, ui_event_Button55, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button56, ui_event_Button56, LV_EVENT_ALL, NULL);

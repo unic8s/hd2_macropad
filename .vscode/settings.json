@@ -17,6 +17,23 @@
         "sdkconfig.h": "c",
         "adafruit_tinyusb.h": "c",
         "adafruit_usbd_cdc.h": "c",
-        "tusb_option.h": "c"
+        "tusb_option.h": "c",
+        "hid_device.h": "c",
+        "tinyusb.h": "c",
+        "tinyusb_types.h": "c",
+        "tusb.h": "c",
+        "osal.h": "c",
+        "osal_freertos.h": "c",
+        "tusb_fifo.h": "c",
+        "semphr.h": "c",
+        "freertos.h": "c",
+        "queue.h": "c",
+        "esp_check.h": "c",
+        "task.h": "c",
+        "sd.h": "c",
+        "esp_hidd_prf_api.h": "c",
+        "esp_err.h": "c",
+        "esp_bt_defs.h": "c",
+        "esp_bt.h": "c"
     }
 }

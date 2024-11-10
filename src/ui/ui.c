@@ -7,7 +7,6 @@
 #include "ui_helpers.h"
 
 ///////////////////// VARIABLES ////////////////////
-void Reinforce_Animation(lv_obj_t * TargetObject, int delay);
 
 
 // SCREEN: ui_Intro
@@ -131,13 +130,12 @@ lv_obj_t * ui_Label3;
 lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
-const char * ui_imgset_frame_[42] = {"S:assets/reinforce/frame_00.png", "S:assets/reinforce/frame_01.png", "S:assets/reinforce/frame_02.png", "S:assets/reinforce/frame_03.png", "S:assets/reinforce/frame_04.png", "S:assets/reinforce/frame_05.png", "S:assets/reinforce/frame_06.png", "S:assets/reinforce/frame_07.png", "S:assets/reinforce/frame_08.png", "S:assets/reinforce/frame_09.png", "S:assets/reinforce/frame_10.png", "S:assets/reinforce/frame_11.png", "S:assets/reinforce/frame_12.png", "S:assets/reinforce/frame_13.png", "S:assets/reinforce/frame_14.png", "S:assets/reinforce/frame_15.png", "S:assets/reinforce/frame_16.png", "S:assets/reinforce/frame_17.png", "S:assets/reinforce/frame_18.png", "S:assets/reinforce/frame_19.png", "S:assets/reinforce/frame_20.png", "S:assets/reinforce/frame_21.png", "S:assets/reinforce/frame_22.png", "S:assets/reinforce/frame_23.png", "S:assets/reinforce/frame_24.png", "S:assets/reinforce/frame_25.png", "S:assets/reinforce/frame_26.png", "S:assets/reinforce/frame_27.png", "S:assets/reinforce/frame_28.png", "S:assets/reinforce/frame_29.png", "S:assets/reinforce/frame_30.png", "S:assets/reinforce/frame_31.png", "S:assets/reinforce/frame_32.png", "S:assets/reinforce/frame_33.png", "S:assets/reinforce/frame_34.png", "S:assets/reinforce/frame_35.png", "S:assets/reinforce/frame_36.png", "S:assets/reinforce/frame_37.png", "S:assets/reinforce/frame_38.png", "S:assets/reinforce/frame_39.png", "S:assets/reinforce/frame_40.png", "S:assets/reinforce/frame_41.png"};
-const char * ui_imgset_000_helldivers[1] = {"S:assets/stratagems/000_helldivers2.png"};
-const char * ui_imgset_class_[7] = {"S:assets/stratagems/CLASS_1.png", "S:assets/stratagems/CLASS_2.png", "S:assets/stratagems/CLASS_3.png", "S:assets/stratagems/CLASS_4.png", "S:assets/stratagems/CLASS_5.png", "S:assets/stratagems/CLASS_6.png", "S:assets/stratagems/CLASS_7.png"};
-const char * ui_imgset_defensive_[11] = {"S:assets/stratagems/DEFENSIVE_1.png", "S:assets/stratagems/DEFENSIVE_10.png", "S:assets/stratagems/DEFENSIVE_11.png", "S:assets/stratagems/DEFENSIVE_2.png", "S:assets/stratagems/DEFENSIVE_3.png", "S:assets/stratagems/DEFENSIVE_4.png", "S:assets/stratagems/DEFENSIVE_5.png", "S:assets/stratagems/DEFENSIVE_6.png", "S:assets/stratagems/DEFENSIVE_7.png", "S:assets/stratagems/DEFENSIVE_8.png", "S:assets/stratagems/DEFENSIVE_9.png"};
-const char * ui_imgset_offensive_[18] = {"S:assets/stratagems/OFFENSIVE_1.png", "S:assets/stratagems/OFFENSIVE_10.png", "S:assets/stratagems/OFFENSIVE_11.png", "S:assets/stratagems/OFFENSIVE_12.png", "S:assets/stratagems/OFFENSIVE_2.png", "S:assets/stratagems/OFFENSIVE_13.png", "S:assets/stratagems/OFFENSIVE_3.png", "S:assets/stratagems/OFFENSIVE_14.png", "S:assets/stratagems/OFFENSIVE_4.png", "S:assets/stratagems/OFFENSIVE_15.png", "S:assets/stratagems/OFFENSIVE_5.png", "S:assets/stratagems/OFFENSIVE_16.png", "S:assets/stratagems/OFFENSIVE_6.png", "S:assets/stratagems/OFFENSIVE_17.png", "S:assets/stratagems/OFFENSIVE_7.png", "S:assets/stratagems/OFFENSIVE_18.png", "S:assets/stratagems/OFFENSIVE_8.png", "S:assets/stratagems/OFFENSIVE_9.png"};
-const char * ui_imgset_supply_[19] = {"S:assets/stratagems/SUPPLY_1.png", "S:assets/stratagems/SUPPLY_10.png", "S:assets/stratagems/SUPPLY_11.png", "S:assets/stratagems/SUPPLY_12.png", "S:assets/stratagems/SUPPLY_2.png", "S:assets/stratagems/SUPPLY_13.png", "S:assets/stratagems/SUPPLY_3.png", "S:assets/stratagems/SUPPLY_14.png", "S:assets/stratagems/SUPPLY_4.png", "S:assets/stratagems/SUPPLY_15.png", "S:assets/stratagems/SUPPLY_5.png", "S:assets/stratagems/SUPPLY_16.png", "S:assets/stratagems/SUPPLY_6.png", "S:assets/stratagems/SUPPLY_17.png", "S:assets/stratagems/SUPPLY_7.png", "S:assets/stratagems/SUPPLY_18.png", "S:assets/stratagems/SUPPLY_8.png", "S:assets/stratagems/SUPPLY_19.png", "S:assets/stratagems/SUPPLY_9.png"};
-const char * ui_imgset_support_[10] = {"S:assets/stratagems/SUPPORT_1.png", "S:assets/stratagems/SUPPORT_10.png", "S:assets/stratagems/SUPPORT_2.png", "S:assets/stratagems/SUPPORT_3.png", "S:assets/stratagems/SUPPORT_4.png", "S:assets/stratagems/SUPPORT_5.png", "S:assets/stratagems/SUPPORT_6.png", "S:assets/stratagems/SUPPORT_7.png", "S:assets/stratagems/SUPPORT_8.png", "S:assets/stratagems/SUPPORT_9.png"};
+const lv_img_dsc_t * ui_imgset_000_helldivers[1] = {&ui_img_stratagems_000_helldivers2_png};
+const lv_img_dsc_t * ui_imgset_class_[7] = {&ui_img_stratagems_class_1_png, &ui_img_stratagems_class_2_png, &ui_img_stratagems_class_3_png, &ui_img_stratagems_class_4_png, &ui_img_stratagems_class_5_png, &ui_img_stratagems_class_6_png, &ui_img_stratagems_class_7_png};
+const lv_img_dsc_t * ui_imgset_defensive_[11] = {&ui_img_stratagems_defensive_1_png, &ui_img_stratagems_defensive_10_png, &ui_img_stratagems_defensive_11_png, &ui_img_stratagems_defensive_2_png, &ui_img_stratagems_defensive_3_png, &ui_img_stratagems_defensive_4_png, &ui_img_stratagems_defensive_5_png, &ui_img_stratagems_defensive_6_png, &ui_img_stratagems_defensive_7_png, &ui_img_stratagems_defensive_8_png, &ui_img_stratagems_defensive_9_png};
+const lv_img_dsc_t * ui_imgset_offensive_[18] = {&ui_img_stratagems_offensive_1_png, &ui_img_stratagems_offensive_10_png, &ui_img_stratagems_offensive_11_png, &ui_img_stratagems_offensive_12_png, &ui_img_stratagems_offensive_2_png, &ui_img_stratagems_offensive_13_png, &ui_img_stratagems_offensive_3_png, &ui_img_stratagems_offensive_14_png, &ui_img_stratagems_offensive_4_png, &ui_img_stratagems_offensive_15_png, &ui_img_stratagems_offensive_5_png, &ui_img_stratagems_offensive_16_png, &ui_img_stratagems_offensive_6_png, &ui_img_stratagems_offensive_17_png, &ui_img_stratagems_offensive_7_png, &ui_img_stratagems_offensive_18_png, &ui_img_stratagems_offensive_8_png, &ui_img_stratagems_offensive_9_png};
+const lv_img_dsc_t * ui_imgset_supply_[19] = {&ui_img_stratagems_supply_1_png, &ui_img_stratagems_supply_10_png, &ui_img_stratagems_supply_11_png, &ui_img_stratagems_supply_12_png, &ui_img_stratagems_supply_2_png, &ui_img_stratagems_supply_13_png, &ui_img_stratagems_supply_3_png, &ui_img_stratagems_supply_14_png, &ui_img_stratagems_supply_4_png, &ui_img_stratagems_supply_15_png, &ui_img_stratagems_supply_5_png, &ui_img_stratagems_supply_16_png, &ui_img_stratagems_supply_6_png, &ui_img_stratagems_supply_17_png, &ui_img_stratagems_supply_7_png, &ui_img_stratagems_supply_18_png, &ui_img_stratagems_supply_8_png, &ui_img_stratagems_supply_19_png, &ui_img_stratagems_supply_9_png};
+const lv_img_dsc_t * ui_imgset_support_[10] = {&ui_img_stratagems_support_1_png, &ui_img_stratagems_support_10_png, &ui_img_stratagems_support_2_png, &ui_img_stratagems_support_3_png, &ui_img_stratagems_support_4_png, &ui_img_stratagems_support_5_png, &ui_img_stratagems_support_6_png, &ui_img_stratagems_support_7_png, &ui_img_stratagems_support_8_png, &ui_img_stratagems_support_9_png};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16
@@ -148,30 +146,6 @@ const char * ui_imgset_support_[10] = {"S:assets/stratagems/SUPPORT_1.png", "S:a
 #endif
 
 ///////////////////// ANIMATIONS ////////////////////
-void Reinforce_Animation(lv_obj_t * TargetObject, int delay)
-{
-    ui_anim_user_data_t * PropertyAnimation_0_user_data = lv_mem_alloc(sizeof(ui_anim_user_data_t));
-    PropertyAnimation_0_user_data->target = TargetObject;
-    PropertyAnimation_0_user_data->imgset = (lv_img_dsc_t **)ui_imgset_frame_;
-    PropertyAnimation_0_user_data->imgset_size = sizeof(ui_imgset_frame_) / (sizeof(lv_img_dsc_t *));
-    PropertyAnimation_0_user_data->val = -1;
-    lv_anim_t PropertyAnimation_0;
-    lv_anim_init(&PropertyAnimation_0);
-    lv_anim_set_time(&PropertyAnimation_0, 4100);
-    lv_anim_set_user_data(&PropertyAnimation_0, PropertyAnimation_0_user_data);
-    lv_anim_set_custom_exec_cb(&PropertyAnimation_0, _ui_anim_callback_set_image_frame);
-    lv_anim_set_values(&PropertyAnimation_0, 0, 41);
-    lv_anim_set_path_cb(&PropertyAnimation_0, lv_anim_path_linear);
-    lv_anim_set_delay(&PropertyAnimation_0, delay + 0);
-    lv_anim_set_deleted_cb(&PropertyAnimation_0, _ui_anim_callback_free_user_data);
-    lv_anim_set_playback_time(&PropertyAnimation_0, 0);
-    lv_anim_set_playback_delay(&PropertyAnimation_0, 0);
-    lv_anim_set_repeat_count(&PropertyAnimation_0, 0);
-    lv_anim_set_repeat_delay(&PropertyAnimation_0, 0);
-    lv_anim_set_early_apply(&PropertyAnimation_0, false);
-    lv_anim_start(&PropertyAnimation_0);
-
-}
 
 ///////////////////// FUNCTIONS ////////////////////
 void ui_event_Intro(lv_event_t * e)

@@ -27,8 +27,6 @@ extern "C" {
 #include "ui_theme_manager.h"
 #include "ui_themes.h"
 
-void Reinforce_Animation(lv_obj_t * TargetObject, int delay);
-
 // SCREEN: ui_Intro
 void ui_Intro_screen_init(void);
 void ui_event_Intro(lv_event_t * e);
@@ -149,115 +147,73 @@ extern lv_obj_t * ui_Label3;
 extern lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
-extern const char * ui_img_intro_png;  // assets/intro.png
-extern const char * ui_img_stratagems_support_5_png;  // assets/stratagems/SUPPORT_5.png
-extern const char * ui_img_stratagems_support_4_png;  // assets/stratagems/SUPPORT_4.png
-extern const char * ui_img_stratagems_support_3_png;  // assets/stratagems/SUPPORT_3.png
-extern const char * ui_img_stratagems_supply_1_png;  // assets/stratagems/SUPPLY_1.png
-extern const char * ui_img_stratagems_supply_2_png;  // assets/stratagems/SUPPLY_2.png
-extern const char * ui_img_stratagems_supply_3_png;  // assets/stratagems/SUPPLY_3.png
-extern const char * ui_img_stratagems_supply_5_png;  // assets/stratagems/SUPPLY_5.png
-extern const char * ui_img_stratagems_support_6_png;  // assets/stratagems/SUPPORT_6.png
-extern const char * ui_img_stratagems_support_10_png;  // assets/stratagems/SUPPORT_10.png
-extern const char * ui_img_stratagems_defensive_5_png;  // assets/stratagems/DEFENSIVE_5.png
-extern const char * ui_img_stratagems_offensive_4_png;  // assets/stratagems/OFFENSIVE_4.png
-extern const char * ui_img_stratagems_supply_8_png;  // assets/stratagems/SUPPLY_8.png
-extern const char * ui_img_reinforce_frame_00_png;  // assets/reinforce/frame_00.png
-extern const char * ui_img_reinforce_frame_01_png;  // assets/reinforce/frame_01.png
-extern const char * ui_img_reinforce_frame_02_png;  // assets/reinforce/frame_02.png
-extern const char * ui_img_reinforce_frame_03_png;  // assets/reinforce/frame_03.png
-extern const char * ui_img_reinforce_frame_04_png;  // assets/reinforce/frame_04.png
-extern const char * ui_img_reinforce_frame_05_png;  // assets/reinforce/frame_05.png
-extern const char * ui_img_reinforce_frame_06_png;  // assets/reinforce/frame_06.png
-extern const char * ui_img_reinforce_frame_07_png;  // assets/reinforce/frame_07.png
-extern const char * ui_img_reinforce_frame_08_png;  // assets/reinforce/frame_08.png
-extern const char * ui_img_reinforce_frame_09_png;  // assets/reinforce/frame_09.png
-extern const char * ui_img_reinforce_frame_10_png;  // assets/reinforce/frame_10.png
-extern const char * ui_img_reinforce_frame_11_png;  // assets/reinforce/frame_11.png
-extern const char * ui_img_reinforce_frame_12_png;  // assets/reinforce/frame_12.png
-extern const char * ui_img_reinforce_frame_13_png;  // assets/reinforce/frame_13.png
-extern const char * ui_img_reinforce_frame_14_png;  // assets/reinforce/frame_14.png
-extern const char * ui_img_reinforce_frame_15_png;  // assets/reinforce/frame_15.png
-extern const char * ui_img_reinforce_frame_16_png;  // assets/reinforce/frame_16.png
-extern const char * ui_img_reinforce_frame_17_png;  // assets/reinforce/frame_17.png
-extern const char * ui_img_reinforce_frame_18_png;  // assets/reinforce/frame_18.png
-extern const char * ui_img_reinforce_frame_19_png;  // assets/reinforce/frame_19.png
-extern const char * ui_img_reinforce_frame_20_png;  // assets/reinforce/frame_20.png
-extern const char * ui_img_reinforce_frame_21_png;  // assets/reinforce/frame_21.png
-extern const char * ui_img_reinforce_frame_22_png;  // assets/reinforce/frame_22.png
-extern const char * ui_img_reinforce_frame_23_png;  // assets/reinforce/frame_23.png
-extern const char * ui_img_reinforce_frame_24_png;  // assets/reinforce/frame_24.png
-extern const char * ui_img_reinforce_frame_25_png;  // assets/reinforce/frame_25.png
-extern const char * ui_img_reinforce_frame_26_png;  // assets/reinforce/frame_26.png
-extern const char * ui_img_reinforce_frame_27_png;  // assets/reinforce/frame_27.png
-extern const char * ui_img_reinforce_frame_28_png;  // assets/reinforce/frame_28.png
-extern const char * ui_img_reinforce_frame_29_png;  // assets/reinforce/frame_29.png
-extern const char * ui_img_reinforce_frame_30_png;  // assets/reinforce/frame_30.png
-extern const char * ui_img_reinforce_frame_31_png;  // assets/reinforce/frame_31.png
-extern const char * ui_img_reinforce_frame_32_png;  // assets/reinforce/frame_32.png
-extern const char * ui_img_reinforce_frame_33_png;  // assets/reinforce/frame_33.png
-extern const char * ui_img_reinforce_frame_34_png;  // assets/reinforce/frame_34.png
-extern const char * ui_img_reinforce_frame_35_png;  // assets/reinforce/frame_35.png
-extern const char * ui_img_reinforce_frame_36_png;  // assets/reinforce/frame_36.png
-extern const char * ui_img_reinforce_frame_37_png;  // assets/reinforce/frame_37.png
-extern const char * ui_img_reinforce_frame_38_png;  // assets/reinforce/frame_38.png
-extern const char * ui_img_reinforce_frame_39_png;  // assets/reinforce/frame_39.png
-extern const char * ui_img_reinforce_frame_40_png;  // assets/reinforce/frame_40.png
-extern const char * ui_img_reinforce_frame_41_png;  // assets/reinforce/frame_41.png
-extern const char * ui_img_stratagems_000_helldivers2_png;  // assets/stratagems/000_helldivers2.png
-extern const char * ui_img_stratagems_class_1_png;  // assets/stratagems/CLASS_1.png
-extern const char * ui_img_stratagems_class_2_png;  // assets/stratagems/CLASS_2.png
-extern const char * ui_img_stratagems_class_3_png;  // assets/stratagems/CLASS_3.png
-extern const char * ui_img_stratagems_class_4_png;  // assets/stratagems/CLASS_4.png
-extern const char * ui_img_stratagems_class_5_png;  // assets/stratagems/CLASS_5.png
-extern const char * ui_img_stratagems_class_6_png;  // assets/stratagems/CLASS_6.png
-extern const char * ui_img_stratagems_class_7_png;  // assets/stratagems/CLASS_7.png
-extern const char * ui_img_stratagems_defensive_1_png;  // assets/stratagems/DEFENSIVE_1.png
-extern const char * ui_img_stratagems_defensive_10_png;  // assets/stratagems/DEFENSIVE_10.png
-extern const char * ui_img_stratagems_defensive_11_png;  // assets/stratagems/DEFENSIVE_11.png
-extern const char * ui_img_stratagems_defensive_2_png;  // assets/stratagems/DEFENSIVE_2.png
-extern const char * ui_img_stratagems_defensive_3_png;  // assets/stratagems/DEFENSIVE_3.png
-extern const char * ui_img_stratagems_defensive_4_png;  // assets/stratagems/DEFENSIVE_4.png
-extern const char * ui_img_stratagems_defensive_6_png;  // assets/stratagems/DEFENSIVE_6.png
-extern const char * ui_img_stratagems_defensive_7_png;  // assets/stratagems/DEFENSIVE_7.png
-extern const char * ui_img_stratagems_defensive_8_png;  // assets/stratagems/DEFENSIVE_8.png
-extern const char * ui_img_stratagems_defensive_9_png;  // assets/stratagems/DEFENSIVE_9.png
-extern const char * ui_img_stratagems_offensive_1_png;  // assets/stratagems/OFFENSIVE_1.png
-extern const char * ui_img_stratagems_offensive_10_png;  // assets/stratagems/OFFENSIVE_10.png
-extern const char * ui_img_stratagems_offensive_11_png;  // assets/stratagems/OFFENSIVE_11.png
-extern const char * ui_img_stratagems_offensive_12_png;  // assets/stratagems/OFFENSIVE_12.png
-extern const char * ui_img_stratagems_offensive_13_png;  // assets/stratagems/OFFENSIVE_13.png
-extern const char * ui_img_stratagems_offensive_14_png;  // assets/stratagems/OFFENSIVE_14.png
-extern const char * ui_img_stratagems_offensive_15_png;  // assets/stratagems/OFFENSIVE_15.png
-extern const char * ui_img_stratagems_offensive_16_png;  // assets/stratagems/OFFENSIVE_16.png
-extern const char * ui_img_stratagems_offensive_17_png;  // assets/stratagems/OFFENSIVE_17.png
-extern const char * ui_img_stratagems_offensive_18_png;  // assets/stratagems/OFFENSIVE_18.png
-extern const char * ui_img_stratagems_offensive_2_png;  // assets/stratagems/OFFENSIVE_2.png
-extern const char * ui_img_stratagems_offensive_3_png;  // assets/stratagems/OFFENSIVE_3.png
-extern const char * ui_img_stratagems_offensive_5_png;  // assets/stratagems/OFFENSIVE_5.png
-extern const char * ui_img_stratagems_offensive_6_png;  // assets/stratagems/OFFENSIVE_6.png
-extern const char * ui_img_stratagems_offensive_7_png;  // assets/stratagems/OFFENSIVE_7.png
-extern const char * ui_img_stratagems_offensive_8_png;  // assets/stratagems/OFFENSIVE_8.png
-extern const char * ui_img_stratagems_offensive_9_png;  // assets/stratagems/OFFENSIVE_9.png
-extern const char * ui_img_stratagems_supply_10_png;  // assets/stratagems/SUPPLY_10.png
-extern const char * ui_img_stratagems_supply_11_png;  // assets/stratagems/SUPPLY_11.png
-extern const char * ui_img_stratagems_supply_12_png;  // assets/stratagems/SUPPLY_12.png
-extern const char * ui_img_stratagems_supply_13_png;  // assets/stratagems/SUPPLY_13.png
-extern const char * ui_img_stratagems_supply_14_png;  // assets/stratagems/SUPPLY_14.png
-extern const char * ui_img_stratagems_supply_15_png;  // assets/stratagems/SUPPLY_15.png
-extern const char * ui_img_stratagems_supply_16_png;  // assets/stratagems/SUPPLY_16.png
-extern const char * ui_img_stratagems_supply_17_png;  // assets/stratagems/SUPPLY_17.png
-extern const char * ui_img_stratagems_supply_18_png;  // assets/stratagems/SUPPLY_18.png
-extern const char * ui_img_stratagems_supply_19_png;  // assets/stratagems/SUPPLY_19.png
-extern const char * ui_img_stratagems_supply_4_png;  // assets/stratagems/SUPPLY_4.png
-extern const char * ui_img_stratagems_supply_6_png;  // assets/stratagems/SUPPLY_6.png
-extern const char * ui_img_stratagems_supply_7_png;  // assets/stratagems/SUPPLY_7.png
-extern const char * ui_img_stratagems_supply_9_png;  // assets/stratagems/SUPPLY_9.png
-extern const char * ui_img_stratagems_support_1_png;  // assets/stratagems/SUPPORT_1.png
-extern const char * ui_img_stratagems_support_2_png;  // assets/stratagems/SUPPORT_2.png
-extern const char * ui_img_stratagems_support_7_png;  // assets/stratagems/SUPPORT_7.png
-extern const char * ui_img_stratagems_support_8_png;  // assets/stratagems/SUPPORT_8.png
-extern const char * ui_img_stratagems_support_9_png;  // assets/stratagems/SUPPORT_9.png
+//LV_IMG_DECLARE(ui_img_intro_png);    // assets/intro.png
+LV_IMG_DECLARE(ui_img_stratagems_support_5_png);    // assets/stratagems/SUPPORT_5.png
+LV_IMG_DECLARE(ui_img_stratagems_support_4_png);    // assets/stratagems/SUPPORT_4.png
+LV_IMG_DECLARE(ui_img_stratagems_support_3_png);    // assets/stratagems/SUPPORT_3.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_1_png);    // assets/stratagems/SUPPLY_1.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_2_png);    // assets/stratagems/SUPPLY_2.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_3_png);    // assets/stratagems/SUPPLY_3.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_5_png);    // assets/stratagems/SUPPLY_5.png
+LV_IMG_DECLARE(ui_img_stratagems_support_6_png);    // assets/stratagems/SUPPORT_6.png
+LV_IMG_DECLARE(ui_img_stratagems_support_10_png);    // assets/stratagems/SUPPORT_10.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_5_png);    // assets/stratagems/DEFENSIVE_5.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_4_png);    // assets/stratagems/OFFENSIVE_4.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_8_png);    // assets/stratagems/SUPPLY_8.png
+LV_IMG_DECLARE(ui_img_stratagems_000_helldivers2_png);    // assets/stratagems/000_helldivers2.png
+LV_IMG_DECLARE(ui_img_stratagems_class_1_png);    // assets/stratagems/CLASS_1.png
+LV_IMG_DECLARE(ui_img_stratagems_class_2_png);    // assets/stratagems/CLASS_2.png
+LV_IMG_DECLARE(ui_img_stratagems_class_3_png);    // assets/stratagems/CLASS_3.png
+LV_IMG_DECLARE(ui_img_stratagems_class_4_png);    // assets/stratagems/CLASS_4.png
+LV_IMG_DECLARE(ui_img_stratagems_class_5_png);    // assets/stratagems/CLASS_5.png
+LV_IMG_DECLARE(ui_img_stratagems_class_6_png);    // assets/stratagems/CLASS_6.png
+LV_IMG_DECLARE(ui_img_stratagems_class_7_png);    // assets/stratagems/CLASS_7.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_1_png);    // assets/stratagems/DEFENSIVE_1.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_10_png);    // assets/stratagems/DEFENSIVE_10.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_11_png);    // assets/stratagems/DEFENSIVE_11.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_2_png);    // assets/stratagems/DEFENSIVE_2.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_3_png);    // assets/stratagems/DEFENSIVE_3.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_4_png);    // assets/stratagems/DEFENSIVE_4.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_6_png);    // assets/stratagems/DEFENSIVE_6.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_7_png);    // assets/stratagems/DEFENSIVE_7.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_8_png);    // assets/stratagems/DEFENSIVE_8.png
+LV_IMG_DECLARE(ui_img_stratagems_defensive_9_png);    // assets/stratagems/DEFENSIVE_9.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_1_png);    // assets/stratagems/OFFENSIVE_1.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_10_png);    // assets/stratagems/OFFENSIVE_10.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_11_png);    // assets/stratagems/OFFENSIVE_11.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_12_png);    // assets/stratagems/OFFENSIVE_12.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_13_png);    // assets/stratagems/OFFENSIVE_13.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_14_png);    // assets/stratagems/OFFENSIVE_14.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_15_png);    // assets/stratagems/OFFENSIVE_15.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_16_png);    // assets/stratagems/OFFENSIVE_16.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_17_png);    // assets/stratagems/OFFENSIVE_17.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_18_png);    // assets/stratagems/OFFENSIVE_18.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_2_png);    // assets/stratagems/OFFENSIVE_2.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_3_png);    // assets/stratagems/OFFENSIVE_3.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_5_png);    // assets/stratagems/OFFENSIVE_5.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_6_png);    // assets/stratagems/OFFENSIVE_6.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_7_png);    // assets/stratagems/OFFENSIVE_7.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_8_png);    // assets/stratagems/OFFENSIVE_8.png
+LV_IMG_DECLARE(ui_img_stratagems_offensive_9_png);    // assets/stratagems/OFFENSIVE_9.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_10_png);    // assets/stratagems/SUPPLY_10.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_11_png);    // assets/stratagems/SUPPLY_11.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_12_png);    // assets/stratagems/SUPPLY_12.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_13_png);    // assets/stratagems/SUPPLY_13.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_14_png);    // assets/stratagems/SUPPLY_14.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_15_png);    // assets/stratagems/SUPPLY_15.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_16_png);    // assets/stratagems/SUPPLY_16.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_17_png);    // assets/stratagems/SUPPLY_17.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_18_png);    // assets/stratagems/SUPPLY_18.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_19_png);    // assets/stratagems/SUPPLY_19.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_4_png);    // assets/stratagems/SUPPLY_4.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_6_png);    // assets/stratagems/SUPPLY_6.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_7_png);    // assets/stratagems/SUPPLY_7.png
+LV_IMG_DECLARE(ui_img_stratagems_supply_9_png);    // assets/stratagems/SUPPLY_9.png
+LV_IMG_DECLARE(ui_img_stratagems_support_1_png);    // assets/stratagems/SUPPORT_1.png
+LV_IMG_DECLARE(ui_img_stratagems_support_2_png);    // assets/stratagems/SUPPORT_2.png
+LV_IMG_DECLARE(ui_img_stratagems_support_7_png);    // assets/stratagems/SUPPORT_7.png
+LV_IMG_DECLARE(ui_img_stratagems_support_8_png);    // assets/stratagems/SUPPORT_8.png
+LV_IMG_DECLARE(ui_img_stratagems_support_9_png);    // assets/stratagems/SUPPORT_9.png
 
 // UI INIT
 void ui_init(void);

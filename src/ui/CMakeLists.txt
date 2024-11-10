@@ -20,48 +20,6 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_stratagems_defensive_5_png.c
     images/ui_img_stratagems_offensive_4_png.c
     images/ui_img_stratagems_supply_8_png.c
-    images/ui_img_reinforce_frame_00_png.c
-    images/ui_img_reinforce_frame_01_png.c
-    images/ui_img_reinforce_frame_02_png.c
-    images/ui_img_reinforce_frame_03_png.c
-    images/ui_img_reinforce_frame_04_png.c
-    images/ui_img_reinforce_frame_05_png.c
-    images/ui_img_reinforce_frame_06_png.c
-    images/ui_img_reinforce_frame_07_png.c
-    images/ui_img_reinforce_frame_08_png.c
-    images/ui_img_reinforce_frame_09_png.c
-    images/ui_img_reinforce_frame_10_png.c
-    images/ui_img_reinforce_frame_11_png.c
-    images/ui_img_reinforce_frame_12_png.c
-    images/ui_img_reinforce_frame_13_png.c
-    images/ui_img_reinforce_frame_14_png.c
-    images/ui_img_reinforce_frame_15_png.c
-    images/ui_img_reinforce_frame_16_png.c
-    images/ui_img_reinforce_frame_17_png.c
-    images/ui_img_reinforce_frame_18_png.c
-    images/ui_img_reinforce_frame_19_png.c
-    images/ui_img_reinforce_frame_20_png.c
-    images/ui_img_reinforce_frame_21_png.c
-    images/ui_img_reinforce_frame_22_png.c
-    images/ui_img_reinforce_frame_23_png.c
-    images/ui_img_reinforce_frame_24_png.c
-    images/ui_img_reinforce_frame_25_png.c
-    images/ui_img_reinforce_frame_26_png.c
-    images/ui_img_reinforce_frame_27_png.c
-    images/ui_img_reinforce_frame_28_png.c
-    images/ui_img_reinforce_frame_29_png.c
-    images/ui_img_reinforce_frame_30_png.c
-    images/ui_img_reinforce_frame_31_png.c
-    images/ui_img_reinforce_frame_32_png.c
-    images/ui_img_reinforce_frame_33_png.c
-    images/ui_img_reinforce_frame_34_png.c
-    images/ui_img_reinforce_frame_35_png.c
-    images/ui_img_reinforce_frame_36_png.c
-    images/ui_img_reinforce_frame_37_png.c
-    images/ui_img_reinforce_frame_38_png.c
-    images/ui_img_reinforce_frame_39_png.c
-    images/ui_img_reinforce_frame_40_png.c
-    images/ui_img_reinforce_frame_41_png.c
     images/ui_img_stratagems_000_helldivers2_png.c
     images/ui_img_stratagems_class_1_png.c
     images/ui_img_stratagems_class_2_png.c

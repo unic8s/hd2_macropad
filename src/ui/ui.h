@@ -38,8 +38,8 @@ extern lv_obj_t * ui_Image1;
 void ui_Setup_screen_init(void);
 extern lv_obj_t * ui_Setup;
 extern lv_obj_t * ui_TabView1;
-extern lv_obj_t * ui_Mission;
-extern lv_obj_t * ui_Container1;
+extern lv_obj_t * ui_Weapons;
+extern lv_obj_t * ui_Container2;
 void ui_event_Button6(lv_event_t * e);
 extern lv_obj_t * ui_Button6;
 void ui_event_Button1(lv_event_t * e);
@@ -48,10 +48,14 @@ void ui_event_Button2(lv_event_t * e);
 extern lv_obj_t * ui_Button2;
 void ui_event_Button3(lv_event_t * e);
 extern lv_obj_t * ui_Button3;
-extern lv_obj_t * ui_Weapons;
-extern lv_obj_t * ui_Container2;
-void ui_event_Button62(lv_event_t * e);
-extern lv_obj_t * ui_Button62;
+void ui_event_Button4(lv_event_t * e);
+extern lv_obj_t * ui_Button4;
+void ui_event_Button5(lv_event_t * e);
+extern lv_obj_t * ui_Button5;
+void ui_event_Button7(lv_event_t * e);
+extern lv_obj_t * ui_Button7;
+void ui_event_Button8(lv_event_t * e);
+extern lv_obj_t * ui_Button8;
 void ui_event_Button9(lv_event_t * e);
 extern lv_obj_t * ui_Button9;
 void ui_event_Button10(lv_event_t * e);
@@ -60,12 +64,14 @@ void ui_event_Button11(lv_event_t * e);
 extern lv_obj_t * ui_Button11;
 void ui_event_Button12(lv_event_t * e);
 extern lv_obj_t * ui_Button12;
+extern lv_obj_t * ui_Backpacks;
+extern lv_obj_t * ui_Container1;
+void ui_event_Button16(lv_event_t * e);
+extern lv_obj_t * ui_Button16;
 void ui_event_Button13(lv_event_t * e);
 extern lv_obj_t * ui_Button13;
 void ui_event_Button14(lv_event_t * e);
 extern lv_obj_t * ui_Button14;
-void ui_event_Button16(lv_event_t * e);
-extern lv_obj_t * ui_Button16;
 void ui_event_Button17(lv_event_t * e);
 extern lv_obj_t * ui_Button17;
 void ui_event_Button18(lv_event_t * e);
@@ -74,50 +80,72 @@ void ui_event_Button19(lv_event_t * e);
 extern lv_obj_t * ui_Button19;
 void ui_event_Button20(lv_event_t * e);
 extern lv_obj_t * ui_Button20;
-extern lv_obj_t * ui_Eagle;
+extern lv_obj_t * ui_Stationary;
+extern lv_obj_t * ui_Container3;
+void ui_event_Button21(lv_event_t * e);
+extern lv_obj_t * ui_Button21;
+void ui_event_Button22(lv_event_t * e);
+extern lv_obj_t * ui_Button22;
+void ui_event_Button23(lv_event_t * e);
+extern lv_obj_t * ui_Button23;
+void ui_event_Button24(lv_event_t * e);
 extern lv_obj_t * ui_Button24;
+void ui_event_Button25(lv_event_t * e);
 extern lv_obj_t * ui_Button25;
+void ui_event_Button26(lv_event_t * e);
 extern lv_obj_t * ui_Button26;
+void ui_event_Button27(lv_event_t * e);
 extern lv_obj_t * ui_Button27;
+void ui_event_Button28(lv_event_t * e);
 extern lv_obj_t * ui_Button28;
+void ui_event_Button29(lv_event_t * e);
 extern lv_obj_t * ui_Button29;
+void ui_event_Button30(lv_event_t * e);
 extern lv_obj_t * ui_Button30;
+void ui_event_Button31(lv_event_t * e);
 extern lv_obj_t * ui_Button31;
-extern lv_obj_t * ui_Strikes;
-extern lv_obj_t * ui_Button15;
-extern lv_obj_t * ui_Button32;
-extern lv_obj_t * ui_Button33;
-extern lv_obj_t * ui_Button34;
-extern lv_obj_t * ui_Button35;
-extern lv_obj_t * ui_Button36;
-extern lv_obj_t * ui_Button37;
-extern lv_obj_t * ui_Button38;
-extern lv_obj_t * ui_Button40;
-extern lv_obj_t * ui_Button41;
-extern lv_obj_t * ui_Button42;
-extern lv_obj_t * ui_Defensive;
-extern lv_obj_t * ui_Button39;
-extern lv_obj_t * ui_Button43;
-extern lv_obj_t * ui_Button44;
-extern lv_obj_t * ui_Button45;
-extern lv_obj_t * ui_Button46;
-extern lv_obj_t * ui_Button47;
-extern lv_obj_t * ui_Button48;
-extern lv_obj_t * ui_Button49;
-extern lv_obj_t * ui_Button50;
-extern lv_obj_t * ui_Button51;
-extern lv_obj_t * ui_Button52;
-extern lv_obj_t * ui_Backpacks;
+void ui_event_Button53(lv_event_t * e);
 extern lv_obj_t * ui_Button53;
+extern lv_obj_t * ui_Strikes;
+extern lv_obj_t * ui_Container4;
+void ui_event_Button54(lv_event_t * e);
 extern lv_obj_t * ui_Button54;
+void ui_event_Button55(lv_event_t * e);
 extern lv_obj_t * ui_Button55;
+void ui_event_Button56(lv_event_t * e);
 extern lv_obj_t * ui_Button56;
+void ui_event_Button57(lv_event_t * e);
 extern lv_obj_t * ui_Button57;
+void ui_event_Button58(lv_event_t * e);
 extern lv_obj_t * ui_Button58;
-extern lv_obj_t * ui_Vehicles;
+void ui_event_Button59(lv_event_t * e);
 extern lv_obj_t * ui_Button59;
+void ui_event_Button60(lv_event_t * e);
 extern lv_obj_t * ui_Button60;
+void ui_event_Button61(lv_event_t * e);
 extern lv_obj_t * ui_Button61;
+void ui_event_Button62(lv_event_t * e);
+extern lv_obj_t * ui_Button62;
+void ui_event_Button63(lv_event_t * e);
+extern lv_obj_t * ui_Button63;
+void ui_event_Button73(lv_event_t * e);
+extern lv_obj_t * ui_Button73;
+extern lv_obj_t * ui_Eagle;
+extern lv_obj_t * ui_Container7;
+void ui_event_Button15(lv_event_t * e);
+extern lv_obj_t * ui_Button15;
+void ui_event_Button32(lv_event_t * e);
+extern lv_obj_t * ui_Button32;
+void ui_event_Button33(lv_event_t * e);
+extern lv_obj_t * ui_Button33;
+void ui_event_Button34(lv_event_t * e);
+extern lv_obj_t * ui_Button34;
+void ui_event_Button35(lv_event_t * e);
+extern lv_obj_t * ui_Button35;
+void ui_event_Button36(lv_event_t * e);
+extern lv_obj_t * ui_Button36;
+void ui_event_Button37(lv_event_t * e);
+extern lv_obj_t * ui_Button37;
 extern lv_obj_t * ui_Amount;
 extern lv_obj_t * ui_Label1;
 extern lv_obj_t * ui_Label2;
@@ -147,73 +175,275 @@ extern lv_obj_t * ui_Label3;
 extern lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
-//LV_IMG_DECLARE(ui_img_intro_png);    // assets/intro.png
-LV_IMG_DECLARE(ui_img_stratagems_support_5_png);    // assets/stratagems/SUPPORT_5.png
-LV_IMG_DECLARE(ui_img_stratagems_support_4_png);    // assets/stratagems/SUPPORT_4.png
-LV_IMG_DECLARE(ui_img_stratagems_support_3_png);    // assets/stratagems/SUPPORT_3.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_1_png);    // assets/stratagems/SUPPLY_1.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_2_png);    // assets/stratagems/SUPPLY_2.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_3_png);    // assets/stratagems/SUPPLY_3.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_5_png);    // assets/stratagems/SUPPLY_5.png
-LV_IMG_DECLARE(ui_img_stratagems_support_6_png);    // assets/stratagems/SUPPORT_6.png
-LV_IMG_DECLARE(ui_img_stratagems_support_10_png);    // assets/stratagems/SUPPORT_10.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_5_png);    // assets/stratagems/DEFENSIVE_5.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_4_png);    // assets/stratagems/OFFENSIVE_4.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_8_png);    // assets/stratagems/SUPPLY_8.png
-LV_IMG_DECLARE(ui_img_stratagems_000_helldivers2_png);    // assets/stratagems/000_helldivers2.png
-LV_IMG_DECLARE(ui_img_stratagems_class_1_png);    // assets/stratagems/CLASS_1.png
-LV_IMG_DECLARE(ui_img_stratagems_class_2_png);    // assets/stratagems/CLASS_2.png
-LV_IMG_DECLARE(ui_img_stratagems_class_3_png);    // assets/stratagems/CLASS_3.png
-LV_IMG_DECLARE(ui_img_stratagems_class_4_png);    // assets/stratagems/CLASS_4.png
-LV_IMG_DECLARE(ui_img_stratagems_class_5_png);    // assets/stratagems/CLASS_5.png
-LV_IMG_DECLARE(ui_img_stratagems_class_6_png);    // assets/stratagems/CLASS_6.png
-LV_IMG_DECLARE(ui_img_stratagems_class_7_png);    // assets/stratagems/CLASS_7.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_1_png);    // assets/stratagems/DEFENSIVE_1.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_10_png);    // assets/stratagems/DEFENSIVE_10.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_11_png);    // assets/stratagems/DEFENSIVE_11.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_2_png);    // assets/stratagems/DEFENSIVE_2.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_3_png);    // assets/stratagems/DEFENSIVE_3.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_4_png);    // assets/stratagems/DEFENSIVE_4.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_6_png);    // assets/stratagems/DEFENSIVE_6.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_7_png);    // assets/stratagems/DEFENSIVE_7.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_8_png);    // assets/stratagems/DEFENSIVE_8.png
-LV_IMG_DECLARE(ui_img_stratagems_defensive_9_png);    // assets/stratagems/DEFENSIVE_9.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_1_png);    // assets/stratagems/OFFENSIVE_1.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_10_png);    // assets/stratagems/OFFENSIVE_10.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_11_png);    // assets/stratagems/OFFENSIVE_11.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_12_png);    // assets/stratagems/OFFENSIVE_12.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_13_png);    // assets/stratagems/OFFENSIVE_13.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_14_png);    // assets/stratagems/OFFENSIVE_14.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_15_png);    // assets/stratagems/OFFENSIVE_15.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_16_png);    // assets/stratagems/OFFENSIVE_16.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_17_png);    // assets/stratagems/OFFENSIVE_17.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_18_png);    // assets/stratagems/OFFENSIVE_18.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_2_png);    // assets/stratagems/OFFENSIVE_2.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_3_png);    // assets/stratagems/OFFENSIVE_3.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_5_png);    // assets/stratagems/OFFENSIVE_5.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_6_png);    // assets/stratagems/OFFENSIVE_6.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_7_png);    // assets/stratagems/OFFENSIVE_7.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_8_png);    // assets/stratagems/OFFENSIVE_8.png
-LV_IMG_DECLARE(ui_img_stratagems_offensive_9_png);    // assets/stratagems/OFFENSIVE_9.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_10_png);    // assets/stratagems/SUPPLY_10.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_11_png);    // assets/stratagems/SUPPLY_11.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_12_png);    // assets/stratagems/SUPPLY_12.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_13_png);    // assets/stratagems/SUPPLY_13.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_14_png);    // assets/stratagems/SUPPLY_14.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_15_png);    // assets/stratagems/SUPPLY_15.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_16_png);    // assets/stratagems/SUPPLY_16.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_17_png);    // assets/stratagems/SUPPLY_17.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_18_png);    // assets/stratagems/SUPPLY_18.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_19_png);    // assets/stratagems/SUPPLY_19.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_4_png);    // assets/stratagems/SUPPLY_4.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_6_png);    // assets/stratagems/SUPPLY_6.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_7_png);    // assets/stratagems/SUPPLY_7.png
-LV_IMG_DECLARE(ui_img_stratagems_supply_9_png);    // assets/stratagems/SUPPLY_9.png
-LV_IMG_DECLARE(ui_img_stratagems_support_1_png);    // assets/stratagems/SUPPORT_1.png
-LV_IMG_DECLARE(ui_img_stratagems_support_2_png);    // assets/stratagems/SUPPORT_2.png
-LV_IMG_DECLARE(ui_img_stratagems_support_7_png);    // assets/stratagems/SUPPORT_7.png
-LV_IMG_DECLARE(ui_img_stratagems_support_8_png);    // assets/stratagems/SUPPORT_8.png
-LV_IMG_DECLARE(ui_img_stratagems_support_9_png);    // assets/stratagems/SUPPORT_9.png
+extern const char * ui_img_intro_png;  // assets/intro.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_machine_gun_64_png;  // assets/stratagems/Patriotic Administration Center/Machine Gun_64.png
+extern const char * ui_img_818786715;  // assets/stratagems/Patriotic Administration Center/Anti-Materiel Rifle_64.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_stalwart_64_png;  // assets/stratagems/Patriotic Administration Center/Stalwart_64.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_flamethrower_64_png;  // assets/stratagems/Patriotic Administration Center/Flamethrower_64.png
+extern const char *
+ui_img_stratagems_engineering_bay_laser_cannon_64_png;  // assets/stratagems/Engineering Bay/Laser Cannon_64.png
+extern const char *
+ui_img_stratagems_engineering_bay_grenade_launcher_64_png;  // assets/stratagems/Engineering Bay/Grenade Launcher_64.png
+extern const char *
+ui_img_stratagems_engineering_bay_arc_thrower_64_png;  // assets/stratagems/Engineering Bay/Arc Thrower_64.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_railgun_64_png;  // assets/stratagems/Patriotic Administration Center/Railgun_64.png
+extern const char * ui_img_1055777086;  // assets/stratagems/Patriotic Administration Center/Expendable Anti-Tank_64.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_recoilless_rifle_64_png;  // assets/stratagems/Patriotic Administration Center/Recoilless Rifle_64.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_autocannon_64_png;  // assets/stratagems/Patriotic Administration Center/Autocannon_64.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_spear_64_png;  // assets/stratagems/Patriotic Administration Center/Spear_64.png
+extern const char * ui_img_stratagems_hangar_jump_pack_64_png;  // assets/stratagems/Hangar/Jump Pack_64.png
+extern const char *
+ui_img_stratagems_engineering_bay_supply_pack_64_png;  // assets/stratagems/Engineering Bay/Supply Pack_64.png
+extern const char *
+ui_img_stratagems_engineering_bay_ballistic_shield_backpack_64_png;  // assets/stratagems/Engineering Bay/Ballistic Shield Backpack_64.png
+extern const char *
+ui_img_stratagems_engineering_bay_shield_generator_pack_64_png;  // assets/stratagems/Engineering Bay/Shield Generator Pack_64.png
+extern const char *
+ui_img_stratagems_robotics_workshop_guard_dog_64_png;  // assets/stratagems/Robotics Workshop/Guard Dog_64.png
+extern const char *
+ui_img_stratagems_engineering_bay_guard_dog_rover_64_png;  // assets/stratagems/Engineering Bay/Guard Dog Rover_64.png
+extern const char *
+ui_img_stratagems_chemical_agents_guard_dog_breath_64_png;  // assets/stratagems/Chemical Agents/Guard Dog Breath_64.png
+extern const char *
+ui_img_stratagems_robotics_workshop_machine_gun_sentry_64_png;  // assets/stratagems/Robotics Workshop/Machine Gun Sentry_64.png
+extern const char *
+ui_img_stratagems_robotics_workshop_gatling_sentry_64_png;  // assets/stratagems/Robotics Workshop/Gatling Sentry_64.png
+extern const char *
+ui_img_stratagems_robotics_workshop_mortar_sentry_64_png;  // assets/stratagems/Robotics Workshop/Mortar Sentry_64.png
+extern const char *
+ui_img_stratagems_robotics_workshop_ems_mortar_sentry_64_png;  // assets/stratagems/Robotics Workshop/EMS Mortar Sentry_64.png
+extern const char *
+ui_img_stratagems_robotics_workshop_autocannon_sentry_64_png;  // assets/stratagems/Robotics Workshop/Autocannon Sentry_64.png
+extern const char *
+ui_img_stratagems_robotics_workshop_rocket_sentry_64_png;  // assets/stratagems/Robotics Workshop/Rocket Sentry_64.png
+extern const char * ui_img_stratagems_bridge_hmg_emplacement_64_png;  // assets/stratagems/Bridge/HMG Emplacement_64.png
+extern const char *
+ui_img_stratagems_bridge_shield_generator_relay_64_png;  // assets/stratagems/Bridge/Shield Generator Relay_64.png
+extern const char * ui_img_1071012764;  // assets/stratagems/Engineering Bay/Anti-Personnel Minefield_64.png
+extern const char * ui_img_1617680711;  // assets/stratagems/Engineering Bay/Anti-Tank Mines_64.png
+extern const char *
+ui_img_stratagems_engineering_bay_incendiary_mines_64_png;  // assets/stratagems/Engineering Bay/Incendiary Mines_64.png
+extern const char * ui_img_stratagems_bridge_tesla_tower_64_png;  // assets/stratagems/Bridge/Tesla Tower_64.png
+extern const char *
+ui_img_stratagems_bridge_orbital_precision_strike_64_png;  // assets/stratagems/Bridge/Orbital Precision Strike_64.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_airburst_strike_64_png;  // assets/stratagems/Orbital Cannons/Orbital Airburst Strike_64.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_railcannon_strike_64_png;  // assets/stratagems/Orbital Cannons/Orbital Railcannon Strike_64.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_laser_64_png;  // assets/stratagems/Orbital Cannons/Orbital Laser_64.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_gatling_barrage_64_png;  // assets/stratagems/Orbital Cannons/Orbital Gatling Barrage_64.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_walking_barrage_64_png;  // assets/stratagems/Orbital Cannons/Orbital Walking Barrage_64.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_120mm_he_barrage_64_png;  // assets/stratagems/Orbital Cannons/Orbital 120MM HE Barrage_64.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_380mm_he_barrage_64_png;  // assets/stratagems/Orbital Cannons/Orbital 380MM HE Barrage_64.png
+extern const char *
+ui_img_stratagems_bridge_orbital_smoke_strike_64_png;  // assets/stratagems/Bridge/Orbital Smoke Strike_64.png
+extern const char *
+ui_img_stratagems_bridge_orbital_gas_strike_64_png;  // assets/stratagems/Bridge/Orbital Gas Strike_64.png
+extern const char *
+ui_img_stratagems_bridge_orbital_ems_strike_64_png;  // assets/stratagems/Bridge/Orbital EMS Strike_64.png
+extern const char *
+ui_img_stratagems_hangar_eagle_strafing_run_64_png;  // assets/stratagems/Hangar/Eagle Strafing Run_64.png
+extern const char * ui_img_stratagems_hangar_eagle_airstrike_64_png;  // assets/stratagems/Hangar/Eagle Airstrike_64.png
+extern const char *
+ui_img_stratagems_hangar_eagle_cluster_bomb_64_png;  // assets/stratagems/Hangar/Eagle Cluster Bomb_64.png
+extern const char *
+ui_img_stratagems_hangar_eagle_110mm_rocket_pods_64_png;  // assets/stratagems/Hangar/Eagle 110MM Rocket Pods_64.png
+extern const char *
+ui_img_stratagems_hangar_eagle_500kg_bomb_64_png;  // assets/stratagems/Hangar/Eagle 500KG Bomb_64.png
+extern const char *
+ui_img_stratagems_hangar_eagle_smoke_strike_64_png;  // assets/stratagems/Hangar/Eagle Smoke Strike_64.png
+extern const char *
+ui_img_stratagems_hangar_eagle_napalm_airstrike_64_png;  // assets/stratagems/Hangar/Eagle Napalm Airstrike_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_reinforce_64_png;  // assets/stratagems/General Stratagems/Reinforce_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_resupply_64_png;  // assets/stratagems/General Stratagems/Resupply_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_sos_beacon_64_png;  // assets/stratagems/General Stratagems/SOS Beacon_64.png
+extern const char * ui_img_stratagems_hangar_eagle_rearm_64_png;  // assets/stratagems/Hangar/Eagle Rearm_64.png
+extern const char *
+ui_img_stratagems_bridge_orbital_ems_strike_128_png;  // assets/stratagems/Bridge/Orbital EMS Strike_128.png
+extern const char *
+ui_img_stratagems_engineering_bay_quasar_cannon_128_png;  // assets/stratagems/Engineering Bay/Quasar Cannon_128.png
+extern const char *
+ui_img_stratagems_hangar_eagle_strafing_run_128_png;  // assets/stratagems/Hangar/Eagle Strafing Run_128.png
+extern const char *
+ui_img_stratagems_engineering_bay_supply_pack_128_png;  // assets/stratagems/Engineering Bay/Supply Pack_128.png
+extern const char *
+ui_img_stratagems_bridge_hmg_emplacement_128_png;  // assets/stratagems/Bridge/HMG Emplacement_128.png
+extern const char *
+ui_img_stratagems_bridge_orbital_gas_strike_128_png;  // assets/stratagems/Bridge/Orbital Gas Strike_128.png
+extern const char *
+ui_img_stratagems_bridge_orbital_precision_strike_128_png;  // assets/stratagems/Bridge/Orbital Precision Strike_128.png
+extern const char *
+ui_img_stratagems_bridge_orbital_smoke_strike_128_png;  // assets/stratagems/Bridge/Orbital Smoke Strike_128.png
+extern const char *
+ui_img_stratagems_bridge_shield_generator_relay_128_png;  // assets/stratagems/Bridge/Shield Generator Relay_128.png
+extern const char * ui_img_stratagems_bridge_tesla_tower_128_png;  // assets/stratagems/Bridge/Tesla Tower_128.png
+extern const char *
+ui_img_stratagems_chemical_agents_guard_dog_breath_128_png;  // assets/stratagems/Chemical Agents/Guard Dog Breath_128.png
+extern const char *
+ui_img_stratagems_chemical_agents_sterilizer_128_png;  // assets/stratagems/Chemical Agents/Sterilizer_128.png
+extern const char *
+ui_img_stratagems_chemical_agents_sterilizer_64_png;  // assets/stratagems/Chemical Agents/Sterilizer_64.png
+extern const char * ui_img_727347789;  // assets/stratagems/Engineering Bay/Anti-Personnel Minefield_128.png
+extern const char * ui_img_355640774;  // assets/stratagems/Engineering Bay/Anti-Tank Mines_128.png
+extern const char *
+ui_img_stratagems_engineering_bay_arc_thrower_128_png;  // assets/stratagems/Engineering Bay/Arc Thrower_128.png
+extern const char *
+ui_img_stratagems_engineering_bay_ballistic_shield_backpack_128_png;  // assets/stratagems/Engineering Bay/Ballistic Shield Backpack_128.png
+extern const char *
+ui_img_stratagems_engineering_bay_grenade_launcher_128_png;  // assets/stratagems/Engineering Bay/Grenade Launcher_128.png
+extern const char *
+ui_img_stratagems_engineering_bay_guard_dog_rover_128_png;  // assets/stratagems/Engineering Bay/Guard Dog Rover_128.png
+extern const char *
+ui_img_stratagems_engineering_bay_incendiary_mines_128_png;  // assets/stratagems/Engineering Bay/Incendiary Mines_128.png
+extern const char *
+ui_img_stratagems_engineering_bay_laser_cannon_128_png;  // assets/stratagems/Engineering Bay/Laser Cannon_128.png
+extern const char *
+ui_img_stratagems_engineering_bay_quasar_cannon_64_png;  // assets/stratagems/Engineering Bay/Quasar Cannon_64.png
+extern const char *
+ui_img_stratagems_engineering_bay_shield_generator_pack_128_png;  // assets/stratagems/Engineering Bay/Shield Generator Pack_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_dark_fluid_vessel_128_png;  // assets/stratagems/General Stratagems/Dark Fluid Vessel_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_dark_fluid_vessel_64_png;  // assets/stratagems/General Stratagems/Dark Fluid Vessel_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_hellbomb_128_png;  // assets/stratagems/General Stratagems/Hellbomb_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_hellbomb_64_png;  // assets/stratagems/General Stratagems/Hellbomb_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_hive_breaker_drill_128_png;  // assets/stratagems/General Stratagems/Hive Breaker Drill_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_hive_breaker_drill_64_png;  // assets/stratagems/General Stratagems/Hive Breaker Drill_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_orbital_illumination_flare_128_png;  // assets/stratagems/General Stratagems/Orbital Illumination Flare_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_orbital_illumination_flare_64_png;  // assets/stratagems/General Stratagems/Orbital Illumination Flare_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_prospecting_drill_128_png;  // assets/stratagems/General Stratagems/Prospecting Drill_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_prospecting_drill_64_png;  // assets/stratagems/General Stratagems/Prospecting Drill_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_reinforce_128_png;  // assets/stratagems/General Stratagems/Reinforce_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_resupply_128_png;  // assets/stratagems/General Stratagems/Resupply_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_seaf_artillery_128_png;  // assets/stratagems/General Stratagems/SEAF Artillery_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_seaf_artillery_64_png;  // assets/stratagems/General Stratagems/SEAF Artillery_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_seismic_probe_128_png;  // assets/stratagems/General Stratagems/Seismic Probe_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_seismic_probe_64_png;  // assets/stratagems/General Stratagems/Seismic Probe_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_sos_beacon_128_png;  // assets/stratagems/General Stratagems/SOS Beacon_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_super_earth_flag_128_png;  // assets/stratagems/General Stratagems/Super Earth Flag_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_super_earth_flag_64_png;  // assets/stratagems/General Stratagems/Super Earth Flag_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_tectonic_drill_128_png;  // assets/stratagems/General Stratagems/Tectonic Drill_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_tectonic_drill_64_png;  // assets/stratagems/General Stratagems/Tectonic Drill_64.png
+extern const char *
+ui_img_stratagems_general_stratagems_upload_data_128_png;  // assets/stratagems/General Stratagems/Upload Data_128.png
+extern const char *
+ui_img_stratagems_general_stratagems_upload_data_64_png;  // assets/stratagems/General Stratagems/Upload Data_64.png
+extern const char *
+ui_img_stratagems_hangar_eagle_110mm_rocket_pods_128_png;  // assets/stratagems/Hangar/Eagle 110MM Rocket Pods_128.png
+extern const char *
+ui_img_stratagems_hangar_eagle_500kg_bomb_128_png;  // assets/stratagems/Hangar/Eagle 500KG Bomb_128.png
+extern const char *
+ui_img_stratagems_hangar_eagle_airstrike_128_png;  // assets/stratagems/Hangar/Eagle Airstrike_128.png
+extern const char *
+ui_img_stratagems_hangar_eagle_cluster_bomb_128_png;  // assets/stratagems/Hangar/Eagle Cluster Bomb_128.png
+extern const char *
+ui_img_stratagems_hangar_eagle_napalm_airstrike_128_png;  // assets/stratagems/Hangar/Eagle Napalm Airstrike_128.png
+extern const char * ui_img_stratagems_hangar_eagle_rearm_128_png;  // assets/stratagems/Hangar/Eagle Rearm_128.png
+extern const char *
+ui_img_stratagems_hangar_eagle_smoke_strike_128_png;  // assets/stratagems/Hangar/Eagle Smoke Strike_128.png
+extern const char * ui_img_stratagems_hangar_jump_pack_128_png;  // assets/stratagems/Hangar/Jump Pack_128.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_120mm_he_barrage_128_png;  // assets/stratagems/Orbital Cannons/Orbital 120MM HE Barrage_128.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_380mm_he_barrage_128_png;  // assets/stratagems/Orbital Cannons/Orbital 380MM HE Barrage_128.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_airburst_strike_128_png;  // assets/stratagems/Orbital Cannons/Orbital Airburst Strike_128.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_gatling_barrage_128_png;  // assets/stratagems/Orbital Cannons/Orbital Gatling Barrage_128.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_laser_128_png;  // assets/stratagems/Orbital Cannons/Orbital Laser_128.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_napalm_barrage_128_png;  // assets/stratagems/Orbital Cannons/Orbital Napalm Barrage_128.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_napalm_barrage_64_png;  // assets/stratagems/Orbital Cannons/Orbital Napalm Barrage_64.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_railcannon_strike_128_png;  // assets/stratagems/Orbital Cannons/Orbital Railcannon Strike_128.png
+extern const char *
+ui_img_stratagems_orbital_cannons_orbital_walking_barrage_128_png;  // assets/stratagems/Orbital Cannons/Orbital Walking Barrage_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_airburst_rocket_launcher_128_png;  // assets/stratagems/Patriotic Administration Center/Airburst Rocket Launcher_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_airburst_rocket_launcher_64_png;  // assets/stratagems/Patriotic Administration Center/Airburst Rocket Launcher_64.png
+extern const char * ui_img_383820482;  // assets/stratagems/Patriotic Administration Center/Anti-Materiel Rifle_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_autocannon_128_png;  // assets/stratagems/Patriotic Administration Center/Autocannon_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_commando_128_png;  // assets/stratagems/Patriotic Administration Center/Commando_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_commando_64_png;  // assets/stratagems/Patriotic Administration Center/Commando_64.png
+extern const char * ui_img_756107897;  // assets/stratagems/Patriotic Administration Center/Expendable Anti-Tank_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_flamethrower_128_png;  // assets/stratagems/Patriotic Administration Center/Flamethrower_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_heavy_machine_gun_128_png;  // assets/stratagems/Patriotic Administration Center/Heavy Machine Gun_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_heavy_machine_gun_64_png;  // assets/stratagems/Patriotic Administration Center/Heavy Machine Gun_64.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_machine_gun_128_png;  // assets/stratagems/Patriotic Administration Center/Machine Gun_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_railgun_128_png;  // assets/stratagems/Patriotic Administration Center/Railgun_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_recoilless_rifle_128_png;  // assets/stratagems/Patriotic Administration Center/Recoilless Rifle_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_spear_128_png;  // assets/stratagems/Patriotic Administration Center/Spear_128.png
+extern const char *
+ui_img_stratagems_patriotic_administration_center_stalwart_128_png;  // assets/stratagems/Patriotic Administration Center/Stalwart_128.png
+extern const char *
+ui_img_stratagems_robotics_workshop_autocannon_sentry_128_png;  // assets/stratagems/Robotics Workshop/Autocannon Sentry_128.png
+extern const char *
+ui_img_stratagems_robotics_workshop_emancipator_exosuit_128_png;  // assets/stratagems/Robotics Workshop/Emancipator Exosuit_128.png
+extern const char *
+ui_img_stratagems_robotics_workshop_emancipator_exosuit_64_png;  // assets/stratagems/Robotics Workshop/Emancipator Exosuit_64.png
+extern const char *
+ui_img_stratagems_robotics_workshop_ems_mortar_sentry_128_png;  // assets/stratagems/Robotics Workshop/EMS Mortar Sentry_128.png
+extern const char *
+ui_img_stratagems_robotics_workshop_gatling_sentry_128_png;  // assets/stratagems/Robotics Workshop/Gatling Sentry_128.png
+extern const char *
+ui_img_stratagems_robotics_workshop_guard_dog_128_png;  // assets/stratagems/Robotics Workshop/Guard Dog_128.png
+extern const char *
+ui_img_stratagems_robotics_workshop_machine_gun_sentry_128_png;  // assets/stratagems/Robotics Workshop/Machine Gun Sentry_128.png
+extern const char *
+ui_img_stratagems_robotics_workshop_mortar_sentry_128_png;  // assets/stratagems/Robotics Workshop/Mortar Sentry_128.png
+extern const char *
+ui_img_stratagems_robotics_workshop_patriot_exosuit_128_png;  // assets/stratagems/Robotics Workshop/Patriot Exosuit_128.png
+extern const char *
+ui_img_stratagems_robotics_workshop_patriot_exosuit_64_png;  // assets/stratagems/Robotics Workshop/Patriot Exosuit_64.png
+extern const char *
+ui_img_stratagems_robotics_workshop_rocket_sentry_128_png;  // assets/stratagems/Robotics Workshop/Rocket Sentry_128.png
 
 // UI INIT
 void ui_init(void);

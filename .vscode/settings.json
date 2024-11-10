@@ -36,6 +36,7 @@
         "esp_bt_defs.h": "c",
         "esp_bt.h": "c",
         "esp_bt_device.h": "c",
-        "hid_dev.h": "c"
+        "hid_dev.h": "c",
+        "sdmmc_host.h": "c"
     }
 }

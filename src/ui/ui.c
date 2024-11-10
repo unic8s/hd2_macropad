@@ -21,8 +21,8 @@ lv_obj_t * ui_Image1;
 void ui_Setup_screen_init(void);
 lv_obj_t * ui_Setup;
 lv_obj_t * ui_TabView1;
-lv_obj_t * ui_Mission;
-lv_obj_t * ui_Container1;
+lv_obj_t * ui_Weapons;
+lv_obj_t * ui_Container2;
 void ui_event_Button6(lv_event_t * e);
 lv_obj_t * ui_Button6;
 void ui_event_Button1(lv_event_t * e);
@@ -31,10 +31,14 @@ void ui_event_Button2(lv_event_t * e);
 lv_obj_t * ui_Button2;
 void ui_event_Button3(lv_event_t * e);
 lv_obj_t * ui_Button3;
-lv_obj_t * ui_Weapons;
-lv_obj_t * ui_Container2;
-void ui_event_Button62(lv_event_t * e);
-lv_obj_t * ui_Button62;
+void ui_event_Button4(lv_event_t * e);
+lv_obj_t * ui_Button4;
+void ui_event_Button5(lv_event_t * e);
+lv_obj_t * ui_Button5;
+void ui_event_Button7(lv_event_t * e);
+lv_obj_t * ui_Button7;
+void ui_event_Button8(lv_event_t * e);
+lv_obj_t * ui_Button8;
 void ui_event_Button9(lv_event_t * e);
 lv_obj_t * ui_Button9;
 void ui_event_Button10(lv_event_t * e);
@@ -43,12 +47,14 @@ void ui_event_Button11(lv_event_t * e);
 lv_obj_t * ui_Button11;
 void ui_event_Button12(lv_event_t * e);
 lv_obj_t * ui_Button12;
+lv_obj_t * ui_Backpacks;
+lv_obj_t * ui_Container1;
+void ui_event_Button16(lv_event_t * e);
+lv_obj_t * ui_Button16;
 void ui_event_Button13(lv_event_t * e);
 lv_obj_t * ui_Button13;
 void ui_event_Button14(lv_event_t * e);
 lv_obj_t * ui_Button14;
-void ui_event_Button16(lv_event_t * e);
-lv_obj_t * ui_Button16;
 void ui_event_Button17(lv_event_t * e);
 lv_obj_t * ui_Button17;
 void ui_event_Button18(lv_event_t * e);
@@ -57,50 +63,72 @@ void ui_event_Button19(lv_event_t * e);
 lv_obj_t * ui_Button19;
 void ui_event_Button20(lv_event_t * e);
 lv_obj_t * ui_Button20;
-lv_obj_t * ui_Eagle;
+lv_obj_t * ui_Stationary;
+lv_obj_t * ui_Container3;
+void ui_event_Button21(lv_event_t * e);
+lv_obj_t * ui_Button21;
+void ui_event_Button22(lv_event_t * e);
+lv_obj_t * ui_Button22;
+void ui_event_Button23(lv_event_t * e);
+lv_obj_t * ui_Button23;
+void ui_event_Button24(lv_event_t * e);
 lv_obj_t * ui_Button24;
+void ui_event_Button25(lv_event_t * e);
 lv_obj_t * ui_Button25;
+void ui_event_Button26(lv_event_t * e);
 lv_obj_t * ui_Button26;
+void ui_event_Button27(lv_event_t * e);
 lv_obj_t * ui_Button27;
+void ui_event_Button28(lv_event_t * e);
 lv_obj_t * ui_Button28;
+void ui_event_Button29(lv_event_t * e);
 lv_obj_t * ui_Button29;
+void ui_event_Button30(lv_event_t * e);
 lv_obj_t * ui_Button30;
+void ui_event_Button31(lv_event_t * e);
 lv_obj_t * ui_Button31;
-lv_obj_t * ui_Strikes;
-lv_obj_t * ui_Button15;
-lv_obj_t * ui_Button32;
-lv_obj_t * ui_Button33;
-lv_obj_t * ui_Button34;
-lv_obj_t * ui_Button35;
-lv_obj_t * ui_Button36;
-lv_obj_t * ui_Button37;
-lv_obj_t * ui_Button38;
-lv_obj_t * ui_Button40;
-lv_obj_t * ui_Button41;
-lv_obj_t * ui_Button42;
-lv_obj_t * ui_Defensive;
-lv_obj_t * ui_Button39;
-lv_obj_t * ui_Button43;
-lv_obj_t * ui_Button44;
-lv_obj_t * ui_Button45;
-lv_obj_t * ui_Button46;
-lv_obj_t * ui_Button47;
-lv_obj_t * ui_Button48;
-lv_obj_t * ui_Button49;
-lv_obj_t * ui_Button50;
-lv_obj_t * ui_Button51;
-lv_obj_t * ui_Button52;
-lv_obj_t * ui_Backpacks;
+void ui_event_Button53(lv_event_t * e);
 lv_obj_t * ui_Button53;
+lv_obj_t * ui_Strikes;
+lv_obj_t * ui_Container4;
+void ui_event_Button54(lv_event_t * e);
 lv_obj_t * ui_Button54;
+void ui_event_Button55(lv_event_t * e);
 lv_obj_t * ui_Button55;
+void ui_event_Button56(lv_event_t * e);
 lv_obj_t * ui_Button56;
+void ui_event_Button57(lv_event_t * e);
 lv_obj_t * ui_Button57;
+void ui_event_Button58(lv_event_t * e);
 lv_obj_t * ui_Button58;
-lv_obj_t * ui_Vehicles;
+void ui_event_Button59(lv_event_t * e);
 lv_obj_t * ui_Button59;
+void ui_event_Button60(lv_event_t * e);
 lv_obj_t * ui_Button60;
+void ui_event_Button61(lv_event_t * e);
 lv_obj_t * ui_Button61;
+void ui_event_Button62(lv_event_t * e);
+lv_obj_t * ui_Button62;
+void ui_event_Button63(lv_event_t * e);
+lv_obj_t * ui_Button63;
+void ui_event_Button73(lv_event_t * e);
+lv_obj_t * ui_Button73;
+lv_obj_t * ui_Eagle;
+lv_obj_t * ui_Container7;
+void ui_event_Button15(lv_event_t * e);
+lv_obj_t * ui_Button15;
+void ui_event_Button32(lv_event_t * e);
+lv_obj_t * ui_Button32;
+void ui_event_Button33(lv_event_t * e);
+lv_obj_t * ui_Button33;
+void ui_event_Button34(lv_event_t * e);
+lv_obj_t * ui_Button34;
+void ui_event_Button35(lv_event_t * e);
+lv_obj_t * ui_Button35;
+void ui_event_Button36(lv_event_t * e);
+lv_obj_t * ui_Button36;
+void ui_event_Button37(lv_event_t * e);
+lv_obj_t * ui_Button37;
 lv_obj_t * ui_Amount;
 lv_obj_t * ui_Label1;
 lv_obj_t * ui_Label2;
@@ -130,12 +158,77 @@ lv_obj_t * ui_Label3;
 lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
-const lv_img_dsc_t * ui_imgset_000_helldivers[1] = {&ui_img_stratagems_000_helldivers2_png};
-const lv_img_dsc_t * ui_imgset_class_[7] = {&ui_img_stratagems_class_1_png, &ui_img_stratagems_class_2_png, &ui_img_stratagems_class_3_png, &ui_img_stratagems_class_4_png, &ui_img_stratagems_class_5_png, &ui_img_stratagems_class_6_png, &ui_img_stratagems_class_7_png};
-const lv_img_dsc_t * ui_imgset_defensive_[11] = {&ui_img_stratagems_defensive_1_png, &ui_img_stratagems_defensive_10_png, &ui_img_stratagems_defensive_11_png, &ui_img_stratagems_defensive_2_png, &ui_img_stratagems_defensive_3_png, &ui_img_stratagems_defensive_4_png, &ui_img_stratagems_defensive_5_png, &ui_img_stratagems_defensive_6_png, &ui_img_stratagems_defensive_7_png, &ui_img_stratagems_defensive_8_png, &ui_img_stratagems_defensive_9_png};
-const lv_img_dsc_t * ui_imgset_offensive_[18] = {&ui_img_stratagems_offensive_1_png, &ui_img_stratagems_offensive_10_png, &ui_img_stratagems_offensive_11_png, &ui_img_stratagems_offensive_12_png, &ui_img_stratagems_offensive_2_png, &ui_img_stratagems_offensive_13_png, &ui_img_stratagems_offensive_3_png, &ui_img_stratagems_offensive_14_png, &ui_img_stratagems_offensive_4_png, &ui_img_stratagems_offensive_15_png, &ui_img_stratagems_offensive_5_png, &ui_img_stratagems_offensive_16_png, &ui_img_stratagems_offensive_6_png, &ui_img_stratagems_offensive_17_png, &ui_img_stratagems_offensive_7_png, &ui_img_stratagems_offensive_18_png, &ui_img_stratagems_offensive_8_png, &ui_img_stratagems_offensive_9_png};
-const lv_img_dsc_t * ui_imgset_supply_[19] = {&ui_img_stratagems_supply_1_png, &ui_img_stratagems_supply_10_png, &ui_img_stratagems_supply_11_png, &ui_img_stratagems_supply_12_png, &ui_img_stratagems_supply_2_png, &ui_img_stratagems_supply_13_png, &ui_img_stratagems_supply_3_png, &ui_img_stratagems_supply_14_png, &ui_img_stratagems_supply_4_png, &ui_img_stratagems_supply_15_png, &ui_img_stratagems_supply_5_png, &ui_img_stratagems_supply_16_png, &ui_img_stratagems_supply_6_png, &ui_img_stratagems_supply_17_png, &ui_img_stratagems_supply_7_png, &ui_img_stratagems_supply_18_png, &ui_img_stratagems_supply_8_png, &ui_img_stratagems_supply_19_png, &ui_img_stratagems_supply_9_png};
-const lv_img_dsc_t * ui_imgset_support_[10] = {&ui_img_stratagems_support_1_png, &ui_img_stratagems_support_10_png, &ui_img_stratagems_support_2_png, &ui_img_stratagems_support_3_png, &ui_img_stratagems_support_4_png, &ui_img_stratagems_support_5_png, &ui_img_stratagems_support_6_png, &ui_img_stratagems_support_7_png, &ui_img_stratagems_support_8_png, &ui_img_stratagems_support_9_png};
+const char * ui_imgset_hmg_emplacement_[2] = {"S:assets/stratagems/Bridge/HMG Emplacement_128.png", "S:assets/stratagems/Bridge/HMG Emplacement_64.png"};
+const char * ui_imgset_orbital_ems_strike_[2] = {"S:assets/stratagems/Bridge/Orbital EMS Strike_128.png", "S:assets/stratagems/Bridge/Orbital EMS Strike_64.png"};
+const char * ui_imgset_orbital_gas_strike_[2] = {"S:assets/stratagems/Bridge/Orbital Gas Strike_128.png", "S:assets/stratagems/Bridge/Orbital Gas Strike_64.png"};
+const char * ui_imgset_orbital_precision_strike_[2] = {"S:assets/stratagems/Bridge/Orbital Precision Strike_128.png", "S:assets/stratagems/Bridge/Orbital Precision Strike_64.png"};
+const char * ui_imgset_orbital_smoke_strike_[2] = {"S:assets/stratagems/Bridge/Orbital Smoke Strike_128.png", "S:assets/stratagems/Bridge/Orbital Smoke Strike_64.png"};
+const char * ui_imgset_shield_generator_relay_[2] = {"S:assets/stratagems/Bridge/Shield Generator Relay_128.png", "S:assets/stratagems/Bridge/Shield Generator Relay_64.png"};
+const char * ui_imgset_tesla_tower_[2] = {"S:assets/stratagems/Bridge/Tesla Tower_128.png", "S:assets/stratagems/Bridge/Tesla Tower_64.png"};
+const char * ui_imgset_guard_dog_breath_[2] = {"S:assets/stratagems/Chemical Agents/Guard Dog Breath_128.png", "S:assets/stratagems/Chemical Agents/Guard Dog Breath_64.png"};
+const char * ui_imgset_sterilizer_[2] = {"S:assets/stratagems/Chemical Agents/Sterilizer_128.png", "S:assets/stratagems/Chemical Agents/Sterilizer_64.png"};
+const char * ui_imgset_906324259[2] = {"S:assets/stratagems/Engineering Bay/Anti-Personnel Minefield_128.png", "S:assets/stratagems/Engineering Bay/Anti-Personnel Minefield_64.png"};
+const char * ui_imgset_1818789982[2] = {"S:assets/stratagems/Engineering Bay/Anti-Tank Mines_128.png", "S:assets/stratagems/Engineering Bay/Anti-Tank Mines_64.png"};
+const char * ui_imgset_arc_thrower_[2] = {"S:assets/stratagems/Engineering Bay/Arc Thrower_128.png", "S:assets/stratagems/Engineering Bay/Arc Thrower_64.png"};
+const char * ui_imgset_ballistic_shield_backpack_[2] = {"S:assets/stratagems/Engineering Bay/Ballistic Shield Backpack_128.png", "S:assets/stratagems/Engineering Bay/Ballistic Shield Backpack_64.png"};
+const char * ui_imgset_grenade_launcher_[2] = {"S:assets/stratagems/Engineering Bay/Grenade Launcher_128.png", "S:assets/stratagems/Engineering Bay/Grenade Launcher_64.png"};
+const char * ui_imgset_guard_dog_rover_[2] = {"S:assets/stratagems/Engineering Bay/Guard Dog Rover_128.png", "S:assets/stratagems/Engineering Bay/Guard Dog Rover_64.png"};
+const char * ui_imgset_incendiary_mines_[2] = {"S:assets/stratagems/Engineering Bay/Incendiary Mines_128.png", "S:assets/stratagems/Engineering Bay/Incendiary Mines_64.png"};
+const char * ui_imgset_laser_cannon_[2] = {"S:assets/stratagems/Engineering Bay/Laser Cannon_128.png", "S:assets/stratagems/Engineering Bay/Laser Cannon_64.png"};
+const char * ui_imgset_quasar_cannon_[2] = {"S:assets/stratagems/Engineering Bay/Quasar Cannon_128.png", "S:assets/stratagems/Engineering Bay/Quasar Cannon_64.png"};
+const char * ui_imgset_shield_generator_pack_[2] = {"S:assets/stratagems/Engineering Bay/Shield Generator Pack_128.png", "S:assets/stratagems/Engineering Bay/Shield Generator Pack_64.png"};
+const char * ui_imgset_supply_pack_[2] = {"S:assets/stratagems/Engineering Bay/Supply Pack_128.png", "S:assets/stratagems/Engineering Bay/Supply Pack_64.png"};
+const char * ui_imgset_dark_fluid_vessel_[2] = {"S:assets/stratagems/General Stratagems/Dark Fluid Vessel_128.png", "S:assets/stratagems/General Stratagems/Dark Fluid Vessel_64.png"};
+const char * ui_imgset_hellbomb_[2] = {"S:assets/stratagems/General Stratagems/Hellbomb_128.png", "S:assets/stratagems/General Stratagems/Hellbomb_64.png"};
+const char * ui_imgset_hive_breaker_drill_[2] = {"S:assets/stratagems/General Stratagems/Hive Breaker Drill_128.png", "S:assets/stratagems/General Stratagems/Hive Breaker Drill_64.png"};
+const char * ui_imgset_orbital_illumination_flare_[2] = {"S:assets/stratagems/General Stratagems/Orbital Illumination Flare_128.png", "S:assets/stratagems/General Stratagems/Orbital Illumination Flare_64.png"};
+const char * ui_imgset_prospecting_drill_[2] = {"S:assets/stratagems/General Stratagems/Prospecting Drill_128.png", "S:assets/stratagems/General Stratagems/Prospecting Drill_64.png"};
+const char * ui_imgset_reinforce_[2] = {"S:assets/stratagems/General Stratagems/Reinforce_128.png", "S:assets/stratagems/General Stratagems/Reinforce_64.png"};
+const char * ui_imgset_resupply_[2] = {"S:assets/stratagems/General Stratagems/Resupply_128.png", "S:assets/stratagems/General Stratagems/Resupply_64.png"};
+const char * ui_imgset_seaf_artillery_[2] = {"S:assets/stratagems/General Stratagems/SEAF Artillery_128.png", "S:assets/stratagems/General Stratagems/SEAF Artillery_64.png"};
+const char * ui_imgset_seismic_probe_[2] = {"S:assets/stratagems/General Stratagems/Seismic Probe_128.png", "S:assets/stratagems/General Stratagems/Seismic Probe_64.png"};
+const char * ui_imgset_sos_beacon_[2] = {"S:assets/stratagems/General Stratagems/SOS Beacon_128.png", "S:assets/stratagems/General Stratagems/SOS Beacon_64.png"};
+const char * ui_imgset_super_earth_flag_[2] = {"S:assets/stratagems/General Stratagems/Super Earth Flag_128.png", "S:assets/stratagems/General Stratagems/Super Earth Flag_64.png"};
+const char * ui_imgset_tectonic_drill_[2] = {"S:assets/stratagems/General Stratagems/Tectonic Drill_128.png", "S:assets/stratagems/General Stratagems/Tectonic Drill_64.png"};
+const char * ui_imgset_upload_data_[2] = {"S:assets/stratagems/General Stratagems/Upload Data_128.png", "S:assets/stratagems/General Stratagems/Upload Data_64.png"};
+const char * ui_imgset_eagle_110mm_rocket_pods_[2] = {"S:assets/stratagems/Hangar/Eagle 110MM Rocket Pods_128.png", "S:assets/stratagems/Hangar/Eagle 110MM Rocket Pods_64.png"};
+const char * ui_imgset_eagle_500kg_bomb_[2] = {"S:assets/stratagems/Hangar/Eagle 500KG Bomb_128.png", "S:assets/stratagems/Hangar/Eagle 500KG Bomb_64.png"};
+const char * ui_imgset_eagle_airstrike_[2] = {"S:assets/stratagems/Hangar/Eagle Airstrike_128.png", "S:assets/stratagems/Hangar/Eagle Airstrike_64.png"};
+const char * ui_imgset_eagle_cluster_bomb_[2] = {"S:assets/stratagems/Hangar/Eagle Cluster Bomb_128.png", "S:assets/stratagems/Hangar/Eagle Cluster Bomb_64.png"};
+const char * ui_imgset_eagle_napalm_airstrike_[2] = {"S:assets/stratagems/Hangar/Eagle Napalm Airstrike_128.png", "S:assets/stratagems/Hangar/Eagle Napalm Airstrike_64.png"};
+const char * ui_imgset_eagle_rearm_[2] = {"S:assets/stratagems/Hangar/Eagle Rearm_128.png", "S:assets/stratagems/Hangar/Eagle Rearm_64.png"};
+const char * ui_imgset_eagle_smoke_strike_[2] = {"S:assets/stratagems/Hangar/Eagle Smoke Strike_128.png", "S:assets/stratagems/Hangar/Eagle Smoke Strike_64.png"};
+const char * ui_imgset_eagle_strafing_run_[2] = {"S:assets/stratagems/Hangar/Eagle Strafing Run_128.png", "S:assets/stratagems/Hangar/Eagle Strafing Run_64.png"};
+const char * ui_imgset_jump_pack_[2] = {"S:assets/stratagems/Hangar/Jump Pack_128.png", "S:assets/stratagems/Hangar/Jump Pack_64.png"};
+const char * ui_imgset_orbital_120mm_he_barrage_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital 120MM HE Barrage_128.png", "S:assets/stratagems/Orbital Cannons/Orbital 120MM HE Barrage_64.png"};
+const char * ui_imgset_orbital_380mm_he_barrage_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital 380MM HE Barrage_128.png", "S:assets/stratagems/Orbital Cannons/Orbital 380MM HE Barrage_64.png"};
+const char * ui_imgset_orbital_airburst_strike_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Airburst Strike_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Airburst Strike_64.png"};
+const char * ui_imgset_orbital_gatling_barrage_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Gatling Barrage_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Gatling Barrage_64.png"};
+const char * ui_imgset_orbital_laser_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Laser_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Laser_64.png"};
+const char * ui_imgset_orbital_napalm_barrage_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Napalm Barrage_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Napalm Barrage_64.png"};
+const char * ui_imgset_orbital_railcannon_strike_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Railcannon Strike_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Railcannon Strike_64.png"};
+const char * ui_imgset_orbital_walking_barrage_[2] = {"S:assets/stratagems/Orbital Cannons/Orbital Walking Barrage_128.png", "S:assets/stratagems/Orbital Cannons/Orbital Walking Barrage_64.png"};
+const char * ui_imgset_airburst_rocket_launcher_[2] = {"S:assets/stratagems/Patriotic Administration Center/Airburst Rocket Launcher_128.png", "S:assets/stratagems/Patriotic Administration Center/Airburst Rocket Launcher_64.png"};
+const char * ui_imgset_1495394437[2] = {"S:assets/stratagems/Patriotic Administration Center/Anti-Materiel Rifle_128.png", "S:assets/stratagems/Patriotic Administration Center/Anti-Materiel Rifle_64.png"};
+const char * ui_imgset_autocannon_[2] = {"S:assets/stratagems/Patriotic Administration Center/Autocannon_128.png", "S:assets/stratagems/Patriotic Administration Center/Autocannon_64.png"};
+const char * ui_imgset_commando_[2] = {"S:assets/stratagems/Patriotic Administration Center/Commando_128.png", "S:assets/stratagems/Patriotic Administration Center/Commando_64.png"};
+const char * ui_imgset_683967390[2] = {"S:assets/stratagems/Patriotic Administration Center/Expendable Anti-Tank_128.png", "S:assets/stratagems/Patriotic Administration Center/Expendable Anti-Tank_64.png"};
+const char * ui_imgset_flamethrower_[2] = {"S:assets/stratagems/Patriotic Administration Center/Flamethrower_128.png", "S:assets/stratagems/Patriotic Administration Center/Flamethrower_64.png"};
+const char * ui_imgset_heavy_machine_gun_[2] = {"S:assets/stratagems/Patriotic Administration Center/Heavy Machine Gun_128.png", "S:assets/stratagems/Patriotic Administration Center/Heavy Machine Gun_64.png"};
+const char * ui_imgset_machine_gun_[2] = {"S:assets/stratagems/Patriotic Administration Center/Machine Gun_128.png", "S:assets/stratagems/Patriotic Administration Center/Machine Gun_64.png"};
+const char * ui_imgset_railgun_[2] = {"S:assets/stratagems/Patriotic Administration Center/Railgun_128.png", "S:assets/stratagems/Patriotic Administration Center/Railgun_64.png"};
+const char * ui_imgset_recoilless_rifle_[2] = {"S:assets/stratagems/Patriotic Administration Center/Recoilless Rifle_128.png", "S:assets/stratagems/Patriotic Administration Center/Recoilless Rifle_64.png"};
+const char * ui_imgset_spear_[2] = {"S:assets/stratagems/Patriotic Administration Center/Spear_128.png", "S:assets/stratagems/Patriotic Administration Center/Spear_64.png"};
+const char * ui_imgset_stalwart_[2] = {"S:assets/stratagems/Patriotic Administration Center/Stalwart_128.png", "S:assets/stratagems/Patriotic Administration Center/Stalwart_64.png"};
+const char * ui_imgset_autocannon_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/Autocannon Sentry_128.png", "S:assets/stratagems/Robotics Workshop/Autocannon Sentry_64.png"};
+const char * ui_imgset_emancipator_exosuit_[2] = {"S:assets/stratagems/Robotics Workshop/Emancipator Exosuit_128.png", "S:assets/stratagems/Robotics Workshop/Emancipator Exosuit_64.png"};
+const char * ui_imgset_ems_mortar_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/EMS Mortar Sentry_128.png", "S:assets/stratagems/Robotics Workshop/EMS Mortar Sentry_64.png"};
+const char * ui_imgset_gatling_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/Gatling Sentry_128.png", "S:assets/stratagems/Robotics Workshop/Gatling Sentry_64.png"};
+const char * ui_imgset_guard_dog_[2] = {"S:assets/stratagems/Robotics Workshop/Guard Dog_128.png", "S:assets/stratagems/Robotics Workshop/Guard Dog_64.png"};
+const char * ui_imgset_machine_gun_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/Machine Gun Sentry_128.png", "S:assets/stratagems/Robotics Workshop/Machine Gun Sentry_64.png"};
+const char * ui_imgset_mortar_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/Mortar Sentry_128.png", "S:assets/stratagems/Robotics Workshop/Mortar Sentry_64.png"};
+const char * ui_imgset_patriot_exosuit_[2] = {"S:assets/stratagems/Robotics Workshop/Patriot Exosuit_128.png", "S:assets/stratagems/Robotics Workshop/Patriot Exosuit_64.png"};
+const char * ui_imgset_rocket_sentry_[2] = {"S:assets/stratagems/Robotics Workshop/Rocket Sentry_128.png", "S:assets/stratagems/Robotics Workshop/Rocket Sentry_64.png"};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16
@@ -209,16 +302,55 @@ void ui_event_Button3(lv_event_t * e)
     }
 }
 
-void ui_event_Button62(lv_event_t * e)
+void ui_event_Button4(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
 
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
     if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button5(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button7(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button8(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
     }
 }
 
@@ -227,11 +359,11 @@ void ui_event_Button9(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
 
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
     if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
     }
 }
 
@@ -240,11 +372,11 @@ void ui_event_Button10(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
 
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
     if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
     }
 }
 
@@ -253,11 +385,11 @@ void ui_event_Button11(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
 
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
     if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
     }
 }
 
@@ -266,37 +398,11 @@ void ui_event_Button12(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
 
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
     if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        deselectStratagem(e);
     }
-}
-
-void ui_event_Button13(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
     if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
-    }
-}
-
-void ui_event_Button14(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        selectStratagem(e);
     }
 }
 
@@ -305,11 +411,37 @@ void ui_event_Button16(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
 
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
     if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button13(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button14(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
     }
 }
 
@@ -318,11 +450,11 @@ void ui_event_Button17(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
 
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
     if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
     }
 }
 
@@ -331,11 +463,11 @@ void ui_event_Button18(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
 
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
     if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
     }
 }
 
@@ -344,11 +476,11 @@ void ui_event_Button19(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
 
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
     if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
     }
 }
 
@@ -357,11 +489,401 @@ void ui_event_Button20(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
 
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, 1, LV_ANIM_ON);
-    }
     if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        _ui_bar_increment(ui_Amount, -1, LV_ANIM_ON);
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button21(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button22(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button23(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button24(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button25(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button26(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button27(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button28(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button29(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button30(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button31(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button53(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button54(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button55(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button56(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button57(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button58(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button59(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button60(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button61(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button62(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button63(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button73(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button15(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button32(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button33(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button34(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button35(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button36(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button37(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
     }
 }
 

@@ -59,12 +59,12 @@ void ui_event_Button12(lv_event_t * e);
 extern lv_obj_t * ui_Button12;
 extern lv_obj_t * ui_Backpacks;
 extern lv_obj_t * ui_Container1;
-void ui_event_Button16(lv_event_t * e);
-extern lv_obj_t * ui_Button16;
 void ui_event_Button13(lv_event_t * e);
 extern lv_obj_t * ui_Button13;
 void ui_event_Button14(lv_event_t * e);
 extern lv_obj_t * ui_Button14;
+void ui_event_Button16(lv_event_t * e);
+extern lv_obj_t * ui_Button16;
 void ui_event_Button17(lv_event_t * e);
 extern lv_obj_t * ui_Button17;
 void ui_event_Button18(lv_event_t * e);
@@ -101,28 +101,28 @@ void ui_event_Button38(lv_event_t * e);
 extern lv_obj_t * ui_Button38;
 extern lv_obj_t * ui_Strikes;
 extern lv_obj_t * ui_Container4;
-void ui_event_Button54(lv_event_t * e);
-extern lv_obj_t * ui_Button54;
-void ui_event_Button55(lv_event_t * e);
-extern lv_obj_t * ui_Button55;
-void ui_event_Button56(lv_event_t * e);
-extern lv_obj_t * ui_Button56;
-void ui_event_Button57(lv_event_t * e);
-extern lv_obj_t * ui_Button57;
-void ui_event_Button58(lv_event_t * e);
-extern lv_obj_t * ui_Button58;
-void ui_event_Button59(lv_event_t * e);
-extern lv_obj_t * ui_Button59;
-void ui_event_Button60(lv_event_t * e);
-extern lv_obj_t * ui_Button60;
-void ui_event_Button61(lv_event_t * e);
-extern lv_obj_t * ui_Button61;
-void ui_event_Button62(lv_event_t * e);
-extern lv_obj_t * ui_Button62;
-void ui_event_Button63(lv_event_t * e);
-extern lv_obj_t * ui_Button63;
-void ui_event_Button73(lv_event_t * e);
-extern lv_obj_t * ui_Button73;
+void ui_event_Button39(lv_event_t * e);
+extern lv_obj_t * ui_Button39;
+void ui_event_Button40(lv_event_t * e);
+extern lv_obj_t * ui_Button40;
+void ui_event_Button41(lv_event_t * e);
+extern lv_obj_t * ui_Button41;
+void ui_event_Button42(lv_event_t * e);
+extern lv_obj_t * ui_Button42;
+void ui_event_Button43(lv_event_t * e);
+extern lv_obj_t * ui_Button43;
+void ui_event_Button44(lv_event_t * e);
+extern lv_obj_t * ui_Button44;
+void ui_event_Button45(lv_event_t * e);
+extern lv_obj_t * ui_Button45;
+void ui_event_Button46(lv_event_t * e);
+extern lv_obj_t * ui_Button46;
+void ui_event_Button47(lv_event_t * e);
+extern lv_obj_t * ui_Button47;
+void ui_event_Button48(lv_event_t * e);
+extern lv_obj_t * ui_Button48;
+void ui_event_Button49(lv_event_t * e);
+extern lv_obj_t * ui_Button49;
 extern lv_obj_t * ui_Eagle;
 extern lv_obj_t * ui_Container7;
 void ui_event_Button15(lv_event_t * e);
@@ -156,9 +156,13 @@ extern lv_obj_t * ui_Button66;
 extern lv_obj_t * ui_Button67;
 extern lv_obj_t * ui_Button68;
 extern lv_obj_t * ui_Container6;
+void ui_event_Button69(lv_event_t * e);
 extern lv_obj_t * ui_Button69;
+void ui_event_Button70(lv_event_t * e);
 extern lv_obj_t * ui_Button70;
+void ui_event_Button71(lv_event_t * e);
 extern lv_obj_t * ui_Button71;
+void ui_event_Button72(lv_event_t * e);
 extern lv_obj_t * ui_Button72;
 extern lv_obj_t * ui_Label3;
 // CUSTOM VARIABLES
@@ -168,55 +172,11 @@ extern lv_obj_t * ui_Label3;
 extern lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
-extern const char * ui_img_sg_mg1_png;  // assets/sg/MG1.png
-extern const char * ui_img_sg_amr1_png;  // assets/sg/AMR1.png
-extern const char * ui_img_sg_sw1_png;  // assets/sg/SW1.png
-extern const char * ui_img_sg_ft1_png;  // assets/sg/FT1.png
-extern const char * ui_img_sg_lc1_png;  // assets/sg/LC1.png
-extern const char * ui_img_sg_gl1_png;  // assets/sg/GL1.png
-extern const char * ui_img_sg_at1_png;  // assets/sg/AT1.png
-extern const char * ui_img_sg_rg1_png;  // assets/sg/RG1.png
-extern const char * ui_img_sg_eat1_png;  // assets/sg/EAT1.png
-extern const char * ui_img_sg_rr1_png;  // assets/sg/RR1.png
-extern const char * ui_img_sg_ac1_png;  // assets/sg/AC1.png
-extern const char * ui_img_sg_spr1_png;  // assets/sg/SPR1.png
-extern const char * ui_img_sg_sup1_png;  // assets/sg/SUP1.png
-extern const char * ui_img_sg_bsb1_png;  // assets/sg/BSB1.png
-extern const char * ui_img_sg_jp1_png;  // assets/sg/JP1.png
-extern const char * ui_img_sg_sgp1_png;  // assets/sg/SGP1.png
-extern const char * ui_img_sg_gd1_png;  // assets/sg/GD1.png
-extern const char * ui_img_sg_gdr1_png;  // assets/sg/GDR1.png
-extern const char * ui_img_sg_gdb1_png;  // assets/sg/GDB1.png
-extern const char * ui_img_sg_mgs1_png;  // assets/sg/MGS1.png
-extern const char * ui_img_sg_gs1_png;  // assets/sg/GS1.png
-extern const char * ui_img_sg_ms1_png;  // assets/sg/MS1.png
-extern const char * ui_img_sg_ems1_png;  // assets/sg/EMS1.png
-extern const char * ui_img_sg_acs1_png;  // assets/sg/ACS1.png
-extern const char * ui_img_sg_rs1_png;  // assets/sg/RS1.png
-extern const char * ui_img_sg_hmge1_png;  // assets/sg/HMGE1.png
-extern const char * ui_img_sg_sgr1_png;  // assets/sg/SGR1.png
-extern const char * ui_img_sg_apm1_png;  // assets/sg/APM1.png
-extern const char * ui_img_sg_atm1_png;  // assets/sg/ATM1.png
-extern const char * ui_img_sg_im1_png;  // assets/sg/IM1.png
-extern const char * ui_img_sg_tt1_png;  // assets/sg/TT1.png
-extern const char * ui_img_sg_ops1_png;  // assets/sg/OPS1.png
-extern const char * ui_img_sg_oas1_png;  // assets/sg/OAS1.png
-extern const char * ui_img_sg_ors1_png;  // assets/sg/ORS1.png
-extern const char * ui_img_sg_ol1_png;  // assets/sg/OL1.png
-extern const char * ui_img_sg_ogb1_png;  // assets/sg/OGB1.png
-extern const char * ui_img_sg_owb1_png;  // assets/sg/OWB1.png
-extern const char * ui_img_sg_1201_png;  // assets/sg/1201.png
-extern const char * ui_img_sg_3801_png;  // assets/sg/3801.png
-extern const char * ui_img_sg_oss1_png;  // assets/sg/OSS1.png
-extern const char * ui_img_sg_ogs1_png;  // assets/sg/OGS1.png
-extern const char * ui_img_sg_oes1_png;  // assets/sg/OES1.png
-extern const char * ui_img_sg_esr1_png;  // assets/sg/ESR1.png
-extern const char * ui_img_sg_ea1_png;  // assets/sg/EA1.png
-extern const char * ui_img_sg_ecb1_png;  // assets/sg/ECB1.png
-extern const char * ui_img_sg_e1101_png;  // assets/sg/E1101.png
-extern const char * ui_img_sg_e5001_png;  // assets/sg/E5001.png
-extern const char * ui_img_sg_ess1_png;  // assets/sg/ESS1.png
-extern const char * ui_img_sg_ena1_png;  // assets/sg/ENA1.png
+extern const char * ui_img_bg1_png;  // assets/bg1.png
+extern const char * ui_img_bg2_png;  // assets/bg2.png
+extern const char * ui_img_bg3_png;  // assets/bg3.png
+extern const char * ui_img_bg4_png;  // assets/bg4.png
+extern const char * ui_img_bg5_png;  // assets/bg5.png
 extern const char * ui_img_sg_rf1_png;  // assets/sg/RF1.png
 extern const char * ui_img_sg_res1_png;  // assets/sg/RES1.png
 extern const char * ui_img_sg_sos1_png;  // assets/sg/SOS1.png
@@ -225,36 +185,60 @@ extern const char * ui_img_sg_ecb2_png;  // assets/sg/ECB2.png
 extern const char * ui_img_sg_ogs2_png;  // assets/sg/OGS2.png
 extern const char * ui_img_sg_ee2_png;  // assets/sg/EE2.png
 extern const char * ui_img_sg_sgr2_png;  // assets/sg/SGR2.png
+extern const char * ui_img_sg_1201_png;  // assets/sg/1201.png
 extern const char * ui_img_sg_1202_png;  // assets/sg/1202.png
+extern const char * ui_img_sg_3801_png;  // assets/sg/3801.png
 extern const char * ui_img_sg_3802_png;  // assets/sg/3802.png
+extern const char * ui_img_sg_ac1_png;  // assets/sg/AC1.png
 extern const char * ui_img_sg_ac2_png;  // assets/sg/AC2.png
+extern const char * ui_img_sg_acs1_png;  // assets/sg/ACS1.png
 extern const char * ui_img_sg_acs2_png;  // assets/sg/ACS2.png
+extern const char * ui_img_sg_amr1_png;  // assets/sg/AMR1.png
 extern const char * ui_img_sg_amr2_png;  // assets/sg/AMR2.png
+extern const char * ui_img_sg_apm1_png;  // assets/sg/APM1.png
 extern const char * ui_img_sg_apm2_png;  // assets/sg/APM2.png
 extern const char * ui_img_sg_arl1_png;  // assets/sg/ARL1.png
 extern const char * ui_img_sg_arl2_png;  // assets/sg/ARL2.png
+extern const char * ui_img_sg_at1_png;  // assets/sg/AT1.png
 extern const char * ui_img_sg_at2_png;  // assets/sg/AT2.png
+extern const char * ui_img_sg_atm1_png;  // assets/sg/ATM1.png
 extern const char * ui_img_sg_atm2_png;  // assets/sg/ATM2.png
+extern const char * ui_img_sg_bsb1_png;  // assets/sg/BSB1.png
 extern const char * ui_img_sg_bsb2_png;  // assets/sg/BSB2.png
 extern const char * ui_img_sg_c1_png;  // assets/sg/C1.png
 extern const char * ui_img_sg_c2_png;  // assets/sg/C2.png
 extern const char * ui_img_sg_dfv1_png;  // assets/sg/DFV1.png
 extern const char * ui_img_sg_dfv2_png;  // assets/sg/DFV2.png
+extern const char * ui_img_sg_e1101_png;  // assets/sg/E1101.png
 extern const char * ui_img_sg_e1102_png;  // assets/sg/E1102.png
+extern const char * ui_img_sg_e5001_png;  // assets/sg/E5001.png
 extern const char * ui_img_sg_e5002_png;  // assets/sg/E5002.png
+extern const char * ui_img_sg_ea1_png;  // assets/sg/EA1.png
 extern const char * ui_img_sg_ea2_png;  // assets/sg/EA2.png
+extern const char * ui_img_sg_eat1_png;  // assets/sg/EAT1.png
 extern const char * ui_img_sg_eat2_png;  // assets/sg/EAT2.png
+extern const char * ui_img_sg_ecb1_png;  // assets/sg/ECB1.png
 extern const char * ui_img_sg_ee1_png;  // assets/sg/EE1.png
+extern const char * ui_img_sg_ems1_png;  // assets/sg/EMS1.png
 extern const char * ui_img_sg_ems2_png;  // assets/sg/EMS2.png
+extern const char * ui_img_sg_ena1_png;  // assets/sg/ENA1.png
 extern const char * ui_img_sg_ena2_png;  // assets/sg/ENA2.png
 extern const char * ui_img_sg_er2_png;  // assets/sg/ER2.png
+extern const char * ui_img_sg_esr1_png;  // assets/sg/ESR1.png
 extern const char * ui_img_sg_esr2_png;  // assets/sg/ESR2.png
+extern const char * ui_img_sg_ess1_png;  // assets/sg/ESS1.png
 extern const char * ui_img_sg_ess2_png;  // assets/sg/ESS2.png
+extern const char * ui_img_sg_ft1_png;  // assets/sg/FT1.png
 extern const char * ui_img_sg_ft2_png;  // assets/sg/FT2.png
+extern const char * ui_img_sg_gd1_png;  // assets/sg/GD1.png
 extern const char * ui_img_sg_gd2_png;  // assets/sg/GD2.png
+extern const char * ui_img_sg_gdb1_png;  // assets/sg/GDB1.png
 extern const char * ui_img_sg_gdb2_png;  // assets/sg/GDB2.png
+extern const char * ui_img_sg_gdr1_png;  // assets/sg/GDR1.png
 extern const char * ui_img_sg_gdr2_png;  // assets/sg/GDR2.png
+extern const char * ui_img_sg_gl1_png;  // assets/sg/GL1.png
 extern const char * ui_img_sg_gl2_png;  // assets/sg/GL2.png
+extern const char * ui_img_sg_gs1_png;  // assets/sg/GS1.png
 extern const char * ui_img_sg_gs2_png;  // assets/sg/GS2.png
 extern const char * ui_img_sg_hb1_png;  // assets/sg/HB1.png
 extern const char * ui_img_sg_hb2_png;  // assets/sg/HB2.png
@@ -262,24 +246,40 @@ extern const char * ui_img_sg_hbd1_png;  // assets/sg/HBD1.png
 extern const char * ui_img_sg_hbd2_png;  // assets/sg/HBD2.png
 extern const char * ui_img_sg_hmg1_png;  // assets/sg/HMG1.png
 extern const char * ui_img_sg_hmg2_png;  // assets/sg/HMG2.png
+extern const char * ui_img_sg_hmge1_png;  // assets/sg/HMGE1.png
 extern const char * ui_img_sg_hmge2_png;  // assets/sg/HMGE2.png
+extern const char * ui_img_sg_im1_png;  // assets/sg/IM1.png
 extern const char * ui_img_sg_im2_png;  // assets/sg/IM2.png
+extern const char * ui_img_sg_jp1_png;  // assets/sg/JP1.png
 extern const char * ui_img_sg_jp2_png;  // assets/sg/JP2.png
+extern const char * ui_img_sg_lc1_png;  // assets/sg/LC1.png
 extern const char * ui_img_sg_lc2_png;  // assets/sg/LC2.png
+extern const char * ui_img_sg_mg1_png;  // assets/sg/MG1.png
 extern const char * ui_img_sg_mg2_png;  // assets/sg/MG2.png
+extern const char * ui_img_sg_mgs1_png;  // assets/sg/MGS1.png
 extern const char * ui_img_sg_mgs2_png;  // assets/sg/MGS2.png
+extern const char * ui_img_sg_ms1_png;  // assets/sg/MS1.png
 extern const char * ui_img_sg_ms2_png;  // assets/sg/MS2.png
+extern const char * ui_img_sg_oas1_png;  // assets/sg/OAS1.png
 extern const char * ui_img_sg_oas2_png;  // assets/sg/OAS2.png
+extern const char * ui_img_sg_oes1_png;  // assets/sg/OES1.png
 extern const char * ui_img_sg_oes2_png;  // assets/sg/OES2.png
+extern const char * ui_img_sg_ogb1_png;  // assets/sg/OGB1.png
 extern const char * ui_img_sg_ogb2_png;  // assets/sg/OGB2.png
+extern const char * ui_img_sg_ogs1_png;  // assets/sg/OGS1.png
 extern const char * ui_img_sg_oif1_png;  // assets/sg/OIF1.png
 extern const char * ui_img_sg_oif2_png;  // assets/sg/OIF2.png
+extern const char * ui_img_sg_ol1_png;  // assets/sg/OL1.png
 extern const char * ui_img_sg_ol2_png;  // assets/sg/OL2.png
 extern const char * ui_img_sg_onb1_png;  // assets/sg/ONB1.png
 extern const char * ui_img_sg_onb2_png;  // assets/sg/ONB2.png
+extern const char * ui_img_sg_ops1_png;  // assets/sg/OPS1.png
 extern const char * ui_img_sg_ops2_png;  // assets/sg/OPS2.png
+extern const char * ui_img_sg_ors1_png;  // assets/sg/ORS1.png
 extern const char * ui_img_sg_ors2_png;  // assets/sg/ORS2.png
+extern const char * ui_img_sg_oss1_png;  // assets/sg/OSS1.png
 extern const char * ui_img_sg_oss2_png;  // assets/sg/OSS2.png
+extern const char * ui_img_sg_owb1_png;  // assets/sg/OWB1.png
 extern const char * ui_img_sg_owb2_png;  // assets/sg/OWB2.png
 extern const char * ui_img_sg_pd1_png;  // assets/sg/PD1.png
 extern const char * ui_img_sg_pd2_png;  // assets/sg/PD2.png
@@ -289,24 +289,33 @@ extern const char * ui_img_sg_qc1_png;  // assets/sg/QC1.png
 extern const char * ui_img_sg_qc2_png;  // assets/sg/QC2.png
 extern const char * ui_img_sg_res2_png;  // assets/sg/RES2.png
 extern const char * ui_img_sg_rf2_png;  // assets/sg/RF2.png
+extern const char * ui_img_sg_rg1_png;  // assets/sg/RG1.png
 extern const char * ui_img_sg_rg2_png;  // assets/sg/RG2.png
+extern const char * ui_img_sg_rr1_png;  // assets/sg/RR1.png
 extern const char * ui_img_sg_rr2_png;  // assets/sg/RR2.png
+extern const char * ui_img_sg_rs1_png;  // assets/sg/RS1.png
 extern const char * ui_img_sg_rs2_png;  // assets/sg/RS2.png
 extern const char * ui_img_sg_seaf1_png;  // assets/sg/SEAF1.png
 extern const char * ui_img_sg_seaf2_png;  // assets/sg/SEAF2.png
 extern const char * ui_img_sg_sef1_png;  // assets/sg/SEF1.png
 extern const char * ui_img_sg_sef2_png;  // assets/sg/SEF2.png
+extern const char * ui_img_sg_sgp1_png;  // assets/sg/SGP1.png
 extern const char * ui_img_sg_sgp2_png;  // assets/sg/SGP2.png
+extern const char * ui_img_sg_sgr1_png;  // assets/sg/SGR1.png
 extern const char * ui_img_sg_sos2_png;  // assets/sg/SOS2.png
 extern const char * ui_img_sg_sp1_png;  // assets/sg/SP1.png
 extern const char * ui_img_sg_sp2_png;  // assets/sg/SP2.png
+extern const char * ui_img_sg_spr1_png;  // assets/sg/SPR1.png
 extern const char * ui_img_sg_spr2_png;  // assets/sg/SPR2.png
 extern const char * ui_img_sg_ste1_png;  // assets/sg/STE1.png
 extern const char * ui_img_sg_ste2_png;  // assets/sg/STE2.png
+extern const char * ui_img_sg_sup1_png;  // assets/sg/SUP1.png
 extern const char * ui_img_sg_sup2_png;  // assets/sg/SUP2.png
+extern const char * ui_img_sg_sw1_png;  // assets/sg/SW1.png
 extern const char * ui_img_sg_sw2_png;  // assets/sg/SW2.png
 extern const char * ui_img_sg_td1_png;  // assets/sg/TD1.png
 extern const char * ui_img_sg_td2_png;  // assets/sg/TD2.png
+extern const char * ui_img_sg_tt1_png;  // assets/sg/TT1.png
 extern const char * ui_img_sg_tt2_png;  // assets/sg/TT2.png
 extern const char * ui_img_sg_ud1_png;  // assets/sg/UD1.png
 extern const char * ui_img_sg_ud2_png;  // assets/sg/UD2.png

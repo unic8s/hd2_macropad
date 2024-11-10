@@ -124,7 +124,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button69, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button69, ui_img_sg_ecb1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button69, ui_img_sg_ecb2_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button70 = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_Button70, 152);
@@ -138,7 +138,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button70, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button70, ui_img_sg_ogs1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button70, ui_img_sg_ogs2_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button71 = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_Button71, 152);
@@ -152,7 +152,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button71, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button71, ui_img_sg_ee1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button71, ui_img_sg_ee2_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button72 = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_Button72, 152);
@@ -166,7 +166,7 @@ void ui_Game_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button72, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_bg_img_src(ui_Button72, ui_img_sg_sgr1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_Button72, ui_img_sg_sgr2_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label3 = lv_label_create(ui_Game);
     lv_obj_set_width(ui_Label3, LV_SIZE_CONTENT);   /// 1
@@ -179,5 +179,9 @@ void ui_Game_screen_init(void)
     lv_obj_set_style_text_opa(ui_Label3, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_add_event_cb(ui_Button64, ui_event_Button64, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button69, ui_event_Button69, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button70, ui_event_Button70, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button71, ui_event_Button71, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button72, ui_event_Button72, LV_EVENT_ALL, NULL);
 
 }

@@ -8,6 +8,7 @@
 
 uint8_t strategemsAmount = 0;
 lv_obj_t *buttons[4];
+int indices[4] = {0, 0, 0, 0};
 
 void deselectStratagem(lv_event_t *e)
 {
@@ -34,6 +35,7 @@ void selectStratagem(lv_event_t *e)
 		if (buttons[c] == NULL)
 		{
 			buttons[c] = e->target;
+			indices[c] = (int)e->user_data;
 			break;
 		}
 	}
@@ -91,28 +93,207 @@ void resetStratagems(lv_event_t *e)
 		{
 			lv_obj_clear_state(buttons[c], LV_STATE_CHECKED);
 			buttons[c] = NULL;
+			indices[c] = 0;
 		}
 	}
 
 	updateStratagemSelection();
 }
 
+uint8_t sequences[71][8] = {
+	// 0
+	// MG-43 Machine Gun
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 1
+	// APW-1 Anti-Materiel Rifle
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 2
+	// M-105 Stalwart
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0},
+
+	// 3
+	// EAT-17 Expendable Anti-tank
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 4
+	// MLS-4X Commando
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 5
+	// GR-8 Recoilless Rifle
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 6
+	// FLAM-40 Flamethrower
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 7
+	// AC-8 Autocannon
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0},
+
+	// 8
+	// MG-206 Heavy Machine Gun
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 9
+	// RS-422 Railgun
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0},
+
+	// 10
+	// FAF-14 Spear Launcher
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 11
+	// GL-21 Grenade Launcher
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 12
+	// LAS-98 Laser Cannon
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 13
+	// ARC-3 Arc Thrower
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0},
+
+	// 14
+	// LAS-99 Quasar Cannon
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 15
+	// RL-77 Airburst Rocket Launcher
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 16
+	// TX-41 Sterilizer
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0,
+	 0}
+
+	//
+};
+
 void triggerStratagem1(lv_event_t *e)
 {
-	uint8_t sequence[8] = {HID_KEY_H,
-						   HID_KEY_E,
-						   HID_KEY_L,
-						   HID_KEY_L,
-						   HID_KEY_O,
-						   0,
-						   0,
-						   0};
-
-	setStratagemCode(sequence);
-}
-
-void triggerStratagem2(lv_event_t *e)
-{
+	// Reinforce
 	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
 						   HID_KEY_DOWN_ARROW,
 						   HID_KEY_RIGHT_ARROW,
@@ -125,8 +306,24 @@ void triggerStratagem2(lv_event_t *e)
 	setStratagemCode(sequence);
 }
 
+void triggerStratagem2(lv_event_t *e)
+{
+	// Resupply
+	uint8_t sequence[8] = {HID_KEY_DOWN_ARROW,
+						   HID_KEY_DOWN_ARROW,
+						   HID_KEY_UP_ARROW,
+						   HID_KEY_RIGHT_ARROW,
+						   0,
+						   0,
+						   0,
+						   0};
+
+	setStratagemCode(sequence);
+}
+
 void triggerStratagem3(lv_event_t *e)
 {
+	// SOS
 	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
 						   HID_KEY_DOWN_ARROW,
 						   HID_KEY_RIGHT_ARROW,
@@ -141,11 +338,12 @@ void triggerStratagem3(lv_event_t *e)
 
 void triggerStratagem4(lv_event_t *e)
 {
+	// Eagle rearm
 	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
-						   HID_KEY_DOWN_ARROW,
-						   HID_KEY_RIGHT_ARROW,
+						   HID_KEY_UP_ARROW,
 						   HID_KEY_LEFT_ARROW,
 						   HID_KEY_UP_ARROW,
+						   HID_KEY_RIGHT_ARROW,
 						   0,
 						   0,
 						   0};
@@ -155,56 +353,28 @@ void triggerStratagem4(lv_event_t *e)
 
 void triggerStratagem5(lv_event_t *e)
 {
-	uint8_t sequence[8] = {HID_KEY_H,
-						   HID_KEY_E,
-						   HID_KEY_L,
-						   HID_KEY_L,
-						   HID_KEY_O,
-						   0,
-						   0,
-						   0};
+	uint8_t index = indices[0];
 
-	setStratagemCode(sequence);
+	setStratagemCode(sequences[index]);
 }
 
 void triggerStratagem6(lv_event_t *e)
 {
-	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
-						   HID_KEY_DOWN_ARROW,
-						   HID_KEY_RIGHT_ARROW,
-						   HID_KEY_LEFT_ARROW,
-						   HID_KEY_UP_ARROW,
-						   0,
-						   0,
-						   0};
+	uint8_t index = indices[1];
 
-	setStratagemCode(sequence);
+	setStratagemCode(sequences[index]);
 }
 
 void triggerStratagem7(lv_event_t *e)
 {
-	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
-						   HID_KEY_DOWN_ARROW,
-						   HID_KEY_RIGHT_ARROW,
-						   HID_KEY_LEFT_ARROW,
-						   HID_KEY_UP_ARROW,
-						   0,
-						   0,
-						   0};
+	uint8_t index = indices[2];
 
-	setStratagemCode(sequence);
+	setStratagemCode(sequences[index]);
 }
 
 void triggerStratagem8(lv_event_t *e)
 {
-	uint8_t sequence[8] = {HID_KEY_UP_ARROW,
-						   HID_KEY_DOWN_ARROW,
-						   HID_KEY_RIGHT_ARROW,
-						   HID_KEY_LEFT_ARROW,
-						   HID_KEY_UP_ARROW,
-						   0,
-						   0,
-						   0};
+	uint8_t index = indices[3];
 
-	setStratagemCode(sequence);
+	setStratagemCode(sequences[index]);
 }

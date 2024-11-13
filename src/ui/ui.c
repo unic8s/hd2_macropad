@@ -9,6 +9,14 @@
 ///////////////////// VARIABLES ////////////////////
 
 
+// SCREEN: ui_Intro
+void ui_Intro_screen_init(void);
+void ui_event_Intro(lv_event_t * e);
+lv_obj_t * ui_Intro;
+lv_obj_t * ui_Image1;
+// CUSTOM VARIABLES
+
+
 // SCREEN: ui_Setup
 void ui_Setup_screen_init(void);
 lv_obj_t * ui_Setup;
@@ -39,8 +47,20 @@ void ui_event_Button11(lv_event_t * e);
 lv_obj_t * ui_Button11;
 void ui_event_Button12(lv_event_t * e);
 lv_obj_t * ui_Button12;
+void ui_event_Button40(lv_event_t * e);
+lv_obj_t * ui_Button40;
+void ui_event_Button41(lv_event_t * e);
+lv_obj_t * ui_Button41;
+void ui_event_Button42(lv_event_t * e);
+lv_obj_t * ui_Button42;
+void ui_event_Button43(lv_event_t * e);
+lv_obj_t * ui_Button43;
+void ui_event_Button44(lv_event_t * e);
+lv_obj_t * ui_Button44;
 lv_obj_t * ui_Backpacks;
 lv_obj_t * ui_Container1;
+void ui_event_Button46(lv_event_t * e);
+lv_obj_t * ui_Button46;
 void ui_event_Button13(lv_event_t * e);
 lv_obj_t * ui_Button13;
 void ui_event_Button14(lv_event_t * e);
@@ -55,6 +75,8 @@ void ui_event_Button19(lv_event_t * e);
 lv_obj_t * ui_Button19;
 void ui_event_Button20(lv_event_t * e);
 lv_obj_t * ui_Button20;
+void ui_event_Button45(lv_event_t * e);
+lv_obj_t * ui_Button45;
 lv_obj_t * ui_Stationary;
 lv_obj_t * ui_Container3;
 void ui_event_Button21(lv_event_t * e);
@@ -83,28 +105,30 @@ void ui_event_Button38(lv_event_t * e);
 lv_obj_t * ui_Button38;
 lv_obj_t * ui_Strikes;
 lv_obj_t * ui_Container4;
-void ui_event_Button39(lv_event_t * e);
-lv_obj_t * ui_Button39;
-void ui_event_Button40(lv_event_t * e);
-lv_obj_t * ui_Button40;
-void ui_event_Button41(lv_event_t * e);
-lv_obj_t * ui_Button41;
-void ui_event_Button42(lv_event_t * e);
-lv_obj_t * ui_Button42;
-void ui_event_Button43(lv_event_t * e);
-lv_obj_t * ui_Button43;
-void ui_event_Button44(lv_event_t * e);
-lv_obj_t * ui_Button44;
-void ui_event_Button45(lv_event_t * e);
-lv_obj_t * ui_Button45;
-void ui_event_Button46(lv_event_t * e);
-lv_obj_t * ui_Button46;
+void ui_event_Button57(lv_event_t * e);
+lv_obj_t * ui_Button57;
+void ui_event_Button58(lv_event_t * e);
+lv_obj_t * ui_Button58;
 void ui_event_Button47(lv_event_t * e);
 lv_obj_t * ui_Button47;
 void ui_event_Button48(lv_event_t * e);
 lv_obj_t * ui_Button48;
 void ui_event_Button49(lv_event_t * e);
 lv_obj_t * ui_Button49;
+void ui_event_Button51(lv_event_t * e);
+lv_obj_t * ui_Button51;
+void ui_event_Button50(lv_event_t * e);
+lv_obj_t * ui_Button50;
+void ui_event_Button52(lv_event_t * e);
+lv_obj_t * ui_Button52;
+void ui_event_Button53(lv_event_t * e);
+lv_obj_t * ui_Button53;
+void ui_event_Button54(lv_event_t * e);
+lv_obj_t * ui_Button54;
+void ui_event_Button55(lv_event_t * e);
+lv_obj_t * ui_Button55;
+void ui_event_Button56(lv_event_t * e);
+lv_obj_t * ui_Button56;
 lv_obj_t * ui_Eagle;
 lv_obj_t * ui_Container7;
 void ui_event_Button15(lv_event_t * e);
@@ -124,6 +148,9 @@ lv_obj_t * ui_Button37;
 lv_obj_t * ui_Amount;
 lv_obj_t * ui_Label1;
 lv_obj_t * ui_Label2;
+void ui_event_Button69(lv_event_t * e);
+lv_obj_t * ui_Button69;
+lv_obj_t * ui_Label6;
 // CUSTOM VARIABLES
 lv_obj_t * uic_Amount;
 
@@ -131,22 +158,25 @@ lv_obj_t * uic_Amount;
 // SCREEN: ui_Game
 void ui_Game_screen_init(void);
 lv_obj_t * ui_Game;
-void ui_event_Button64(lv_event_t * e);
-lv_obj_t * ui_Button64;
-lv_obj_t * ui_Container5;
-lv_obj_t * ui_Button65;
-lv_obj_t * ui_Button66;
-lv_obj_t * ui_Button67;
-lv_obj_t * ui_Button68;
 lv_obj_t * ui_Container6;
-void ui_event_Button69(lv_event_t * e);
-lv_obj_t * ui_Button69;
-void ui_event_Button70(lv_event_t * e);
-lv_obj_t * ui_Button70;
-void ui_event_Button71(lv_event_t * e);
-lv_obj_t * ui_Button71;
-void ui_event_Button72(lv_event_t * e);
-lv_obj_t * ui_Button72;
+void ui_event_Button68(lv_event_t * e);
+lv_obj_t * ui_Button68;
+void ui_event_Button59(lv_event_t * e);
+lv_obj_t * ui_Button59;
+void ui_event_Button60(lv_event_t * e);
+lv_obj_t * ui_Button60;
+void ui_event_Button61(lv_event_t * e);
+lv_obj_t * ui_Button61;
+void ui_event_CustomStratagem1(lv_event_t * e);
+lv_obj_t * ui_CustomStratagem1;
+void ui_event_CustomStratagem2(lv_event_t * e);
+lv_obj_t * ui_CustomStratagem2;
+void ui_event_CustomStratagem3(lv_event_t * e);
+lv_obj_t * ui_CustomStratagem3;
+void ui_event_CustomStratagem4(lv_event_t * e);
+lv_obj_t * ui_CustomStratagem4;
+void ui_event_Button39(lv_event_t * e);
+lv_obj_t * ui_Button39;
 lv_obj_t * ui_Label3;
 // CUSTOM VARIABLES
 
@@ -154,76 +184,75 @@ lv_obj_t * ui_Label3;
 lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
-const char * ui_imgset_[4] = {"S:assets/sg/1201.png", "S:assets/sg/1202.png", "S:assets/sg/3801.png", "S:assets/sg/3802.png"};
-const char * ui_imgset_ac[2] = {"S:assets/sg/AC1.png", "S:assets/sg/AC2.png"};
-const char * ui_imgset_acs[2] = {"S:assets/sg/ACS1.png", "S:assets/sg/ACS2.png"};
-const char * ui_imgset_amr[2] = {"S:assets/sg/AMR1.png", "S:assets/sg/AMR2.png"};
-const char * ui_imgset_apm[2] = {"S:assets/sg/APM1.png", "S:assets/sg/APM2.png"};
-const char * ui_imgset_arl[2] = {"S:assets/sg/ARL1.png", "S:assets/sg/ARL2.png"};
-const char * ui_imgset_at[2] = {"S:assets/sg/AT1.png", "S:assets/sg/AT2.png"};
-const char * ui_imgset_atm[2] = {"S:assets/sg/ATM1.png", "S:assets/sg/ATM2.png"};
-const char * ui_imgset_bsb[2] = {"S:assets/sg/BSB1.png", "S:assets/sg/BSB2.png"};
-const char * ui_imgset_c[2] = {"S:assets/sg/C1.png", "S:assets/sg/C2.png"};
-const char * ui_imgset_dfv[2] = {"S:assets/sg/DFV1.png", "S:assets/sg/DFV2.png"};
-const char * ui_imgset_e[4] = {"S:assets/sg/E1101.png", "S:assets/sg/E1102.png", "S:assets/sg/E5001.png", "S:assets/sg/E5002.png"};
-const char * ui_imgset_ea[2] = {"S:assets/sg/EA1.png", "S:assets/sg/EA2.png"};
-const char * ui_imgset_eat[2] = {"S:assets/sg/EAT1.png", "S:assets/sg/EAT2.png"};
-const char * ui_imgset_ecb[2] = {"S:assets/sg/ECB1.png", "S:assets/sg/ECB2.png"};
-const char * ui_imgset_ee[2] = {"S:assets/sg/EE1.png", "S:assets/sg/EE2.png"};
-const char * ui_imgset_ems[2] = {"S:assets/sg/EMS1.png", "S:assets/sg/EMS2.png"};
-const char * ui_imgset_ena[2] = {"S:assets/sg/ENA1.png", "S:assets/sg/ENA2.png"};
-const char * ui_imgset_er[2] = {"S:assets/sg/ER1.png", "S:assets/sg/ER2.png"};
-const char * ui_imgset_esr[2] = {"S:assets/sg/ESR1.png", "S:assets/sg/ESR2.png"};
-const char * ui_imgset_ess[2] = {"S:assets/sg/ESS1.png", "S:assets/sg/ESS2.png"};
-const char * ui_imgset_ft[2] = {"S:assets/sg/FT1.png", "S:assets/sg/FT2.png"};
-const char * ui_imgset_gd[2] = {"S:assets/sg/GD1.png", "S:assets/sg/GD2.png"};
-const char * ui_imgset_gdb[2] = {"S:assets/sg/GDB1.png", "S:assets/sg/GDB2.png"};
-const char * ui_imgset_gdr[2] = {"S:assets/sg/GDR1.png", "S:assets/sg/GDR2.png"};
-const char * ui_imgset_gl[2] = {"S:assets/sg/GL1.png", "S:assets/sg/GL2.png"};
-const char * ui_imgset_gs[2] = {"S:assets/sg/GS1.png", "S:assets/sg/GS2.png"};
-const char * ui_imgset_hb[2] = {"S:assets/sg/HB1.png", "S:assets/sg/HB2.png"};
-const char * ui_imgset_hbd[2] = {"S:assets/sg/HBD1.png", "S:assets/sg/HBD2.png"};
-const char * ui_imgset_hmg[2] = {"S:assets/sg/HMG1.png", "S:assets/sg/HMG2.png"};
-const char * ui_imgset_hmge[2] = {"S:assets/sg/HMGE1.png", "S:assets/sg/HMGE2.png"};
-const char * ui_imgset_im[2] = {"S:assets/sg/IM1.png", "S:assets/sg/IM2.png"};
-const char * ui_imgset_jp[2] = {"S:assets/sg/JP1.png", "S:assets/sg/JP2.png"};
-const char * ui_imgset_lc[2] = {"S:assets/sg/LC1.png", "S:assets/sg/LC2.png"};
-const char * ui_imgset_mg[2] = {"S:assets/sg/MG1.png", "S:assets/sg/MG2.png"};
-const char * ui_imgset_mgs[2] = {"S:assets/sg/MGS1.png", "S:assets/sg/MGS2.png"};
-const char * ui_imgset_ms[2] = {"S:assets/sg/MS1.png", "S:assets/sg/MS2.png"};
-const char * ui_imgset_oas[2] = {"S:assets/sg/OAS1.png", "S:assets/sg/OAS2.png"};
-const char * ui_imgset_oes[2] = {"S:assets/sg/OES1.png", "S:assets/sg/OES2.png"};
-const char * ui_imgset_ogb[2] = {"S:assets/sg/OGB1.png", "S:assets/sg/OGB2.png"};
-const char * ui_imgset_ogs[2] = {"S:assets/sg/OGS1.png", "S:assets/sg/OGS2.png"};
-const char * ui_imgset_oif[2] = {"S:assets/sg/OIF1.png", "S:assets/sg/OIF2.png"};
-const char * ui_imgset_ol[2] = {"S:assets/sg/OL1.png", "S:assets/sg/OL2.png"};
-const char * ui_imgset_onb[2] = {"S:assets/sg/ONB1.png", "S:assets/sg/ONB2.png"};
-const char * ui_imgset_ops[2] = {"S:assets/sg/OPS1.png", "S:assets/sg/OPS2.png"};
-const char * ui_imgset_ors[2] = {"S:assets/sg/ORS1.png", "S:assets/sg/ORS2.png"};
-const char * ui_imgset_oss[2] = {"S:assets/sg/OSS1.png", "S:assets/sg/OSS2.png"};
-const char * ui_imgset_owb[2] = {"S:assets/sg/OWB1.png", "S:assets/sg/OWB2.png"};
-const char * ui_imgset_pd[2] = {"S:assets/sg/PD1.png", "S:assets/sg/PD2.png"};
-const char * ui_imgset_pe[2] = {"S:assets/sg/PE1.png", "S:assets/sg/PE2.png"};
-const char * ui_imgset_qc[2] = {"S:assets/sg/QC1.png", "S:assets/sg/QC2.png"};
-const char * ui_imgset_res[2] = {"S:assets/sg/RES1.png", "S:assets/sg/RES2.png"};
-const char * ui_imgset_rf[2] = {"S:assets/sg/RF1.png", "S:assets/sg/RF2.png"};
-const char * ui_imgset_rg[2] = {"S:assets/sg/RG1.png", "S:assets/sg/RG2.png"};
-const char * ui_imgset_rr[2] = {"S:assets/sg/RR1.png", "S:assets/sg/RR2.png"};
-const char * ui_imgset_rs[2] = {"S:assets/sg/RS1.png", "S:assets/sg/RS2.png"};
-const char * ui_imgset_seaf[2] = {"S:assets/sg/SEAF1.png", "S:assets/sg/SEAF2.png"};
-const char * ui_imgset_sef[2] = {"S:assets/sg/SEF1.png", "S:assets/sg/SEF2.png"};
-const char * ui_imgset_sgp[2] = {"S:assets/sg/SGP1.png", "S:assets/sg/SGP2.png"};
-const char * ui_imgset_sgr[2] = {"S:assets/sg/SGR1.png", "S:assets/sg/SGR2.png"};
-const char * ui_imgset_sos[2] = {"S:assets/sg/SOS1.png", "S:assets/sg/SOS2.png"};
-const char * ui_imgset_sp[2] = {"S:assets/sg/SP1.png", "S:assets/sg/SP2.png"};
-const char * ui_imgset_spr[2] = {"S:assets/sg/SPR1.png", "S:assets/sg/SPR2.png"};
-const char * ui_imgset_ste[2] = {"S:assets/sg/STE1.png", "S:assets/sg/STE2.png"};
-const char * ui_imgset_sup[2] = {"S:assets/sg/SUP1.png", "S:assets/sg/SUP2.png"};
-const char * ui_imgset_sw[2] = {"S:assets/sg/SW1.png", "S:assets/sg/SW2.png"};
-const char * ui_imgset_td[2] = {"S:assets/sg/TD1.png", "S:assets/sg/TD2.png"};
-const char * ui_imgset_tt[2] = {"S:assets/sg/TT1.png", "S:assets/sg/TT2.png"};
-const char * ui_imgset_ud[2] = {"S:assets/sg/UD1.png", "S:assets/sg/UD2.png"};
-const char * ui_imgset_bg[5] = {"S:assets/bg1.png", "S:assets/bg2.png", "S:assets/bg3.png", "S:assets/bg4.png", "S:assets/bg5.png"};
+const lv_img_dsc_t * ui_imgset_[4] = {&ui_img_sg_1201_png, &ui_img_sg_1202_png, &ui_img_sg_3801_png, &ui_img_sg_3802_png};
+const lv_img_dsc_t * ui_imgset_ac[2] = {&ui_img_sg_ac1_png, &ui_img_sg_ac2_png};
+const lv_img_dsc_t * ui_imgset_acs[2] = {&ui_img_sg_acs1_png, &ui_img_sg_acs2_png};
+const lv_img_dsc_t * ui_imgset_amr[2] = {&ui_img_sg_amr1_png, &ui_img_sg_amr2_png};
+const lv_img_dsc_t * ui_imgset_apm[2] = {&ui_img_sg_apm1_png, &ui_img_sg_apm2_png};
+const lv_img_dsc_t * ui_imgset_arl[2] = {&ui_img_sg_arl1_png, &ui_img_sg_arl2_png};
+const lv_img_dsc_t * ui_imgset_at[2] = {&ui_img_sg_at1_png, &ui_img_sg_at2_png};
+const lv_img_dsc_t * ui_imgset_atm[2] = {&ui_img_sg_atm1_png, &ui_img_sg_atm2_png};
+const lv_img_dsc_t * ui_imgset_bsb[2] = {&ui_img_sg_bsb1_png, &ui_img_sg_bsb2_png};
+const lv_img_dsc_t * ui_imgset_c[2] = {&ui_img_sg_c1_png, &ui_img_sg_c2_png};
+const lv_img_dsc_t * ui_imgset_dfv[2] = {&ui_img_sg_dfv1_png, &ui_img_sg_dfv2_png};
+const lv_img_dsc_t * ui_imgset_e[4] = {&ui_img_sg_e1101_png, &ui_img_sg_e1102_png, &ui_img_sg_e5001_png, &ui_img_sg_e5002_png};
+const lv_img_dsc_t * ui_imgset_ea[2] = {&ui_img_sg_ea1_png, &ui_img_sg_ea2_png};
+const lv_img_dsc_t * ui_imgset_eat[2] = {&ui_img_sg_eat1_png, &ui_img_sg_eat2_png};
+const lv_img_dsc_t * ui_imgset_ecb[2] = {&ui_img_sg_ecb1_png, &ui_img_sg_ecb2_png};
+const lv_img_dsc_t * ui_imgset_ee[2] = {&ui_img_sg_ee1_png, &ui_img_sg_ee2_png};
+const lv_img_dsc_t * ui_imgset_ems[2] = {&ui_img_sg_ems1_png, &ui_img_sg_ems2_png};
+const lv_img_dsc_t * ui_imgset_ena[2] = {&ui_img_sg_ena1_png, &ui_img_sg_ena2_png};
+const lv_img_dsc_t * ui_imgset_er[2] = {&ui_img_sg_er1_png, &ui_img_sg_er2_png};
+const lv_img_dsc_t * ui_imgset_esr[2] = {&ui_img_sg_esr1_png, &ui_img_sg_esr2_png};
+const lv_img_dsc_t * ui_imgset_ess[2] = {&ui_img_sg_ess1_png, &ui_img_sg_ess2_png};
+const lv_img_dsc_t * ui_imgset_ft[2] = {&ui_img_sg_ft1_png, &ui_img_sg_ft2_png};
+const lv_img_dsc_t * ui_imgset_gd[2] = {&ui_img_sg_gd1_png, &ui_img_sg_gd2_png};
+const lv_img_dsc_t * ui_imgset_gdb[2] = {&ui_img_sg_gdb1_png, &ui_img_sg_gdb2_png};
+const lv_img_dsc_t * ui_imgset_gdr[2] = {&ui_img_sg_gdr1_png, &ui_img_sg_gdr2_png};
+const lv_img_dsc_t * ui_imgset_gl[2] = {&ui_img_sg_gl1_png, &ui_img_sg_gl2_png};
+const lv_img_dsc_t * ui_imgset_gs[2] = {&ui_img_sg_gs1_png, &ui_img_sg_gs2_png};
+const lv_img_dsc_t * ui_imgset_hb[2] = {&ui_img_sg_hb1_png, &ui_img_sg_hb2_png};
+const lv_img_dsc_t * ui_imgset_hbd[2] = {&ui_img_sg_hbd1_png, &ui_img_sg_hbd2_png};
+const lv_img_dsc_t * ui_imgset_hmg[2] = {&ui_img_sg_hmg1_png, &ui_img_sg_hmg2_png};
+const lv_img_dsc_t * ui_imgset_hmge[2] = {&ui_img_sg_hmge1_png, &ui_img_sg_hmge2_png};
+const lv_img_dsc_t * ui_imgset_im[2] = {&ui_img_sg_im1_png, &ui_img_sg_im2_png};
+const lv_img_dsc_t * ui_imgset_jp[2] = {&ui_img_sg_jp1_png, &ui_img_sg_jp2_png};
+const lv_img_dsc_t * ui_imgset_lc[2] = {&ui_img_sg_lc1_png, &ui_img_sg_lc2_png};
+const lv_img_dsc_t * ui_imgset_mg[2] = {&ui_img_sg_mg1_png, &ui_img_sg_mg2_png};
+const lv_img_dsc_t * ui_imgset_mgs[2] = {&ui_img_sg_mgs1_png, &ui_img_sg_mgs2_png};
+const lv_img_dsc_t * ui_imgset_ms[2] = {&ui_img_sg_ms1_png, &ui_img_sg_ms2_png};
+const lv_img_dsc_t * ui_imgset_oas[2] = {&ui_img_sg_oas1_png, &ui_img_sg_oas2_png};
+const lv_img_dsc_t * ui_imgset_oes[2] = {&ui_img_sg_oes1_png, &ui_img_sg_oes2_png};
+const lv_img_dsc_t * ui_imgset_ogb[2] = {&ui_img_sg_ogb1_png, &ui_img_sg_ogb2_png};
+const lv_img_dsc_t * ui_imgset_ogs[2] = {&ui_img_sg_ogs1_png, &ui_img_sg_ogs2_png};
+const lv_img_dsc_t * ui_imgset_oif[2] = {&ui_img_sg_oif1_png, &ui_img_sg_oif2_png};
+const lv_img_dsc_t * ui_imgset_ol[2] = {&ui_img_sg_ol1_png, &ui_img_sg_ol2_png};
+const lv_img_dsc_t * ui_imgset_onb[2] = {&ui_img_sg_onb1_png, &ui_img_sg_onb2_png};
+const lv_img_dsc_t * ui_imgset_ops[2] = {&ui_img_sg_ops1_png, &ui_img_sg_ops2_png};
+const lv_img_dsc_t * ui_imgset_ors[2] = {&ui_img_sg_ors1_png, &ui_img_sg_ors2_png};
+const lv_img_dsc_t * ui_imgset_oss[2] = {&ui_img_sg_oss1_png, &ui_img_sg_oss2_png};
+const lv_img_dsc_t * ui_imgset_owb[2] = {&ui_img_sg_owb1_png, &ui_img_sg_owb2_png};
+const lv_img_dsc_t * ui_imgset_pd[2] = {&ui_img_sg_pd1_png, &ui_img_sg_pd2_png};
+const lv_img_dsc_t * ui_imgset_pe[2] = {&ui_img_sg_pe1_png, &ui_img_sg_pe2_png};
+const lv_img_dsc_t * ui_imgset_qc[2] = {&ui_img_sg_qc1_png, &ui_img_sg_qc2_png};
+const lv_img_dsc_t * ui_imgset_res[2] = {&ui_img_sg_res1_png, &ui_img_sg_res2_png};
+const lv_img_dsc_t * ui_imgset_rf[2] = {&ui_img_sg_rf1_png, &ui_img_sg_rf2_png};
+const lv_img_dsc_t * ui_imgset_rg[2] = {&ui_img_sg_rg1_png, &ui_img_sg_rg2_png};
+const lv_img_dsc_t * ui_imgset_rr[2] = {&ui_img_sg_rr1_png, &ui_img_sg_rr2_png};
+const lv_img_dsc_t * ui_imgset_rs[2] = {&ui_img_sg_rs1_png, &ui_img_sg_rs2_png};
+const lv_img_dsc_t * ui_imgset_seaf[2] = {&ui_img_sg_seaf1_png, &ui_img_sg_seaf2_png};
+const lv_img_dsc_t * ui_imgset_sef[2] = {&ui_img_sg_sef1_png, &ui_img_sg_sef2_png};
+const lv_img_dsc_t * ui_imgset_sgp[2] = {&ui_img_sg_sgp1_png, &ui_img_sg_sgp2_png};
+const lv_img_dsc_t * ui_imgset_sgr[2] = {&ui_img_sg_sgr1_png, &ui_img_sg_sgr2_png};
+const lv_img_dsc_t * ui_imgset_sos[2] = {&ui_img_sg_sos1_png, &ui_img_sg_sos2_png};
+const lv_img_dsc_t * ui_imgset_sp[2] = {&ui_img_sg_sp1_png, &ui_img_sg_sp2_png};
+const lv_img_dsc_t * ui_imgset_spr[2] = {&ui_img_sg_spr1_png, &ui_img_sg_spr2_png};
+const lv_img_dsc_t * ui_imgset_ste[2] = {&ui_img_sg_ste1_png, &ui_img_sg_ste2_png};
+const lv_img_dsc_t * ui_imgset_sup[2] = {&ui_img_sg_sup1_png, &ui_img_sg_sup2_png};
+const lv_img_dsc_t * ui_imgset_sw[2] = {&ui_img_sg_sw1_png, &ui_img_sg_sw2_png};
+const lv_img_dsc_t * ui_imgset_td[2] = {&ui_img_sg_td1_png, &ui_img_sg_td2_png};
+const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
+const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16
@@ -236,6 +265,15 @@ const char * ui_imgset_bg[5] = {"S:assets/bg1.png", "S:assets/bg2.png", "S:asset
 ///////////////////// ANIMATIONS ////////////////////
 
 ///////////////////// FUNCTIONS ////////////////////
+void ui_event_Intro(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_SCREEN_LOADED) {
+        _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_OVER_BOTTOM, 1000, 2000, &ui_Setup_screen_init);
+    }
+}
+
 void ui_event_Button6(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -392,6 +430,84 @@ void ui_event_Button12(lv_event_t * e)
     }
 }
 
+void ui_event_Button40(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button41(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button42(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button43(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button44(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button46(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
 void ui_event_Button13(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -471,6 +587,19 @@ void ui_event_Button19(lv_event_t * e)
 }
 
 void ui_event_Button20(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button45(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -639,7 +768,7 @@ void ui_event_Button38(lv_event_t * e)
     }
 }
 
-void ui_event_Button39(lv_event_t * e)
+void ui_event_Button57(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -652,85 +781,7 @@ void ui_event_Button39(lv_event_t * e)
     }
 }
 
-void ui_event_Button40(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_Button41(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_Button42(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_Button43(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_Button44(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_Button45(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_Button46(lv_event_t * e)
+void ui_event_Button58(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -770,6 +821,97 @@ void ui_event_Button48(lv_event_t * e)
 }
 
 void ui_event_Button49(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button51(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button50(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button52(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button53(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button54(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button55(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_Button56(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -873,7 +1015,7 @@ void ui_event_Button37(lv_event_t * e)
     }
 }
 
-void ui_event_Button64(lv_event_t * e)
+void ui_event_Button69(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
@@ -882,7 +1024,7 @@ void ui_event_Button64(lv_event_t * e)
     }
 }
 
-void ui_event_Button69(lv_event_t * e)
+void ui_event_Button68(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
@@ -891,7 +1033,7 @@ void ui_event_Button69(lv_event_t * e)
     }
 }
 
-void ui_event_Button70(lv_event_t * e)
+void ui_event_Button59(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
@@ -900,7 +1042,7 @@ void ui_event_Button70(lv_event_t * e)
     }
 }
 
-void ui_event_Button71(lv_event_t * e)
+void ui_event_Button60(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
@@ -909,12 +1051,57 @@ void ui_event_Button71(lv_event_t * e)
     }
 }
 
-void ui_event_Button72(lv_event_t * e)
+void ui_event_Button61(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
         triggerStratagem4(e);
+    }
+}
+
+void ui_event_CustomStratagem1(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        triggerStratagem5(e);
+    }
+}
+
+void ui_event_CustomStratagem2(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        triggerStratagem6(e);
+    }
+}
+
+void ui_event_CustomStratagem3(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        triggerStratagem7(e);
+    }
+}
+
+void ui_event_CustomStratagem4(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        triggerStratagem8(e);
+    }
+}
+
+void ui_event_Button39(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, &ui_Setup_screen_init);
     }
 }
 
@@ -926,8 +1113,9 @@ void ui_init(void)
     lv_theme_t * theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED),
                                                true, LV_FONT_DEFAULT);
     lv_disp_set_theme(dispp, theme);
+    ui_Intro_screen_init();
     ui_Setup_screen_init();
     ui_Game_screen_init();
     ui____initial_actions0 = lv_obj_create(NULL);
-    lv_disp_load_scr(ui_Setup);
+    lv_disp_load_scr(ui_Intro);
 }

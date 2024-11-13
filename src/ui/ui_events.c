@@ -5,6 +5,7 @@
 
 #include "ui.h"
 #include "hid_dev.h"
+#include "esp_log.h"
 
 uint8_t strategemsAmount = 0;
 lv_obj_t *buttons[4];
@@ -35,7 +36,7 @@ void selectStratagem(lv_event_t *e)
 		if (buttons[c] == NULL)
 		{
 			buttons[c] = e->target;
-			indices[c] = (int)e->user_data;
+			indices[c] = (int)lv_obj_get_user_data(e->target);
 			break;
 		}
 	}
@@ -47,10 +48,10 @@ void selectStratagem(lv_event_t *e)
 
 void updateStratagemSelection()
 {
-	lv_bar_set_value(uic_Amount, strategemsAmount, LV_ANIM_OFF);
+	lv_bar_set_value(uic_BarAmount, strategemsAmount, LV_ANIM_OFF);
 
 	char textAmount = (char)(strategemsAmount + '0');
-	lv_label_set_text(ui_Label1, &textAmount);
+	lv_label_set_text(ui_LabelAmount, &textAmount);
 
 	if (strategemsAmount == 4)
 	{
@@ -290,6 +291,15 @@ uint8_t sequences[71][8] = {
 
 	//
 };
+
+void assignStratagems(lv_event_t * e)
+{
+	ui_WeaponsAC->user_data = 7;
+	ui_WeaponsAMR->user_data = 1;
+	ui_WeaponsARL->user_data = 15;
+	ui_WeaponsAT->user_data = 13;
+}
+
 
 void triggerStratagem1(lv_event_t *e)
 {

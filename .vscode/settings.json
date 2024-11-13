@@ -38,6 +38,8 @@
         "esp_bt_device.h": "c",
         "hid_dev.h": "c",
         "sdmmc_host.h": "c",
-        "audio.h": "c"
+        "audio.h": "c",
+        "i2s_configuration.h": "c",
+        "gpio.h": "c"
     }
 }

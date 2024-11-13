@@ -10,6 +10,7 @@
 extern "C" {
 #endif
 
+void assignStratagems(lv_event_t * e);
 void deselectStratagem(lv_event_t * e);
 void selectStratagem(lv_event_t * e);
 void triggerStratagem1(lv_event_t * e);

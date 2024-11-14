@@ -336,7 +336,7 @@ void setup()
       .allocation_unit_size = 16 * 1024};
   sdmmc_card_t *card;
 
-  const char mount_point[] = "/assets";
+  const char mount_point[] = "/sdcard";
 
   ESP_LOGI(TAG, "Initializing SD card");
 

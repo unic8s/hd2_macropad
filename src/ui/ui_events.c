@@ -6,11 +6,12 @@
 #include "ui.h"
 #include "hid_dev.h"
 #include "esp_log.h"
-#include "sequences.c"
+
 
 uint8_t strategemsAmount = 0;
 lv_obj_t *buttons[4];
 int indices[4] = {0, 0, 0, 0};
+
 
 void deselectStratagem(lv_event_t *e)
 {
@@ -101,6 +102,639 @@ void resetStratagems(lv_event_t *e)
 
 	updateStratagemSelection();
 }
+
+
+uint8_t sequences[57][8] = {
+	// 0
+	// MG-43 Machine Gun
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 1
+	// APW-1 Anti-Materiel Rifle
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 2
+	// M-105 Stalwart
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0},
+
+	// 3
+	// EAT-17 Expendable Anti-tank
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 4
+	// MLS-4X Commando
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 5
+	// GR-8 Recoilless Rifle
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 6
+	// FLAM-40 Flamethrower
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 7
+	// AC-8 Autocannon
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0},
+
+	// 8
+	// MG-206 Heavy Machine Gun
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 9
+	// RS-422 Railgun
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0},
+
+	// 10
+	// FAF-14 Spear Launcher
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 11
+	// GL-21 Grenade Launcher
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 12
+	// LAS-98 Laser Cannon
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 13
+	// ARC-3 Arc Thrower
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0},
+
+	// 14
+	// LAS-99 Quasar Cannon
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 15
+	// RL-77 Airburst Rocket Launcher
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 16
+	// TX-41 Sterilizer
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 17
+	// LIFT-850 Jump Pack
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 18
+	// B-1 Supply Pack
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0},
+
+	// 19
+	// SH-20 Ballistic Shield Backpack
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0},
+
+	// 20
+	// SH-32 Shield Generator Pack
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0},
+
+	// 21
+	// AX/AR-23 "Guard Dog"
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0},
+
+	// 22
+	// AX/LAS-5 "Guard Dog" Rover
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0},
+
+	// 23
+	// AX/TX-13 "Guard Dog" Dog Breath
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0},
+
+	// 24
+	// EXO-45 Patriot Exosuit
+	{HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0},
+
+	// 25
+	// EXO-49 Emancipator Exosuit
+	{HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0},
+
+	// 26
+	// E/MG-101 HMG Emplacement
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0},
+
+	// 27
+	// FX-12 Shield Generator Relay
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0},
+
+	// 28
+	// A/ARC-3 Tesla Tower
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0},
+
+	// 29
+	// MD-6 Anti-Personnel Minefield
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 30
+	// MD-I4 Incendiary Mines
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 31
+	// MD-17 Anti-Tank Mines
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 32
+	// A/MG-43 Machine Gun Sentry
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 33
+	// A/G-16 Gatling Sentry
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 34
+	// A/M-12 Mortar Sentry
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 35
+	// A/AC-8 Autocannon Sentry
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0},
+
+	// 36
+	// A/MLS-4X Rocket Sentry
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 37
+	// A/M-23 EMS Mortar Sentry
+	{HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 38
+	// Orbital Gatling Barrage
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 39
+	// Orbital Airburst Strike
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 40
+	// Orbital 120MM HE Barrage
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0},
+
+	// 41
+	// Orbital 380MM HE Barrage
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0},
+
+	// 42
+	// Orbital Walking Barrage
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0},
+
+	// 43
+	// Orbital Laser
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 44
+	// Orbital Railcannon Strike
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 45
+	// Orbital Precision Strike
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 46
+	// Orbital Gas Strike
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 47
+	// Orbital EMS Strike
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 48
+	// Orbital Smoke Strike
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 49
+	// Orbital Napalm Barrage
+	{HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0},
+
+	// 50
+	// Eagle Strafing Run
+	{HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 51
+	// Eagle Airstrike
+	{HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 52
+	// Eagle Cluster Bomb
+	{HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 0,
+	 0,
+	 0},
+
+	// 53
+	// Eagle Napalm Airstrike
+	{HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_UP_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 54
+	// Eagle Smoke Strike
+	{HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 55
+	// Eagle 110MM Rocket Pods
+	{HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 0,
+	 0,
+	 0,
+	 0},
+
+	// 56
+	// Eagle 500kg Bomb
+	{HID_KEY_UP_ARROW,
+	 HID_KEY_RIGHT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 0,
+	 0,
+	 0}
+
+	//
+};
+
 
 void assignStratagems(lv_event_t *e)
 {

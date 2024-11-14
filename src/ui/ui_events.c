@@ -848,8 +848,8 @@ void triggerStratagem3(lv_event_t *e)
 	uint8_t sequence[8] = {INPUT_UP,
 						   INPUT_DOWN,
 						   INPUT_RIGHT,
-						   INPUT_LEFT,
 						   INPUT_UP,
+						   0,
 						   0,
 						   0,
 						   0};

@@ -28,7 +28,6 @@
 #include "i2s_configuration.h"
 #include "driver/i2s_std.h"
 
-
 static const char *TAG = "DEMO_LVGL";
 
 #define SD_MMC_D0 13
@@ -51,8 +50,7 @@ static const char *TAG = "DEMO_LVGL";
  */
 #define LVGL_PORT_ROTATION_DEGREE (90)
 
-
-#define AUDIO_BUFFER 2048           // buffer size for reading the wav file and sending to i2s
+#define AUDIO_BUFFER 2048                  // buffer size for reading the wav file and sending to i2s
 #define WAV_FILE "/sdcard/assets/test.wav" // wav file to play
 
 i2s_chan_handle_t tx_handle;
@@ -119,7 +117,6 @@ esp_err_t play_wav(char *fp)
   return ESP_OK;
 }
 
-
 uint8_t stratagemCode[8];
 
 void setStratagemCode(uint8_t sequence[8])
@@ -133,7 +130,6 @@ void setStratagemCode(uint8_t sequence[8])
   ESP_LOGI(TAG, "Playing wav file");
   ESP_ERROR_CHECK(play_wav(WAV_FILE));
 }
-
 
 static uint16_t hid_conn_id = 0;
 static bool sec_conn = false;
@@ -288,12 +284,15 @@ void hid_demo_task(void *pvParameters)
 
       uint8_t cmdIndex = 0;
 
+      //esp_hidd_send_keyboard_value(hid_conn_id, 0, HID_KEY_LEFT_CTRL, true);
+      //vTaskDelay(50 / portTICK_PERIOD_MS);
+
       while (stratagemCode[cmdIndex] > 0 && cmdIndex < 8)
       {
-        esp_hidd_send_keyboard_value(hid_conn_id, 0, &stratagemCode[cmdIndex], true);
+        esp_hidd_send_keyboard_value(hid_conn_id, 1, &stratagemCode[cmdIndex], true);
         vTaskDelay(50 / portTICK_PERIOD_MS);
 
-        esp_hidd_send_keyboard_value(hid_conn_id, 0, &stratagemCode[cmdIndex], false);
+        esp_hidd_send_keyboard_value(hid_conn_id, 1, &stratagemCode[cmdIndex], false);
         vTaskDelay(50 / portTICK_PERIOD_MS);
 
         ESP_LOGI(TAG, "CMD Index: %c", (char)(cmdIndex + '0'));
@@ -302,6 +301,8 @@ void hid_demo_task(void *pvParameters)
         stratagemCode[cmdIndex] = 0;
         cmdIndex++;
       }
+
+      esp_hidd_send_keyboard_value(hid_conn_id, 0, 0, false);
 
       ESP_LOGI(TAG, "Finish command");
     }
@@ -376,7 +377,6 @@ void setup()
 
   ESP_LOGI(TAG, "Setting up i2s");
   ESP_ERROR_CHECK(i2s_setup());
-  
 
   // Initialize NVS.
   ret = nvs_flash_init();

@@ -40,6 +40,8 @@
         "sdmmc_host.h": "c",
         "audio.h": "c",
         "i2s_configuration.h": "c",
-        "gpio.h": "c"
+        "gpio.h": "c",
+        "i2s_std.h": "c",
+        "esp_vfs.h": "c"
     }
 }

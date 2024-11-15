@@ -26,13 +26,14 @@
 #include "driver/sdmmc_host.h"
 
 #include "i2s_configuration.h"
+#include "i2s_sdcard.h"
 #include "driver/i2s_std.h"
 
 static const char *TAG = "DEMO_LVGL";
 
-#define SD_MMC_D0 13
+/*#define SD_MMC_D0 13
 #define SD_MMC_CLK 12
-#define SD_MMC_CMD 11
+#define SD_MMC_CMD 11*/
 
 #define BUILD (String(__DATE__) + " - " + String(__TIME__)).c_str()
 
@@ -270,10 +271,8 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
   }
 }
 
-
 #define INPUT_DELAY 75
-#define INPUT_CTRL_MASK 1
-
+#define INPUT_CTRL_MASK 1 // 1 CTRL leftwsdaw
 
 void hid_demo_task(void *pvParameters)
 {
@@ -334,7 +333,7 @@ void setup()
 
   esp_err_t ret;
 
-  esp_vfs_fat_sdmmc_mount_config_t mount_config = {
+  /*esp_vfs_fat_sdmmc_mount_config_t mount_config = {
       .format_if_mount_failed = false,
       .max_files = 5,
       .allocation_unit_size = 16 * 1024};
@@ -376,9 +375,10 @@ void setup()
     ESP_LOGI(TAG, "Filesystem mounted");
   }
 
-  // sdmmc_card_print_info(stdout, card);
+  // sdmmc_card_print_info(stdout, card);*/
 
   ESP_LOGI(TAG, "Setting up i2s");
+  init_sdcard();
   ESP_ERROR_CHECK(i2s_setup());
 
   // Initialize NVS.

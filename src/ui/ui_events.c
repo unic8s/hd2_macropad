@@ -8,18 +8,12 @@
 #include "esp_log.h"
 
 
-uint8_t strategemsAmount = 0;
 lv_obj_t *buttons[4];
 int indices[4] = {0, 0, 0, 0};
 
 
 void deselectStratagem(lv_event_t *e)
 {
-	if (strategemsAmount > 0)
-	{
-		strategemsAmount--;
-	}
-
 	for (uint8_t c = 0; c < 4; c++)
 	{
 		if (buttons[c] == e->target)
@@ -43,13 +37,22 @@ void selectStratagem(lv_event_t *e)
 		}
 	}
 
-	strategemsAmount++;
-
 	updateStratagemSelection();
 }
 
 void updateStratagemSelection()
 {
+	uint8_t strategemsAmount = 0;
+
+	for (uint8_t c = 0; c < 4; c++)
+	{
+		if (buttons[c] != NULL)
+		{
+			strategemsAmount++;
+		}
+	}
+
+
 	lv_bar_set_value(uic_BarAmount, strategemsAmount, LV_ANIM_OFF);
 
 	char textAmount = (char)(strategemsAmount + '0');
@@ -88,8 +91,6 @@ void updateStratagemSelection()
 
 void resetStratagems(lv_event_t *e)
 {
-	strategemsAmount = 0;
-
 	for (uint8_t c = 0; c < 4; c++)
 	{
 		if (buttons[c] != NULL)

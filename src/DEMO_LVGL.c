@@ -21,19 +21,8 @@
 #include "driver/gpio.h"
 #include "hid_dev.h"
 
-#include "esp_vfs_fat.h"
-#include "sdmmc_cmd.h"
-#include "driver/sdmmc_host.h"
-
-#include "i2s_configuration.h"
-#include "i2s_sdcard.h"
-#include "driver/i2s_std.h"
-
 static const char *TAG = "DEMO_LVGL";
 
-/*#define SD_MMC_D0 13
-#define SD_MMC_CLK 12
-#define SD_MMC_CMD 11*/
 
 #define BUILD (String(__DATE__) + " - " + String(__TIME__)).c_str()
 
@@ -51,72 +40,6 @@ static const char *TAG = "DEMO_LVGL";
  */
 #define LVGL_PORT_ROTATION_DEGREE (90)
 
-#define AUDIO_BUFFER 2048                  // buffer size for reading the wav file and sending to i2s
-#define WAV_FILE "/sdcard/assets/test.wav" // wav file to play
-
-i2s_chan_handle_t tx_handle;
-
-esp_err_t i2s_setup(void)
-{
-  // setup a standard config and the channel
-  i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_AUTO, I2S_ROLE_MASTER);
-  ESP_ERROR_CHECK(i2s_new_channel(&chan_cfg, &tx_handle, NULL));
-
-  // setup the i2s config
-  i2s_std_config_t std_cfg = {
-      .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(44100),                                                    // the wav file sample rate
-      .slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_STEREO), // the wav faile bit and channel config
-      .gpio_cfg = {
-          // refer to configuration.h for pin setup
-          .mclk = AUDIO_I2S_MCK_IO,
-          .bclk = AUDIO_I2S_BCK_IO,
-          .ws = AUDIO_I2S_LRCK_IO,
-          .dout = AUDIO_I2S_DO_IO,
-          .din = 0,
-          .invert_flags = {
-              .mclk_inv = false,
-              .bclk_inv = false,
-              .ws_inv = false,
-          },
-      },
-  };
-  return i2s_channel_init_std_mode(tx_handle, &std_cfg);
-}
-
-esp_err_t play_wav(char *fp)
-{
-  FILE *fh = fopen(fp, "rb");
-  if (fh == NULL)
-  {
-    ESP_LOGE(TAG, "Failed to open file");
-    return ESP_ERR_INVALID_ARG;
-  }
-
-  // skip the header...
-  fseek(fh, 44, SEEK_SET);
-
-  // create a writer buffer
-  int16_t *buf = calloc(AUDIO_BUFFER, sizeof(int16_t));
-  size_t bytes_read = 0;
-  size_t bytes_written = 0;
-
-  bytes_read = fread(buf, sizeof(int16_t), AUDIO_BUFFER, fh);
-
-  i2s_channel_enable(tx_handle);
-
-  while (bytes_read > 0)
-  {
-    // write the buffer to the i2s
-    i2s_channel_write(tx_handle, buf, bytes_read * sizeof(int16_t), &bytes_written, portMAX_DELAY);
-    bytes_read = fread(buf, sizeof(int16_t), AUDIO_BUFFER, fh);
-    ESP_LOGV(TAG, "Bytes read: %d", bytes_read);
-  }
-
-  i2s_channel_disable(tx_handle);
-  free(buf);
-
-  return ESP_OK;
-}
 
 uint8_t stratagemCode[8];
 
@@ -126,10 +49,6 @@ void setStratagemCode(uint8_t sequence[8])
   {
     stratagemCode[c] = sequence[c];
   }
-
-  // play the wav file
-  ESP_LOGI(TAG, "Playing wav file");
-  ESP_ERROR_CHECK(play_wav(WAV_FILE));
 }
 
 static uint16_t hid_conn_id = 0;
@@ -272,7 +191,7 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
 }
 
 #define INPUT_DELAY 100
-#define INPUT_CTRL_MASK 1 // 1 CTRL leftwsdaw
+#define INPUT_CTRL_MASK 0 // 1 CTRL leftwsdaw
 
 void hid_demo_task(void *pvParameters)
 {
@@ -329,57 +248,7 @@ void app_main()
 #endif
 void setup()
 {
-  //  String title = "LVGL porting example";
-
   esp_err_t ret;
-
-  /*esp_vfs_fat_sdmmc_mount_config_t mount_config = {
-      .format_if_mount_failed = false,
-      .max_files = 5,
-      .allocation_unit_size = 16 * 1024};
-  sdmmc_card_t *card;
-
-  const char mount_point[] = "/sdcard";
-
-  ESP_LOGI(TAG, "Initializing SD card");
-
-  sdmmc_host_t host = SDMMC_HOST_DEFAULT();
-
-  sdmmc_slot_config_t slot_config = SDMMC_SLOT_CONFIG_DEFAULT();
-  slot_config.width = 1;
-  slot_config.clk = SD_MMC_CLK;
-  slot_config.cmd = SD_MMC_CMD;
-  slot_config.d0 = SD_MMC_D0;
-  slot_config.flags |= SDMMC_SLOT_FLAG_INTERNAL_PULLUP;
-
-  ESP_LOGI(TAG, "Mounting filesystem");
-  ret = esp_vfs_fat_sdmmc_mount(mount_point, &host, &slot_config, &mount_config, &card);
-
-  if (ret != ESP_OK)
-  {
-    if (ret == ESP_FAIL)
-    {
-      ESP_LOGE(TAG, "Failed to mount filesystem. "
-                    "If you want the card to be formatted, set the EXAMPLE_FORMAT_IF_MOUNT_FAILED menuconfig option.");
-    }
-    else
-    {
-      ESP_LOGE(TAG, "Failed to initialize the card (%s). "
-                    "Make sure SD card lines have pull-up resistors in place.",
-               esp_err_to_name(ret));
-    }
-    // return;
-  }
-  else
-  {
-    ESP_LOGI(TAG, "Filesystem mounted");
-  }
-
-  // sdmmc_card_print_info(stdout, card);*/
-
-  ESP_LOGI(TAG, "Setting up i2s");
-  init_sdcard();
-  ESP_ERROR_CHECK(i2s_setup());
 
   // Initialize NVS.
   ret = nvs_flash_init();

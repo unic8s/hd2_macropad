@@ -271,9 +271,8 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
 }
 
 
-#define INPUT_DOWN_DELAY 100
-#define INPUT_UP_DELAY 50
-#define INPUT_CTRL_MASK 0
+#define INPUT_DELAY 75
+#define INPUT_CTRL_MASK 1
 
 
 void hid_demo_task(void *pvParameters)
@@ -288,13 +287,16 @@ void hid_demo_task(void *pvParameters)
 
       uint8_t cmdIndex = 0;
 
+      esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, 0, 0);
+      vTaskDelay(INPUT_DELAY / portTICK_PERIOD_MS);
+
       while (stratagemCode[cmdIndex] > 0 && cmdIndex < 8)
       {
-        esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, &stratagemCode[cmdIndex], true);
-        vTaskDelay(INPUT_DOWN_DELAY / portTICK_PERIOD_MS);
+        esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, &stratagemCode[cmdIndex], 1);
+        vTaskDelay(INPUT_DELAY / portTICK_PERIOD_MS);
 
-        esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, &stratagemCode[cmdIndex], false);
-        vTaskDelay(INPUT_UP_DELAY / portTICK_PERIOD_MS);
+        esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, &stratagemCode[cmdIndex], 0);
+        vTaskDelay(INPUT_DELAY / portTICK_PERIOD_MS);
 
         ESP_LOGI(TAG, "CMD Index: %c", (char)(cmdIndex + '0'));
         ESP_LOGI(TAG, "CMD Value: %d", stratagemCode[cmdIndex]);
@@ -303,8 +305,7 @@ void hid_demo_task(void *pvParameters)
         cmdIndex++;
       }
 
-      //esp_hidd_send_keyboard_value(hid_conn_id, 0, 0, false);
-      //esp_hidd_send_keyboard_value(hid_conn_id, 0, HID_KEY_LEFT_CTRL, false);
+      esp_hidd_send_keyboard_value(hid_conn_id, 0, 0, 0);
 
       ESP_LOGI(TAG, "Finish command");
     }

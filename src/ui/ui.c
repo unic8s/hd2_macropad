@@ -24,112 +24,112 @@ lv_obj_t * ui_Setup;
 lv_obj_t * ui_TabView1;
 lv_obj_t * ui_Weapon;
 lv_obj_t * ui_Container2;
+void ui_event_WeaponsMG(lv_event_t * e);
+lv_obj_t * ui_WeaponsMG;
+void ui_event_WeaponsHMG(lv_event_t * e);
+lv_obj_t * ui_WeaponsHMG;
+void ui_event_WeaponsSW(lv_event_t * e);
+lv_obj_t * ui_WeaponsSW;
 void ui_event_WeaponsAC(lv_event_t * e);
 lv_obj_t * ui_WeaponsAC;
 void ui_event_WeaponsAMR(lv_event_t * e);
 lv_obj_t * ui_WeaponsAMR;
 void ui_event_WeaponsARL(lv_event_t * e);
 lv_obj_t * ui_WeaponsARL;
-void ui_event_WeaponsAT(lv_event_t * e);
-lv_obj_t * ui_WeaponsAT;
 void ui_event_WeaponsC(lv_event_t * e);
 lv_obj_t * ui_WeaponsC;
 void ui_event_WeaponsEAT(lv_event_t * e);
 lv_obj_t * ui_WeaponsEAT;
-void ui_event_WeaponsFT(lv_event_t * e);
-lv_obj_t * ui_WeaponsFT;
 void ui_event_WeaponsGL(lv_event_t * e);
 lv_obj_t * ui_WeaponsGL;
-void ui_event_WeaponsHMG(lv_event_t * e);
-lv_obj_t * ui_WeaponsHMG;
-void ui_event_WeaponsLC(lv_event_t * e);
-lv_obj_t * ui_WeaponsLC;
-void ui_event_WeaponsMG(lv_event_t * e);
-lv_obj_t * ui_WeaponsMG;
-void ui_event_WeaponsQC(lv_event_t * e);
-lv_obj_t * ui_WeaponsQC;
 void ui_event_WeaponsRG(lv_event_t * e);
 lv_obj_t * ui_WeaponsRG;
 void ui_event_WeaponsRR(lv_event_t * e);
 lv_obj_t * ui_WeaponsRR;
 void ui_event_WeaponsSPR(lv_event_t * e);
 lv_obj_t * ui_WeaponsSPR;
+void ui_event_WeaponsQC(lv_event_t * e);
+lv_obj_t * ui_WeaponsQC;
+void ui_event_WeaponsLC(lv_event_t * e);
+lv_obj_t * ui_WeaponsLC;
+void ui_event_WeaponsAT(lv_event_t * e);
+lv_obj_t * ui_WeaponsAT;
+void ui_event_WeaponsFT(lv_event_t * e);
+lv_obj_t * ui_WeaponsFT;
 void ui_event_WeaponsSTE(lv_event_t * e);
 lv_obj_t * ui_WeaponsSTE;
-void ui_event_WeaponsSW(lv_event_t * e);
-lv_obj_t * ui_WeaponsSW;
 lv_obj_t * ui_Backpack;
 lv_obj_t * ui_Container1;
 void ui_event_BackpacksBSB(lv_event_t * e);
 lv_obj_t * ui_BackpacksBSB;
-void ui_event_BackpacksEE(lv_event_t * e);
-lv_obj_t * ui_BackpacksEE;
+void ui_event_BackpacksSGP(lv_event_t * e);
+lv_obj_t * ui_BackpacksSGP;
 void ui_event_BackpacksGD(lv_event_t * e);
 lv_obj_t * ui_BackpacksGD;
 void ui_event_BackpacksGDB(lv_event_t * e);
 lv_obj_t * ui_BackpacksGDB;
 void ui_event_BackpacksGDR(lv_event_t * e);
 lv_obj_t * ui_BackpacksGDR;
+void ui_event_BackpacksSUP(lv_event_t * e);
+lv_obj_t * ui_BackpacksSUP;
 void ui_event_BackpacksJP(lv_event_t * e);
 lv_obj_t * ui_BackpacksJP;
 void ui_event_BackpacksPE(lv_event_t * e);
 lv_obj_t * ui_BackpacksPE;
-void ui_event_BackpacksSGP(lv_event_t * e);
-lv_obj_t * ui_BackpacksSGP;
-void ui_event_BackpacksSUP(lv_event_t * e);
-lv_obj_t * ui_BackpacksSUP;
+void ui_event_BackpacksEE(lv_event_t * e);
+lv_obj_t * ui_BackpacksEE;
 lv_obj_t * ui_Stationary;
 lv_obj_t * ui_Container3;
-void ui_event_StationaryACS(lv_event_t * e);
-lv_obj_t * ui_StationaryACS;
-void ui_event_StationaryAPM(lv_event_t * e);
-lv_obj_t * ui_StationaryAPM;
-void ui_event_StationaryATM(lv_event_t * e);
-lv_obj_t * ui_StationaryATM;
-void ui_event_StationaryEMS(lv_event_t * e);
-lv_obj_t * ui_StationaryEMS;
-void ui_event_StationaryGS(lv_event_t * e);
-lv_obj_t * ui_StationaryGS;
-void ui_event_StationaryHMGE(lv_event_t * e);
-lv_obj_t * ui_StationaryHMGE;
-void ui_event_StationaryIM(lv_event_t * e);
-lv_obj_t * ui_StationaryIM;
 void ui_event_StationaryMGS(lv_event_t * e);
 lv_obj_t * ui_StationaryMGS;
+void ui_event_StationaryGS(lv_event_t * e);
+lv_obj_t * ui_StationaryGS;
+void ui_event_StationaryACS(lv_event_t * e);
+lv_obj_t * ui_StationaryACS;
+void ui_event_StationaryHMGE(lv_event_t * e);
+lv_obj_t * ui_StationaryHMGE;
+void ui_event_StationaryTT(lv_event_t * e);
+lv_obj_t * ui_StationaryTT;
+void ui_event_StationarySGR(lv_event_t * e);
+lv_obj_t * ui_StationarySGR;
 void ui_event_StationaryMS(lv_event_t * e);
 lv_obj_t * ui_StationaryMS;
 void ui_event_StationaryRS(lv_event_t * e);
 lv_obj_t * ui_StationaryRS;
-void ui_event_StationarySGR(lv_event_t * e);
-lv_obj_t * ui_StationarySGR;
-void ui_event_StationaryTT(lv_event_t * e);
-lv_obj_t * ui_StationaryTT;
+void ui_event_StationaryEMS(lv_event_t * e);
+lv_obj_t * ui_StationaryEMS;
+void ui_event_StationaryAPM(lv_event_t * e);
+lv_obj_t * ui_StationaryAPM;
+void ui_event_StationaryATM(lv_event_t * e);
+lv_obj_t * ui_StationaryATM;
+void ui_event_StationaryIM(lv_event_t * e);
+lv_obj_t * ui_StationaryIM;
 lv_obj_t * ui_Strike;
 lv_obj_t * ui_Container4;
 void ui_event_Strikes120(lv_event_t * e);
 lv_obj_t * ui_Strikes120;
 void ui_event_Strikes380(lv_event_t * e);
 lv_obj_t * ui_Strikes380;
-void ui_event_StrikesOAS(lv_event_t * e);
-lv_obj_t * ui_StrikesOAS;
-void ui_event_StrikesOES(lv_event_t * e);
-lv_obj_t * ui_StrikesOES;
-void ui_event_StrikesOGB(lv_event_t * e);
-lv_obj_t * ui_StrikesOGB;
-void ui_event_StrikesOGS(lv_event_t * e);
-lv_obj_t * ui_StrikesOGS;
-void ui_event_StrikesOL(lv_event_t * e);
-lv_obj_t * ui_StrikesOL;
-void ui_event_StrikesONB(lv_event_t * e);
-lv_obj_t * ui_StrikesONB;
-void ui_event_StrikesOPS(lv_event_t * e);
-lv_obj_t * ui_StrikesOPS;
 void ui_event_StrikesORS(lv_event_t * e);
 lv_obj_t * ui_StrikesORS;
-void ui_event_StrikesOSS(lv_event_t * e);
-lv_obj_t * ui_StrikesOSS;
+void ui_event_StrikesOGB(lv_event_t * e);
+lv_obj_t * ui_StrikesOGB;
+void ui_event_StrikesOAS(lv_event_t * e);
+lv_obj_t * ui_StrikesOAS;
+void ui_event_StrikesOL(lv_event_t * e);
+lv_obj_t * ui_StrikesOL;
+void ui_event_StrikesOPS(lv_event_t * e);
+lv_obj_t * ui_StrikesOPS;
 void ui_event_StrikesOWB(lv_event_t * e);
 lv_obj_t * ui_StrikesOWB;
+void ui_event_StrikesOES(lv_event_t * e);
+lv_obj_t * ui_StrikesOES;
+void ui_event_StrikesONB(lv_event_t * e);
+lv_obj_t * ui_StrikesONB;
+void ui_event_StrikesOGS(lv_event_t * e);
+lv_obj_t * ui_StrikesOGS;
+void ui_event_StrikesOSS(lv_event_t * e);
+lv_obj_t * ui_StrikesOSS;
 lv_obj_t * ui_Eagle;
 lv_obj_t * ui_Container7;
 void ui_event_Eagle110(lv_event_t * e);
@@ -140,10 +140,10 @@ void ui_event_EagleA(lv_event_t * e);
 lv_obj_t * ui_EagleA;
 void ui_event_EagleCB(lv_event_t * e);
 lv_obj_t * ui_EagleCB;
-void ui_event_EagleNA(lv_event_t * e);
-lv_obj_t * ui_EagleNA;
 void ui_event_EagleSR(lv_event_t * e);
 lv_obj_t * ui_EagleSR;
+void ui_event_EagleNA(lv_event_t * e);
+lv_obj_t * ui_EagleNA;
 void ui_event_EagleSS(lv_event_t * e);
 lv_obj_t * ui_EagleSS;
 lv_obj_t * ui_BarAmount;
@@ -285,6 +285,45 @@ void ui_event_Setup(lv_event_t * e)
     }
 }
 
+void ui_event_WeaponsMG(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_WeaponsHMG(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_WeaponsSW(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
 void ui_event_WeaponsAC(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -324,19 +363,6 @@ void ui_event_WeaponsARL(lv_event_t * e)
     }
 }
 
-void ui_event_WeaponsAT(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
 void ui_event_WeaponsC(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -363,72 +389,7 @@ void ui_event_WeaponsEAT(lv_event_t * e)
     }
 }
 
-void ui_event_WeaponsFT(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
 void ui_event_WeaponsGL(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_WeaponsHMG(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_WeaponsLC(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_WeaponsMG(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_WeaponsQC(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -480,7 +441,7 @@ void ui_event_WeaponsSPR(lv_event_t * e)
     }
 }
 
-void ui_event_WeaponsSTE(lv_event_t * e)
+void ui_event_WeaponsQC(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -493,7 +454,46 @@ void ui_event_WeaponsSTE(lv_event_t * e)
     }
 }
 
-void ui_event_WeaponsSW(lv_event_t * e)
+void ui_event_WeaponsLC(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_WeaponsAT(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_WeaponsFT(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_WeaponsSTE(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -519,7 +519,7 @@ void ui_event_BackpacksBSB(lv_event_t * e)
     }
 }
 
-void ui_event_BackpacksEE(lv_event_t * e)
+void ui_event_BackpacksSGP(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -571,6 +571,19 @@ void ui_event_BackpacksGDR(lv_event_t * e)
     }
 }
 
+void ui_event_BackpacksSUP(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
 void ui_event_BackpacksJP(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -597,7 +610,7 @@ void ui_event_BackpacksPE(lv_event_t * e)
     }
 }
 
-void ui_event_BackpacksSGP(lv_event_t * e)
+void ui_event_BackpacksEE(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -610,59 +623,7 @@ void ui_event_BackpacksSGP(lv_event_t * e)
     }
 }
 
-void ui_event_BackpacksSUP(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_StationaryACS(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_StationaryAPM(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_StationaryATM(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_StationaryEMS(lv_event_t * e)
+void ui_event_StationaryMGS(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -688,6 +649,19 @@ void ui_event_StationaryGS(lv_event_t * e)
     }
 }
 
+void ui_event_StationaryACS(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
 void ui_event_StationaryHMGE(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -701,7 +675,7 @@ void ui_event_StationaryHMGE(lv_event_t * e)
     }
 }
 
-void ui_event_StationaryIM(lv_event_t * e)
+void ui_event_StationaryTT(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -714,7 +688,7 @@ void ui_event_StationaryIM(lv_event_t * e)
     }
 }
 
-void ui_event_StationaryMGS(lv_event_t * e)
+void ui_event_StationarySGR(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -753,7 +727,7 @@ void ui_event_StationaryRS(lv_event_t * e)
     }
 }
 
-void ui_event_StationarySGR(lv_event_t * e)
+void ui_event_StationaryEMS(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -766,7 +740,33 @@ void ui_event_StationarySGR(lv_event_t * e)
     }
 }
 
-void ui_event_StationaryTT(lv_event_t * e)
+void ui_event_StationaryAPM(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_StationaryATM(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_StationaryIM(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -805,20 +805,7 @@ void ui_event_Strikes380(lv_event_t * e)
     }
 }
 
-void ui_event_StrikesOAS(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_StrikesOES(lv_event_t * e)
+void ui_event_StrikesORS(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -844,7 +831,7 @@ void ui_event_StrikesOGB(lv_event_t * e)
     }
 }
 
-void ui_event_StrikesOGS(lv_event_t * e)
+void ui_event_StrikesOAS(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -870,19 +857,6 @@ void ui_event_StrikesOL(lv_event_t * e)
     }
 }
 
-void ui_event_StrikesONB(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
 void ui_event_StrikesOPS(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -896,7 +870,46 @@ void ui_event_StrikesOPS(lv_event_t * e)
     }
 }
 
-void ui_event_StrikesORS(lv_event_t * e)
+void ui_event_StrikesOWB(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_StrikesOES(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_StrikesONB(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_StrikesOGS(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -910,19 +923,6 @@ void ui_event_StrikesORS(lv_event_t * e)
 }
 
 void ui_event_StrikesOSS(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_StrikesOWB(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -987,7 +987,7 @@ void ui_event_EagleCB(lv_event_t * e)
     }
 }
 
-void ui_event_EagleNA(lv_event_t * e)
+void ui_event_EagleSR(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -1000,7 +1000,7 @@ void ui_event_EagleNA(lv_event_t * e)
     }
 }
 
-void ui_event_EagleSR(lv_event_t * e)
+void ui_event_EagleNA(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);

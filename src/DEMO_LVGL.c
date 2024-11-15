@@ -271,7 +271,7 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
   }
 }
 
-#define INPUT_DELAY 75
+#define INPUT_DELAY 100
 #define INPUT_CTRL_MASK 1 // 1 CTRL leftwsdaw
 
 void hid_demo_task(void *pvParameters)

@@ -9,11 +9,15 @@ void ui_Setup_screen_init(void)
 {
     ui_Setup = lv_obj_create(NULL);
     lv_obj_clear_flag(ui_Setup, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_Setup, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Setup, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_TabView1 = lv_tabview_create(ui_Setup, LV_DIR_TOP, 48);
     lv_obj_set_width(ui_TabView1, 480);
     lv_obj_set_height(ui_TabView1, 280);
     lv_obj_clear_flag(ui_TabView1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_TabView1, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_TabView1, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
 
     ui_Weapon = lv_tabview_add_tab(ui_TabView1, "Weapon");

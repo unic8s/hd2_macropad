@@ -27,11 +27,13 @@ extern "C" {
 #include "ui_theme_manager.h"
 #include "ui_themes.h"
 
+void SplashFade_Animation(lv_obj_t * TargetObject, int delay);
+
 // SCREEN: ui_Intro
 void ui_Intro_screen_init(void);
 void ui_event_Intro(lv_event_t * e);
 extern lv_obj_t * ui_Intro;
-extern lv_obj_t * ui_Image1;
+extern lv_obj_t * ui_Splash;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Setup

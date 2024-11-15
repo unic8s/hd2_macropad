@@ -9,6 +9,8 @@ void ui_Game_screen_init(void)
 {
     ui_Game = lv_obj_create(NULL);
     lv_obj_clear_flag(ui_Game, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_Game, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Game, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Container6 = lv_obj_create(ui_Game);
     lv_obj_remove_style_all(ui_Container6);

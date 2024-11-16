@@ -42,6 +42,15 @@
         "i2s_configuration.h": "c",
         "gpio.h": "c",
         "i2s_std.h": "c",
-        "esp_vfs.h": "c"
+        "esp_vfs.h": "c",
+        "esp_log.h": "c",
+        "display.h": "c",
+        "i2s_sdcard.h": "c",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp"
     }
 }

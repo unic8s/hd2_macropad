@@ -28,10 +28,6 @@
 #include "sdmmc_cmd.h"
 #include "esp_vfs_fat.h"
 
-#define SD_MMC_D0 13
-#define SD_MMC_CLK 12
-#define SD_MMC_CMD 11
-
 sdmmc_card_t *card;
 
 esp_err_t init_sdcard(void)
@@ -53,7 +49,7 @@ esp_err_t init_sdcard(void)
       .max_files = 5,
       .allocation_unit_size = 16 * 1024};
 
-  esp_err_t ret = esp_vfs_fat_sdmmc_mount("/", &host, &slot_config, &mount_config, &card);
+  esp_err_t ret = esp_vfs_fat_sdmmc_mount("/sdcard", &host, &slot_config, &mount_config, &card);
 
   if (ret != ESP_OK)
   {

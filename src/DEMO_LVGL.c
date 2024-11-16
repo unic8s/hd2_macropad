@@ -21,6 +21,8 @@
 #include "driver/gpio.h"
 #include "hid_dev.h"
 
+#include "i2s_player.h"
+
 static const char *TAG = "DEMO_LVGL";
 
 
@@ -374,6 +376,9 @@ void setup()
   bsp_display_unlock();
 
   logSection("LVGL porting example end");
+
+  ESP_ERROR_CHECK(i2s_setup());
+  play_wav("/sdcard/assets/test.wav");
 }
 
 void loop()

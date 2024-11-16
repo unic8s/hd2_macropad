@@ -35,6 +35,9 @@
 #include "driver/i2s_std.h"
 
 // Pin Configurations
+#define SD_MMC_D0 13
+#define SD_MMC_CLK 12
+#define SD_MMC_CMD 11
 
 // I2S Configuration
 #define AUDIO_I2S_PORT I2S_NUM_0
@@ -42,29 +45,3 @@
 #define AUDIO_I2S_BCK_IO 42 // BCK
 #define AUDIO_I2S_LRCK_IO 2   // LCK
 #define AUDIO_I2S_DO_IO 41  // DIN
-
-void print_system_info(void)
-{
-  char TAG[] = "conf";
-  // print idf version
-  ESP_LOGI(TAG, "IDF version: %s", esp_get_idf_version());
-
-  // show chip info
-  esp_chip_info_t chip_info;
-  esp_chip_info(&chip_info);
-
-  ESP_LOGI(TAG, "Chip Model: %s", CONFIG_IDF_TARGET);
-
-  ESP_LOGI(TAG, "This is ESP32 chip with %d CPU cores, WiFi%s%s, ",
-           chip_info.cores,
-           (chip_info.features & CHIP_FEATURE_BT) ? "/BT" : "",
-           (chip_info.features & CHIP_FEATURE_BLE) ? "/BLE" : "");
-
-  ESP_LOGI(TAG, "silicon revision %d, ", chip_info.revision);
-
-  // mac address
-  uint8_t mac[6];
-  esp_efuse_mac_get_default(mac);
-  ESP_LOGI(TAG, "default mac: %02x:%02x:%02x:%02x:%02x:%02x",
-           mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
-}

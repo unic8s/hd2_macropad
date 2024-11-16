@@ -192,14 +192,15 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
   }
 }
 
+#define CHECK_DELAY 50
 #define INPUT_DELAY 100
-#define INPUT_CTRL_MASK 1 // 1 CTRL leftwsdaw
+#define INPUT_CTRL_MASK 1 // 1 CTRL left
 
 void hid_demo_task(void *pvParameters)
 {
   while (1)
   {
-    vTaskDelay(100 / portTICK_PERIOD_MS);
+    vTaskDelay(CHECK_DELAY / portTICK_PERIOD_MS);
 
     if (sec_conn && stratagemCode[0] > 0)
     {
@@ -364,7 +365,7 @@ void setup()
   };
 
   bsp_display_start_with_config(&cfg);
-  bsp_display_backlight_on();
+  bsp_display_backlight_off();
 
   logSection("Create UI");
   /* Lock the mutex due to the LVGL APIs are not thread-safe */
@@ -374,6 +375,10 @@ void setup()
 
   /* Release the mutex */
   bsp_display_unlock();
+
+  vTaskDelay(200 / portTICK_PERIOD_MS);
+
+  bsp_display_backlight_on();
 
   logSection("LVGL porting example end");
 

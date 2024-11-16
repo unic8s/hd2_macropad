@@ -20,13 +20,10 @@
 #include "esp_bt_device.h"
 #include "driver/gpio.h"
 #include "hid_dev.h"
-
 #include "i2s_player.h"
 
-static const char *TAG = "DEMO_LVGL";
 
-
-#define BUILD (String(__DATE__) + " - " + String(__TIME__)).c_str()
+static const char *TAG = "HD2 Macropad";
 
 #define logSection(section) \
   ESP_LOGI(TAG, "\n\n************* %s **************\n", section);
@@ -196,7 +193,7 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
 #define INPUT_DELAY 100
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
 
-void hid_demo_task(void *pvParameters)
+void hid_input_task(void *pvParameters)
 {
   while (1)
   {
@@ -233,23 +230,8 @@ void hid_demo_task(void *pvParameters)
   }
 }
 
-/**
- * To use the built-in examples and demos of LVGL uncomment the includes below respectively.
- * You also need to copy `lvgl/examples` to `lvgl/src/examples`. Similarly for the demos `lvgl/demos` to `lvgl/src/demos`.
- */
 
-void setup();
-
-#if !CONFIG_AUTOSTART_ARDUINO
 void app_main()
-{
-  // initialize arduino library before we start the tasks
-  // initArduino();
-
-  setup();
-}
-#endif
-void setup()
 {
   esp_err_t ret;
 
@@ -311,43 +293,13 @@ void setup()
   esp_ble_gap_set_security_param(ESP_BLE_SM_AUTHEN_REQ_MODE, &auth_req, sizeof(uint8_t));
   esp_ble_gap_set_security_param(ESP_BLE_SM_IOCAP_MODE, &iocap, sizeof(uint8_t));
   esp_ble_gap_set_security_param(ESP_BLE_SM_MAX_KEY_SIZE, &key_size, sizeof(uint8_t));
-  /* If your BLE device act as a Slave, the init_key means you hope which types of key of the master should distribute to you,
-  and the response key means which key you can distribute to the Master;
-  If your BLE device act as a master, the response key means you hope which types of key of the slave should distribute to you,
-  and the init key means which key you can distribute to the slave. */
   esp_ble_gap_set_security_param(ESP_BLE_SM_SET_INIT_KEY, &init_key, sizeof(uint8_t));
   esp_ble_gap_set_security_param(ESP_BLE_SM_SET_RSP_KEY, &rsp_key, sizeof(uint8_t));
 
-  xTaskCreate(&hid_demo_task, "hid_task", 2048, NULL, 5, NULL);
 
-  // Serial.begin(115200);
-  logSection("LVGL porting example start");
-  esp_chip_info_t chip_info;
-  uint32_t flash_size;
-  esp_chip_info(&chip_info);
-  ESP_LOGI(TAG, "This is %s chip with %d CPU core(s), %s%s%s%s, ",
-           CONFIG_IDF_TARGET,
-           chip_info.cores,
-           (chip_info.features & CHIP_FEATURE_WIFI_BGN) ? "WiFi/" : "",
-           (chip_info.features & CHIP_FEATURE_BT) ? "BT" : "",
-           (chip_info.features & CHIP_FEATURE_BLE) ? "BLE" : "",
-           (chip_info.features & CHIP_FEATURE_IEEE802154) ? ", 802.15.4 (Zigbee/Thread)" : "");
+  xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);
 
-  unsigned major_rev = chip_info.revision / 100;
-  unsigned minor_rev = chip_info.revision % 100;
-  ESP_LOGI(TAG, "silicon revision v%d.%d, ", major_rev, minor_rev);
-  if (esp_flash_get_size(NULL, &flash_size) != ESP_OK)
-  {
-    ESP_LOGI(TAG, "Get flash size failed");
-    return;
-  }
 
-  ESP_LOGI(TAG, "%" PRIu32 "MB %s flash", flash_size / (uint32_t)(1024 * 1024),
-           (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
-
-  ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes", esp_get_minimum_free_heap_size());
-  size_t freePsram = heap_caps_get_free_size(MALLOC_CAP_SPIRAM);
-  ESP_LOGI(TAG, "Free PSRAM: %d bytes", freePsram);
   logSection("Initialize panel device");
   // ESP_LOGI(TAG, "Initialize panel device");
   bsp_display_cfg_t cfg = {
@@ -367,7 +319,6 @@ void setup()
   bsp_display_start_with_config(&cfg);
   bsp_display_backlight_off();
 
-  logSection("Create UI");
   /* Lock the mutex due to the LVGL APIs are not thread-safe */
   bsp_display_lock(0);
 
@@ -380,14 +331,6 @@ void setup()
 
   bsp_display_backlight_on();
 
-  logSection("LVGL porting example end");
-
   ESP_ERROR_CHECK(i2s_setup());
   play_wav("/sdcard/assets/test.wav");
-}
-
-void loop()
-{
-  ESP_LOGI(TAG, "IDLE loop");
-  // delay(1000);
 }

@@ -1,14 +1,12 @@
 #include "i2s_configuration.h" // basic sysetm includes and pin setup
 #include "driver/i2s_std.h"    // i2s setup
+#include "lvgl.h"
 
-
-#define AUDIO_BUFFER 2048 
-
+#define AUDIO_BUFFER 2048
 
 static const char *TAG = "I2S Audio Player";
 
 i2s_chan_handle_t tx_handle;
-
 
 esp_err_t i2s_setup(void)
 {
@@ -39,35 +37,51 @@ esp_err_t i2s_setup(void)
 
 esp_err_t play_wav(char *fp)
 {
-    FILE *fh = fopen(fp, "rb");
-    if (fh == NULL)
+    lv_fs_file_t f;
+    lv_fs_res_t res;
+
+    res = lv_fs_open(&f, fp, LV_FS_MODE_RD);
+    if (res != LV_FS_RES_OK)
     {
-        ESP_LOGE(TAG, "Failed to open file");
-        return ESP_ERR_INVALID_ARG;
+        ESP_LOGE(TAG, "(%s) FS open failed.", fp);
+        lv_fs_close(&f);
+        return ESP_FAIL;
     }
+    ESP_LOGI(TAG, "(%s) FS opened.", fp);
 
     // skip the header...
-    fseek(fh, 44, SEEK_SET);
+    res = lv_fs_seek(&f, 44, LV_FS_SEEK_SET);
+    if (res != LV_FS_RES_OK)
+    {
+        ESP_LOGE(TAG, "(%s) Seek failed.", fp);
+        lv_fs_close(&f);
+        return ESP_FAIL;
+    }
+    ESP_LOGI(TAG, "(%s) FS seeked.", fp);
 
     // create a writer buffer
-    int16_t *buf = calloc(AUDIO_BUFFER, sizeof(int16_t));
-    size_t bytes_read = 0;
+    size_t chunkSize = sizeof(int16_t);
+    int16_t *buf = calloc(AUDIO_BUFFER, chunkSize);
+    uint32_t bytes_read = 0;
     size_t bytes_written = 0;
 
-    bytes_read = fread(buf, sizeof(int16_t), AUDIO_BUFFER, fh);
+    lv_fs_read(&f, buf, AUDIO_BUFFER, &bytes_read);
+    //ESP_LOGI(TAG, "Bytes read: %lx", bytes_read);
 
     i2s_channel_enable(tx_handle);
 
     while (bytes_read > 0)
     {
         // write the buffer to the i2s
-        i2s_channel_write(tx_handle, buf, bytes_read * sizeof(int16_t), &bytes_written, portMAX_DELAY);
-        bytes_read = fread(buf, sizeof(int16_t), AUDIO_BUFFER, fh);
-        ESP_LOGV(TAG, "Bytes read: %d", bytes_read);
+        i2s_channel_write(tx_handle, buf, bytes_read * (uint32_t)chunkSize, &bytes_written, portMAX_DELAY);
+        lv_fs_read(&f, buf, AUDIO_BUFFER, &bytes_read);
+        //ESP_LOGI(TAG, "Bytes read: %lx", bytes_read);
     }
 
     i2s_channel_disable(tx_handle);
     free(buf);
+
+    lv_fs_close(&f);
 
     return ESP_OK;
 }

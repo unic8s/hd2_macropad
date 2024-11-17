@@ -24,6 +24,7 @@ void triggerStratagem8(lv_event_t * e);
 void resetStratagems(lv_event_t * e);
 void updateStratagemSelection();
 extern void setStratagemCode(uint8_t[8]);
+extern void playbackSound(char *path);
 
 #ifdef __cplusplus
 } /*extern "C"*/

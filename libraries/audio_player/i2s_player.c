@@ -16,8 +16,8 @@ esp_err_t i2s_setup(void)
 
     // setup the i2s config
     i2s_std_config_t std_cfg = {
-        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(44100),                                                    // the wav file sample rate
-        .slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_STEREO), // the wav faile bit and channel config
+        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(48000),                                                    // the wav file sample rate
+        .slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_MONO), // the wav faile bit and channel config
         .gpio_cfg = {
             // refer to configuration.h for pin setup
             .mclk = AUDIO_I2S_MCK_IO,

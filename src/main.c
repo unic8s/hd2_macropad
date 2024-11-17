@@ -23,7 +23,6 @@
 #include "i2s_sdcard.h"
 #include "i2s_player.h"
 
-
 static const char *TAG = "HD2 Macropad";
 
 #define logSection(section) \
@@ -40,8 +39,9 @@ static const char *TAG = "HD2 Macropad";
  */
 #define LVGL_PORT_ROTATION_DEGREE (90)
 
-
 uint8_t stratagemCode[8];
+bool soundPlayback = false;
+char *soundFile;
 
 void setStratagemCode(uint8_t sequence[8])
 {
@@ -49,6 +49,15 @@ void setStratagemCode(uint8_t sequence[8])
   {
     stratagemCode[c] = sequence[c];
   }
+
+  soundPlayback = true;
+  soundFile = "S:assets/Eqp.wav";
+}
+
+void playbackSound(char *path)
+{
+  soundPlayback = true;
+  soundFile = path;
 }
 
 static uint16_t hid_conn_id = 0;
@@ -228,9 +237,15 @@ void hid_input_task(void *pvParameters)
 
       ESP_LOGI(TAG, "Finish command");
     }
+
+    if (soundPlayback)
+    {
+      soundPlayback = false;
+
+      play_wav(soundFile);
+    }
   }
 }
-
 
 void app_main()
 {
@@ -297,12 +312,11 @@ void app_main()
   esp_ble_gap_set_security_param(ESP_BLE_SM_SET_INIT_KEY, &init_key, sizeof(uint8_t));
   esp_ble_gap_set_security_param(ESP_BLE_SM_SET_RSP_KEY, &rsp_key, sizeof(uint8_t));
 
-
   ESP_ERROR_CHECK(i2s_setup());
-
+  ESP_ERROR_CHECK(init_sdcard());
+  lv_fs_fatfs_init();
 
   xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);
-
 
   logSection("Initialize panel device");
   // ESP_LOGI(TAG, "Initialize panel device");
@@ -334,8 +348,4 @@ void app_main()
   vTaskDelay(200 / portTICK_PERIOD_MS);
 
   bsp_display_backlight_on();
-
-  ESP_ERROR_CHECK(init_sdcard());
-  lv_fs_fatfs_init();
-  play_wav("S:test.wav");
 }

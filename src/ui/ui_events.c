@@ -7,6 +7,7 @@
 #include "hid_dev.h"
 #include "esp_log.h"
 #include "sequences.h"
+#include "i2s_player.h"
 
 
 lv_obj_t *buttons[4];
@@ -40,6 +41,8 @@ void selectStratagem(lv_event_t *e)
 	}
 
 	updateStratagemSelection();
+
+	playbackSound("S:assets/StEntry.wav");
 }
 
 void updateStratagemSelection()
@@ -104,6 +107,8 @@ void resetStratagems(lv_event_t *e)
 	}
 
 	updateStratagemSelection();
+
+	playbackSound("S:assets/StError.wav");
 }
 
 void assignStratagems(lv_event_t *e)
@@ -241,6 +246,8 @@ void triggerStratagem5(lv_event_t *e)
 	uint8_t index = indices[0];
 
 	setStratagemCode(sequences[index]);
+
+	playbackSound("S:assets/Reinf.wav");
 }
 
 void triggerStratagem6(lv_event_t *e)
@@ -248,6 +255,8 @@ void triggerStratagem6(lv_event_t *e)
 	uint8_t index = indices[1];
 
 	setStratagemCode(sequences[index]);
+
+	playbackSound("S:assets/Sup.wav");
 }
 
 void triggerStratagem7(lv_event_t *e)

@@ -312,76 +312,49 @@
                   }
                 ],
                 "InheritedType": 10
-              }
-            ],
-            "InheritedType": 4
-          },
-          {
-            "disabled": false,
-            "nid": 1001449,
-            "strtype": "_event/EventHandler",
-            "strval": "SCREEN_LOADED",
-            "childs": [
-              {
-                "nid": 1001450,
-                "strtype": "_event/name",
-                "strval": "Event15",
-                "InheritedType": 10
               },
               {
-                "nid": 1001451,
-                "strtype": "_event/condition_C",
-                "strval": "",
-                "InheritedType": 10
-              },
-              {
-                "nid": 1001452,
-                "strtype": "_event/condition_P",
-                "strval": "",
-                "InheritedType": 10
-              },
-              {
-                "nid": 1001453,
+                "nid": 1001505,
                 "strtype": "_event/action",
                 "strval": "PLAY ANIMATION",
                 "childs": [
                   {
-                    "nid": 1001454,
+                    "nid": 1001506,
                     "strtype": "PLAY ANIMATION/Name",
                     "strval": "PLAY ANIMATION",
                     "InheritedType": 10
                   },
                   {
-                    "nid": 1001455,
+                    "nid": 1001507,
                     "strtype": "PLAY ANIMATION/FunctionName",
                     "strval": "SplashFade_Animation",
                     "InheritedType": 10
                   },
                   {
-                    "nid": 1001456,
+                    "nid": 1001508,
                     "strtype": "PLAY ANIMATION/Animation",
                     "strval": "SplashFade",
                     "InheritedType": 8
                   },
                   {
-                    "nid": 1001457,
+                    "nid": 1001509,
                     "strtype": "PLAY ANIMATION/Target",
                     "strval": "GUID75931894-395420S64383316",
                     "InheritedType": 9
                   },
                   {
-                    "nid": 1001458,
+                    "nid": 1001510,
                     "strtype": "PLAY ANIMATION/Delay",
                     "InheritedType": 6
                   },
                   {
-                    "nid": 1001459,
+                    "nid": 1001511,
                     "strtype": "PLAY ANIMATION/Call",
                     "strval": "<{FunctionName}>(<{Target}>, <{Delay}>)",
                     "InheritedType": 10
                   },
                   {
-                    "nid": 1001460,
+                    "nid": 1001512,
                     "strtype": "PLAY ANIMATION/CallC",
                     "strval": "<{FunctionName}>(<{Target}>, <{Delay}>);",
                     "InheritedType": 10
@@ -25255,7 +25228,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 1120,
+    "backup_cnt": 1121,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",
@@ -25271,7 +25244,7 @@
     "drive_fatfs_path": "/",
     "naming": "Name",
     "naming_force_lowercase": false,
-    "nidcnt": 1001505,
+    "nidcnt": 1001513,
     "BitDepth": 16,
     "Name": "SquareLine_Project"
   }

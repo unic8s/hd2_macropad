@@ -54,6 +54,8 @@
         "initializer_list": "cpp",
         "i2s_player.h": "c",
         "sdmmc_cmd.h": "c",
-        "lv_fsdrv.h": "c"
+        "lv_fsdrv.h": "c",
+        "esp_gatts_api.h": "c",
+        "esp_gatt_defs.h": "c"
     }
 }

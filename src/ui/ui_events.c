@@ -9,10 +9,10 @@
 #include "sequences.h"
 #include "i2s_player.h"
 
-
 lv_obj_t *buttons[4];
 int indices[4];
 
+uint8_t strategemsAmount = 0;
 
 void deselectStratagem(lv_event_t *e)
 {
@@ -32,24 +32,33 @@ void deselectStratagem(lv_event_t *e)
 
 void selectStratagem(lv_event_t *e)
 {
-	for (uint8_t c = 0; c < 4; c++)
+	if (strategemsAmount < 4)
 	{
-		if (buttons[c] == NULL)
+		for (uint8_t c = 0; c < 4; c++)
 		{
-			buttons[c] = e->target;
-			indices[c] = (int)lv_obj_get_user_data(e->target);
-			break;
+			if (buttons[c] == NULL)
+			{
+				buttons[c] = e->target;
+				indices[c] = (int)lv_obj_get_user_data(e->target);
+				break;
+			}
 		}
+
+		updateStratagemSelection();
+
+		playbackSound("S:assets/StEntry.wav");
 	}
+	else
+	{
+		lv_obj_clear_state(e->target, LV_STATE_CHECKED);
 
-	updateStratagemSelection();
-
-	playbackSound("S:assets/StEntry.wav");
+		playbackSound("S:assets/StStop.wav");
+	}
 }
 
 void updateStratagemSelection()
 {
-	uint8_t strategemsAmount = 0;
+	strategemsAmount = 0;
 
 	for (uint8_t c = 0; c < 4; c++)
 	{
@@ -58,7 +67,6 @@ void updateStratagemSelection()
 			strategemsAmount++;
 		}
 	}
-
 
 	lv_bar_set_value(uic_BarAmount, strategemsAmount, LV_ANIM_OFF);
 
@@ -253,7 +261,7 @@ void triggerStratagem5(lv_event_t *e)
 
 	setStratagemCode(sequences[index]);
 
-  	playbackSound("S:assets/Eqp.wav");
+	playbackSound("S:assets/Eqp.wav");
 }
 
 void triggerStratagem6(lv_event_t *e)

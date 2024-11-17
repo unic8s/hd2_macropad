@@ -194,6 +194,8 @@ void triggerStratagem1(lv_event_t *e)
 						   0};
 
 	setStratagemCode(sequence);
+
+	playbackSound("S:assets/Reinf.wav");
 }
 
 void triggerStratagem2(lv_event_t *e)
@@ -209,6 +211,8 @@ void triggerStratagem2(lv_event_t *e)
 						   0};
 
 	setStratagemCode(sequence);
+
+	playbackSound("S:assets/Sup.wav");
 }
 
 void triggerStratagem3(lv_event_t *e)
@@ -247,7 +251,7 @@ void triggerStratagem5(lv_event_t *e)
 
 	setStratagemCode(sequences[index]);
 
-	playbackSound("S:assets/Reinf.wav");
+  	playbackSound("S:assets/Eqp.wav");
 }
 
 void triggerStratagem6(lv_event_t *e)
@@ -256,7 +260,7 @@ void triggerStratagem6(lv_event_t *e)
 
 	setStratagemCode(sequences[index]);
 
-	playbackSound("S:assets/Sup.wav");
+	playbackSound("S:assets/Eqp.wav");
 }
 
 void triggerStratagem7(lv_event_t *e)
@@ -264,6 +268,8 @@ void triggerStratagem7(lv_event_t *e)
 	uint8_t index = indices[2];
 
 	setStratagemCode(sequences[index]);
+
+	playbackSound("S:assets/Eqp.wav");
 }
 
 void triggerStratagem8(lv_event_t *e)
@@ -271,4 +277,6 @@ void triggerStratagem8(lv_event_t *e)
 	uint8_t index = indices[3];
 
 	setStratagemCode(sequences[index]);
+
+	playbackSound("S:assets/Eqp.wav");
 }

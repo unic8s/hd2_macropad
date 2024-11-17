@@ -7,6 +7,7 @@
 static const char *TAG = "I2S Audio Player";
 
 i2s_chan_handle_t tx_handle;
+i2s_std_slot_config_t slotConfig = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_MONO);
 
 esp_err_t i2s_setup(void)
 {
@@ -16,8 +17,8 @@ esp_err_t i2s_setup(void)
 
     // setup the i2s config
     i2s_std_config_t std_cfg = {
-        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(48000),                                                    // the wav file sample rate
-        .slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_MONO), // the wav faile bit and channel config
+        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(44100),                                                    // the wav file sample rate
+        .slot_cfg = slotConfig, // the wav faile bit and channel config
         .gpio_cfg = {
             // refer to configuration.h for pin setup
             .mclk = AUDIO_I2S_MCK_IO,
@@ -60,14 +61,15 @@ esp_err_t play_wav(char *fp)
     ESP_LOGI(TAG, "(%s) FS seeked.", fp);
 
     // create a writer buffer
-    size_t chunkSize = sizeof(int16_t);
-    int16_t *buf = calloc(AUDIO_BUFFER, chunkSize);
+    size_t chunkSize = sizeof(int8_t);
+    uint16_t *buf = calloc(AUDIO_BUFFER, chunkSize);
     uint32_t bytes_read = 0;
     size_t bytes_written = 0;
 
     lv_fs_read(&f, buf, AUDIO_BUFFER, &bytes_read);
     //ESP_LOGI(TAG, "Bytes read: %lx", bytes_read);
 
+    i2s_setup();
     i2s_channel_enable(tx_handle);
 
     while (bytes_read > 0)
@@ -79,6 +81,7 @@ esp_err_t play_wav(char *fp)
     }
 
     i2s_channel_disable(tx_handle);
+    i2s_del_channel(tx_handle);
     free(buf);
 
     lv_fs_close(&f);

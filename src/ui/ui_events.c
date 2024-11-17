@@ -26,6 +26,8 @@ void deselectStratagem(lv_event_t *e)
 	}
 
 	updateStratagemSelection();
+
+	playbackSound("S:assets/StStop.wav");
 }
 
 void selectStratagem(lv_event_t *e)

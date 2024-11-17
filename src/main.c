@@ -345,4 +345,6 @@ void app_main()
   vTaskDelay(200 / portTICK_PERIOD_MS);
 
   bsp_display_backlight_on();
+
+  playbackSound("S:assets/ToPods.wav");
 }

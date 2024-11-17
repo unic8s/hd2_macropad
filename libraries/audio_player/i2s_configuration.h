@@ -45,3 +45,5 @@
 #define AUDIO_I2S_BCK_IO 42 // BCK
 #define AUDIO_I2S_LRCK_IO 2   // LCK
 #define AUDIO_I2S_DO_IO 41  // DIN
+
+#define MOUNT_POINT "/sdcard"

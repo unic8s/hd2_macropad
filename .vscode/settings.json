@@ -51,6 +51,8 @@
         "unordered_map": "cpp",
         "vector": "cpp",
         "string_view": "cpp",
-        "initializer_list": "cpp"
+        "initializer_list": "cpp",
+        "i2s_player.h": "c",
+        "sdmmc_cmd.h": "c"
     }
 }

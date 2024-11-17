@@ -20,6 +20,7 @@
 #include "esp_bt_device.h"
 #include "driver/gpio.h"
 #include "hid_dev.h"
+#include "i2s_sdcard.h"
 #include "i2s_player.h"
 
 
@@ -235,6 +236,8 @@ void app_main()
 {
   esp_err_t ret;
 
+  ESP_ERROR_CHECK(init_sdcard());
+
   // Initialize NVS.
   ret = nvs_flash_init();
   if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
@@ -297,6 +300,9 @@ void app_main()
   esp_ble_gap_set_security_param(ESP_BLE_SM_SET_RSP_KEY, &rsp_key, sizeof(uint8_t));
 
 
+  ESP_ERROR_CHECK(i2s_setup());
+
+
   xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);
 
 
@@ -331,6 +337,5 @@ void app_main()
 
   bsp_display_backlight_on();
 
-  ESP_ERROR_CHECK(i2s_setup());
-  play_wav("/sdcard/assets/test.wav");
+  play_wav("/sdcard/test.wav");
 }

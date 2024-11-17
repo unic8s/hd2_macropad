@@ -1,16 +1,11 @@
-
-
-#include <esp_system.h>
-#include <esp_log.h>
 #include "i2s_configuration.h" // basic sysetm includes and pin setup
-#include "i2s_sdcard.h"        // sdcard intialization
 #include "driver/i2s_std.h"    // i2s setup
 
 
 #define AUDIO_BUFFER 2048 
 
 
-static const char *TAG = "DEMO_LVGL";
+static const char *TAG = "I2S Audio Player";
 
 i2s_chan_handle_t tx_handle;
 

@@ -32,7 +32,7 @@ sdmmc_card_t *card;
 
 esp_err_t init_sdcard(void)
 {
-  char TAG[] = "sdcard";
+  char TAG[] = "SDCARD";
 
   ESP_LOGI(TAG, "Initializing SD card");
 
@@ -49,7 +49,7 @@ esp_err_t init_sdcard(void)
       .max_files = 5,
       .allocation_unit_size = 16 * 1024};
 
-  esp_err_t ret = esp_vfs_fat_sdmmc_mount("/sdcard", &host, &slot_config, &mount_config, &card);
+  esp_err_t ret = esp_vfs_fat_sdmmc_mount(MOUNT_POINT, &host, &slot_config, &mount_config, &card);
 
   if (ret != ESP_OK)
   {

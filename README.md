@@ -1,6 +1,6 @@
 # HD2 Macropad
 
-The most comfortable and easy-to-use Macropad for Helldivers 2&trade; for with live configuration for each drop into combat.
+The most comfortable and easy-to-use Macropad for Helldivers&trade; 2 for with live configuration for each drop into combat.
 
 Based on a affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth.
 
@@ -31,3 +31,5 @@ The device features a fully-fledged ESP32 called JC3248W535 from the manufacture
 
 - [Icon Set](https://github.com/nvigneux/Helldivers-2-Stratagems-icons-svg) from [@nvigneux](https://github.com/nvigneux)
 - [Demo project](https://github.com/NorthernMan54/JC3248W535EN) from [@NorthernMan54](https://github.com/NorthernMan54)
+
+HELLDIVERS is a trademark of SONY INTERACTIVE ENTERTAINMENT LLC

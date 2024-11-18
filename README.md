@@ -21,8 +21,9 @@ The device features a fully-fledged ESP32 called JC3248W535 from the manufacture
 - IDE: [PlatformIO](https://platformio.org/)
 - Board: [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
 - Framework: [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
+- UI Editor: [Squareline Studio](https://squareline.io/)
 - Libraries & functions
-  -  [LVGL UI](https://lvgl.io/)
+  -  [LVGL](https://lvgl.io/)
   - [BLE HID](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidd.html)
   - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)
 

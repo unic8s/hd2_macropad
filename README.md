@@ -1,11 +1,27 @@
-# This is a platformio based build of the JC3248W535EN DEMO_LVGL Package
+# HD2 Macropad
 
-![alt text](docs/IMG_6782.jpg)
+The most comfortable and easy-to-use Macropad for Helldivers 2&trade; for with live configuration for each drop into combat.
 
-I had downloaded the zip file from the manufacturer, but had a really hard time getting it to build in VSCode/PlatformIO so I thought I would share my build to help others get started with the board.
+Based on a affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth.
 
-Under the covers, this build leverages ESP-IDF 5.3 and LVGL 8.3.  I found that it would not build on Arduino ESP32, as the display code required ESP-IDF (5.3.0) in order to complile.  And Arduino ESP32 is currently ESP-IDF 4.x
+## Hardware
 
-![alt text](docs/IMG_6781.jpg)
+The device features a fully-fledged ESP32 called JC3248W535 from the manufacturer Shenzhen Jingcai Inteligent Co., Ltd
 
-For this board from https://s.click.aliexpress.com/e/_DFO5uIV
+- CPU: ESP32-S3
+- ROM: 16MB
+- Display: 3.5" 480 x 320 IPS LCD with 65K Colors
+- Audio: Preamplified speaker output
+- TF Card slot
+- Battery connector
+- USB-C power supply
+
+## Software
+
+- IDE: [PlatformIO](https://platformio.org/)
+- Board: [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
+- Framework: [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
+- Libraries & functions
+  -  [LVGL UI](https://lvgl.io/)
+  - [BLE HID](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidd.html)
+  - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)

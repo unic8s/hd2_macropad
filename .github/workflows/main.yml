@@ -29,9 +29,11 @@ jobs:
         env:  
           MERGED_BIN_PATH: hd2_macropad.bin
 
-      - uses: christophebedard/tag-version-commit@v1
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Upload archive to release
         uses: svenstaro/upload-release-action@v2
@@ -39,6 +41,6 @@ jobs:
           repo_token: ${{ secrets.github_token }}
           file: .pio/build/LVGL-320-480/hd2_macropad.bin
           asset_name: hd2_macropad.bin
-          tag: ${{ github.ref }}
+          tag: ${{ steps.tag_version.outputs.new_tag }}
           overwrite: true
-          body: "This is my release text"
+          body: ${{ steps.tag_version.outputs.changelog }}

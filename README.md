@@ -28,6 +28,10 @@ The device features a fully-fledged ESP32 called JC3248W535 from the manufacture
   -  [LVGL](https://lvgl.io/)
   - [BLE HID](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidd.html)
   - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)
+ 
+## Screenshots
+
+![Game](screens/game.png)
 
 ## Special thanks to
 

@@ -4,7 +4,7 @@ The most comfortable and easy-to-use Macropad for HELLDIVERS&trade; 2 for with l
 
 Get the game on [PS5](https://www.playstation.com/games/helldivers-2/) or [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/)
 
-Based on a affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth.
+Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth.
 
 ## Hardware
 
@@ -13,7 +13,7 @@ The device features a fully-fledged ESP32 called JC3248W535 from the manufacture
 - CPU: ESP32-S3
 - ROM: 16MB
 - Display: 3.5" 480 x 320 IPS LCD with 65K Colors
-- Audio: Preamplified speaker output
+- Audio: Pre-amplified speaker output
 - TF Card slot
 - Battery connector
 - USB-C power supply

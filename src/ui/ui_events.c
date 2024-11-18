@@ -270,27 +270,36 @@ void triggerStratagem5(lv_event_t *e)
 
 void triggerStratagem6(lv_event_t *e)
 {
-	uint8_t index = indices[1];
+	uint8_t itemIndex = indices[1];
 
-	setStratagemCode(sequences[index]);
+	setStratagemCode(sequences[itemIndex]);
 
-	playbackSound("S:assets/Eqp.wav");
+	uint8_t soundIndex = soundMap[itemIndex];
+	char *path = soundFiles[soundIndex];
+
+	playbackSound(path);
 }
 
 void triggerStratagem7(lv_event_t *e)
 {
-	uint8_t index = indices[2];
+	uint8_t itemIndex = indices[2];
 
-	setStratagemCode(sequences[index]);
+	setStratagemCode(sequences[itemIndex]);
 
-	playbackSound("S:assets/Eqp.wav");
+	uint8_t soundIndex = soundMap[itemIndex];
+	char *path = soundFiles[soundIndex];
+
+	playbackSound(path);
 }
 
 void triggerStratagem8(lv_event_t *e)
 {
-	uint8_t index = indices[3];
+	uint8_t itemIndex = indices[3];
 
-	setStratagemCode(sequences[index]);
+	setStratagemCode(sequences[itemIndex]);
 
-	playbackSound("S:assets/Eqp.wav");
+	uint8_t soundIndex = soundMap[itemIndex];
+	char *path = soundFiles[soundIndex];
+
+	playbackSound(path);
 }

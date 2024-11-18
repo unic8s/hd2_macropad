@@ -1,6 +1,10 @@
 name: PlatformIO CI
 
-on: [push]
+on:
+  workflow_dispatch:
+  
+  #push:
+  #  branches: [ "main" ]
 
 jobs:
   build:
@@ -22,3 +26,17 @@ jobs:
 
       - name: Build PlatformIO Project
         run: pio run
+
+      - name: Merge BINs
+        working-directory: .pio/build/LVGL-320-480
+        run: esptool.py --chip ESP32 merge_bin -o flash.bin --flash_mode dio --flash_size 16MB 0x0 bootloader.bin 0x8000 partitions.bin 0xe000 ota_data_intial.bin 0x10000 firmware.bin
+        
+      - name: Upload archive to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.github_token }}
+          file: .pio/build/LVGL-320-480/flash.bin
+          asset_name: flash.bin
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "This is my release text"

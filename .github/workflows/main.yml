@@ -28,6 +28,10 @@ jobs:
         run:  pio run -t mergebin
         env:  
           MERGED_BIN_PATH: hd2_macropad.bin
+
+      - uses: christophebedard/tag-version-commit@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Upload archive to release
         uses: svenstaro/upload-release-action@v2

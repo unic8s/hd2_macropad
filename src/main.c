@@ -28,17 +28,6 @@ static const char *TAG = "HD2 Macropad";
 #define logSection(section) \
   ESP_LOGI(TAG, "\n\n************* %s **************\n", section);
 
-/**
- * @brief LVGL porting example
- * Set the rotation degree:
- *      - 0: 0 degree
- *      - 90: 90 degree
- *      - 180: 180 degree
- *      - 270: 270 degree
- *
- */
-#define LVGL_PORT_ROTATION_DEGREE (90)
-
 uint8_t stratagemCode[8];
 bool soundPlayback = false;
 char *soundFile;
@@ -320,15 +309,7 @@ void app_main()
   bsp_display_cfg_t cfg = {
       .lvgl_port_cfg = ESP_LVGL_PORT_INIT_CONFIG(),
       .buffer_size = EXAMPLE_LCD_QSPI_H_RES * EXAMPLE_LCD_QSPI_V_RES,
-#if LVGL_PORT_ROTATION_DEGREE == 90
       .rotate = LV_DISP_ROT_90,
-#elif LVGL_PORT_ROTATION_DEGREE == 270
-      .rotate = LV_DISP_ROT_270,
-#elif LVGL_PORT_ROTATION_DEGREE == 180
-      .rotate = LV_DISP_ROT_180,
-#elif LVGL_PORT_ROTATION_DEGREE == 0
-      .rotate = LV_DISP_ROT_NONE,
-#endif
   };
 
   bsp_display_start_with_config(&cfg);

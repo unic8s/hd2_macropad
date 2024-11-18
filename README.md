@@ -1,7 +1,8 @@
 # HD2 Macropad
 
 The most comfortable and easy-to-use Macropad for HELLDIVERS&trade; 2 for with live configuration for each drop into combat.
-Get it on [PS5](https://www.playstation.com/de-de/games/helldivers-2/) or [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/)
+
+Get the game on [PS5](https://www.playstation.com/de-de/games/helldivers-2/) or [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/)
 
 Based on a affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth.
 

@@ -7,6 +7,7 @@
 #include "hid_dev.h"
 #include "esp_log.h"
 #include "sequences.h"
+#include "sounds.h"
 #include "i2s_player.h"
 
 lv_obj_t *buttons[4];
@@ -257,11 +258,14 @@ void triggerStratagem4(lv_event_t *e)
 
 void triggerStratagem5(lv_event_t *e)
 {
-	uint8_t index = indices[0];
+	uint8_t itemIndex = indices[0];
 
-	setStratagemCode(sequences[index]);
+	setStratagemCode(sequences[itemIndex]);
 
-	playbackSound("S:assets/Eqp.wav");
+	uint8_t soundIndex = soundMap[itemIndex];
+	char *path = soundFiles[soundIndex];
+
+	playbackSound(path);
 }
 
 void triggerStratagem6(lv_event_t *e)

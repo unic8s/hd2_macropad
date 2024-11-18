@@ -9641,8 +9641,7 @@
                     "InheritedType": 11
                   }
                 ],
-                "saved_objtypeKey": "TABPAGE",
-                "tree_closed": true
+                "saved_objtypeKey": "TABPAGE"
               },
               {
                 "guid": "GUID40109768-171702S249023306",
@@ -23418,6 +23417,12 @@
                             "InheritedType": 7
                           },
                           {
+                            "nid": 10610,
+                            "strtype": "_style/Bg_Image",
+                            "strval": "assets/sg/E5001.png",
+                            "InheritedType": 5
+                          },
+                          {
                             "nid": 10710,
                             "strtype": "_style/Border_Color",
                             "strval": "colorTheme",
@@ -23650,6 +23655,12 @@
                               0
                             ],
                             "InheritedType": 7
+                          },
+                          {
+                            "nid": 10610,
+                            "strtype": "_style/Bg_Image",
+                            "strval": "assets/sg/GS1.png",
+                            "InheritedType": 5
                           },
                           {
                             "nid": 10710,
@@ -23886,6 +23897,12 @@
                             "InheritedType": 7
                           },
                           {
+                            "nid": 10610,
+                            "strtype": "_style/Bg_Image",
+                            "strval": "assets/sg/SW1.png",
+                            "InheritedType": 5
+                          },
+                          {
                             "nid": 10710,
                             "strtype": "_style/Border_Color",
                             "strval": "colorTheme",
@@ -24118,6 +24135,12 @@
                               127
                             ],
                             "InheritedType": 7
+                          },
+                          {
+                            "nid": 10610,
+                            "strtype": "_style/Bg_Image",
+                            "strval": "assets/sg/GDR1.png",
+                            "InheritedType": 5
                           },
                           {
                             "nid": 10710,
@@ -25228,7 +25251,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 1151,
+    "backup_cnt": 1155,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

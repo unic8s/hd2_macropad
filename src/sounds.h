@@ -1,4 +1,4 @@
-char *soundFiles[2] = {
+char *soundFiles[] = {
     "S:assets/StError.wav",
     "S:assets/StError.wav",
 };

@@ -31,6 +31,8 @@ The device features a fully-fledged ESP32 called JC3248W535 from the manufacture
  
 ## Screenshots
 
+### Setup
+
 ![setup_weapons](screens/setup_weapons.png)
 
 ![setup_backpacks](screens/setup_backpacks.png)
@@ -40,6 +42,8 @@ The device features a fully-fledged ESP32 called JC3248W535 from the manufacture
 ![setup_strike](screens/setup_strike.png)
 
 ![setup_eagle](screens/setup_eagle.png)
+
+### Game
 
 ![Game](screens/game.png)
 

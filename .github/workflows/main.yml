@@ -46,4 +46,5 @@ jobs:
           asset_name: hd2_macropad.bin
           tag: ${{ steps.tag_version.outputs.new_tag }}
           overwrite: true
+          draft: true
           body: ${{ steps.tag_version.outputs.changelog }}

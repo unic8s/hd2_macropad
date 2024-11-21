@@ -57,6 +57,7 @@
         "lv_fsdrv.h": "c",
         "esp_gatts_api.h": "c",
         "esp_gatt_defs.h": "c",
-        "cstdint": "c"
+        "cstdint": "c",
+        "esp_bt_main.h": "c"
     }
 }

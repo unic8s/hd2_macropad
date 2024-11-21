@@ -95,8 +95,6 @@ static esp_ble_adv_params_t hidd_adv_params = {
     .adv_int_max = 0x30,
     .adv_type = ADV_TYPE_IND,
     .own_addr_type = BLE_ADDR_TYPE_PUBLIC,
-    //.peer_addr            =
-    //.peer_addr_type       =
     .channel_map = ADV_CHNL_ALL,
     .adv_filter_policy = ADV_FILTER_ALLOW_SCAN_ANY_CON_ANY,
 };
@@ -109,7 +107,6 @@ static void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *
   {
     if (param->init_finish.state == ESP_HIDD_INIT_OK)
     {
-      // esp_bd_addr_t rand_addr = {0x04,0x11,0x11,0x11,0x11,0x05};
       esp_ble_gap_set_device_name(HIDD_DEVICE_NAME);
       esp_ble_gap_config_adv_data(&hidd_adv_data);
     }

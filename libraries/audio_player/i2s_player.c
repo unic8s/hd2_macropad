@@ -66,8 +66,14 @@ esp_err_t play_wav(char *fp)
     uint32_t bytes_read = 0;
     size_t bytes_written = 0;
 
-    lv_fs_read(&f, buf, AUDIO_BUFFER, &bytes_read);
-    //ESP_LOGI(TAG, "Bytes read: %lx", bytes_read);
+    res = lv_fs_read(&f, buf, AUDIO_BUFFER, &bytes_read);
+    if (res != LV_FS_RES_OK)
+    {
+        ESP_LOGE(TAG, "(%s) FS read failed.", fp);
+        lv_fs_close(&f);
+        return ESP_FAIL;
+    }
+    ESP_LOGI(TAG, "FS read bytes: %lx", bytes_read);
 
     i2s_setup();
     i2s_channel_enable(tx_handle);
@@ -77,7 +83,6 @@ esp_err_t play_wav(char *fp)
         // write the buffer to the i2s
         i2s_channel_write(tx_handle, buf, bytes_read * (uint32_t)chunkSize, &bytes_written, portMAX_DELAY);
         lv_fs_read(&f, buf, AUDIO_BUFFER, &bytes_read);
-        //ESP_LOGI(TAG, "Bytes read: %lx", bytes_read);
     }
 
     i2s_channel_disable(tx_handle);

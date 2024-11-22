@@ -147,6 +147,7 @@ void ui_event_EagleNA(lv_event_t * e);
 lv_obj_t * ui_EagleNA;
 void ui_event_EagleSS(lv_event_t * e);
 lv_obj_t * ui_EagleSS;
+lv_obj_t * ui_Container8;
 lv_obj_t * ui_BarAmount;
 lv_obj_t * ui_LabelAmount;
 lv_obj_t * ui_Label2;
@@ -178,6 +179,7 @@ void ui_event_CustomStratagem3(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem3;
 void ui_event_CustomStratagem4(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem4;
+lv_obj_t * ui_Container5;
 void ui_event_Button39(lv_event_t * e);
 lv_obj_t * ui_Button39;
 lv_obj_t * ui_Label3;
@@ -287,7 +289,6 @@ void SplashFade_Animation(lv_obj_t * TargetObject, int delay)
     lv_anim_set_repeat_count(&PropertyAnimation_0, 0);
     lv_anim_set_repeat_delay(&PropertyAnimation_0, 0);
     lv_anim_set_early_apply(&PropertyAnimation_0, false);
-    lv_anim_set_get_value_cb(&PropertyAnimation_0, &_ui_anim_callback_get_opacity);
     lv_anim_start(&PropertyAnimation_0);
 
 }
@@ -299,8 +300,6 @@ void ui_event_Intro(lv_event_t * e)
 
     if(event_code == LV_EVENT_SCREEN_LOADED) {
         _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_OVER_BOTTOM, 1000, 2000, &ui_Setup_screen_init);
-    }
-    if(event_code == LV_EVENT_SCREEN_LOADED) {
         SplashFade_Animation(ui_Splash, 0);
     }
 }

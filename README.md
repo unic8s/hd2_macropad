@@ -47,7 +47,7 @@ The device features a fully-fledged ESP32 called JC3248W535 from the manufacture
 
 ![setup_eagle](screens/setup_eagle.png)
 
-### Game
+### Game (example configuration)
 
 ![Game](screens/game.png)
 

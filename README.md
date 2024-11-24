@@ -33,7 +33,7 @@ The device features a fully-fledged ESP32 called JC3248W535 from the manufacture
 
 ### Intro
 
-![intro](screens/intro.png)
+![intro](squareline/assets/intro.png)
 
 ### Setup
 

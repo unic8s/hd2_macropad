@@ -42,7 +42,7 @@ jobs:
         run: python utils/pack-assets.py
         
       - name: Upload binary to release
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@2.2.1
         with:
           repo_token: ${{ secrets.github_token }}
           file: ./hd2_macropad.bin
@@ -53,7 +53,7 @@ jobs:
           body: ${{ steps.tag_version.outputs.changelog }}
 
       - name: Upload assets to release
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@2.2.1
         with:
           repo_token: ${{ secrets.github_token }}
           file: ./assets.zip

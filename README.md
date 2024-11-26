@@ -42,23 +42,23 @@ The device features a fully-fledged ESP32 called JC3248W535 from the manufacture
 
 ### Intro
 
-![intro|240](squareline/assets/intro.png)
+![](squareline/assets/intro.png)
 
 ### Setup
 
-![setup_weapons|240](screens/setup_weapons.png)
+![](screens/setup_weapons.png)
 
-![setup_backpacks|240](screens/setup_backpacks.png)
+![](screens/setup_backpacks.png)
 
-![setup_stationary|240](screens/setup_stationary.png)
+![](screens/setup_stationary.png)
 
-![setup_strike|240](screens/setup_strike.png)
+![](screens/setup_strike.png)
 
-![setup_eagle|240](screens/setup_eagle.png)
+![](screens/setup_eagle.png)
 
 ### Game (example configuration)
 
-![Game|240](screens/game.png)
+![](screens/game.png)
 
 ## Special thanks to
 

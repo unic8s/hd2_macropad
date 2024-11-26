@@ -6,6 +6,11 @@ Get the game on [PS5](https://www.playstation.com/games/helldivers-2/) or [PC](h
 
 Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth.
 
+## Installation
+
+1. Download you prefered [Release](/releases)
+2. Visit the [ESP Web Flasher](https://esp.huhn.me/) and upload the BIN file to your device
+
 ## Hardware
 
 The device features a fully-fledged ESP32 called JC3248W535 from the manufacturer Shenzhen Jingcai Inteligent Co., Ltd

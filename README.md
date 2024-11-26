@@ -19,13 +19,15 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 
 The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR) from the manufacturer [Shenzhen Jingcai Inteligent Co., Ltd](https://www.displaysmodule.com/)
 
-- CPU: ESP32-S3
+- CPU: Espressif ESP32-S3
 - ROM: 16MB
 - Display: 3.5" 480 x 320 IPS LCD with 65K Colors
-- Audio: Pre-amplified speaker output
-- TF Card slot
-- Battery connector
-- USB-C power supply
+- Touch: Capacitive multitouch
+- Connectivity: WiFi + Bluetooth
+- Audio: Pre-amplified speaker output (mono)
+- Memory: TF Card slot
+- Power supply: USB-C (also data transfer)
+- Battery: 2-pin connector
 
 ## Software setup - for developers
 

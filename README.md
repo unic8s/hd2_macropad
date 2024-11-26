@@ -15,9 +15,9 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 3. Unpack and copy all [assets](https://github.com/unic8s/hd2_macropad/releases/latest/download/assets.zip) to a SD card into the root directory
 4. Connect a speaker to the rear port of the device
 
-## Hardware
+## Hardware specs - for enthusiasts
 
-The device features a fully-fledged ESP32 called [JC3248W535](https://aliexpress.com/item/1005007566332450.html) from the manufacturer Shenzhen Jingcai Inteligent Co., Ltd
+The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR) from the manufacturer [Shenzhen Jingcai Inteligent Co., Ltd](https://www.displaysmodule.com/)
 
 - CPU: ESP32-S3
 - ROM: 16MB
@@ -27,7 +27,7 @@ The device features a fully-fledged ESP32 called [JC3248W535](https://aliexpress
 - Battery connector
 - USB-C power supply
 
-## Software
+## Software setup - for developers
 
 - IDE: [VSCode](https://code.visualstudio.com/) + [PlatformIO](https://platformio.org/)
 - Board: [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)

@@ -8,8 +8,12 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 
 ## Installation
 
+### Firmware
 1. Download you prefered [release BIN file](https://github.com/unic8s/hd2_macropad/releases)
 2. Visit the [ESP Web Flasher](https://esp.huhn.me/) and upload the BIN file to your device
+### Sounds (optional)
+3. Copy all assets from [sounds](https://github.com/unic8s/hd2_macropad/tree/main/src) directory to a SD card into the target directory "/assets"
+4. Connect a speaker to the rear port of the device
 
 ## Hardware
 

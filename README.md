@@ -17,7 +17,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 
 ## Hardware
 
-The device features a fully-fledged ESP32 called JC3248W535 from the manufacturer Shenzhen Jingcai Inteligent Co., Ltd
+The device features a fully-fledged ESP32 called [JC3248W535](https://aliexpress.com/item/1005007566332450.html) from the manufacturer Shenzhen Jingcai Inteligent Co., Ltd
 
 - CPU: ESP32-S3
 - ROM: 16MB

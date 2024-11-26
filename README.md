@@ -12,7 +12,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 1. Download the [lastest BIN file](https://github.com/unic8s/hd2_macropad/releases/latest/download/hd2_macropad.bin) or your prefered [release](https://github.com/unic8s/hd2_macropad/releases)
 2. Visit the [ESP Tool](https://espressif.github.io/esptool-js/) and upload the BIN file to your device
 ### Sounds (optional)
-3. Unpack and copy all assets from [SOUNDS.ZIP](https://github.com/unic8s/hd2_macropad/releases) directory to a SD card into the target directory "/assets"
+3. Unpack and copy all assets from [sounds](https://github.com/unic8s/hd2_macropad/releases/latest/download/sounds.zip) directory to a SD card into the target directory "/assets"
 4. Connect a speaker to the rear port of the device
 
 ## Hardware

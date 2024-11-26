@@ -1,6 +1,6 @@
 # HD2 Macropad
 
-The most comfortable and easy-to-use Macropad for HELLDIVERS&trade; 2 for with live configuration for each drop into combat.
+A very comfortable and easy-to-use macropad for HELLDIVERS&trade; 2 for live configuration on each drop into combat with individual loadouts.
 
 Get the game on [PS5](https://www.playstation.com/games/helldivers-2/) or [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/)
 

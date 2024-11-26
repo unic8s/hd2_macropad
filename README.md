@@ -29,7 +29,7 @@ The device features a fully-fledged ESP32 called JC3248W535 from the manufacture
 
 ## Software
 
-- IDE: [PlatformIO](https://platformio.org/)
+- IDE: [VSCode](https://code.visualstudio.com/) + [PlatformIO](https://platformio.org/)
 - Board: [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
 - Framework: [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
 - UI Editor: [Squareline Studio](https://squareline.io/)

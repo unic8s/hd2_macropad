@@ -9641,7 +9641,8 @@
                     "InheritedType": 11
                   }
                 ],
-                "saved_objtypeKey": "TABPAGE"
+                "saved_objtypeKey": "TABPAGE",
+                "tree_closed": true
               },
               {
                 "guid": "GUID40109768-171702S249023306",
@@ -13949,7 +13950,8 @@
                     "InheritedType": 11
                   }
                 ],
-                "saved_objtypeKey": "TABPAGE"
+                "saved_objtypeKey": "TABPAGE",
+                "tree_closed": true
               },
               {
                 "guid": "GUID849156-171749S7253306",
@@ -18257,7 +18259,8 @@
                     "InheritedType": 11
                   }
                 ],
-                "saved_objtypeKey": "TABPAGE"
+                "saved_objtypeKey": "TABPAGE",
+                "tree_closed": true
               },
               {
                 "guid": "GUID36846584-171765S4643306",
@@ -20945,7 +20948,8 @@
                     "InheritedType": 11
                   }
                 ],
-                "saved_objtypeKey": "TABPAGE"
+                "saved_objtypeKey": "TABPAGE",
+                "tree_closed": true
               }
             ],
             "dont_export": false,
@@ -20954,7 +20958,7 @@
               {
                 "nid": 10,
                 "strtype": "OBJECT/Name",
-                "strval": "TabView1",
+                "strval": "TabStratagems",
                 "InheritedType": 10
               },
               {
@@ -21079,7 +21083,7 @@
                           0,
                           0,
                           0,
-                          255
+                          0
                         ],
                         "InheritedType": 7
                       }
@@ -21381,7 +21385,7 @@
                   {
                     "nid": 10,
                     "strtype": "OBJECT/Name",
-                    "strval": "LabelAmount",
+                    "strval": "LblCurAmount",
                     "childs": [
                       {
                         "nid": 15,
@@ -21537,7 +21541,7 @@
                   {
                     "nid": 10,
                     "strtype": "OBJECT/Name",
-                    "strval": "Label2",
+                    "strval": "LblMaxAmount",
                     "InheritedType": 10
                   },
                   {
@@ -21689,7 +21693,7 @@
                       {
                         "nid": 10,
                         "strtype": "OBJECT/Name",
-                        "strval": "Label6",
+                        "strval": "LblReset",
                         "InheritedType": 10
                       },
                       {
@@ -21834,7 +21838,7 @@
                   {
                     "nid": 10,
                     "strtype": "OBJECT/Name",
-                    "strval": "Button69",
+                    "strval": "BtnReset",
                     "InheritedType": 10
                   },
                   {
@@ -22044,7 +22048,7 @@
               {
                 "nid": 10,
                 "strtype": "OBJECT/Name",
-                "strval": "Container8",
+                "strval": "SetupFooter",
                 "InheritedType": 10
               },
               {
@@ -22349,7 +22353,7 @@
                   {
                     "nid": 10,
                     "strtype": "OBJECT/Name",
-                    "strval": "Button68",
+                    "strval": "BtnReinforce",
                     "InheritedType": 10
                   },
                   {
@@ -22589,7 +22593,7 @@
                   {
                     "nid": 10,
                     "strtype": "OBJECT/Name",
-                    "strval": "Button59",
+                    "strval": "BtnResupply",
                     "InheritedType": 10
                   },
                   {
@@ -22829,7 +22833,7 @@
                   {
                     "nid": 10,
                     "strtype": "OBJECT/Name",
-                    "strval": "Button60",
+                    "strval": "BtnSOS",
                     "InheritedType": 10
                   },
                   {
@@ -23069,7 +23073,7 @@
                   {
                     "nid": 10,
                     "strtype": "OBJECT/Name",
-                    "strval": "Button61",
+                    "strval": "BtnRearm",
                     "InheritedType": 10
                   },
                   {
@@ -24243,7 +24247,7 @@
               {
                 "nid": 10,
                 "strtype": "OBJECT/Name",
-                "strval": "Container6",
+                "strval": "BoxStratagems",
                 "InheritedType": 10
               },
               {
@@ -24396,7 +24400,7 @@
                       {
                         "nid": 10,
                         "strtype": "OBJECT/Name",
-                        "strval": "Label3",
+                        "strval": "LblBack",
                         "InheritedType": 10
                       },
                       {
@@ -24541,7 +24545,7 @@
                   {
                     "nid": 10,
                     "strtype": "OBJECT/Name",
-                    "strval": "Button39",
+                    "strval": "BtnBack",
                     "InheritedType": 10
                   },
                   {
@@ -24762,7 +24766,7 @@
               {
                 "nid": 10,
                 "strtype": "OBJECT/Name",
-                "strval": "Container5",
+                "strval": "GameFooter",
                 "InheritedType": 10
               },
               {
@@ -25227,7 +25231,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 1158,
+    "backup_cnt": 1174,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

@@ -113,77 +113,14 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_column(ui_Container8, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label1 = lv_label_create(ui_Container8);
-    lv_obj_set_width(ui_Label1, lv_pct(50));
+    lv_obj_set_width(ui_Label1, lv_pct(100));
     lv_obj_set_height(ui_Label1, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Label1, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label1, "Volume");
+    lv_label_set_text(ui_Label1, "Sound");
     ui_object_set_themeable_style_property(ui_Label1, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Label1, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
                                            _ui_theme_alpha_colorTheme);
-
-    ui_LblVolume = lv_label_create(ui_Container8);
-    lv_obj_set_width(ui_LblVolume, lv_pct(50));
-    lv_obj_set_height(ui_LblVolume, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_LblVolume, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_LblVolume, "0");
-    ui_object_set_themeable_style_property(ui_LblVolume, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_LblVolume, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
-                                           _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_text_align(ui_LblVolume, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_SldVolume = lv_slider_create(ui_Container8);
-    lv_slider_set_range(ui_SldVolume, -64, 63);
-    lv_slider_set_value(ui_SldVolume, 0, LV_ANIM_OFF);
-    if(lv_slider_get_mode(ui_SldVolume) == LV_SLIDER_MODE_RANGE) lv_slider_set_left_value(ui_SldVolume, 0, LV_ANIM_OFF);
-    lv_obj_set_height(ui_SldVolume, 16);
-    lv_obj_set_width(ui_SldVolume, lv_pct(100));
-    lv_obj_set_x(ui_SldVolume, -61);
-    lv_obj_set_y(ui_SldVolume, -24);
-    lv_obj_set_align(ui_SldVolume, LV_ALIGN_CENTER);
-    lv_obj_set_style_bg_color(ui_SldVolume, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_SldVolume, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_SldVolume, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_SldVolume, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_border_width(ui_SldVolume, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_SldVolume, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DISABLED);
-    lv_obj_set_style_bg_opa(ui_SldVolume, 255, LV_PART_MAIN | LV_STATE_DISABLED);
-    lv_obj_set_style_border_color(ui_SldVolume, lv_color_hex(0x222222), LV_PART_MAIN | LV_STATE_DISABLED);
-    lv_obj_set_style_border_opa(ui_SldVolume, 255, LV_PART_MAIN | LV_STATE_DISABLED);
-    lv_obj_set_style_border_width(ui_SldVolume, 4, LV_PART_MAIN | LV_STATE_DISABLED);
-
-    lv_obj_set_style_bg_color(ui_SldVolume, lv_color_hex(0x000000), LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_SldVolume, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_SldVolume, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorActive);
-    ui_object_set_themeable_style_property(ui_SldVolume, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorActive);
-    lv_obj_set_style_border_width(ui_SldVolume, 4, LV_PART_INDICATOR | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_SldVolume, lv_color_hex(0x000000), LV_PART_INDICATOR | LV_STATE_DISABLED);
-    lv_obj_set_style_bg_opa(ui_SldVolume, 255, LV_PART_INDICATOR | LV_STATE_DISABLED);
-    lv_obj_set_style_border_color(ui_SldVolume, lv_color_hex(0x222222), LV_PART_INDICATOR | LV_STATE_DISABLED);
-    lv_obj_set_style_border_opa(ui_SldVolume, 255, LV_PART_INDICATOR | LV_STATE_DISABLED);
-    lv_obj_set_style_border_width(ui_SldVolume, 4, LV_PART_INDICATOR | LV_STATE_DISABLED);
-
-    lv_obj_set_style_bg_color(ui_SldVolume, lv_color_hex(0x000000), LV_PART_KNOB | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_SldVolume, 255, LV_PART_KNOB | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_SldVolume, LV_PART_KNOB | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorActive);
-    ui_object_set_themeable_style_property(ui_SldVolume, LV_PART_KNOB | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorActive);
-    lv_obj_set_style_border_width(ui_SldVolume, 4, LV_PART_KNOB | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui_SldVolume, 8, LV_PART_KNOB | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_SldVolume, 8, LV_PART_KNOB | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_SldVolume, 8, LV_PART_KNOB | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_SldVolume, 8, LV_PART_KNOB | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_SldVolume, lv_color_hex(0x000000), LV_PART_KNOB | LV_STATE_DISABLED);
-    lv_obj_set_style_bg_opa(ui_SldVolume, 255, LV_PART_KNOB | LV_STATE_DISABLED);
-    lv_obj_set_style_border_color(ui_SldVolume, lv_color_hex(0x222222), LV_PART_KNOB | LV_STATE_DISABLED);
-    lv_obj_set_style_border_opa(ui_SldVolume, 255, LV_PART_KNOB | LV_STATE_DISABLED);
-    lv_obj_set_style_border_width(ui_SldVolume, 4, LV_PART_KNOB | LV_STATE_DISABLED);
 
     ui_Checkbox1 = lv_checkbox_create(ui_Container8);
     lv_checkbox_set_text(ui_Checkbox1, "Mute");
@@ -253,7 +190,6 @@ void ui_Config_screen_init(void)
                                            _ui_theme_alpha_colorTheme);
 
     lv_obj_add_event_cb(ui_SldBrightness, ui_event_SldBrightness, LV_EVENT_ALL, NULL);
-    lv_obj_add_event_cb(ui_SldVolume, ui_event_SldVolume, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Checkbox1, ui_event_Checkbox1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnSetup, ui_event_BtnSetup, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_SetupFooter2, ui_event_SetupFooter2, LV_EVENT_ALL, NULL);

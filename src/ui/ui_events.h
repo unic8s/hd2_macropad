@@ -25,7 +25,6 @@ void resetStratagems(lv_event_t * e);
 void updateStratagemSelection();
 extern void setStratagemCode(uint8_t[8]);
 extern void playbackSound(char *path);
-void ChangeVolume(lv_event_t * e);
 void ChangeBrightness(lv_event_t * e);
 void MuteSound(lv_event_t * e);
 

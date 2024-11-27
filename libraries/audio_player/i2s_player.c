@@ -36,7 +36,7 @@ esp_err_t i2s_setup(void)
     return i2s_channel_init_std_mode(tx_handle, &std_cfg);
 }
 
-esp_err_t play_wav(char *fp, int volume)
+esp_err_t play_wav(char *fp)
 {
     lv_fs_file_t f;
     lv_fs_res_t res;
@@ -77,7 +77,6 @@ esp_err_t play_wav(char *fp, int volume)
 
     i2s_setup();
     i2s_channel_enable(tx_handle);
-    //i2s_alc_volume_set(tx_handle, volume);
 
     while (bytes_read > 0)
     {

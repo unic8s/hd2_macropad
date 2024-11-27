@@ -201,9 +201,6 @@ void ui_event_SldBrightness(lv_event_t * e);
 lv_obj_t * ui_SldBrightness;
 lv_obj_t * ui_Container8;
 lv_obj_t * ui_Label1;
-lv_obj_t * ui_LblVolume;
-void ui_event_SldVolume(lv_event_t * e);
-lv_obj_t * ui_SldVolume;
 void ui_event_Checkbox1(lv_event_t * e);
 lv_obj_t * ui_Checkbox1;
 void ui_event_SetupFooter2(lv_event_t * e);
@@ -1187,15 +1184,6 @@ void ui_event_SldBrightness(lv_event_t * e)
 
     if(event_code == LV_EVENT_VALUE_CHANGED) {
         ChangeBrightness(e);
-    }
-}
-
-void ui_event_SldVolume(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED) {
-        ChangeVolume(e);
     }
 }
 

@@ -309,13 +309,6 @@ void triggerStratagem8(lv_event_t *e)
 	playbackSound(path);
 }
 
-void ChangeVolume(lv_event_t * e)
-{
-	int32_t volume = lv_slider_get_value(e->target);
-
-	setVolume(volume);
-}
-
 void ChangeBrightness(lv_event_t * e)
 {
 	int32_t brightness = lv_slider_get_value(e->target);
@@ -327,14 +320,5 @@ void MuteSound(lv_event_t *e)
 {
 	bool muted = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
 
-	if (muted)
-	{
-		lv_obj_add_state(ui_SldVolume, LV_STATE_DISABLED);
-	}
-	else
-	{
-		lv_obj_clear_state(ui_SldVolume, LV_STATE_DISABLED);
-	}
-
-	setVolume(0);
+	setMuted(muted);
 }

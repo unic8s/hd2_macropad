@@ -54,3 +54,15 @@ def triggerStratagem8(event_struct):
 def assignStratagems(event_struct):
     return
 
+
+def ChangeVolume(event_struct):
+    return
+
+
+def ChangeBrightness(event_struct):
+    return
+
+
+def MuteSound(event_struct):
+    return
+

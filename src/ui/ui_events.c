@@ -9,6 +9,7 @@
 #include "sequences.h"
 #include "sounds.h"
 #include "i2s_player.h"
+#include "main.h"
 
 lv_obj_t *buttons[4];
 int indices[4];
@@ -72,7 +73,7 @@ void updateStratagemSelection()
 	lv_bar_set_value(uic_BarAmount, strategemsAmount, LV_ANIM_OFF);
 
 	char textAmount = (char)(strategemsAmount + '0');
-	lv_label_set_text(ui_LabelAmount, &textAmount);
+	lv_label_set_text(uic_LabelAmount, &textAmount);
 
 	if (strategemsAmount == 4)
 	{
@@ -306,4 +307,34 @@ void triggerStratagem8(lv_event_t *e)
 	char *path = soundFiles[soundIndex];
 
 	playbackSound(path);
+}
+
+void ChangeVolume(lv_event_t * e)
+{
+	int32_t volume = lv_slider_get_value(e->target);
+
+	setVolume(volume);
+}
+
+void ChangeBrightness(lv_event_t * e)
+{
+	int32_t brightness = lv_slider_get_value(e->target);
+
+	setBrightness(brightness);
+}
+
+void MuteSound(lv_event_t *e)
+{
+	bool muted = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
+
+	if (muted)
+	{
+		lv_obj_add_state(ui_SldVolume, LV_STATE_DISABLED);
+	}
+	else
+	{
+		lv_obj_clear_state(ui_SldVolume, LV_STATE_DISABLED);
+	}
+
+	setVolume(0);
 }

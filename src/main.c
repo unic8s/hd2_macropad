@@ -31,6 +31,7 @@ static const char *TAG = "HD2 Macropad";
 uint8_t stratagemCode[8];
 bool soundPlayback = false;
 char *soundFile;
+int playerVolume;
 
 void setStratagemCode(uint8_t sequence[8])
 {
@@ -225,9 +226,29 @@ void hid_input_task(void *pvParameters)
     {
       soundPlayback = false;
 
-      play_wav(soundFile);
+      play_wav(soundFile, playerVolume);
     }
   }
+}
+
+void setBrightness(int brightness)
+{
+  bsp_display_brightness_set(brightness);
+
+  char *textBrightness[3];
+	itoa(brightness, textBrightness, 10);
+
+	lv_label_set_text(ui_LblBrightness, &textBrightness);
+}
+
+void setVolume(int volume)
+{
+  playerVolume = volume;
+
+  char *textVolume[3];
+	itoa(volume, textVolume, 10);
+
+	lv_label_set_text(ui_LblVolume, &textVolume);
 }
 
 void app_main()
@@ -320,6 +341,8 @@ void app_main()
   bsp_display_unlock();
 
   vTaskDelay(200 / portTICK_PERIOD_MS);
+
+  setBrightness(50);
 
   bsp_display_backlight_on();
 

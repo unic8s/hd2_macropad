@@ -40,7 +40,7 @@ extern lv_obj_t * ui_Splash;
 void ui_Setup_screen_init(void);
 void ui_event_Setup(lv_event_t * e);
 extern lv_obj_t * ui_Setup;
-extern lv_obj_t * ui_TabView1;
+extern lv_obj_t * ui_TabStratagems;
 extern lv_obj_t * ui_Weapon;
 extern lv_obj_t * ui_Container2;
 void ui_event_WeaponsMG(lv_event_t * e);
@@ -165,29 +165,33 @@ void ui_event_EagleNA(lv_event_t * e);
 extern lv_obj_t * ui_EagleNA;
 void ui_event_EagleSS(lv_event_t * e);
 extern lv_obj_t * ui_EagleSS;
-extern lv_obj_t * ui_Container8;
+extern lv_obj_t * ui_SetupFooter;
+void ui_event_BtnConfig(lv_event_t * e);
+extern lv_obj_t * ui_BtnConfig;
+extern lv_obj_t * ui_LblConfig;
+extern lv_obj_t * ui_Container5;
+extern lv_obj_t * ui_LblCurAmount;
+extern lv_obj_t * ui_LblMaxAmount;
 extern lv_obj_t * ui_BarAmount;
-extern lv_obj_t * ui_LabelAmount;
-extern lv_obj_t * ui_Label2;
-void ui_event_Button69(lv_event_t * e);
-extern lv_obj_t * ui_Button69;
-extern lv_obj_t * ui_Label6;
+void ui_event_BtnReset(lv_event_t * e);
+extern lv_obj_t * ui_BtnReset;
+extern lv_obj_t * ui_LblReset;
 // CUSTOM VARIABLES
-extern lv_obj_t * uic_BarAmount;
 extern lv_obj_t * uic_LabelAmount;
+extern lv_obj_t * uic_BarAmount;
 
 // SCREEN: ui_Game
 void ui_Game_screen_init(void);
 extern lv_obj_t * ui_Game;
-extern lv_obj_t * ui_Container6;
-void ui_event_Button68(lv_event_t * e);
-extern lv_obj_t * ui_Button68;
-void ui_event_Button59(lv_event_t * e);
-extern lv_obj_t * ui_Button59;
-void ui_event_Button60(lv_event_t * e);
-extern lv_obj_t * ui_Button60;
-void ui_event_Button61(lv_event_t * e);
-extern lv_obj_t * ui_Button61;
+extern lv_obj_t * ui_BoxStratagems;
+void ui_event_BtnReinforce(lv_event_t * e);
+extern lv_obj_t * ui_BtnReinforce;
+void ui_event_BtnResupply(lv_event_t * e);
+extern lv_obj_t * ui_BtnResupply;
+void ui_event_BtnSOS(lv_event_t * e);
+extern lv_obj_t * ui_BtnSOS;
+void ui_event_BtnRearm(lv_event_t * e);
+extern lv_obj_t * ui_BtnRearm;
 void ui_event_CustomStratagem1(lv_event_t * e);
 extern lv_obj_t * ui_CustomStratagem1;
 void ui_event_CustomStratagem2(lv_event_t * e);
@@ -196,10 +200,33 @@ void ui_event_CustomStratagem3(lv_event_t * e);
 extern lv_obj_t * ui_CustomStratagem3;
 void ui_event_CustomStratagem4(lv_event_t * e);
 extern lv_obj_t * ui_CustomStratagem4;
-extern lv_obj_t * ui_Container5;
-void ui_event_Button39(lv_event_t * e);
-extern lv_obj_t * ui_Button39;
-extern lv_obj_t * ui_Label3;
+extern lv_obj_t * ui_GameFooter;
+void ui_event_BtnBack(lv_event_t * e);
+extern lv_obj_t * ui_BtnBack;
+extern lv_obj_t * ui_LblBack;
+// CUSTOM VARIABLES
+
+// SCREEN: ui_Config
+void ui_Config_screen_init(void);
+extern lv_obj_t * ui_Config;
+extern lv_obj_t * ui_Container6;
+extern lv_obj_t * ui_Container9;
+extern lv_obj_t * ui_Label2;
+extern lv_obj_t * ui_LblBrightness;
+void ui_event_SldBrightness(lv_event_t * e);
+extern lv_obj_t * ui_SldBrightness;
+extern lv_obj_t * ui_Container8;
+extern lv_obj_t * ui_Label1;
+extern lv_obj_t * ui_LblVolume;
+void ui_event_SldVolume(lv_event_t * e);
+extern lv_obj_t * ui_SldVolume;
+void ui_event_Checkbox1(lv_event_t * e);
+extern lv_obj_t * ui_Checkbox1;
+void ui_event_SetupFooter2(lv_event_t * e);
+extern lv_obj_t * ui_SetupFooter2;
+void ui_event_BtnSetup(lv_event_t * e);
+extern lv_obj_t * ui_BtnSetup;
+extern lv_obj_t * ui_LblSetup;
 // CUSTOM VARIABLES
 
 // EVENTS

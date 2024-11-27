@@ -1,6 +1,7 @@
 screens/ui_Intro.c
 screens/ui_Setup.c
 screens/ui_Game.c
+screens/ui_Config.c
 ui_theme_manager.c
 ui_themes.c
 ui.c

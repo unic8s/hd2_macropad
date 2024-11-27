@@ -8,7 +8,7 @@ extern "C" {
 #include <esp_system.h>
 
 esp_err_t i2s_setup(void);
-esp_err_t play_wav(char *fp);
+esp_err_t play_wav(char *fp, int volume);
 
 #ifdef __cplusplus
 } /*extern "C"*/

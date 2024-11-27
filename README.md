@@ -36,31 +36,6 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. [How to use a keyboard and mouse on PS5 consoles](https://www.playstation.com/en-us/support/hardware/keyboard-mouse-ps5/)
 
-## Hardware specs - for enthusiasts
-
-The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR) from the manufacturer [Shenzhen Jingcai Inteligent Co., Ltd](https://www.displaysmodule.com/)
-
-- CPU: Espressif [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
-- ROM: 16MB
-- Display: 3.5" 480 x 320 IPS LCD with 65K Colors
-- Touch: Capacitive multitouch
-- Connectivity: WiFi + Bluetooth
-- Audio: Pre-amplified speaker output (mono) on 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
-- Memory: TF Card slot
-- Power supply: USB-C (also data transfer)
-- Battery: 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
-
-## Software setup - for developers
-
-- IDE: [VSCode](https://code.visualstudio.com/) + [PlatformIO](https://platformio.org/)
-- Board: [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
-- Framework: [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
-- UI Editor: [Squareline Studio](https://squareline.io/)
-- Libraries & functions
-  -  [LVGL](https://lvgl.io/)
-  - [BLE HID](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidd.html)
-  - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)
-
 ## Credits and special thanks
 
 - [Icon Set](https://github.com/nvigneux/Helldivers-2-Stratagems-icons-svg) from [@nvigneux](https://github.com/nvigneux)
@@ -87,3 +62,28 @@ The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.al
 ### Game (example configuration)
 
 ![](screens/game.png)
+
+## Hardware specs - for enthusiasts
+
+The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR) from the manufacturer [Shenzhen Jingcai Inteligent Co., Ltd](https://www.displaysmodule.com/)
+
+- CPU: Espressif [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
+- ROM: 16MB
+- Display: 3.5" 480 x 320 IPS LCD with 65K Colors
+- Touch: Capacitive multitouch
+- Connectivity: WiFi + Bluetooth
+- Audio: Pre-amplified speaker output (mono) on 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
+- Memory: TF Card slot
+- Power supply: USB-C (also data transfer)
+- Battery: 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
+
+## Software setup - for developers
+
+- IDE: [VSCode](https://code.visualstudio.com/) + [PlatformIO](https://platformio.org/)
+- Board: [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
+- Framework: [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
+- UI Editor: [Squareline Studio](https://squareline.io/)
+- Libraries & functions
+  -  [LVGL](https://lvgl.io/)
+  - [BLE HID](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidd.html)
+  - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)

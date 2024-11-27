@@ -24,7 +24,11 @@ Please follow the described steps and make your decision if you'd like to add au
 ### Firmware
 1. Download the [lastest BIN file](https://github.com/unic8s/hd2_macropad/releases/latest/download/hd2_macropad.bin) or your prefered [release](https://github.com/unic8s/hd2_macropad/releases)
 2. Connect device to PC via USB-C data cable
-3. Visit the [ESP Tool](https://espressif.github.io/esptool-js/) and upload the BIN file to your device
+3. Firmware upload
+  - Normal users
+    - Visit the [ESP Tool](https://espressif.github.io/esptool-js/) and upload the BIN file to your device
+  - Pro users
+    - Use esptool to [flash](https://docs.espressif.com/projects/esptool/en/latest/esp32/esptool/flashing-firmware.html) the BIN to your device
 ### Sounds (optional)
 3. Unpack and copy all [assets](https://github.com/unic8s/hd2_macropad/releases/latest/download/assets.zip) to a SD card into the root directory
 4. Connect a speaker to the rear [JST](https://en.wikipedia.org/wiki/JST_connector) port of the device

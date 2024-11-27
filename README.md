@@ -15,7 +15,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
   - Web browser ([Google Chrome](https://www.google.com/intl/en_us/chrome/) or [Microsoft Edge](https://www.microsoft.com/en-us/edge/)) for uploading the firmware to the device
 - Pro users
   - [esp-tool](https://github.com/espressif/esptool) to upload the firmware
-- [Optional]
+- Sound output (optional)
   - SD Card with minimum 2 MB free space
   - Speaker with [JST](https://en.wikipedia.org/wiki/JST_connector) connector
 

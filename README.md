@@ -6,7 +6,7 @@ Get the game on [PS5](https://www.playstation.com/games/helldivers-2/) or [PC](h
 
 Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth.
 
-— HELLDIVERS is a trademark of SONY INTERACTIVE ENTERTAINMENT LLC
+> HELLDIVERS is a trademark of SONY INTERACTIVE ENTERTAINMENT LLC
 
 ## Installation
 

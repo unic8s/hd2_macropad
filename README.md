@@ -42,7 +42,7 @@ Please follow the specific steps for your prefered system.
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. [How to use a keyboard and mouse on PS5 consoles](https://www.playstation.com/en-us/support/hardware/keyboard-mouse-ps5/)
 
-## Configuration and in-gamne use
+## Configuration and in-game usage
 
 ### First startup
 1. After the intro screen all stratagems are displayed in groups (weapons, backpacks, stationary, strike and eagle)

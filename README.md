@@ -8,6 +8,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 
 > HELLDIVERS is a trademark of SONY INTERACTIVE ENTERTAINMENT LLC
 
+
 ## Installation
 
 ### Firmware
@@ -16,6 +17,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 ### Sounds (optional)
 3. Unpack and copy all [assets](https://github.com/unic8s/hd2_macropad/releases/latest/download/assets.zip) to a SD card into the root directory
 4. Connect a speaker to the rear [JST](https://en.wikipedia.org/wiki/JST_connector) port of the device
+
 
 ## Configuration
 
@@ -28,6 +30,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. [How to use a keyboard and mouse on PS5 consoles](https://www.playstation.com/en-us/support/hardware/keyboard-mouse-ps5/)
+
 
 ## Hardware specs - for enthusiasts
 
@@ -43,6 +46,7 @@ The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.al
 - Power supply: USB-C (also data transfer)
 - Battery: 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
 
+
 ## Software setup - for developers
 
 - IDE: [VSCode](https://code.visualstudio.com/) + [PlatformIO](https://platformio.org/)
@@ -53,11 +57,13 @@ The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.al
   -  [LVGL](https://lvgl.io/)
   - [BLE HID](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidd.html)
   - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)
+
  
 ## Credits and special thanks
 
 - [Icon Set](https://github.com/nvigneux/Helldivers-2-Stratagems-icons-svg) from [@nvigneux](https://github.com/nvigneux)
 - [Demo project](https://github.com/NorthernMan54/JC3248W535EN) from [@NorthernMan54](https://github.com/NorthernMan54)
+
  
 ## Screenshots
 

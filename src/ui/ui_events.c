@@ -28,7 +28,7 @@ void deselectStratagem(lv_event_t *e)
 
 	updateStratagemSelection();
 
-	playbackSound("S:assets/StStop.wav");
+	playbackSound("S:assets/sound/StStop.wav");
 }
 
 void selectStratagem(lv_event_t *e)
@@ -47,13 +47,13 @@ void selectStratagem(lv_event_t *e)
 
 		updateStratagemSelection();
 
-		playbackSound("S:assets/StEntry.wav");
+		playbackSound("S:assets/sound/StEntry.wav");
 	}
 	else
 	{
 		lv_obj_clear_state(e->target, LV_STATE_CHECKED);
 
-		playbackSound("S:assets/StStop.wav");
+		playbackSound("S:assets/sound/StStop.wav");
 	}
 }
 
@@ -206,7 +206,7 @@ void triggerStratagem1(lv_event_t *e)
 
 	setStratagemCode(sequence);
 
-	playbackSound("S:assets/Reinf.wav");
+	playbackSound("S:assets/sound/reinf.wav");
 }
 
 void triggerStratagem2(lv_event_t *e)
@@ -223,7 +223,7 @@ void triggerStratagem2(lv_event_t *e)
 
 	setStratagemCode(sequence);
 
-	playbackSound("S:assets/Sup.wav");
+	playbackSound("S:assets/sound/supp.wav");
 }
 
 void triggerStratagem3(lv_event_t *e)
@@ -239,6 +239,8 @@ void triggerStratagem3(lv_event_t *e)
 						   0};
 
 	setStratagemCode(sequence);
+
+	playbackSound("S:assets/sound/sos.wav");
 }
 
 void triggerStratagem4(lv_event_t *e)
@@ -254,6 +256,8 @@ void triggerStratagem4(lv_event_t *e)
 						   0};
 
 	setStratagemCode(sequence);
+
+	playbackSound("S:assets/sound/eagrel.wav");
 }
 
 void triggerStratagem5(lv_event_t *e)

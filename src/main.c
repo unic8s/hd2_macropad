@@ -295,7 +295,6 @@ void app_main()
   esp_ble_gap_set_security_param(ESP_BLE_SM_SET_INIT_KEY, &init_key, sizeof(uint8_t));
   esp_ble_gap_set_security_param(ESP_BLE_SM_SET_RSP_KEY, &rsp_key, sizeof(uint8_t));
 
-  //ESP_ERROR_CHECK(i2s_setup());
   ESP_ERROR_CHECK(init_sdcard());
   lv_fs_fatfs_init();
 
@@ -324,5 +323,5 @@ void app_main()
 
   bsp_display_backlight_on();
 
-  playbackSound("S:assets/ToPods.wav");
+  playbackSound("S:assets/sound/intro.wav");
 }

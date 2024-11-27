@@ -6,6 +6,8 @@ Get the game on [PS5](https://www.playstation.com/games/helldivers-2/) or [PC](h
 
 Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth.
 
+— HELLDIVERS is a trademark of SONY INTERACTIVE ENTERTAINMENT LLC
+
 ## Installation
 
 ### Firmware
@@ -66,6 +68,3 @@ The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.al
 
 - [Icon Set](https://github.com/nvigneux/Helldivers-2-Stratagems-icons-svg) from [@nvigneux](https://github.com/nvigneux)
 - [Demo project](https://github.com/NorthernMan54/JC3248W535EN) from [@NorthernMan54](https://github.com/NorthernMan54)
-
----
-HELLDIVERS is a trademark of SONY INTERACTIVE ENTERTAINMENT LLC

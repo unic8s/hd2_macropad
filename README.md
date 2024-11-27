@@ -10,7 +10,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 
 ## Prerequesites
 - The specific device [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR)
-- USB-C data cable to communicate with a PC
+- USB-C data cable to communicate with a PC for flashing the firmware once. After successful operation the device will connect only via Bluetooth.
 - Normal users
   - Web browser ([Google Chrome](https://www.google.com/intl/en_us/chrome/) or [Microsoft Edge](https://www.microsoft.com/en-us/edge/)) for uploading the firmware to the device
 - Pro users

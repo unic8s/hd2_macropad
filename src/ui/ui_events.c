@@ -119,7 +119,7 @@ void resetStratagems(lv_event_t *e)
 
 	updateStratagemSelection();
 
-	playbackSound("S:assets/StError.wav");
+	playbackSound("S:assets/sound/StError.wav");
 }
 
 void assignStratagems(lv_event_t *e)

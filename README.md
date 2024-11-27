@@ -4,7 +4,7 @@ A very comfortable and easy-to-use macropad for HELLDIVERS&trade; 2 for live con
 
 Get the game on [PS5](https://www.playstation.com/games/helldivers-2/) or [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/)
 
-Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth.
+Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth as a keyboard input device.
 
 > HELLDIVERS is a trademark of SONY INTERACTIVE ENTERTAINMENT LLC
 

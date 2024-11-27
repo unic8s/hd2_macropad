@@ -16,6 +16,9 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 
 ## Installation
 
+The firmware is already pre-built available in our release section. Just go ahead and download your prefered version (we surely recommend to use the lastest one).
+Please follow the described steps and make your decision if you'd like to add audio support with a SD card, the mandatory assets and a speaker attached to the device.
+
 ### Firmware
 1. Download the [lastest BIN file](https://github.com/unic8s/hd2_macropad/releases/latest/download/hd2_macropad.bin) or your prefered [release](https://github.com/unic8s/hd2_macropad/releases)
 2. Connect device to PC via USB-C data cable
@@ -24,7 +27,10 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 3. Unpack and copy all [assets](https://github.com/unic8s/hd2_macropad/releases/latest/download/assets.zip) to a SD card into the root directory
 4. Connect a speaker to the rear [JST](https://en.wikipedia.org/wiki/JST_connector) port of the device
 
-## Configuration
+## Setup
+
+In general there is no specific further configuration needed. You only have to pair the device with your PC or PS5 and it's ready to use already.
+Please follow the specific steps for your prefered system.
 
 ### PC
 
@@ -35,6 +41,31 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. [How to use a keyboard and mouse on PS5 consoles](https://www.playstation.com/en-us/support/hardware/keyboard-mouse-ps5/)
+
+## Hardware - for enthusiasts
+
+The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR) from the manufacturer [Shenzhen Jingcai Inteligent Co., Ltd](https://www.displaysmodule.com/)
+
+- CPU: Espressif [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
+- ROM: 16MB
+- Display: 3.5" 480 x 320 IPS LCD with 65K Colors
+- Touch: Capacitive multitouch
+- Connectivity: WiFi + Bluetooth
+- Audio: Pre-amplified speaker output (mono) on 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
+- Memory: TF Card slot
+- Power supply: USB-C (also data transfer)
+- Battery: 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
+
+## Software - for developers
+
+- IDE: [VSCode](https://code.visualstudio.com/) + [PlatformIO](https://platformio.org/)
+- Board: [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
+- Framework: [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
+- UI Editor: [Squareline Studio](https://squareline.io/)
+- Libraries & functions
+  -  [LVGL](https://lvgl.io/)
+  - [BLE HID](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidd.html)
+  - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)
 
 ## Credits and special thanks
 
@@ -62,28 +93,3 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 ### Game (example configuration)
 
 ![](screens/game.png)
-
-## Hardware specs - for enthusiasts
-
-The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR) from the manufacturer [Shenzhen Jingcai Inteligent Co., Ltd](https://www.displaysmodule.com/)
-
-- CPU: Espressif [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
-- ROM: 16MB
-- Display: 3.5" 480 x 320 IPS LCD with 65K Colors
-- Touch: Capacitive multitouch
-- Connectivity: WiFi + Bluetooth
-- Audio: Pre-amplified speaker output (mono) on 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
-- Memory: TF Card slot
-- Power supply: USB-C (also data transfer)
-- Battery: 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
-
-## Software setup - for developers
-
-- IDE: [VSCode](https://code.visualstudio.com/) + [PlatformIO](https://platformio.org/)
-- Board: [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
-- Framework: [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
-- UI Editor: [Squareline Studio](https://squareline.io/)
-- Libraries & functions
-  -  [LVGL](https://lvgl.io/)
-  - [BLE HID](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidd.html)
-  - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)

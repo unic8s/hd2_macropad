@@ -15,13 +15,13 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 2. Visit the [ESP Tool](https://espressif.github.io/esptool-js/) and upload the BIN file to your device
 ### Sounds (optional)
 3. Unpack and copy all [assets](https://github.com/unic8s/hd2_macropad/releases/latest/download/assets.zip) to a SD card into the root directory
-4. Connect a speaker to the rear port of the device
+4. Connect a speaker to the rear [JST](https://en.wikipedia.org/wiki/JST_connector) port of the device
 
 ## Hardware specs - for enthusiasts
 
 The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR) from the manufacturer [Shenzhen Jingcai Inteligent Co., Ltd](https://www.displaysmodule.com/)
 
-- CPU: Espressif ESP32-S3
+- CPU: Espressif [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
 - ROM: 16MB
 - Display: 3.5" 480 x 320 IPS LCD with 65K Colors
 - Touch: Capacitive multitouch

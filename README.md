@@ -42,19 +42,24 @@ Please follow the specific steps for your prefered system.
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. [How to use a keyboard and mouse on PS5 consoles](https://www.playstation.com/en-us/support/hardware/keyboard-mouse-ps5/)
 
-## Configuration for in-gamne use
+## Configuration and in-gamne use
 
+### First startup
 1. After the intro screen all stratagems are displayed in groups (weapons, backpacks, stationary, strike and eagle)
 2. Select a stratagems by clicking on it. The yellow border will turn into a white one which indicates the selection.
 3. You have to pick your 4 specific stratagems from the groups.
 4. The label and the bar at the bottom of the screen shows the progress of your selection.
 5. After 4 stratagems have been selected the screen switches from the setup to game mode.
-6. The 4 upper stratagems are the basic items for all operation types (reinforce, resupply, SOS and rearm eagle).
-7. The 4 lower stratagems are the ones you selected in the setup procedure.
-8. If you want to change your selection just click the "back" button at the bottom left corner.
-9. You screen will switch back from game to setup mode.
-10. Now you can either unselect the unwanted stratagems inside the groups or just click "reset" at the bottom right corner to unselect all selected stratagems from the list.
-11. As soon as you have selected 4 stratagems again the screen will automatically switch from setup to game mode.
+
+### How to use
+1. The 4 upper stratagems are the basic items for all operation types (reinforce, resupply, SOS and rearm eagle).
+2. The 4 lower stratagems are the ones you selected in the setup procedure.
+
+### Re-configuration
+1. If you want to change your selection just click the "back" button at the bottom left corner.
+2. You screen will switch back from game to setup mode.
+3. Now you can either unselect the unwanted stratagems inside the groups or just click "reset" at the bottom right corner to unselect all selected stratagems from the list.
+4. As soon as you have selected 4 stratagems again the screen will automatically switch from setup to game mode.
 
 ## Hardware - for enthusiasts
 

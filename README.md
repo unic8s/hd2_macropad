@@ -52,8 +52,9 @@ Please follow the specific steps for your prefered system.
 5. After 4 stratagems have been selected the screen switches from the setup to game mode.
 
 ### How to use
-1. The 4 upper stratagems are the basic items for all operation types (reinforce, resupply, SOS and rearm eagle).
-2. The 4 lower stratagems are the ones you selected in the setup procedure.
+- The 4 upper stratagems are the basic items for all operation types (reinforce, resupply, SOS and rearm eagle).
+- The 4 lower stratagems are the ones you selected in the setup procedure.
+- Just click a strategem to activate the execution of the macro.
 
 ### Re-configuration
 1. If you want to change your selection just click the "back" button at the bottom left corner.

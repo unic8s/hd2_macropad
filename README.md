@@ -17,6 +17,18 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 3. Unpack and copy all [assets](https://github.com/unic8s/hd2_macropad/releases/latest/download/assets.zip) to a SD card into the root directory
 4. Connect a speaker to the rear [JST](https://en.wikipedia.org/wiki/JST_connector) port of the device
 
+## Configuration
+
+### PC
+
+1. Connect HD2 Macropad to a power source (either USB-C or battery)
+2. [Pair a Bluetooth device in Windows](https://support.microsoft.com/en-us/windows/pair-a-bluetooth-device-in-windows-2be7b51f-6ae9-b757-a3b9-95ee40c3e242)
+
+### PS5
+
+1. Connect HD2 Macropad to a power source (either USB-C or battery)
+2. [How to use a keyboard and mouse on PS5 consoles](https://www.playstation.com/en-us/support/hardware/keyboard-mouse-ps5/)
+
 ## Hardware specs - for enthusiasts
 
 The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR) from the manufacturer [Shenzhen Jingcai Inteligent Co., Ltd](https://www.displaysmodule.com/)
@@ -26,10 +38,10 @@ The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.al
 - Display: 3.5" 480 x 320 IPS LCD with 65K Colors
 - Touch: Capacitive multitouch
 - Connectivity: WiFi + Bluetooth
-- Audio: Pre-amplified speaker output (mono)
+- Audio: Pre-amplified speaker output (mono) on 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
 - Memory: TF Card slot
 - Power supply: USB-C (also data transfer)
-- Battery: 2-pin connector
+- Battery: 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
 
 ## Software setup - for developers
 

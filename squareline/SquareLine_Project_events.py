@@ -66,3 +66,7 @@ def ChangeBrightness(event_struct):
 def MuteSound(event_struct):
     return
 
+
+def ResetConfig(event_struct):
+    return
+

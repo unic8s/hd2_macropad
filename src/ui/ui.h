@@ -217,13 +217,19 @@ void ui_event_SldBrightness(lv_event_t * e);
 extern lv_obj_t * ui_SldBrightness;
 extern lv_obj_t * ui_Container8;
 extern lv_obj_t * ui_Label1;
-void ui_event_Checkbox1(lv_event_t * e);
-extern lv_obj_t * ui_Checkbox1;
+void ui_event_ChbMute(lv_event_t * e);
+extern lv_obj_t * ui_ChbMute;
 void ui_event_SetupFooter2(lv_event_t * e);
 extern lv_obj_t * ui_SetupFooter2;
 void ui_event_BtnSetup(lv_event_t * e);
 extern lv_obj_t * ui_BtnSetup;
 extern lv_obj_t * ui_LblSetup;
+void ui_event_BtnDefault(lv_event_t * e);
+extern lv_obj_t * ui_BtnDefault;
+extern lv_obj_t * ui_LblDefault;
+void ui_event_BtnReboot(lv_event_t * e);
+extern lv_obj_t * ui_BtnReboot;
+extern lv_obj_t * ui_LblReboot;
 // CUSTOM VARIABLES
 
 // EVENTS

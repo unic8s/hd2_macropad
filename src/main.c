@@ -33,6 +33,8 @@ bool soundPlayback = false;
 char *soundFile;
 bool playerMuted;
 
+nvs_handle_t nvsConfig;
+
 void setStratagemCode(uint8_t sequence[8])
 {
   for (uint8_t c = 0; c < 8; c++)
@@ -234,7 +236,7 @@ void hid_input_task(void *pvParameters)
   }
 }
 
-void setBrightness(int brightness)
+void setBrightness(int brightness, bool restore)
 {
   bsp_display_brightness_set(brightness);
 
@@ -242,11 +244,126 @@ void setBrightness(int brightness)
   itoa(brightness, textBrightness, 10);
 
   lv_label_set_text(ui_LblBrightness, &textBrightness);
+
+  if (restore)
+  {
+    lv_slider_set_value(ui_SldBrightness, brightness, LV_ANIM_OFF);
+  }
+  else
+  {
+    esp_err_t ret;
+
+    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
+    if (ret != ESP_OK)
+    {
+      printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+      return;
+    }
+
+    ret = nvs_set_u8(nvsConfig, "brightness", brightness);
+    printf((ret != ESP_OK) ? "Failed!\n" : "Done\n");
+
+    nvs_close(nvsConfig);
+  }
 }
 
-void setMuted(bool muted)
+void setMuted(bool muted, bool restore)
 {
   playerMuted = muted;
+
+  if (restore)
+  {
+    if (muted)
+    {
+      lv_obj_add_state(ui_ChbMute, LV_STATE_CHECKED);
+    }
+    else
+    {
+      lv_obj_clear_state(ui_ChbMute, LV_STATE_CHECKED);
+    }
+  }
+  else
+  {
+    esp_err_t ret;
+
+    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
+    if (ret != ESP_OK)
+    {
+      printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+      return;
+    }
+
+    ret = nvs_set_u8(nvsConfig, "muted", playerMuted ? 1 : 0);
+    printf((ret != ESP_OK) ? "Failed!\n" : "Done\n");
+
+    nvs_close(nvsConfig);
+  }
+}
+
+void loadConfig()
+{
+  esp_err_t ret;
+
+  ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
+  if (ret != ESP_OK)
+  {
+    printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+    return;
+  }
+
+  uint8_t screen_brightness = 50;
+
+  ret = nvs_get_u8(nvsConfig, "brightness", &screen_brightness);
+
+  switch (ret)
+  {
+  case ESP_OK:
+    printf("Screen brightnesss = %" PRIu8 "\n", screen_brightness);
+    setBrightness(screen_brightness, true);
+    break;
+  case ESP_ERR_NVS_NOT_FOUND:
+    printf("The value is not initialized yet!\n");
+    break;
+  default:
+    printf("Error (%s) reading!\n", esp_err_to_name(ret));
+  }
+
+  uint8_t sound_muted = 0;
+
+  ret = nvs_get_u8(nvsConfig, "muted", &sound_muted);
+
+  switch (ret)
+  {
+  case ESP_OK:
+    printf("Sound muted = %" PRIu8 "\n", sound_muted);
+    setMuted(sound_muted == 1, true);
+    break;
+  case ESP_ERR_NVS_NOT_FOUND:
+    printf("The value is not initialized yet!\n");
+    break;
+  default:
+    printf("Error (%s) reading!\n", esp_err_to_name(ret));
+  }
+
+  nvs_close(nvsConfig);
+}
+
+void resetConfig()
+{
+  esp_err_t ret;
+
+  ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
+  if (ret != ESP_OK)
+  {
+    printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+    return;
+  }
+
+  nvs_erase_all(nvsConfig);
+  nvs_close(nvsConfig);
+
+  setBrightness(50, true);
+  setMuted(0, true);
 }
 
 void app_main()
@@ -340,9 +457,10 @@ void app_main()
 
   vTaskDelay(200 / portTICK_PERIOD_MS);
 
-  setBrightness(50);
-
   bsp_display_backlight_on();
+
+  /* Read config */
+  loadConfig();
 
   playbackSound("S:assets/sound/intro.wav");
 }

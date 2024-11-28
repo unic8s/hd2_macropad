@@ -27,6 +27,8 @@ extern void setStratagemCode(uint8_t[8]);
 extern void playbackSound(char *path);
 void ChangeBrightness(lv_event_t * e);
 void MuteSound(lv_event_t * e);
+void ResetConfig(lv_event_t * e);
+void RebootDevice(lv_event_t * e);
 
 #ifdef __cplusplus
 } /*extern "C"*/

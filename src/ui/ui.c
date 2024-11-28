@@ -201,13 +201,19 @@ void ui_event_SldBrightness(lv_event_t * e);
 lv_obj_t * ui_SldBrightness;
 lv_obj_t * ui_Container8;
 lv_obj_t * ui_Label1;
-void ui_event_Checkbox1(lv_event_t * e);
-lv_obj_t * ui_Checkbox1;
+void ui_event_ChbMute(lv_event_t * e);
+lv_obj_t * ui_ChbMute;
 void ui_event_SetupFooter2(lv_event_t * e);
 lv_obj_t * ui_SetupFooter2;
 void ui_event_BtnSetup(lv_event_t * e);
 lv_obj_t * ui_BtnSetup;
 lv_obj_t * ui_LblSetup;
+void ui_event_BtnDefault(lv_event_t * e);
+lv_obj_t * ui_BtnDefault;
+lv_obj_t * ui_LblDefault;
+void ui_event_BtnReboot(lv_event_t * e);
+lv_obj_t * ui_BtnReboot;
+lv_obj_t * ui_LblReboot;
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -1187,7 +1193,7 @@ void ui_event_SldBrightness(lv_event_t * e)
     }
 }
 
-void ui_event_Checkbox1(lv_event_t * e)
+void ui_event_ChbMute(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
@@ -1211,6 +1217,24 @@ void ui_event_BtnSetup(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 1000, 0, &ui_Setup_screen_init);
+    }
+}
+
+void ui_event_BtnDefault(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        ResetConfig(e);
+    }
+}
+
+void ui_event_BtnReboot(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        RebootDevice(e);
     }
 }
 

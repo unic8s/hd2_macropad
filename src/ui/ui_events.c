@@ -313,12 +313,22 @@ void ChangeBrightness(lv_event_t * e)
 {
 	int32_t brightness = lv_slider_get_value(e->target);
 
-	setBrightness(brightness);
+	setBrightness(brightness, false);
 }
 
 void MuteSound(lv_event_t *e)
 {
 	bool muted = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
 
-	setMuted(muted);
+	setMuted(muted, false);
+}
+
+void ResetConfig(lv_event_t * e)
+{
+	resetConfig();
+}
+
+void RebootDevice(lv_event_t * e)
+{
+	esp_restart();
 }

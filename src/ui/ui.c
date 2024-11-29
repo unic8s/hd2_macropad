@@ -211,8 +211,8 @@ void ui_event_SldBrightness(lv_event_t * e);
 lv_obj_t * ui_SldBrightness;
 lv_obj_t * ui_Container8;
 lv_obj_t * ui_Label1;
-void ui_event_ChbMute(lv_event_t * e);
 lv_obj_t * ui_ChbMute;
+lv_obj_t * ui_Label4;
 void ui_event_SetupFooter2(lv_event_t * e);
 lv_obj_t * ui_SetupFooter2;
 void ui_event_BtnSetup(lv_event_t * e);
@@ -229,6 +229,7 @@ void ui_event_BtnReboot(lv_event_t * e);
 lv_obj_t * ui_BtnReboot;
 lv_obj_t * ui_LblReboot;
 // CUSTOM VARIABLES
+lv_obj_t * uic_ChbMute;
 
 // EVENTS
 lv_obj_t * ui____initial_actions0;
@@ -1222,15 +1223,6 @@ void ui_event_SldBrightness(lv_event_t * e)
 
     if(event_code == LV_EVENT_VALUE_CHANGED) {
         ChangeBrightness(e);
-    }
-}
-
-void ui_event_ChbMute(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    if(event_code == LV_EVENT_CLICKED) {
-        MuteSound(e);
     }
 }
 

@@ -309,6 +309,13 @@ void triggerStratagem8(lv_event_t *e)
 	playbackSound(path);
 }
 
+void ChangeDelay(lv_event_t * e)
+{
+	int32_t delay = lv_slider_get_value(e->target);
+
+	setDelay(delay, false);
+}
+
 void ChangeBrightness(lv_event_t * e)
 {
 	int32_t brightness = lv_slider_get_value(e->target);

@@ -194,6 +194,11 @@ lv_obj_t * ui_LblBack;
 void ui_Config_screen_init(void);
 lv_obj_t * ui_Config;
 lv_obj_t * ui_Container6;
+lv_obj_t * ui_Container10;
+lv_obj_t * ui_Label3;
+lv_obj_t * ui_LblDelay;
+void ui_event_SldDelay(lv_event_t * e);
+lv_obj_t * ui_SldDelay;
 lv_obj_t * ui_Container9;
 lv_obj_t * ui_Label2;
 lv_obj_t * ui_LblBrightness;
@@ -1181,6 +1186,15 @@ void ui_event_BtnBack(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, &ui_Setup_screen_init);
+    }
+}
+
+void ui_event_SldDelay(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        ChangeDelay(e);
     }
 }
 

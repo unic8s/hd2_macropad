@@ -70,3 +70,7 @@ def MuteSound(event_struct):
 def ResetConfig(event_struct):
     return
 
+
+def RebootDevice(event_struct):
+    return
+

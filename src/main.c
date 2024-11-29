@@ -185,8 +185,8 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
   }
 }
 
+int inputDelay = 100;
 #define CHECK_DELAY 50
-#define INPUT_DELAY 100
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
 
 void hid_input_task(void *pvParameters)
@@ -202,15 +202,15 @@ void hid_input_task(void *pvParameters)
       uint8_t cmdIndex = 0;
 
       esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, 0, 0);
-      vTaskDelay(INPUT_DELAY / portTICK_PERIOD_MS);
+      vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
       while (stratagemCode[cmdIndex] > 0 && cmdIndex < 8)
       {
         esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, &stratagemCode[cmdIndex], 1);
-        vTaskDelay(INPUT_DELAY / portTICK_PERIOD_MS);
+        vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
         esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, &stratagemCode[cmdIndex], 0);
-        vTaskDelay(INPUT_DELAY / portTICK_PERIOD_MS);
+        vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
         ESP_LOGI(TAG, "CMD Index: %c", (char)(cmdIndex + '0'));
         ESP_LOGI(TAG, "CMD Value: %d", stratagemCode[cmdIndex]);
@@ -233,6 +233,37 @@ void hid_input_task(void *pvParameters)
         play_wav(soundFile);
       }
     }
+  }
+}
+
+void setDelay(int delay, bool restore)
+{
+  inputDelay = delay;
+
+  char *textDelay[3];
+  itoa(delay, textDelay, 10);
+
+  lv_label_set_text(ui_LblDelay, &textDelay);
+
+  if (restore)
+  {
+    lv_slider_set_value(ui_SldDelay, delay, LV_ANIM_OFF);
+  }
+  else
+  {
+    esp_err_t ret;
+
+    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
+    if (ret != ESP_OK)
+    {
+      printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+      return;
+    }
+
+    ret = nvs_set_u8(nvsConfig, "delay", delay);
+    printf((ret != ESP_OK) ? "Failed!\n" : "Done\n");
+
+    nvs_close(nvsConfig);
   }
 }
 
@@ -311,6 +342,23 @@ void loadConfig()
     return;
   }
 
+  uint8_t delay = 100;
+
+  ret = nvs_get_u8(nvsConfig, "delay", &delay);
+
+  switch (ret)
+  {
+  case ESP_OK:
+    printf("Screen delay = %" PRIu8 "\n", delay);
+    setDelay(delay, true);
+    break;
+  case ESP_ERR_NVS_NOT_FOUND:
+    printf("The value is not initialized yet!\n");
+    break;
+  default:
+    printf("Error (%s) reading!\n", esp_err_to_name(ret));
+  }
+
   uint8_t screen_brightness = 50;
 
   ret = nvs_get_u8(nvsConfig, "brightness", &screen_brightness);
@@ -362,6 +410,7 @@ void resetConfig()
   nvs_erase_all(nvsConfig);
   nvs_close(nvsConfig);
 
+  setDelay(100, true);
   setBrightness(50, true);
   setMuted(0, true);
 }

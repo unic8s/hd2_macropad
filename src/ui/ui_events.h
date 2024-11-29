@@ -23,14 +23,13 @@ void triggerStratagem7(lv_event_t * e);
 void triggerStratagem8(lv_event_t * e);
 void resetStratagems(lv_event_t * e);
 void updateStratagemSelection();
-extern void setStratagemCode(uint8_t[8]);
-extern void playbackSound(char *path);
 void ChangeDelay(lv_event_t * e);
 void ChangeBrightness(lv_event_t * e);
 void MuteSound(lv_event_t * e);
 void ResetConfig(lv_event_t * e);
 void RebootDevice(lv_event_t * e);
 void GotoGame(lv_event_t * e);
+void KeyboardDemo(lv_event_t * e);
 
 #ifdef __cplusplus
 } /*extern "C"*/

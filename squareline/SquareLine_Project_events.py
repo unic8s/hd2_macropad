@@ -86,3 +86,7 @@ def gotoGame(event_struct):
 def GotoGame(event_struct):
     return
 
+
+def KeyboardDemo(event_struct):
+    return
+

@@ -16,6 +16,8 @@ int indices[4];
 
 uint8_t strategemsAmount = 0;
 
+#define INPUT_CTRL_MASK 1 // 1 CTRL left
+
 void deselectStratagem(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < 4; c++)
@@ -180,7 +182,7 @@ void triggerStratagem1(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence);
+	setStratagemCode(sequence, INPUT_CTRL_MASK);
 
 	playbackSound("S:assets/sound/reinf.wav");
 }
@@ -197,7 +199,7 @@ void triggerStratagem2(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence);
+	setStratagemCode(sequence, INPUT_CTRL_MASK);
 
 	playbackSound("S:assets/sound/supp.wav");
 }
@@ -214,7 +216,7 @@ void triggerStratagem3(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence);
+	setStratagemCode(sequence, INPUT_CTRL_MASK);
 
 	playbackSound("S:assets/sound/sos.wav");
 }
@@ -231,7 +233,7 @@ void triggerStratagem4(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence);
+	setStratagemCode(sequence, INPUT_CTRL_MASK);
 
 	playbackSound("S:assets/sound/eagrel.wav");
 }
@@ -240,7 +242,7 @@ void triggerStratagem5(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[0];
 
-	setStratagemCode(sequences[itemIndex]);
+	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK);
 
 	uint8_t soundIndex = soundMap[itemIndex];
 	char *path = soundFiles[soundIndex];
@@ -252,7 +254,7 @@ void triggerStratagem6(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[1];
 
-	setStratagemCode(sequences[itemIndex]);
+	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK);
 
 	uint8_t soundIndex = soundMap[itemIndex];
 	char *path = soundFiles[soundIndex];
@@ -264,7 +266,7 @@ void triggerStratagem7(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[2];
 
-	setStratagemCode(sequences[itemIndex]);
+	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK);
 
 	uint8_t soundIndex = soundMap[itemIndex];
 	char *path = soundFiles[soundIndex];
@@ -276,7 +278,7 @@ void triggerStratagem8(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[3];
 
-	setStratagemCode(sequences[itemIndex]);
+	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK);
 
 	uint8_t soundIndex = soundMap[itemIndex];
 	char *path = soundFiles[soundIndex];
@@ -308,6 +310,20 @@ void MuteSound(lv_event_t *e)
 void ResetConfig(lv_event_t *e)
 {
 	resetConfig();
+}
+
+void KeyboardDemo(lv_event_t *e)
+{
+	uint8_t sequence[8] = {HID_KEY_H,
+						   HID_KEY_E,
+						   HID_KEY_L,
+						   HID_KEY_L,
+						   HID_KEY_O,
+						   0,
+						   0,
+						   0};
+
+	setStratagemCode(sequence, 0);
 }
 
 void RebootDevice(lv_event_t *e)

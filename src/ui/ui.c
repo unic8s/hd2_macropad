@@ -218,6 +218,10 @@ lv_obj_t * ui_SetupFooter2;
 void ui_event_BtnSetup(lv_event_t * e);
 lv_obj_t * ui_BtnSetup;
 lv_obj_t * ui_LblSetup;
+lv_obj_t * ui_Container11;
+void ui_event_BtnDemo(lv_event_t * e);
+lv_obj_t * ui_BtnDemo;
+lv_obj_t * ui_LblDemo;
 void ui_event_BtnDefault(lv_event_t * e);
 lv_obj_t * ui_BtnDefault;
 lv_obj_t * ui_LblDefault;
@@ -1245,6 +1249,15 @@ void ui_event_BtnSetup(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 1000, 0, &ui_Setup_screen_init);
+    }
+}
+
+void ui_event_BtnDemo(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        KeyboardDemo(e);
     }
 }
 

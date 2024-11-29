@@ -29,18 +29,21 @@ static const char *TAG = "HD2 Macropad";
   ESP_LOGI(TAG, "\n\n************* %s **************\n", section);
 
 uint8_t stratagemCode[8];
+uint8_t stratagemMask;
 bool soundPlayback = false;
 char *soundFile;
 bool playerMuted;
 
 nvs_handle_t nvsConfig;
 
-void setStratagemCode(uint8_t sequence[8])
+void setStratagemCode(uint8_t sequence[8], uint8_t mask)
 {
   for (uint8_t c = 0; c < 8; c++)
   {
     stratagemCode[c] = sequence[c];
   }
+
+  stratagemMask = mask;
 }
 
 void playbackSound(char *path)
@@ -187,7 +190,6 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
 
 int inputDelay = 100;
 #define CHECK_DELAY 50
-#define INPUT_CTRL_MASK 1 // 1 CTRL left
 
 void hid_input_task(void *pvParameters)
 {
@@ -201,15 +203,15 @@ void hid_input_task(void *pvParameters)
 
       uint8_t cmdIndex = 0;
 
-      esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, 0, 0);
+      esp_hidd_send_keyboard_value(hid_conn_id, stratagemMask, 0, 0);
       vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
       while (stratagemCode[cmdIndex] > 0 && cmdIndex < 8)
       {
-        esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, &stratagemCode[cmdIndex], 1);
+        esp_hidd_send_keyboard_value(hid_conn_id, stratagemMask, &stratagemCode[cmdIndex], 1);
         vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
-        esp_hidd_send_keyboard_value(hid_conn_id, INPUT_CTRL_MASK, &stratagemCode[cmdIndex], 0);
+        esp_hidd_send_keyboard_value(hid_conn_id, stratagemMask, &stratagemCode[cmdIndex], 0);
         vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
         ESP_LOGI(TAG, "CMD Index: %c", (char)(cmdIndex + '0'));

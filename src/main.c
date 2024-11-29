@@ -247,7 +247,7 @@ void setDelay(int delay, bool restore)
 
   if (restore)
   {
-    lv_slider_set_value(ui_SldDelay, delay, LV_ANIM_OFF);
+    lv_slider_set_value(ui_SldDelay, (int)(delay / 10), LV_ANIM_OFF);
   }
   else
   {
@@ -278,7 +278,7 @@ void setBrightness(int brightness, bool restore)
 
   if (restore)
   {
-    lv_slider_set_value(ui_SldBrightness, brightness, LV_ANIM_OFF);
+    lv_slider_set_value(ui_SldBrightness, (int)(brightness / 10), LV_ANIM_OFF);
   }
   else
   {

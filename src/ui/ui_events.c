@@ -313,14 +313,14 @@ void ChangeDelay(lv_event_t * e)
 {
 	int32_t delay = lv_slider_get_value(e->target);
 
-	setDelay(delay, false);
+	setDelay(delay * 10, false);
 }
 
 void ChangeBrightness(lv_event_t * e)
 {
 	int32_t brightness = lv_slider_get_value(e->target);
 
-	setBrightness(brightness, false);
+	setBrightness(brightness * 10, false);
 }
 
 void MuteSound(lv_event_t *e)

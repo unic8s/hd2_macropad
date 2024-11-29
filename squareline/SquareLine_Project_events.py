@@ -74,3 +74,7 @@ def ResetConfig(event_struct):
 def RebootDevice(event_struct):
     return
 
+
+def ChangeDelay(event_struct):
+    return
+

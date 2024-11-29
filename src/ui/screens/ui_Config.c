@@ -62,8 +62,8 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_text_align(ui_LblDelay, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_SldDelay = lv_slider_create(ui_Container10);
-    lv_slider_set_range(ui_SldDelay, 50, 200);
-    lv_slider_set_value(ui_SldDelay, 100, LV_ANIM_OFF);
+    lv_slider_set_range(ui_SldDelay, 5, 20);
+    lv_slider_set_value(ui_SldDelay, 10, LV_ANIM_OFF);
     if(lv_slider_get_mode(ui_SldDelay) == LV_SLIDER_MODE_RANGE) lv_slider_set_left_value(ui_SldDelay, 0, LV_ANIM_OFF);
     lv_obj_set_height(ui_SldDelay, 16);
     lv_obj_set_width(ui_SldDelay, lv_pct(100));
@@ -133,8 +133,8 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_text_align(ui_LblBrightness, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_SldBrightness = lv_slider_create(ui_Container9);
-    lv_slider_set_range(ui_SldBrightness, 5, 100);
-    lv_slider_set_value(ui_SldBrightness, 50, LV_ANIM_OFF);
+    lv_slider_set_range(ui_SldBrightness, 1, 10);
+    lv_slider_set_value(ui_SldBrightness, 5, LV_ANIM_OFF);
     if(lv_slider_get_mode(ui_SldBrightness) == LV_SLIDER_MODE_RANGE) lv_slider_set_left_value(ui_SldBrightness, 0,
                                                                                                   LV_ANIM_OFF);
     lv_obj_set_height(ui_SldBrightness, 16);

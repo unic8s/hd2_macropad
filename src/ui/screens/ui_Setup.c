@@ -1441,6 +1441,32 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_LblConfig, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
                                            _ui_theme_alpha_colorTheme);
 
+    ui_BtnReset = lv_btn_create(ui_SetupFooter);
+    lv_obj_set_width(ui_BtnReset, 72);
+    lv_obj_set_height(ui_BtnReset, 36);
+    lv_obj_set_x(ui_BtnReset, -4);
+    lv_obj_set_y(ui_BtnReset, 0);
+    lv_obj_set_align(ui_BtnReset, LV_ALIGN_BOTTOM_RIGHT);
+    lv_obj_add_flag(ui_BtnReset, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_BtnReset, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_BtnReset, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_BtnReset, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_BtnReset, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_BtnReset, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_border_width(ui_BtnReset, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_LblReset = lv_label_create(ui_BtnReset);
+    lv_obj_set_width(ui_LblReset, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_LblReset, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_LblReset, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_LblReset, "Reset");
+    ui_object_set_themeable_style_property(ui_LblReset, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_LblReset, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_colorTheme);
+
     ui_Container5 = lv_obj_create(ui_SetupFooter);
     lv_obj_remove_style_all(ui_Container5);
     lv_obj_set_width(ui_Container5, 40);
@@ -1482,7 +1508,7 @@ void ui_Setup_screen_init(void)
 
     ui_BarAmount = lv_bar_create(ui_SetupFooter);
     lv_bar_set_range(ui_BarAmount, 0, 4);
-    lv_obj_set_width(ui_BarAmount, 264);
+    lv_obj_set_width(ui_BarAmount, 186);
     lv_obj_set_height(ui_BarAmount, 8);
     lv_obj_set_x(ui_BarAmount, 0);
     lv_obj_set_y(ui_BarAmount, -14);
@@ -1495,30 +1521,30 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
 
-    ui_BtnReset = lv_btn_create(ui_SetupFooter);
-    lv_obj_set_width(ui_BtnReset, 72);
-    lv_obj_set_height(ui_BtnReset, 36);
-    lv_obj_set_x(ui_BtnReset, -4);
-    lv_obj_set_y(ui_BtnReset, 0);
-    lv_obj_set_align(ui_BtnReset, LV_ALIGN_BOTTOM_RIGHT);
-    lv_obj_add_flag(ui_BtnReset, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_BtnReset, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_color(ui_BtnReset, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_BtnReset, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_BtnReset, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+    ui_BtnPlay = lv_btn_create(ui_SetupFooter);
+    lv_obj_set_width(ui_BtnPlay, 72);
+    lv_obj_set_height(ui_BtnPlay, 36);
+    lv_obj_set_x(ui_BtnPlay, -4);
+    lv_obj_set_y(ui_BtnPlay, 0);
+    lv_obj_set_align(ui_BtnPlay, LV_ALIGN_BOTTOM_RIGHT);
+    lv_obj_add_flag(ui_BtnPlay, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_BtnPlay, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_BtnPlay, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_BtnPlay, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_BtnPlay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_BtnReset, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+    ui_object_set_themeable_style_property(ui_BtnPlay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_border_width(ui_BtnReset, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui_BtnPlay, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_LblReset = lv_label_create(ui_BtnReset);
-    lv_obj_set_width(ui_LblReset, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_LblReset, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_LblReset, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_LblReset, "Reset");
-    ui_object_set_themeable_style_property(ui_LblReset, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+    ui_LblPlay = lv_label_create(ui_BtnPlay);
+    lv_obj_set_width(ui_LblPlay, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_LblPlay, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_LblPlay, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_LblPlay, "Play");
+    ui_object_set_themeable_style_property(ui_LblPlay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_LblReset, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+    ui_object_set_themeable_style_property(ui_LblPlay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
                                            _ui_theme_alpha_colorTheme);
 
     lv_obj_add_event_cb(ui_WeaponsMG, ui_event_WeaponsMG, LV_EVENT_ALL, NULL);
@@ -1580,6 +1606,7 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_EagleSS, ui_event_EagleSS, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnConfig, ui_event_BtnConfig, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnReset, ui_event_BtnReset, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_BtnPlay, ui_event_BtnPlay, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Setup, ui_event_Setup, LV_EVENT_ALL, NULL);
     uic_LabelAmount = ui_LblCurAmount;
     uic_BarAmount = ui_BarAmount;

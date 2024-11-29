@@ -30,6 +30,7 @@ void ChangeBrightness(lv_event_t * e);
 void MuteSound(lv_event_t * e);
 void ResetConfig(lv_event_t * e);
 void RebootDevice(lv_event_t * e);
+void GotoGame(lv_event_t * e);
 
 #ifdef __cplusplus
 } /*extern "C"*/

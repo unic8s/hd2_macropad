@@ -77,32 +77,7 @@ void updateStratagemSelection()
 
 	if (strategemsAmount == 4)
 	{
-		for (uint8_t c = 0; c < 4; c++)
-		{
-			if (buttons[c] != NULL)
-			{
-				const lv_obj_t *button = buttons[c];
-				const lv_img_dsc_t *bgImg = lv_obj_get_style_bg_img_src(button, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-				switch (c)
-				{
-				case 0:
-					lv_obj_set_style_bg_img_src(ui_CustomStratagem1, bgImg, LV_PART_MAIN | LV_STATE_DEFAULT);
-					break;
-				case 1:
-					lv_obj_set_style_bg_img_src(ui_CustomStratagem2, bgImg, LV_PART_MAIN | LV_STATE_DEFAULT);
-					break;
-				case 2:
-					lv_obj_set_style_bg_img_src(ui_CustomStratagem3, bgImg, LV_PART_MAIN | LV_STATE_DEFAULT);
-					break;
-				case 3:
-					lv_obj_set_style_bg_img_src(ui_CustomStratagem4, bgImg, LV_PART_MAIN | LV_STATE_DEFAULT);
-					break;
-				}
-			}
-		}
-
-		_ui_screen_change(&ui_Game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 100, &ui_Game_screen_init);
+		GotoGame(NULL);
 	}
 }
 
@@ -309,14 +284,14 @@ void triggerStratagem8(lv_event_t *e)
 	playbackSound(path);
 }
 
-void ChangeDelay(lv_event_t * e)
+void ChangeDelay(lv_event_t *e)
 {
 	int32_t delay = lv_slider_get_value(e->target);
 
 	setDelay(delay * 10, false);
 }
 
-void ChangeBrightness(lv_event_t * e)
+void ChangeBrightness(lv_event_t *e)
 {
 	int32_t brightness = lv_slider_get_value(e->target);
 
@@ -330,12 +305,48 @@ void MuteSound(lv_event_t *e)
 	setMuted(muted, false);
 }
 
-void ResetConfig(lv_event_t * e)
+void ResetConfig(lv_event_t *e)
 {
 	resetConfig();
 }
 
-void RebootDevice(lv_event_t * e)
+void RebootDevice(lv_event_t *e)
 {
 	esp_restart();
+}
+
+void GotoGame(lv_event_t *e)
+{
+	for (uint8_t c = 0; c < 4; c++)
+	{
+		const lv_obj_t *button = buttons[c];
+		const lv_img_dsc_t *bgImg = lv_obj_get_style_bg_img_src(button, LV_PART_MAIN | LV_STATE_DEFAULT);
+		const bool configured = buttons[c] != NULL;
+		lv_obj_t *targetButton = ui_CustomStratagem1;
+
+		switch (c)
+		{
+		case 1:
+			targetButton = ui_CustomStratagem2;
+			break;
+		case 2:
+			targetButton = ui_CustomStratagem3;
+			break;
+		case 3:
+			targetButton = ui_CustomStratagem4;
+			break;
+		}
+
+		if (configured)
+		{
+			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_set_style_bg_img_src(targetButton, bgImg, LV_PART_MAIN | LV_STATE_DEFAULT);
+		}
+		else
+		{
+			lv_obj_add_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
+		}
+	}
+
+	_ui_screen_change(&ui_Game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 100, &ui_Game_screen_init);
 }

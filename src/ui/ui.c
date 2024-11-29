@@ -151,13 +151,16 @@ lv_obj_t * ui_SetupFooter;
 void ui_event_BtnConfig(lv_event_t * e);
 lv_obj_t * ui_BtnConfig;
 lv_obj_t * ui_LblConfig;
+void ui_event_BtnReset(lv_event_t * e);
+lv_obj_t * ui_BtnReset;
+lv_obj_t * ui_LblReset;
 lv_obj_t * ui_Container5;
 lv_obj_t * ui_LblCurAmount;
 lv_obj_t * ui_LblMaxAmount;
 lv_obj_t * ui_BarAmount;
-void ui_event_BtnReset(lv_event_t * e);
-lv_obj_t * ui_BtnReset;
-lv_obj_t * ui_LblReset;
+void ui_event_BtnPlay(lv_event_t * e);
+lv_obj_t * ui_BtnPlay;
+lv_obj_t * ui_LblPlay;
 // CUSTOM VARIABLES
 lv_obj_t * uic_LabelAmount;
 lv_obj_t * uic_BarAmount;
@@ -197,11 +200,13 @@ lv_obj_t * ui_Container6;
 lv_obj_t * ui_Container10;
 lv_obj_t * ui_Label3;
 lv_obj_t * ui_LblDelay;
+lv_obj_t * ui_LblDelay1;
 void ui_event_SldDelay(lv_event_t * e);
 lv_obj_t * ui_SldDelay;
 lv_obj_t * ui_Container9;
 lv_obj_t * ui_Label2;
 lv_obj_t * ui_LblBrightness;
+lv_obj_t * ui_LblBrightness1;
 void ui_event_SldBrightness(lv_event_t * e);
 lv_obj_t * ui_SldBrightness;
 lv_obj_t * ui_Container8;
@@ -1105,6 +1110,15 @@ void ui_event_BtnReset(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         resetStratagems(e);
+    }
+}
+
+void ui_event_BtnPlay(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        GotoGame(e);
     }
 }
 

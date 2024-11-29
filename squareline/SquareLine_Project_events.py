@@ -78,3 +78,11 @@ def RebootDevice(event_struct):
 def ChangeDelay(event_struct):
     return
 
+
+def gotoGame(event_struct):
+    return
+
+
+def GotoGame(event_struct):
+    return
+

@@ -51,15 +51,26 @@ void ui_Config_screen_init(void)
                                            _ui_theme_alpha_colorTheme);
 
     ui_LblDelay = lv_label_create(ui_Container10);
-    lv_obj_set_width(ui_LblDelay, lv_pct(50));
+    lv_obj_set_width(ui_LblDelay, lv_pct(42));
     lv_obj_set_height(ui_LblDelay, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_LblDelay, LV_ALIGN_CENTER);
     lv_label_set_text(ui_LblDelay, "100");
     ui_object_set_themeable_style_property(ui_LblDelay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
-                                           _ui_theme_color_colorTheme);
+                                           _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_LblDelay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
-                                           _ui_theme_alpha_colorTheme);
+                                           _ui_theme_alpha_colorActive);
     lv_obj_set_style_text_align(ui_LblDelay, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_LblDelay1 = lv_label_create(ui_Container10);
+    lv_obj_set_width(ui_LblDelay1, lv_pct(8));
+    lv_obj_set_height(ui_LblDelay1, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_LblDelay1, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_LblDelay1, "ms");
+    ui_object_set_themeable_style_property(ui_LblDelay1, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_LblDelay1, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_text_align(ui_LblDelay1, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_SldDelay = lv_slider_create(ui_Container10);
     lv_slider_set_range(ui_SldDelay, 5, 20);
@@ -122,15 +133,26 @@ void ui_Config_screen_init(void)
                                            _ui_theme_alpha_colorTheme);
 
     ui_LblBrightness = lv_label_create(ui_Container9);
-    lv_obj_set_width(ui_LblBrightness, lv_pct(50));
+    lv_obj_set_width(ui_LblBrightness, lv_pct(42));
     lv_obj_set_height(ui_LblBrightness, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_LblBrightness, LV_ALIGN_CENTER);
     lv_label_set_text(ui_LblBrightness, "100");
     ui_object_set_themeable_style_property(ui_LblBrightness, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
-                                           _ui_theme_color_colorTheme);
+                                           _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_LblBrightness, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
-                                           _ui_theme_alpha_colorTheme);
+                                           _ui_theme_alpha_colorActive);
     lv_obj_set_style_text_align(ui_LblBrightness, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_LblBrightness1 = lv_label_create(ui_Container9);
+    lv_obj_set_width(ui_LblBrightness1, lv_pct(8));
+    lv_obj_set_height(ui_LblBrightness1, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_LblBrightness1, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_LblBrightness1, "%");
+    ui_object_set_themeable_style_property(ui_LblBrightness1, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_LblBrightness1, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_text_align(ui_LblBrightness1, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_SldBrightness = lv_slider_create(ui_Container9);
     lv_slider_set_range(ui_SldBrightness, 1, 10);

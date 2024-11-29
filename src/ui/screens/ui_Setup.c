@@ -1467,6 +1467,21 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_LblReset, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
                                            _ui_theme_alpha_colorTheme);
 
+    ui_BarAmount = lv_bar_create(ui_SetupFooter);
+    lv_bar_set_range(ui_BarAmount, 0, 4);
+    lv_obj_set_width(ui_BarAmount, 186);
+    lv_obj_set_height(ui_BarAmount, 8);
+    lv_obj_set_x(ui_BarAmount, 0);
+    lv_obj_set_y(ui_BarAmount, -14);
+    lv_obj_set_align(ui_BarAmount, LV_ALIGN_TOP_MID);
+    lv_obj_set_style_bg_color(ui_BarAmount, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_BarAmount, 63, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_object_set_themeable_style_property(ui_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
+                                           _ui_theme_alpha_colorTheme);
+
     ui_Container5 = lv_obj_create(ui_SetupFooter);
     lv_obj_remove_style_all(ui_Container5);
     lv_obj_set_width(ui_Container5, 40);
@@ -1504,21 +1519,6 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_LblMaxAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_LblMaxAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
-                                           _ui_theme_alpha_colorTheme);
-
-    ui_BarAmount = lv_bar_create(ui_SetupFooter);
-    lv_bar_set_range(ui_BarAmount, 0, 4);
-    lv_obj_set_width(ui_BarAmount, 186);
-    lv_obj_set_height(ui_BarAmount, 8);
-    lv_obj_set_x(ui_BarAmount, 0);
-    lv_obj_set_y(ui_BarAmount, -14);
-    lv_obj_set_align(ui_BarAmount, LV_ALIGN_TOP_MID);
-    lv_obj_set_style_bg_color(ui_BarAmount, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_BarAmount, 63, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_object_set_themeable_style_property(ui_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
 
     ui_BtnPlay = lv_btn_create(ui_SetupFooter);
@@ -1608,7 +1608,7 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_BtnReset, ui_event_BtnReset, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnPlay, ui_event_BtnPlay, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Setup, ui_event_Setup, LV_EVENT_ALL, NULL);
-    uic_LabelAmount = ui_LblCurAmount;
     uic_BarAmount = ui_BarAmount;
+    uic_LabelAmount = ui_LblCurAmount;
 
 }

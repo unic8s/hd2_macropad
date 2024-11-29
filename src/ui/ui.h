@@ -172,16 +172,16 @@ extern lv_obj_t * ui_LblConfig;
 void ui_event_BtnReset(lv_event_t * e);
 extern lv_obj_t * ui_BtnReset;
 extern lv_obj_t * ui_LblReset;
+extern lv_obj_t * ui_BarAmount;
 extern lv_obj_t * ui_Container5;
 extern lv_obj_t * ui_LblCurAmount;
 extern lv_obj_t * ui_LblMaxAmount;
-extern lv_obj_t * ui_BarAmount;
 void ui_event_BtnPlay(lv_event_t * e);
 extern lv_obj_t * ui_BtnPlay;
 extern lv_obj_t * ui_LblPlay;
 // CUSTOM VARIABLES
-extern lv_obj_t * uic_LabelAmount;
 extern lv_obj_t * uic_BarAmount;
+extern lv_obj_t * uic_LabelAmount;
 
 // SCREEN: ui_Game
 void ui_Game_screen_init(void);

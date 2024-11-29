@@ -14,8 +14,8 @@ void ui_Game_screen_init(void)
 
     ui_BoxStratagems = lv_obj_create(ui_Game);
     lv_obj_remove_style_all(ui_BoxStratagems);
+    lv_obj_set_height(ui_BoxStratagems, 280);
     lv_obj_set_width(ui_BoxStratagems, lv_pct(100));
-    lv_obj_set_height(ui_BoxStratagems, lv_pct(100));
     lv_obj_set_align(ui_BoxStratagems, LV_ALIGN_TOP_MID);
     lv_obj_set_flex_flow(ui_BoxStratagems, LV_FLEX_FLOW_ROW_WRAP);
     lv_obj_set_flex_align(ui_BoxStratagems, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
@@ -196,7 +196,11 @@ void ui_Game_screen_init(void)
     lv_obj_set_height(ui_GameFooter, 38);
     lv_obj_set_width(ui_GameFooter, lv_pct(100));
     lv_obj_set_align(ui_GameFooter, LV_ALIGN_BOTTOM_MID);
+    lv_obj_set_flex_flow(ui_GameFooter, LV_FLEX_FLOW_ROW);
+    lv_obj_set_flex_align(ui_GameFooter, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_START);
     lv_obj_clear_flag(ui_GameFooter, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_pad_row(ui_GameFooter, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_GameFooter, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_BtnBack = lv_btn_create(ui_GameFooter);
     lv_obj_set_width(ui_BtnBack, 72);

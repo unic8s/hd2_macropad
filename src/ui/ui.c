@@ -154,16 +154,16 @@ lv_obj_t * ui_LblConfig;
 void ui_event_BtnReset(lv_event_t * e);
 lv_obj_t * ui_BtnReset;
 lv_obj_t * ui_LblReset;
+lv_obj_t * ui_BarAmount;
 lv_obj_t * ui_Container5;
 lv_obj_t * ui_LblCurAmount;
 lv_obj_t * ui_LblMaxAmount;
-lv_obj_t * ui_BarAmount;
 void ui_event_BtnPlay(lv_event_t * e);
 lv_obj_t * ui_BtnPlay;
 lv_obj_t * ui_LblPlay;
 // CUSTOM VARIABLES
-lv_obj_t * uic_LabelAmount;
 lv_obj_t * uic_BarAmount;
+lv_obj_t * uic_LabelAmount;
 
 
 // SCREEN: ui_Game

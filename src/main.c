@@ -38,9 +38,19 @@ nvs_handle_t nvsConfig;
 
 void setStratagemCode(uint8_t sequence[8], uint8_t mask)
 {
+  uint8_t sequenceLength = 0;
+
   for (uint8_t c = 0; c < 8; c++)
   {
-    stratagemCode[c] = sequence[c];
+    if (sequence[c] > 0)
+    {
+      stratagemCode[c] = sequence[c];
+      sequenceLength++;
+    }
+    else
+    {
+      break;
+    }
   }
 
   stratagemMask = mask;
@@ -238,6 +248,44 @@ void hid_input_task(void *pvParameters)
   }
 }
 
+uint8_t getConfig(char *key, uint8_t defaultValue)
+{
+  uint8_t value;
+
+  esp_err_t ret = nvs_get_u8(nvsConfig, key, &value);
+
+  switch (ret)
+  {
+  case ESP_OK:
+    printf("%s = %" PRIu8 "\n", key, value);
+    return value;
+  case ESP_ERR_NVS_NOT_FOUND:
+    printf("The value is not initialized yet!\n");
+    break;
+  default:
+    printf("Error (%s) reading!\n", esp_err_to_name(ret));
+  }
+
+  return defaultValue;
+}
+
+void setConfig(char *key, uint8_t value)
+{
+  esp_err_t ret;
+
+  ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
+  if (ret != ESP_OK)
+  {
+    printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+    return;
+  }
+
+  ret = nvs_set_u8(nvsConfig, key, value);
+  printf((ret != ESP_OK) ? "Failed!\n" : "Done\n");
+
+  nvs_close(nvsConfig);
+}
+
 void setDelay(int delay, bool restore)
 {
   inputDelay = delay;
@@ -253,19 +301,7 @@ void setDelay(int delay, bool restore)
   }
   else
   {
-    esp_err_t ret;
-
-    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
-    if (ret != ESP_OK)
-    {
-      printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
-      return;
-    }
-
-    ret = nvs_set_u8(nvsConfig, "delay", delay);
-    printf((ret != ESP_OK) ? "Failed!\n" : "Done\n");
-
-    nvs_close(nvsConfig);
+    setConfig("delay", delay);
   }
 }
 
@@ -284,19 +320,7 @@ void setBrightness(int brightness, bool restore)
   }
   else
   {
-    esp_err_t ret;
-
-    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
-    if (ret != ESP_OK)
-    {
-      printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
-      return;
-    }
-
-    ret = nvs_set_u8(nvsConfig, "brightness", brightness);
-    printf((ret != ESP_OK) ? "Failed!\n" : "Done\n");
-
-    nvs_close(nvsConfig);
+    setConfig("brightness", brightness);
   }
 }
 
@@ -317,19 +341,7 @@ void setMuted(bool muted, bool restore)
   }
   else
   {
-    esp_err_t ret;
-
-    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
-    if (ret != ESP_OK)
-    {
-      printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
-      return;
-    }
-
-    ret = nvs_set_u8(nvsConfig, "muted", playerMuted ? 1 : 0);
-    printf((ret != ESP_OK) ? "Failed!\n" : "Done\n");
-
-    nvs_close(nvsConfig);
+    setConfig("muted", playerMuted ? 1 : 0);
   }
 }
 
@@ -344,56 +356,14 @@ void loadConfig()
     return;
   }
 
-  uint8_t delay = 100;
+  uint8_t delay = getConfig("delay", 100);
+  setDelay(delay, true);
 
-  ret = nvs_get_u8(nvsConfig, "delay", &delay);
+  uint8_t screen_brightness = getConfig("brightness", 50);
+  setBrightness(screen_brightness, true);
 
-  switch (ret)
-  {
-  case ESP_OK:
-    printf("Screen delay = %" PRIu8 "\n", delay);
-    setDelay(delay, true);
-    break;
-  case ESP_ERR_NVS_NOT_FOUND:
-    printf("The value is not initialized yet!\n");
-    break;
-  default:
-    printf("Error (%s) reading!\n", esp_err_to_name(ret));
-  }
-
-  uint8_t screen_brightness = 50;
-
-  ret = nvs_get_u8(nvsConfig, "brightness", &screen_brightness);
-
-  switch (ret)
-  {
-  case ESP_OK:
-    printf("Screen brightnesss = %" PRIu8 "\n", screen_brightness);
-    setBrightness(screen_brightness, true);
-    break;
-  case ESP_ERR_NVS_NOT_FOUND:
-    printf("The value is not initialized yet!\n");
-    break;
-  default:
-    printf("Error (%s) reading!\n", esp_err_to_name(ret));
-  }
-
-  uint8_t sound_muted = 0;
-
-  ret = nvs_get_u8(nvsConfig, "muted", &sound_muted);
-
-  switch (ret)
-  {
-  case ESP_OK:
-    printf("Sound muted = %" PRIu8 "\n", sound_muted);
-    setMuted(sound_muted == 1, true);
-    break;
-  case ESP_ERR_NVS_NOT_FOUND:
-    printf("The value is not initialized yet!\n");
-    break;
-  default:
-    printf("Error (%s) reading!\n", esp_err_to_name(ret));
-  }
+  uint8_t sound_muted = getConfig("muted", 0);
+  setMuted(sound_muted == 1, true);
 
   nvs_close(nvsConfig);
 }

@@ -26797,10 +26797,10 @@
                                 "nid": 11110,
                                 "strtype": "_style/Padding",
                                 "intarray": [
-                                  0,
-                                  0,
-                                  0,
-                                  8
+                                  20,
+                                  20,
+                                  10,
+                                  10
                                 ],
                                 "InheritedType": 7
                               },
@@ -27549,10 +27549,10 @@
                                 "nid": 11110,
                                 "strtype": "_style/Padding",
                                 "intarray": [
-                                  0,
-                                  0,
-                                  0,
-                                  8
+                                  20,
+                                  20,
+                                  10,
+                                  10
                                 ],
                                 "InheritedType": 7
                               },
@@ -27818,7 +27818,27 @@
                   },
                   {
                     "part": "lv.PART.MAIN",
-                    "childs": [],
+                    "childs": [
+                      {
+                        "nid": 10000,
+                        "strtype": "_style/StyleState",
+                        "strval": "DEFAULT",
+                        "childs": [
+                          {
+                            "nid": 11110,
+                            "strtype": "_style/Padding",
+                            "intarray": [
+                              0,
+                              0,
+                              0,
+                              0
+                            ],
+                            "InheritedType": 7
+                          }
+                        ],
+                        "InheritedType": 1
+                      }
+                    ],
                     "nid": 1001636,
                     "strtype": "TABPAGE/Style_main",
                     "strval": "lv.PART.MAIN, Rectangle, Pad, Text, Transform",
@@ -28399,10 +28419,10 @@
                                 "nid": 11110,
                                 "strtype": "_style/Padding",
                                 "intarray": [
-                                  0,
-                                  0,
-                                  0,
-                                  8
+                                  20,
+                                  20,
+                                  10,
+                                  10
                                 ],
                                 "InheritedType": 7
                               },
@@ -28668,7 +28688,27 @@
                   },
                   {
                     "part": "lv.PART.MAIN",
-                    "childs": [],
+                    "childs": [
+                      {
+                        "nid": 10000,
+                        "strtype": "_style/StyleState",
+                        "strval": "DEFAULT",
+                        "childs": [
+                          {
+                            "nid": 11110,
+                            "strtype": "_style/Padding",
+                            "intarray": [
+                              0,
+                              0,
+                              0,
+                              0
+                            ],
+                            "InheritedType": 7
+                          }
+                        ],
+                        "InheritedType": 1
+                      }
+                    ],
                     "nid": 1001675,
                     "strtype": "TABPAGE/Style_main",
                     "strval": "lv.PART.MAIN, Rectangle, Pad, Text, Transform",
@@ -29570,10 +29610,10 @@
                                 "nid": 11110,
                                 "strtype": "_style/Padding",
                                 "intarray": [
-                                  0,
-                                  0,
-                                  0,
-                                  8
+                                  20,
+                                  20,
+                                  10,
+                                  10
                                 ],
                                 "InheritedType": 7
                               },
@@ -30079,10 +30119,10 @@
                                 "nid": 11110,
                                 "strtype": "_style/Padding",
                                 "intarray": [
-                                  0,
-                                  0,
-                                  0,
-                                  8
+                                  20,
+                                  20,
+                                  10,
+                                  10
                                 ],
                                 "InheritedType": 7
                               },
@@ -30348,7 +30388,27 @@
                   },
                   {
                     "part": "lv.PART.MAIN",
-                    "childs": [],
+                    "childs": [
+                      {
+                        "nid": 10000,
+                        "strtype": "_style/StyleState",
+                        "strval": "DEFAULT",
+                        "childs": [
+                          {
+                            "nid": 11110,
+                            "strtype": "_style/Padding",
+                            "intarray": [
+                              0,
+                              0,
+                              0,
+                              0
+                            ],
+                            "InheritedType": 7
+                          }
+                        ],
+                        "InheritedType": 1
+                      }
+                    ],
                     "nid": 1001714,
                     "strtype": "TABPAGE/Style_main",
                     "strval": "lv.PART.MAIN, Rectangle, Pad, Text, Transform",
@@ -32387,7 +32447,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 1526,
+    "backup_cnt": 1537,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

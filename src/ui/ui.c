@@ -214,6 +214,7 @@ lv_obj_t * ui_Container8;
 lv_obj_t * ui_Label1;
 void ui_event_ChbMute(lv_event_t * e);
 lv_obj_t * ui_ChbMute;
+lv_obj_t * ui_Label6;
 lv_obj_t * ui_Input;
 lv_obj_t * ui_Container10;
 lv_obj_t * ui_Label3;
@@ -222,9 +223,10 @@ lv_obj_t * ui_LblDelay1;
 void ui_event_SldDelay(lv_event_t * e);
 lv_obj_t * ui_SldDelay;
 lv_obj_t * ui_Container6;
-void ui_event_BtnDemo(lv_event_t * e);
-lv_obj_t * ui_BtnDemo;
-lv_obj_t * ui_LblDemo;
+void ui_event_BtnTest(lv_event_t * e);
+lv_obj_t * ui_BtnTest;
+lv_obj_t * ui_LblTest;
+lv_obj_t * ui_Label16;
 void ui_event_SetupFooter2(lv_event_t * e);
 lv_obj_t * ui_SetupFooter2;
 void ui_event_BtnSetup(lv_event_t * e);
@@ -1254,7 +1256,7 @@ void ui_event_SldDelay(lv_event_t * e)
     }
 }
 
-void ui_event_BtnDemo(lv_event_t * e)
+void ui_event_BtnTest(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 

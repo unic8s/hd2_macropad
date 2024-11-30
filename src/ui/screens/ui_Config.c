@@ -262,6 +262,18 @@ void ui_Config_screen_init(void)
     ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorActive);
 
+    ui_Label6 = lv_label_create(ui_Container8);
+    lv_obj_set_width(ui_Label6, LV_SIZE_CONTENT);   /// 50
+    lv_obj_set_height(ui_Label6, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label6, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label6, "Requires external speaker");
+    lv_obj_set_style_text_color(ui_Label6, lv_color_hex(0x666666), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_Label6, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui_Label6, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Label6, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Label6, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Label6, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+
     ui_Input = lv_tabview_add_tab(ui_TabView1, "Input");
     lv_obj_set_flex_flow(ui_Input, LV_FLEX_FLOW_ROW_WRAP);
     lv_obj_set_flex_align(ui_Input, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
@@ -367,31 +379,43 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_row(ui_Container6, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_column(ui_Container6, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_BtnDemo = lv_btn_create(ui_Container6);
-    lv_obj_set_width(ui_BtnDemo, 72);
-    lv_obj_set_height(ui_BtnDemo, 36);
-    lv_obj_set_x(ui_BtnDemo, 4);
-    lv_obj_set_y(ui_BtnDemo, 0);
-    lv_obj_set_align(ui_BtnDemo, LV_ALIGN_BOTTOM_LEFT);
-    lv_obj_add_flag(ui_BtnDemo, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_BtnDemo, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_color(ui_BtnDemo, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_BtnDemo, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_BtnDemo, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+    ui_BtnTest = lv_btn_create(ui_Container6);
+    lv_obj_set_width(ui_BtnTest, 72);
+    lv_obj_set_height(ui_BtnTest, 36);
+    lv_obj_set_x(ui_BtnTest, 4);
+    lv_obj_set_y(ui_BtnTest, 0);
+    lv_obj_set_align(ui_BtnTest, LV_ALIGN_BOTTOM_LEFT);
+    lv_obj_add_flag(ui_BtnTest, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_BtnTest, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_BtnTest, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_BtnTest, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_BtnTest, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_BtnDemo, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+    ui_object_set_themeable_style_property(ui_BtnTest, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_border_width(ui_BtnDemo, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui_BtnTest, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_LblDemo = lv_label_create(ui_BtnDemo);
-    lv_obj_set_width(ui_LblDemo, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_LblDemo, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_LblDemo, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_LblDemo, "Demo");
-    ui_object_set_themeable_style_property(ui_LblDemo, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+    ui_LblTest = lv_label_create(ui_BtnTest);
+    lv_obj_set_width(ui_LblTest, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_LblTest, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_LblTest, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_LblTest, "Test");
+    ui_object_set_themeable_style_property(ui_LblTest, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_LblDemo, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+    ui_object_set_themeable_style_property(ui_LblTest, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
                                            _ui_theme_alpha_colorTheme);
+
+    ui_Label16 = lv_label_create(ui_Container6);
+    lv_obj_set_width(ui_Label16, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label16, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label16, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label16, "Sends a \"hello\" via Bluetooth keyboard");
+    lv_obj_set_style_text_color(ui_Label16, lv_color_hex(0x666666), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_Label16, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui_Label16, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Label16, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Label16, 10, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Label16, 10, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_SetupFooter2 = lv_obj_create(ui_Config);
     lv_obj_remove_style_all(ui_SetupFooter2);
@@ -495,7 +519,7 @@ void ui_Config_screen_init(void)
     lv_obj_add_event_cb(ui_ChbFlip, ui_event_ChbFlip, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_ChbMute, ui_event_ChbMute, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_SldDelay, ui_event_SldDelay, LV_EVENT_ALL, NULL);
-    lv_obj_add_event_cb(ui_BtnDemo, ui_event_BtnDemo, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_BtnTest, ui_event_BtnTest, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnSetup, ui_event_BtnSetup, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnDefault, ui_event_BtnDefault, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnReboot, ui_event_BtnReboot, LV_EVENT_ALL, NULL);

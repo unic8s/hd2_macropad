@@ -70,6 +70,8 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_res1_png.c
     images/ui_img_sg_sos1_png.c
     images/ui_img_sg_er1_png.c
+    images/ui_img_bt_dis_png.c
+    images/ui_img_bt_con_png.c
     images/ui_img_sg_1202_png.c
     images/ui_img_sg_3802_png.c
     images/ui_img_sg_ac2_png.c

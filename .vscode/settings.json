@@ -61,6 +61,7 @@
         "esp_bt_main.h": "c",
         "esp_gap_ble_api.h": "c",
         "ratio": "c",
-        "nvs_flash.h": "c"
+        "nvs_flash.h": "c",
+        "configration.h": "c"
     }
 }

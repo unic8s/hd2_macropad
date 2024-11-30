@@ -207,6 +207,9 @@ extern lv_obj_t * ui_GameFooter;
 void ui_event_BtnBack(lv_event_t * e);
 extern lv_obj_t * ui_BtnBack;
 extern lv_obj_t * ui_LblBack;
+extern lv_obj_t * ui_Container12;
+extern lv_obj_t * ui_ImgBTdis;
+extern lv_obj_t * ui_ImgBTcon;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Config
@@ -326,6 +329,8 @@ LV_IMG_DECLARE(ui_img_sg_rf1_png);    // assets/sg/RF1.png
 LV_IMG_DECLARE(ui_img_sg_res1_png);    // assets/sg/RES1.png
 LV_IMG_DECLARE(ui_img_sg_sos1_png);    // assets/sg/SOS1.png
 LV_IMG_DECLARE(ui_img_sg_er1_png);    // assets/sg/ER1.png
+LV_IMG_DECLARE(ui_img_bt_dis_png);    // assets/bt_dis.png
+LV_IMG_DECLARE(ui_img_bt_con_png);    // assets/bt_con.png
 LV_IMG_DECLARE(ui_img_sg_1202_png);    // assets/sg/1202.png
 LV_IMG_DECLARE(ui_img_sg_3802_png);    // assets/sg/3802.png
 LV_IMG_DECLARE(ui_img_sg_ac2_png);    // assets/sg/AC2.png

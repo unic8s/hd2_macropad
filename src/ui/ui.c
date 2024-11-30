@@ -190,6 +190,9 @@ lv_obj_t * ui_GameFooter;
 void ui_event_BtnBack(lv_event_t * e);
 lv_obj_t * ui_BtnBack;
 lv_obj_t * ui_LblBack;
+lv_obj_t * ui_Container12;
+lv_obj_t * ui_ImgBTdis;
+lv_obj_t * ui_ImgBTcon;
 // CUSTOM VARIABLES
 
 

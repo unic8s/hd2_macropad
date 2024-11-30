@@ -12,10 +12,15 @@
 #include "driver/gpio.h"
 #include "hid_dev.h"
 #include "i2s_player.h"
-#include "ble_controller.c"
+#include "ble/ble_controller.c"
 #include "configration.h"
 
 static const char *TAG = "HD2 Macropad";
+
+extern uint16_t hid_conn_id;
+extern bool sec_conn;
+
+bool lvglReady = false;
 
 #define logSection(section) \
   ESP_LOGI(TAG, "\n\n************* %s **************\n", section);
@@ -28,7 +33,6 @@ char *soundFile;
 bool playerMuted;
 int inputDelay = 100;
 int screenRotation = LV_DISP_ROT_90;
-
 
 void setStratagemCode(uint8_t sequence[8], uint8_t mask)
 {
@@ -59,6 +63,24 @@ void playbackSound(char *path)
 void dimScreen(int brightness)
 {
   bsp_display_brightness_set(brightness);
+}
+
+void updateBluetooth()
+{
+  if(!lvglReady){
+    return;
+  }
+
+  if (sec_conn)
+  {
+    lv_obj_add_flag(ui_ImgBTdis, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(ui_ImgBTcon, LV_OBJ_FLAG_HIDDEN);
+  }
+  else
+  {
+    lv_obj_add_flag(ui_ImgBTcon, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(ui_ImgBTdis, LV_OBJ_FLAG_HIDDEN);
+  }
 }
 
 #define CHECK_DELAY 50
@@ -112,10 +134,8 @@ void hid_input_task(void *pvParameters)
 
 void app_main()
 {
-  esp_err_t ret;
-
-  ret = initConfig();
-  ret = ble_controller_init();
+  initConfig();
+  ble_controller_init();
 
   xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);
 
@@ -146,6 +166,9 @@ void app_main()
 
   /* Read config */
   loadConfig();
+
+  lvglReady = true;
+  updateBluetooth();
 
   playbackSound("S:assets/sound/intro.wav");
 }

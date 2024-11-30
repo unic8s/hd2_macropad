@@ -421,8 +421,6 @@ void ui_Config_screen_init(void)
     lv_obj_remove_style_all(ui_SetupFooter2);
     lv_obj_set_height(ui_SetupFooter2, 38);
     lv_obj_set_width(ui_SetupFooter2, lv_pct(100));
-    lv_obj_set_x(ui_SetupFooter2, 0);
-    lv_obj_set_y(ui_SetupFooter2, 2);
     lv_obj_set_align(ui_SetupFooter2, LV_ALIGN_BOTTOM_MID);
     lv_obj_set_flex_flow(ui_SetupFooter2, LV_FLEX_FLOW_ROW);
     lv_obj_set_flex_align(ui_SetupFooter2, LV_FLEX_ALIGN_SPACE_BETWEEN, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_START);

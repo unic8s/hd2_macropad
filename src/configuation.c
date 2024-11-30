@@ -9,6 +9,7 @@ nvs_handle_t nvsConfig;
 
 extern bool playerMuted;
 extern int inputDelay;
+extern int screenRotation;
 
 esp_err_t initConfig()
 {
@@ -84,6 +85,27 @@ void setDelay(int delay, bool restore)
     }
 }
 
+void setRotation(int rotation, bool restore)
+{
+    screenRotation = rotation;
+
+    if (restore)
+    {
+        if (screenRotation == LV_DISP_ROT_270)
+        {
+            lv_obj_add_state(ui_ChbFlip, LV_STATE_CHECKED);
+        }
+        else
+        {
+            lv_obj_clear_state(ui_ChbFlip, LV_STATE_CHECKED);
+        }
+    }
+    else
+    {
+        setConfig("rotation", screenRotation);
+    }
+}
+
 void setBrightness(int brightness, bool restore)
 {
     dimScreen(brightness);
@@ -138,6 +160,9 @@ void loadConfig()
     uint8_t delay = getConfig("delay", 100);
     setDelay(delay, true);
 
+    uint8_t rotation = getConfig("rotation", 100);
+    setRotation(rotation, true);
+
     uint8_t screen_brightness = getConfig("brightness", 50);
     setBrightness(screen_brightness, true);
 
@@ -145,6 +170,24 @@ void loadConfig()
     setMuted(sound_muted == 1, true);
 
     nvs_close(nvsConfig);
+}
+
+uint8_t peekConfig(char *key, uint8_t defaultValue)
+{
+    esp_err_t ret;
+
+    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
+    if (ret != ESP_OK)
+    {
+        printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+        return defaultValue;
+    }
+
+    uint8_t value = getConfig(key, defaultValue);
+
+    nvs_close(nvsConfig);
+
+    return value;
 }
 
 void resetConfig()

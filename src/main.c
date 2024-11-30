@@ -27,6 +27,7 @@ char *soundFile;
 
 bool playerMuted;
 int inputDelay = 100;
+int screenRotation = LV_DISP_ROT_90;
 
 
 void setStratagemCode(uint8_t sequence[8], uint8_t mask)
@@ -118,12 +119,14 @@ void app_main()
 
   xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);
 
+  screenRotation = peekConfig("rotation", LV_DISP_ROT_90);
+
   logSection("Initialize panel device");
   // ESP_LOGI(TAG, "Initialize panel device");
   bsp_display_cfg_t cfg = {
       .lvgl_port_cfg = ESP_LVGL_PORT_INIT_CONFIG(),
       .buffer_size = EXAMPLE_LCD_QSPI_H_RES * EXAMPLE_LCD_QSPI_V_RES,
-      .rotate = LV_DISP_ROT_90,
+      .rotate = screenRotation,
   };
 
   bsp_display_start_with_config(&cfg);

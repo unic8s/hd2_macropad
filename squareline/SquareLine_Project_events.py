@@ -90,3 +90,7 @@ def GotoGame(event_struct):
 def KeyboardDemo(event_struct):
     return
 
+
+def FlipScreen(event_struct):
+    return
+

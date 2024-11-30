@@ -332,6 +332,13 @@ void RebootDevice(lv_event_t *e)
 	esp_restart();
 }
 
+void FlipScreen(lv_event_t *e)
+{
+	bool flip = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
+
+	setRotation(flip ? LV_DISP_ROT_270 : LV_DISP_ROT_90, false);
+}
+
 void GotoGame(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < 4; c++)

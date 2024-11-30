@@ -65,6 +65,7 @@ Please follow the specific steps for your prefered system.
 - The 4 upper stratagems are the basic items for all operation types (reinforce, resupply, SOS and rearm eagle).
 - The 4 lower stratagems are the ones you selected in the setup procedure.
 - Just click a strategem to activate the execution of the macro.
+- The Bluetooth icon in the lower right corner indicates the connection stats (grey: disconnected, blue: connect).
 
 ### Change selection
 1. If you want to change your selection just click the "back" button at the bottom left corner.

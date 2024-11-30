@@ -51,25 +51,51 @@ Please follow the specific steps for your prefered system.
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. [How to use a keyboard and mouse on PS5 consoles](https://www.playstation.com/en-us/support/hardware/keyboard-mouse-ps5/)
 
-## Configuration and in-game usage
+## Stratagem selection
 
 ### First startup
 1. After the intro screen all stratagems are displayed in groups (weapons, backpacks, stationary, strike and eagle)
 2. Select a stratagems by clicking on it. The yellow border will turn into a white one which indicates the selection.
 3. You have to pick your 4 specific stratagems from the groups.
 4. The label and the bar at the bottom of the screen shows the progress of your selection.
-5. After 4 stratagems have been selected the screen switches from the setup to game mode.
+- After 4 stratagems have been selected the screen switches from the setup to game mode.
+- If you want to switch to gaming mode with less than 4 stratagems select just click the "Play" button
 
-### How to use
+### In-game usage
 - The 4 upper stratagems are the basic items for all operation types (reinforce, resupply, SOS and rearm eagle).
 - The 4 lower stratagems are the ones you selected in the setup procedure.
 - Just click a strategem to activate the execution of the macro.
 
-### Re-configuration
+### Change selection
 1. If you want to change your selection just click the "back" button at the bottom left corner.
 2. You screen will switch back from game to setup mode.
 3. Now you can either unselect the unwanted stratagems inside the groups or just click "reset" at the bottom right corner to unselect all selected stratagems from the list.
-4. As soon as you have selected 4 stratagems again the screen will automatically switch from setup to game mode.
+4. As soon as you're finished just click the "Play" button or have selected 4 stratagems again and the screen will automatically switch from setup to game mode.
+
+## Device configuration
+If you click on "Config" on the setup screen you will enter the device configuration with specific hard-/software features.
+
+### Menu
+- Default
+  - Resets ALL settings to the default values
+- Reboot
+  - Restarts the device
+
+### Display
+- Brightness
+  - Set the brighness level of your screen (10 - 100%)
+- Flip 180°
+  - Set the orientation of the screen from 0 to 180° flipped (Device need to be rebooted after changing this setting)
+
+### Audio
+- Mute
+  - En-/disable the sound output (Requires an external speaker to work)
+
+### Input
+- Delay
+  - Set the input delay of the Bluetooth keyboard (50 - 200ms). This has to be adjusted if there are issues with your Bluetooth receiver of the PC/PS5.
+- Test
+  - Click this button to send a test input sequence "hello" to your receiving device PC/PS5.
 
 ## Hardware - for enthusiasts
 
@@ -109,15 +135,11 @@ The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.al
 
 ### Setup
 
-![](screens/setup_weapons.png)
+![](screens/setup.png)
 
-![](screens/setup_backpacks.png)
+### Config
 
-![](screens/setup_stationary.png)
-
-![](screens/setup_strike.png)
-
-![](screens/setup_eagle.png)
+![](screens/config.png)
 
 ### Game (example configuration)
 

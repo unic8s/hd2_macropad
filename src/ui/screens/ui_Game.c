@@ -239,16 +239,16 @@ void ui_Game_screen_init(void)
 
     ui_ImgBTdis = lv_img_create(ui_Container12);
     lv_img_set_src(ui_ImgBTdis, &ui_img_bt_dis_png);
-    lv_obj_set_width(ui_ImgBTdis, 36);
-    lv_obj_set_height(ui_ImgBTdis, 36);
+    lv_obj_set_width(ui_ImgBTdis, 32);
+    lv_obj_set_height(ui_ImgBTdis, 32);
     lv_obj_set_align(ui_ImgBTdis, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_ImgBTdis, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_ImgBTdis, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
     ui_ImgBTcon = lv_img_create(ui_Container12);
     lv_img_set_src(ui_ImgBTcon, &ui_img_bt_con_png);
-    lv_obj_set_width(ui_ImgBTcon, 36);
-    lv_obj_set_height(ui_ImgBTcon, 36);
+    lv_obj_set_width(ui_ImgBTcon, 32);
+    lv_obj_set_height(ui_ImgBTcon, 32);
     lv_obj_set_align(ui_ImgBTcon, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_ImgBTcon, LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_ImgBTcon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags

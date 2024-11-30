@@ -2,6 +2,7 @@ SET(SOURCES screens/ui_Intro.c
     screens/ui_Setup.c
     screens/ui_Game.c
     screens/ui_Config.c
+    screens/ui_About.c
     ui_theme_manager.c
     ui_themes.c
     ui.c
@@ -72,6 +73,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_er1_png.c
     images/ui_img_bt_dis_png.c
     images/ui_img_bt_con_png.c
+    images/ui_img_qrcode_png.c
     images/ui_img_sg_1202_png.c
     images/ui_img_sg_3802_png.c
     images/ui_img_sg_ac2_png.c

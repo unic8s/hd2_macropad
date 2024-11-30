@@ -222,7 +222,6 @@ void ui_Config_screen_init(void)
     lv_obj_set_x(ui_ChbMute, -73);
     lv_obj_set_y(ui_ChbMute, 95);
     lv_obj_set_align(ui_ChbMute, LV_ALIGN_CENTER);
-    lv_obj_add_state(ui_ChbMute, LV_STATE_CHECKED);       /// States
     lv_obj_set_style_bg_color(ui_ChbMute, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_ChbMute, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
@@ -388,6 +387,7 @@ void ui_Config_screen_init(void)
 
     lv_obj_add_event_cb(ui_SldDelay, ui_event_SldDelay, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_SldBrightness, ui_event_SldBrightness, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_ChbMute, ui_event_ChbMute, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnSetup, ui_event_BtnSetup, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnDemo, ui_event_BtnDemo, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnDefault, ui_event_BtnDefault, LV_EVENT_ALL, NULL);

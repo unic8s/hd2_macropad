@@ -10,6 +10,7 @@
 #include "sounds.h"
 #include "i2s_player.h"
 #include "main.h"
+#include "configration.h"
 
 lv_obj_t *buttons[4];
 int indices[4];

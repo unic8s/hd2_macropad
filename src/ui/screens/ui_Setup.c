@@ -1602,6 +1602,7 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_EagleSR, ui_event_EagleSR, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_EagleNA, ui_event_EagleNA, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_EagleSS, ui_event_EagleSS, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_TabStratagems, ui_event_TabStratagems, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnConfig, ui_event_BtnConfig, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnReset, ui_event_BtnReset, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnPlay, ui_event_BtnPlay, LV_EVENT_ALL, NULL);

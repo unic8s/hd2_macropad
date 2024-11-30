@@ -32,7 +32,7 @@ void deselectStratagem(lv_event_t *e)
 
 	updateStratagemSelection();
 
-	playbackSound("S:assets/sound/StStop.wav");
+	playbackSound("S:assets/sound/_des.wav");
 }
 
 void selectStratagem(lv_event_t *e)
@@ -51,13 +51,13 @@ void selectStratagem(lv_event_t *e)
 
 		updateStratagemSelection();
 
-		playbackSound("S:assets/sound/StEntry.wav");
+		playbackSound("S:assets/sound/_sel.wav");
 	}
 	else
 	{
 		lv_obj_clear_state(e->target, LV_STATE_CHECKED);
 
-		playbackSound("S:assets/sound/StStop.wav");
+		playbackSound("S:assets/sound/_des.wav");
 	}
 }
 
@@ -98,7 +98,7 @@ void resetStratagems(lv_event_t *e)
 
 	updateStratagemSelection();
 
-	playbackSound("S:assets/sound/StError.wav");
+	playbackSound("S:assets/sound/_rst.wav");
 }
 
 void assignStratagems(lv_event_t *e)
@@ -330,6 +330,11 @@ void KeyboardDemo(lv_event_t *e)
 void RebootDevice(lv_event_t *e)
 {
 	esp_restart();
+}
+
+void TabChanged(lv_event_t *e)
+{
+	playbackSound("S:assets/sound/_swp.wav");
 }
 
 void FlipScreen(lv_event_t *e)

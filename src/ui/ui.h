@@ -40,6 +40,7 @@ extern lv_obj_t * ui_Splash;
 void ui_Setup_screen_init(void);
 void ui_event_Setup(lv_event_t * e);
 extern lv_obj_t * ui_Setup;
+void ui_event_TabStratagems(lv_event_t * e);
 extern lv_obj_t * ui_TabStratagems;
 extern lv_obj_t * ui_Weapon;
 extern lv_obj_t * ui_Container2;
@@ -215,6 +216,7 @@ extern lv_obj_t * ui_ImgBTcon;
 // SCREEN: ui_Config
 void ui_Config_screen_init(void);
 extern lv_obj_t * ui_Config;
+void ui_event_TabView1(lv_event_t * e);
 extern lv_obj_t * ui_TabView1;
 extern lv_obj_t * ui_Display;
 extern lv_obj_t * ui_Container9;

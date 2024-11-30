@@ -94,3 +94,7 @@ def KeyboardDemo(event_struct):
 def FlipScreen(event_struct):
     return
 
+
+def TabChanged(event_struct):
+    return
+

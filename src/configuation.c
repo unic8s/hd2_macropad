@@ -104,6 +104,8 @@ void setRotation(int rotation, bool restore)
     {
         setConfig("rotation", screenRotation);
     }
+
+    playbackSound("S:assets/sound/_swt.wav");
 }
 
 void setBrightness(int brightness, bool restore)
@@ -144,6 +146,8 @@ void setMuted(bool muted, bool restore)
     {
         setConfig("muted", playerMuted ? 1 : 0);
     }
+
+    playbackSound("S:assets/sound/_swt.wav");
 }
 
 void loadConfig()

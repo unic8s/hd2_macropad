@@ -22,6 +22,7 @@ lv_obj_t * ui_Splash;
 void ui_Setup_screen_init(void);
 void ui_event_Setup(lv_event_t * e);
 lv_obj_t * ui_Setup;
+void ui_event_TabStratagems(lv_event_t * e);
 lv_obj_t * ui_TabStratagems;
 lv_obj_t * ui_Weapon;
 lv_obj_t * ui_Container2;
@@ -199,6 +200,7 @@ lv_obj_t * ui_ImgBTcon;
 // SCREEN: ui_Config
 void ui_Config_screen_init(void);
 lv_obj_t * ui_Config;
+void ui_event_TabView1(lv_event_t * e);
 lv_obj_t * ui_TabView1;
 lv_obj_t * ui_Display;
 lv_obj_t * ui_Container9;
@@ -371,6 +373,15 @@ void ui_event_Setup(lv_event_t * e)
 
     if(event_code == LV_EVENT_SCREEN_LOADED) {
         assignStratagems(e);
+    }
+}
+
+void ui_event_TabStratagems(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        TabChanged(e);
     }
 }
 
@@ -1220,6 +1231,15 @@ void ui_event_BtnBack(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, &ui_Setup_screen_init);
+    }
+}
+
+void ui_event_TabView1(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        TabChanged(e);
     }
 }
 

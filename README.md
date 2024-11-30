@@ -76,26 +76,20 @@ Please follow the specific steps for your prefered system.
 If you click on "Config" on the setup screen you will enter the device configuration with specific hard-/software features.
 
 ### Menu
-- Default
-  - Resets ALL settings to the default values
-- Reboot
-  - Restarts the device
+- [Back] Switch back to setup mode
+- [Default] Resets ALL settings to the default values
+- [Reboot] Restarts the device
 
 ### Display
-- Brightness
-  - Set the brighness level of your screen (10 - 100%)
-- Flip 180°
-  - Set the orientation of the screen from 0 to 180° flipped (Device need to be rebooted after changing this setting)
+- [Brightness] Set the brighness level of your screen (10 - 100%)
+- [Flip 180°] Set the orientation of the screen from 0 to 180° flipped (Device need to be rebooted after changing this setting)
 
 ### Audio
-- Mute
-  - En-/disable the sound output (Requires an external speaker to work)
+- [Mute] En-/disable the sound output (Requires an external speaker to work)
 
 ### Input
-- Delay
-  - Set the input delay of the Bluetooth keyboard (50 - 200ms). This has to be adjusted if there are issues with your Bluetooth receiver of the PC/PS5.
-- Test
-  - Click this button to send a test input sequence "hello" to your receiving device PC/PS5.
+- [Delay] Set the input delay of the Bluetooth keyboard (50 - 200ms). This has to be adjusted if there are issues with your Bluetooth receiver of the PC/PS5.
+- [Test] Click this button to send a test input sequence "hello" to your receiving device PC/PS5.
 
 ## Hardware - for enthusiasts
 

@@ -27521,7 +27521,7 @@
                             "flags": 17,
                             "strtype": "OBJECT/Size",
                             "intarray": [
-                              52,
+                              64,
                               32
                             ],
                             "InheritedType": 7
@@ -28547,7 +28547,7 @@
                             "flags": 17,
                             "strtype": "OBJECT/Size",
                             "intarray": [
-                              52,
+                              64,
                               32
                             ],
                             "InheritedType": 7
@@ -35352,7 +35352,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 1633,
+    "backup_cnt": 1634,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

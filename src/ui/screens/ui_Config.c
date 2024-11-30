@@ -156,7 +156,7 @@ void ui_Config_screen_init(void)
                                            _ui_theme_alpha_colorTheme);
 
     ui_ChbFlip = lv_switch_create(ui_Container13);
-    lv_obj_set_width(ui_ChbFlip, 52);
+    lv_obj_set_width(ui_ChbFlip, 64);
     lv_obj_set_height(ui_ChbFlip, 32);
     lv_obj_set_x(ui_ChbFlip, -73);
     lv_obj_set_y(ui_ChbFlip, 95);
@@ -232,7 +232,7 @@ void ui_Config_screen_init(void)
                                            _ui_theme_alpha_colorTheme);
 
     ui_ChbMute = lv_switch_create(ui_Container8);
-    lv_obj_set_width(ui_ChbMute, 52);
+    lv_obj_set_width(ui_ChbMute, 64);
     lv_obj_set_height(ui_ChbMute, 32);
     lv_obj_set_x(ui_ChbMute, -73);
     lv_obj_set_y(ui_ChbMute, 95);

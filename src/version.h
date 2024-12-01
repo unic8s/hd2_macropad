@@ -1,1 +1,1 @@
-#define SW_VER "{{version}}"
+#define SW_VER "(dev)"

@@ -86,6 +86,11 @@ void updateStratagemSelection()
 
 void resetStratagems(lv_event_t *e)
 {
+	if (strategemsAmount == 0)
+	{
+		return;
+	}
+
 	for (uint8_t c = 0; c < 4; c++)
 	{
 		if (buttons[c] != NULL)

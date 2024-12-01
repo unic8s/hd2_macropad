@@ -1,0 +1,1 @@
+#define SW_VER "{{version}}"

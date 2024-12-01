@@ -14,6 +14,7 @@
 #include "i2s_player.h"
 #include "ble/ble_controller.c"
 #include "configration.h"
+#include "version.h"
 
 static const char *TAG = "HD2 Macropad";
 
@@ -67,7 +68,8 @@ void dimScreen(int brightness)
 
 void updateBluetooth()
 {
-  if(!lvglReady){
+  if (!lvglReady)
+  {
     return;
   }
 
@@ -171,4 +173,9 @@ void app_main()
   updateBluetooth();
 
   playbackSound("S:assets/sound/intro.wav");
+
+  char softwareVersion[12];
+  strcpy(softwareVersion, SW_VER);
+
+  lv_label_set_text(ui_LblVersion, softwareVersion);
 }

@@ -273,6 +273,7 @@ extern lv_obj_t * ui_About;
 extern lv_obj_t * ui_Splash2;
 extern lv_obj_t * ui_Container14;
 extern lv_obj_t * ui_Label7;
+extern lv_obj_t * ui_LblVersion;
 extern lv_obj_t * ui_Label9;
 extern lv_obj_t * ui_Label12;
 extern lv_obj_t * ui_Label8;

@@ -273,7 +273,6 @@ extern lv_obj_t * ui_About;
 extern lv_obj_t * ui_Splash2;
 extern lv_obj_t * ui_Container14;
 extern lv_obj_t * ui_Label7;
-extern lv_obj_t * ui_LblVersion;
 extern lv_obj_t * ui_Label9;
 extern lv_obj_t * ui_Label12;
 extern lv_obj_t * ui_Label8;
@@ -284,6 +283,7 @@ extern lv_obj_t * ui_SetupFooter3;
 void ui_event_Button10(lv_event_t * e);
 extern lv_obj_t * ui_Button10;
 extern lv_obj_t * ui_Label11;
+extern lv_obj_t * ui_LblVersion;
 // CUSTOM VARIABLES
 extern lv_obj_t * uic_Button10;
 

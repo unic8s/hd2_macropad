@@ -37,29 +37,52 @@ void ui_About_screen_init(void)
     lv_obj_set_style_pad_column(ui_Container14, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label7 = lv_label_create(ui_Container14);
-    lv_obj_set_width(ui_Label7, lv_pct(50));
+    lv_obj_set_width(ui_Label7, lv_pct(100));
     lv_obj_set_height(ui_Label7, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Label7, -130);
     lv_obj_set_y(ui_Label7, -15);
     lv_obj_set_align(ui_Label7, LV_ALIGN_CENTER);
     lv_label_set_text(ui_Label7, "HD2 Macropad");
-
-    ui_Label8 = lv_label_create(ui_Container14);
-    lv_obj_set_width(ui_Label8, lv_pct(50));
-    lv_obj_set_height(ui_Label8, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label8, -130);
-    lv_obj_set_y(ui_Label8, -15);
-    lv_obj_set_align(ui_Label8, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label8, "(C) 2022 All rights reserved.");
-    lv_obj_set_style_text_align(ui_Label8, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_Label7, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_Label7, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_text_font(ui_Label7, &lv_font_montserrat_28, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label9 = lv_label_create(ui_Container14);
-    lv_obj_set_width(ui_Label9, lv_pct(100));
+    lv_obj_set_width(ui_Label9, lv_pct(25));
     lv_obj_set_height(ui_Label9, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Label9, -130);
     lv_obj_set_y(ui_Label9, -15);
     lv_obj_set_align(ui_Label9, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label9, "A project by Oliver G. and Erik L.");
+    lv_label_set_text(ui_Label9, "A project by:\nOliver G.\nErik L.");
+    lv_obj_set_style_text_letter_space(ui_Label9, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui_Label9, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label12 = lv_label_create(ui_Container14);
+    lv_obj_set_width(ui_Label12, lv_pct(75));
+    lv_obj_set_height(ui_Label12, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label12, -130);
+    lv_obj_set_y(ui_Label12, -15);
+    lv_obj_set_align(ui_Label12, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label12, "\n@Gore66\n@unic8s");
+    ui_object_set_themeable_style_property(ui_Label12, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_Label12, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_text_letter_space(ui_Label12, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui_Label12, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label8 = lv_label_create(ui_Container14);
+    lv_obj_set_width(ui_Label8, lv_pct(67));
+    lv_obj_set_height(ui_Label8, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label8, -130);
+    lv_obj_set_y(ui_Label8, -15);
+    lv_obj_set_align(ui_Label8, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label8,
+                      "Copyright (C) 2024 All rights reserved.\nThis project is released under the MIT license.\n\nFor any further information please visit:");
+    lv_obj_set_style_text_letter_space(ui_Label8, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui_Label8, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label10 = lv_label_create(ui_Container14);
     lv_obj_set_width(ui_Label10, lv_pct(100));
@@ -67,7 +90,11 @@ void ui_About_screen_init(void)
     lv_obj_set_x(ui_Label10, -130);
     lv_obj_set_y(ui_Label10, -15);
     lv_obj_set_align(ui_Label10, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label10, "https://github.com/unic8s/hd2_macropad");
+    lv_label_set_text(ui_Label10, "github.com/unic8s/hd2_macropad");
+    ui_object_set_themeable_style_property(ui_Label10, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_Label10, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_colorTheme);
 
     ui_Image1 = lv_img_create(ui_About);
     lv_img_set_src(ui_Image1, &ui_img_qrcode_png);

@@ -4,7 +4,7 @@ import subprocess
 
 versionPath = "src/version.h"
 
-if len(sys.argv) > 1:
+if len(sys.argv) > 1 and sys.argv[1][0] == 'v':
     versionNumber = sys.argv[1]
 else:
     result = subprocess.run(['git', 'pull'])

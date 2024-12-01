@@ -34,12 +34,12 @@ jobs:
           github_token: ${{ secrets.github_token }}
 
       - name: Generate version
-        run: python utils/write-version.py 
+        run: python utils/write-version.py ${{ steps.tag_version.outputs.new_tag }}
 
       - name: Build PlatformIO Project
         run:  pio run -t mergebin
         env:  
-          MERGED_BIN_PATH: ./hd2_macropad.bin ${{ steps.tag_version.outputs.new_tag }}
+          MERGED_BIN_PATH: ./hd2_macropad.bin
 
       - name: Pack assets
         run: python utils/pack-assets.py

@@ -1,1 +1,0 @@
-#define SW_VER "(dev)"

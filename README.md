@@ -17,7 +17,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
   - [esp-tool](https://github.com/espressif/esptool) to upload the firmware
 - Sound output (optional)
   - SD Card with minimum 2 MB free space
-  - Speaker with [JST](https://en.wikipedia.org/wiki/JST_connector) connector
+  - Speaker with [JST](https://en.wikipedia.org/wiki/JST_connector) connector. Our suggestion would be a [slim speaker with the right connector](https://s.click.aliexpress.com/e/_DkaGKst).
 
 ## Installation
 
@@ -34,7 +34,7 @@ Please follow the described steps and make your decision if you'd like to add au
   - Use esptool to [flash](https://docs.espressif.com/projects/esptool/en/latest/esp32/esptool/flashing-firmware.html) the BIN to your device
 ### Sounds (optional)
 3. Unpack and copy all [assets](https://github.com/unic8s/hd2_macropad/releases/latest/download/assets.zip) to a SD card into the root directory
-4. Connect a speaker to the rear [JST](https://en.wikipedia.org/wiki/JST_connector) port of the device
+4. Connect a speaker to the rear [JST](https://en.wikipedia.org/wiki/JST_connector) port of the device. We use a [slim speaker with the right connector](https://s.click.aliexpress.com/e/_DkaGKst).
 
 ## Setup
 

@@ -108,6 +108,10 @@ The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.al
 - Power supply: USB-C (also data transfer)
 - Battery: 2-pin [JST](https://en.wikipedia.org/wiki/JST_connector) connector
 
+There is no speaker included in  the casing of the device. As a speaker you should ideally use a broandband driver with a small and slim casing.
+
+- [SHEVCHENKO speaker](https://s.click.aliexpress.com/e/_DkaGKst) w 20 * h 35 * d 3.5 mm with a cable and a [JST](https://en.wikipedia.org/wiki/JST_connector) connector
+
 ## Software - for developers
 
 - IDE: [VSCode](https://code.visualstudio.com/) + [PlatformIO](https://platformio.org/)

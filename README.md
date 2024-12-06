@@ -9,7 +9,7 @@ Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/) or
 
 Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC since it's connected via Bluetooth as a keyboard input device.
 
-> HELLDIVERS and PS5 a registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC
+> HELLDIVERS and PS5 a registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC.
 
 ## Prerequesites
 - The specific device [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR)
@@ -120,6 +120,11 @@ There is no speaker included in  the casing of the device. As a speaker you shou
   -  [LVGL](https://lvgl.io/)
   - [BLE HID](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidd.html)
   - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)
+
+## Disclaimer and copyright
+- This is a private opensource project and is not associated in any kind with SONY INTERACTIVE ENTERTAINMENT LLC.
+- SONY INTERACTIVE ENTERTAINMENT LLC is not responsible for any function and content that is related to this project.
+- Related assets in this project are either produced by us and free to use or respectively published by the owners mentioned here.
 
 ## Credits and special thanks
 

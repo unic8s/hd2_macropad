@@ -2,11 +2,14 @@
 
 A very comfortable and easy-to-use macropad for HELLDIVERS&trade; 2 for live configuration on each drop into combat with individual loadouts.
 
-Get the game on [PS5](https://www.playstation.com/games/helldivers-2/) or [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/)
+Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/) or [PS5&trade;](https://www.playstation.com/games/helldivers-2/)
 
-Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for either PC or PS5 since it's connected via Bluetooth as a keyboard input device.
+> [!PS5&trade; support]  
+> The device is not able to connect to the PS5&trade; directly. We're currently working on a device bridge which would plugin to the USB port of a PS5&trade; directly and connects to the HD2 Macropad via Bluetooth. We will provide more information in the near future.
 
-> HELLDIVERS is a trademark of SONY INTERACTIVE ENTERTAINMENT LLC
+Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC since it's connected via Bluetooth as a keyboard input device.
+
+> HELLDIVERS and PS5 a registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC
 
 ## Prerequesites
 - The specific device [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR)
@@ -38,18 +41,13 @@ Please follow the described steps and make your decision if you'd like to add au
 
 ## Setup
 
-In general there is no specific further configuration needed. You only have to pair the device with your PC or PS5 and it's ready to use already.
+In general there is no specific further configuration needed. You only have to pair the device with your PC and it's ready to use already.
 Please follow the specific steps for your prefered system.
 
 ### PC
 
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. [Pair a Bluetooth device in Windows](https://support.microsoft.com/en-us/windows/pair-a-bluetooth-device-in-windows-2be7b51f-6ae9-b757-a3b9-95ee40c3e242)
-
-### PS5
-
-1. Connect HD2 Macropad to a power source (either USB-C or battery)
-2. [How to use a keyboard and mouse on PS5 consoles](https://www.playstation.com/en-us/support/hardware/keyboard-mouse-ps5/)
 
 ## Stratagem selection
 
@@ -91,8 +89,8 @@ If you click on "Config" on the setup screen you will enter the device configura
 - [Mute] En-/disable the sound output (Requires an external speaker to work)
 
 ### Input
-- [Delay] Set the input delay of the Bluetooth keyboard (50 - 200ms). This has to be adjusted if there are issues with your Bluetooth receiver of the PC/PS5.
-- [Test] Click this button to send a test input sequence "hello" to your receiving device PC/PS5.
+- [Delay] Set the input delay of the Bluetooth keyboard (50 - 200ms). This has to be adjusted if there are issues with your Bluetooth receiver of the PC.
+- [Test] Click this button to send a test input sequence "hello" to your receiving device PC.
 
 ## Hardware - for enthusiasts
 

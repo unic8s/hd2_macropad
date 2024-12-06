@@ -122,9 +122,9 @@ There is no speaker included in  the casing of the device. As a speaker you shou
   - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)
 
 ## Disclaimer and copyright
-- This is a private opensource project and is not associated in any kind with SONY INTERACTIVE ENTERTAINMENT LLC.
-- SONY INTERACTIVE ENTERTAINMENT LLC is not responsible for any function and content that is related to this project.
-- Related assets in this project are either produced by us and free to use or respectively published by the owners mentioned here.
+> This is a private opensource project and is not associated in any kind with SONY INTERACTIVE ENTERTAINMENT LLC.
+> SONY INTERACTIVE ENTERTAINMENT LLC is not responsible for any function and content that is related to this project.
+> Related assets in this project are either produced by us and free to use or respectively published by the owners mentioned here.
 
 ## Credits and special thanks
 

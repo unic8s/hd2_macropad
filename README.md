@@ -140,7 +140,7 @@ There is no speaker included in  the casing of the device. As a speaker you shou
 ## Disclaimer and copyright
 > This is a private opensource project and is not associated in any kind with SONY INTERACTIVE ENTERTAINMENT LLC.
 > SONY INTERACTIVE ENTERTAINMENT LLC is not responsible for any function and content that is related to this project.
-> Related assets in this project are either produced by us and free to use or respectively published by the owners mentioned here.
+> Related assets in this project are either produced by us and free to use for non-commercial usage or respectively published by the owners mentioned here.
 
 ## Credits and special thanks
 

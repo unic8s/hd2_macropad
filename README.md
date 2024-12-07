@@ -63,7 +63,6 @@ The case on the photo is 3D printed and fits perfectly to the [JC3248W535](https
 Instructions for printing and assembling go along with...
 
 - [STL files on Thingiverse](https://www.thingiverse.com/thing:)
-or
 - [STL files on Printables](https://www.printables.com/model/)
 
 ## Stratagem selection

@@ -65,9 +65,10 @@ Please follow the specific steps for your prefered system.
 ## 3D printing
 
 The case on the photo is 3D printed and fits perfectly to the [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR).
-Instructions for printing and assembling go along with...
+Instructions for printing and assembling go along with STL files on...
 
-- [STL files on Thingiverse](https://www.thingiverse.com/thing:6861703)
+- [Thingiverse](https://www.thingiverse.com/thing:6861703)
+- [Printables]https://www.printables.com/model/1100588-hd2-macropad-stand
 
 ## Stratagem selection
 

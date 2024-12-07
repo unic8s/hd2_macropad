@@ -1,6 +1,7 @@
 # HD2 Macropad
 
 ![](screens/device.jpg)
+[![Video preview](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=zbW8vrxIuko)
 
 A very comfortable and easy-to-use macropad for HELLDIVERS&trade; 2 for live configuration on each drop into combat with individual loadouts.
 

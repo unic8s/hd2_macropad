@@ -21,7 +21,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 - Sound output (optional)
   - SD Card with minimum 2 MB free space
   - Speaker with [JST](https://en.wikipedia.org/wiki/JST_connector) connector. Our suggestion would be a [slim speaker with the right connector](https://s.click.aliexpress.com/e/_DkaGKst).
-- [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) (for PS5 support)
+- [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) (for PS5&trade; support)
 
 ## Installation
 

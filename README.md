@@ -37,7 +37,10 @@ Please follow the described steps and make your decision if you'd like to add au
 2. Connect device to PC via USB-C data cable
 3. Firmware upload...
 - Normal users
-  - Visit the [ESP Tool](https://espressif.github.io/esptool-js/) and upload the BIN file to your device
+  - Visit the [ESP Tool](https://espressif.github.io/esptool-js/)
+  - Click the "Connect" button and select the correct device from the shown list
+  - Change the "Flash Address" to 0x0
+  - Select the BIN file and upload it to your device
 - Pro users
   - Use esptool to [flash](https://docs.espressif.com/projects/esptool/en/latest/esp32/esptool/flashing-firmware.html) the BIN to your device
 ### Sounds (optional)

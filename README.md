@@ -9,7 +9,7 @@ Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/) or
 > [!IMPORTANT]  
 > The device is not able to connect to the PS5&trade; directly. We're currently working on the [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) which plugs into the USB port of a PS5&trade; directly and connects to the HD2 Macropad via Bluetooth.
 
-Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC since it's connected via Bluetooth as a keyboard input device.
+Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC or PS5&trade; since it's connected via Bluetooth as a keyboard input device.
 
 > HELLDIVERS and PS5 a registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC.
 
@@ -105,8 +105,8 @@ If you click on "Config" on the setup screen you will enter the device configura
 - [Mute] En-/disable the sound output (Requires an external speaker to work)
 
 ### Input
-- [Delay] Set the input delay of the Bluetooth keyboard (50 - 200ms). This has to be adjusted if there are issues with your Bluetooth receiver of the PC.
-- [Test] Click this button to send a test input sequence "hello" to your receiving device PC.
+- [Delay] Set the input delay of the Bluetooth keyboard (50 - 200ms). This has to be adjusted if there are issues with your Bluetooth receiver of the PC or PS5&trade;.
+- [Test] Click this button to send a test input sequence "hello" to your receiving device PC or PS5&trade;.
 
 ## Hardware - for enthusiasts
 

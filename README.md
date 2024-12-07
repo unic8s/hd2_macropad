@@ -1,5 +1,7 @@
 # HD2 Macropad
 
+![](screens/device.jpg)
+
 A very comfortable and easy-to-use macropad for HELLDIVERS&trade; 2 for live configuration on each drop into combat with individual loadouts.
 
 Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/) or [PS5&trade;](https://www.playstation.com/games/helldivers-2/)
@@ -54,6 +56,14 @@ Please follow the specific steps for your prefered system.
 
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. Connect [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) into the PS5 USB port
+
+## 3D printing
+
+The case on the photo is 3D printed and fits perfectly to the [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR).
+Instructions for printing and assembling go along with...
+
+... [STL files on Thingiverse](https://www.thingiverse.com/thing:)
+... [STL files on Printables](https://www.printables.com/model/)
 
 ## Stratagem selection
 

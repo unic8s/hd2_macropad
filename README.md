@@ -5,7 +5,7 @@ A very comfortable and easy-to-use macropad for HELLDIVERS&trade; 2 for live con
 Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/) or [PS5&trade;](https://www.playstation.com/games/helldivers-2/)
 
 > [!IMPORTANT]  
-> The device is not able to connect to the PS5&trade; directly. We're currently working on a device bridge which would plugin to the USB port of a PS5&trade; directly and connects to the HD2 Macropad via Bluetooth. We will provide more information in the near future.
+> The device is not able to connect to the PS5&trade; directly. We're currently working on the [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) which plugs into the USB port of a PS5&trade; directly and connects to the HD2 Macropad via Bluetooth.
 
 Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC since it's connected via Bluetooth as a keyboard input device.
 
@@ -48,6 +48,11 @@ Please follow the specific steps for your prefered system.
 
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. [Pair a Bluetooth device in Windows](https://support.microsoft.com/en-us/windows/pair-a-bluetooth-device-in-windows-2be7b51f-6ae9-b757-a3b9-95ee40c3e242)
+
+### PS5
+
+1. Connect HD2 Macropad to a power source (either USB-C or battery)
+2. Connect [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) into the PS5 USB port
 
 ## Stratagem selection
 

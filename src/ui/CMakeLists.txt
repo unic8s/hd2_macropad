@@ -29,6 +29,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_ste1_png.c
     images/ui_img_sg_bsb1_png.c
     images/ui_img_sg_sgp1_png.c
+    images/ui_img_sg_ds1_png.c
     images/ui_img_sg_gd1_png.c
     images/ui_img_sg_gdb1_png.c
     images/ui_img_sg_gdr1_png.c
@@ -40,11 +41,13 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_gs1_png.c
     images/ui_img_sg_acs1_png.c
     images/ui_img_sg_hmge1_png.c
-    images/ui_img_sg_tt1_png.c
-    images/ui_img_sg_sgr1_png.c
+    images/ui_img_sg_ate1_png.c
+    images/ui_img_sg_fs1_png.c
     images/ui_img_sg_ms1_png.c
     images/ui_img_sg_rs1_png.c
     images/ui_img_sg_ems1_png.c
+    images/ui_img_sg_tt1_png.c
+    images/ui_img_sg_sgr1_png.c
     images/ui_img_sg_apm1_png.c
     images/ui_img_sg_atm1_png.c
     images/ui_img_sg_im1_png.c
@@ -154,6 +157,9 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_td2_png.c
     images/ui_img_sg_tt2_png.c
     images/ui_img_sg_ud1_png.c
-    images/ui_img_sg_ud2_png.c)
+    images/ui_img_sg_ud2_png.c
+    images/ui_img_sg_ate2_png.c
+    images/ui_img_sg_ds2_png.c
+    images/ui_img_sg_fs2_png.c)
 
 add_library(ui ${SOURCES})

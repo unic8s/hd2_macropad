@@ -10,7 +10,7 @@ char *soundFiles[] = {
     "S:assets/sound/weap.wav",      // 8 advanced weapon
 };
 
-int soundMap[57] = {
+int soundMap[60] = {
     // WEAPONS
     8, // 0     MG-43 Machine Gun
     8, // 1     AMR
@@ -71,12 +71,17 @@ int soundMap[57] = {
     5, // 48
     5, // 49
 
-    // EAGOLE
+    // EAGLE
     2, // 50
     2, // 51
     2, // 52
     2, // 53
     2, // 54
     2, // 55
-    2  // 56
+    2,  // 56
+
+    // URBAN LEGENDS
+    0, // 57
+    3, // 58
+    6  // 59
 };

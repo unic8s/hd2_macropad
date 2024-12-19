@@ -84,6 +84,8 @@ void ui_event_BackpacksBSB(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksBSB;
 void ui_event_BackpacksSGP(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksSGP;
+void ui_event_BackpacksDS(lv_event_t * e);
+extern lv_obj_t * ui_BackpacksDS;
 void ui_event_BackpacksGD(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksGD;
 void ui_event_BackpacksGDB(lv_event_t * e);
@@ -108,16 +110,20 @@ void ui_event_StationaryACS(lv_event_t * e);
 extern lv_obj_t * ui_StationaryACS;
 void ui_event_StationaryHMGE(lv_event_t * e);
 extern lv_obj_t * ui_StationaryHMGE;
-void ui_event_StationaryTT(lv_event_t * e);
-extern lv_obj_t * ui_StationaryTT;
-void ui_event_StationarySGR(lv_event_t * e);
-extern lv_obj_t * ui_StationarySGR;
+void ui_event_StationaryATE(lv_event_t * e);
+extern lv_obj_t * ui_StationaryATE;
+void ui_event_StationaryFS(lv_event_t * e);
+extern lv_obj_t * ui_StationaryFS;
 void ui_event_StationaryMS(lv_event_t * e);
 extern lv_obj_t * ui_StationaryMS;
 void ui_event_StationaryRS(lv_event_t * e);
 extern lv_obj_t * ui_StationaryRS;
 void ui_event_StationaryEMS(lv_event_t * e);
 extern lv_obj_t * ui_StationaryEMS;
+void ui_event_StationaryTT(lv_event_t * e);
+extern lv_obj_t * ui_StationaryTT;
+void ui_event_StationarySGR(lv_event_t * e);
+extern lv_obj_t * ui_StationarySGR;
 void ui_event_StationaryAPM(lv_event_t * e);
 extern lv_obj_t * ui_StationaryAPM;
 void ui_event_StationaryATM(lv_event_t * e);
@@ -273,6 +279,7 @@ extern lv_obj_t * ui_About;
 extern lv_obj_t * ui_Splash2;
 extern lv_obj_t * ui_Container14;
 extern lv_obj_t * ui_Label7;
+extern lv_obj_t * ui_LblVersion;
 extern lv_obj_t * ui_Label9;
 extern lv_obj_t * ui_Label12;
 extern lv_obj_t * ui_Label8;
@@ -283,7 +290,6 @@ extern lv_obj_t * ui_SetupFooter3;
 void ui_event_Button10(lv_event_t * e);
 extern lv_obj_t * ui_Button10;
 extern lv_obj_t * ui_Label11;
-extern lv_obj_t * ui_LblVersion;
 // CUSTOM VARIABLES
 extern lv_obj_t * uic_Button10;
 
@@ -312,6 +318,7 @@ LV_IMG_DECLARE(ui_img_sg_ft1_png);    // assets/sg/FT1.png
 LV_IMG_DECLARE(ui_img_sg_ste1_png);    // assets/sg/STE1.png
 LV_IMG_DECLARE(ui_img_sg_bsb1_png);    // assets/sg/BSB1.png
 LV_IMG_DECLARE(ui_img_sg_sgp1_png);    // assets/sg/SGP1.png
+LV_IMG_DECLARE(ui_img_sg_ds1_png);    // assets/sg/DS1.png
 LV_IMG_DECLARE(ui_img_sg_gd1_png);    // assets/sg/GD1.png
 LV_IMG_DECLARE(ui_img_sg_gdb1_png);    // assets/sg/GDB1.png
 LV_IMG_DECLARE(ui_img_sg_gdr1_png);    // assets/sg/GDR1.png
@@ -323,11 +330,13 @@ LV_IMG_DECLARE(ui_img_sg_mgs1_png);    // assets/sg/MGS1.png
 LV_IMG_DECLARE(ui_img_sg_gs1_png);    // assets/sg/GS1.png
 LV_IMG_DECLARE(ui_img_sg_acs1_png);    // assets/sg/ACS1.png
 LV_IMG_DECLARE(ui_img_sg_hmge1_png);    // assets/sg/HMGE1.png
-LV_IMG_DECLARE(ui_img_sg_tt1_png);    // assets/sg/TT1.png
-LV_IMG_DECLARE(ui_img_sg_sgr1_png);    // assets/sg/SGR1.png
+LV_IMG_DECLARE(ui_img_sg_ate1_png);    // assets/sg/ATE1.png
+LV_IMG_DECLARE(ui_img_sg_fs1_png);    // assets/sg/FS1.png
 LV_IMG_DECLARE(ui_img_sg_ms1_png);    // assets/sg/MS1.png
 LV_IMG_DECLARE(ui_img_sg_rs1_png);    // assets/sg/RS1.png
 LV_IMG_DECLARE(ui_img_sg_ems1_png);    // assets/sg/EMS1.png
+LV_IMG_DECLARE(ui_img_sg_tt1_png);    // assets/sg/TT1.png
+LV_IMG_DECLARE(ui_img_sg_sgr1_png);    // assets/sg/SGR1.png
 LV_IMG_DECLARE(ui_img_sg_apm1_png);    // assets/sg/APM1.png
 LV_IMG_DECLARE(ui_img_sg_atm1_png);    // assets/sg/ATM1.png
 LV_IMG_DECLARE(ui_img_sg_im1_png);    // assets/sg/IM1.png
@@ -438,6 +447,9 @@ LV_IMG_DECLARE(ui_img_sg_td2_png);    // assets/sg/TD2.png
 LV_IMG_DECLARE(ui_img_sg_tt2_png);    // assets/sg/TT2.png
 LV_IMG_DECLARE(ui_img_sg_ud1_png);    // assets/sg/UD1.png
 LV_IMG_DECLARE(ui_img_sg_ud2_png);    // assets/sg/UD2.png
+LV_IMG_DECLARE(ui_img_sg_ate2_png);    // assets/sg/ATE2.png
+LV_IMG_DECLARE(ui_img_sg_ds2_png);    // assets/sg/DS2.png
+LV_IMG_DECLARE(ui_img_sg_fs2_png);    // assets/sg/FS2.png
 
 // UI INIT
 void ui_init(void);

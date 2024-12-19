@@ -7,7 +7,7 @@
 #define INPUT_RIGHT HID_KEY_D
 
 
-uint8_t sequences[57][8] = {
+uint8_t sequences[60][8] = {
 	// 0
 	// MG-43 Machine Gun
 	{INPUT_DOWN,
@@ -632,6 +632,39 @@ uint8_t sequences[57][8] = {
 	 INPUT_DOWN,
 	 INPUT_DOWN,
 	 0,
+	 0,
+	 0},
+
+	// 57
+	// Directional Shield
+	{INPUT_DOWN,
+	 INPUT_UP,
+	 INPUT_LEFT,
+	 INPUT_RIGHT,
+	 INPUT_UP,
+	 INPUT_UP,
+	 0,
+	 0},
+
+	// 58
+	// Anti-Tank Emplacement
+	{INPUT_DOWN,
+	 INPUT_UP,
+	 INPUT_LEFT,
+	 INPUT_RIGHT,
+	 INPUT_RIGHT,
+	 INPUT_RIGHT,
+	 0,
+	 0},
+
+	// 59
+	// Flame Sentry
+	{INPUT_DOWN,
+	 INPUT_UP,
+	 INPUT_RIGHT,
+	 INPUT_DOWN,
+	 INPUT_UP,
+	 INPUT_UP,
 	 0,
 	 0}
 

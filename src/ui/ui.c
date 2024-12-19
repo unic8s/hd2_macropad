@@ -66,6 +66,8 @@ void ui_event_BackpacksBSB(lv_event_t * e);
 lv_obj_t * ui_BackpacksBSB;
 void ui_event_BackpacksSGP(lv_event_t * e);
 lv_obj_t * ui_BackpacksSGP;
+void ui_event_BackpacksDS(lv_event_t * e);
+lv_obj_t * ui_BackpacksDS;
 void ui_event_BackpacksGD(lv_event_t * e);
 lv_obj_t * ui_BackpacksGD;
 void ui_event_BackpacksGDB(lv_event_t * e);
@@ -90,16 +92,20 @@ void ui_event_StationaryACS(lv_event_t * e);
 lv_obj_t * ui_StationaryACS;
 void ui_event_StationaryHMGE(lv_event_t * e);
 lv_obj_t * ui_StationaryHMGE;
-void ui_event_StationaryTT(lv_event_t * e);
-lv_obj_t * ui_StationaryTT;
-void ui_event_StationarySGR(lv_event_t * e);
-lv_obj_t * ui_StationarySGR;
+void ui_event_StationaryATE(lv_event_t * e);
+lv_obj_t * ui_StationaryATE;
+void ui_event_StationaryFS(lv_event_t * e);
+lv_obj_t * ui_StationaryFS;
 void ui_event_StationaryMS(lv_event_t * e);
 lv_obj_t * ui_StationaryMS;
 void ui_event_StationaryRS(lv_event_t * e);
 lv_obj_t * ui_StationaryRS;
 void ui_event_StationaryEMS(lv_event_t * e);
 lv_obj_t * ui_StationaryEMS;
+void ui_event_StationaryTT(lv_event_t * e);
+lv_obj_t * ui_StationaryTT;
+void ui_event_StationarySGR(lv_event_t * e);
+lv_obj_t * ui_StationarySGR;
 void ui_event_StationaryAPM(lv_event_t * e);
 lv_obj_t * ui_StationaryAPM;
 void ui_event_StationaryATM(lv_event_t * e);
@@ -258,6 +264,7 @@ lv_obj_t * ui_About;
 lv_obj_t * ui_Splash2;
 lv_obj_t * ui_Container14;
 lv_obj_t * ui_Label7;
+lv_obj_t * ui_LblVersion;
 lv_obj_t * ui_Label9;
 lv_obj_t * ui_Label12;
 lv_obj_t * ui_Label8;
@@ -268,7 +275,6 @@ lv_obj_t * ui_SetupFooter3;
 void ui_event_Button10(lv_event_t * e);
 lv_obj_t * ui_Button10;
 lv_obj_t * ui_Label11;
-lv_obj_t * ui_LblVersion;
 // CUSTOM VARIABLES
 lv_obj_t * uic_Button10;
 
@@ -345,6 +351,9 @@ const lv_img_dsc_t * ui_imgset_sw[2] = {&ui_img_sg_sw1_png, &ui_img_sg_sw2_png};
 const lv_img_dsc_t * ui_imgset_td[2] = {&ui_img_sg_td1_png, &ui_img_sg_td2_png};
 const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
 const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
+const lv_img_dsc_t * ui_imgset_ate[2] = {&ui_img_sg_ate1_png, &ui_img_sg_ate2_png};
+const lv_img_dsc_t * ui_imgset_ds[2] = {&ui_img_sg_ds1_png, &ui_img_sg_ds2_png};
+const lv_img_dsc_t * ui_imgset_fs[2] = {&ui_img_sg_fs1_png, &ui_img_sg_fs2_png};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16
@@ -656,6 +665,19 @@ void ui_event_BackpacksSGP(lv_event_t * e)
     }
 }
 
+void ui_event_BackpacksDS(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
 void ui_event_BackpacksGD(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -799,7 +821,7 @@ void ui_event_StationaryHMGE(lv_event_t * e)
     }
 }
 
-void ui_event_StationaryTT(lv_event_t * e)
+void ui_event_StationaryATE(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -812,7 +834,7 @@ void ui_event_StationaryTT(lv_event_t * e)
     }
 }
 
-void ui_event_StationarySGR(lv_event_t * e)
+void ui_event_StationaryFS(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -852,6 +874,32 @@ void ui_event_StationaryRS(lv_event_t * e)
 }
 
 void ui_event_StationaryEMS(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_StationaryTT(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_StationarySGR(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);

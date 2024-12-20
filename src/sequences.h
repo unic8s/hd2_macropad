@@ -666,6 +666,17 @@ uint8_t sequences[60][8] = {
 	 INPUT_UP,
 	 INPUT_UP,
 	 0,
+	 0},
+
+	// 60
+	// Fast Recon Vehicle
+	{INPUT_LEFT,
+	 INPUT_DOWN,
+	 INPUT_RIGHT,
+	 INPUT_DOWN,
+	 INPUT_RIGHT,
+	 INPUT_DOWN,
+	 INPUT_UP,
 	 0}
 
 	//

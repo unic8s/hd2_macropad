@@ -83,5 +83,7 @@ int soundMap[60] = {
     // URBAN LEGENDS
     0, // 57
     3, // 58
-    6  // 59
+    6,  // 59
+
+    0  // 60    Fast Recon Vehicle
 };

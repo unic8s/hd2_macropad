@@ -435,13 +435,13 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsSTE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_Backpack = lv_tabview_add_tab(ui_TabStratagems, "Backpack");
-    lv_obj_set_style_pad_left(ui_Backpack, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Backpack, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Backpack, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Backpack, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_Equipment = lv_tabview_add_tab(ui_TabStratagems, "Equipment");
+    lv_obj_set_style_pad_left(ui_Equipment, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Equipment, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Equipment, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Equipment, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Container1 = lv_obj_create(ui_Backpack);
+    ui_Container1 = lv_obj_create(ui_Equipment);
     lv_obj_remove_style_all(ui_Container1);
     lv_obj_set_width(ui_Container1, lv_pct(90));
     lv_obj_set_height(ui_Container1, lv_pct(100));
@@ -674,6 +674,28 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksEE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_BackpacksEE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
+
+    ui_BackpacksFRV = lv_btn_create(ui_Container1);
+    lv_obj_set_width(ui_BackpacksFRV, 72);
+    lv_obj_set_height(ui_BackpacksFRV, 72);
+    lv_obj_add_flag(ui_BackpacksFRV, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_BackpacksFRV, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_BackpacksFRV, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_BackpacksFRV, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_BackpacksFRV, &ui_img_sg_frv1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_BackpacksFRV, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_BackpacksFRV, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_border_width(ui_BackpacksFRV, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_BackpacksFRV, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_BackpacksFRV, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
+                                           _ui_theme_alpha_colorActive);
+    ui_object_set_themeable_style_property(ui_BackpacksFRV, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_BackpacksFRV, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
     ui_Stationary = lv_tabview_add_tab(ui_TabStratagems, "Stationary");
@@ -1638,6 +1660,7 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_BackpacksJP, ui_event_BackpacksJP, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksPE, ui_event_BackpacksPE, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksEE, ui_event_BackpacksEE, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_BackpacksFRV, ui_event_BackpacksFRV, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryMGS, ui_event_StationaryMGS, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryGS, ui_event_StationaryGS, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryACS, ui_event_StationaryACS, LV_EVENT_ALL, NULL);

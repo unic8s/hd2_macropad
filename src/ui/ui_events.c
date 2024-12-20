@@ -138,6 +138,7 @@ void assignStratagems(lv_event_t *e)
 	ui_BackpacksSGP->user_data = 20;
 	ui_BackpacksSUP->user_data = 18;
 	ui_BackpacksDS->user_data = 57;
+	ui_BackpacksFRV->user_data = 60;
 
 	// Stationary
 	ui_StationaryACS->user_data = 35;

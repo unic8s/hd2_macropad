@@ -60,7 +60,7 @@ void ui_event_WeaponsFT(lv_event_t * e);
 lv_obj_t * ui_WeaponsFT;
 void ui_event_WeaponsSTE(lv_event_t * e);
 lv_obj_t * ui_WeaponsSTE;
-lv_obj_t * ui_Backpack;
+lv_obj_t * ui_Equipment;
 lv_obj_t * ui_Container1;
 void ui_event_BackpacksBSB(lv_event_t * e);
 lv_obj_t * ui_BackpacksBSB;
@@ -82,6 +82,8 @@ void ui_event_BackpacksPE(lv_event_t * e);
 lv_obj_t * ui_BackpacksPE;
 void ui_event_BackpacksEE(lv_event_t * e);
 lv_obj_t * ui_BackpacksEE;
+void ui_event_BackpacksFRV(lv_event_t * e);
+lv_obj_t * ui_BackpacksFRV;
 lv_obj_t * ui_Stationary;
 lv_obj_t * ui_Container3;
 void ui_event_StationaryMGS(lv_event_t * e);
@@ -289,10 +291,12 @@ const lv_img_dsc_t * ui_imgset_amr[2] = {&ui_img_sg_amr1_png, &ui_img_sg_amr2_pn
 const lv_img_dsc_t * ui_imgset_apm[2] = {&ui_img_sg_apm1_png, &ui_img_sg_apm2_png};
 const lv_img_dsc_t * ui_imgset_arl[2] = {&ui_img_sg_arl1_png, &ui_img_sg_arl2_png};
 const lv_img_dsc_t * ui_imgset_at[2] = {&ui_img_sg_at1_png, &ui_img_sg_at2_png};
+const lv_img_dsc_t * ui_imgset_ate[2] = {&ui_img_sg_ate1_png, &ui_img_sg_ate2_png};
 const lv_img_dsc_t * ui_imgset_atm[2] = {&ui_img_sg_atm1_png, &ui_img_sg_atm2_png};
 const lv_img_dsc_t * ui_imgset_bsb[2] = {&ui_img_sg_bsb1_png, &ui_img_sg_bsb2_png};
 const lv_img_dsc_t * ui_imgset_c[2] = {&ui_img_sg_c1_png, &ui_img_sg_c2_png};
 const lv_img_dsc_t * ui_imgset_dfv[2] = {&ui_img_sg_dfv1_png, &ui_img_sg_dfv2_png};
+const lv_img_dsc_t * ui_imgset_ds[2] = {&ui_img_sg_ds1_png, &ui_img_sg_ds2_png};
 const lv_img_dsc_t * ui_imgset_e[4] = {&ui_img_sg_e1101_png, &ui_img_sg_e1102_png, &ui_img_sg_e5001_png, &ui_img_sg_e5002_png};
 const lv_img_dsc_t * ui_imgset_ea[2] = {&ui_img_sg_ea1_png, &ui_img_sg_ea2_png};
 const lv_img_dsc_t * ui_imgset_eat[2] = {&ui_img_sg_eat1_png, &ui_img_sg_eat2_png};
@@ -303,6 +307,7 @@ const lv_img_dsc_t * ui_imgset_ena[2] = {&ui_img_sg_ena1_png, &ui_img_sg_ena2_pn
 const lv_img_dsc_t * ui_imgset_er[2] = {&ui_img_sg_er1_png, &ui_img_sg_er2_png};
 const lv_img_dsc_t * ui_imgset_esr[2] = {&ui_img_sg_esr1_png, &ui_img_sg_esr2_png};
 const lv_img_dsc_t * ui_imgset_ess[2] = {&ui_img_sg_ess1_png, &ui_img_sg_ess2_png};
+const lv_img_dsc_t * ui_imgset_fs[2] = {&ui_img_sg_fs1_png, &ui_img_sg_fs2_png};
 const lv_img_dsc_t * ui_imgset_ft[2] = {&ui_img_sg_ft1_png, &ui_img_sg_ft2_png};
 const lv_img_dsc_t * ui_imgset_gd[2] = {&ui_img_sg_gd1_png, &ui_img_sg_gd2_png};
 const lv_img_dsc_t * ui_imgset_gdb[2] = {&ui_img_sg_gdb1_png, &ui_img_sg_gdb2_png};
@@ -351,9 +356,7 @@ const lv_img_dsc_t * ui_imgset_sw[2] = {&ui_img_sg_sw1_png, &ui_img_sg_sw2_png};
 const lv_img_dsc_t * ui_imgset_td[2] = {&ui_img_sg_td1_png, &ui_img_sg_td2_png};
 const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
 const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
-const lv_img_dsc_t * ui_imgset_ate[2] = {&ui_img_sg_ate1_png, &ui_img_sg_ate2_png};
-const lv_img_dsc_t * ui_imgset_ds[2] = {&ui_img_sg_ds1_png, &ui_img_sg_ds2_png};
-const lv_img_dsc_t * ui_imgset_fs[2] = {&ui_img_sg_fs1_png, &ui_img_sg_fs2_png};
+const lv_img_dsc_t * ui_imgset_frv[2] = {&ui_img_sg_frv1_png, &ui_img_sg_frv2_png};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16
@@ -757,6 +760,19 @@ void ui_event_BackpacksPE(lv_event_t * e)
 }
 
 void ui_event_BackpacksEE(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_BackpacksFRV(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);

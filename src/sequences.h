@@ -7,7 +7,7 @@
 #define INPUT_RIGHT HID_KEY_D
 
 
-uint8_t sequences[60][8] = {
+uint8_t sequences[61][8] = {
 	// 0
 	// MG-43 Machine Gun
 	{INPUT_DOWN,

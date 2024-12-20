@@ -35306,7 +35306,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "A project by\t\t\t\tOliver G.\t\t\t\t@Gore66\\nErik L.\t\t\t\t\t\t@unic8s",
+                    "strval": "A project by\\nOliver G.\t\t\t\t@Gore66\\nErik L.\t\t\t\t\t\t@unic8s",
                     "InheritedType": 10
                   },
                   {
@@ -36733,7 +36733,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 1696,
+    "backup_cnt": 1698,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

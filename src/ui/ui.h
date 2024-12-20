@@ -283,9 +283,7 @@ extern lv_obj_t * ui_Container14;
 extern lv_obj_t * ui_Label7;
 extern lv_obj_t * ui_LblVersion;
 extern lv_obj_t * ui_Label9;
-extern lv_obj_t * ui_Label12;
 extern lv_obj_t * ui_Label8;
-extern lv_obj_t * ui_Label10;
 extern lv_obj_t * ui_Image1;
 void ui_event_SetupFooter3(lv_event_t * e);
 extern lv_obj_t * ui_SetupFooter3;
@@ -395,6 +393,7 @@ LV_IMG_DECLARE(ui_img_sg_ena2_png);    // assets/sg/ENA2.png
 LV_IMG_DECLARE(ui_img_sg_er2_png);    // assets/sg/ER2.png
 LV_IMG_DECLARE(ui_img_sg_esr2_png);    // assets/sg/ESR2.png
 LV_IMG_DECLARE(ui_img_sg_ess2_png);    // assets/sg/ESS2.png
+LV_IMG_DECLARE(ui_img_sg_frv2_png);    // assets/sg/FRV2.png
 LV_IMG_DECLARE(ui_img_sg_fs2_png);    // assets/sg/FS2.png
 LV_IMG_DECLARE(ui_img_sg_ft2_png);    // assets/sg/FT2.png
 LV_IMG_DECLARE(ui_img_sg_gd2_png);    // assets/sg/GD2.png
@@ -453,7 +452,6 @@ LV_IMG_DECLARE(ui_img_sg_td2_png);    // assets/sg/TD2.png
 LV_IMG_DECLARE(ui_img_sg_tt2_png);    // assets/sg/TT2.png
 LV_IMG_DECLARE(ui_img_sg_ud1_png);    // assets/sg/UD1.png
 LV_IMG_DECLARE(ui_img_sg_ud2_png);    // assets/sg/UD2.png
-LV_IMG_DECLARE(ui_img_sg_frv2_png);    // assets/sg/FRV2.png
 
 // UI INIT
 void ui_init(void);

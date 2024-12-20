@@ -443,7 +443,7 @@ void ui_Setup_screen_init(void)
 
     ui_Container1 = lv_obj_create(ui_Equipment);
     lv_obj_remove_style_all(ui_Container1);
-    lv_obj_set_width(ui_Container1, lv_pct(90));
+    lv_obj_set_width(ui_Container1, lv_pct(100));
     lv_obj_set_height(ui_Container1, lv_pct(100));
     lv_obj_set_align(ui_Container1, LV_ALIGN_CENTER);
     lv_obj_set_flex_flow(ui_Container1, LV_FLEX_FLOW_ROW_WRAP);
@@ -707,7 +707,7 @@ void ui_Setup_screen_init(void)
 
     ui_Container3 = lv_obj_create(ui_Stationary);
     lv_obj_remove_style_all(ui_Container3);
-    lv_obj_set_width(ui_Container3, lv_pct(100));
+    lv_obj_set_width(ui_Container3, lv_pct(90));
     lv_obj_set_height(ui_Container3, lv_pct(100));
     lv_obj_set_align(ui_Container3, LV_ALIGN_CENTER);
     lv_obj_set_flex_flow(ui_Container3, LV_FLEX_FLOW_ROW_WRAP);

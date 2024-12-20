@@ -268,9 +268,7 @@ lv_obj_t * ui_Container14;
 lv_obj_t * ui_Label7;
 lv_obj_t * ui_LblVersion;
 lv_obj_t * ui_Label9;
-lv_obj_t * ui_Label12;
 lv_obj_t * ui_Label8;
-lv_obj_t * ui_Label10;
 lv_obj_t * ui_Image1;
 void ui_event_SetupFooter3(lv_event_t * e);
 lv_obj_t * ui_SetupFooter3;
@@ -307,6 +305,7 @@ const lv_img_dsc_t * ui_imgset_ena[2] = {&ui_img_sg_ena1_png, &ui_img_sg_ena2_pn
 const lv_img_dsc_t * ui_imgset_er[2] = {&ui_img_sg_er1_png, &ui_img_sg_er2_png};
 const lv_img_dsc_t * ui_imgset_esr[2] = {&ui_img_sg_esr1_png, &ui_img_sg_esr2_png};
 const lv_img_dsc_t * ui_imgset_ess[2] = {&ui_img_sg_ess1_png, &ui_img_sg_ess2_png};
+const lv_img_dsc_t * ui_imgset_frv[2] = {&ui_img_sg_frv1_png, &ui_img_sg_frv2_png};
 const lv_img_dsc_t * ui_imgset_fs[2] = {&ui_img_sg_fs1_png, &ui_img_sg_fs2_png};
 const lv_img_dsc_t * ui_imgset_ft[2] = {&ui_img_sg_ft1_png, &ui_img_sg_ft2_png};
 const lv_img_dsc_t * ui_imgset_gd[2] = {&ui_img_sg_gd1_png, &ui_img_sg_gd2_png};
@@ -356,7 +355,6 @@ const lv_img_dsc_t * ui_imgset_sw[2] = {&ui_img_sg_sw1_png, &ui_img_sg_sw2_png};
 const lv_img_dsc_t * ui_imgset_td[2] = {&ui_img_sg_td1_png, &ui_img_sg_td2_png};
 const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
 const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
-const lv_img_dsc_t * ui_imgset_frv[2] = {&ui_img_sg_frv1_png, &ui_img_sg_frv2_png};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16

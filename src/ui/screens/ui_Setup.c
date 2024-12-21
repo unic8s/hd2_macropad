@@ -1568,44 +1568,20 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
                                            _ui_theme_alpha_colorTheme);
 
-    ui_Container5 = lv_obj_create(ui_SetupFooter);
-    lv_obj_remove_style_all(ui_Container5);
-    lv_obj_set_width(ui_Container5, 40);
-    lv_obj_set_height(ui_Container5, LV_SIZE_CONTENT);    /// 50
-    lv_obj_set_align(ui_Container5, LV_ALIGN_CENTER);
-    lv_obj_set_flex_flow(ui_Container5, LV_FLEX_FLOW_ROW);
-    lv_obj_set_flex_align(ui_Container5, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
-    lv_obj_clear_flag(ui_Container5, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Container5, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Container5, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Container5, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Container5, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_LblCurAmount = lv_label_create(ui_Container5);
-    lv_obj_set_width(ui_LblCurAmount, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_LblCurAmount, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_LblCurAmount, LV_ALIGN_TOP_MID);
-    lv_label_set_text(ui_LblCurAmount, " 0");
-    ui_object_set_themeable_style_property(ui_LblCurAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+    ui_LblAmount = lv_label_create(ui_SetupFooter);
+    lv_obj_set_width(ui_LblAmount, 40);
+    lv_obj_set_height(ui_LblAmount, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_LblAmount, LV_ALIGN_TOP_MID);
+    lv_label_set_text(ui_LblAmount, "0 / 4");
+    ui_object_set_themeable_style_property(ui_LblAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_LblCurAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+    ui_object_set_themeable_style_property(ui_LblAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_pad_left(ui_LblCurAmount, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_LblCurAmount, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_LblCurAmount, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_LblCurAmount, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_LblMaxAmount = lv_label_create(ui_Container5);
-    lv_obj_set_width(ui_LblMaxAmount, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_LblMaxAmount, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_LblMaxAmount, 20);
-    lv_obj_set_y(ui_LblMaxAmount, 0);
-    lv_obj_set_align(ui_LblMaxAmount, LV_ALIGN_RIGHT_MID);
-    lv_label_set_text(ui_LblMaxAmount, "/ 4");
-    ui_object_set_themeable_style_property(ui_LblMaxAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_LblMaxAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
-                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_text_align(ui_LblAmount, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui_LblAmount, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_LblAmount, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_LblAmount, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_LblAmount, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_BtnPlay = lv_btn_create(ui_SetupFooter);
     lv_obj_set_width(ui_BtnPlay, 72);
@@ -1700,6 +1676,6 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_BtnPlay, ui_event_BtnPlay, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Setup, ui_event_Setup, LV_EVENT_ALL, NULL);
     uic_BarAmount = ui_BarAmount;
-    uic_LabelAmount = ui_LblCurAmount;
+    uic_LabelAmount = ui_LblAmount;
 
 }

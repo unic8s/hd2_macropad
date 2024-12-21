@@ -75,7 +75,9 @@ void updateStratagemSelection()
 
 	lv_bar_set_value(uic_BarAmount, strategemsAmount, LV_ANIM_OFF);
 
-	char textAmount = (char)(strategemsAmount + '0');
+	char textAmount[] = "0 / 4";
+	textAmount[0] = (char)(strategemsAmount + '0');
+
 	lv_label_set_text(uic_LabelAmount, &textAmount);
 
 	if (strategemsAmount == 4)

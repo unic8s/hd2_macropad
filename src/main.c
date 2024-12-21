@@ -75,13 +75,11 @@ void updateBluetooth()
 
   if (sec_conn)
   {
-    lv_obj_add_flag(ui_ImgBTdis, LV_OBJ_FLAG_HIDDEN);
-    lv_obj_clear_flag(ui_ImgBTcon, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_state(uic_CntBT, LV_STATE_CHECKED);
   }
   else
   {
-    lv_obj_add_flag(ui_ImgBTcon, LV_OBJ_FLAG_HIDDEN);
-    lv_obj_clear_flag(ui_ImgBTdis, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_state(uic_CntBT, LV_STATE_CHECKED);
   }
 }
 

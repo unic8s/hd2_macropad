@@ -164,9 +164,7 @@ void ui_event_BtnReset(lv_event_t * e);
 lv_obj_t * ui_BtnReset;
 lv_obj_t * ui_LblReset;
 lv_obj_t * ui_BarAmount;
-lv_obj_t * ui_Container5;
-lv_obj_t * ui_LblCurAmount;
-lv_obj_t * ui_LblMaxAmount;
+lv_obj_t * ui_LblAmount;
 void ui_event_BtnPlay(lv_event_t * e);
 lv_obj_t * ui_BtnPlay;
 lv_obj_t * ui_LblPlay;
@@ -195,14 +193,12 @@ void ui_event_CustomStratagem3(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem3;
 void ui_event_CustomStratagem4(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem4;
-lv_obj_t * ui_GameFooter;
 void ui_event_BtnBack(lv_event_t * e);
 lv_obj_t * ui_BtnBack;
 lv_obj_t * ui_LblBack;
-lv_obj_t * ui_Container12;
-lv_obj_t * ui_ImgBTdis;
-lv_obj_t * ui_ImgBTcon;
+lv_obj_t * ui_CntBT;
 // CUSTOM VARIABLES
+lv_obj_t * uic_CntBT;
 
 
 // SCREEN: ui_Config
@@ -214,7 +210,6 @@ lv_obj_t * ui_Display;
 lv_obj_t * ui_Container9;
 lv_obj_t * ui_Label2;
 lv_obj_t * ui_LblBrightness;
-lv_obj_t * ui_LblBrightness1;
 void ui_event_SldBrightness(lv_event_t * e);
 lv_obj_t * ui_SldBrightness;
 lv_obj_t * ui_Container13;
@@ -232,7 +227,6 @@ lv_obj_t * ui_Input;
 lv_obj_t * ui_Container10;
 lv_obj_t * ui_Label3;
 lv_obj_t * ui_LblDelay;
-lv_obj_t * ui_LblDelay1;
 void ui_event_SldDelay(lv_event_t * e);
 lv_obj_t * ui_SldDelay;
 lv_obj_t * ui_Container6;
@@ -267,11 +261,9 @@ lv_obj_t * ui_Splash2;
 lv_obj_t * ui_Container14;
 lv_obj_t * ui_Label7;
 lv_obj_t * ui_LblVersion;
-lv_obj_t * ui_Label9;
 lv_obj_t * ui_Label8;
+lv_obj_t * ui_Label9;
 lv_obj_t * ui_Image1;
-void ui_event_SetupFooter3(lv_event_t * e);
-lv_obj_t * ui_SetupFooter3;
 void ui_event_Button10(lv_event_t * e);
 lv_obj_t * ui_Button10;
 lv_obj_t * ui_Label11;
@@ -1416,15 +1408,6 @@ void ui_event_BtnReboot(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         RebootDevice(e);
-    }
-}
-
-void ui_event_SetupFooter3(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    if(event_code == LV_EVENT_CLICKED) {
-        _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_OVER_BOTTOM, 1000, 0, &ui_Setup_screen_init);
     }
 }
 

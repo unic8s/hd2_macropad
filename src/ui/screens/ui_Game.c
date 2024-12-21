@@ -191,22 +191,11 @@ void ui_Game_screen_init(void)
     ui_object_set_themeable_style_property(ui_CustomStratagem4, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_GameFooter = lv_obj_create(ui_Game);
-    lv_obj_remove_style_all(ui_GameFooter);
-    lv_obj_set_height(ui_GameFooter, 38);
-    lv_obj_set_width(ui_GameFooter, lv_pct(100));
-    lv_obj_set_align(ui_GameFooter, LV_ALIGN_BOTTOM_MID);
-    lv_obj_set_flex_flow(ui_GameFooter, LV_FLEX_FLOW_ROW);
-    lv_obj_set_flex_align(ui_GameFooter, LV_FLEX_ALIGN_SPACE_BETWEEN, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_START);
-    lv_obj_clear_flag(ui_GameFooter, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_row(ui_GameFooter, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_GameFooter, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_BtnBack = lv_btn_create(ui_GameFooter);
+    ui_BtnBack = lv_btn_create(ui_Game);
     lv_obj_set_width(ui_BtnBack, 72);
     lv_obj_set_height(ui_BtnBack, 36);
-    lv_obj_set_x(ui_BtnBack, 4);
-    lv_obj_set_y(ui_BtnBack, 0);
+    lv_obj_set_x(ui_BtnBack, 2);
+    lv_obj_set_y(ui_BtnBack, -2);
     lv_obj_set_align(ui_BtnBack, LV_ALIGN_BOTTOM_LEFT);
     lv_obj_add_flag(ui_BtnBack, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_BtnBack, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -228,30 +217,17 @@ void ui_Game_screen_init(void)
     ui_object_set_themeable_style_property(ui_LblBack, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
                                            _ui_theme_alpha_colorTheme);
 
-    ui_Container12 = lv_obj_create(ui_GameFooter);
-    lv_obj_remove_style_all(ui_Container12);
-    lv_obj_set_width(ui_Container12, 36);
-    lv_obj_set_height(ui_Container12, 36);
-    lv_obj_set_x(ui_Container12, 82);
-    lv_obj_set_y(ui_Container12, 130);
-    lv_obj_set_align(ui_Container12, LV_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_Container12, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-
-    ui_ImgBTdis = lv_img_create(ui_Container12);
-    lv_img_set_src(ui_ImgBTdis, &ui_img_bt_dis_png);
-    lv_obj_set_width(ui_ImgBTdis, 32);
-    lv_obj_set_height(ui_ImgBTdis, 32);
-    lv_obj_set_align(ui_ImgBTdis, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_ImgBTdis, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_ImgBTdis, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-
-    ui_ImgBTcon = lv_img_create(ui_Container12);
-    lv_img_set_src(ui_ImgBTcon, &ui_img_bt_con_png);
-    lv_obj_set_width(ui_ImgBTcon, 32);
-    lv_obj_set_height(ui_ImgBTcon, 32);
-    lv_obj_set_align(ui_ImgBTcon, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_ImgBTcon, LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_ImgBTcon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_CntBT = lv_obj_create(ui_Game);
+    lv_obj_remove_style_all(ui_CntBT);
+    lv_obj_set_width(ui_CntBT, 32);
+    lv_obj_set_height(ui_CntBT, 32);
+    lv_obj_set_x(ui_CntBT, -2);
+    lv_obj_set_y(ui_CntBT, -2);
+    lv_obj_set_align(ui_CntBT, LV_ALIGN_BOTTOM_RIGHT);
+    lv_obj_add_flag(ui_CntBT, LV_OBJ_FLAG_CHECKABLE);     /// Flags
+    lv_obj_clear_flag(ui_CntBT, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_img_src(ui_CntBT, &ui_img_bt_dis_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_CntBT, &ui_img_bt_con_png, LV_PART_MAIN | LV_STATE_CHECKED);
 
     lv_obj_add_event_cb(ui_BtnReinforce, ui_event_BtnReinforce, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnResupply, ui_event_BtnResupply, LV_EVENT_ALL, NULL);
@@ -262,5 +238,6 @@ void ui_Game_screen_init(void)
     lv_obj_add_event_cb(ui_CustomStratagem3, ui_event_CustomStratagem3, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_CustomStratagem4, ui_event_CustomStratagem4, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnBack, ui_event_BtnBack, LV_EVENT_ALL, NULL);
+    uic_CntBT = ui_CntBT;
 
 }

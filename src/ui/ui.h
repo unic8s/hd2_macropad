@@ -177,15 +177,12 @@ extern lv_obj_t * ui_EagleSS;
 extern lv_obj_t * ui_SetupFooter;
 void ui_event_BtnConfig(lv_event_t * e);
 extern lv_obj_t * ui_BtnConfig;
-extern lv_obj_t * ui_LblConfig;
 void ui_event_BtnReset(lv_event_t * e);
 extern lv_obj_t * ui_BtnReset;
-extern lv_obj_t * ui_LblReset;
 extern lv_obj_t * ui_BarAmount;
 extern lv_obj_t * ui_LblAmount;
 void ui_event_BtnPlay(lv_event_t * e);
 extern lv_obj_t * ui_BtnPlay;
-extern lv_obj_t * ui_LblPlay;
 // CUSTOM VARIABLES
 extern lv_obj_t * uic_BarAmount;
 extern lv_obj_t * uic_LabelAmount;
@@ -212,7 +209,6 @@ void ui_event_CustomStratagem4(lv_event_t * e);
 extern lv_obj_t * ui_CustomStratagem4;
 void ui_event_BtnBack(lv_event_t * e);
 extern lv_obj_t * ui_BtnBack;
-extern lv_obj_t * ui_LblBack;
 extern lv_obj_t * ui_CntBT;
 // CUSTOM VARIABLES
 extern lv_obj_t * uic_CntBT;
@@ -254,17 +250,13 @@ void ui_event_SetupFooter2(lv_event_t * e);
 extern lv_obj_t * ui_SetupFooter2;
 void ui_event_BtnSetup(lv_event_t * e);
 extern lv_obj_t * ui_BtnSetup;
-extern lv_obj_t * ui_LblSetup;
 void ui_event_BtnAbout(lv_event_t * e);
 extern lv_obj_t * ui_BtnAbout;
-extern lv_obj_t * ui_LblAbout;
 extern lv_obj_t * ui_Container11;
 void ui_event_BtnDefault(lv_event_t * e);
 extern lv_obj_t * ui_BtnDefault;
-extern lv_obj_t * ui_LblDefault;
 void ui_event_BtnReboot(lv_event_t * e);
 extern lv_obj_t * ui_BtnReboot;
-extern lv_obj_t * ui_LblReboot;
 // CUSTOM VARIABLES
 extern lv_obj_t * uic_ChbFlip;
 extern lv_obj_t * uic_ChbMute;
@@ -272,7 +264,6 @@ extern lv_obj_t * uic_ChbMute;
 // SCREEN: ui_About
 void ui_About_screen_init(void);
 extern lv_obj_t * ui_About;
-extern lv_obj_t * ui_Splash2;
 extern lv_obj_t * ui_Container14;
 extern lv_obj_t * ui_Label7;
 extern lv_obj_t * ui_LblVersion;
@@ -281,7 +272,6 @@ extern lv_obj_t * ui_Label9;
 extern lv_obj_t * ui_Image1;
 void ui_event_Button10(lv_event_t * e);
 extern lv_obj_t * ui_Button10;
-extern lv_obj_t * ui_Label11;
 // CUSTOM VARIABLES
 extern lv_obj_t * uic_Button10;
 
@@ -352,12 +342,19 @@ LV_IMG_DECLARE(ui_img_sg_ecb1_png);    // assets/sg/ECB1.png
 LV_IMG_DECLARE(ui_img_sg_esr1_png);    // assets/sg/ESR1.png
 LV_IMG_DECLARE(ui_img_sg_ena1_png);    // assets/sg/ENA1.png
 LV_IMG_DECLARE(ui_img_sg_ess1_png);    // assets/sg/ESS1.png
+LV_IMG_DECLARE(ui_img_619782496);    // assets/icons/icons8-slider-32.png
+LV_IMG_DECLARE(ui_img_738976508);    // assets/icons/icons8-clear-32.png
+LV_IMG_DECLARE(ui_img_2124055880);    // assets/icons/icons8-play-26.png
 LV_IMG_DECLARE(ui_img_sg_rf1_png);    // assets/sg/RF1.png
 LV_IMG_DECLARE(ui_img_sg_res1_png);    // assets/sg/RES1.png
 LV_IMG_DECLARE(ui_img_sg_sos1_png);    // assets/sg/SOS1.png
 LV_IMG_DECLARE(ui_img_sg_er1_png);    // assets/sg/ER1.png
+LV_IMG_DECLARE(ui_img_1050696822);    // assets/icons/icons8-back-32.png
 LV_IMG_DECLARE(ui_img_bt_dis_png);    // assets/bt_dis.png
 LV_IMG_DECLARE(ui_img_bt_con_png);    // assets/bt_con.png
+LV_IMG_DECLARE(ui_img_1566825004);    // assets/icons/icons8-about-32.png
+LV_IMG_DECLARE(ui_img_165882922);    // assets/icons/icons8-reset-32.png
+LV_IMG_DECLARE(ui_img_1132554101);    // assets/icons/icons8-shutdown-32.png
 LV_IMG_DECLARE(ui_img_qrcode_png);    // assets/qrcode.png
 LV_IMG_DECLARE(ui_img_sg_1202_png);    // assets/sg/1202.png
 LV_IMG_DECLARE(ui_img_sg_3802_png);    // assets/sg/3802.png

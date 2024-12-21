@@ -192,8 +192,8 @@ void ui_Game_screen_init(void)
                                            _ui_theme_alpha_colorActive);
 
     ui_BtnBack = lv_btn_create(ui_Game);
-    lv_obj_set_width(ui_BtnBack, 72);
-    lv_obj_set_height(ui_BtnBack, 36);
+    lv_obj_set_width(ui_BtnBack, 76);
+    lv_obj_set_height(ui_BtnBack, 38);
     lv_obj_set_x(ui_BtnBack, 2);
     lv_obj_set_y(ui_BtnBack, -2);
     lv_obj_set_align(ui_BtnBack, LV_ALIGN_BOTTOM_LEFT);
@@ -201,28 +201,19 @@ void ui_Game_screen_init(void)
     lv_obj_clear_flag(ui_BtnBack, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_BtnBack, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_BtnBack, 127, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_BtnBack, &ui_img_1050696822, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_BtnBack, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_BtnBack, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorTheme);
     lv_obj_set_style_border_width(ui_BtnBack, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_LblBack = lv_label_create(ui_BtnBack);
-    lv_obj_set_width(ui_LblBack, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_LblBack, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_LblBack, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_LblBack, "Back");
-    ui_object_set_themeable_style_property(ui_LblBack, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_LblBack, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
-                                           _ui_theme_alpha_colorTheme);
-
     ui_CntBT = lv_obj_create(ui_Game);
     lv_obj_remove_style_all(ui_CntBT);
     lv_obj_set_width(ui_CntBT, 32);
     lv_obj_set_height(ui_CntBT, 32);
     lv_obj_set_x(ui_CntBT, -2);
-    lv_obj_set_y(ui_CntBT, -2);
+    lv_obj_set_y(ui_CntBT, -6);
     lv_obj_set_align(ui_CntBT, LV_ALIGN_BOTTOM_RIGHT);
     lv_obj_add_flag(ui_CntBT, LV_OBJ_FLAG_CHECKABLE);     /// Flags
     lv_obj_clear_flag(ui_CntBT, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags

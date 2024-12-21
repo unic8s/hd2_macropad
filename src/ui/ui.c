@@ -159,15 +159,12 @@ lv_obj_t * ui_EagleSS;
 lv_obj_t * ui_SetupFooter;
 void ui_event_BtnConfig(lv_event_t * e);
 lv_obj_t * ui_BtnConfig;
-lv_obj_t * ui_LblConfig;
 void ui_event_BtnReset(lv_event_t * e);
 lv_obj_t * ui_BtnReset;
-lv_obj_t * ui_LblReset;
 lv_obj_t * ui_BarAmount;
 lv_obj_t * ui_LblAmount;
 void ui_event_BtnPlay(lv_event_t * e);
 lv_obj_t * ui_BtnPlay;
-lv_obj_t * ui_LblPlay;
 // CUSTOM VARIABLES
 lv_obj_t * uic_BarAmount;
 lv_obj_t * uic_LabelAmount;
@@ -195,7 +192,6 @@ void ui_event_CustomStratagem4(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem4;
 void ui_event_BtnBack(lv_event_t * e);
 lv_obj_t * ui_BtnBack;
-lv_obj_t * ui_LblBack;
 lv_obj_t * ui_CntBT;
 // CUSTOM VARIABLES
 lv_obj_t * uic_CntBT;
@@ -238,17 +234,13 @@ void ui_event_SetupFooter2(lv_event_t * e);
 lv_obj_t * ui_SetupFooter2;
 void ui_event_BtnSetup(lv_event_t * e);
 lv_obj_t * ui_BtnSetup;
-lv_obj_t * ui_LblSetup;
 void ui_event_BtnAbout(lv_event_t * e);
 lv_obj_t * ui_BtnAbout;
-lv_obj_t * ui_LblAbout;
 lv_obj_t * ui_Container11;
 void ui_event_BtnDefault(lv_event_t * e);
 lv_obj_t * ui_BtnDefault;
-lv_obj_t * ui_LblDefault;
 void ui_event_BtnReboot(lv_event_t * e);
 lv_obj_t * ui_BtnReboot;
-lv_obj_t * ui_LblReboot;
 // CUSTOM VARIABLES
 lv_obj_t * uic_ChbFlip;
 lv_obj_t * uic_ChbMute;
@@ -257,7 +249,6 @@ lv_obj_t * uic_ChbMute;
 // SCREEN: ui_About
 void ui_About_screen_init(void);
 lv_obj_t * ui_About;
-lv_obj_t * ui_Splash2;
 lv_obj_t * ui_Container14;
 lv_obj_t * ui_Label7;
 lv_obj_t * ui_LblVersion;
@@ -266,7 +257,6 @@ lv_obj_t * ui_Label9;
 lv_obj_t * ui_Image1;
 void ui_event_Button10(lv_event_t * e);
 lv_obj_t * ui_Button10;
-lv_obj_t * ui_Label11;
 // CUSTOM VARIABLES
 lv_obj_t * uic_Button10;
 
@@ -347,6 +337,13 @@ const lv_img_dsc_t * ui_imgset_sw[2] = {&ui_img_sg_sw1_png, &ui_img_sg_sw2_png};
 const lv_img_dsc_t * ui_imgset_td[2] = {&ui_img_sg_td1_png, &ui_img_sg_td2_png};
 const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
 const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
+const lv_img_dsc_t * ui_imgset_792859353[1] = {&ui_img_1566825004};
+const lv_img_dsc_t * ui_imgset_1388782467[1] = {&ui_img_1050696822};
+const lv_img_dsc_t * ui_imgset_1570572463[1] = {&ui_img_738976508};
+const lv_img_dsc_t * ui_imgset_313891012[1] = {&ui_img_2124055880};
+const lv_img_dsc_t * ui_imgset_2008775657[1] = {&ui_img_165882922};
+const lv_img_dsc_t * ui_imgset_1732230296[1] = {&ui_img_1132554101};
+const lv_img_dsc_t * ui_imgset_895911889[1] = {&ui_img_619782496};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16

@@ -71,12 +71,19 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_esr1_png.c
     images/ui_img_sg_ena1_png.c
     images/ui_img_sg_ess1_png.c
+    images/ui_img_619782496.c
+    images/ui_img_738976508.c
+    images/ui_img_2124055880.c
     images/ui_img_sg_rf1_png.c
     images/ui_img_sg_res1_png.c
     images/ui_img_sg_sos1_png.c
     images/ui_img_sg_er1_png.c
+    images/ui_img_1050696822.c
     images/ui_img_bt_dis_png.c
     images/ui_img_bt_con_png.c
+    images/ui_img_1566825004.c
+    images/ui_img_165882922.c
+    images/ui_img_1132554101.c
     images/ui_img_qrcode_png.c
     images/ui_img_sg_1202_png.c
     images/ui_img_sg_3802_png.c

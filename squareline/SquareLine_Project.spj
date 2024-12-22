@@ -22823,7 +22823,7 @@
                     "flags": 17,
                     "strtype": "OBJECT/Position",
                     "intarray": [
-                      -4,
+                      -6,
                       0
                     ],
                     "InheritedType": 7
@@ -23059,7 +23059,7 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      180,
+                      192,
                       8
                     ],
                     "InheritedType": 7
@@ -23471,7 +23471,7 @@
                           {
                             "nid": 10610,
                             "strtype": "_style/Bg_Image",
-                            "strval": "assets/icons/icons8-play-26.png",
+                            "strval": "assets/icons/icons8-play-32.png",
                             "InheritedType": 5
                           },
                           {
@@ -23678,7 +23678,7 @@
                         "strtype": "_style/Padding_RowCol",
                         "intarray": [
                           0,
-                          8
+                          4
                         ],
                         "InheritedType": 7
                       }
@@ -27173,8 +27173,8 @@
                                 "intarray": [
                                   20,
                                   20,
-                                  10,
-                                  10
+                                  8,
+                                  8
                                 ],
                                 "InheritedType": 7
                               },
@@ -27925,8 +27925,8 @@
                                 "intarray": [
                                   20,
                                   20,
-                                  10,
-                                  10
+                                  8,
+                                  8
                                 ],
                                 "InheritedType": 7
                               },
@@ -28951,8 +28951,8 @@
                                 "intarray": [
                                   20,
                                   20,
-                                  10,
-                                  10
+                                  8,
+                                  8
                                 ],
                                 "InheritedType": 7
                               },
@@ -29988,8 +29988,8 @@
                                 "intarray": [
                                   20,
                                   20,
-                                  10,
-                                  10
+                                  8,
+                                  8
                                 ],
                                 "InheritedType": 7
                               },
@@ -30653,8 +30653,8 @@
                                 "intarray": [
                                   20,
                                   20,
-                                  10,
-                                  10
+                                  8,
+                                  8
                                 ],
                                 "InheritedType": 7
                               },
@@ -34106,7 +34106,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 1771,
+    "backup_cnt": 1833,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

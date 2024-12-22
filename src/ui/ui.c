@@ -264,6 +264,13 @@ lv_obj_t * uic_Button10;
 lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
+const lv_img_dsc_t * ui_imgset_792859353[1] = {&ui_img_1566825004};
+const lv_img_dsc_t * ui_imgset_1388782467[1] = {&ui_img_1050696822};
+const lv_img_dsc_t * ui_imgset_1570572463[1] = {&ui_img_738976508};
+const lv_img_dsc_t * ui_imgset_313891012[2] = {&ui_img_2124055880, &ui_img_2089845529};
+const lv_img_dsc_t * ui_imgset_2008775657[1] = {&ui_img_165882922};
+const lv_img_dsc_t * ui_imgset_1732230296[1] = {&ui_img_1132554101};
+const lv_img_dsc_t * ui_imgset_895911889[1] = {&ui_img_619782496};
 const lv_img_dsc_t * ui_imgset_[4] = {&ui_img_sg_1201_png, &ui_img_sg_1202_png, &ui_img_sg_3801_png, &ui_img_sg_3802_png};
 const lv_img_dsc_t * ui_imgset_ac[2] = {&ui_img_sg_ac1_png, &ui_img_sg_ac2_png};
 const lv_img_dsc_t * ui_imgset_acs[2] = {&ui_img_sg_acs1_png, &ui_img_sg_acs2_png};
@@ -337,13 +344,6 @@ const lv_img_dsc_t * ui_imgset_sw[2] = {&ui_img_sg_sw1_png, &ui_img_sg_sw2_png};
 const lv_img_dsc_t * ui_imgset_td[2] = {&ui_img_sg_td1_png, &ui_img_sg_td2_png};
 const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
 const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
-const lv_img_dsc_t * ui_imgset_792859353[1] = {&ui_img_1566825004};
-const lv_img_dsc_t * ui_imgset_1388782467[1] = {&ui_img_1050696822};
-const lv_img_dsc_t * ui_imgset_1570572463[1] = {&ui_img_738976508};
-const lv_img_dsc_t * ui_imgset_313891012[1] = {&ui_img_2124055880};
-const lv_img_dsc_t * ui_imgset_2008775657[1] = {&ui_img_165882922};
-const lv_img_dsc_t * ui_imgset_1732230296[1] = {&ui_img_1132554101};
-const lv_img_dsc_t * ui_imgset_895911889[1] = {&ui_img_619782496};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16

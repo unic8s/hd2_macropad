@@ -1501,7 +1501,7 @@ void ui_Setup_screen_init(void)
     lv_obj_set_flex_align(ui_SetupFooter, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_START);
     lv_obj_clear_flag(ui_SetupFooter, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_pad_row(ui_SetupFooter, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_SetupFooter, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_SetupFooter, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_BtnConfig = lv_btn_create(ui_SetupFooter);
     lv_obj_set_width(ui_BtnConfig, 76);
@@ -1523,7 +1523,7 @@ void ui_Setup_screen_init(void)
     ui_BtnReset = lv_btn_create(ui_SetupFooter);
     lv_obj_set_width(ui_BtnReset, 76);
     lv_obj_set_height(ui_BtnReset, 38);
-    lv_obj_set_x(ui_BtnReset, -4);
+    lv_obj_set_x(ui_BtnReset, -6);
     lv_obj_set_y(ui_BtnReset, 0);
     lv_obj_set_align(ui_BtnReset, LV_ALIGN_BOTTOM_RIGHT);
     lv_obj_add_flag(ui_BtnReset, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1539,7 +1539,7 @@ void ui_Setup_screen_init(void)
 
     ui_BarAmount = lv_bar_create(ui_SetupFooter);
     lv_bar_set_range(ui_BarAmount, 0, 4);
-    lv_obj_set_width(ui_BarAmount, 180);
+    lv_obj_set_width(ui_BarAmount, 192);
     lv_obj_set_height(ui_BarAmount, 8);
     lv_obj_set_x(ui_BarAmount, 0);
     lv_obj_set_y(ui_BarAmount, -14);
@@ -1577,7 +1577,7 @@ void ui_Setup_screen_init(void)
     lv_obj_clear_flag(ui_BtnPlay, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_BtnPlay, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_BtnPlay, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_src(ui_BtnPlay, &ui_img_2124055880, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_BtnPlay, &ui_img_2089845529, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_BtnPlay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_BtnPlay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,

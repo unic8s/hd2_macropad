@@ -344,7 +344,7 @@ LV_IMG_DECLARE(ui_img_sg_ena1_png);    // assets/sg/ENA1.png
 LV_IMG_DECLARE(ui_img_sg_ess1_png);    // assets/sg/ESS1.png
 LV_IMG_DECLARE(ui_img_619782496);    // assets/icons/icons8-slider-32.png
 LV_IMG_DECLARE(ui_img_738976508);    // assets/icons/icons8-clear-32.png
-LV_IMG_DECLARE(ui_img_2124055880);    // assets/icons/icons8-play-26.png
+LV_IMG_DECLARE(ui_img_2089845529);    // assets/icons/icons8-play-32.png
 LV_IMG_DECLARE(ui_img_sg_rf1_png);    // assets/sg/RF1.png
 LV_IMG_DECLARE(ui_img_sg_res1_png);    // assets/sg/RES1.png
 LV_IMG_DECLARE(ui_img_sg_sos1_png);    // assets/sg/SOS1.png
@@ -356,6 +356,7 @@ LV_IMG_DECLARE(ui_img_1566825004);    // assets/icons/icons8-about-32.png
 LV_IMG_DECLARE(ui_img_165882922);    // assets/icons/icons8-reset-32.png
 LV_IMG_DECLARE(ui_img_1132554101);    // assets/icons/icons8-shutdown-32.png
 LV_IMG_DECLARE(ui_img_qrcode_png);    // assets/qrcode.png
+LV_IMG_DECLARE(ui_img_2124055880);    // assets/icons/icons8-play-26.png
 LV_IMG_DECLARE(ui_img_sg_1202_png);    // assets/sg/1202.png
 LV_IMG_DECLARE(ui_img_sg_3802_png);    // assets/sg/3802.png
 LV_IMG_DECLARE(ui_img_sg_ac2_png);    // assets/sg/AC2.png

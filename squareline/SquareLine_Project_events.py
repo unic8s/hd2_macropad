@@ -98,3 +98,19 @@ def FlipScreen(event_struct):
 def TabChanged(event_struct):
     return
 
+
+def triggerManualUp(event_struct):
+    return
+
+
+def triggerManualLeft(event_struct):
+    return
+
+
+def triggerManualDown(event_struct):
+    return
+
+
+def triggerManualRight(event_struct):
+    return
+

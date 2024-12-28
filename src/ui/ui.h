@@ -268,7 +268,6 @@ extern lv_obj_t * ui_Container14;
 extern lv_obj_t * ui_Label7;
 extern lv_obj_t * ui_LblVersion;
 extern lv_obj_t * ui_Label8;
-extern lv_obj_t * ui_Label9;
 extern lv_obj_t * ui_Image1;
 void ui_event_Button10(lv_event_t * e);
 extern lv_obj_t * ui_Button10;
@@ -356,7 +355,6 @@ LV_IMG_DECLARE(ui_img_1566825004);    // assets/icons/icons8-about-32.png
 LV_IMG_DECLARE(ui_img_165882922);    // assets/icons/icons8-reset-32.png
 LV_IMG_DECLARE(ui_img_1132554101);    // assets/icons/icons8-shutdown-32.png
 LV_IMG_DECLARE(ui_img_qrcode_png);    // assets/qrcode.png
-LV_IMG_DECLARE(ui_img_2124055880);    // assets/icons/icons8-play-26.png
 LV_IMG_DECLARE(ui_img_sg_1202_png);    // assets/sg/1202.png
 LV_IMG_DECLARE(ui_img_sg_3802_png);    // assets/sg/3802.png
 LV_IMG_DECLARE(ui_img_sg_ac2_png);    // assets/sg/AC2.png

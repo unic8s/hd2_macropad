@@ -55,25 +55,15 @@ void ui_About_screen_init(void)
     lv_obj_set_style_text_font(ui_LblVersion, &lv_font_montserrat_28, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label8 = lv_label_create(ui_Container14);
-    lv_obj_set_width(ui_Label8, lv_pct(68));
+    lv_obj_set_width(ui_Label8, lv_pct(100));
     lv_obj_set_height(ui_Label8, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Label8, -130);
     lv_obj_set_y(ui_Label8, -15);
     lv_obj_set_align(ui_Label8, LV_ALIGN_CENTER);
     lv_label_set_text(ui_Label8,
-                      "Copyright (C) 2024 All rights reserved.\n\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.\n\nFor any further information please visit:\ngithub.com/unic8s/hd2_macropad");
+                      "Copyright (C) 2024 All rights reserved.\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.\n\nFor any further information please visit:\ngithub.com/unic8s/hd2_macropad\n\nA project by\nOliver G.	@Gore66\nErik L.			@unic8s");
     lv_obj_set_style_text_letter_space(ui_Label8, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_line_space(ui_Label8, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_Label9 = lv_label_create(ui_Container14);
-    lv_obj_set_width(ui_Label9, lv_pct(30));
-    lv_obj_set_height(ui_Label9, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label9, 168);
-    lv_obj_set_y(ui_Label9, -78);
-    lv_obj_set_align(ui_Label9, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label9, "A project by\nOliver G.	@Gore66\nErik L.			@unic8s");
-    lv_obj_set_style_text_letter_space(ui_Label9, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui_Label9, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Image1 = lv_img_create(ui_About);
     lv_img_set_src(ui_Image1, &ui_img_qrcode_png);
@@ -101,6 +91,10 @@ void ui_About_screen_init(void)
     ui_object_set_themeable_style_property(ui_Button10, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorTheme);
     lv_obj_set_style_border_width(ui_Button10, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_Button10, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_Button10, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
 
     lv_obj_add_event_cb(ui_Button10, ui_event_Button10, LV_EVENT_ALL, NULL);
     uic_Button10 = ui_Button10;

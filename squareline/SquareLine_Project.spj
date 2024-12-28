@@ -6303,8 +6303,7 @@
                     "InheritedType": 11
                   }
                 ],
-                "saved_objtypeKey": "TABPAGE",
-                "tree_closed": true
+                "saved_objtypeKey": "TABPAGE"
               },
               {
                 "guid": "GUID70106398-171774S3653306",
@@ -22697,6 +22696,27 @@
                           }
                         ],
                         "InheritedType": 1
+                      },
+                      {
+                        "nid": 30000,
+                        "strtype": "_style/StyleState",
+                        "strval": "PRESSED",
+                        "childs": [
+                          {
+                            "nid": 30710,
+                            "strtype": "_style/Border_Color",
+                            "strval": "colorActive",
+                            "integer": 1000867,
+                            "intarray": [
+                              255,
+                              255,
+                              255,
+                              255
+                            ],
+                            "InheritedType": 7
+                          }
+                        ],
+                        "InheritedType": 1
                       }
                     ],
                     "nid": 1010,
@@ -22846,7 +22866,6 @@
                   },
                   {
                     "nid": 90,
-                    "flags": 1048576,
                     "strtype": "OBJECT/Flags",
                     "InheritedType": 1
                   },
@@ -22923,6 +22942,27 @@
                             "strtype": "_style/Border width",
                             "integer": 4,
                             "InheritedType": 6
+                          }
+                        ],
+                        "InheritedType": 1
+                      },
+                      {
+                        "nid": 30000,
+                        "strtype": "_style/StyleState",
+                        "strval": "PRESSED",
+                        "childs": [
+                          {
+                            "nid": 30710,
+                            "strtype": "_style/Border_Color",
+                            "strval": "colorActive",
+                            "integer": 1000867,
+                            "intarray": [
+                              255,
+                              255,
+                              255,
+                              255
+                            ],
+                            "InheritedType": 7
                           }
                         ],
                         "InheritedType": 1
@@ -23495,6 +23535,27 @@
                           }
                         ],
                         "InheritedType": 1
+                      },
+                      {
+                        "nid": 30000,
+                        "strtype": "_style/StyleState",
+                        "strval": "PRESSED",
+                        "childs": [
+                          {
+                            "nid": 30710,
+                            "strtype": "_style/Border_Color",
+                            "strval": "colorActive",
+                            "integer": 1000867,
+                            "intarray": [
+                              255,
+                              255,
+                              255,
+                              255
+                            ],
+                            "InheritedType": 7
+                          }
+                        ],
+                        "InheritedType": 1
                       }
                     ],
                     "nid": 1010,
@@ -23631,7 +23692,6 @@
               },
               {
                 "nid": 90,
-                "flags": 1048576,
                 "strtype": "OBJECT/Flags",
                 "InheritedType": 1
               },
@@ -23639,6 +23699,12 @@
                 "nid": 110,
                 "strtype": "OBJECT/Clickable",
                 "strval": "False",
+                "InheritedType": 2
+              },
+              {
+                "nid": 180,
+                "strtype": "OBJECT/Overflow_visible",
+                "strval": "True",
                 "InheritedType": 2
               },
               {
@@ -23954,7 +24020,6 @@
                   },
                   {
                     "nid": 90,
-                    "flags": 1048576,
                     "strtype": "OBJECT/Flags",
                     "InheritedType": 1
                   },
@@ -26070,6 +26135,27 @@
                         "strtype": "_style/Border width",
                         "integer": 4,
                         "InheritedType": 6
+                      }
+                    ],
+                    "InheritedType": 1
+                  },
+                  {
+                    "nid": 30000,
+                    "strtype": "_style/StyleState",
+                    "strval": "PRESSED",
+                    "childs": [
+                      {
+                        "nid": 30710,
+                        "strtype": "_style/Border_Color",
+                        "strval": "colorActive",
+                        "integer": 1000867,
+                        "intarray": [
+                          255,
+                          255,
+                          255,
+                          255
+                        ],
+                        "InheritedType": 7
                       }
                     ],
                     "InheritedType": 1
@@ -30313,6 +30399,27 @@
                                   }
                                 ],
                                 "InheritedType": 1
+                              },
+                              {
+                                "nid": 30000,
+                                "strtype": "_style/StyleState",
+                                "strval": "PRESSED",
+                                "childs": [
+                                  {
+                                    "nid": 30710,
+                                    "strtype": "_style/Border_Color",
+                                    "strval": "colorActive",
+                                    "integer": 1000867,
+                                    "intarray": [
+                                      255,
+                                      255,
+                                      255,
+                                      255
+                                    ],
+                                    "InheritedType": 7
+                                  }
+                                ],
+                                "InheritedType": 1
                               }
                             ],
                             "nid": 1010,
@@ -31411,6 +31518,27 @@
                           }
                         ],
                         "InheritedType": 1
+                      },
+                      {
+                        "nid": 30000,
+                        "strtype": "_style/StyleState",
+                        "strval": "PRESSED",
+                        "childs": [
+                          {
+                            "nid": 30710,
+                            "strtype": "_style/Border_Color",
+                            "strval": "colorActive",
+                            "integer": 1000867,
+                            "intarray": [
+                              255,
+                              255,
+                              255,
+                              255
+                            ],
+                            "InheritedType": 7
+                          }
+                        ],
+                        "InheritedType": 1
                       }
                     ],
                     "nid": 1010,
@@ -31637,6 +31765,27 @@
                             "strtype": "_style/Border width",
                             "integer": 4,
                             "InheritedType": 6
+                          }
+                        ],
+                        "InheritedType": 1
+                      },
+                      {
+                        "nid": 30000,
+                        "strtype": "_style/StyleState",
+                        "strval": "PRESSED",
+                        "childs": [
+                          {
+                            "nid": 30710,
+                            "strtype": "_style/Border_Color",
+                            "strval": "colorActive",
+                            "integer": 1000867,
+                            "intarray": [
+                              255,
+                              255,
+                              255,
+                              255
+                            ],
+                            "InheritedType": 7
                           }
                         ],
                         "InheritedType": 1
@@ -31985,6 +32134,27 @@
                           }
                         ],
                         "InheritedType": 1
+                      },
+                      {
+                        "nid": 30000,
+                        "strtype": "_style/StyleState",
+                        "strval": "PRESSED",
+                        "childs": [
+                          {
+                            "nid": 30710,
+                            "strtype": "_style/Border_Color",
+                            "strval": "colorActive",
+                            "integer": 1000867,
+                            "intarray": [
+                              255,
+                              255,
+                              255,
+                              255
+                            ],
+                            "InheritedType": 7
+                          }
+                        ],
+                        "InheritedType": 1
                       }
                     ],
                     "nid": 1010,
@@ -32203,6 +32373,27 @@
                           }
                         ],
                         "InheritedType": 1
+                      },
+                      {
+                        "nid": 30000,
+                        "strtype": "_style/StyleState",
+                        "strval": "PRESSED",
+                        "childs": [
+                          {
+                            "nid": 30710,
+                            "strtype": "_style/Border_Color",
+                            "strval": "colorActive",
+                            "integer": 1000867,
+                            "intarray": [
+                              255,
+                              255,
+                              255,
+                              255
+                            ],
+                            "InheritedType": 7
+                          }
+                        ],
+                        "InheritedType": 1
                       }
                     ],
                     "nid": 1010,
@@ -32339,7 +32530,6 @@
               },
               {
                 "nid": 90,
-                "flags": 1048576,
                 "strtype": "OBJECT/Flags",
                 "InheritedType": 1
               },
@@ -32347,6 +32537,12 @@
                 "nid": 110,
                 "strtype": "OBJECT/Clickable",
                 "strval": "False",
+                "InheritedType": 2
+              },
+              {
+                "nid": 180,
+                "strtype": "OBJECT/Overflow_visible",
+                "strval": "True",
                 "InheritedType": 2
               },
               {
@@ -32985,7 +33181,7 @@
                     "flags": 50,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      68,
+                      100,
                       1
                     ],
                     "InheritedType": 7
@@ -33040,151 +33236,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "Copyright (C) 2024 All rights reserved.\\n\\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.\\n\\nFor any further information please visit:\\ngithub.com/unic8s/hd2_macropad",
-                    "InheritedType": 10
-                  },
-                  {
-                    "nid": 1040,
-                    "strtype": "LABEL/Recolor",
-                    "strval": "False",
-                    "InheritedType": 2
-                  },
-                  {
-                    "part": "lv.PART.MAIN",
-                    "childs": [
-                      {
-                        "nid": 10000,
-                        "strtype": "_style/StyleState",
-                        "strval": "DEFAULT",
-                        "childs": [
-                          {
-                            "nid": 10420,
-                            "strtype": "_style/Text_Spacing",
-                            "intarray": [
-                              0,
-                              4
-                            ],
-                            "InheritedType": 7
-                          }
-                        ],
-                        "InheritedType": 1
-                      }
-                    ],
-                    "nid": 1050,
-                    "strtype": "LABEL/Style_main",
-                    "strval": "lv.PART.MAIN, Text, Rectangle, Pad, Transform",
-                    "InheritedType": 11
-                  }
-                ],
-                "saved_objtypeKey": "LABEL",
-                "tree_closed": true
-              },
-              {
-                "guid": "GUID67690823-603101S7633335",
-                "deepid": 1211565254,
-                "dont_export": false,
-                "locked": false,
-                "properties": [
-                  {
-                    "nid": 10,
-                    "strtype": "OBJECT/Name",
-                    "strval": "Label9",
-                    "InheritedType": 10
-                  },
-                  {
-                    "nid": 20,
-                    "strtype": "OBJECT/Layout",
-                    "InheritedType": 1
-                  },
-                  {
-                    "Flow": 0,
-                    "Wrap": false,
-                    "Reversed": false,
-                    "MainAlignment": 0,
-                    "CrossAlignment": 0,
-                    "TrackAlignment": 0,
-                    "LayoutType": 0,
-                    "nid": 30,
-                    "strtype": "OBJECT/Layout_type",
-                    "strval": "No_layout",
-                    "InheritedType": 13
-                  },
-                  {
-                    "nid": 40,
-                    "strtype": "OBJECT/Transform",
-                    "InheritedType": 1
-                  },
-                  {
-                    "nid": 50,
-                    "flags": 17,
-                    "strtype": "OBJECT/Position",
-                    "intarray": [
-                      168,
-                      -78
-                    ],
-                    "InheritedType": 7
-                  },
-                  {
-                    "nid": 60,
-                    "flags": 50,
-                    "strtype": "OBJECT/Size",
-                    "intarray": [
-                      30,
-                      1
-                    ],
-                    "InheritedType": 7
-                  },
-                  {
-                    "nid": 70,
-                    "strtype": "OBJECT/Align",
-                    "strval": "CENTER",
-                    "InheritedType": 3
-                  },
-                  {
-                    "nid": 90,
-                    "flags": 1048576,
-                    "strtype": "OBJECT/Flags",
-                    "InheritedType": 1
-                  },
-                  {
-                    "nid": 110,
-                    "strtype": "OBJECT/Clickable",
-                    "strval": "False",
-                    "InheritedType": 2
-                  },
-                  {
-                    "nid": 300,
-                    "strtype": "OBJECT/Scrollbar_mode",
-                    "strval": "AUTO",
-                    "InheritedType": 3
-                  },
-                  {
-                    "nid": 310,
-                    "strtype": "OBJECT/Scroll_direction",
-                    "strval": "ALL",
-                    "InheritedType": 3
-                  },
-                  {
-                    "nid": 320,
-                    "flags": 1048576,
-                    "strtype": "OBJECT/States",
-                    "InheritedType": 1
-                  },
-                  {
-                    "nid": 1010,
-                    "strtype": "LABEL/Label",
-                    "InheritedType": 1
-                  },
-                  {
-                    "nid": 1020,
-                    "strtype": "LABEL/Long_mode",
-                    "strval": "WRAP",
-                    "InheritedType": 3
-                  },
-                  {
-                    "nid": 1030,
-                    "strtype": "LABEL/Text",
-                    "strval": "A project by\\nOliver G.\t@Gore66\\nErik L.\t\t\t@unic8s",
+                    "strval": "Copyright (C) 2024 All rights reserved.\\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.\\n\\nFor any further information please visit:\\ngithub.com/unic8s/hd2_macropad\\n\\nA project by\\nOliver G.\t@Gore66\\nErik L.\t\t\t@unic8s",
                     "InheritedType": 10
                   },
                   {
@@ -33662,6 +33714,27 @@
                       }
                     ],
                     "InheritedType": 1
+                  },
+                  {
+                    "nid": 30000,
+                    "strtype": "_style/StyleState",
+                    "strval": "PRESSED",
+                    "childs": [
+                      {
+                        "nid": 30710,
+                        "strtype": "_style/Border_Color",
+                        "strval": "colorActive",
+                        "integer": 1000867,
+                        "intarray": [
+                          255,
+                          255,
+                          255,
+                          255
+                        ],
+                        "InheritedType": 7
+                      }
+                    ],
+                    "InheritedType": 1
                   }
                 ],
                 "nid": 1010,
@@ -33750,7 +33823,7 @@
           }
         ],
         "isPage": true,
-        "editor_posx": 1800,
+        "editor_posx": 1770,
         "editor_posy": -1050,
         "dont_export": false,
         "locked": false,
@@ -34106,7 +34179,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 1833,
+    "backup_cnt": 1891,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",
@@ -34122,7 +34195,7 @@
     "drive_fatfs_path": "/",
     "naming": "Name",
     "naming_force_lowercase": false,
-    "nidcnt": 1001760,
+    "nidcnt": 1001827,
     "BitDepth": 16,
     "Name": "SquareLine_Project"
   }

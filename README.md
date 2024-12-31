@@ -1,6 +1,6 @@
 # HD2 Macropad
 
-![](screens/device.jpg)
+![The device including the 3D printed frame](screens/device.jpg)
 
 [Video preview](https://www.youtube.com/watch?v=zbW8vrxIuko) on YouTube.
 
@@ -13,7 +13,7 @@ Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/) or
 
 Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC or PS5&trade; since it's connected via Bluetooth as a keyboard input device.
 
-> HELLDIVERS and PS5 a registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC.
+> HELLDIVERS and PS5 are registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC.
 
 ## Prerequesites
 - The specific device [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR)

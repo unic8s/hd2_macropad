@@ -197,10 +197,8 @@ void ui_event_BtnResupply(lv_event_t * e);
 extern lv_obj_t * ui_BtnResupply;
 void ui_event_BtnSOS(lv_event_t * e);
 extern lv_obj_t * ui_BtnSOS;
-void ui_event_BtnSuperEarthFlag(lv_event_t * e);
-extern lv_obj_t * ui_BtnSuperEarthFlag;
-void ui_event_BtnHellbomb(lv_event_t * e);
-extern lv_obj_t * ui_BtnHellbomb;
+void ui_event_BtnRearm(lv_event_t * e);
+extern lv_obj_t * ui_BtnRearm;
 void ui_event_CustomStratagem1(lv_event_t * e);
 extern lv_obj_t * ui_CustomStratagem1;
 void ui_event_CustomStratagem2(lv_event_t * e);
@@ -211,12 +209,12 @@ void ui_event_CustomStratagem4(lv_event_t * e);
 extern lv_obj_t * ui_CustomStratagem4;
 void ui_event_BtnBack(lv_event_t * e);
 extern lv_obj_t * ui_BtnBack;
+extern lv_obj_t * ui_CntBT;
 extern lv_obj_t * ui_Container5;
 void ui_event_BtnSEAF(lv_event_t * e);
 extern lv_obj_t * ui_BtnSEAF;
-void ui_event_BtnRearm(lv_event_t * e);
-extern lv_obj_t * ui_BtnRearm;
-extern lv_obj_t * ui_CntBT;
+void ui_event_BtnHellbomb(lv_event_t * e);
+extern lv_obj_t * ui_BtnHellbomb;
 // CUSTOM VARIABLES
 extern lv_obj_t * uic_CntBT;
 
@@ -354,13 +352,12 @@ LV_IMG_DECLARE(ui_img_2089845529);    // assets/icons/icons8-play-32.png
 LV_IMG_DECLARE(ui_img_sg_rf1_png);    // assets/sg/RF1.png
 LV_IMG_DECLARE(ui_img_sg_res1_png);    // assets/sg/RES1.png
 LV_IMG_DECLARE(ui_img_sg_sos1_png);    // assets/sg/SOS1.png
-LV_IMG_DECLARE(ui_img_sg_sef1_png);    // assets/sg/SEF1.png
-LV_IMG_DECLARE(ui_img_sg_hb1_png);    // assets/sg/HB1.png
-LV_IMG_DECLARE(ui_img_1050696822);    // assets/icons/icons8-back-32.png
-LV_IMG_DECLARE(ui_img_sg_seaf1_png);    // assets/sg/SEAF1.png
 LV_IMG_DECLARE(ui_img_sg_er1_png);    // assets/sg/ER1.png
+LV_IMG_DECLARE(ui_img_1050696822);    // assets/icons/icons8-back-32.png
 LV_IMG_DECLARE(ui_img_bt_dis_png);    // assets/bt_dis.png
 LV_IMG_DECLARE(ui_img_bt_con_png);    // assets/bt_con.png
+LV_IMG_DECLARE(ui_img_sg_seaf1_png);    // assets/sg/SEAF1.png
+LV_IMG_DECLARE(ui_img_sg_hb1_png);    // assets/sg/HB1.png
 LV_IMG_DECLARE(ui_img_1566825004);    // assets/icons/icons8-about-32.png
 LV_IMG_DECLARE(ui_img_165882922);    // assets/icons/icons8-reset-32.png
 LV_IMG_DECLARE(ui_img_1132554101);    // assets/icons/icons8-shutdown-32.png
@@ -432,6 +429,7 @@ LV_IMG_DECLARE(ui_img_sg_rg2_png);    // assets/sg/RG2.png
 LV_IMG_DECLARE(ui_img_sg_rr2_png);    // assets/sg/RR2.png
 LV_IMG_DECLARE(ui_img_sg_rs2_png);    // assets/sg/RS2.png
 LV_IMG_DECLARE(ui_img_sg_seaf2_png);    // assets/sg/SEAF2.png
+LV_IMG_DECLARE(ui_img_sg_sef1_png);    // assets/sg/SEF1.png
 LV_IMG_DECLARE(ui_img_sg_sef2_png);    // assets/sg/SEF2.png
 LV_IMG_DECLARE(ui_img_sg_sgp2_png);    // assets/sg/SGP2.png
 LV_IMG_DECLARE(ui_img_sg_sgr2_png);    // assets/sg/SGR2.png

@@ -114,3 +114,39 @@ def triggerManualDown(event_struct):
 def triggerManualRight(event_struct):
     return
 
+
+def triggerStratagemStd1(event_struct):
+    return
+
+
+def triggerStratagemStd2(event_struct):
+    return
+
+
+def triggerStratagemStd3(event_struct):
+    return
+
+
+def triggerStratagemStd4(event_struct):
+    return
+
+
+def triggerStratagemStd5(event_struct):
+    return
+
+
+def triggerStratagemUser1(event_struct):
+    return
+
+
+def triggerStratagemUser2(event_struct):
+    return
+
+
+def triggerStratagemUser3(event_struct):
+    return
+
+
+def triggerStratagemUser4(event_struct):
+    return
+

@@ -182,7 +182,7 @@ void assignStratagems(lv_event_t *e)
 	ui_EagleSS->user_data = 54;
 }
 
-void triggerStratagem1(lv_event_t *e)
+void triggerStratagemStd1(lv_event_t *e)
 {
 	// Reinforce
 	uint8_t sequence[8] = {INPUT_UP,
@@ -199,7 +199,7 @@ void triggerStratagem1(lv_event_t *e)
 	playbackSound("S:assets/sound/reinf.wav");
 }
 
-void triggerStratagem2(lv_event_t *e)
+void triggerStratagemStd2(lv_event_t *e)
 {
 	// Resupply
 	uint8_t sequence[8] = {INPUT_DOWN,
@@ -216,7 +216,7 @@ void triggerStratagem2(lv_event_t *e)
 	playbackSound("S:assets/sound/supp.wav");
 }
 
-void triggerStratagem3(lv_event_t *e)
+void triggerStratagemStd3(lv_event_t *e)
 {
 	// SOS
 	uint8_t sequence[8] = {INPUT_UP,
@@ -233,7 +233,7 @@ void triggerStratagem3(lv_event_t *e)
 	playbackSound("S:assets/sound/sos.wav");
 }
 
-void triggerStratagem4(lv_event_t *e)
+void triggerStratagemStd4(lv_event_t *e)
 {
 	// Eagle rearm
 	uint8_t sequence[8] = {INPUT_UP,
@@ -250,7 +250,24 @@ void triggerStratagem4(lv_event_t *e)
 	playbackSound("S:assets/sound/eagrel.wav");
 }
 
-void triggerStratagem5(lv_event_t *e)
+void triggerStratagemStd5(lv_event_t *e)
+{
+	// Hellbomb
+	uint8_t sequence[8] = {INPUT_DOWN,
+						   INPUT_UP,
+						   INPUT_LEFT,
+						   INPUT_DOWN,
+						   INPUT_UP,
+						   INPUT_RIGHT,
+						   INPUT_DOWN,
+						   INPUT_UP};
+
+	setStratagemCode(sequence, INPUT_CTRL_MASK);
+
+	playbackSound("S:assets/sound/eagrel.wav");
+}
+
+void triggerStratagemUser1(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[0];
 
@@ -262,7 +279,7 @@ void triggerStratagem5(lv_event_t *e)
 	playbackSound(path);
 }
 
-void triggerStratagem6(lv_event_t *e)
+void triggerStratagemUser2(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[1];
 
@@ -274,7 +291,7 @@ void triggerStratagem6(lv_event_t *e)
 	playbackSound(path);
 }
 
-void triggerStratagem7(lv_event_t *e)
+void triggerStratagemUser3(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[2];
 
@@ -286,7 +303,7 @@ void triggerStratagem7(lv_event_t *e)
 	playbackSound(path);
 }
 
-void triggerStratagem8(lv_event_t *e)
+void triggerStratagemUser4(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[3];
 

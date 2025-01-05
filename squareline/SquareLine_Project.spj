@@ -148,8 +148,8 @@
           }
         ],
         "isPage": true,
-        "editor_posx": 600,
-        "editor_posy": -600,
+        "editor_posx": 1170,
+        "editor_posy": -1050,
         "dont_export": false,
         "locked": false,
         "properties": [
@@ -23770,7 +23770,7 @@
           }
         ],
         "isPage": true,
-        "editor_posx": 1200,
+        "editor_posx": 1170,
         "editor_posy": -600,
         "dont_export": false,
         "locked": false,
@@ -24007,8 +24007,8 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      112,
-                      112
+                      88,
+                      88
                     ],
                     "InheritedType": 7
                   },
@@ -24020,6 +24020,7 @@
                   },
                   {
                     "nid": 90,
+                    "flags": 1048576,
                     "strtype": "OBJECT/Flags",
                     "InheritedType": 1
                   },
@@ -24177,7 +24178,7 @@
                           {
                             "nid": 1001336,
                             "strtype": "CALL FUNCTION/Function_name",
-                            "strval": "triggerStratagem1",
+                            "strval": "triggerStratagemStd1",
                             "InheritedType": 10
                           },
                           {
@@ -24246,8 +24247,8 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      112,
-                      112
+                      88,
+                      88
                     ],
                     "InheritedType": 7
                   },
@@ -24417,7 +24418,7 @@
                           {
                             "nid": 1001346,
                             "strtype": "CALL FUNCTION/Function_name",
-                            "strval": "triggerStratagem2",
+                            "strval": "triggerStratagemStd2",
                             "InheritedType": 10
                           },
                           {
@@ -24486,8 +24487,8 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      112,
-                      112
+                      88,
+                      88
                     ],
                     "InheritedType": 7
                   },
@@ -24657,7 +24658,7 @@
                           {
                             "nid": 1001356,
                             "strtype": "CALL FUNCTION/Function_name",
-                            "strval": "triggerStratagem3",
+                            "strval": "triggerStratagemStd3",
                             "InheritedType": 10
                           },
                           {
@@ -24726,8 +24727,8 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      112,
-                      112
+                      88,
+                      88
                     ],
                     "InheritedType": 7
                   },
@@ -24897,7 +24898,247 @@
                           {
                             "nid": 1001366,
                             "strtype": "CALL FUNCTION/Function_name",
-                            "strval": "triggerStratagem4",
+                            "strval": "triggerStratagemStd4",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1001367,
+                            "strtype": "CALL FUNCTION/Dont_export_function",
+                            "strval": "False",
+                            "InheritedType": 2
+                          }
+                        ],
+                        "InheritedType": 10
+                      }
+                    ],
+                    "InheritedType": 4
+                  }
+                ],
+                "saved_objtypeKey": "BUTTON",
+                "tree_closed": true
+              },
+              {
+                "guid": "GUID9441534-45037S2438345",
+                "deepid": -1481323804,
+                "dont_export": false,
+                "locked": false,
+                "properties": [
+                  {
+                    "nid": 10,
+                    "strtype": "OBJECT/Name",
+                    "strval": "BtnHellbomb",
+                    "InheritedType": 10
+                  },
+                  {
+                    "nid": 20,
+                    "strtype": "OBJECT/Layout",
+                    "InheritedType": 1
+                  },
+                  {
+                    "Flow": 0,
+                    "Wrap": false,
+                    "Reversed": false,
+                    "MainAlignment": 0,
+                    "CrossAlignment": 0,
+                    "TrackAlignment": 0,
+                    "LayoutType": 0,
+                    "nid": 30,
+                    "strtype": "OBJECT/Layout_type",
+                    "strval": "No_layout",
+                    "InheritedType": 13
+                  },
+                  {
+                    "nid": 40,
+                    "strtype": "OBJECT/Transform",
+                    "InheritedType": 1
+                  },
+                  {
+                    "nid": 50,
+                    "flags": 17,
+                    "strtype": "OBJECT/Position",
+                    "intarray": [
+                      244,
+                      -8
+                    ],
+                    "InheritedType": 7
+                  },
+                  {
+                    "nid": 60,
+                    "flags": 17,
+                    "strtype": "OBJECT/Size",
+                    "intarray": [
+                      88,
+                      88
+                    ],
+                    "InheritedType": 7
+                  },
+                  {
+                    "nid": 70,
+                    "strtype": "OBJECT/Align",
+                    "strval": "BOTTOM_LEFT",
+                    "InheritedType": 3
+                  },
+                  {
+                    "nid": 90,
+                    "flags": 1048576,
+                    "strtype": "OBJECT/Flags",
+                    "InheritedType": 1
+                  },
+                  {
+                    "nid": 230,
+                    "strtype": "OBJECT/Scrollable",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 260,
+                    "strtype": "OBJECT/Scroll_on_focus",
+                    "strval": "True",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 300,
+                    "strtype": "OBJECT/Scrollbar_mode",
+                    "strval": "AUTO",
+                    "InheritedType": 3
+                  },
+                  {
+                    "nid": 310,
+                    "strtype": "OBJECT/Scroll_direction",
+                    "strval": "ALL",
+                    "InheritedType": 3
+                  },
+                  {
+                    "nid": 320,
+                    "flags": 1048576,
+                    "strtype": "OBJECT/States",
+                    "InheritedType": 1
+                  },
+                  {
+                    "part": "lv.PART.MAIN",
+                    "childs": [
+                      {
+                        "nid": 10000,
+                        "strtype": "_style/StyleState",
+                        "strval": "DEFAULT",
+                        "childs": [
+                          {
+                            "nid": 10520,
+                            "strtype": "_style/Bg_Color",
+                            "intarray": [
+                              0,
+                              0,
+                              0,
+                              127
+                            ],
+                            "InheritedType": 7
+                          },
+                          {
+                            "nid": 10610,
+                            "strtype": "_style/Bg_Image",
+                            "strval": "assets/sg/HB1.png",
+                            "InheritedType": 5
+                          },
+                          {
+                            "nid": 10710,
+                            "strtype": "_style/Border_Color",
+                            "strval": "colorTheme",
+                            "integer": 1000825,
+                            "intarray": [
+                              255,
+                              223,
+                              0,
+                              255
+                            ],
+                            "InheritedType": 7
+                          },
+                          {
+                            "nid": 10720,
+                            "strtype": "_style/Border width",
+                            "integer": 4,
+                            "InheritedType": 6
+                          }
+                        ],
+                        "InheritedType": 1
+                      },
+                      {
+                        "nid": 30000,
+                        "strtype": "_style/StyleState",
+                        "strval": "PRESSED",
+                        "childs": [
+                          {
+                            "nid": 30710,
+                            "strtype": "_style/Border_Color",
+                            "strval": "colorActive",
+                            "integer": 1000867,
+                            "intarray": [
+                              255,
+                              255,
+                              255,
+                              255
+                            ],
+                            "InheritedType": 7
+                          }
+                        ],
+                        "InheritedType": 1
+                      }
+                    ],
+                    "nid": 1010,
+                    "strtype": "BUTTON/Style_main",
+                    "strval": "lv.PART.MAIN, Rectangle, Pad, Text, Transform",
+                    "InheritedType": 11
+                  },
+                  {
+                    "disabled": false,
+                    "nid": 1001358,
+                    "strtype": "_event/EventHandler",
+                    "strval": "CLICKED",
+                    "childs": [
+                      {
+                        "nid": 1001359,
+                        "strtype": "_event/name",
+                        "strval": "Event9",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 1001360,
+                        "strtype": "_event/condition_C",
+                        "strval": "",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 1001361,
+                        "strtype": "_event/condition_P",
+                        "strval": "",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 1001362,
+                        "strtype": "_event/action",
+                        "strval": "CALL FUNCTION",
+                        "childs": [
+                          {
+                            "nid": 1001363,
+                            "strtype": "CALL FUNCTION/Name",
+                            "strval": "CALL FUNCTION",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1001364,
+                            "strtype": "CALL FUNCTION/Call",
+                            "strval": "<{Function_name}>( event_struct )",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1001365,
+                            "strtype": "CALL FUNCTION/CallC",
+                            "strval": "<{Function_name}>( e );",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1001366,
+                            "strtype": "CALL FUNCTION/Function_name",
+                            "strval": "triggerStratagemStd5",
                             "InheritedType": 10
                           },
                           {
@@ -25131,7 +25372,7 @@
                           {
                             "nid": 1001376,
                             "strtype": "CALL FUNCTION/Function_name",
-                            "strval": "triggerStratagem5",
+                            "strval": "triggerStratagemUser1",
                             "InheritedType": 10
                           },
                           {
@@ -25365,7 +25606,7 @@
                           {
                             "nid": 1001386,
                             "strtype": "CALL FUNCTION/Function_name",
-                            "strval": "triggerStratagem6",
+                            "strval": "triggerStratagemUser2",
                             "InheritedType": 10
                           },
                           {
@@ -25599,7 +25840,7 @@
                           {
                             "nid": 1001396,
                             "strtype": "CALL FUNCTION/Function_name",
-                            "strval": "triggerStratagem7",
+                            "strval": "triggerStratagemUser3",
                             "InheritedType": 10
                           },
                           {
@@ -25833,7 +26074,7 @@
                           {
                             "nid": 1001406,
                             "strtype": "CALL FUNCTION/Function_name",
-                            "strval": "triggerStratagem8",
+                            "strval": "triggerStratagemUser4",
                             "InheritedType": 10
                           },
                           {
@@ -25897,11 +26138,11 @@
               },
               {
                 "nid": 60,
-                "flags": 18,
+                "flags": 34,
                 "strtype": "OBJECT/Size",
                 "intarray": [
                   100,
-                  280
+                  100
                 ],
                 "InheritedType": 7
               },
@@ -26406,7 +26647,7 @@
           }
         ],
         "isPage": true,
-        "editor_posx": 1770,
+        "editor_posx": 1740,
         "editor_posy": -600,
         "dont_export": false,
         "locked": false,
@@ -32695,8 +32936,8 @@
           }
         ],
         "isPage": true,
-        "editor_posx": 1200,
-        "editor_posy": -1050,
+        "editor_posx": 600,
+        "editor_posy": -600,
         "dont_export": false,
         "locked": false,
         "properties": [
@@ -33236,7 +33477,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "Copyright (C) 2024 All rights reserved.\\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.\\n\\nFor any further information please visit:\\ngithub.com/unic8s/hd2_macropad\\n\\nA project by\\nOliver G.\t@Gore66\\nErik L.\t\t\t@unic8s",
+                    "strval": "Copyright (C) 2024 All rights reserved.\\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.\\n\\nFor more information please visit:\\ngithub.com/unic8s/hd2_macropad\\n\\nA project by\\nOliver G.\t@Gore66\\nErik L.\t\t\t@unic8s",
                     "InheritedType": 10
                   },
                   {
@@ -33823,7 +34064,7 @@
           }
         ],
         "isPage": true,
-        "editor_posx": 1770,
+        "editor_posx": 600,
         "editor_posy": -1050,
         "dont_export": false,
         "locked": false,
@@ -34179,7 +34420,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 1891,
+    "backup_cnt": 1927,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

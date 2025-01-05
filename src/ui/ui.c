@@ -182,6 +182,8 @@ void ui_event_BtnSOS(lv_event_t * e);
 lv_obj_t * ui_BtnSOS;
 void ui_event_BtnRearm(lv_event_t * e);
 lv_obj_t * ui_BtnRearm;
+void ui_event_BtnHellbomb(lv_event_t * e);
+lv_obj_t * ui_BtnHellbomb;
 void ui_event_CustomStratagem1(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem1;
 void ui_event_CustomStratagem2(lv_event_t * e);
@@ -1232,7 +1234,7 @@ void ui_event_BtnReinforce(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        triggerStratagem1(e);
+        triggerStratagemStd1(e);
     }
 }
 
@@ -1241,7 +1243,7 @@ void ui_event_BtnResupply(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        triggerStratagem2(e);
+        triggerStratagemStd2(e);
     }
 }
 
@@ -1250,7 +1252,7 @@ void ui_event_BtnSOS(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        triggerStratagem3(e);
+        triggerStratagemStd3(e);
     }
 }
 
@@ -1259,7 +1261,16 @@ void ui_event_BtnRearm(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        triggerStratagem4(e);
+        triggerStratagemStd4(e);
+    }
+}
+
+void ui_event_BtnHellbomb(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        triggerStratagemStd5(e);
     }
 }
 
@@ -1268,7 +1279,7 @@ void ui_event_CustomStratagem1(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        triggerStratagem5(e);
+        triggerStratagemUser1(e);
     }
 }
 
@@ -1277,7 +1288,7 @@ void ui_event_CustomStratagem2(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        triggerStratagem6(e);
+        triggerStratagemUser2(e);
     }
 }
 
@@ -1286,7 +1297,7 @@ void ui_event_CustomStratagem3(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        triggerStratagem7(e);
+        triggerStratagemUser3(e);
     }
 }
 
@@ -1295,7 +1306,7 @@ void ui_event_CustomStratagem4(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        triggerStratagem8(e);
+        triggerStratagemUser4(e);
     }
 }
 

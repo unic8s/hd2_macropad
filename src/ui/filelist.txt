@@ -78,6 +78,7 @@ images/ui_img_sg_rf1_png.c
 images/ui_img_sg_res1_png.c
 images/ui_img_sg_sos1_png.c
 images/ui_img_sg_er1_png.c
+images/ui_img_sg_hb1_png.c
 images/ui_img_1050696822.c
 images/ui_img_bt_dis_png.c
 images/ui_img_bt_con_png.c
@@ -119,7 +120,6 @@ images/ui_img_sg_gdb2_png.c
 images/ui_img_sg_gdr2_png.c
 images/ui_img_sg_gl2_png.c
 images/ui_img_sg_gs2_png.c
-images/ui_img_sg_hb1_png.c
 images/ui_img_sg_hb2_png.c
 images/ui_img_sg_hbd1_png.c
 images/ui_img_sg_hbd2_png.c

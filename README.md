@@ -73,7 +73,7 @@ Instructions for printing and assembling go along with STL files on...
 ## Stratagem selection
 
 ### First startup
-1. After the intro screen all stratagems are displayed in groups (weapons, backpacks, stationary, strike and eagle)
+1. After the intro screen all stratagems are displayed in groups (weapons, equioment, stationary, strike and eagle)
 2. Select a stratagems by clicking on it. The yellow border will turn into a white one which indicates the selection.
 3. You have to pick your 4 specific stratagems from the groups.
 4. The label and the bar at the bottom of the screen shows the progress of your selection.
@@ -81,7 +81,7 @@ Instructions for printing and assembling go along with STL files on...
 - If you want to switch to gaming mode with less than 4 stratagems select just click the "Play" button
 
 ### In-game usage
-- The 4 upper stratagems are the basic items for all operation types (reinforce, resupply, SOS and rearm eagle).
+- The 5 upper stratagems are the basic items for all operation types (reinforce, resupply, SOS, rearm eagle and hellbomb).
 - The 4 lower stratagems are the ones you selected in the setup procedure.
 - Just click a strategem to activate the execution of the macro.
 - The Bluetooth icon in the lower right corner indicates the connection stats.

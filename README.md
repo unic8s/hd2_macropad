@@ -73,7 +73,7 @@ Instructions for printing and assembling go along with STL files on...
 ## Stratagem selection
 
 ### First startup
-1. After the intro screen all stratagems are displayed in groups (weapons, equioment, stationary, strike and eagle)
+1. After the intro screen all stratagems are displayed in groups (weapons, equipment, stationary, strike and eagle)
 2. Select a stratagems by clicking on it. The yellow border will turn into a white one which indicates the selection.
 3. You have to pick your 4 specific stratagems from the groups.
 4. The label and the bar at the bottom of the screen shows the progress of your selection.

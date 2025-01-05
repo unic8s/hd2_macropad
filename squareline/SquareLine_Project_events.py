@@ -150,3 +150,11 @@ def triggerStratagemUser3(event_struct):
 def triggerStratagemUser4(event_struct):
     return
 
+
+def triggerStratagemStd6(event_struct):
+    return
+
+
+def triggerStratagemStd7(event_struct):
+    return
+

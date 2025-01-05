@@ -264,7 +264,41 @@ void triggerStratagemStd5(lv_event_t *e)
 
 	setStratagemCode(sequence, INPUT_CTRL_MASK);
 
-	playbackSound("S:assets/sound/eagrel.wav");
+	//playbackSound("S:assets/sound/.wav");
+}
+
+void triggerStratagemStd6(lv_event_t *e)
+{
+	// Super Earth Flag
+	uint8_t sequence[8] = {INPUT_DOWN,
+						   INPUT_UP,
+						   INPUT_DOWN,
+						   INPUT_UP,
+						   0,
+						   0,
+						   0,
+						   0};
+
+	setStratagemCode(sequence, INPUT_CTRL_MASK);
+
+	//playbackSound("S:assets/sound/.wav");
+}
+
+void triggerStratagemStd7(lv_event_t *e)
+{
+	// S.E.A.F. Artillery
+	uint8_t sequence[8] = {INPUT_RIGHT,
+						   INPUT_UP,
+						   INPUT_UP,
+						   INPUT_DOWN,
+						   0,
+						   0,
+						   0,
+						   0};
+
+	setStratagemCode(sequence, INPUT_CTRL_MASK);
+
+	//playbackSound("S:assets/sound/.wav");
 }
 
 void triggerStratagemUser1(lv_event_t *e)

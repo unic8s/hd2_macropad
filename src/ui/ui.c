@@ -180,8 +180,8 @@ void ui_event_BtnResupply(lv_event_t * e);
 lv_obj_t * ui_BtnResupply;
 void ui_event_BtnSOS(lv_event_t * e);
 lv_obj_t * ui_BtnSOS;
-void ui_event_BtnRearm(lv_event_t * e);
-lv_obj_t * ui_BtnRearm;
+void ui_event_BtnSuperEarthFlag(lv_event_t * e);
+lv_obj_t * ui_BtnSuperEarthFlag;
 void ui_event_BtnHellbomb(lv_event_t * e);
 lv_obj_t * ui_BtnHellbomb;
 void ui_event_CustomStratagem1(lv_event_t * e);
@@ -194,6 +194,11 @@ void ui_event_CustomStratagem4(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem4;
 void ui_event_BtnBack(lv_event_t * e);
 lv_obj_t * ui_BtnBack;
+lv_obj_t * ui_Container5;
+void ui_event_BtnSEAF(lv_event_t * e);
+lv_obj_t * ui_BtnSEAF;
+void ui_event_BtnRearm(lv_event_t * e);
+lv_obj_t * ui_BtnRearm;
 lv_obj_t * ui_CntBT;
 // CUSTOM VARIABLES
 lv_obj_t * uic_CntBT;
@@ -1256,12 +1261,12 @@ void ui_event_BtnSOS(lv_event_t * e)
     }
 }
 
-void ui_event_BtnRearm(lv_event_t * e)
+void ui_event_BtnSuperEarthFlag(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        triggerStratagemStd4(e);
+        triggerStratagemStd6(e);
     }
 }
 
@@ -1316,6 +1321,24 @@ void ui_event_BtnBack(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, &ui_Setup_screen_init);
+    }
+}
+
+void ui_event_BtnSEAF(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        triggerStratagemStd7(e);
+    }
+}
+
+void ui_event_BtnRearm(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        triggerStratagemStd4(e);
     }
 }
 

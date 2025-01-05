@@ -264,7 +264,7 @@ void triggerStratagemStd5(lv_event_t *e)
 
 	setStratagemCode(sequence, INPUT_CTRL_MASK);
 
-	//playbackSound("S:assets/sound/.wav");
+	// playbackSound("S:assets/sound/.wav");
 }
 
 void triggerStratagemStd6(lv_event_t *e)
@@ -281,7 +281,7 @@ void triggerStratagemStd6(lv_event_t *e)
 
 	setStratagemCode(sequence, INPUT_CTRL_MASK);
 
-	//playbackSound("S:assets/sound/.wav");
+	// playbackSound("S:assets/sound/.wav");
 }
 
 void triggerStratagemUser1(lv_event_t *e)
@@ -398,6 +398,8 @@ void GotoGame(lv_event_t *e)
 		const bool configured = buttons[c] != NULL;
 		lv_obj_t *targetButton = ui_CustomStratagem1;
 
+		const lv_img_dsc_t *hires = ResolveHiResIcon(bgImg);
+
 		switch (c)
 		{
 		case 1:
@@ -414,7 +416,7 @@ void GotoGame(lv_event_t *e)
 		if (configured)
 		{
 			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_set_style_bg_img_src(targetButton, bgImg, LV_PART_MAIN | LV_STATE_DEFAULT);
+			lv_obj_set_style_bg_img_src(targetButton, hires, LV_PART_MAIN | LV_STATE_DEFAULT);
 		}
 		else
 		{
@@ -423,4 +425,256 @@ void GotoGame(lv_event_t *e)
 	}
 
 	_ui_screen_change(&ui_Game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 100, &ui_Game_screen_init);
+}
+
+lv_img_dsc_t* ResolveHiResIcon(lv_img_dsc_t* icon)
+{
+	lv_img_dsc_t *hires;
+
+	if (icon == ui_imgset_[0])
+	{
+		hires = ui_imgset_ft[1];
+	}
+	else if (icon == ui_imgset_[2])
+	{
+		hires = ui_imgset_ft[3];
+	}
+	else if (icon == ui_imgset_ac[0])
+	{
+		hires = ui_imgset_ac[1];
+	}
+	else if (icon == ui_imgset_acs[0])
+	{
+		hires = ui_imgset_acs[1];
+	}
+	else if (icon == ui_imgset_amr[0])
+	{
+		hires = ui_imgset_amr[1];
+	}
+	else if (icon == ui_imgset_apm[0])
+	{
+		hires = ui_imgset_apm[1];
+	}
+	else if (icon == ui_imgset_arl[0])
+	{
+		hires = ui_imgset_arl[1];
+	}
+	else if (icon == ui_imgset_at[0])
+	{
+		hires = ui_imgset_at[1];
+	}
+	else if (icon == ui_imgset_ate[0])
+	{
+		hires = ui_imgset_ate[1];
+	}
+	else if (icon == ui_imgset_atm[0])
+	{
+		hires = ui_imgset_atm[1];
+	}
+	else if (icon == ui_imgset_bsb[0])
+	{
+		hires = ui_imgset_bsb[1];
+	}
+	else if (icon == ui_imgset_c[0])
+	{
+		hires = ui_imgset_c[1];
+	}
+	else if (icon == ui_imgset_ds[0])
+	{
+		hires = ui_imgset_ds[1];
+	}
+	else if (icon == ui_imgset_e[0])
+	{
+		hires = ui_imgset_e[1];
+	}
+	else if (icon == ui_imgset_e[2])
+	{
+		hires = ui_imgset_e[3];
+	}
+	else if (icon == ui_imgset_ea[0])
+	{
+		hires = ui_imgset_ea[1];
+	}
+	else if (icon == ui_imgset_eat[0])
+	{
+		hires = ui_imgset_eat[1];
+	}
+	else if (icon == ui_imgset_ecb[0])
+	{
+		hires = ui_imgset_ecb[1];
+	}
+	else if (icon == ui_imgset_ee[0])
+	{
+		hires = ui_imgset_ee[1];
+	}
+	else if (icon == ui_imgset_ems[0])
+	{
+		hires = ui_imgset_ems[1];
+	}
+	else if (icon == ui_imgset_ena[0])
+	{
+		hires = ui_imgset_ena[1];
+	}
+	else if (icon == ui_imgset_esr[0])
+	{
+		hires = ui_imgset_esr[1];
+	}
+	else if (icon == ui_imgset_ess[0])
+	{
+		hires = ui_imgset_ess[1];
+	}
+	else if (icon == ui_imgset_frv[0])
+	{
+		hires = ui_imgset_frv[1];
+	}
+	else if (icon == ui_imgset_fs[0])
+	{
+		hires = ui_imgset_fs[1];
+	}
+	else if (icon == ui_imgset_ft[0])
+	{
+		hires = ui_imgset_ft[1];
+	}
+	else if (icon == ui_imgset_gd[0])
+	{
+		hires = ui_imgset_gd[1];
+	}
+	else if (icon == ui_imgset_gdb[0])
+	{
+		hires = ui_imgset_gdb[1];
+	}
+	else if (icon == ui_imgset_gdr[0])
+	{
+		hires = ui_imgset_gdr[1];
+	}
+	else if (icon == ui_imgset_gl[0])
+	{
+		hires = ui_imgset_gl[1];
+	}
+	else if (icon == ui_imgset_gs[0])
+	{
+		hires = ui_imgset_gs[1];
+	}
+	else if (icon == ui_imgset_hmg[0])
+	{
+		hires = ui_imgset_hmg[1];
+	}
+	else if (icon == ui_imgset_hmge[0])
+	{
+		hires = ui_imgset_hmge[1];
+	}
+	else if (icon == ui_imgset_im[0])
+	{
+		hires = ui_imgset_im[1];
+	}
+	else if (icon == ui_imgset_jp[0])
+	{
+		hires = ui_imgset_jp[1];
+	}
+	else if (icon == ui_imgset_lc[0])
+	{
+		hires = ui_imgset_lc[1];
+	}
+	else if (icon == ui_imgset_mg[0])
+	{
+		hires = ui_imgset_mg[1];
+	}
+	else if (icon == ui_imgset_mgs[0])
+	{
+		hires = ui_imgset_mgs[1];
+	}
+	else if (icon == ui_imgset_ms[0])
+	{
+		hires = ui_imgset_ms[1];
+	}
+	else if (icon == ui_imgset_oas[0])
+	{
+		hires = ui_imgset_oas[1];
+	}
+	else if (icon == ui_imgset_oes[0])
+	{
+		hires = ui_imgset_oes[1];
+	}
+	else if (icon == ui_imgset_ogb[0])
+	{
+		hires = ui_imgset_ogb[1];
+	}
+	else if (icon == ui_imgset_ogs[0])
+	{
+		hires = ui_imgset_ogs[1];
+	}
+	else if (icon == ui_imgset_ol[0])
+	{
+		hires = ui_imgset_ol[1];
+	}
+	else if (icon == ui_imgset_onb[0])
+	{
+		hires = ui_imgset_onb[1];
+	}
+	else if (icon == ui_imgset_ops[0])
+	{
+		hires = ui_imgset_ops[1];
+	}
+	else if (icon == ui_imgset_ors[0])
+	{
+		hires = ui_imgset_ors[1];
+	}
+	else if (icon == ui_imgset_oss[0])
+	{
+		hires = ui_imgset_oss[1];
+	}
+	else if (icon == ui_imgset_owb[0])
+	{
+		hires = ui_imgset_owb[1];
+	}
+	else if (icon == ui_imgset_pe[0])
+	{
+		hires = ui_imgset_pe[1];
+	}
+	else if (icon == ui_imgset_qc[0])
+	{
+		hires = ui_imgset_qc[1];
+	}
+	else if (icon == ui_imgset_rg[0])
+	{
+		hires = ui_imgset_rg[1];
+	}
+	else if (icon == ui_imgset_rr[0])
+	{
+		hires = ui_imgset_rr[1];
+	}
+	else if (icon == ui_imgset_rs[0])
+	{
+		hires = ui_imgset_rs[1];
+	}
+	else if (icon == ui_imgset_sgp[0])
+	{
+		hires = ui_imgset_sgp[1];
+	}
+	else if (icon == ui_imgset_sgr[0])
+	{
+		hires = ui_imgset_sgr[1];
+	}
+	else if (icon == ui_imgset_spr[0])
+	{
+		hires = ui_imgset_spr[1];
+	}
+	else if (icon == ui_imgset_ste[0])
+	{
+		hires = ui_imgset_ste[1];
+	}
+	else if (icon == ui_imgset_sup[0])
+	{
+		hires = ui_imgset_sup[1];
+	}
+	else if (icon == ui_imgset_sw[0])
+	{
+		hires = ui_imgset_sw[1];
+	}
+	else if (icon == ui_imgset_tt[0])
+	{
+		hires = ui_imgset_tt[1];
+	}
+
+	return hires;
 }

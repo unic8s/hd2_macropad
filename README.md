@@ -140,9 +140,13 @@ There is no speaker included in  the casing of the device. As a speaker you shou
 - Framework: [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
 - UI Editor: [Squareline Studio](https://squareline.io/)
 - Libraries & functions
-  -  [LVGL](https://lvgl.io/)
+  - [LVGL](https://lvgl.io/)
   - [BLE HID](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/esp_hidd.html)
   - [I2S Audio](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2s.html)
+- Programming languages & build tools
+  - [C](https://en.wikipedia.org/wiki/C_(programming_language))
+  - [Python](https://www.python.org/)
+  - [CMake](https://cmake.org/)
 
 ## Disclaimer and copyright
 > This is a private opensource project and is not associated in any kind with SONY INTERACTIVE ENTERTAINMENT LLC.

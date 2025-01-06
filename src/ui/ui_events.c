@@ -433,11 +433,11 @@ lv_img_dsc_t* ResolveHiResIcon(lv_img_dsc_t* icon)
 
 	if (icon == ui_imgset_[0])
 	{
-		hires = ui_imgset_ft[1];
+		hires = ui_imgset_[1];
 	}
 	else if (icon == ui_imgset_[2])
 	{
-		hires = ui_imgset_ft[3];
+		hires = ui_imgset_[3];
 	}
 	else if (icon == ui_imgset_ac[0])
 	{

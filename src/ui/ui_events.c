@@ -427,253 +427,107 @@ void GotoGame(lv_event_t *e)
 	_ui_screen_change(&ui_Game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 100, &ui_Game_screen_init);
 }
 
-lv_img_dsc_t* ResolveHiResIcon(lv_img_dsc_t* icon)
-{
-	lv_img_dsc_t *hires;
+const lv_img_dsc_t **imgsetListTwo[57] = {
+	ui_imgset_ac,
+	ui_imgset_acs,
+	ui_imgset_amr,
+	ui_imgset_apm,
+	ui_imgset_arl,
+	ui_imgset_at,
+	ui_imgset_ate,
+	ui_imgset_atm,
+	ui_imgset_bsb,
+	ui_imgset_c,
+	ui_imgset_ds,
+	ui_imgset_ea,
+	ui_imgset_eat,
+	ui_imgset_ecb,
+	ui_imgset_ee,
+	ui_imgset_ems,
+	ui_imgset_ena,
+	ui_imgset_esr,
+	ui_imgset_ess,
+	ui_imgset_frv,
+	ui_imgset_fs,
+	ui_imgset_ft,
+	ui_imgset_gd,
+	ui_imgset_gdb,
+	ui_imgset_gdr,
+	ui_imgset_gl,
+	ui_imgset_gs,
+	ui_imgset_hmg,
+	ui_imgset_hmge,
+	ui_imgset_im,
+	ui_imgset_jp,
+	ui_imgset_lc,
+	ui_imgset_mg,
+	ui_imgset_mgs,
+	ui_imgset_ms,
+	ui_imgset_oas,
+	ui_imgset_oes,
+	ui_imgset_ogb,
+	ui_imgset_ogs,
+	ui_imgset_ol,
+	ui_imgset_onb,
+	ui_imgset_ops,
+	ui_imgset_ors,
+	ui_imgset_oss,
+	ui_imgset_owb,
+	ui_imgset_pe,
+	ui_imgset_qc,
+	ui_imgset_rg,
+	ui_imgset_rr,
+	ui_imgset_rs,
+	ui_imgset_sgp,
+	ui_imgset_sgr,
+	ui_imgset_spr,
+	ui_imgset_ste,
+	ui_imgset_sup,
+	ui_imgset_sw,
+	ui_imgset_tt};
 
-	if (icon == ui_imgset_[0])
+const lv_img_dsc_t **imgsetListFour[2] = {
+	ui_imgset_,
+	ui_imgset_e};
+
+lv_img_dsc_t *ResolveHiResIcon(lv_img_dsc_t *icon)
+{
+	lv_img_dsc_t *hires = icon;
+
+	for (uint8_t c = 0; c < 57; c++)
 	{
-		hires = ui_imgset_[1];
+		lv_img_dsc_t **imgset = imgsetListTwo[c];
+		lv_img_dsc_t *imgLowRes = imgset[0];
+		
+
+		if (icon == imgLowRes)
+		{
+			lv_img_dsc_t *imgHiRes = imgset[1];
+
+			hires = imgHiRes;
+			break;
+		}
 	}
-	else if (icon == ui_imgset_[2])
+
+	for (uint8_t c = 0; c < 2; c++)
 	{
-		hires = ui_imgset_[3];
-	}
-	else if (icon == ui_imgset_ac[0])
-	{
-		hires = ui_imgset_ac[1];
-	}
-	else if (icon == ui_imgset_acs[0])
-	{
-		hires = ui_imgset_acs[1];
-	}
-	else if (icon == ui_imgset_amr[0])
-	{
-		hires = ui_imgset_amr[1];
-	}
-	else if (icon == ui_imgset_apm[0])
-	{
-		hires = ui_imgset_apm[1];
-	}
-	else if (icon == ui_imgset_arl[0])
-	{
-		hires = ui_imgset_arl[1];
-	}
-	else if (icon == ui_imgset_at[0])
-	{
-		hires = ui_imgset_at[1];
-	}
-	else if (icon == ui_imgset_ate[0])
-	{
-		hires = ui_imgset_ate[1];
-	}
-	else if (icon == ui_imgset_atm[0])
-	{
-		hires = ui_imgset_atm[1];
-	}
-	else if (icon == ui_imgset_bsb[0])
-	{
-		hires = ui_imgset_bsb[1];
-	}
-	else if (icon == ui_imgset_c[0])
-	{
-		hires = ui_imgset_c[1];
-	}
-	else if (icon == ui_imgset_ds[0])
-	{
-		hires = ui_imgset_ds[1];
-	}
-	else if (icon == ui_imgset_e[0])
-	{
-		hires = ui_imgset_e[1];
-	}
-	else if (icon == ui_imgset_e[2])
-	{
-		hires = ui_imgset_e[3];
-	}
-	else if (icon == ui_imgset_ea[0])
-	{
-		hires = ui_imgset_ea[1];
-	}
-	else if (icon == ui_imgset_eat[0])
-	{
-		hires = ui_imgset_eat[1];
-	}
-	else if (icon == ui_imgset_ecb[0])
-	{
-		hires = ui_imgset_ecb[1];
-	}
-	else if (icon == ui_imgset_ee[0])
-	{
-		hires = ui_imgset_ee[1];
-	}
-	else if (icon == ui_imgset_ems[0])
-	{
-		hires = ui_imgset_ems[1];
-	}
-	else if (icon == ui_imgset_ena[0])
-	{
-		hires = ui_imgset_ena[1];
-	}
-	else if (icon == ui_imgset_esr[0])
-	{
-		hires = ui_imgset_esr[1];
-	}
-	else if (icon == ui_imgset_ess[0])
-	{
-		hires = ui_imgset_ess[1];
-	}
-	else if (icon == ui_imgset_frv[0])
-	{
-		hires = ui_imgset_frv[1];
-	}
-	else if (icon == ui_imgset_fs[0])
-	{
-		hires = ui_imgset_fs[1];
-	}
-	else if (icon == ui_imgset_ft[0])
-	{
-		hires = ui_imgset_ft[1];
-	}
-	else if (icon == ui_imgset_gd[0])
-	{
-		hires = ui_imgset_gd[1];
-	}
-	else if (icon == ui_imgset_gdb[0])
-	{
-		hires = ui_imgset_gdb[1];
-	}
-	else if (icon == ui_imgset_gdr[0])
-	{
-		hires = ui_imgset_gdr[1];
-	}
-	else if (icon == ui_imgset_gl[0])
-	{
-		hires = ui_imgset_gl[1];
-	}
-	else if (icon == ui_imgset_gs[0])
-	{
-		hires = ui_imgset_gs[1];
-	}
-	else if (icon == ui_imgset_hmg[0])
-	{
-		hires = ui_imgset_hmg[1];
-	}
-	else if (icon == ui_imgset_hmge[0])
-	{
-		hires = ui_imgset_hmge[1];
-	}
-	else if (icon == ui_imgset_im[0])
-	{
-		hires = ui_imgset_im[1];
-	}
-	else if (icon == ui_imgset_jp[0])
-	{
-		hires = ui_imgset_jp[1];
-	}
-	else if (icon == ui_imgset_lc[0])
-	{
-		hires = ui_imgset_lc[1];
-	}
-	else if (icon == ui_imgset_mg[0])
-	{
-		hires = ui_imgset_mg[1];
-	}
-	else if (icon == ui_imgset_mgs[0])
-	{
-		hires = ui_imgset_mgs[1];
-	}
-	else if (icon == ui_imgset_ms[0])
-	{
-		hires = ui_imgset_ms[1];
-	}
-	else if (icon == ui_imgset_oas[0])
-	{
-		hires = ui_imgset_oas[1];
-	}
-	else if (icon == ui_imgset_oes[0])
-	{
-		hires = ui_imgset_oes[1];
-	}
-	else if (icon == ui_imgset_ogb[0])
-	{
-		hires = ui_imgset_ogb[1];
-	}
-	else if (icon == ui_imgset_ogs[0])
-	{
-		hires = ui_imgset_ogs[1];
-	}
-	else if (icon == ui_imgset_ol[0])
-	{
-		hires = ui_imgset_ol[1];
-	}
-	else if (icon == ui_imgset_onb[0])
-	{
-		hires = ui_imgset_onb[1];
-	}
-	else if (icon == ui_imgset_ops[0])
-	{
-		hires = ui_imgset_ops[1];
-	}
-	else if (icon == ui_imgset_ors[0])
-	{
-		hires = ui_imgset_ors[1];
-	}
-	else if (icon == ui_imgset_oss[0])
-	{
-		hires = ui_imgset_oss[1];
-	}
-	else if (icon == ui_imgset_owb[0])
-	{
-		hires = ui_imgset_owb[1];
-	}
-	else if (icon == ui_imgset_pe[0])
-	{
-		hires = ui_imgset_pe[1];
-	}
-	else if (icon == ui_imgset_qc[0])
-	{
-		hires = ui_imgset_qc[1];
-	}
-	else if (icon == ui_imgset_rg[0])
-	{
-		hires = ui_imgset_rg[1];
-	}
-	else if (icon == ui_imgset_rr[0])
-	{
-		hires = ui_imgset_rr[1];
-	}
-	else if (icon == ui_imgset_rs[0])
-	{
-		hires = ui_imgset_rs[1];
-	}
-	else if (icon == ui_imgset_sgp[0])
-	{
-		hires = ui_imgset_sgp[1];
-	}
-	else if (icon == ui_imgset_sgr[0])
-	{
-		hires = ui_imgset_sgr[1];
-	}
-	else if (icon == ui_imgset_spr[0])
-	{
-		hires = ui_imgset_spr[1];
-	}
-	else if (icon == ui_imgset_ste[0])
-	{
-		hires = ui_imgset_ste[1];
-	}
-	else if (icon == ui_imgset_sup[0])
-	{
-		hires = ui_imgset_sup[1];
-	}
-	else if (icon == ui_imgset_sw[0])
-	{
-		hires = ui_imgset_sw[1];
-	}
-	else if (icon == ui_imgset_tt[0])
-	{
-		hires = ui_imgset_tt[1];
+		lv_img_dsc_t **imgset = imgsetListFour[c];
+		lv_img_dsc_t *imgLowRes1 = imgset[0];
+		lv_img_dsc_t *imgLowRes2 = imgset[2];		
+
+		if (icon == imgLowRes1)
+		{
+			lv_img_dsc_t *imgHiRes = imgset[1];
+
+			hires = imgHiRes;
+			break;
+		}else if (icon == imgLowRes2)
+		{
+			lv_img_dsc_t *imgHiRes = imgset[3];
+
+			hires = imgHiRes;
+			break;
+		}
 	}
 
 	return hires;

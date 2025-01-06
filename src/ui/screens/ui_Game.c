@@ -240,8 +240,8 @@ void ui_Game_screen_init(void)
     lv_obj_set_style_pad_column(ui_Container5, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_BtnSEAF = lv_btn_create(ui_Container5);
-    lv_obj_set_width(ui_BtnSEAF, 72);
-    lv_obj_set_height(ui_BtnSEAF, 72);
+    lv_obj_set_width(ui_BtnSEAF, 76);
+    lv_obj_set_height(ui_BtnSEAF, 76);
     lv_obj_set_x(ui_BtnSEAF, 399);
     lv_obj_set_y(ui_BtnSEAF, -11);
     lv_obj_set_align(ui_BtnSEAF, LV_ALIGN_BOTTOM_LEFT);
@@ -261,8 +261,8 @@ void ui_Game_screen_init(void)
                                            _ui_theme_alpha_colorActive);
 
     ui_BtnHellbomb = lv_btn_create(ui_Container5);
-    lv_obj_set_width(ui_BtnHellbomb, 72);
-    lv_obj_set_height(ui_BtnHellbomb, 72);
+    lv_obj_set_width(ui_BtnHellbomb, 76);
+    lv_obj_set_height(ui_BtnHellbomb, 76);
     lv_obj_set_x(ui_BtnHellbomb, 244);
     lv_obj_set_y(ui_BtnHellbomb, -8);
     lv_obj_set_align(ui_BtnHellbomb, LV_ALIGN_BOTTOM_LEFT);

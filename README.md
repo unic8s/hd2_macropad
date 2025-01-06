@@ -112,6 +112,7 @@ If you click on "Config" on the setup screen you will enter the device configura
 
 ### Input
 - [Delay] Set the input delay of the Bluetooth keyboard (50 - 200ms). This has to be adjusted if there are issues with your Bluetooth receiver of the PC or PS5&trade;.
+- [Keymap] Select between the most common keymaps: WASD or arrow keys. These will be used to execute the stratagem code sequences.
 - [Test] Click this button to send a test input sequence "hello" to your receiving device PC or PS5&trade;.
 
 ## Hardware - for enthusiasts

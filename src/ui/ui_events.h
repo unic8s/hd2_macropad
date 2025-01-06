@@ -70,6 +70,8 @@ extern const lv_img_dsc_t * ui_imgset_sup[2];
 extern const lv_img_dsc_t * ui_imgset_sw[2];
 extern const lv_img_dsc_t * ui_imgset_tt[2];
 
+extern uint8_t keymapIndex;
+
 void assignStratagems(lv_event_t * e);
 void deselectStratagem(lv_event_t * e);
 void selectStratagem(lv_event_t * e);
@@ -84,6 +86,7 @@ void triggerStratagemUser4(lv_event_t * e);
 void triggerStratagemStd5(lv_event_t * e);
 void triggerStratagemStd6(lv_event_t * e);
 void resetStratagems(lv_event_t * e);
+void ChangeKeymap(lv_event_t * e);
 void updateStratagemSelection();
 void ChangeDelay(lv_event_t * e);
 void ChangeBrightness(lv_event_t * e);

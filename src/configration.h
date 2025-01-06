@@ -14,6 +14,7 @@ void setDelay(int delay, bool restore);
 void setRotation(int rotation, bool restore);
 void setBrightness(int brightness, bool restore);
 void setMuted(bool muted, bool restore);
+void setKeymap(uint8_t index, bool restore);
 void loadConfig();
 void resetConfig();
 uint8_t peekConfig(char *key, uint8_t defaultValue);

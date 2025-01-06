@@ -62,6 +62,9 @@
         "esp_gap_ble_api.h": "c",
         "ratio": "c",
         "nvs_flash.h": "c",
-        "configration.h": "c"
+        "configration.h": "c",
+        "sounds.h": "c",
+        "esp_bsp.h": "c",
+        "lv_port.h": "c"
     }
 }

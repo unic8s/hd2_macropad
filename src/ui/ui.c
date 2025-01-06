@@ -230,6 +230,10 @@ lv_obj_t * ui_Label3;
 lv_obj_t * ui_LblDelay;
 void ui_event_SldDelay(lv_event_t * e);
 lv_obj_t * ui_SldDelay;
+lv_obj_t * ui_Container12;
+lv_obj_t * ui_Label9;
+void ui_event_DdKeymap(lv_event_t * e);
+lv_obj_t * ui_DdKeymap;
 lv_obj_t * ui_Container6;
 void ui_event_BtnTest(lv_event_t * e);
 lv_obj_t * ui_BtnTest;
@@ -1373,6 +1377,15 @@ void ui_event_SldDelay(lv_event_t * e)
 
     if(event_code == LV_EVENT_VALUE_CHANGED) {
         ChangeDelay(e);
+    }
+}
+
+void ui_event_DdKeymap(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        ChangeKeymap(e);
     }
 }
 

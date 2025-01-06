@@ -150,6 +150,23 @@ void setMuted(bool muted, bool restore)
     playbackSound("S:assets/sound/_swt.wav");
 }
 
+void setKeymap(uint8_t index, bool restore)
+{
+    keymapIndex = index;
+
+    if (restore)
+    {
+        lv_dropdown_set_selected(ui_DdKeymap, index);
+    }
+    else
+    {
+        setConfig("keymap", index);
+    }
+
+    playbackSound("S:assets/sound/_swt.wav");
+}
+
+
 void loadConfig()
 {
     esp_err_t ret;
@@ -172,6 +189,9 @@ void loadConfig()
 
     uint8_t sound_muted = getConfig("muted", 0);
     setMuted(sound_muted == 1, true);
+
+    uint8_t keymap_index = getConfig("keymap", 0);
+    setKeymap(keymap_index, true);
 
     nvs_close(nvsConfig);
 }
@@ -211,5 +231,6 @@ void resetConfig()
     setDelay(100, true);
     setBrightness(50, true);
     setMuted(0, true);
+    setKeymap(0, true);
     setRotation(LV_DISP_ROT_90, true);
 }

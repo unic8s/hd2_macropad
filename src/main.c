@@ -26,6 +26,7 @@ bool lvglReady = false;
 #define logSection(section) \
   ESP_LOGI(TAG, "\n\n************* %s **************\n", section);
 
+uint8_t keymapIndex = 0;
 uint8_t stratagemCode[8];
 uint8_t stratagemMask;
 bool soundPlayback = false;
@@ -35,6 +36,26 @@ bool playerMuted;
 int inputDelay = 100;
 int screenRotation = LV_DISP_ROT_90;
 
+const uint8_t keymaps[2][4] = {
+	{HID_KEY_W,
+	 HID_KEY_S,
+	 HID_KEY_A,
+	 HID_KEY_D},
+	{HID_KEY_UP_ARROW,
+	 HID_KEY_LEFT_ARROW,
+	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_RIGHT_ARROW}};
+
+uint8_t LookupKeycode(uint8_t keyCode)
+{
+  uint8_t *keymap = keymaps[keymapIndex];
+  uint8_t lookupIndex = keyCode - 1;
+
+	keyCode = keymap[lookupIndex];
+
+	return keyCode;
+}
+
 void setStratagemCode(uint8_t sequence[8], uint8_t mask)
 {
   uint8_t sequenceLength = 0;
@@ -43,7 +64,7 @@ void setStratagemCode(uint8_t sequence[8], uint8_t mask)
   {
     if (sequence[c] > 0)
     {
-      stratagemCode[c] = sequence[c];
+      stratagemCode[c] = LookupKeycode(sequence[c]);
       sequenceLength++;
     }
     else

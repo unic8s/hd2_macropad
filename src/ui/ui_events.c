@@ -108,6 +108,13 @@ void resetStratagems(lv_event_t *e)
 	playbackSound("S:assets/sound/_rst.wav");
 }
 
+void ChangeKeymap(lv_event_t *e)
+{
+	keymapIndex = lv_dropdown_get_selected(ui_DdKeymap);
+
+	setKeymap(keymapIndex, false);
+}
+
 void assignStratagems(lv_event_t *e)
 {
 	// Weapons
@@ -498,7 +505,6 @@ lv_img_dsc_t *ResolveHiResIcon(lv_img_dsc_t *icon)
 	{
 		lv_img_dsc_t **imgset = imgsetListTwo[c];
 		lv_img_dsc_t *imgLowRes = imgset[0];
-		
 
 		if (icon == imgLowRes)
 		{
@@ -513,7 +519,7 @@ lv_img_dsc_t *ResolveHiResIcon(lv_img_dsc_t *icon)
 	{
 		lv_img_dsc_t **imgset = imgsetListFour[c];
 		lv_img_dsc_t *imgLowRes1 = imgset[0];
-		lv_img_dsc_t *imgLowRes2 = imgset[2];		
+		lv_img_dsc_t *imgLowRes2 = imgset[2];
 
 		if (icon == imgLowRes1)
 		{
@@ -521,7 +527,8 @@ lv_img_dsc_t *ResolveHiResIcon(lv_img_dsc_t *icon)
 
 			hires = imgHiRes;
 			break;
-		}else if (icon == imgLowRes2)
+		}
+		else if (icon == imgLowRes2)
 		{
 			lv_img_dsc_t *imgHiRes = imgset[3];
 

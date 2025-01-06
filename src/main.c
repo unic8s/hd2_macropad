@@ -42,8 +42,8 @@ const uint8_t keymaps[2][4] = {
 	 HID_KEY_A,
 	 HID_KEY_D},
 	{HID_KEY_UP_ARROW,
-	 HID_KEY_LEFT_ARROW,
 	 HID_KEY_DOWN_ARROW,
+	 HID_KEY_LEFT_ARROW,
 	 HID_KEY_RIGHT_ARROW}};
 
 uint8_t LookupKeycode(uint8_t keyCode)

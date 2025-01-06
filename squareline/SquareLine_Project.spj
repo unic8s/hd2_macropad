@@ -27850,6 +27850,12 @@
                         "InheritedType": 2
                       },
                       {
+                        "nid": 180,
+                        "strtype": "OBJECT/Overflow_visible",
+                        "strval": "True",
+                        "InheritedType": 2
+                      },
+                      {
                         "nid": 230,
                         "strtype": "OBJECT/Scrollable",
                         "strval": "False",
@@ -27896,7 +27902,7 @@
                                 "nid": 11120,
                                 "strtype": "_style/Padding_RowCol",
                                 "intarray": [
-                                  8,
+                                  16,
                                   0
                                 ],
                                 "InheritedType": 7
@@ -28648,7 +28654,7 @@
                                 "nid": 11120,
                                 "strtype": "_style/Padding_RowCol",
                                 "intarray": [
-                                  8,
+                                  16,
                                   0
                                 ],
                                 "InheritedType": 7
@@ -28920,6 +28926,15 @@
                               0,
                               0,
                               0
+                            ],
+                            "InheritedType": 7
+                          },
+                          {
+                            "nid": 11120,
+                            "strtype": "_style/Padding_RowCol",
+                            "intarray": [
+                              8,
+                              8
                             ],
                             "InheritedType": 7
                           }
@@ -29674,7 +29689,7 @@
                                 "nid": 11120,
                                 "strtype": "_style/Padding_RowCol",
                                 "intarray": [
-                                  8,
+                                  16,
                                   0
                                 ],
                                 "InheritedType": 7
@@ -29946,6 +29961,15 @@
                               0,
                               0,
                               0
+                            ],
+                            "InheritedType": 7
+                          },
+                          {
+                            "nid": 11120,
+                            "strtype": "_style/Padding_RowCol",
+                            "intarray": [
+                              8,
+                              8
                             ],
                             "InheritedType": 7
                           }
@@ -30665,6 +30689,12 @@
                         "InheritedType": 2
                       },
                       {
+                        "nid": 180,
+                        "strtype": "OBJECT/Overflow_visible",
+                        "strval": "True",
+                        "InheritedType": 2
+                      },
+                      {
                         "nid": 230,
                         "strtype": "OBJECT/Scrollable",
                         "strval": "False",
@@ -30711,7 +30741,7 @@
                                 "nid": 11120,
                                 "strtype": "_style/Padding_RowCol",
                                 "intarray": [
-                                  8,
+                                  16,
                                   0
                                 ],
                                 "InheritedType": 7
@@ -30734,7 +30764,8 @@
                         "InheritedType": 11
                       }
                     ],
-                    "saved_objtypeKey": "CONTAINER"
+                    "saved_objtypeKey": "CONTAINER",
+                    "tree_closed": true
                   },
                   {
                     "guid": "GUID86808929-555941S1891046",
@@ -31266,7 +31297,7 @@
                                 "nid": 11120,
                                 "strtype": "_style/Padding_RowCol",
                                 "intarray": [
-                                  8,
+                                  16,
                                   0
                                 ],
                                 "InheritedType": 7
@@ -31815,7 +31846,7 @@
                                     "nid": 11110,
                                     "strtype": "_style/Padding",
                                     "intarray": [
-                                      8,
+                                      0,
                                       0,
                                       10,
                                       10
@@ -31952,8 +31983,8 @@
                                 "nid": 11120,
                                 "strtype": "_style/Padding_RowCol",
                                 "intarray": [
-                                  8,
-                                  0
+                                  16,
+                                  8
                                 ],
                                 "InheritedType": 7
                               }
@@ -32224,6 +32255,15 @@
                               0,
                               0,
                               0
+                            ],
+                            "InheritedType": 7
+                          },
+                          {
+                            "nid": 11120,
+                            "strtype": "_style/Padding_RowCol",
+                            "intarray": [
+                              8,
+                              8
                             ],
                             "InheritedType": 7
                           }
@@ -35362,7 +35402,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2016,
+    "backup_cnt": 2037,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

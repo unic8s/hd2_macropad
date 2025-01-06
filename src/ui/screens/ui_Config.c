@@ -46,6 +46,8 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_right(ui_Display, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_Display, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_Display, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Display, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Display, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Container9 = lv_obj_create(ui_Display);
     lv_obj_remove_style_all(ui_Container9);
@@ -54,12 +56,13 @@ void ui_Config_screen_init(void)
     lv_obj_set_align(ui_Container9, LV_ALIGN_CENTER);
     lv_obj_set_flex_flow(ui_Container9, LV_FLEX_FLOW_ROW_WRAP);
     lv_obj_set_flex_align(ui_Container9, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
+    lv_obj_add_flag(ui_Container9, LV_OBJ_FLAG_OVERFLOW_VISIBLE);     /// Flags
     lv_obj_clear_flag(ui_Container9, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_pad_left(ui_Container9, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_right(ui_Container9, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_Container9, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_Container9, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container9, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Container9, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_column(ui_Container9, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label2 = lv_label_create(ui_Container9);
@@ -131,7 +134,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_right(ui_Container13, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_Container13, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_Container13, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container13, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Container13, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_column(ui_Container13, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label5 = lv_label_create(ui_Container13);
@@ -194,6 +197,8 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_right(ui_Audio, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_Audio, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_Audio, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Audio, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Audio, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Container8 = lv_obj_create(ui_Audio);
     lv_obj_remove_style_all(ui_Container8);
@@ -207,7 +212,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_right(ui_Container8, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_Container8, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_Container8, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container8, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Container8, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_column(ui_Container8, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label1 = lv_label_create(ui_Container8);
@@ -270,6 +275,8 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_right(ui_Input, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_Input, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_Input, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Input, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Input, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Container10 = lv_obj_create(ui_Input);
     lv_obj_remove_style_all(ui_Container10);
@@ -278,12 +285,13 @@ void ui_Config_screen_init(void)
     lv_obj_set_align(ui_Container10, LV_ALIGN_CENTER);
     lv_obj_set_flex_flow(ui_Container10, LV_FLEX_FLOW_ROW_WRAP);
     lv_obj_set_flex_align(ui_Container10, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
+    lv_obj_add_flag(ui_Container10, LV_OBJ_FLAG_OVERFLOW_VISIBLE);     /// Flags
     lv_obj_clear_flag(ui_Container10, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_pad_left(ui_Container10, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_right(ui_Container10, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_Container10, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_Container10, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container10, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Container10, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_column(ui_Container10, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label3 = lv_label_create(ui_Container10);
@@ -354,7 +362,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_right(ui_Container12, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_Container12, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_Container12, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container12, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Container12, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_column(ui_Container12, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label9 = lv_label_create(ui_Container12);
@@ -395,8 +403,8 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_right(ui_Container6, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_Container6, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_Container6, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container6, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_Container6, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Container6, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Container6, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_BtnTest = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_BtnTest, 72);
@@ -435,7 +443,7 @@ void ui_Config_screen_init(void)
     lv_label_set_text(ui_Label16, "Sends a \"hello\" via Bluetooth keyboard");
     lv_obj_set_style_text_color(ui_Label16, lv_color_hex(0x666666), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_Label16, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui_Label16, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui_Label16, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_right(ui_Label16, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_Label16, 10, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_Label16, 10, LV_PART_MAIN | LV_STATE_DEFAULT);

@@ -201,7 +201,7 @@ void triggerStratagemStd1(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK);
+	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
 
 	playbackSound("S:assets/sound/reinf.wav");
 }
@@ -218,7 +218,7 @@ void triggerStratagemStd2(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK);
+	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
 
 	playbackSound("S:assets/sound/supp.wav");
 }
@@ -235,7 +235,7 @@ void triggerStratagemStd3(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK);
+	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
 
 	playbackSound("S:assets/sound/sos.wav");
 }
@@ -252,7 +252,7 @@ void triggerStratagemStd4(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK);
+	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
 
 	playbackSound("S:assets/sound/eagrel.wav");
 }
@@ -269,7 +269,7 @@ void triggerStratagemStd5(lv_event_t *e)
 						   INPUT_DOWN,
 						   INPUT_UP};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK);
+	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
 
 	// playbackSound("S:assets/sound/.wav");
 }
@@ -286,7 +286,7 @@ void triggerStratagemStd6(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK);
+	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
 
 	// playbackSound("S:assets/sound/.wav");
 }
@@ -295,7 +295,7 @@ void triggerStratagemUser1(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[0];
 
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK);
+	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
 
 	uint8_t soundIndex = soundMap[itemIndex];
 	char *path = soundFiles[soundIndex];
@@ -307,7 +307,7 @@ void triggerStratagemUser2(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[1];
 
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK);
+	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
 
 	uint8_t soundIndex = soundMap[itemIndex];
 	char *path = soundFiles[soundIndex];
@@ -319,7 +319,7 @@ void triggerStratagemUser3(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[2];
 
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK);
+	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
 
 	uint8_t soundIndex = soundMap[itemIndex];
 	char *path = soundFiles[soundIndex];
@@ -331,7 +331,7 @@ void triggerStratagemUser4(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[3];
 
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK);
+	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
 
 	uint8_t soundIndex = soundMap[itemIndex];
 	char *path = soundFiles[soundIndex];
@@ -376,7 +376,7 @@ void KeyboardDemo(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence, 0);
+	setStratagemCode(sequence, 0, true);
 }
 
 void RebootDevice(lv_event_t *e)

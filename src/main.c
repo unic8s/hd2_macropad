@@ -56,7 +56,7 @@ uint8_t LookupKeycode(uint8_t keyCode)
 	return keyCode;
 }
 
-void setStratagemCode(uint8_t sequence[8], uint8_t mask)
+void setStratagemCode(uint8_t sequence[8], uint8_t mask, bool plain)
 {
   uint8_t sequenceLength = 0;
 
@@ -64,7 +64,8 @@ void setStratagemCode(uint8_t sequence[8], uint8_t mask)
   {
     if (sequence[c] > 0)
     {
-      stratagemCode[c] = LookupKeycode(sequence[c]);
+      uint8_t rawCode = sequence[c];
+      stratagemCode[c] = plain ? rawCode : LookupKeycode(rawCode);
       sequenceLength++;
     }
     else

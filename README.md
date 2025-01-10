@@ -120,7 +120,8 @@ If you click on "Config" on the setup screen you will enter the device configura
 The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR) from the manufacturer [Shenzhen Jingcai Inteligent Co., Ltd](https://www.displaysmodule.com/)
 
 - CPU: Espressif [ESP32-S3](https://www.espressif.com/en/products/socs/esp32-s3)
-- ROM: 16MB
+- PSRAM: 8MB
+- Flash: 16MB
 - Display: 3.5" 480 x 320 IPS LCD with 65K Colors
 - Touch: Capacitive multitouch
 - Connectivity: WiFi + Bluetooth

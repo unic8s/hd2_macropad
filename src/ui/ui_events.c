@@ -12,13 +12,17 @@
 #include "main.h"
 #include "configration.h"
 
+// 4 user button list
 lv_obj_t *buttons[4];
+// Stratagem list index of user buttons
 int indices[4];
-
+// Amount of user assigned stratagems
 uint8_t strategemsAmount = 0;
 
+// HID input mask for special keys
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
 
+// Unassign stratagem item from button
 void deselectStratagem(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < 4; c++)
@@ -35,6 +39,7 @@ void deselectStratagem(lv_event_t *e)
 	playbackSound("S:assets/sound/_des.wav");
 }
 
+// Assign stratagem item from button
 void selectStratagem(lv_event_t *e)
 {
 	if (strategemsAmount < 4)
@@ -61,6 +66,7 @@ void selectStratagem(lv_event_t *e)
 	}
 }
 
+// Update selection in UI (text and bar)
 void updateStratagemSelection()
 {
 	strategemsAmount = 0;
@@ -86,6 +92,7 @@ void updateStratagemSelection()
 	}
 }
 
+// Reset all selected stratagems from user
 void resetStratagems(lv_event_t *e)
 {
 	if (strategemsAmount == 0)
@@ -108,6 +115,7 @@ void resetStratagems(lv_event_t *e)
 	playbackSound("S:assets/sound/_rst.wav");
 }
 
+// Change assigned keymap
 void ChangeKeymap(lv_event_t *e)
 {
 	keymapIndex = lv_dropdown_get_selected(ui_DdKeymap);
@@ -115,6 +123,7 @@ void ChangeKeymap(lv_event_t *e)
 	setKeymap(keymapIndex, false);
 }
 
+// Assign stratagems index to UI buttons
 void assignStratagems(lv_event_t *e)
 {
 	// Weapons
@@ -189,6 +198,7 @@ void assignStratagems(lv_event_t *e)
 	ui_EagleSS->user_data = 54;
 }
 
+// Trigger 1st standard stratagem
 void triggerStratagemStd1(lv_event_t *e)
 {
 	// Reinforce
@@ -206,6 +216,7 @@ void triggerStratagemStd1(lv_event_t *e)
 	playbackSound("S:assets/sound/reinf.wav");
 }
 
+// Trigger 2nd standard stratagem
 void triggerStratagemStd2(lv_event_t *e)
 {
 	// Resupply
@@ -223,6 +234,7 @@ void triggerStratagemStd2(lv_event_t *e)
 	playbackSound("S:assets/sound/supp.wav");
 }
 
+// Trigger 3rd standard stratagem
 void triggerStratagemStd3(lv_event_t *e)
 {
 	// SOS
@@ -240,6 +252,7 @@ void triggerStratagemStd3(lv_event_t *e)
 	playbackSound("S:assets/sound/sos.wav");
 }
 
+// Trigger 4th standard stratagem
 void triggerStratagemStd4(lv_event_t *e)
 {
 	// Eagle rearm
@@ -257,6 +270,7 @@ void triggerStratagemStd4(lv_event_t *e)
 	playbackSound("S:assets/sound/eagrel.wav");
 }
 
+// Trigger 5th standard stratagem
 void triggerStratagemStd5(lv_event_t *e)
 {
 	// Hellbomb
@@ -274,6 +288,7 @@ void triggerStratagemStd5(lv_event_t *e)
 	// playbackSound("S:assets/sound/.wav");
 }
 
+// Trigger 6th standard stratagem
 void triggerStratagemStd6(lv_event_t *e)
 {
 	// S.E.A.F. Artillery
@@ -291,6 +306,7 @@ void triggerStratagemStd6(lv_event_t *e)
 	// playbackSound("S:assets/sound/.wav");
 }
 
+// Trigger 1st user stratagem
 void triggerStratagemUser1(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[0];
@@ -303,6 +319,7 @@ void triggerStratagemUser1(lv_event_t *e)
 	playbackSound(path);
 }
 
+// Trigger 2nd user stratagem
 void triggerStratagemUser2(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[1];
@@ -315,6 +332,7 @@ void triggerStratagemUser2(lv_event_t *e)
 	playbackSound(path);
 }
 
+// Trigger 3rd user stratagem
 void triggerStratagemUser3(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[2];
@@ -327,6 +345,7 @@ void triggerStratagemUser3(lv_event_t *e)
 	playbackSound(path);
 }
 
+// Trigger 4th user stratagem
 void triggerStratagemUser4(lv_event_t *e)
 {
 	uint8_t itemIndex = indices[3];
@@ -339,6 +358,7 @@ void triggerStratagemUser4(lv_event_t *e)
 	playbackSound(path);
 }
 
+// Change HID input delay
 void ChangeDelay(lv_event_t *e)
 {
 	int32_t delay = lv_slider_get_value(e->target);
@@ -346,6 +366,7 @@ void ChangeDelay(lv_event_t *e)
 	setDelay(delay * 10, false);
 }
 
+// Change display brightness
 void ChangeBrightness(lv_event_t *e)
 {
 	int32_t brightness = lv_slider_get_value(e->target);
@@ -353,6 +374,7 @@ void ChangeBrightness(lv_event_t *e)
 	setBrightness(brightness * 10, false);
 }
 
+// Change sound mute (on/off)
 void MuteSound(lv_event_t *e)
 {
 	bool muted = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
@@ -360,11 +382,13 @@ void MuteSound(lv_event_t *e)
 	setMuted(muted, false);
 }
 
+// Reset configuration to default
 void ResetConfig(lv_event_t *e)
 {
 	resetConfig();
 }
 
+// Trigger keyboard demo (send "hello" via bluetooth connection to host)
 void KeyboardDemo(lv_event_t *e)
 {
 	uint8_t sequence[8] = {HID_KEY_H,
@@ -379,16 +403,19 @@ void KeyboardDemo(lv_event_t *e)
 	setStratagemCode(sequence, 0, true);
 }
 
+// Reboot the device
 void RebootDevice(lv_event_t *e)
 {
 	esp_restart();
 }
 
+// Trigger when tab navigation has changed
 void TabChanged(lv_event_t *e)
 {
 	playbackSound("S:assets/sound/_swp.wav");
 }
 
+// Change screen orientation
 void FlipScreen(lv_event_t *e)
 {
 	bool flip = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
@@ -396,6 +423,7 @@ void FlipScreen(lv_event_t *e)
 	setRotation(flip ? LV_DISP_ROT_270 : LV_DISP_ROT_90, false);
 }
 
+// Goto game screen
 void GotoGame(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < 4; c++)
@@ -434,6 +462,7 @@ void GotoGame(lv_event_t *e)
 	_ui_screen_change(&ui_Game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 100, &ui_Game_screen_init);
 }
 
+// Hi-res icons list (2 items)
 const lv_img_dsc_t **imgsetListTwo[57] = {
 	ui_imgset_ac,
 	ui_imgset_acs,
@@ -493,10 +522,12 @@ const lv_img_dsc_t **imgsetListTwo[57] = {
 	ui_imgset_sw,
 	ui_imgset_tt};
 
+// Hi-res icon list (4 items)
 const lv_img_dsc_t **imgsetListFour[2] = {
 	ui_imgset_,
 	ui_imgset_e};
 
+// Resolve hi-res icon from low-res assignment
 lv_img_dsc_t *ResolveHiResIcon(lv_img_dsc_t *icon)
 {
 	lv_img_dsc_t *hires = icon;

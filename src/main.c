@@ -14,48 +14,48 @@
 #include "i2s_player.h"
 #include "ble/ble_controller.c"
 #include "configration.h"
+#include "keymaps.h"
 #include "version.h"
 
+
+// Tag for logging
 static const char *TAG = "HD2 Macropad";
 
+// Bluetooth connection ID for HID device
 extern uint16_t hid_conn_id;
+// Bluetooth connection status
 extern bool sec_conn;
 
+// Flag for ready state of LVGL after init
 bool lvglReady = false;
 
+// Logging helper function for grouping
 #define logSection(section) \
   ESP_LOGI(TAG, "\n\n************* %s **************\n", section);
 
-uint8_t keymapIndex = 0;
+// Stratagem code sequence (buffer) for execution
 uint8_t stratagemCode[8];
+// Stratagem mask for modifier key combination (ctrl, alt, etc.)
 uint8_t stratagemMask;
-bool soundPlayback = false;
-char *soundFile;
 
+// Flag for sound playback state
+bool soundPlayback = false;
+// Path to sound file which should be played
+char *soundFile;
+// Flag for muting sound playback
 bool playerMuted;
+
+// Delay for HID input execution in milliseconds (default: 100)
 int inputDelay = 100;
+
+// Rotation of screen (default: 90)
 int screenRotation = LV_DISP_ROT_90;
 
-const uint8_t keymaps[2][4] = {
-	{HID_KEY_W,
-	 HID_KEY_S,
-	 HID_KEY_A,
-	 HID_KEY_D},
-	{HID_KEY_UP_ARROW,
-	 HID_KEY_DOWN_ARROW,
-	 HID_KEY_LEFT_ARROW,
-	 HID_KEY_RIGHT_ARROW}};
 
-uint8_t LookupKeycode(uint8_t keyCode)
-{
-  uint8_t *keymap = keymaps[keymapIndex];
-  uint8_t lookupIndex = keyCode - 1;
-
-	keyCode = keymap[lookupIndex];
-
-	return keyCode;
-}
-
+// Set stratagem code sequence which should be executed
+// sequence - keycode buffer
+// mask - modifier keys
+// plain - resolve via keymap or send directly (raw)
 void setStratagemCode(uint8_t sequence[8], uint8_t mask, bool plain)
 {
   uint8_t sequenceLength = 0;
@@ -77,17 +77,22 @@ void setStratagemCode(uint8_t sequence[8], uint8_t mask, bool plain)
   stratagemMask = mask;
 }
 
+// Playback sound file from specified path
+// path - path to the sound file
 void playbackSound(char *path)
 {
   soundPlayback = true;
   soundFile = path;
 }
 
+// Dim the screen to a specific value
+// brightness - A brightness value between 0 and 100 (percent)
 void dimScreen(int brightness)
 {
   bsp_display_brightness_set(brightness);
 }
 
+// Update UI relating to bluetooth connection state
 void updateBluetooth()
 {
   if (!lvglReady)
@@ -95,6 +100,7 @@ void updateBluetooth()
     return;
   }
 
+  // Check bluetooth connection state
   if (sec_conn)
   {
     lv_obj_add_state(uic_CntBT, LV_STATE_CHECKED);
@@ -105,8 +111,10 @@ void updateBluetooth()
   }
 }
 
+// Delay for checking if a the stratagem execution buffer is filled
 #define CHECK_DELAY 50
 
+// Task for exeuction of HID inputs
 void hid_input_task(void *pvParameters)
 {
   while (1)
@@ -119,14 +127,18 @@ void hid_input_task(void *pvParameters)
 
       uint8_t cmdIndex = 0;
 
+      // Send modifier keys (mask)
       esp_hidd_send_keyboard_value(hid_conn_id, stratagemMask, 0, 0);
       vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
+      // Loop through command sequence from buffer
       while (stratagemCode[cmdIndex] > 0 && cmdIndex < 8)
       {
+        // Press key defined by the keycode
         esp_hidd_send_keyboard_value(hid_conn_id, stratagemMask, &stratagemCode[cmdIndex], 1);
         vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
+        // Release key defined by the keycode
         esp_hidd_send_keyboard_value(hid_conn_id, stratagemMask, &stratagemCode[cmdIndex], 0);
         vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
@@ -142,10 +154,12 @@ void hid_input_task(void *pvParameters)
       ESP_LOGI(TAG, "Finish command");
     }
 
+    // Check if a sound playback is ongoing
     if (soundPlayback)
     {
       soundPlayback = false;
 
+      // Check is playback is not muted
       if (!playerMuted)
       {
         play_wav(soundFile);
@@ -154,29 +168,38 @@ void hid_input_task(void *pvParameters)
   }
 }
 
+// App main function
 void app_main()
 {
+  // Init and load config from NVS storage
   initConfig();
+  
+  // Init bluetooth controller
   ble_controller_init();
 
+  // Setup HID input task (async)
   xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);
 
+  // Resolve screen rotation from config
   screenRotation = peekConfig("rotation", LV_DISP_ROT_90);
 
   logSection("Initialize panel device");
-  // ESP_LOGI(TAG, "Initialize panel device");
+  // Display configuration
   bsp_display_cfg_t cfg = {
       .lvgl_port_cfg = ESP_LVGL_PORT_INIT_CONFIG(),
       .buffer_size = EXAMPLE_LCD_QSPI_H_RES * EXAMPLE_LCD_QSPI_V_RES,
       .rotate = screenRotation,
   };
 
+  // Init display
   bsp_display_start_with_config(&cfg);
+  // Turn of display backlight
   bsp_display_backlight_off();
 
   /* Lock the mutex due to the LVGL APIs are not thread-safe */
   bsp_display_lock(0);
 
+  // Start LVGL
   ui_init();
 
   /* Release the mutex */
@@ -184,6 +207,7 @@ void app_main()
 
   vTaskDelay(200 / portTICK_PERIOD_MS);
 
+  // Turn on display backlight
   bsp_display_backlight_on();
 
   /* Read config */
@@ -192,8 +216,10 @@ void app_main()
   lvglReady = true;
   updateBluetooth();
 
+  // Playback intro sound
   playbackSound("S:assets/sound/intro.wav");
 
+  // Update software version in UI
   char softwareVersion[12];
   strcpy(softwareVersion, SW_VER);
 

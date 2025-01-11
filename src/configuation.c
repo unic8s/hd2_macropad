@@ -5,12 +5,14 @@
 #include "ui/ui.h"
 #include "main.h"
 
+// Handle for NVS config
 nvs_handle_t nvsConfig;
 
 extern bool playerMuted;
 extern int inputDelay;
 extern int screenRotation;
 
+// Init configuration from NVS
 esp_err_t initConfig()
 {
     // Initialize NVS.
@@ -28,6 +30,9 @@ esp_err_t initConfig()
     return ret;
 }
 
+// Read configuration value by key
+// key - Identifier for configuration value
+// defaultValue - Default value which will be returned if the key/value does not exist
 uint8_t getConfig(char *key, uint8_t defaultValue)
 {
     uint8_t value;
@@ -49,6 +54,9 @@ uint8_t getConfig(char *key, uint8_t defaultValue)
     return defaultValue;
 }
 
+// Write configuration value by key
+// key - Identifier for configuration value
+// value - Value which should be stored
 void setConfig(char *key, uint8_t value)
 {
     esp_err_t ret;
@@ -66,6 +74,7 @@ void setConfig(char *key, uint8_t value)
     nvs_close(nvsConfig);
 }
 
+// Write the HID input delay to configuration
 void setDelay(int delay, bool restore)
 {
     inputDelay = delay;
@@ -85,6 +94,7 @@ void setDelay(int delay, bool restore)
     }
 }
 
+// Write the display rotation to configuration
 void setRotation(int rotation, bool restore)
 {
     screenRotation = rotation;
@@ -108,6 +118,7 @@ void setRotation(int rotation, bool restore)
     playbackSound("S:assets/sound/_swt.wav");
 }
 
+// Write the display brightness to configuration
 void setBrightness(int brightness, bool restore)
 {
     dimScreen(brightness);
@@ -127,6 +138,7 @@ void setBrightness(int brightness, bool restore)
     }
 }
 
+// Write the sound mute state to configuration
 void setMuted(bool muted, bool restore)
 {
     playerMuted = muted;
@@ -150,6 +162,7 @@ void setMuted(bool muted, bool restore)
     playbackSound("S:assets/sound/_swt.wav");
 }
 
+// Write the keymap assignment to configuration
 void setKeymap(uint8_t index, bool restore)
 {
     keymapIndex = index;
@@ -166,7 +179,7 @@ void setKeymap(uint8_t index, bool restore)
     playbackSound("S:assets/sound/_swt.wav");
 }
 
-
+// Load complete configuration from NVS
 void loadConfig()
 {
     esp_err_t ret;
@@ -196,6 +209,7 @@ void loadConfig()
     nvs_close(nvsConfig);
 }
 
+// Load single configuration of a key/value from NVS
 uint8_t peekConfig(char *key, uint8_t defaultValue)
 {
     esp_err_t ret;
@@ -214,6 +228,7 @@ uint8_t peekConfig(char *key, uint8_t defaultValue)
     return value;
 }
 
+// Clear all stored configuration in NVS and write it to default values
 void resetConfig()
 {
     esp_err_t ret;

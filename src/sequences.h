@@ -1,10 +1,13 @@
 #include "hid_dev.h"
 
+// Identifiers for inputs (UP/DOWN/LEFT/RIGHT)
+// DO NOT EDIT - If you want to change assignments please have a look into "keymaps.c"
 #define INPUT_UP 1
 #define INPUT_DOWN 2
 #define INPUT_LEFT 3
 #define INPUT_RIGHT 4
 
+// Assignment of all stratagem sequences
 uint8_t sequences[61][8] = {
 	// 0
 	// MG-43 Machine Gun

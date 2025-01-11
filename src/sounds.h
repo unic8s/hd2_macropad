@@ -1,3 +1,4 @@
+// Available sound file list on SD card
 char *soundFiles[] = {
     "S:assets/sound/bkpk.wav",      // 0 backpack
     "S:assets/sound/bot.wav",       // 1 bot
@@ -10,6 +11,7 @@ char *soundFiles[] = {
     "S:assets/sound/weap.wav",      // 8 advanced weapon
 };
 
+// Map for strategem items to specific sound files
 int soundMap[61] = {
     // WEAPONS
     8, // 0     MG-43 Machine Gun

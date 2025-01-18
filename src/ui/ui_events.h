@@ -72,7 +72,7 @@ extern const lv_img_dsc_t * ui_imgset_tt[2];
 
 extern uint8_t keymapIndex;
 
-void assignStratagems(lv_event_t * e);
+extern void assignStratagems(lv_event_t * e);
 void deselectStratagem(lv_event_t * e);
 void selectStratagem(lv_event_t * e);
 void triggerStratagemStd1(lv_event_t * e);
@@ -97,6 +97,10 @@ void GotoGame(lv_event_t * e);
 void KeyboardDemo(lv_event_t * e);
 void FlipScreen(lv_event_t * e);
 void TabChanged(lv_event_t * e);
+
+extern const lv_img_dsc_t **imgsetListTwo[57];
+extern const lv_img_dsc_t **imgsetListFour[2];
+
 lv_img_dsc_t* ResolveHiResIcon(lv_img_dsc_t* icon);
 
 #ifdef __cplusplus

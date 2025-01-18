@@ -496,17 +496,6 @@
                                 "strval": "DEFAULT",
                                 "childs": [
                                   {
-                                    "nid": 10520,
-                                    "strtype": "_style/Bg_Color",
-                                    "intarray": [
-                                      255,
-                                      223,
-                                      0,
-                                      0
-                                    ],
-                                    "InheritedType": 7
-                                  },
-                                  {
                                     "nid": 10610,
                                     "strtype": "_style/Bg_Image",
                                     "strval": "assets/sg/MG1.png",
@@ -515,12 +504,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -839,12 +828,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -1163,12 +1152,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -1487,12 +1476,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -1811,12 +1800,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -2135,12 +2124,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -2459,12 +2448,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -2783,12 +2772,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -3107,12 +3096,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -3431,12 +3420,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -3755,12 +3744,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -4079,12 +4068,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -4403,12 +4392,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -4727,12 +4716,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -5051,12 +5040,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -5375,12 +5364,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -5699,12 +5688,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -6444,12 +6433,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -6768,12 +6757,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -7092,12 +7081,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -7416,12 +7405,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -7740,12 +7729,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -8064,12 +8053,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -8388,12 +8377,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -8712,12 +8701,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -9036,12 +9025,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -9360,12 +9349,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -9684,12 +9673,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgBlue",
+                                    "integer": 1001964,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      73,
+                                      173,
+                                      201,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -10429,12 +10418,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -10753,12 +10742,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -11077,12 +11066,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -11401,12 +11390,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -11725,12 +11714,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -12049,12 +12038,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -12373,12 +12362,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -12697,12 +12686,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -13021,12 +13010,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -13345,12 +13334,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -13669,12 +13658,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -13993,12 +13982,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -14317,12 +14306,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -14641,12 +14630,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgGreen",
+                                    "integer": 1001963,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      103,
+                                      149,
+                                      82,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -15385,12 +15374,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -15709,12 +15698,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -16033,12 +16022,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -16357,12 +16346,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -16681,12 +16670,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -17005,12 +16994,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -17329,12 +17318,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -17653,12 +17642,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -17977,12 +17966,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -18301,12 +18290,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -18625,12 +18614,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -18949,12 +18938,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -19693,12 +19682,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -20017,12 +20006,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -20341,12 +20330,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -20665,12 +20654,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -20989,12 +20978,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -21313,12 +21302,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -21637,12 +21626,12 @@
                                   {
                                     "nid": 10710,
                                     "strtype": "_style/Border_Color",
-                                    "strval": "colorTheme",
-                                    "integer": 1000825,
+                                    "strval": "sgRed",
+                                    "integer": 1001965,
                                     "intarray": [
-                                      255,
-                                      223,
-                                      0,
+                                      222,
+                                      123,
+                                      108,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -24082,12 +24071,10 @@
                           {
                             "nid": 10710,
                             "strtype": "_style/Border_Color",
-                            "strval": "colorTheme",
-                            "integer": 1000825,
                             "intarray": [
-                              255,
-                              223,
-                              0,
+                              201,
+                              178,
+                              105,
                               255
                             ],
                             "InheritedType": 7
@@ -24322,12 +24309,10 @@
                           {
                             "nid": 10710,
                             "strtype": "_style/Border_Color",
-                            "strval": "colorTheme",
-                            "integer": 1000825,
                             "intarray": [
-                              255,
-                              223,
-                              0,
+                              201,
+                              178,
+                              105,
                               255
                             ],
                             "InheritedType": 7
@@ -24562,12 +24547,10 @@
                           {
                             "nid": 10710,
                             "strtype": "_style/Border_Color",
-                            "strval": "colorTheme",
-                            "integer": 1000825,
                             "intarray": [
-                              255,
-                              223,
-                              0,
+                              201,
+                              178,
+                              105,
                               255
                             ],
                             "InheritedType": 7
@@ -24802,12 +24785,10 @@
                           {
                             "nid": 10710,
                             "strtype": "_style/Border_Color",
-                            "strval": "colorTheme",
-                            "integer": 1000825,
                             "intarray": [
-                              255,
-                              223,
-                              0,
+                              201,
+                              178,
+                              105,
                               255
                             ],
                             "InheritedType": 7
@@ -26534,12 +26515,10 @@
                           {
                             "nid": 10710,
                             "strtype": "_style/Border_Color",
-                            "strval": "colorTheme",
-                            "integer": 1000825,
                             "intarray": [
-                              255,
-                              223,
-                              0,
+                              201,
+                              178,
+                              105,
                               255
                             ],
                             "InheritedType": 7
@@ -26774,12 +26753,10 @@
                           {
                             "nid": 10710,
                             "strtype": "_style/Border_Color",
-                            "strval": "colorTheme",
-                            "integer": 1000825,
                             "intarray": [
-                              255,
-                              223,
-                              0,
+                              201,
+                              178,
+                              105,
                               255
                             ],
                             "InheritedType": 7
@@ -35402,7 +35379,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2038,
+    "backup_cnt": 2057,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",
@@ -35418,7 +35395,7 @@
     "drive_fatfs_path": "/",
     "naming": "Name",
     "naming_force_lowercase": false,
-    "nidcnt": 1001960,
+    "nidcnt": 1001966,
     "BitDepth": 16,
     "Name": "SquareLine_Project"
   }

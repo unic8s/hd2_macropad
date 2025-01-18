@@ -16,6 +16,8 @@
 lv_obj_t *buttons[4];
 // Stratagem list index of user buttons
 int indices[4];
+// Strategem item colors of user buttons
+lv_color_t colors[4];
 // Amount of user assigned stratagems
 uint8_t strategemsAmount = 0;
 
@@ -31,6 +33,7 @@ void deselectStratagem(lv_event_t *e)
 		{
 			buttons[c] = NULL;
 			indices[c] = 0;
+			colors[c] = lv_color_hex(0xffffff);
 		}
 	}
 
@@ -50,6 +53,12 @@ void selectStratagem(lv_event_t *e)
 			{
 				buttons[c] = e->target;
 				indices[c] = (int)lv_obj_get_user_data(e->target);
+
+				lv_obj_clear_state(e->target, LV_STATE_CHECKED);
+				lv_color_t borderColor = lv_obj_get_style_border_color(e->target, LV_PART_MAIN);
+				lv_obj_add_state(e->target, LV_STATE_CHECKED);
+
+				colors[c] = borderColor;
 				break;
 			}
 		}
@@ -450,8 +459,10 @@ void GotoGame(lv_event_t *e)
 
 		if (configured)
 		{
-			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_set_style_border_color(targetButton, colors[c], LV_PART_MAIN | LV_STATE_DEFAULT);			
 			lv_obj_set_style_bg_img_src(targetButton, hires, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);			
 		}
 		else
 		{

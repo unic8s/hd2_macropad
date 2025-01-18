@@ -38,10 +38,8 @@ void ui_Game_screen_init(void)
     lv_obj_set_style_bg_color(ui_BtnReinforce, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_BtnReinforce, 127, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui_BtnReinforce, &ui_img_sg_rf2_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_BtnReinforce, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_BtnReinforce, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_border_color(ui_BtnReinforce, lv_color_hex(0xC9B269), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_BtnReinforce, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui_BtnReinforce, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_BtnReinforce, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
@@ -59,10 +57,8 @@ void ui_Game_screen_init(void)
     lv_obj_set_style_bg_color(ui_BtnResupply, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_BtnResupply, 127, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui_BtnResupply, &ui_img_sg_res2_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_BtnResupply, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_BtnResupply, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_border_color(ui_BtnResupply, lv_color_hex(0xC9B269), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_BtnResupply, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui_BtnResupply, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_BtnResupply, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
@@ -80,10 +76,8 @@ void ui_Game_screen_init(void)
     lv_obj_set_style_bg_color(ui_BtnSOS, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_BtnSOS, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui_BtnSOS, &ui_img_sg_sos2_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_BtnSOS, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_BtnSOS, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_border_color(ui_BtnSOS, lv_color_hex(0xC9B269), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_BtnSOS, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui_BtnSOS, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_BtnSOS, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
@@ -101,10 +95,8 @@ void ui_Game_screen_init(void)
     lv_obj_set_style_bg_color(ui_BtnRearm, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_BtnRearm, 127, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui_BtnRearm, &ui_img_sg_er2_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_BtnRearm, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_BtnRearm, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_border_color(ui_BtnRearm, lv_color_hex(0xC9B269), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_BtnRearm, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui_BtnRearm, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_BtnRearm, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
@@ -250,10 +242,8 @@ void ui_Game_screen_init(void)
     lv_obj_set_style_bg_color(ui_BtnSEAF, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_BtnSEAF, 127, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui_BtnSEAF, &ui_img_sg_seaf1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_BtnSEAF, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_BtnSEAF, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_border_color(ui_BtnSEAF, lv_color_hex(0xC9B269), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_BtnSEAF, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui_BtnSEAF, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_BtnSEAF, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
@@ -271,10 +261,8 @@ void ui_Game_screen_init(void)
     lv_obj_set_style_bg_color(ui_BtnHellbomb, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_BtnHellbomb, 127, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui_BtnHellbomb, &ui_img_sg_hb1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_BtnHellbomb, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_BtnHellbomb, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_border_color(ui_BtnHellbomb, lv_color_hex(0xC9B269), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_BtnHellbomb, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui_BtnHellbomb, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_BtnHellbomb, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);

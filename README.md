@@ -43,7 +43,6 @@ Please follow the described steps and make your decision if you'd like to add au
   - Select the BIN file and upload it to your device
 - Pro users
   - Use "esptool" (Python) to [flash](https://docs.espressif.com/projects/esptool/en/latest/esp32/esptool/flashing-firmware.html) the BIN to your device
-  ... or ...
   - Use "Flash download tool" (Windows only) to [flash](https://docs.espressif.com/projects/esp-test-tools/en/latest/esp32/production_stage/tools/flash_download_tool.html) the BIN to your device
 ### Sounds (optional)
 3. Unpack and copy all [assets](https://github.com/unic8s/hd2_macropad/releases/latest/download/assets.zip) to a SD card into the root directory

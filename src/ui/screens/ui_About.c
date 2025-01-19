@@ -90,7 +90,7 @@ void ui_About_screen_init(void)
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Button10, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorTheme);
-    lv_obj_set_style_border_width(ui_Button10, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui_Button10, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_Button10, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_Button10, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_OPA,

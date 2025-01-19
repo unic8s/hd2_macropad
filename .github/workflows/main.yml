@@ -36,13 +36,11 @@ jobs:
       - name: Generate version
         run: python utils/write-version.py ${{ steps.tag_version.outputs.new_tag }}
 
-      - name: Full clean build
-        run: idf.py fullclean
-
       - name: Build PlatformIO Project
         run: pio run -t mergebin
         env:  
           MERGED_BIN_PATH: ./hd2_macropad.bin
+          IDF_MAINTAINER: y
 
       - name: Pack assets
         run: python utils/pack-assets.py

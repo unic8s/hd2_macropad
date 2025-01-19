@@ -34480,6 +34480,17 @@
                     "strval": "DEFAULT",
                     "childs": [
                       {
+                        "nid": 10520,
+                        "strtype": "_style/Bg_Color",
+                        "intarray": [
+                          0,
+                          0,
+                          0,
+                          192
+                        ],
+                        "InheritedType": 7
+                      },
+                      {
                         "nid": 11110,
                         "strtype": "_style/Padding",
                         "intarray": [
@@ -35017,6 +35028,12 @@
                       255
                     ],
                     "InheritedType": 7
+                  },
+                  {
+                    "nid": 10610,
+                    "strtype": "_style/Bg_Image",
+                    "strval": "assets/intro.png",
+                    "InheritedType": 5
                   }
                 ],
                 "InheritedType": 1
@@ -35280,7 +35297,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2085,
+    "backup_cnt": 2098,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

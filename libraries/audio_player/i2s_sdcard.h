@@ -52,14 +52,3 @@ esp_err_t init_sdcard(void)
   ESP_LOGI(TAG, "Filesystem mounted");
   return ESP_OK;
 }
-
-void print_sdcard_info(void)
-{
-  char TAG[] = "sdcard";
-  ESP_LOGI(TAG, "SD card info:");
-  ESP_LOGI(TAG, "Name: %s", card->cid.name);
-  ESP_LOGI(TAG, "Speed: %s", (card->csd.tr_speed < 25000000) ? "Default Speed" : "High Speed");
-  ESP_LOGI(TAG, "Frequency: %ukHz", card->max_freq_khz);
-  ESP_LOGI(TAG, "Log Bus Width: %u", card->log_bus_width);
-  ESP_LOGI(TAG, "Read Block Length: %u", card->csd.read_block_len);
-}

@@ -170,13 +170,16 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_bg_color(ui_ChbFlip, lv_color_hex(0x000000), LV_PART_INDICATOR | LV_STATE_CHECKED);
     lv_obj_set_style_bg_opa(ui_ChbFlip, 0, LV_PART_INDICATOR | LV_STATE_CHECKED);
 
-    ui_object_set_themeable_style_property(ui_ChbFlip, LV_PART_KNOB | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR,
+    lv_obj_set_style_bg_color(ui_ChbFlip, lv_color_hex(0xFFDF00), LV_PART_KNOB | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_ChbFlip, 0, LV_PART_KNOB | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_ChbFlip, LV_PART_KNOB | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_ChbFlip, LV_PART_KNOB | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
+    ui_object_set_themeable_style_property(ui_ChbFlip, LV_PART_KNOB | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorTheme);
-    ui_object_set_themeable_style_property(ui_ChbFlip, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
+    lv_obj_set_style_border_width(ui_ChbFlip, 2, LV_PART_KNOB | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_ChbFlip, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
-    ui_object_set_themeable_style_property(ui_ChbFlip, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
+    ui_object_set_themeable_style_property(ui_ChbFlip, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
     ui_Label4 = lv_label_create(ui_Container13);
@@ -248,13 +251,16 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_bg_color(ui_ChbMute, lv_color_hex(0x000000), LV_PART_INDICATOR | LV_STATE_CHECKED);
     lv_obj_set_style_bg_opa(ui_ChbMute, 0, LV_PART_INDICATOR | LV_STATE_CHECKED);
 
-    ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_KNOB | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR,
+    lv_obj_set_style_bg_color(ui_ChbMute, lv_color_hex(0xFFDF00), LV_PART_KNOB | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_ChbMute, 0, LV_PART_KNOB | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_KNOB | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorTheme);
-    ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_KNOB | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
+    ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_KNOB | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorTheme);
-    ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BG_COLOR,
+    lv_obj_set_style_border_width(ui_ChbMute, 2, LV_PART_KNOB | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
-    ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BG_OPA,
+    ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
     ui_Label6 = lv_label_create(ui_Container8);

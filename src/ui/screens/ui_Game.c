@@ -206,10 +206,10 @@ void ui_Game_screen_init(void)
 
     ui_CntBT = lv_obj_create(ui_Game);
     lv_obj_remove_style_all(ui_CntBT);
-    lv_obj_set_width(ui_CntBT, 32);
-    lv_obj_set_height(ui_CntBT, 32);
+    lv_obj_set_width(ui_CntBT, 38);
+    lv_obj_set_height(ui_CntBT, 38);
     lv_obj_set_x(ui_CntBT, -2);
-    lv_obj_set_y(ui_CntBT, -6);
+    lv_obj_set_y(ui_CntBT, -2);
     lv_obj_set_align(ui_CntBT, LV_ALIGN_BOTTOM_RIGHT);
     lv_obj_add_flag(ui_CntBT, LV_OBJ_FLAG_CHECKABLE);     /// Flags
     lv_obj_clear_flag(ui_CntBT, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags

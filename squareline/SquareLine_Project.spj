@@ -26172,7 +26172,7 @@
                 "strtype": "OBJECT/Position",
                 "intarray": [
                   -2,
-                  -6
+                  -2
                 ],
                 "InheritedType": 7
               },
@@ -26181,8 +26181,8 @@
                 "flags": 17,
                 "strtype": "OBJECT/Size",
                 "intarray": [
-                  32,
-                  32
+                  38,
+                  38
                 ],
                 "InheritedType": 7
               },
@@ -28145,6 +28145,17 @@
                                   {
                                     "nid": 10520,
                                     "strtype": "_style/Bg_Color",
+                                    "intarray": [
+                                      255,
+                                      223,
+                                      0,
+                                      0
+                                    ],
+                                    "InheritedType": 7
+                                  },
+                                  {
+                                    "nid": 10710,
+                                    "strtype": "_style/Border_Color",
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
@@ -28154,6 +28165,12 @@
                                       255
                                     ],
                                     "InheritedType": 7
+                                  },
+                                  {
+                                    "nid": 10720,
+                                    "strtype": "_style/Border width",
+                                    "integer": 2,
+                                    "InheritedType": 6
                                   }
                                 ],
                                 "InheritedType": 1
@@ -28164,8 +28181,8 @@
                                 "strval": "CHECKED",
                                 "childs": [
                                   {
-                                    "nid": 20520,
-                                    "strtype": "_style/Bg_Color",
+                                    "nid": 20710,
+                                    "strtype": "_style/Border_Color",
                                     "strval": "colorActive",
                                     "integer": 1000867,
                                     "intarray": [
@@ -29180,6 +29197,17 @@
                                   {
                                     "nid": 10520,
                                     "strtype": "_style/Bg_Color",
+                                    "intarray": [
+                                      255,
+                                      223,
+                                      0,
+                                      0
+                                    ],
+                                    "InheritedType": 7
+                                  },
+                                  {
+                                    "nid": 10710,
+                                    "strtype": "_style/Border_Color",
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
@@ -29189,6 +29217,12 @@
                                       255
                                     ],
                                     "InheritedType": 7
+                                  },
+                                  {
+                                    "nid": 10720,
+                                    "strtype": "_style/Border width",
+                                    "integer": 2,
+                                    "InheritedType": 6
                                   }
                                 ],
                                 "InheritedType": 1
@@ -29199,8 +29233,8 @@
                                 "strval": "CHECKED",
                                 "childs": [
                                   {
-                                    "nid": 20520,
-                                    "strtype": "_style/Bg_Color",
+                                    "nid": 20710,
+                                    "strtype": "_style/Border_Color",
                                     "strval": "colorActive",
                                     "integer": 1000867,
                                     "intarray": [
@@ -34931,7 +34965,8 @@
                 "InheritedType": 4
               }
             ],
-            "saved_objtypeKey": "BUTTON"
+            "saved_objtypeKey": "BUTTON",
+            "tree_closed": true
           }
         ],
         "isPage": true,
@@ -35297,7 +35332,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2098,
+    "backup_cnt": 2109,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

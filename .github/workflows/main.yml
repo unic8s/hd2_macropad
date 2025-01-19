@@ -15,12 +15,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      #- uses: actions/cache@v4
-      #  with:
-      #    path: |
-      #      ~/.cache/pip
-      #      ~/.platformio/.cache
-      #    key: ${{ runner.os }}-pio
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.platformio/.cache
+          key: ${{ runner.os }}-pio
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -36,8 +36,11 @@ jobs:
       - name: Generate version
         run: python utils/write-version.py ${{ steps.tag_version.outputs.new_tag }}
 
+      - name: Full clean build
+        run: idf.py fullclean
+
       - name: Build PlatformIO Project
-        run:  pio run -t mergebin
+        run: pio run -t mergebin
         env:  
           MERGED_BIN_PATH: ./hd2_macropad.bin
 

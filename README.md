@@ -116,6 +116,14 @@ If you click on "Config" on the setup screen you will enter the device configura
 - [Keymap] Select between the most common keymaps: WASD or arrow keys. These will be used to execute the stratagem code sequences.
 - [Test] Click this button to send a test input sequence "hello" to your receiving device PC or PS5&trade;.
 
+## Q&A - Troubleshooting
+### Bluetooth
+- I can't see the "HD2 Macropad" in the bluetooth device list of my PC
+  - Please try turning bluetooth off and on your PC and retry pairing
+  - Please try it with another bluetooth USB stick - some BT USB sticks are a bit picky
+- The bluetooth icon in the game screen is continously switching (gray/blue)
+  - Please unpair the device from your PC and pair it again
+
 ## Hardware - for enthusiasts
 
 The device features a fully-fledged ESP32 called [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR) from the manufacturer [Shenzhen Jingcai Inteligent Co., Ltd](https://www.displaysmodule.com/)

@@ -119,7 +119,7 @@ If you click on "Config" on the setup screen you will enter the device configura
 ## Q&A - Troubleshooting
 ### Bluetooth
 - I can't see the "HD2 Macropad" in the bluetooth device list of my PC
-  - Please try turning bluetooth off and on your PC and retry pairing
+  - Please turn off and on bluetooth your PC and retry pairing
   - Please try it with another bluetooth USB stick - some BT USB sticks are a bit picky
 - The bluetooth icon in the game screen is continously switching (gray/blue)
   - Please unpair the device from your PC and pair it again

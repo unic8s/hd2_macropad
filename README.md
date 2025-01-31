@@ -4,7 +4,7 @@
 
 [Video preview](https://www.youtube.com/watch?v=zbW8vrxIuko) on YouTube.
 
-A very comfortable and easy-to-use macropad for HELLDIVERS&trade; 2 for live configuration on each drop into combat with individual loadouts.
+A very flexible and easy-to-use macropad for HELLDIVERS&trade; 2 for live configuration on each drop into combat with individual loadouts.
 
 Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/) or [PS5&trade;](https://www.playstation.com/games/helldivers-2/)
 

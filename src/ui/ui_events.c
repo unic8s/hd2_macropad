@@ -14,11 +14,12 @@
 #include "ui_assignment.h"
 
 // 4 user button list
-lv_obj_t *buttons[4];
+lv_obj_t *buttons[5];
+const int userStratagemAmount = 5;
 // Stratagem list index of user buttons
-int indices[4];
+int indices[5];
 // Strategem item colors of user buttons
-lv_color_t colors[4];
+lv_color_t colors[5];
 // Amount of user assigned stratagems
 uint8_t strategemsAmount = 0;
 
@@ -28,7 +29,7 @@ uint8_t strategemsAmount = 0;
 // Unassign stratagem item from button
 void deselectStratagem(lv_event_t *e)
 {
-	for (uint8_t c = 0; c < 4; c++)
+	for (uint8_t c = 0; c < userStratagemAmount; c++)
 	{
 		if (buttons[c] == e->target)
 		{
@@ -46,9 +47,9 @@ void deselectStratagem(lv_event_t *e)
 // Assign stratagem item from button
 void selectStratagem(lv_event_t *e)
 {
-	if (strategemsAmount < 4)
+	if (strategemsAmount < userStratagemAmount)
 	{
-		for (uint8_t c = 0; c < 4; c++)
+		for (uint8_t c = 0; c < userStratagemAmount; c++)
 		{
 			if (buttons[c] == NULL)
 			{
@@ -81,7 +82,7 @@ void updateStratagemSelection()
 {
 	strategemsAmount = 0;
 
-	for (uint8_t c = 0; c < 4; c++)
+	for (uint8_t c = 0; c < userStratagemAmount; c++)
 	{
 		if (buttons[c] != NULL)
 		{
@@ -91,12 +92,12 @@ void updateStratagemSelection()
 
 	lv_bar_set_value(uic_BarAmount, strategemsAmount, LV_ANIM_OFF);
 
-	char textAmount[] = "0 / 4";
+	char textAmount[] = "0 / 5";
 	textAmount[0] = (char)(strategemsAmount + '0');
 
 	lv_label_set_text(uic_LabelAmount, &textAmount);
 
-	if (strategemsAmount == 4)
+	if (strategemsAmount == userStratagemAmount)
 	{
 		GotoGame(NULL);
 	}
@@ -110,7 +111,7 @@ void resetStratagems(lv_event_t *e)
 		return;
 	}
 
-	for (uint8_t c = 0; c < 4; c++)
+	for (uint8_t c = 0; c < userStratagemAmount; c++)
 	{
 		if (buttons[c] != NULL)
 		{
@@ -293,6 +294,19 @@ void triggerStratagemUser4(lv_event_t *e)
 	playbackSound(path);
 }
 
+// Trigger 5th user stratagem
+void triggerStratagemUser5(lv_event_t *e)
+{
+	uint8_t itemIndex = indices[4];
+
+	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
+
+	uint8_t soundIndex = soundMap[itemIndex];
+	char *path = soundFiles[soundIndex];
+
+	playbackSound(path);
+}
+
 // Change HID input delay
 void ChangeDelay(lv_event_t *e)
 {
@@ -361,14 +375,14 @@ void FlipScreen(lv_event_t *e)
 // Goto game screen
 void GotoGame(lv_event_t *e)
 {
-	for (uint8_t c = 0; c < 4; c++)
+	for (uint8_t c = 0; c < userStratagemAmount; c++)
 	{
 		const lv_obj_t *button = buttons[c];
 		const lv_img_dsc_t *bgImg = lv_obj_get_style_bg_img_src(button, LV_PART_MAIN | LV_STATE_DEFAULT);
 		const bool configured = buttons[c] != NULL;
 		lv_obj_t *targetButton = ui_CustomStratagem1;
 
-		const lv_img_dsc_t *hires = ResolveHiResIcon(bgImg);
+		bool useHiResIcon = true;
 
 		switch (c)
 		{
@@ -381,14 +395,20 @@ void GotoGame(lv_event_t *e)
 		case 3:
 			targetButton = ui_CustomStratagem4;
 			break;
+		case 4:
+			targetButton = ui_CustomStratagem5;
+			useHiResIcon = false;
+			break;
 		}
+
+		const lv_img_dsc_t *hires = useHiResIcon ? ResolveHiResIcon(bgImg) : bgImg;
 
 		if (configured)
 		{
-			lv_obj_set_style_border_color(targetButton, colors[c], LV_PART_MAIN | LV_STATE_DEFAULT);			
+			lv_obj_set_style_border_color(targetButton, colors[c], LV_PART_MAIN | LV_STATE_DEFAULT);
 			lv_obj_set_style_bg_img_src(targetButton, hires, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);			
+			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
 		}
 		else
 		{

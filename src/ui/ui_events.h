@@ -83,6 +83,7 @@ void triggerStratagemUser1(lv_event_t * e);
 void triggerStratagemUser2(lv_event_t * e);
 void triggerStratagemUser3(lv_event_t * e);
 void triggerStratagemUser4(lv_event_t * e);
+void triggerStratagemUser5(lv_event_t * e);
 void triggerStratagemStd5(lv_event_t * e);
 void triggerStratagemStd6(lv_event_t * e);
 void resetStratagems(lv_event_t * e);

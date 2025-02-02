@@ -218,11 +218,11 @@ void ui_Game_screen_init(void)
 
     ui_Container5 = lv_obj_create(ui_Game);
     lv_obj_remove_style_all(ui_Container5);
-    lv_obj_set_width(ui_Container5, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_width(ui_Container5, lv_pct(50));
     lv_obj_set_height(ui_Container5, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Container5, LV_ALIGN_BOTTOM_MID);
     lv_obj_set_flex_flow(ui_Container5, LV_FLEX_FLOW_ROW);
-    lv_obj_set_flex_align(ui_Container5, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
+    lv_obj_set_flex_align(ui_Container5, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
     lv_obj_clear_flag(ui_Container5, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_pad_left(ui_Container5, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_right(ui_Container5, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -230,6 +230,26 @@ void ui_Game_screen_init(void)
     lv_obj_set_style_pad_bottom(ui_Container5, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_row(ui_Container5, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_column(ui_Container5, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_CustomStratagem5 = lv_btn_create(ui_Container5);
+    lv_obj_set_width(ui_CustomStratagem5, 76);
+    lv_obj_set_height(ui_CustomStratagem5, 76);
+    lv_obj_set_x(ui_CustomStratagem5, 244);
+    lv_obj_set_y(ui_CustomStratagem5, -8);
+    lv_obj_set_align(ui_CustomStratagem5, LV_ALIGN_BOTTOM_LEFT);
+    lv_obj_add_flag(ui_CustomStratagem5, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_CustomStratagem5, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_CustomStratagem5, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_CustomStratagem5, 127, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_CustomStratagem5, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_CustomStratagem5, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorTheme);
+    lv_obj_set_style_border_width(ui_CustomStratagem5, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_CustomStratagem5, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_CustomStratagem5, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
 
     ui_BtnSEAF = lv_btn_create(ui_Container5);
     lv_obj_set_width(ui_BtnSEAF, 76);
@@ -278,6 +298,7 @@ void ui_Game_screen_init(void)
     lv_obj_add_event_cb(ui_CustomStratagem3, ui_event_CustomStratagem3, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_CustomStratagem4, ui_event_CustomStratagem4, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnBack, ui_event_BtnBack, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_CustomStratagem5, ui_event_CustomStratagem5, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnSEAF, ui_event_BtnSEAF, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnHellbomb, ui_event_BtnHellbomb, LV_EVENT_ALL, NULL);
     uic_CntBT = ui_CntBT;

@@ -84,7 +84,7 @@ Instructions for printing and assembling go along with STL files on...
 ### In-game usage
 - The 4 upper stratagems are the basic items for all operation types (reinforce, resupply, SOS, rearm eagle).
 - The 4 middle stratagems are the ones you selected in the setup procedure.
-- The 2 lower stratagems are typical items for most operations (S.E.A.F. artillery, hellbomb).
+- The 2 + 1 lower stratagems are typical items for most operations (S.E.A.F. artillery, hellbomb) and a 5th custom user stratagem if there a bonus stratagems from high command.
 - Just click a strategem to activate the execution of the macro.
 - The Bluetooth icon in the lower right corner indicates the connection stats.
   - ![](squareline/assets/bt_dis.png) disconnected
@@ -94,7 +94,7 @@ Instructions for printing and assembling go along with STL files on...
 1. If you want to change your selection just click the "back" button at the bottom left corner.
 2. You screen will switch back from game to setup mode.
 3. Now you can either unselect the unwanted stratagems inside the groups or just click "reset" at the bottom right corner to unselect all selected stratagems from the list.
-4. As soon as you're finished just click the "Play" button or have selected 4 stratagems again and the screen will automatically switch from setup to game mode.
+4. As soon as you're finished just click the "Play" button or have selected 4 (+1 bonus) stratagems again and the screen will automatically switch from setup to game mode.
 
 ## Device configuration
 If you click on "Config" on the setup screen you will enter the device configuration with specific hard-/software features.

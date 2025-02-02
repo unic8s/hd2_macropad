@@ -211,6 +211,8 @@ void ui_event_BtnBack(lv_event_t * e);
 extern lv_obj_t * ui_BtnBack;
 extern lv_obj_t * ui_CntBT;
 extern lv_obj_t * ui_Container5;
+void ui_event_CustomStratagem5(lv_event_t * e);
+extern lv_obj_t * ui_CustomStratagem5;
 void ui_event_BtnSEAF(lv_event_t * e);
 extern lv_obj_t * ui_BtnSEAF;
 void ui_event_BtnHellbomb(lv_event_t * e);

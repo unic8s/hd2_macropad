@@ -194,6 +194,8 @@ void ui_event_BtnBack(lv_event_t * e);
 lv_obj_t * ui_BtnBack;
 lv_obj_t * ui_CntBT;
 lv_obj_t * ui_Container5;
+void ui_event_CustomStratagem5(lv_event_t * e);
+lv_obj_t * ui_CustomStratagem5;
 void ui_event_BtnSEAF(lv_event_t * e);
 lv_obj_t * ui_BtnSEAF;
 void ui_event_BtnHellbomb(lv_event_t * e);
@@ -1314,6 +1316,15 @@ void ui_event_BtnBack(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, &ui_Setup_screen_init);
+    }
+}
+
+void ui_event_CustomStratagem5(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        triggerStratagemUser5(e);
     }
 }
 

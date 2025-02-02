@@ -162,3 +162,11 @@ def triggerStratagemStd7(event_struct):
 def ChangeKeymap(event_struct):
     return
 
+
+def triggerStratagemUser5(event_struct):
+    return
+
+
+def triggerStratagemUser6(event_struct):
+    return
+

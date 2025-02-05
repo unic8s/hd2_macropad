@@ -8,7 +8,7 @@
 #define INPUT_RIGHT 4
 
 // Assignment of all stratagem sequences
-uint8_t sequences[61][8] = {
+uint8_t sequences[62][8] = {
 	// 0
 	// MG-43 Machine Gun
 	{INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
@@ -251,7 +251,9 @@ uint8_t sequences[61][8] = {
 
 	// 60
 	// Fast Recon Vehicle
-	{INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0}
+	{INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0},
 
-	//
+	// 61
+	// Portable Hellbomb
+	{0, 0, 0, 0, 0, 0, 0, 0}
 };

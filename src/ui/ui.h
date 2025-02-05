@@ -94,6 +94,8 @@ void ui_event_BackpacksGDR(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksGDR;
 void ui_event_BackpacksSUP(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksSUP;
+void ui_event_BackpacksPH(lv_event_t * e);
+extern lv_obj_t * ui_BackpacksPH;
 void ui_event_BackpacksJP(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksJP;
 void ui_event_BackpacksPE(lv_event_t * e);
@@ -315,6 +317,7 @@ LV_IMG_DECLARE(ui_img_sg_gd1_png);    // assets/sg/GD1.png
 LV_IMG_DECLARE(ui_img_sg_gdb1_png);    // assets/sg/GDB1.png
 LV_IMG_DECLARE(ui_img_sg_gdr1_png);    // assets/sg/GDR1.png
 LV_IMG_DECLARE(ui_img_sg_sup1_png);    // assets/sg/SUP1.png
+LV_IMG_DECLARE(ui_img_sg_ph1_png);    // assets/sg/PH1.png
 LV_IMG_DECLARE(ui_img_sg_jp1_png);    // assets/sg/JP1.png
 LV_IMG_DECLARE(ui_img_sg_pe1_png);    // assets/sg/PE1.png
 LV_IMG_DECLARE(ui_img_sg_ee1_png);    // assets/sg/EE1.png
@@ -428,6 +431,7 @@ LV_IMG_DECLARE(ui_img_sg_owb2_png);    // assets/sg/OWB2.png
 LV_IMG_DECLARE(ui_img_sg_pd1_png);    // assets/sg/PD1.png
 LV_IMG_DECLARE(ui_img_sg_pd2_png);    // assets/sg/PD2.png
 LV_IMG_DECLARE(ui_img_sg_pe2_png);    // assets/sg/PE2.png
+LV_IMG_DECLARE(ui_img_sg_ph2_png);    // assets/sg/PH2.png
 LV_IMG_DECLARE(ui_img_sg_qc2_png);    // assets/sg/QC2.png
 LV_IMG_DECLARE(ui_img_sg_res1_png);    // assets/sg/RES1.png
 LV_IMG_DECLARE(ui_img_sg_rf1_png);    // assets/sg/RF1.png

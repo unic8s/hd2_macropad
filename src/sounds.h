@@ -12,7 +12,7 @@ char *soundFiles[] = {
 };
 
 // Map for strategem items to specific sound files
-int soundMap[61] = {
+int soundMap[62] = {
     // WEAPONS
     8, // 0     MG-43 Machine Gun
     8, // 1     AMR
@@ -87,5 +87,7 @@ int soundMap[61] = {
     3, // 58
     6,  // 59
 
-    0  // 60    Fast Recon Vehicle
+    0,  // 60    Fast Recon Vehicle
+
+    0  // 61    Portable Hellbomb
 };

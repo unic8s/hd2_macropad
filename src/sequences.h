@@ -255,5 +255,5 @@ uint8_t sequences[62][8] = {
 
 	// 61
 	// Portable Hellbomb
-	{0, 0, 0, 0, 0, 0, 0, 0}
+	{INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_UP, 0, 0, 0}
 };

@@ -69,6 +69,7 @@ extern const lv_img_dsc_t * ui_imgset_ste[2];
 extern const lv_img_dsc_t * ui_imgset_sup[2];
 extern const lv_img_dsc_t * ui_imgset_sw[2];
 extern const lv_img_dsc_t * ui_imgset_tt[2];
+extern const lv_img_dsc_t * ui_imgset_ph[2];
 
 extern uint8_t keymapIndex;
 
@@ -99,7 +100,7 @@ void KeyboardDemo(lv_event_t * e);
 void FlipScreen(lv_event_t * e);
 void TabChanged(lv_event_t * e);
 
-extern const lv_img_dsc_t **imgsetListTwo[57];
+extern const lv_img_dsc_t **imgsetListTwo[58];
 extern const lv_img_dsc_t **imgsetListFour[2];
 
 lv_img_dsc_t* ResolveHiResIcon(lv_img_dsc_t* icon);

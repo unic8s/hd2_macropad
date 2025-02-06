@@ -76,6 +76,8 @@ void ui_event_BackpacksGDR(lv_event_t * e);
 lv_obj_t * ui_BackpacksGDR;
 void ui_event_BackpacksSUP(lv_event_t * e);
 lv_obj_t * ui_BackpacksSUP;
+void ui_event_BackpacksPH(lv_event_t * e);
+lv_obj_t * ui_BackpacksPH;
 void ui_event_BackpacksJP(lv_event_t * e);
 lv_obj_t * ui_BackpacksJP;
 void ui_event_BackpacksPE(lv_event_t * e);
@@ -335,6 +337,7 @@ const lv_img_dsc_t * ui_imgset_oss[2] = {&ui_img_sg_oss1_png, &ui_img_sg_oss2_pn
 const lv_img_dsc_t * ui_imgset_owb[2] = {&ui_img_sg_owb1_png, &ui_img_sg_owb2_png};
 const lv_img_dsc_t * ui_imgset_pd[2] = {&ui_img_sg_pd1_png, &ui_img_sg_pd2_png};
 const lv_img_dsc_t * ui_imgset_pe[2] = {&ui_img_sg_pe1_png, &ui_img_sg_pe2_png};
+const lv_img_dsc_t * ui_imgset_ph[2] = {&ui_img_sg_ph1_png, &ui_img_sg_ph2_png};
 const lv_img_dsc_t * ui_imgset_qc[2] = {&ui_img_sg_qc1_png, &ui_img_sg_qc2_png};
 const lv_img_dsc_t * ui_imgset_res[2] = {&ui_img_sg_res1_png, &ui_img_sg_res2_png};
 const lv_img_dsc_t * ui_imgset_rf[2] = {&ui_img_sg_rf1_png, &ui_img_sg_rf2_png};
@@ -718,6 +721,19 @@ void ui_event_BackpacksGDR(lv_event_t * e)
 }
 
 void ui_event_BackpacksSUP(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_BackpacksPH(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);

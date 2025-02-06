@@ -11,7 +11,7 @@ extern "C" {
 void assignStratagems(lv_event_t * e);
 
 // Hi-res icons list (2 items)
-const lv_img_dsc_t **imgsetListTwo[57] = {
+const lv_img_dsc_t **imgsetListTwo[58] = {
 	ui_imgset_ac,
 	ui_imgset_acs,
 	ui_imgset_amr,
@@ -68,7 +68,8 @@ const lv_img_dsc_t **imgsetListTwo[57] = {
 	ui_imgset_ste,
 	ui_imgset_sup,
 	ui_imgset_sw,
-	ui_imgset_tt};
+	ui_imgset_tt,
+	ui_imgset_ph};
 
 // Hi-res icon list (4 items)
 const lv_img_dsc_t **imgsetListFour[2] = {

@@ -34,6 +34,7 @@ void assignStratagems(lv_event_t *e)
 	ui_BackpacksSUP->user_data = 18;
 	ui_BackpacksDS->user_data = 57;
 	ui_BackpacksFRV->user_data = 60;
+	ui_BackpacksPH->user_data = 61;
 
 	// Stationary
 	ui_StationaryACS->user_data = 35;

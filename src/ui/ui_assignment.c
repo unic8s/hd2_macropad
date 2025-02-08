@@ -51,6 +51,7 @@ void assignStratagems(lv_event_t *e)
 	ui_StationaryTT->user_data = 28;
 	ui_StationaryATE->user_data = 58;
 	ui_StationaryFS->user_data = 59;
+	ui_StationaryGM->user_data = 62;
 
 	// Strikes
 	ui_Strikes120->user_data = 40;

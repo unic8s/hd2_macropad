@@ -424,7 +424,7 @@ lv_img_dsc_t *ResolveHiResIcon(lv_img_dsc_t *icon)
 {
 	lv_img_dsc_t *hires = icon;
 
-	for (uint8_t c = 0; c < 58; c++)
+	for (uint8_t c = 0; c < 59; c++)
 	{
 		lv_img_dsc_t **imgset = imgsetListTwo[c];
 		lv_img_dsc_t *imgLowRes = imgset[0];

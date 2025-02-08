@@ -106,6 +106,8 @@ void ui_event_StationaryRS(lv_event_t * e);
 lv_obj_t * ui_StationaryRS;
 void ui_event_StationaryEMS(lv_event_t * e);
 lv_obj_t * ui_StationaryEMS;
+void ui_event_StationaryGM(lv_event_t * e);
+lv_obj_t * ui_StationaryGM;
 void ui_event_StationaryTT(lv_event_t * e);
 lv_obj_t * ui_StationaryTT;
 void ui_event_StationarySGR(lv_event_t * e);
@@ -313,6 +315,7 @@ const lv_img_dsc_t * ui_imgset_gd[2] = {&ui_img_sg_gd1_png, &ui_img_sg_gd2_png};
 const lv_img_dsc_t * ui_imgset_gdb[2] = {&ui_img_sg_gdb1_png, &ui_img_sg_gdb2_png};
 const lv_img_dsc_t * ui_imgset_gdr[2] = {&ui_img_sg_gdr1_png, &ui_img_sg_gdr2_png};
 const lv_img_dsc_t * ui_imgset_gl[2] = {&ui_img_sg_gl1_png, &ui_img_sg_gl2_png};
+const lv_img_dsc_t * ui_imgset_gm[2] = {&ui_img_sg_gm1_png, &ui_img_sg_gm2_png};
 const lv_img_dsc_t * ui_imgset_gs[2] = {&ui_img_sg_gs1_png, &ui_img_sg_gs2_png};
 const lv_img_dsc_t * ui_imgset_hb[2] = {&ui_img_sg_hb1_png, &ui_img_sg_hb2_png};
 const lv_img_dsc_t * ui_imgset_hbd[2] = {&ui_img_sg_hbd1_png, &ui_img_sg_hbd2_png};
@@ -903,6 +906,19 @@ void ui_event_StationaryRS(lv_event_t * e)
 }
 
 void ui_event_StationaryEMS(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_StationaryGM(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);

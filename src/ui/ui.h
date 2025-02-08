@@ -124,6 +124,8 @@ void ui_event_StationaryRS(lv_event_t * e);
 extern lv_obj_t * ui_StationaryRS;
 void ui_event_StationaryEMS(lv_event_t * e);
 extern lv_obj_t * ui_StationaryEMS;
+void ui_event_StationaryGM(lv_event_t * e);
+extern lv_obj_t * ui_StationaryGM;
 void ui_event_StationaryTT(lv_event_t * e);
 extern lv_obj_t * ui_StationaryTT;
 void ui_event_StationarySGR(lv_event_t * e);
@@ -331,6 +333,7 @@ LV_IMG_DECLARE(ui_img_sg_fs1_png);    // assets/sg/FS1.png
 LV_IMG_DECLARE(ui_img_sg_ms1_png);    // assets/sg/MS1.png
 LV_IMG_DECLARE(ui_img_sg_rs1_png);    // assets/sg/RS1.png
 LV_IMG_DECLARE(ui_img_sg_ems1_png);    // assets/sg/EMS1.png
+LV_IMG_DECLARE(ui_img_sg_gm1_png);    // assets/sg/GM1.png
 LV_IMG_DECLARE(ui_img_sg_tt1_png);    // assets/sg/TT1.png
 LV_IMG_DECLARE(ui_img_sg_sgr1_png);    // assets/sg/SGR1.png
 LV_IMG_DECLARE(ui_img_sg_apm1_png);    // assets/sg/APM1.png
@@ -404,6 +407,7 @@ LV_IMG_DECLARE(ui_img_sg_gd2_png);    // assets/sg/GD2.png
 LV_IMG_DECLARE(ui_img_sg_gdb2_png);    // assets/sg/GDB2.png
 LV_IMG_DECLARE(ui_img_sg_gdr2_png);    // assets/sg/GDR2.png
 LV_IMG_DECLARE(ui_img_sg_gl2_png);    // assets/sg/GL2.png
+LV_IMG_DECLARE(ui_img_sg_gm2_png);    // assets/sg/GM2.png
 LV_IMG_DECLARE(ui_img_sg_gs2_png);    // assets/sg/GS2.png
 LV_IMG_DECLARE(ui_img_sg_hb2_png);    // assets/sg/HB2.png
 LV_IMG_DECLARE(ui_img_sg_hbd1_png);    // assets/sg/HBD1.png

@@ -197,6 +197,7 @@ lv_obj_t * ui_CustomStratagem4;
 void ui_event_BtnBack(lv_event_t * e);
 lv_obj_t * ui_BtnBack;
 lv_obj_t * ui_CntBT;
+lv_obj_t * ui_CntBattery;
 lv_obj_t * ui_Container5;
 void ui_event_CustomStratagem5(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem5;
@@ -205,6 +206,7 @@ lv_obj_t * ui_BtnSEAF;
 void ui_event_BtnHellbomb(lv_event_t * e);
 lv_obj_t * ui_BtnHellbomb;
 // CUSTOM VARIABLES
+lv_obj_t * uic_CntBT;
 lv_obj_t * uic_CntBT;
 
 
@@ -360,6 +362,7 @@ const lv_img_dsc_t * ui_imgset_sw[2] = {&ui_img_sg_sw1_png, &ui_img_sg_sw2_png};
 const lv_img_dsc_t * ui_imgset_td[2] = {&ui_img_sg_td1_png, &ui_img_sg_td2_png};
 const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
 const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
+const lv_img_dsc_t * ui_imgset_bat_[5] = {&ui_img_bat_0_png, &ui_img_bat_25_png, &ui_img_bat_75_png, &ui_img_bat_50_png, &ui_img_bat_100_png};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16

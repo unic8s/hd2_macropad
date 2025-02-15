@@ -83,6 +83,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_1050696822.c
     images/ui_img_bt_dis_png.c
     images/ui_img_bt_con_png.c
+    images/ui_img_bat_chg_png.c
     images/ui_img_sg_seaf1_png.c
     images/ui_img_sg_hb1_png.c
     images/ui_img_1566825004.c
@@ -173,6 +174,11 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_td2_png.c
     images/ui_img_sg_tt2_png.c
     images/ui_img_sg_ud1_png.c
-    images/ui_img_sg_ud2_png.c)
+    images/ui_img_sg_ud2_png.c
+    images/ui_img_bat_0_png.c
+    images/ui_img_bat_25_png.c
+    images/ui_img_bat_75_png.c
+    images/ui_img_bat_50_png.c
+    images/ui_img_bat_100_png.c)
 
 add_library(ui ${SOURCES})

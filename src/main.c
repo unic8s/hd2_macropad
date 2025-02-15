@@ -18,7 +18,6 @@
 #include "keymaps.h"
 #include "version.h"
 
-
 // Tag for logging
 static const char *TAG = "HD2 Macropad";
 
@@ -51,7 +50,6 @@ int inputDelay = 100;
 
 // Rotation of screen (default: 90)
 int screenRotation = LV_DISP_ROT_90;
-
 
 // Set stratagem code sequence which should be executed
 // sequence - keycode buffer
@@ -166,6 +164,40 @@ void hid_input_task(void *pvParameters)
         play_wav(soundFile);
       }
     }
+
+    bool isCharging = bm_is_charging();
+
+    lv_obj_t *batteryIcon = &ui_img_bat_chg_png;
+
+    if (!isCharging)
+    {
+      uint8_t batteryLevel = 0;
+
+      bm_get_power_level(&batteryLevel);
+
+      if (batteryLevel > 80)
+      {
+        batteryIcon = &ui_img_bat_100_png;
+      }
+      else if (batteryLevel > 60)
+      {
+        batteryIcon = &ui_img_bat_75_png;
+      }
+      else if (batteryLevel > 40)
+      {
+        batteryIcon = &ui_img_bat_50_png;
+      }
+      else if (batteryLevel > 20)
+      {
+        batteryIcon = &ui_img_bat_25_png;
+      }
+      else
+      {
+        batteryIcon = &ui_img_bat_0_png;
+      }
+    }
+
+    //lv_obj_set_style_bg_img_src(ui_CntBT, batteryIcon, LV_PART_MAIN | LV_STATE_DEFAULT);
   }
 }
 
@@ -178,14 +210,6 @@ void app_main()
   // Init battery management controller
   bm_init();
 
-  uint8_t batteryLevel = 0;
-
-  bm_get_power_level(&batteryLevel);
-  bool isCharging = bm_is_charging();
-
-  ESP_LOGI(TAG, "Battery level: %d", batteryLevel);
-  ESP_LOGI(TAG, "Battery charge: %s", isCharging ? "true" : "false");
-  
   // Init bluetooth controller
   ble_controller_init();
 

@@ -12,6 +12,7 @@
 #include "driver/gpio.h"
 #include "hid_dev.h"
 #include "i2s_player.h"
+#include "bm/bm_controller.h"
 #include "ble/ble_controller.c"
 #include "configration.h"
 #include "keymaps.h"
@@ -173,6 +174,17 @@ void app_main()
 {
   // Init and load config from NVS storage
   initConfig();
+
+  // Init battery management controller
+  bm_init();
+
+  uint8_t batteryLevel = 0;
+
+  bm_get_power_level(&batteryLevel);
+  bool isCharging = bm_is_charging();
+
+  ESP_LOGI(TAG, "Battery level: %d", batteryLevel);
+  ESP_LOGI(TAG, "Battery charge: %s", isCharging ? "true" : "false");
   
   // Init bluetooth controller
   ble_controller_init();

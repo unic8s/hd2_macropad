@@ -224,16 +224,16 @@ static uint16_t hidExtReportRefDesc = ESP_GATT_UUID_BATTERY_LEVEL;
 
 // HID Report Reference characteristic descriptor, mouse input
 static uint8_t hidReportRefMouseIn[HID_REPORT_REF_LEN] =
-             { HID_RPT_ID_MOUSE_IN, HID_REPORT_TYPE_INPUT };
+             { HID_RPT_ID_MOUSE_IN, BLE_HID_REPORT_TYPE_INPUT };
 
 
 // HID Report Reference characteristic descriptor, key input
 static uint8_t hidReportRefKeyIn[HID_REPORT_REF_LEN] =
-             { HID_RPT_ID_KEY_IN, HID_REPORT_TYPE_INPUT };
+             { HID_RPT_ID_KEY_IN, BLE_HID_REPORT_TYPE_INPUT };
 
 // HID Report Reference characteristic descriptor, LED output
 static uint8_t hidReportRefLedOut[HID_REPORT_REF_LEN] =
-             { HID_RPT_ID_LED_OUT, HID_REPORT_TYPE_OUTPUT };
+             { HID_RPT_ID_LED_OUT, BLE_HID_REPORT_TYPE_OUTPUT };
 
 #if (SUPPORT_REPORT_VENDOR  == true)
 
@@ -243,11 +243,11 @@ static uint8_t hidReportRefVendorOut[HID_REPORT_REF_LEN] =
 
 // HID Report Reference characteristic descriptor, Feature
 static uint8_t hidReportRefFeature[HID_REPORT_REF_LEN] =
-             { HID_RPT_ID_FEATURE, HID_REPORT_TYPE_FEATURE };
+             { HID_RPT_ID_FEATURE, BLE_HID_REPORT_TYPE_FEATURE };
 
 // HID Report Reference characteristic descriptor, consumer control input
 static uint8_t hidReportRefCCIn[HID_REPORT_REF_LEN] =
-             { HID_RPT_ID_CC_IN, HID_REPORT_TYPE_INPUT };
+             { HID_RPT_ID_CC_IN, BLE_HID_REPORT_TYPE_INPUT };
 
 
 /*

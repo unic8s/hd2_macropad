@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+static esp_err_t ble_controller_init();
+
 #ifdef __cplusplus
 } /*extern "C"*/
 #endif

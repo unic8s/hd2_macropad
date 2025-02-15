@@ -13,6 +13,7 @@
 #include "hid_dev.h"
 #include "i2s_player.h"
 #include "ble/ble_controller.c"
+#include "usb/usb_controller.c"
 #include "configration.h"
 #include "keymaps.h"
 #include "version.h"
@@ -176,6 +177,9 @@ void app_main()
   
   // Init bluetooth controller
   ble_controller_init();
+
+  // Init usb controller
+  usb_controller_init();
 
   // Setup HID input task (async)
   xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);

@@ -40,7 +40,6 @@ jobs:
         run: pio run -t mergebin
         env:  
           MERGED_BIN_PATH: ./hd2_macropad.bin
-          IDF_MAINTAINER: y
 
       - name: Pack assets
         run: python utils/pack-assets.py

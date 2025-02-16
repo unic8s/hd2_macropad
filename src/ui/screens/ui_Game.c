@@ -218,7 +218,7 @@ void ui_Game_screen_init(void)
 
     ui_CntBattery = lv_obj_create(ui_Game);
     lv_obj_remove_style_all(ui_CntBattery);
-    lv_obj_set_width(ui_CntBattery, 76);
+    lv_obj_set_width(ui_CntBattery, 38);
     lv_obj_set_height(ui_CntBattery, 38);
     lv_obj_set_x(ui_CntBattery, -40);
     lv_obj_set_y(ui_CntBattery, -2);

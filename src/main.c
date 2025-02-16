@@ -51,8 +51,8 @@ int inputDelay = 100;
 // Rotation of screen (default: 90)
 int screenRotation = LV_DISP_ROT_90;
 
-// Battery status (0-4 level / -1 charging)
-int batteryStatus = -1;
+// Battery status (0-4 level / -1 charging / -2 no battery)
+int batteryStatus = -2;
 
 // Set stratagem code sequence which should be executed
 // sequence - keycode buffer
@@ -174,8 +174,15 @@ void hid_input_task(void *pvParameters)
 
 void updateBatteryInfo()
 {
+  bool hasBattery = bm_is_battery_connected();
   bool isCharging = bm_is_charging();
 
+  if (!hasBattery && batteryStatus != -2)
+  {
+    batteryStatus = -2;
+
+    lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_no_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+  }
   if (isCharging && batteryStatus != -1)
   {
     batteryStatus = -1;

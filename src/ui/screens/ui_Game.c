@@ -225,7 +225,7 @@ void ui_Game_screen_init(void)
     lv_obj_set_align(ui_CntBattery, LV_ALIGN_BOTTOM_RIGHT);
     lv_obj_add_flag(ui_CntBattery, LV_OBJ_FLAG_CHECKABLE);     /// Flags
     lv_obj_clear_flag(ui_CntBattery, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_chg_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_no_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bt_con_png, LV_PART_MAIN | LV_STATE_CHECKED);
 
     ui_Container5 = lv_obj_create(ui_Game);

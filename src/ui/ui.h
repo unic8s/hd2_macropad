@@ -467,6 +467,7 @@ LV_IMG_DECLARE(ui_img_bat_100_png);    // assets/bat_100.png
 LV_IMG_DECLARE(ui_img_bat_25_png);    // assets/bat_25.png
 LV_IMG_DECLARE(ui_img_bat_50_png);    // assets/bat_50.png
 LV_IMG_DECLARE(ui_img_bat_75_png);    // assets/bat_75.png
+LV_IMG_DECLARE(ui_img_bat_no_png);    // assets/bat_no.png
 
 // UI INIT
 void ui_init(void);

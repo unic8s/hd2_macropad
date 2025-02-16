@@ -179,6 +179,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_bat_100_png.c
     images/ui_img_bat_25_png.c
     images/ui_img_bat_50_png.c
-    images/ui_img_bat_75_png.c)
+    images/ui_img_bat_75_png.c
+    images/ui_img_bat_no_png.c)
 
 add_library(ui ${SOURCES})

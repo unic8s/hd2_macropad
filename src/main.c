@@ -185,8 +185,8 @@ void bm_info_task(void *pvParameters)
 
     if (bm_error_state() == ESP_OK)
     {
-      bool hasBattery = bm_is_battery_connected();
-      bool isCharging = bm_is_charging();
+      bool hasBattery = bm_check_charging_status();
+      bool isCharging = bm_check_battery_status();
 
       if (!hasBattery && batteryStatus != -2)
       {
@@ -202,10 +202,8 @@ void bm_info_task(void *pvParameters)
       }
       else
       {
-        uint8_t batteryLevel = 0;
+        uint8_t batteryLevel = bm_check_load_level();
         lv_img_dsc_t *batteryIcon = &ui_img_bat_0_png;
-
-        bm_get_power_level(&batteryLevel);
 
         if (batteryStatus > batteryLevel)
         {

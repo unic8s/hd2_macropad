@@ -82,6 +82,18 @@ void updateStratagemSelection()
 {
 	strategemsAmount = 0;
 
+	for (uint8_t c = 0; c < userStratagemAmount - 1; c++)
+	{
+		if (buttons[c] == NULL)
+		{
+			buttons[c] = buttons[c + 1];
+			indices[c] = indices[c + 1];
+
+			buttons[c + 1] = NULL;
+			indices[c + 1] = NULL;
+		}
+	}
+
 	for (uint8_t c = 0; c < userStratagemAmount; c++)
 	{
 		if (buttons[c] != NULL)

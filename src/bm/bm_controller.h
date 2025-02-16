@@ -51,4 +51,6 @@ esp_err_t bm_deinit(void);
  */
 esp_err_t bm_get_power_level(uint8_t *power_level);
 
+esp_err_t bm_error_state();
+
 #endif /* _BM_CONTROLLER_H */

@@ -54,6 +54,9 @@ int screenRotation = LV_DISP_ROT_90;
 // Battery status (0-4 level / -1 charging / -2 no battery)
 int batteryStatus = -2;
 
+// Batter Management info task handle
+TaskHandle_t xHandleBMinfo = NULL;
+
 // Set stratagem code sequence which should be executed
 // sequence - keycode buffer
 // mask - modifier keys
@@ -114,14 +117,14 @@ void updateBluetooth()
 }
 
 // Delay for checking if a the stratagem execution buffer is filled
-#define CHECK_DELAY 50
+#define INPUT_CHECK_DELAY 50
 
 // Task for exeuction of HID inputs
 void hid_input_task(void *pvParameters)
 {
   while (1)
   {
-    vTaskDelay(CHECK_DELAY / portTICK_PERIOD_MS);
+    vTaskDelay(INPUT_CHECK_DELAY / portTICK_PERIOD_MS);
 
     if (sec_conn && stratagemCode[0] > 0)
     {
@@ -167,63 +170,77 @@ void hid_input_task(void *pvParameters)
         play_wav(soundFile);
       }
     }
-
-    updateBatteryInfo();
   }
 }
 
-void updateBatteryInfo()
+// Delay for checking if a the stratagem execution buffer is filled
+#define BATTERY_CHECK_DELAY 1000
+
+// Task for exeuction of HID inputs
+void bm_info_task(void *pvParameters)
 {
-  bool hasBattery = bm_is_battery_connected();
-  bool isCharging = bm_is_charging();
-
-  if (!hasBattery && batteryStatus != -2)
+  while (1)
   {
-    batteryStatus = -2;
+    vTaskDelay(BATTERY_CHECK_DELAY / portTICK_PERIOD_MS);
 
-    lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_no_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-  }
-  if (isCharging && batteryStatus != -1)
-  {
-    batteryStatus = -1;
-
-    lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_chg_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-  }
-  else
-  {
-    uint8_t batteryLevel = 0;
-    lv_img_dsc_t *batteryIcon = &ui_img_bat_0_png;
-
-    bm_get_power_level(&batteryLevel);
-
-    if (batteryStatus > batteryLevel)
+    if (bm_error_state() == ESP_OK)
     {
-      if (batteryLevel >= 80)
+      bool hasBattery = bm_is_battery_connected();
+      bool isCharging = bm_is_charging();
+
+      if (!hasBattery && batteryStatus != -2)
       {
-        batteryStatus = 80;
-        batteryIcon = &ui_img_bat_100_png;
+        batteryStatus = -2;
+
+        lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_no_png, LV_PART_MAIN | LV_STATE_DEFAULT);
       }
-      else if (batteryLevel >= 60)
+      if (isCharging && batteryStatus != -1)
       {
-        batteryStatus = 60;
-        batteryIcon = &ui_img_bat_75_png;
-      }
-      else if (batteryLevel >= 40)
-      {
-        batteryStatus = 40;
-        batteryIcon = &ui_img_bat_50_png;
-      }
-      else if (batteryLevel >= 20)
-      {
-        batteryStatus = 20;
-        batteryIcon = &ui_img_bat_25_png;
+        batteryStatus = -1;
+
+        lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_chg_png, LV_PART_MAIN | LV_STATE_DEFAULT);
       }
       else
       {
-        batteryStatus = 0;
-      }
+        uint8_t batteryLevel = 0;
+        lv_img_dsc_t *batteryIcon = &ui_img_bat_0_png;
 
-      lv_obj_set_style_bg_img_src(ui_CntBattery, &batteryIcon, LV_PART_MAIN | LV_STATE_DEFAULT);
+        bm_get_power_level(&batteryLevel);
+
+        if (batteryStatus > batteryLevel)
+        {
+          if (batteryLevel >= 80)
+          {
+            batteryStatus = 80;
+            batteryIcon = &ui_img_bat_100_png;
+          }
+          else if (batteryLevel >= 60)
+          {
+            batteryStatus = 60;
+            batteryIcon = &ui_img_bat_75_png;
+          }
+          else if (batteryLevel >= 40)
+          {
+            batteryStatus = 40;
+            batteryIcon = &ui_img_bat_50_png;
+          }
+          else if (batteryLevel >= 20)
+          {
+            batteryStatus = 20;
+            batteryIcon = &ui_img_bat_25_png;
+          }
+          else
+          {
+            batteryStatus = 0;
+          }
+
+          lv_obj_set_style_bg_img_src(ui_CntBattery, &batteryIcon, LV_PART_MAIN | LV_STATE_DEFAULT);
+        }
+      }
+    }
+    else
+    {
+      vTaskDelete(xHandleBMinfo);
     }
   }
 }
@@ -242,6 +259,9 @@ void app_main()
 
   // Setup HID input task (async)
   xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);
+
+  // Setup Battery Management info task (async)
+  xTaskCreate(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo);
 
   // Resolve screen rotation from config
   screenRotation = peekConfig("rotation", LV_DISP_ROT_90);

@@ -6,6 +6,7 @@
 #define IS_BIT_SET(value, bit) (((value) & (1 << (bit))) != 0)
 
 bool i2c_initialized = false;
+bool bm_has_error = false;
 
 #define BM_REG_POWER_LEVEL 0xA4
 #define bm_MODE_CHGSTATUS 0x01
@@ -24,6 +25,7 @@ bool bm_is_battery_connected(void) {
   if (err != ESP_OK) {
     printf("ERROR [%s]: Failed to write register address 0x%02X: %s\n",
            __func__, reg_addr, esp_err_to_name(err));
+           bm_has_error = true;
     return false;
   }
 
@@ -38,6 +40,7 @@ bool bm_is_battery_connected(void) {
   bool battery_connected = IS_BIT_SET(reg, 5);
   printf("INFO [%s]: Battery connection status: %s\n", __func__,
          battery_connected ? "Connected" : "Not Connected");
+         bm_has_error = true;
   return battery_connected;
 }
 
@@ -55,6 +58,7 @@ bool bm_is_charging(void) {
   if (err != ESP_OK) {
     printf("ERROR [%s]: Failed to write register address 0x%02X: %s\n",
            __func__, reg_addr, esp_err_to_name(err));
+           bm_has_error = true;
     return false;
   }
 
@@ -63,6 +67,7 @@ bool bm_is_charging(void) {
   if (err != ESP_OK) {
     printf("ERROR [%s]: Failed to read register 0x%02X: %s\n", __func__,
            reg_addr, esp_err_to_name(err));
+           bm_has_error = true;
     return false;
   }
 
@@ -92,6 +97,7 @@ esp_err_t bm_init(void) {
   if (err != ESP_OK) {
     printf("ERROR [%s]: Failed to configure I2C parameters: %s\n", __func__,
            esp_err_to_name(err));
+           bm_has_error = true;
     return err;
   }
 
@@ -99,6 +105,7 @@ esp_err_t bm_init(void) {
   if (err != ESP_OK) {
     printf("ERROR [%s]: Failed to install I2C driver: %s\n", __func__,
            esp_err_to_name(err));
+           bm_has_error = true;
     return err;
   }
 
@@ -117,6 +124,7 @@ esp_err_t bm_deinit(void) {
   if (err != ESP_OK) {
     printf("ERROR [%s]: Failed to delete I2C driver: %s\n", __func__,
            esp_err_to_name(err));
+           bm_has_error = true;
     return err;
   }
 
@@ -133,6 +141,7 @@ esp_err_t bm_get_power_level(uint8_t *power_level) {
 
   if (power_level == NULL) {
     printf("ERROR [%s]: Invalid parameter: power_level is NULL\n", __func__);
+    bm_has_error = true;
     return ESP_ERR_INVALID_ARG;
   }
 
@@ -144,6 +153,7 @@ esp_err_t bm_get_power_level(uint8_t *power_level) {
   if (err != ESP_OK) {
     printf("ERROR [%s]: Failed to write to Battery Management register 0x%02X: %s\n",
            __func__, reg_addr, esp_err_to_name(err));
+           bm_has_error = true;
     return err;
   }
 
@@ -152,6 +162,7 @@ esp_err_t bm_get_power_level(uint8_t *power_level) {
   if (err != ESP_OK) {
     printf("ERROR [%s]: Failed to read from Battery Management register 0x%02X: %s\n",
            __func__, reg_addr, esp_err_to_name(err));
+           bm_has_error = true;
     return err;
   }
 
@@ -162,6 +173,12 @@ esp_err_t bm_get_power_level(uint8_t *power_level) {
   } else {
     printf("WARNING [%s]: Battery percentage value is invalid (data: 0x%02X)\n",
            __func__, data);
+           bm_has_error = true;
     return ESP_ERR_INVALID_RESPONSE;
   }
+}
+
+esp_err_t bm_error_state()
+{
+  return bm_has_error ? ESP_ERR_INVALID_RESPONSE : ESP_OK;
 }

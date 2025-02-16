@@ -51,6 +51,9 @@ int inputDelay = 100;
 // Rotation of screen (default: 90)
 int screenRotation = LV_DISP_ROT_90;
 
+// Battery status (0-4 level / -1 charging)
+int batteryStatus = -1;
+
 // Set stratagem code sequence which should be executed
 // sequence - keycode buffer
 // mask - modifier keys
@@ -165,39 +168,56 @@ void hid_input_task(void *pvParameters)
       }
     }
 
-    bool isCharging = bm_is_charging();
+    updateBatteryInfo();
+  }
+}
 
-    lv_obj_t *batteryIcon = &ui_img_bat_chg_png;
+void updateBatteryInfo()
+{
+  bool isCharging = bm_is_charging();
 
-    if (!isCharging)
+  if (isCharging && batteryStatus != -1)
+  {
+    batteryStatus = -1;
+
+    lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_chg_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+  }
+  else
+  {
+    uint8_t batteryLevel = 0;
+    lv_img_dsc_t *batteryIcon = &ui_img_bat_0_png;
+
+    bm_get_power_level(&batteryLevel);
+
+    if (batteryStatus > batteryLevel)
     {
-      uint8_t batteryLevel = 0;
-
-      bm_get_power_level(&batteryLevel);
-
-      if (batteryLevel > 80)
+      if (batteryLevel >= 80)
       {
+        batteryStatus = 80;
         batteryIcon = &ui_img_bat_100_png;
       }
-      else if (batteryLevel > 60)
+      else if (batteryLevel >= 60)
       {
+        batteryStatus = 60;
         batteryIcon = &ui_img_bat_75_png;
       }
-      else if (batteryLevel > 40)
+      else if (batteryLevel >= 40)
       {
+        batteryStatus = 40;
         batteryIcon = &ui_img_bat_50_png;
       }
-      else if (batteryLevel > 20)
+      else if (batteryLevel >= 20)
       {
+        batteryStatus = 20;
         batteryIcon = &ui_img_bat_25_png;
       }
       else
       {
-        batteryIcon = &ui_img_bat_0_png;
+        batteryStatus = 0;
       }
-    }
 
-    //lv_obj_set_style_bg_img_src(ui_CntBT, batteryIcon, LV_PART_MAIN | LV_STATE_DEFAULT);
+      lv_obj_set_style_bg_img_src(ui_CntBattery, &batteryIcon, LV_PART_MAIN | LV_STATE_DEFAULT);
+    }
   }
 }
 

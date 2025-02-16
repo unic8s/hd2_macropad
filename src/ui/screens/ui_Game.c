@@ -314,6 +314,6 @@ void ui_Game_screen_init(void)
     lv_obj_add_event_cb(ui_BtnSEAF, ui_event_BtnSEAF, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnHellbomb, ui_event_BtnHellbomb, LV_EVENT_ALL, NULL);
     uic_CntBT = ui_CntBT;
-    uic_CntBT = ui_CntBattery;
+    uic_CntBattery = ui_CntBattery;
 
 }

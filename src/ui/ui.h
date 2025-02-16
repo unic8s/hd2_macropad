@@ -224,7 +224,7 @@ void ui_event_BtnHellbomb(lv_event_t * e);
 extern lv_obj_t * ui_BtnHellbomb;
 // CUSTOM VARIABLES
 extern lv_obj_t * uic_CntBT;
-extern lv_obj_t * uic_CntBT;
+extern lv_obj_t * uic_CntBattery;
 
 // SCREEN: ui_Config
 void ui_Config_screen_init(void);
@@ -463,10 +463,10 @@ LV_IMG_DECLARE(ui_img_sg_tt2_png);    // assets/sg/TT2.png
 LV_IMG_DECLARE(ui_img_sg_ud1_png);    // assets/sg/UD1.png
 LV_IMG_DECLARE(ui_img_sg_ud2_png);    // assets/sg/UD2.png
 LV_IMG_DECLARE(ui_img_bat_0_png);    // assets/bat_0.png
-LV_IMG_DECLARE(ui_img_bat_25_png);    // assets/bat_25.png
-LV_IMG_DECLARE(ui_img_bat_75_png);    // assets/bat_75.png
-LV_IMG_DECLARE(ui_img_bat_50_png);    // assets/bat_50.png
 LV_IMG_DECLARE(ui_img_bat_100_png);    // assets/bat_100.png
+LV_IMG_DECLARE(ui_img_bat_25_png);    // assets/bat_25.png
+LV_IMG_DECLARE(ui_img_bat_50_png);    // assets/bat_50.png
+LV_IMG_DECLARE(ui_img_bat_75_png);    // assets/bat_75.png
 
 // UI INIT
 void ui_init(void);

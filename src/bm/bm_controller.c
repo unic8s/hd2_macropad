@@ -6,6 +6,7 @@ bool i2c_initialized = false;
 bool bm_has_error = false;
 
 #define IP5306_ADDRESS 0x75
+#define IP5306_REG_LEVEL 0x78 // bat level
 
 #define SYS_CTL0 0x00
 #define SYS_CTL1 0x01
@@ -26,52 +27,52 @@ bool bm_has_error = false;
 /*SYS_CTL0*/
 union
 {
-    struct
-    {
-        uint8_t BUTTON_SHUTDOWN : 1;
-        uint8_t SET_BOOST_OUTPUT_ENABLE : 1;
-        uint8_t POWER_ON_LOAD : 1;
-        uint8_t RSVD : 1;
-        uint8_t CHARGER_ENABLE : 1;
-        uint8_t BOOST_ENABLE : 1;
-        uint8_t RSVD2 : 2;
+  struct
+  {
+    uint8_t BUTTON_SHUTDOWN : 1;
+    uint8_t SET_BOOST_OUTPUT_ENABLE : 1;
+    uint8_t POWER_ON_LOAD : 1;
+    uint8_t RSVD : 1;
+    uint8_t CHARGER_ENABLE : 1;
+    uint8_t BOOST_ENABLE : 1;
+    uint8_t RSVD2 : 2;
 
-    } bits;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 
 } reg_SYS_CTL0_t;
 
 /*SYS_CTL1*/
 union
 {
-    struct
-    {
-        uint8_t LOW_BATTERY_SHUTDOWN_ENABLE : 1;
-        uint8_t RSVD : 1;
-        uint8_t BOOST_AFTER_VIN : 1;
-        uint8_t RSVD2 : 2;
-        uint8_t SHORT_PRESS_BOOST_SWITCH_ENABLE : 1;
-        uint8_t FLASHLIGHT_CTRL_SIGNAL_SELECTION : 1;
-        uint8_t BOOST_CTRL_SIGNAL_SELECTION : 1;
-    } bits;
+  struct
+  {
+    uint8_t LOW_BATTERY_SHUTDOWN_ENABLE : 1;
+    uint8_t RSVD : 1;
+    uint8_t BOOST_AFTER_VIN : 1;
+    uint8_t RSVD2 : 2;
+    uint8_t SHORT_PRESS_BOOST_SWITCH_ENABLE : 1;
+    uint8_t FLASHLIGHT_CTRL_SIGNAL_SELECTION : 1;
+    uint8_t BOOST_CTRL_SIGNAL_SELECTION : 1;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 
 } reg_SYS_CTL1_t;
 
 /*SYS_CTL2*/
 union
 {
-    struct
-    {
-        uint8_t RSVD : 2;
-        uint8_t LIGHT_LOAD_SHUTDOWN_TIME : 2;
-        uint8_t LONG_PRESS_TIME : 1;
-        uint8_t RSVD2 : 3;
-    } bits;
+  struct
+  {
+    uint8_t RSVD : 2;
+    uint8_t LIGHT_LOAD_SHUTDOWN_TIME : 2;
+    uint8_t LONG_PRESS_TIME : 1;
+    uint8_t RSVD2 : 3;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 } reg_SYS_CTL2_t;
 
 /*SHUTDOWN_TIME_VALUE*/
@@ -83,13 +84,13 @@ union
 /*Charger_CTL0*/
 union
 {
-    struct
-    {
-        uint8_t CHARGING_FULL_STOP_VOLTAGE : 2;
-        uint8_t RSVD : 6;
-    } bits;
+  struct
+  {
+    uint8_t CHARGING_FULL_STOP_VOLTAGE : 2;
+    uint8_t RSVD : 6;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 } reg_Charger_CTL0_t;
 
 /*CUT-OFF VOLTAGE RANGE*/
@@ -101,15 +102,15 @@ union
 /*Charger_CTL1*/
 union
 {
-    struct
-    {
-        uint8_t RSVD : 2;
-        uint8_t CHARGE_UNDER_VOLTAGE_LOOP : 3;
-        uint8_t RSVD2 : 1;
-        uint8_t END_CHARGE_CURRENT_DETECTION : 2;
-    } bits;
+  struct
+  {
+    uint8_t RSVD : 2;
+    uint8_t CHARGE_UNDER_VOLTAGE_LOOP : 3;
+    uint8_t RSVD2 : 1;
+    uint8_t END_CHARGE_CURRENT_DETECTION : 2;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 } reg_Charger_CTL1_t;
 
 /*BATTERY STOP CHARGING CURRENT*/
@@ -131,14 +132,14 @@ union
 /*Charger_CTL2*/
 union
 {
-    struct
-    {
-        uint8_t VOLTAGE_PRESSURE : 2;
-        uint8_t BATTERY_VOLTAGE : 2;
-        uint8_t RSVD : 4;
-    } bits;
+  struct
+  {
+    uint8_t VOLTAGE_PRESSURE : 2;
+    uint8_t BATTERY_VOLTAGE : 2;
+    uint8_t RSVD : 4;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 } reg_Charger_CTL2_t;
 
 /*Battery Voltage */
@@ -156,79 +157,79 @@ union
 /*Charger_CTL3*/
 union
 {
-    struct
-    {
-        uint8_t RSVD : 5;
-        uint8_t CHARGE_CC_LOOP : 1;
-        uint8_t RSVD2 : 2;
-    } bits;
+  struct
+  {
+    uint8_t RSVD : 5;
+    uint8_t CHARGE_CC_LOOP : 1;
+    uint8_t RSVD2 : 2;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 } reg_Charger_CTL3_t;
 
 /*CHG_DIG_CTL0*/
 union
 {
-    struct
-    {
-        uint8_t VIN_CURRENT : 5;
-        uint8_t RSVD : 3;
-    } bits;
+  struct
+  {
+    uint8_t VIN_CURRENT : 5;
+    uint8_t RSVD : 3;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 } reg_CHG_DIG_CTL0_t;
 
 /*REG_READ0*/
 union
 {
-    struct
-    {
-        uint8_t RSVD : 3;
-        uint8_t CHARGE_ENABLE : 1;
-        uint8_t RSVD2 : 4;
-    } bits;
+  struct
+  {
+    uint8_t RSVD : 3;
+    uint8_t CHARGE_ENABLE : 1;
+    uint8_t RSVD2 : 4;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 } reg_READ0_t;
 
 /*REG_READ1*/
 union
 {
-    struct
-    {
-        uint8_t RSVD : 3;
-        uint8_t BATTERY_STATUS : 1;
-        uint8_t RSVD2 : 4;
-    } bits;
+  struct
+  {
+    uint8_t RSVD : 3;
+    uint8_t BATTERY_STATUS : 1;
+    uint8_t RSVD2 : 4;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 } reg_READ1_t;
 
 /*REG_READ2*/
 union
 {
-    struct
-    {
-        uint8_t RSVD : 2;
-        uint8_t LOAD_LEVEL : 1;
-        uint8_t RSVD2 : 5;
-    } bits;
+  struct
+  {
+    uint8_t RSVD : 2;
+    uint8_t LOAD_LEVEL : 1;
+    uint8_t RSVD2 : 5;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 } reg_READ2_t;
 
 /*REG_READ3*/
 union
 {
-    struct
-    {
-        uint8_t SHORT_PRESS_DETECT : 1;
-        uint8_t LONG_PRESS_DETECT : 1;
-        uint8_t DOUBLE_PRESS_DETECT : 1;
-        uint8_t RSVD : 5;
-    } bits;
+  struct
+  {
+    uint8_t SHORT_PRESS_DETECT : 1;
+    uint8_t LONG_PRESS_DETECT : 1;
+    uint8_t DOUBLE_PRESS_DETECT : 1;
+    uint8_t RSVD : 5;
+  } bits;
 
-    uint8_t reg_byte;
+  uint8_t reg_byte;
 } reg_READ3_t;
 
 void bm_init()
@@ -563,6 +564,24 @@ uint8_t bm_double_press_detect(void)
   reg_READ3_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, REG_READ3);
 
   return reg_READ3_t.bits.DOUBLE_PRESS_DETECT;
+}
+
+uint8_t bm_get_battery_level()
+{
+  uint8_t data = bm_i2c_read(IP5306_ADDRESS, IP5306_REG_LEVEL);
+  switch (data & 0xF0)
+  {
+  case 0xE0:
+    return 25;
+  case 0xC0:
+    return 50;
+  case 0x80:
+    return 75;
+  case 0x00:
+    return 100;
+  default:
+    return 0;
+  }
 }
 
 esp_err_t bm_error_state()

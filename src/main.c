@@ -202,7 +202,7 @@ void bm_info_task(void *pvParameters)
       }
       else
       {
-        uint8_t batteryLevel = bm_check_load_level();
+        uint8_t batteryLevel = bm_get_battery_level();
         lv_img_dsc_t *batteryIcon = &ui_img_bat_0_png;
 
         if (batteryStatus > batteryLevel)

@@ -50,6 +50,8 @@ uint8_t bm_short_press_detect(void);
 uint8_t bm_long_press_detect(void);
 uint8_t bm_double_press_detect(void);
 
+uint8_t bm_get_battery_level();
+
 esp_err_t bm_error_state();
 
 #endif /* _BM_CONTROLLER_H */

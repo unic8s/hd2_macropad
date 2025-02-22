@@ -100,6 +100,7 @@ void GotoGame(lv_event_t * e);
 void KeyboardDemo(lv_event_t * e);
 void FlipScreen(lv_event_t * e);
 void TabChanged(lv_event_t * e);
+void _executeUserStratagem(uint8_t index);
 
 extern const lv_img_dsc_t **imgsetListTwo[59];
 extern const lv_img_dsc_t **imgsetListFour[2];

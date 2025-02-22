@@ -6,8 +6,7 @@
 #include "ui.h"
 #include "hid_dev.h"
 #include "esp_log.h"
-#include "sequences.h"
-#include "sounds.h"
+#include "stratagems.h"
 #include "i2s_player.h"
 #include "main.h"
 #include "configration.h"
@@ -254,69 +253,47 @@ void triggerStratagemStd6(lv_event_t *e)
 	// playbackSound("S:assets/sound/.wav");
 }
 
-// Trigger 1st user stratagem
-void triggerStratagemUser1(lv_event_t *e)
+void _executeUserStratagem(uint8_t index)
 {
-	uint8_t itemIndex = indices[0];
+	uint8_t itemIndex = indices[index];
+	struct stratagem item = strategems[itemIndex];
 
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
+	setStratagemCode(item.sequence, INPUT_CTRL_MASK, false);
 
-	uint8_t soundIndex = soundMap[itemIndex];
+	uint8_t soundIndex = item.sound;
 	char *path = soundFiles[soundIndex];
 
 	playbackSound(path);
+}
+
+// Trigger 1st user stratagem
+void triggerStratagemUser1(lv_event_t *e)
+{
+	_executeUserStratagem(0);
 }
 
 // Trigger 2nd user stratagem
 void triggerStratagemUser2(lv_event_t *e)
 {
-	uint8_t itemIndex = indices[1];
-
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
-
-	uint8_t soundIndex = soundMap[itemIndex];
-	char *path = soundFiles[soundIndex];
-
-	playbackSound(path);
+	_executeUserStratagem(1);
 }
 
 // Trigger 3rd user stratagem
 void triggerStratagemUser3(lv_event_t *e)
 {
-	uint8_t itemIndex = indices[2];
-
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
-
-	uint8_t soundIndex = soundMap[itemIndex];
-	char *path = soundFiles[soundIndex];
-
-	playbackSound(path);
+	_executeUserStratagem(2);
 }
 
 // Trigger 4th user stratagem
 void triggerStratagemUser4(lv_event_t *e)
 {
-	uint8_t itemIndex = indices[3];
-
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
-
-	uint8_t soundIndex = soundMap[itemIndex];
-	char *path = soundFiles[soundIndex];
-
-	playbackSound(path);
+	_executeUserStratagem(3);
 }
 
 // Trigger 5th user stratagem
 void triggerStratagemUser5(lv_event_t *e)
 {
-	uint8_t itemIndex = indices[4];
-
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
-
-	uint8_t soundIndex = soundMap[itemIndex];
-	char *path = soundFiles[soundIndex];
-
-	playbackSound(path);
+	_executeUserStratagem(4);
 }
 
 // Change HID input delay

@@ -381,13 +381,12 @@ void GotoGame(lv_event_t *e)
 			break;
 		}
 
-		const lv_img_dsc_t *hires = useHiResIcon ? ResolveHiResIcon(bgImg) : bgImg;
+		uint8_t itemIndex = indices[c];
+		struct stratagem item = strategems[itemIndex];
+		const lv_img_dsc_t *hires = useHiResIcon ? item.imgHiRes : bgImg;
 
 		if (configured)
 		{
-			uint8_t itemIndex = indices[c];
-			struct stratagem item = strategems[itemIndex];
-
 			ui_object_set_themeable_style_property(targetButton, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
 												   item.color);
 			lv_obj_set_style_bg_img_src(targetButton, hires, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -400,48 +399,4 @@ void GotoGame(lv_event_t *e)
 	}
 
 	_ui_screen_change(&ui_Game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 100, &ui_Game_screen_init);
-}
-
-// Resolve hi-res icon from low-res assignment
-lv_img_dsc_t *ResolveHiResIcon(lv_img_dsc_t *icon)
-{
-	lv_img_dsc_t *hires = icon;
-
-	for (uint8_t c = 0; c < 59; c++)
-	{
-		lv_img_dsc_t **imgset = imgsetListTwo[c];
-		lv_img_dsc_t *imgLowRes = imgset[0];
-
-		if (icon == imgLowRes)
-		{
-			lv_img_dsc_t *imgHiRes = imgset[1];
-
-			hires = imgHiRes;
-			break;
-		}
-	}
-
-	for (uint8_t c = 0; c < 2; c++)
-	{
-		lv_img_dsc_t **imgset = imgsetListFour[c];
-		lv_img_dsc_t *imgLowRes1 = imgset[0];
-		lv_img_dsc_t *imgLowRes2 = imgset[2];
-
-		if (icon == imgLowRes1)
-		{
-			lv_img_dsc_t *imgHiRes = imgset[1];
-
-			hires = imgHiRes;
-			break;
-		}
-		else if (icon == imgLowRes2)
-		{
-			lv_img_dsc_t *imgHiRes = imgset[3];
-
-			hires = imgHiRes;
-			break;
-		}
-	}
-
-	return hires;
 }

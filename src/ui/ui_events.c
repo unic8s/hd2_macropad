@@ -80,7 +80,7 @@ void updateStratagemSelection()
 			indices[c] = indices[c + 1];
 
 			buttons[c + 1] = NULL;
-			indices[c + 1] = NULL;
+			indices[c + 1] = -1;
 		}
 	}
 
@@ -119,7 +119,7 @@ void resetStratagems(lv_event_t *e)
 		{
 			lv_obj_clear_state(buttons[c], LV_STATE_CHECKED);
 			buttons[c] = NULL;
-			indices[c] = 0;
+			indices[c] = -1;
 		}
 	}
 

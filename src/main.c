@@ -185,8 +185,8 @@ void bm_info_task(void *pvParameters)
 
     if (bm_error_state() == ESP_OK)
     {
-      bool hasBattery = bm_check_charging_status();
-      bool isCharging = bm_check_battery_status();
+      bool hasBattery = !bm_check_charging_status();
+      bool isCharging = !bm_check_battery_status();
 
       if (!hasBattery && batteryStatus != -2)
       {
@@ -249,9 +249,6 @@ void app_main()
   // Init and load config from NVS storage
   initConfig();
 
-  // Init battery management controller
-  bm_init();
-
   // Init bluetooth controller
   ble_controller_init();
 
@@ -293,6 +290,9 @@ void app_main()
 
   /* Read config */
   loadConfig();
+
+  // Init battery management controller
+  bm_init();
 
   lvglReady = true;
   updateBluetooth();

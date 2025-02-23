@@ -12,7 +12,7 @@
 #include "configration.h"
 #include "ui_assignment.h"
 
-// 4 user button list
+// User button list
 lv_obj_t *buttons[5];
 const int userStratagemAmount = 5;
 // Stratagem list index of user buttons

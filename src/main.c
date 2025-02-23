@@ -13,7 +13,7 @@
 #include "hid_dev.h"
 #include "i2s_player.h"
 #include "bm/bm_controller.h"
-#include "ble/ble_controller.c"
+#include "ble/ble_controller.h"
 #include "configration.h"
 #include "keymaps.h"
 #include "version.h"

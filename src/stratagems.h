@@ -34,6 +34,7 @@ char *soundFiles[] = {
     "S:assets/sound/weap.wav",   // 8 advanced weapon
 };
 
+// Struct for stratagem data (command sequence, sound id, button color, hires icon)
 struct stratagem
 {
     uint8_t sequence[8];
@@ -42,6 +43,7 @@ struct stratagem
     const lv_img_dsc_t *imgHiRes;
 };
 
+// List of all available stratagems and corresponding data
 struct stratagem strategems[] = {
     // 0
     // MG-43 Machine Gun

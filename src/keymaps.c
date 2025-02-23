@@ -1,7 +1,6 @@
 #include "esp_system.h"
 #include "hid_dev.h"
 
-
 uint8_t keymapIndex = 0;
 
 const uint8_t keymaps[2][4] = {
@@ -16,10 +15,8 @@ const uint8_t keymaps[2][4] = {
 
 uint8_t LookupKeycode(uint8_t keyCode)
 {
-  uint8_t *keymap = keymaps[keymapIndex];
-  uint8_t lookupIndex = keyCode - 1;
+	uint8_t lookupIndex = keyCode - 1;
+	uint8_t mapCode = keymaps[keymapIndex][lookupIndex];
 
-	keyCode = keymap[lookupIndex];
-
-	return keyCode;
+	return mapCode;
 }

@@ -4,10 +4,6 @@
 #include "esp_err.h"
 #include <stdbool.h>
 
-// I2C configuration
-#define I2C_MASTER_NUM (I2C_NUM_0) // I2C port number
-
-
 void bm_i2c_write(uint8_t slave_address, uint8_t register_address, uint8_t data);
 uint8_t bm_i2c_read(uint8_t slave_address, uint8_t register_address);
 

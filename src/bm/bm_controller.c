@@ -246,7 +246,7 @@ void bm_init()
 
 void bm_i2c_write(uint8_t slave_address, uint8_t register_address, uint8_t data)
 {
-  esp_err_t err = i2c_master_write_to_device(I2C_MASTER_NUM, slave_address,
+  esp_err_t err = i2c_master_write_to_device(I2C_NUM_0, slave_address,
                                              &register_address, 1, pdMS_TO_TICKS(100));
   if (err != ESP_OK)
   {
@@ -262,7 +262,7 @@ void bm_i2c_write(uint8_t slave_address, uint8_t register_address, uint8_t data)
 */
 uint8_t bm_i2c_read(uint8_t slave_address, uint8_t register_address)
 {
-  esp_err_t err = i2c_master_read_from_device(I2C_MASTER_NUM, slave_address, &register_address, 1,
+  esp_err_t err = i2c_master_read_from_device(I2C_NUM_0, slave_address, &register_address, 1,
                                               pdMS_TO_TICKS(100));
   if (err != ESP_OK)
   {

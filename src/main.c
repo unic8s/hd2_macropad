@@ -174,7 +174,7 @@ void hid_input_task(void *pvParameters)
 }
 
 // Delay for checking if a the stratagem execution buffer is filled
-#define BATTERY_CHECK_DELAY 1000
+#define BATTERY_CHECK_DELAY 2000
 
 // Task for exeuction of HID inputs
 void bm_info_task(void *pvParameters)
@@ -255,9 +255,6 @@ void app_main()
   // Setup HID input task (async)
   xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);
 
-  // Setup Battery Management info task (async)
-  xTaskCreate(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo);
-
   // Resolve screen rotation from config
   screenRotation = peekConfig("rotation", LV_DISP_ROT_90);
 
@@ -292,7 +289,7 @@ void app_main()
   loadConfig();
 
   // Init battery management controller
-  bm_init();
+  //bm_init();
 
   lvglReady = true;
   updateBluetooth();
@@ -305,4 +302,7 @@ void app_main()
   strcpy(softwareVersion, SW_VER);
 
   lv_label_set_text(ui_LblVersion, softwareVersion);
+
+  // Setup Battery Management info task (async)
+  xTaskCreate(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo);
 }

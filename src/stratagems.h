@@ -1,7 +1,8 @@
-#ifndef STRATATGEMS
-#define STRATATGEMS
+#ifndef _STRATATGEMS
+#define _STRATATGEMS
 
 #include <esp_system.h>
+#include "ui/ui_assignment.h"
 
 // Identifiers for inputs (UP/DOWN/LEFT/RIGHT)
 // DO NOT EDIT - If you want to change assignments please have a look into "keymaps.c"
@@ -41,6 +42,7 @@ struct stratagem
     uint8_t sound;
     const ui_theme_variable_t *color;
     const lv_img_dsc_t *imgHiRes;
+    enum stratagemType type;
 };
 
 // List of all available stratagems and corresponding data
@@ -51,14 +53,16 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_mg2_png},
+        &ui_img_sg_mg2_png,
+        SG_MG},
     // 1
     // APW-1 Anti-Materiel Rifle
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_DOWN, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_amr2_png},
+        &ui_img_sg_amr2_png,
+        SG_AMR},
 
     // 2
     // M-105 Stalwart
@@ -66,7 +70,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_sw2_png},
+        &ui_img_sg_sw2_png,
+        SG_SW},
 
     // 3
     // EAT-17 Expendable Anti-tank
@@ -74,7 +79,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_eat2_png},
+        &ui_img_sg_eat2_png,
+        SG_EAT},
 
     // 4
     // MLS-4X Commando
@@ -82,7 +88,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_c2_png},
+        &ui_img_sg_c2_png,
+        SG_C},
 
     // 5
     // GR-8 Recoilless Rifle
@@ -90,7 +97,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_rr2_png},
+        &ui_img_sg_rr2_png,
+        SG_RR},
 
     // 6
     // FLAM-40 Flamethrower
@@ -98,7 +106,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_ft2_png},
+        &ui_img_sg_ft2_png,
+        SG_FT},
 
     // 7
     // AC-8 Autocannon
@@ -106,7 +115,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_RIGHT, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_ac2_png},
+        &ui_img_sg_ac2_png,
+        SG_AC},
 
     // 8
     // MG-206 Heavy Machine Gun
@@ -114,7 +124,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_hmg2_png},
+        &ui_img_sg_hmg2_png,
+        SG_HMG},
 
     // 9
     // RS-422 Railgun
@@ -122,7 +133,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_rg2_png},
+        &ui_img_sg_rg2_png,
+        SG_RG},
 
     // 10
     // FAF-14 Spear Launcher
@@ -130,7 +142,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_spr2_png},
+        &ui_img_sg_spr2_png,
+        SG_SPR},
 
     // 11
     // GL-21 Grenade Launcher
@@ -138,7 +151,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_gl2_png},
+        &ui_img_sg_gl2_png,
+        SG_GL},
 
     // 12
     // LAS-98 Laser Cannon
@@ -146,7 +160,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_lc2_png},
+        &ui_img_sg_lc2_png,
+        SG_LC},
 
     // 13
     // ARC-3 Arc Thrower
@@ -154,7 +169,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_LEFT, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_at2_png},
+        &ui_img_sg_at2_png,
+        SG_AT},
 
     // 14
     // LAS-99 Quasar Cannon
@@ -162,7 +178,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_qc2_png},
+        &ui_img_sg_qc2_png,
+        SG_QC},
 
     // 15
     // RL-77 Airburst Rocket Launcher
@@ -170,7 +187,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_arl2_png},
+        &ui_img_sg_arl2_png,
+        SG_ARL},
 
     // 16
     // TX-41 Sterilizer
@@ -178,7 +196,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_LEFT, 0, 0, 0},
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_ste2_png},
+        &ui_img_sg_ste2_png,
+        SG_STE},
 
     // 17
     // LIFT-850 Jump Pack
@@ -186,7 +205,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0},
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_jp2_png},
+        &ui_img_sg_jp2_png,
+        SG_JP},
 
     // 18
     // B-1 Supply Pack
@@ -194,7 +214,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, 0, 0},
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_sp2_png},
+        &ui_img_sg_sp2_png,
+        SG_SUP},
 
     // 19
     // SH-20 Ballistic Shield Backpack
@@ -202,7 +223,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_LEFT, 0, 0},
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_bsb2_png},
+        &ui_img_sg_bsb2_png,
+        SG_BSB},
 
     // 20
     // SH-32 Shield Generator Pack
@@ -210,7 +232,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_sgp2_png},
+        &ui_img_sg_sgp2_png,
+        SG_SGP},
 
     // 21
     // AX/AR-23 "Guard Dog"
@@ -218,7 +241,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, 0, 0},
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_gd2_png},
+        &ui_img_sg_gd2_png,
+        SG_GD},
 
     // 22
     // AX/LAS-5 "Guard Dog" Rover
@@ -226,7 +250,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, 0, 0},
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_gdr2_png},
+        &ui_img_sg_gdr2_png,
+        SG_GDR},
 
     // 23
     // AX/TX-13 "Guard Dog" Dog Breath
@@ -234,7 +259,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_UP, 0, 0},
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_gdb2_png},
+        &ui_img_sg_gdb2_png,
+        SG_GDB},
 
     // 24
     // EXO-45 Patriot Exosuit
@@ -242,7 +268,8 @@ struct stratagem strategems[] = {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, 0},
         SOUND_BOT,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_pe2_png},
+        &ui_img_sg_pe2_png,
+        SG_PE},
 
     // 25
     // EXO-49 Emancipator Exosuit
@@ -250,7 +277,8 @@ struct stratagem strategems[] = {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_UP, 0},
         SOUND_BOT,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_ee2_png},
+        &ui_img_sg_ee2_png,
+        SG_EE},
 
     // 26
     // E/MG-101 HMG Emplacement
@@ -258,7 +286,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0},
         SOUND_SENTRY,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_hmge2_png},
+        &ui_img_sg_hmge2_png,
+        SG_HMGE},
 
     // 27
     // FX-12 Shield Generator Relay
@@ -266,7 +295,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SOUND_SHIELD,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_sgr2_png},
+        &ui_img_sg_sgr2_png,
+        SG_SGR},
 
     // 28
     // A/ARC-3 Tesla Tower
@@ -274,7 +304,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SOUND_SHIELD,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_tt2_png},
+        &ui_img_sg_tt2_png,
+        SG_TT},
 
     // 29
     // MD-6 Anti-Personnel Minefield
@@ -282,7 +313,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
         SOUND_MINES,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_apm2_png},
+        &ui_img_sg_apm2_png,
+        SG_APM},
 
     // 30
     // MD-I4 Incendiary Mines
@@ -290,7 +322,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0},
         SOUND_MINES,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_im2_png},
+        &ui_img_sg_im2_png,
+        SG_IM},
 
     // 31
     // MD-17 Anti-Tank Mines
@@ -298,7 +331,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0, 0},
         SOUND_MINES,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_atm2_png},
+        &ui_img_sg_atm2_png,
+        SG_ATM},
 
     // 32
     // A/MG-43 Machine Gun Sentry
@@ -306,7 +340,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
         SOUND_SENTRY,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_mgs2_png},
+        &ui_img_sg_mgs2_png,
+        SG_MGS},
 
     // 33
     // A/G-16 Gatling Sentry
@@ -314,7 +349,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0, 0},
         SOUND_SENTRY,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_gs2_png},
+        &ui_img_sg_gs2_png,
+        SG_GS},
 
     // 34
     // A/M-12 Mortar Sentry
@@ -322,7 +358,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
         SOUND_MORTAR,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_ms2_png},
+        &ui_img_sg_ms2_png,
+        SG_MS},
 
     // 35
     // A/AC-8 Autocannon Sentry
@@ -330,7 +367,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_UP, 0, 0},
         SOUND_SENTRY,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_acs2_png},
+        &ui_img_sg_acs2_png,
+        SG_ACS},
 
     // 36
     // A/MLS-4X Rocket Sentry
@@ -338,7 +376,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0},
         SOUND_SENTRY,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_rs2_png},
+        &ui_img_sg_rs2_png,
+        SG_RS},
 
     // 37
     // A/M-23 EMS Mortar Sentry
@@ -346,7 +385,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SOUND_MORTAR,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_ems2_png},
+        &ui_img_sg_ems2_png,
+        SG_EMS},
 
     // 38
     // Orbital Gatling Barrage
@@ -354,7 +394,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_ogb2_png},
+        &ui_img_sg_ogb2_png,
+        SG_OGB},
 
     // 39
     // Orbital Airburst Strike
@@ -362,7 +403,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_oas2_png},
+        &ui_img_sg_oas2_png,
+        SG_OAS},
 
     // 40
     // Orbital 120MM HE Barrage
@@ -370,7 +412,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_1202_png},
+        &ui_img_sg_1202_png,
+        SG_120},
 
     // 41
     // Orbital 380MM HE Barrage
@@ -378,7 +421,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_3802_png},
+        &ui_img_sg_3802_png,
+        SG_380},
 
     // 42
     // Orbital Walking Barrage
@@ -386,7 +430,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_owb2_png},
+        &ui_img_sg_owb2_png,
+        SG_OWB},
 
     // 43
     // Orbital Laser
@@ -394,7 +439,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_ol2_png},
+        &ui_img_sg_ol2_png,
+        SG_OL},
 
     // 44
     // Orbital Railcannon Strike
@@ -402,7 +448,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_UP, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_ors2_png},
+        &ui_img_sg_ors2_png,
+        SG_ORS},
 
     // 45
     // Orbital Precision Strike
@@ -410,7 +457,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_ops2_png},
+        &ui_img_sg_ops2_png,
+        SG_OPS},
 
     // 46
     // Orbital Gas Strike
@@ -418,7 +466,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_ogs2_png},
+        &ui_img_sg_ogs2_png,
+        SG_OGS},
 
     // 47
     // Orbital EMS Strike
@@ -426,7 +475,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_oes2_png},
+        &ui_img_sg_oes2_png,
+        SG_OES},
 
     // 48
     // Orbital Smoke Strike
@@ -434,7 +484,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_oss2_png},
+        &ui_img_sg_oss2_png,
+        SG_OSS},
 
     // 49
     // Orbital Napalm Barrage
@@ -442,7 +493,8 @@ struct stratagem strategems[] = {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, 0, 0},
         SOUND_ORBITAL,
         _ui_theme_color_sgRed,
-        &ui_img_sg_onb2_png},
+        &ui_img_sg_onb2_png,
+        SG_ONB},
 
     // 50
     // Eagle Strafing Run
@@ -450,7 +502,8 @@ struct stratagem strategems[] = {
         {INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0, 0, 0},
         SOUND_EAGLE,
         _ui_theme_color_sgRed,
-        &ui_img_sg_esr2_png},
+        &ui_img_sg_esr2_png,
+        SG_SR},
 
     // 51
     // Eagle Airstrike
@@ -458,7 +511,8 @@ struct stratagem strategems[] = {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         SOUND_EAGLE,
         _ui_theme_color_sgRed,
-        &ui_img_sg_ea2_png},
+        &ui_img_sg_ea2_png,
+        SG_A},
 
     // 52
     // Eagle Cluster Bomb
@@ -466,7 +520,8 @@ struct stratagem strategems[] = {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SOUND_EAGLE,
         _ui_theme_color_sgRed,
-        &ui_img_sg_ecb2_png},
+        &ui_img_sg_ecb2_png,
+        SG_CB},
 
     // 53
     // Eagle Napalm Airstrike
@@ -474,7 +529,8 @@ struct stratagem strategems[] = {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
         SOUND_EAGLE,
         _ui_theme_color_sgRed,
-        &ui_img_sg_ena2_png},
+        &ui_img_sg_ena2_png,
+        SG_NA},
 
     // 54
     // Eagle Smoke Strike
@@ -482,7 +538,8 @@ struct stratagem strategems[] = {
         {INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0},
         SOUND_EAGLE,
         _ui_theme_color_sgRed,
-        &ui_img_sg_ess2_png},
+        &ui_img_sg_ess2_png,
+        SG_SS},
 
     // 55
     // Eagle 110MM Rocket Pods
@@ -490,7 +547,8 @@ struct stratagem strategems[] = {
         {INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, 0, 0, 0, 0},
         SOUND_EAGLE,
         _ui_theme_color_sgRed,
-        &ui_img_sg_e1102_png},
+        &ui_img_sg_e1102_png,
+        SG_110},
 
     // 56
     // Eagle 500kg Bomb
@@ -498,7 +556,8 @@ struct stratagem strategems[] = {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SOUND_EAGLE,
         _ui_theme_color_sgRed,
-        &ui_img_sg_e5002_png},
+        &ui_img_sg_e5002_png,
+        SG_500},
 
     // 57
     // Directional Shield
@@ -506,7 +565,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_UP, 0, 0},
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_ds2_png},
+        &ui_img_sg_ds2_png,
+        SG_DS},
 
     // 58
     // Anti-Tank Emplacement
@@ -514,7 +574,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_RIGHT, 0, 0},
         SOUND_MINES,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_ate2_png},
+        &ui_img_sg_ate2_png,
+        SG_ATE},
 
     // 59
     // Flame Sentry
@@ -522,7 +583,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0},
         SOUND_SENTRY,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_fs2_png},
+        &ui_img_sg_fs2_png,
+        SG_FS},
 
     // 60
     // Fast Recon Vehicle
@@ -530,7 +592,8 @@ struct stratagem strategems[] = {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0},
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_frv2_png},
+        &ui_img_sg_frv2_png,
+        SG_FRV},
 
     // 61
     // Portable Hellbomb
@@ -538,7 +601,8 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_UP, 0, 0, 0},
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_ph2_png},
+        &ui_img_sg_ph2_png,
+        SG_PH},
 
     // 62
     // Gas Mines
@@ -546,6 +610,7 @@ struct stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
         SOUND_MINES,
         _ui_theme_color_sgGreen,
-        &ui_img_sg_gm2_png}};
+        &ui_img_sg_gm2_png,
+        SG_GM}};
 
 #endif

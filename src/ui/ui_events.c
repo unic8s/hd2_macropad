@@ -49,8 +49,20 @@ void selectStratagem(lv_event_t *e)
 		{
 			if (buttons[c] == NULL)
 			{
+				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->target);
+				int index = -1;
+
+				for(int c = 0; c < 63; c++){
+					struct stratagem item = strategems[c];
+
+					if(item.type == type){
+						index = c;
+						break;
+					}
+				}
+
 				buttons[c] = e->target;
-				indices[c] = (int)lv_obj_get_user_data(e->target);
+				indices[c] = index;
 				break;
 			}
 		}

@@ -79,10 +79,10 @@ void setDelay(int delay, bool restore)
 {
     inputDelay = delay;
 
-    char *textDelay[3];
+    char textDelay[] = "   ";
     itoa(delay, textDelay, 10);
 
-    lv_label_set_text(ui_LblDelay, &textDelay);
+    lv_label_set_text(ui_LblDelay, (void*)textDelay);
 
     if (restore)
     {
@@ -123,10 +123,10 @@ void setBrightness(int brightness, bool restore)
 {
     dimScreen(brightness);
 
-    char *textBrightness[3];
+    char textBrightness[] = "   ";
     itoa(brightness, textBrightness, 10);
 
-    lv_label_set_text(ui_LblBrightness, &textBrightness);
+    lv_label_set_text(ui_LblBrightness, (void*)textBrightness);
 
     if (restore)
     {

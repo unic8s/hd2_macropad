@@ -203,29 +203,29 @@ void bm_info_task(void *pvParameters)
       else
       {
         uint8_t batteryLevel = bm_get_battery_level();
-        lv_img_dsc_t *batteryIcon = &ui_img_bat_0_png;
+        lv_img_dsc_t batteryIcon = ui_img_bat_0_png;
 
         if (batteryStatus > batteryLevel)
         {
           if (batteryLevel >= 80)
           {
             batteryStatus = 80;
-            batteryIcon = &ui_img_bat_100_png;
+            batteryIcon = ui_img_bat_100_png;
           }
           else if (batteryLevel >= 60)
           {
             batteryStatus = 60;
-            batteryIcon = &ui_img_bat_75_png;
+            batteryIcon = ui_img_bat_75_png;
           }
           else if (batteryLevel >= 40)
           {
             batteryStatus = 40;
-            batteryIcon = &ui_img_bat_50_png;
+            batteryIcon = ui_img_bat_50_png;
           }
           else if (batteryLevel >= 20)
           {
             batteryStatus = 20;
-            batteryIcon = &ui_img_bat_25_png;
+            batteryIcon = ui_img_bat_25_png;
           }
           else
           {

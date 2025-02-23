@@ -97,7 +97,7 @@ void updateStratagemSelection()
 	char textAmount[] = "0 / 5";
 	textAmount[0] = (char)(strategemsAmount + '0');
 
-	lv_label_set_text(uic_LabelAmount, &textAmount);
+	lv_label_set_text(uic_LabelAmount, (void*)textAmount);
 
 	if (strategemsAmount == userStratagemAmount)
 	{

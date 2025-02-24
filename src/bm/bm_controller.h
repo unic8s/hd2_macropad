@@ -4,8 +4,8 @@
 #include "esp_err.h"
 #include <stdbool.h>
 
-void bm_i2c_write(uint8_t slave_address, uint8_t register_address, uint8_t data);
-uint8_t bm_i2c_read(uint8_t slave_address, uint8_t register_address);
+void bm_i2c_write(uint8_t register_address, uint8_t data);
+uint8_t bm_i2c_read(uint8_t register_address);
 
 void bm_init();
 

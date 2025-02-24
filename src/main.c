@@ -187,6 +187,9 @@ void bm_info_task(void *pvParameters)
     {
       bool hasBattery = !bm_check_charging_status();
       bool isCharging = !bm_check_battery_status();
+      uint8_t batteryLevel = bm_get_battery_level();
+
+      ESP_LOGI(TAG, "Battery %d, charging %d, level %d", hasBattery, isCharging, batteryLevel);
 
       if (!hasBattery && batteryStatus != -2)
       {
@@ -194,7 +197,7 @@ void bm_info_task(void *pvParameters)
 
         lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_no_png, LV_PART_MAIN | LV_STATE_DEFAULT);
       }
-      if (isCharging && batteryStatus != -1)
+      else if (isCharging && batteryStatus != -1)
       {
         batteryStatus = -1;
 
@@ -202,7 +205,6 @@ void bm_info_task(void *pvParameters)
       }
       else
       {
-        uint8_t batteryLevel = bm_get_battery_level();
         lv_img_dsc_t batteryIcon = ui_img_bat_0_png;
 
         if (batteryStatus > batteryLevel)
@@ -238,7 +240,7 @@ void bm_info_task(void *pvParameters)
     }
     else
     {
-      vTaskDelete(xHandleBMinfo);
+      //vTaskDelete(xHandleBMinfo);
     }
   }
 }
@@ -288,9 +290,6 @@ void app_main()
   /* Read config */
   loadConfig();
 
-  // Init battery management controller
-  //bm_init();
-
   lvglReady = true;
   updateBluetooth();
 
@@ -302,6 +301,9 @@ void app_main()
   strcpy(softwareVersion, SW_VER);
 
   lv_label_set_text(ui_LblVersion, softwareVersion);
+
+  // Init battery management controller
+  bm_init();
 
   // Setup Battery Management info task (async)
   xTaskCreate(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo);

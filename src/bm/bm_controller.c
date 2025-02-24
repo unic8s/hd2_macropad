@@ -5,7 +5,9 @@
 bool i2c_initialized = false;
 bool bm_has_error = false;
 
-#define IP5306_ADDRESS 0x75
+#define I2C_PORT (I2C_NUM_1)
+#define IP5306_ADDRESS 0xEA
+// #define IP5306_ADDRESS 0x75 // M5 Stack
 #define IP5306_REG_LEVEL 0x78 // bat level
 
 #define SYS_CTL0 0x00
@@ -234,19 +236,56 @@ union
 
 void bm_init()
 {
-  reg_SYS_CTL0_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, SYS_CTL0);
+  /*reg_SYS_CTL0_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, SYS_CTL0);
   reg_SYS_CTL1_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, SYS_CTL1);
   reg_SYS_CTL2_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, SYS_CTL2);
 
   reg_Charger_CTL0_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, Charger_CTL0);
   reg_Charger_CTL1_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, Charger_CTL1);
   reg_Charger_CTL2_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, Charger_CTL2);
-  reg_Charger_CTL3_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, Charger_CTL3);
+  reg_Charger_CTL3_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, Charger_CTL3);*/
+
+  if (i2c_initialized)
+  {
+    printf("WARNING [%s]: Battery Management is already initialized\n", __func__);
+    return;
+  }
+
+  i2c_config_t conf = {
+      .mode = I2C_MODE_MASTER,
+      .sda_io_num = 17,
+      .scl_io_num = 18,
+      .sda_pullup_en = GPIO_PULLUP_DISABLE,
+      .scl_pullup_en = GPIO_PULLUP_DISABLE,
+      .master.clk_speed = 400000
+      //.master.clk_speed = 100000
+  };
+
+  esp_err_t err = i2c_param_config(I2C_PORT, &conf);
+  if (err != ESP_OK)
+  {
+    printf("ERROR [%s]: Failed to configure I2C parameters: %s\n", __func__,
+           esp_err_to_name(err));
+    bm_has_error = true;
+    return;
+  }
+
+  err = i2c_driver_install(I2C_PORT, conf.mode, 0, 0, 0);
+  if (err != ESP_OK)
+  {
+    printf("ERROR [%s]: Failed to install I2C driver: %s\n", __func__,
+           esp_err_to_name(err));
+    bm_has_error = true;
+    return;
+  }
+
+  i2c_initialized = true;
+  printf("INFO [%s]: Battery Management initialized successfully\n", __func__);
 }
 
-void bm_i2c_write(uint8_t slave_address, uint8_t register_address, uint8_t data)
+void bm_i2c_write(uint8_t register_address, uint8_t data)
 {
-  esp_err_t err = i2c_master_write_to_device(I2C_NUM_0, slave_address,
+  esp_err_t err = i2c_master_write_to_device(I2C_PORT, IP5306_ADDRESS,
                                              &register_address, 1, pdMS_TO_TICKS(100));
   if (err != ESP_OK)
   {
@@ -260,9 +299,9 @@ void bm_i2c_write(uint8_t slave_address, uint8_t register_address, uint8_t data)
 @param  register address to read,and i2c address of the device
 @retval current register data
 */
-uint8_t bm_i2c_read(uint8_t slave_address, uint8_t register_address)
+uint8_t bm_i2c_read(uint8_t register_address)
 {
-  esp_err_t err = i2c_master_read_from_device(I2C_NUM_0, slave_address, &register_address, 1,
+  esp_err_t err = i2c_master_read_from_device(I2C_PORT, IP5306_ADDRESS, &register_address, 1,
                                               pdMS_TO_TICKS(100));
   if (err != ESP_OK)
   {
@@ -279,7 +318,7 @@ void bm_boost_mode(uint8_t boost_en)
 {
   reg_SYS_CTL0_t.bits.BOOST_ENABLE = boost_en;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL0, reg_SYS_CTL0_t.reg_byte);
+  bm_i2c_write(SYS_CTL0, reg_SYS_CTL0_t.reg_byte);
 }
 
 /*@brief  select charger mode
@@ -291,7 +330,7 @@ void bm_charger_mode(uint8_t charger_en)
 {
   reg_SYS_CTL0_t.bits.CHARGER_ENABLE = charger_en;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL0, reg_SYS_CTL0_t.reg_byte);
+  bm_i2c_write(SYS_CTL0, reg_SYS_CTL0_t.reg_byte);
 }
 
 /*@brief  select auto power on once load detected
@@ -303,7 +342,7 @@ void bm_power_on_load(uint8_t power_on_en)
 {
   reg_SYS_CTL0_t.bits.POWER_ON_LOAD = power_on_en;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL0, reg_SYS_CTL0_t.reg_byte);
+  bm_i2c_write(SYS_CTL0, reg_SYS_CTL0_t.reg_byte);
 }
 
 /*@brief  boost o/p normally open function
@@ -315,7 +354,7 @@ void bm_boost_output(uint8_t output_val)
 {
   reg_SYS_CTL0_t.bits.SET_BOOST_OUTPUT_ENABLE = output_val;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL0, reg_SYS_CTL0_t.reg_byte);
+  bm_i2c_write(SYS_CTL0, reg_SYS_CTL0_t.reg_byte);
 }
 
 /*@brief  enter shutdown mode using button
@@ -327,7 +366,7 @@ void bm_button_shutdown(uint8_t shutdown_val)
 {
   reg_SYS_CTL0_t.bits.BUTTON_SHUTDOWN = shutdown_val;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL0, reg_SYS_CTL0_t.reg_byte);
+  bm_i2c_write(SYS_CTL0, reg_SYS_CTL0_t.reg_byte);
 }
 
 /*@brief  boost control mode using button
@@ -339,7 +378,7 @@ void bm_boost_ctrl_signal(uint8_t press_val)
 {
   reg_SYS_CTL1_t.bits.BOOST_CTRL_SIGNAL_SELECTION = press_val;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL1, reg_SYS_CTL1_t.reg_byte);
+  bm_i2c_write(SYS_CTL1, reg_SYS_CTL1_t.reg_byte);
 }
 
 /*@brief
@@ -351,7 +390,7 @@ void bm_short_press_boost(uint8_t boost_en)
 {
   reg_SYS_CTL1_t.bits.SHORT_PRESS_BOOST_SWITCH_ENABLE = boost_en;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL1, reg_SYS_CTL1_t.reg_byte);
+  bm_i2c_write(SYS_CTL1, reg_SYS_CTL1_t.reg_byte);
 }
 
 /*@brief  keep boost mode on after input supply removal
@@ -363,7 +402,7 @@ void bm_boost_after_vin(uint8_t val)
 {
   reg_SYS_CTL1_t.bits.BOOST_AFTER_VIN = val;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL1, reg_SYS_CTL1_t.reg_byte);
+  bm_i2c_write(SYS_CTL1, reg_SYS_CTL1_t.reg_byte);
 }
 
 /*@brief  shutdown if battery voltage reaches 3V
@@ -375,7 +414,7 @@ void bm_low_battery_shutdown(uint8_t shutdown_en)
 {
   reg_SYS_CTL1_t.bits.LOW_BATTERY_SHUTDOWN_ENABLE = shutdown_en;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL1, reg_SYS_CTL1_t.reg_byte);
+  bm_i2c_write(SYS_CTL1, reg_SYS_CTL1_t.reg_byte);
 }
 
 /*@brief  set long press timing
@@ -387,7 +426,7 @@ void bm_set_long_press_time(uint8_t press_time_val)
 {
   reg_SYS_CTL2_t.bits.LONG_PRESS_TIME = press_time_val;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL2, reg_SYS_CTL2_t.reg_byte);
+  bm_i2c_write(SYS_CTL2, reg_SYS_CTL2_t.reg_byte);
 }
 
 /*@brief  set light load shutdown timing
@@ -399,7 +438,7 @@ void bm_set_light_load_shutdown_time(uint8_t shutdown_time)
 {
   reg_SYS_CTL2_t.bits.LIGHT_LOAD_SHUTDOWN_TIME = shutdown_time;
 
-  bm_i2c_write(IP5306_ADDRESS, SYS_CTL2, reg_SYS_CTL2_t.reg_byte);
+  bm_i2c_write(SYS_CTL2, reg_SYS_CTL2_t.reg_byte);
 }
 
 /*@brief  set charging cutoff voltage range for battery
@@ -414,7 +453,7 @@ void bm_set_charging_stop_voltage(uint8_t voltage_val)
 {
   reg_Charger_CTL0_t.bits.CHARGING_FULL_STOP_VOLTAGE = voltage_val;
 
-  bm_i2c_write(IP5306_ADDRESS, Charger_CTL0, reg_Charger_CTL0_t.reg_byte);
+  bm_i2c_write(Charger_CTL0, reg_Charger_CTL0_t.reg_byte);
 }
 
 /*@brief  set charging complete current detection
@@ -430,7 +469,7 @@ void bm_end_charge_current(uint8_t current_val)
 {
   reg_Charger_CTL1_t.bits.END_CHARGE_CURRENT_DETECTION = current_val;
 
-  bm_i2c_write(IP5306_ADDRESS, Charger_CTL1, reg_Charger_CTL1_t.reg_byte);
+  bm_i2c_write(Charger_CTL1, reg_Charger_CTL1_t.reg_byte);
 }
 
 /*@brief  set voltage Vout for charging
@@ -449,7 +488,7 @@ void bm_charger_under_voltage(uint8_t voltage_val)
 {
   reg_Charger_CTL1_t.bits.CHARGE_UNDER_VOLTAGE_LOOP = voltage_val;
 
-  bm_i2c_write(IP5306_ADDRESS, Charger_CTL1, reg_Charger_CTL1_t.reg_byte);
+  bm_i2c_write(Charger_CTL1, reg_Charger_CTL1_t.reg_byte);
 }
 
 /*@brief  set battery voltage
@@ -464,7 +503,7 @@ void bm_set_battery_voltage(uint8_t voltage_val)
 {
   reg_Charger_CTL2_t.bits.BATTERY_VOLTAGE = voltage_val;
 
-  bm_i2c_write(IP5306_ADDRESS, Charger_CTL2, reg_Charger_CTL2_t.reg_byte);
+  bm_i2c_write(Charger_CTL2, reg_Charger_CTL2_t.reg_byte);
 }
 
 /*@brief  set constant voltage charging setting
@@ -481,7 +520,7 @@ void bm_set_voltage_pressure(uint8_t voltage_val)
 {
   reg_Charger_CTL2_t.bits.VOLTAGE_PRESSURE = voltage_val;
 
-  bm_i2c_write(IP5306_ADDRESS, Charger_CTL2, reg_Charger_CTL2_t.reg_byte);
+  bm_i2c_write(Charger_CTL2, reg_Charger_CTL2_t.reg_byte);
 }
 
 /*@brief  set constant current charging setting
@@ -494,7 +533,7 @@ void bm_set_cc_loop(uint8_t current_val)
 {
   reg_Charger_CTL3_t.bits.CHARGE_CC_LOOP = current_val;
 
-  bm_i2c_write(IP5306_ADDRESS, Charger_CTL3, reg_Charger_CTL3_t.reg_byte);
+  bm_i2c_write(Charger_CTL3, reg_Charger_CTL3_t.reg_byte);
 }
 
 /*@brief  get current charging status
@@ -503,7 +542,7 @@ void bm_set_cc_loop(uint8_t current_val)
 */
 uint8_t bm_check_charging_status(void)
 {
-  reg_READ0_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, REG_READ0);
+  reg_READ0_t.reg_byte = bm_i2c_read(REG_READ0);
 
   return reg_READ0_t.bits.CHARGE_ENABLE;
 }
@@ -514,7 +553,7 @@ uint8_t bm_check_charging_status(void)
 */
 uint8_t bm_check_battery_status(void)
 {
-  reg_READ1_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, REG_READ1);
+  reg_READ1_t.reg_byte = bm_i2c_read(REG_READ1);
 
   return reg_READ1_t.bits.BATTERY_STATUS;
 }
@@ -525,7 +564,7 @@ uint8_t bm_check_battery_status(void)
 */
 uint8_t bm_check_load_level(void)
 {
-  reg_READ2_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, REG_READ2);
+  reg_READ2_t.reg_byte = bm_i2c_read(REG_READ2);
 
   return reg_READ2_t.bits.LOAD_LEVEL;
 }
@@ -537,7 +576,7 @@ uint8_t bm_check_load_level(void)
 */
 uint8_t bm_short_press_detect(void)
 {
-  reg_READ3_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, REG_READ3);
+  reg_READ3_t.reg_byte = bm_i2c_read(REG_READ3);
 
   return reg_READ3_t.bits.SHORT_PRESS_DETECT;
 }
@@ -549,7 +588,7 @@ uint8_t bm_short_press_detect(void)
 */
 uint8_t bm_long_press_detect(void)
 {
-  reg_READ3_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, REG_READ3);
+  reg_READ3_t.reg_byte = bm_i2c_read(REG_READ3);
 
   return reg_READ3_t.bits.LONG_PRESS_DETECT;
 }
@@ -561,14 +600,14 @@ uint8_t bm_long_press_detect(void)
 */
 uint8_t bm_double_press_detect(void)
 {
-  reg_READ3_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, REG_READ3);
+  reg_READ3_t.reg_byte = bm_i2c_read(REG_READ3);
 
   return reg_READ3_t.bits.DOUBLE_PRESS_DETECT;
 }
 
 uint8_t bm_get_battery_level()
 {
-  uint8_t data = bm_i2c_read(IP5306_ADDRESS, IP5306_REG_LEVEL);
+  uint8_t data = bm_i2c_read(IP5306_REG_LEVEL);
   switch (data & 0xF0)
   {
   case 0xE0:

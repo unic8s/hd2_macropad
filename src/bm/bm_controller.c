@@ -5,9 +5,9 @@
 bool i2c_initialized = false;
 bool bm_has_error = false;
 
-#define I2C_PORT (I2C_NUM_1)
-#define IP5306_ADDRESS 0xEA
-// #define IP5306_ADDRESS 0x75 // M5 Stack
+#define I2C_PORT (I2C_NUM_0)
+// #define IP5306_ADDRESS (0xEA)
+#define IP5306_ADDRESS (0x75) // M5 Stack
 #define IP5306_REG_LEVEL 0x78 // bat level
 
 #define SYS_CTL0 0x00
@@ -236,16 +236,16 @@ union
 
 void bm_init()
 {
-  /*reg_SYS_CTL0_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, SYS_CTL0);
-  reg_SYS_CTL1_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, SYS_CTL1);
-  reg_SYS_CTL2_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, SYS_CTL2);
+  reg_SYS_CTL0_t.reg_byte = bm_i2c_read(SYS_CTL0);
+  reg_SYS_CTL1_t.reg_byte = bm_i2c_read(SYS_CTL1);
+  reg_SYS_CTL2_t.reg_byte = bm_i2c_read(SYS_CTL2);
 
-  reg_Charger_CTL0_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, Charger_CTL0);
-  reg_Charger_CTL1_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, Charger_CTL1);
-  reg_Charger_CTL2_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, Charger_CTL2);
-  reg_Charger_CTL3_t.reg_byte = bm_i2c_read(IP5306_ADDRESS, Charger_CTL3);*/
+  reg_Charger_CTL0_t.reg_byte = bm_i2c_read(Charger_CTL0);
+  reg_Charger_CTL1_t.reg_byte = bm_i2c_read(Charger_CTL1);
+  reg_Charger_CTL2_t.reg_byte = bm_i2c_read(Charger_CTL2);
+  reg_Charger_CTL3_t.reg_byte = bm_i2c_read(Charger_CTL3);
 
-  if (i2c_initialized)
+  /*if (i2c_initialized)
   {
     printf("WARNING [%s]: Battery Management is already initialized\n", __func__);
     return;
@@ -261,11 +261,12 @@ void bm_init()
       //.master.clk_speed = 100000
   };
 
+  i2c_set_data_mode(I2C_PORT, I2C_DATA_MODE_MSB_FIRST, I2C_DATA_MODE_MSB_FIRST);
+
   esp_err_t err = i2c_param_config(I2C_PORT, &conf);
   if (err != ESP_OK)
   {
-    printf("ERROR [%s]: Failed to configure I2C parameters: %s\n", __func__,
-           esp_err_to_name(err));
+    printf("ERROR [%s]: Failed to configure I2C parameters: %s\n", __func__, esp_err_to_name(err));
     bm_has_error = true;
     return;
   }
@@ -273,24 +274,22 @@ void bm_init()
   err = i2c_driver_install(I2C_PORT, conf.mode, 0, 0, 0);
   if (err != ESP_OK)
   {
-    printf("ERROR [%s]: Failed to install I2C driver: %s\n", __func__,
-           esp_err_to_name(err));
+    printf("ERROR [%s]: Failed to install I2C driver: %s\n", __func__, esp_err_to_name(err));
     bm_has_error = true;
     return;
   }
 
   i2c_initialized = true;
-  printf("INFO [%s]: Battery Management initialized successfully\n", __func__);
+  printf("INFO [%s]: Battery Management initialized successfully\n", __func__);*/
 }
 
 void bm_i2c_write(uint8_t register_address, uint8_t data)
 {
-  esp_err_t err = i2c_master_write_to_device(I2C_PORT, IP5306_ADDRESS,
-                                             &register_address, 1, pdMS_TO_TICKS(100));
+  esp_err_t err = i2c_master_write_to_device(I2C_PORT, IP5306_ADDRESS, &register_address, 1, -1);
+
   if (err != ESP_OK)
   {
-    printf("ERROR [%s]: Failed to write register address 0x%02X: %s\n",
-           __func__, register_address, esp_err_to_name(err));
+    printf("ERROR [%s]: Failed to write register address 0x%02X: %s\n", __func__, register_address, esp_err_to_name(err));
     bm_has_error = true;
   }
 }
@@ -301,12 +300,11 @@ void bm_i2c_write(uint8_t register_address, uint8_t data)
 */
 uint8_t bm_i2c_read(uint8_t register_address)
 {
-  esp_err_t err = i2c_master_read_from_device(I2C_PORT, IP5306_ADDRESS, &register_address, 1,
-                                              pdMS_TO_TICKS(100));
+  esp_err_t err = i2c_master_read_from_device(I2C_PORT, IP5306_ADDRESS, &register_address, 1, -1);
+
   if (err != ESP_OK)
   {
-    printf("ERROR [%s]: Failed to read register 0x%02X: %s\n", __func__,
-           register_address, esp_err_to_name(err));
+    printf("ERROR [%s]: Failed to read register 0x%02X: %s\n", __func__, register_address, esp_err_to_name(err));
     bm_has_error = true;
     return false;
   }

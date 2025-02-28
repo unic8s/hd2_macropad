@@ -240,7 +240,9 @@ void bm_info_task(void *pvParameters)
     }
     else
     {
-      //vTaskDelete(xHandleBMinfo);
+      lv_obj_add_flag(ui_CntBattery, LV_OBJ_FLAG_HIDDEN);
+
+      vTaskDelete(xHandleBMinfo);
     }
   }
 }
@@ -273,13 +275,13 @@ void app_main()
   // Turn of display backlight
   bsp_display_backlight_off();
 
-  /* Lock the mutex due to the LVGL APIs are not thread-safe */
+  // Lock the mutex due to the LVGL APIs are not thread-safe
   bsp_display_lock(0);
 
   // Start LVGL
   ui_init();
 
-  /* Release the mutex */
+  // Release the mutex
   bsp_display_unlock();
 
   vTaskDelay(200 / portTICK_PERIOD_MS);
@@ -287,7 +289,7 @@ void app_main()
   // Turn on display backlight
   bsp_display_backlight_on();
 
-  /* Read config */
+  // Read config
   loadConfig();
 
   lvglReady = true;

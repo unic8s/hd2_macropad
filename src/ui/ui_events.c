@@ -140,6 +140,14 @@ void resetStratagems(lv_event_t *e)
 	playbackSound("S:assets/sound/_rst.wav");
 }
 
+// Change connectivity (Bluetooth/USB)
+void ChangeConnectivity(lv_event_t * e)
+{
+	connectionType = lv_dropdown_get_selected(ui_DdConnectivity);
+
+	setConnectivity(connectionType, false);
+}
+
 // Change assigned keymap
 void ChangeKeymap(lv_event_t *e)
 {

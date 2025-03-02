@@ -11,6 +11,7 @@ extern "C" {
 #endif
 
 extern uint8_t keymapIndex;
+extern uint8_t connectionType;
 
 extern void assignStratagems(lv_event_t * e);
 void deselectStratagem(lv_event_t * e);
@@ -38,6 +39,7 @@ void GotoGame(lv_event_t * e);
 void KeyboardDemo(lv_event_t * e);
 void FlipScreen(lv_event_t * e);
 void TabChanged(lv_event_t * e);
+void ChangeConnectivity(lv_event_t * e);
 void _executeUserStratagem(uint8_t index);
 
 #ifdef __cplusplus

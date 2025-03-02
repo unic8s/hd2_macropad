@@ -146,7 +146,7 @@ void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *par
         {
             ESP_LOGE(TAG_BLE, "fail reason = 0x%x", param->ble_security.auth_cmpl.fail_reason);
         }
-        
+
         updateBluetooth();
         break;
     default:
@@ -154,15 +154,25 @@ void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *par
     }
 }
 
-void ble_keyboard_send(key_mask_t special_key_mask, uint8_t *keyboard_cmd, uint8_t num_key)
+void ble_keyboard_send(key_mask_t special_key_mask, uint8_t keyboard_cmd, uint8_t num_key)
 {
-    esp_hidd_send_keyboard_value(hid_conn_id, special_key_mask, keyboard_cmd, num_key);
+    if (!sec_conn)
+    {
+        return;
+    }
+
+    esp_hidd_send_keyboard_value(hid_conn_id, special_key_mask, &keyboard_cmd, num_key);
+}
+
+bool ble_connected()
+{
+    return sec_conn;
 }
 
 esp_err_t ble_controller_init()
 {
     esp_err_t ret;
-    
+
     ESP_ERROR_CHECK(esp_bt_controller_mem_release(ESP_BT_MODE_CLASSIC_BT));
 
     esp_bt_controller_config_t bt_cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();

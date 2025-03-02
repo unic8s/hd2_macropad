@@ -170,3 +170,7 @@ def triggerStratagemUser5(event_struct):
 def triggerStratagemUser6(event_struct):
     return
 
+
+def ChangeConnectivity(event_struct):
+    return
+

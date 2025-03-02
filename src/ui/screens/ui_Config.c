@@ -357,9 +357,50 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_top(ui_SldDelay, 8, LV_PART_KNOB | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_SldDelay, 8, LV_PART_KNOB | LV_STATE_DEFAULT);
 
+    ui_Container15 = lv_obj_create(ui_Input);
+    lv_obj_remove_style_all(ui_Container15);
+    lv_obj_set_width(ui_Container15, lv_pct(49));
+    lv_obj_set_height(ui_Container15, LV_SIZE_CONTENT);    /// 50
+    lv_obj_set_align(ui_Container15, LV_ALIGN_CENTER);
+    lv_obj_set_flex_flow(ui_Container15, LV_FLEX_FLOW_ROW_WRAP);
+    lv_obj_set_flex_align(ui_Container15, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
+    lv_obj_clear_flag(ui_Container15, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_pad_left(ui_Container15, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Container15, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Container15, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Container15, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Container15, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Container15, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label10 = lv_label_create(ui_Container15);
+    lv_obj_set_width(ui_Label10, lv_pct(100));
+    lv_obj_set_height(ui_Label10, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label10, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label10, "Connectivity");
+    ui_object_set_themeable_style_property(ui_Label10, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_colorTheme);
+    ui_object_set_themeable_style_property(ui_Label10, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_colorTheme);
+
+    ui_DdConnectivity = lv_dropdown_create(ui_Container15);
+    lv_dropdown_set_options(ui_DdConnectivity, "Bluetooth\nUSB");
+    lv_obj_set_height(ui_DdConnectivity, 36);
+    lv_obj_set_width(ui_DdConnectivity, lv_pct(100));
+    lv_obj_set_align(ui_DdConnectivity, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_DdConnectivity, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+
+
+    lv_obj_set_style_text_color(lv_dropdown_get_list(ui_DdConnectivity), lv_color_hex(0x000000),
+                                LV_PART_SELECTED | LV_STATE_CHECKED);
+    lv_obj_set_style_text_opa(lv_dropdown_get_list(ui_DdConnectivity), 255,  LV_PART_SELECTED | LV_STATE_CHECKED);
+    ui_object_set_themeable_style_property(lv_dropdown_get_list(ui_DdConnectivity),  LV_PART_SELECTED | LV_STATE_CHECKED,
+                                           LV_STYLE_BG_COLOR, _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(lv_dropdown_get_list(ui_DdConnectivity),  LV_PART_SELECTED | LV_STATE_CHECKED,
+                                           LV_STYLE_BG_OPA, _ui_theme_alpha_colorActive);
+
     ui_Container12 = lv_obj_create(ui_Input);
     lv_obj_remove_style_all(ui_Container12);
-    lv_obj_set_width(ui_Container12, lv_pct(100));
+    lv_obj_set_width(ui_Container12, lv_pct(49));
     lv_obj_set_height(ui_Container12, LV_SIZE_CONTENT);    /// 50
     lv_obj_set_align(ui_Container12, LV_ALIGN_CENTER);
     lv_obj_set_flex_flow(ui_Container12, LV_FLEX_FLOW_ROW_WRAP);
@@ -384,8 +425,8 @@ void ui_Config_screen_init(void)
 
     ui_DdKeymap = lv_dropdown_create(ui_Container12);
     lv_dropdown_set_options(ui_DdKeymap, "WASD\nArrows");
-    lv_obj_set_width(ui_DdKeymap, 150);
     lv_obj_set_height(ui_DdKeymap, 36);
+    lv_obj_set_width(ui_DdKeymap, lv_pct(100));
     lv_obj_set_align(ui_DdKeymap, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_DdKeymap, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
 
@@ -447,7 +488,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_width(ui_Label16, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label16, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Label16, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label16, "Sends a \"hello\" via Bluetooth keyboard");
+    lv_label_set_text(ui_Label16, "Sends a \"hello\" via keyboard connection");
     lv_obj_set_style_text_color(ui_Label16, lv_color_hex(0x666666), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_Label16, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_left(ui_Label16, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -568,6 +609,7 @@ void ui_Config_screen_init(void)
     lv_obj_add_event_cb(ui_ChbFlip, ui_event_ChbFlip, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_ChbMute, ui_event_ChbMute, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_SldDelay, ui_event_SldDelay, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_DdConnectivity, ui_event_DdConnectivity, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_DdKeymap, ui_event_DdKeymap, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnTest, ui_event_BtnTest, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_TabView1, ui_event_TabView1, LV_EVENT_ALL, NULL);

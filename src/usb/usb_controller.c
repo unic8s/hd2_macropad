@@ -77,7 +77,7 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
 {
 }
 
-void usb_keyboard_send(uint8_t special_key_mask, uint8_t *keyboard_cmd, uint8_t num_key)
+void usb_keyboard_send(uint8_t special_key_mask, uint8_t keyboard_cmd, uint8_t num_key)
 {
     if (!tud_mounted())
     {
@@ -86,7 +86,8 @@ void usb_keyboard_send(uint8_t special_key_mask, uint8_t *keyboard_cmd, uint8_t 
 
     if (num_key > 0)
     {
-        tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, special_key_mask, keyboard_cmd);
+        uint8_t keycode[6] = {keyboard_cmd};
+        tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, special_key_mask, keycode);
     }
     else
     {

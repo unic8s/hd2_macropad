@@ -163,6 +163,23 @@ void setMuted(bool muted, bool restore)
 }
 
 // Write the keymap assignment to configuration
+void setConnectivity(uint8_t index, bool restore)
+{
+    connectionType = index;
+
+    if (restore)
+    {
+        lv_dropdown_set_selected(ui_DdConnectivity, index);
+    }
+    else
+    {
+        setConfig("connectivity", index);
+    }
+
+    playbackSound("S:assets/sound/_swt.wav");
+}
+
+// Write the keymap assignment to configuration
 void setKeymap(uint8_t index, bool restore)
 {
     keymapIndex = index;
@@ -202,6 +219,9 @@ void loadConfig()
 
     uint8_t sound_muted = getConfig("muted", 0);
     setMuted(sound_muted == 1, true);
+
+    uint8_t connectivity_index = getConfig("connectivity", 0);
+    setConnectivity(connectivity_index, true);
 
     uint8_t keymap_index = getConfig("keymap", 0);
     setKeymap(keymap_index, true);
@@ -246,6 +266,7 @@ void resetConfig()
     setDelay(100, true);
     setBrightness(50, true);
     setMuted(0, true);
+    setConnectivity(0, true);
     setKeymap(0, true);
     setRotation(LV_DISP_ROT_90, true);
 }

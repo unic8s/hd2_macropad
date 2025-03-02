@@ -11,17 +11,17 @@
 #include <esp_log.h> // Add this line to include the header file that declares ESP_LOGI
 #include "main.h"
 
-static const char *TAG_BLE = "BLE Controller";
-#define HIDD_DEVICE_NAME "HD2 Macropad"
+const char *TAG_BLE = "BLE Controller";
+#define HIDD_DEVICE_NAME "HD2 Macropad (BT)"
 
-static uint16_t hid_conn_id = 0;
-static bool sec_conn = false;
+uint16_t hid_conn_id = 0;
+bool sec_conn = false;
 
 #define CHAR_DECLARATION_SIZE (sizeof(uint8_t))
 
-static void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *param);
+void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *param);
 
-static uint8_t hidd_service_uuid128[] = {
+uint8_t hidd_service_uuid128[] = {
     /* LSB <--------------------------------------------------------------------------------> MSB */
     // first uuid, 16bit, [12],[13] is the value
     0xfb,
@@ -42,7 +42,7 @@ static uint8_t hidd_service_uuid128[] = {
     0x00,
 };
 
-static esp_ble_adv_data_t hidd_adv_data = {
+esp_ble_adv_data_t hidd_adv_data = {
     .set_scan_rsp = false,
     .include_name = true,
     .include_txpower = true,
@@ -58,7 +58,7 @@ static esp_ble_adv_data_t hidd_adv_data = {
     .flag = 0x6,
 };
 
-static esp_ble_adv_params_t hidd_adv_params = {
+esp_ble_adv_params_t hidd_adv_params = {
     .adv_int_min = 0x20,
     .adv_int_max = 0x30,
     .adv_type = ADV_TYPE_IND,
@@ -67,7 +67,7 @@ static esp_ble_adv_params_t hidd_adv_params = {
     .adv_filter_policy = ADV_FILTER_ALLOW_SCAN_ANY_CON_ANY,
 };
 
-static void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *param)
+void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *param)
 {
     switch (event)
     {
@@ -98,7 +98,7 @@ static void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *
         ESP_LOGI(TAG_BLE, "ESP_HIDD_EVENT_BLE_DISCONNECT");
         esp_ble_gap_start_advertising(&hidd_adv_params);
 
-        updateBluetooth();
+        updateConnection();
         break;
     }
     case ESP_HIDD_EVENT_BLE_VENDOR_REPORT_WRITE_EVT:
@@ -119,7 +119,7 @@ static void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *
     return;
 }
 
-static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param)
+void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param)
 {
     switch (event)
     {
@@ -146,18 +146,33 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
         {
             ESP_LOGE(TAG_BLE, "fail reason = 0x%x", param->ble_security.auth_cmpl.fail_reason);
         }
-        
-        updateBluetooth();
+
+        updateConnection();
         break;
     default:
         break;
     }
 }
 
-static esp_err_t ble_controller_init()
+void ble_keyboard_send(key_mask_t special_key_mask, uint8_t keyboard_cmd, uint8_t num_key)
+{
+    if (!sec_conn)
+    {
+        return;
+    }
+
+    esp_hidd_send_keyboard_value(hid_conn_id, special_key_mask, &keyboard_cmd, num_key);
+}
+
+bool ble_connected()
+{
+    return sec_conn;
+}
+
+esp_err_t ble_controller_init()
 {
     esp_err_t ret;
-    
+
     ESP_ERROR_CHECK(esp_bt_controller_mem_release(ESP_BT_MODE_CLASSIC_BT));
 
     esp_bt_controller_config_t bt_cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();

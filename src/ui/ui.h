@@ -213,6 +213,9 @@ void ui_event_CustomStratagem4(lv_event_t * e);
 extern lv_obj_t * ui_CustomStratagem4;
 void ui_event_BtnBack(lv_event_t * e);
 extern lv_obj_t * ui_BtnBack;
+extern lv_obj_t * ui_Container16;
+extern lv_obj_t * ui_CntBattery;
+extern lv_obj_t * ui_CntUSB;
 extern lv_obj_t * ui_CntBT;
 extern lv_obj_t * ui_Container5;
 void ui_event_CustomStratagem5(lv_event_t * e);
@@ -222,6 +225,8 @@ extern lv_obj_t * ui_BtnSEAF;
 void ui_event_BtnHellbomb(lv_event_t * e);
 extern lv_obj_t * ui_BtnHellbomb;
 // CUSTOM VARIABLES
+extern lv_obj_t * uic_CntBattery;
+extern lv_obj_t * uic_CntUSB;
 extern lv_obj_t * uic_CntBT;
 
 // SCREEN: ui_Config
@@ -252,6 +257,10 @@ extern lv_obj_t * ui_Label3;
 extern lv_obj_t * ui_LblDelay;
 void ui_event_SldDelay(lv_event_t * e);
 extern lv_obj_t * ui_SldDelay;
+extern lv_obj_t * ui_Container15;
+extern lv_obj_t * ui_Label10;
+void ui_event_DdConnectivity(lv_event_t * e);
+extern lv_obj_t * ui_DdConnectivity;
 extern lv_obj_t * ui_Container12;
 extern lv_obj_t * ui_Label9;
 void ui_event_DdKeymap(lv_event_t * e);
@@ -366,8 +375,13 @@ LV_IMG_DECLARE(ui_img_sg_res2_png);    // assets/sg/RES2.png
 LV_IMG_DECLARE(ui_img_sg_sos2_png);    // assets/sg/SOS2.png
 LV_IMG_DECLARE(ui_img_sg_er2_png);    // assets/sg/ER2.png
 LV_IMG_DECLARE(ui_img_1050696822);    // assets/icons/icons8-back-32.png
+LV_IMG_DECLARE(ui_img_bat_no_png);    // assets/bat_no.png
+LV_IMG_DECLARE(ui_img_bt_con_png);    // assets/bt_con.png
+LV_IMG_DECLARE(ui_img_usb_dis_png);    // assets/usb_dis.png
+LV_IMG_DECLARE(ui_img_usb_con_png);    // assets/usb_con.png
 LV_IMG_DECLARE(ui_img_bt_dis_png);    // assets/bt_dis.png
 LV_IMG_DECLARE(ui_img_bt_con_png);    // assets/bt_con.png
+LV_IMG_DECLARE(ui_img_bat_chg_png);    // assets/bat_chg.png
 LV_IMG_DECLARE(ui_img_sg_seaf1_png);    // assets/sg/SEAF1.png
 LV_IMG_DECLARE(ui_img_sg_hb1_png);    // assets/sg/HB1.png
 LV_IMG_DECLARE(ui_img_1566825004);    // assets/icons/icons8-about-32.png
@@ -459,6 +473,12 @@ LV_IMG_DECLARE(ui_img_sg_td2_png);    // assets/sg/TD2.png
 LV_IMG_DECLARE(ui_img_sg_tt2_png);    // assets/sg/TT2.png
 LV_IMG_DECLARE(ui_img_sg_ud1_png);    // assets/sg/UD1.png
 LV_IMG_DECLARE(ui_img_sg_ud2_png);    // assets/sg/UD2.png
+LV_IMG_DECLARE(ui_img_bat_0_png);    // assets/bat_0.png
+LV_IMG_DECLARE(ui_img_bat_100_png);    // assets/bat_100.png
+LV_IMG_DECLARE(ui_img_bat_25_png);    // assets/bat_25.png
+LV_IMG_DECLARE(ui_img_bat_50_png);    // assets/bat_50.png
+LV_IMG_DECLARE(ui_img_bat_75_png);    // assets/bat_75.png
+LV_IMG_DECLARE(ui_img_bat_no_png);    // assets/bat_no.png
 
 // UI INIT
 void ui_init(void);

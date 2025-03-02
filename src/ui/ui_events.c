@@ -6,20 +6,17 @@
 #include "ui.h"
 #include "hid_dev.h"
 #include "esp_log.h"
-#include "sequences.h"
-#include "sounds.h"
+#include "stratagems.h"
 #include "i2s_player.h"
 #include "main.h"
 #include "configration.h"
 #include "ui_assignment.h"
 
-// 4 user button list
+// User button list
 lv_obj_t *buttons[5];
 const int userStratagemAmount = 5;
 // Stratagem list index of user buttons
 int indices[5];
-// Strategem item colors of user buttons
-lv_color_t colors[5];
 // Amount of user assigned stratagems
 uint8_t strategemsAmount = 0;
 
@@ -35,7 +32,6 @@ void deselectStratagem(lv_event_t *e)
 		{
 			buttons[c] = NULL;
 			indices[c] = 0;
-			colors[c] = lv_color_hex(0xffffff);
 		}
 	}
 
@@ -53,14 +49,20 @@ void selectStratagem(lv_event_t *e)
 		{
 			if (buttons[c] == NULL)
 			{
+				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->target);
+				int index = -1;
+
+				for(int c = 0; c < 63; c++){
+					struct stratagem item = strategems[c];
+
+					if(item.type == type){
+						index = c;
+						break;
+					}
+				}
+
 				buttons[c] = e->target;
-				indices[c] = (int)lv_obj_get_user_data(e->target);
-
-				lv_obj_clear_state(e->target, LV_STATE_CHECKED);
-				lv_color_t borderColor = lv_obj_get_style_border_color(e->target, LV_PART_MAIN);
-				lv_obj_add_state(e->target, LV_STATE_CHECKED);
-
-				colors[c] = borderColor;
+				indices[c] = index;
 				break;
 			}
 		}
@@ -90,7 +92,7 @@ void updateStratagemSelection()
 			indices[c] = indices[c + 1];
 
 			buttons[c + 1] = NULL;
-			indices[c + 1] = NULL;
+			indices[c + 1] = -1;
 		}
 	}
 
@@ -107,7 +109,7 @@ void updateStratagemSelection()
 	char textAmount[] = "0 / 5";
 	textAmount[0] = (char)(strategemsAmount + '0');
 
-	lv_label_set_text(uic_LabelAmount, &textAmount);
+	lv_label_set_text(uic_LabelAmount, (void*)textAmount);
 
 	if (strategemsAmount == userStratagemAmount)
 	{
@@ -129,13 +131,21 @@ void resetStratagems(lv_event_t *e)
 		{
 			lv_obj_clear_state(buttons[c], LV_STATE_CHECKED);
 			buttons[c] = NULL;
-			indices[c] = 0;
+			indices[c] = -1;
 		}
 	}
 
 	updateStratagemSelection();
 
 	playbackSound("S:assets/sound/_rst.wav");
+}
+
+// Change connectivity (Bluetooth/USB)
+void ChangeConnectivity(lv_event_t * e)
+{
+	connectionType = lv_dropdown_get_selected(ui_DdConnectivity);
+
+	setConnectivity(connectionType, false);
 }
 
 // Change assigned keymap
@@ -254,69 +264,47 @@ void triggerStratagemStd6(lv_event_t *e)
 	// playbackSound("S:assets/sound/.wav");
 }
 
-// Trigger 1st user stratagem
-void triggerStratagemUser1(lv_event_t *e)
+void _executeUserStratagem(uint8_t index)
 {
-	uint8_t itemIndex = indices[0];
+	uint8_t itemIndex = indices[index];
+	struct stratagem item = strategems[itemIndex];
 
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
+	setStratagemCode(item.sequence, INPUT_CTRL_MASK, false);
 
-	uint8_t soundIndex = soundMap[itemIndex];
+	uint8_t soundIndex = item.sound;
 	char *path = soundFiles[soundIndex];
 
 	playbackSound(path);
+}
+
+// Trigger 1st user stratagem
+void triggerStratagemUser1(lv_event_t *e)
+{
+	_executeUserStratagem(0);
 }
 
 // Trigger 2nd user stratagem
 void triggerStratagemUser2(lv_event_t *e)
 {
-	uint8_t itemIndex = indices[1];
-
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
-
-	uint8_t soundIndex = soundMap[itemIndex];
-	char *path = soundFiles[soundIndex];
-
-	playbackSound(path);
+	_executeUserStratagem(1);
 }
 
 // Trigger 3rd user stratagem
 void triggerStratagemUser3(lv_event_t *e)
 {
-	uint8_t itemIndex = indices[2];
-
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
-
-	uint8_t soundIndex = soundMap[itemIndex];
-	char *path = soundFiles[soundIndex];
-
-	playbackSound(path);
+	_executeUserStratagem(2);
 }
 
 // Trigger 4th user stratagem
 void triggerStratagemUser4(lv_event_t *e)
 {
-	uint8_t itemIndex = indices[3];
-
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
-
-	uint8_t soundIndex = soundMap[itemIndex];
-	char *path = soundFiles[soundIndex];
-
-	playbackSound(path);
+	_executeUserStratagem(3);
 }
 
 // Trigger 5th user stratagem
 void triggerStratagemUser5(lv_event_t *e)
 {
-	uint8_t itemIndex = indices[4];
-
-	setStratagemCode(sequences[itemIndex], INPUT_CTRL_MASK, false);
-
-	uint8_t soundIndex = soundMap[itemIndex];
-	char *path = soundFiles[soundIndex];
-
-	playbackSound(path);
+	_executeUserStratagem(4);
 }
 
 // Change HID input delay
@@ -413,13 +401,15 @@ void GotoGame(lv_event_t *e)
 			break;
 		}
 
-		const lv_img_dsc_t *hires = useHiResIcon ? ResolveHiResIcon(bgImg) : bgImg;
+		uint8_t itemIndex = indices[c];
+		struct stratagem item = strategems[itemIndex];
+		const lv_img_dsc_t *hires = useHiResIcon ? item.imgHiRes : bgImg;
 
 		if (configured)
 		{
-			lv_obj_set_style_border_color(targetButton, colors[c], LV_PART_MAIN | LV_STATE_DEFAULT);
+			ui_object_set_themeable_style_property(targetButton, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+												   item.color);
 			lv_obj_set_style_bg_img_src(targetButton, hires, LV_PART_MAIN | LV_STATE_DEFAULT);
-
 			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
 		}
 		else
@@ -429,48 +419,4 @@ void GotoGame(lv_event_t *e)
 	}
 
 	_ui_screen_change(&ui_Game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 100, &ui_Game_screen_init);
-}
-
-// Resolve hi-res icon from low-res assignment
-lv_img_dsc_t *ResolveHiResIcon(lv_img_dsc_t *icon)
-{
-	lv_img_dsc_t *hires = icon;
-
-	for (uint8_t c = 0; c < 59; c++)
-	{
-		lv_img_dsc_t **imgset = imgsetListTwo[c];
-		lv_img_dsc_t *imgLowRes = imgset[0];
-
-		if (icon == imgLowRes)
-		{
-			lv_img_dsc_t *imgHiRes = imgset[1];
-
-			hires = imgHiRes;
-			break;
-		}
-	}
-
-	for (uint8_t c = 0; c < 2; c++)
-	{
-		lv_img_dsc_t **imgset = imgsetListFour[c];
-		lv_img_dsc_t *imgLowRes1 = imgset[0];
-		lv_img_dsc_t *imgLowRes2 = imgset[2];
-
-		if (icon == imgLowRes1)
-		{
-			lv_img_dsc_t *imgHiRes = imgset[1];
-
-			hires = imgHiRes;
-			break;
-		}
-		else if (icon == imgLowRes2)
-		{
-			lv_img_dsc_t *imgHiRes = imgset[3];
-
-			hires = imgHiRes;
-			break;
-		}
-	}
-
-	return hires;
 }

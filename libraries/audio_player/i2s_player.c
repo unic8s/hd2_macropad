@@ -8,6 +8,7 @@ static const char *TAG = "I2S Audio Player";
 
 i2s_chan_handle_t tx_handle;
 i2s_std_slot_config_t slotConfig = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_MONO);
+bool i2s_playbackError = false;
 
 esp_err_t i2s_setup(void)
 {
@@ -38,6 +39,10 @@ esp_err_t i2s_setup(void)
 
 esp_err_t play_wav(char *fp)
 {
+    if(i2s_playbackError){
+        return ESP_ERR_INVALID_STATE;
+    }
+
     lv_fs_file_t f;
     lv_fs_res_t res;
 
@@ -46,6 +51,7 @@ esp_err_t play_wav(char *fp)
     {
         ESP_LOGE(TAG, "(%s) FS open failed.", fp);
         lv_fs_close(&f);
+        i2s_playbackError = true;
         return ESP_FAIL;
     }
     ESP_LOGI(TAG, "(%s) FS opened.", fp);
@@ -56,6 +62,7 @@ esp_err_t play_wav(char *fp)
     {
         ESP_LOGE(TAG, "(%s) Seek failed.", fp);
         lv_fs_close(&f);
+        i2s_playbackError = true;
         return ESP_FAIL;
     }
     ESP_LOGI(TAG, "(%s) FS seeked.", fp);
@@ -71,6 +78,7 @@ esp_err_t play_wav(char *fp)
     {
         ESP_LOGE(TAG, "(%s) FS read failed.", fp);
         lv_fs_close(&f);
+        i2s_playbackError = true;
         return ESP_FAIL;
     }
     ESP_LOGI(TAG, "FS read bytes: %lx", bytes_read);

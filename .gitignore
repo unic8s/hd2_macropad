@@ -7,4 +7,4 @@
 squareline/cache/*
 *.old
 src/version.h
-dependedependencies.lock
+dependencies.lock

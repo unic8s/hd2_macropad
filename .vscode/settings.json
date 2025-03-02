@@ -65,6 +65,7 @@
         "configration.h": "c",
         "sounds.h": "c",
         "esp_bsp.h": "c",
-        "lv_port.h": "c"
+        "lv_port.h": "c",
+        "ble_controller.h": "c"
     }
 }

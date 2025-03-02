@@ -10,68 +10,6 @@
 extern "C" {
 #endif
 
-extern const lv_img_dsc_t * ui_imgset_[4];
-extern const lv_img_dsc_t * ui_imgset_ac[2];
-extern const lv_img_dsc_t * ui_imgset_acs[2];
-extern const lv_img_dsc_t * ui_imgset_amr[2];
-extern const lv_img_dsc_t * ui_imgset_apm[2];
-extern const lv_img_dsc_t * ui_imgset_arl[2];
-extern const lv_img_dsc_t * ui_imgset_at[2];
-extern const lv_img_dsc_t * ui_imgset_ate[2];
-extern const lv_img_dsc_t * ui_imgset_atm[2];
-extern const lv_img_dsc_t * ui_imgset_bsb[2];
-extern const lv_img_dsc_t * ui_imgset_c[2];
-extern const lv_img_dsc_t * ui_imgset_ds[2];
-extern const lv_img_dsc_t * ui_imgset_e[4];
-extern const lv_img_dsc_t * ui_imgset_ea[2];
-extern const lv_img_dsc_t * ui_imgset_eat[2];
-extern const lv_img_dsc_t * ui_imgset_ecb[2];
-extern const lv_img_dsc_t * ui_imgset_ee[2];
-extern const lv_img_dsc_t * ui_imgset_ems[2];
-extern const lv_img_dsc_t * ui_imgset_ena[2];
-extern const lv_img_dsc_t * ui_imgset_esr[2];
-extern const lv_img_dsc_t * ui_imgset_ess[2];
-extern const lv_img_dsc_t * ui_imgset_frv[2];
-extern const lv_img_dsc_t * ui_imgset_fs[2];
-extern const lv_img_dsc_t * ui_imgset_ft[2];
-extern const lv_img_dsc_t * ui_imgset_gd[2];
-extern const lv_img_dsc_t * ui_imgset_gdb[2];
-extern const lv_img_dsc_t * ui_imgset_gdr[2];
-extern const lv_img_dsc_t * ui_imgset_gl[2];
-extern const lv_img_dsc_t * ui_imgset_gs[2];
-extern const lv_img_dsc_t * ui_imgset_hmg[2];
-extern const lv_img_dsc_t * ui_imgset_hmge[2];
-extern const lv_img_dsc_t * ui_imgset_im[2];
-extern const lv_img_dsc_t * ui_imgset_jp[2];
-extern const lv_img_dsc_t * ui_imgset_lc[2];
-extern const lv_img_dsc_t * ui_imgset_mg[2];
-extern const lv_img_dsc_t * ui_imgset_mgs[2];
-extern const lv_img_dsc_t * ui_imgset_ms[2];
-extern const lv_img_dsc_t * ui_imgset_oas[2];
-extern const lv_img_dsc_t * ui_imgset_oes[2];
-extern const lv_img_dsc_t * ui_imgset_ogb[2];
-extern const lv_img_dsc_t * ui_imgset_ogs[2];
-extern const lv_img_dsc_t * ui_imgset_ol[2];
-extern const lv_img_dsc_t * ui_imgset_onb[2];
-extern const lv_img_dsc_t * ui_imgset_ops[2];
-extern const lv_img_dsc_t * ui_imgset_ors[2];
-extern const lv_img_dsc_t * ui_imgset_oss[2];
-extern const lv_img_dsc_t * ui_imgset_owb[2];
-extern const lv_img_dsc_t * ui_imgset_pe[2];
-extern const lv_img_dsc_t * ui_imgset_qc[2];
-extern const lv_img_dsc_t * ui_imgset_rg[2];
-extern const lv_img_dsc_t * ui_imgset_rr[2];
-extern const lv_img_dsc_t * ui_imgset_rs[2];
-extern const lv_img_dsc_t * ui_imgset_sgp[2];
-extern const lv_img_dsc_t * ui_imgset_sgr[2];
-extern const lv_img_dsc_t * ui_imgset_spr[2];
-extern const lv_img_dsc_t * ui_imgset_ste[2];
-extern const lv_img_dsc_t * ui_imgset_sup[2];
-extern const lv_img_dsc_t * ui_imgset_sw[2];
-extern const lv_img_dsc_t * ui_imgset_tt[2];
-extern const lv_img_dsc_t * ui_imgset_ph[2];
-extern const lv_img_dsc_t * ui_imgset_gm[2];
-
 extern uint8_t keymapIndex;
 
 extern void assignStratagems(lv_event_t * e);
@@ -100,11 +38,7 @@ void GotoGame(lv_event_t * e);
 void KeyboardDemo(lv_event_t * e);
 void FlipScreen(lv_event_t * e);
 void TabChanged(lv_event_t * e);
-
-extern const lv_img_dsc_t **imgsetListTwo[59];
-extern const lv_img_dsc_t **imgsetListFour[2];
-
-lv_img_dsc_t* ResolveHiResIcon(lv_img_dsc_t* icon);
+void _executeUserStratagem(uint8_t index);
 
 #ifdef __cplusplus
 } /*extern "C"*/

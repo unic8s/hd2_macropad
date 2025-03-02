@@ -81,6 +81,9 @@ images/ui_img_sg_res2_png.c
 images/ui_img_sg_sos2_png.c
 images/ui_img_sg_er2_png.c
 images/ui_img_1050696822.c
+images/ui_img_bat_no_png.c
+images/ui_img_bt_con_png.c
+images/ui_img_usb_dis_png.c
 images/ui_img_bt_dis_png.c
 images/ui_img_bt_con_png.c
 images/ui_img_bat_chg_png.c
@@ -181,3 +184,4 @@ images/ui_img_bat_25_png.c
 images/ui_img_bat_50_png.c
 images/ui_img_bat_75_png.c
 images/ui_img_bat_no_png.c
+images/ui_img_usb_con_png.c

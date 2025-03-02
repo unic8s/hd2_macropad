@@ -96,12 +96,24 @@ void dimScreen(int brightness)
   bsp_display_brightness_set(brightness);
 }
 
-// Update UI relating to bluetooth connection state
-void updateBluetooth()
+// Update UI relating to connection state
+void updateConnection()
 {
   if (!lvglReady)
   {
     return;
+  }
+
+  switch (connectionType)
+  {
+  case 0:
+    lv_obj_clear_flag(uic_CntBT, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(uic_CntUSB, LV_OBJ_FLAG_HIDDEN);
+    break;
+  case 1:
+    lv_obj_add_flag(uic_CntBT, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(uic_CntUSB, LV_OBJ_FLAG_HIDDEN);
+    break;
   }
 
   // Check bluetooth connection state
@@ -112,6 +124,15 @@ void updateBluetooth()
   else
   {
     lv_obj_clear_state(uic_CntBT, LV_STATE_CHECKED);
+  }
+
+  if (usb_connected())
+  {
+    lv_obj_add_state(uic_CntUSB, LV_STATE_CHECKED);
+  }
+  else
+  {
+    lv_obj_clear_state(uic_CntUSB, LV_STATE_CHECKED);
   }
 }
 
@@ -274,8 +295,6 @@ void bm_info_task(void *pvParameters)
     }
     else
     {
-      lv_obj_add_flag(ui_CntBattery, LV_OBJ_FLAG_HIDDEN);
-
       vTaskDelete(xHandleBMinfo);
     }
   }
@@ -351,4 +370,8 @@ void app_main()
 
   // Setup Battery Management info task (async)
   xTaskCreate(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo);
+
+  vTaskDelay(500 / portTICK_PERIOD_MS);
+
+  updateConnection();
 }

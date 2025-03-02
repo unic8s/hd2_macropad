@@ -26999,7 +26999,7 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      34,
+                      38,
                       38
                     ],
                     "InheritedType": 7
@@ -27048,7 +27048,6 @@
                   },
                   {
                     "nid": 320,
-                    "flags": 1048576,
                     "strtype": "OBJECT/States",
                     "InheritedType": 1
                   },
@@ -27088,7 +27087,7 @@
                           {
                             "nid": 20610,
                             "strtype": "_style/Bg_Image",
-                            "strval": "assets/bt_con.png",
+                            "strval": "assets/usb_con.png",
                             "InheritedType": 5
                           }
                         ],
@@ -27170,7 +27169,7 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      34,
+                      38,
                       38
                     ],
                     "InheritedType": 7
@@ -27183,7 +27182,6 @@
                   },
                   {
                     "nid": 90,
-                    "flags": 1048576,
                     "strtype": "OBJECT/Flags",
                     "InheritedType": 1
                   },
@@ -27369,25 +27367,7 @@
               },
               {
                 "part": "lv.PART.MAIN",
-                "childs": [
-                  {
-                    "nid": 10000,
-                    "strtype": "_style/StyleState",
-                    "strval": "DEFAULT",
-                    "childs": [
-                      {
-                        "nid": 11120,
-                        "strtype": "_style/Padding_RowCol",
-                        "intarray": [
-                          0,
-                          4
-                        ],
-                        "InheritedType": 7
-                      }
-                    ],
-                    "InheritedType": 1
-                  }
-                ],
+                "childs": [],
                 "nid": 1010,
                 "strtype": "CONTAINER/Style_main",
                 "strval": "lv.PART.MAIN, Rectangle, Pad, Text, Transform",
@@ -27402,8 +27382,7 @@
                 "InheritedType": 11
               }
             ],
-            "saved_objtypeKey": "CONTAINER",
-            "tree_closed": true
+            "saved_objtypeKey": "CONTAINER"
           },
           {
             "guid": "GUID42787802-363849S1020545",
@@ -37243,7 +37222,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2175,
+    "backup_cnt": 2179,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

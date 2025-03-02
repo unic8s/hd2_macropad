@@ -98,7 +98,7 @@ void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *param)
         ESP_LOGI(TAG_BLE, "ESP_HIDD_EVENT_BLE_DISCONNECT");
         esp_ble_gap_start_advertising(&hidd_adv_params);
 
-        updateBluetooth();
+        updateConnection();
         break;
     }
     case ESP_HIDD_EVENT_BLE_VENDOR_REPORT_WRITE_EVT:
@@ -147,7 +147,7 @@ void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *par
             ESP_LOGE(TAG_BLE, "fail reason = 0x%x", param->ble_security.auth_cmpl.fail_reason);
         }
 
-        updateBluetooth();
+        updateConnection();
         break;
     default:
         break;

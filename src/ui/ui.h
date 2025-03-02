@@ -213,8 +213,10 @@ void ui_event_CustomStratagem4(lv_event_t * e);
 extern lv_obj_t * ui_CustomStratagem4;
 void ui_event_BtnBack(lv_event_t * e);
 extern lv_obj_t * ui_BtnBack;
-extern lv_obj_t * ui_CntBT;
+extern lv_obj_t * ui_Container16;
 extern lv_obj_t * ui_CntBattery;
+extern lv_obj_t * ui_CntUSB;
+extern lv_obj_t * ui_CntBT;
 extern lv_obj_t * ui_Container5;
 void ui_event_CustomStratagem5(lv_event_t * e);
 extern lv_obj_t * ui_CustomStratagem5;
@@ -223,8 +225,9 @@ extern lv_obj_t * ui_BtnSEAF;
 void ui_event_BtnHellbomb(lv_event_t * e);
 extern lv_obj_t * ui_BtnHellbomb;
 // CUSTOM VARIABLES
-extern lv_obj_t * uic_CntBT;
 extern lv_obj_t * uic_CntBattery;
+extern lv_obj_t * uic_CntUSB;
+extern lv_obj_t * uic_CntBT;
 
 // SCREEN: ui_Config
 void ui_Config_screen_init(void);
@@ -372,6 +375,10 @@ LV_IMG_DECLARE(ui_img_sg_res2_png);    // assets/sg/RES2.png
 LV_IMG_DECLARE(ui_img_sg_sos2_png);    // assets/sg/SOS2.png
 LV_IMG_DECLARE(ui_img_sg_er2_png);    // assets/sg/ER2.png
 LV_IMG_DECLARE(ui_img_1050696822);    // assets/icons/icons8-back-32.png
+LV_IMG_DECLARE(ui_img_bat_no_png);    // assets/bat_no.png
+LV_IMG_DECLARE(ui_img_bt_con_png);    // assets/bt_con.png
+LV_IMG_DECLARE(ui_img_usb_dis_png);    // assets/usb_dis.png
+LV_IMG_DECLARE(ui_img_usb_con_png);    // assets/usb_con.png
 LV_IMG_DECLARE(ui_img_bt_dis_png);    // assets/bt_dis.png
 LV_IMG_DECLARE(ui_img_bt_con_png);    // assets/bt_con.png
 LV_IMG_DECLARE(ui_img_bat_chg_png);    // assets/bat_chg.png

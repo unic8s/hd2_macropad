@@ -95,6 +95,11 @@ void usb_keyboard_send(uint8_t special_key_mask, uint8_t keyboard_cmd, uint8_t n
     }
 }
 
+bool usb_connected()
+{
+    return tud_connected();
+}
+
 void usb_controller_init()
 {
     ESP_LOGI(TAG_USB, "USB initialization");

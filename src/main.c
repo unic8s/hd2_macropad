@@ -14,6 +14,7 @@
 #include "i2s_player.h"
 #include "bm/bm_controller.h"
 #include "ble/ble_controller.h"
+#include "usb/usb_controller.h"
 #include "configration.h"
 #include "keymaps.h"
 #include "version.h"
@@ -21,8 +22,6 @@
 // Tag for logging
 static const char *TAG = "HD2 Macropad";
 
-// Bluetooth connection ID for HID device
-extern uint16_t hid_conn_id;
 // Bluetooth connection status
 extern bool sec_conn;
 
@@ -126,25 +125,48 @@ void hid_input_task(void *pvParameters)
   {
     vTaskDelay(INPUT_CHECK_DELAY / portTICK_PERIOD_MS);
 
-    if (sec_conn && stratagemCode[0] > 0)
+    if (stratagemCode[0] > 0)
     {
       ESP_LOGI(TAG, "Send command");
 
       uint8_t cmdIndex = 0;
 
       // Send modifier keys (mask)
-      esp_hidd_send_keyboard_value(hid_conn_id, stratagemMask, 0, 0);
+      if (sec_conn)
+      {
+        ble_keyboard_send(stratagemMask, 0, 0);
+      }
+      else
+      {
+        usb_keyboard_send(stratagemMask, 0, 0);
+      }
+
       vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
       // Loop through command sequence from buffer
       while (stratagemCode[cmdIndex] > 0 && cmdIndex < 8)
       {
         // Press key defined by the keycode
-        esp_hidd_send_keyboard_value(hid_conn_id, stratagemMask, &stratagemCode[cmdIndex], 1);
+        if (sec_conn)
+        {
+          ble_keyboard_send(stratagemMask, &stratagemCode[cmdIndex], 1);
+        }
+        else
+        {
+          usb_keyboard_send(stratagemMask, &stratagemCode[cmdIndex], 1);
+        }
+
         vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
         // Release key defined by the keycode
-        esp_hidd_send_keyboard_value(hid_conn_id, stratagemMask, &stratagemCode[cmdIndex], 0);
+        if(sec_conn)
+        {
+          ble_keyboard_send(stratagemMask, &stratagemCode[cmdIndex], 0);
+        }
+        else
+        {
+          usb_keyboard_send(stratagemMask, &stratagemCode[cmdIndex], 0);
+        }
         vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
         ESP_LOGI(TAG, "CMD Index: %c", (char)(cmdIndex + '0'));
@@ -154,7 +176,14 @@ void hid_input_task(void *pvParameters)
         cmdIndex++;
       }
 
-      esp_hidd_send_keyboard_value(hid_conn_id, 0, 0, 0);
+      if(sec_conn)
+      {
+        ble_keyboard_send(0, 0, 0);
+      }
+      else
+      {
+        usb_keyboard_send(0, 0, 0);
+      }
 
       ESP_LOGI(TAG, "Finish command");
     }
@@ -255,6 +284,9 @@ void app_main()
 
   // Init bluetooth controller
   ble_controller_init();
+
+  // Init usb controller
+  usb_controller_init();
 
   // Setup HID input task (async)
   xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);

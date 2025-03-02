@@ -12,7 +12,7 @@
 #include "main.h"
 
 const char *TAG_BLE = "BLE Controller";
-#define HIDD_DEVICE_NAME "HD2 Macropad"
+#define HIDD_DEVICE_NAME "HD2 Macropad (BT)"
 
 uint16_t hid_conn_id = 0;
 bool sec_conn = false;
@@ -152,6 +152,11 @@ void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *par
     default:
         break;
     }
+}
+
+void ble_keyboard_send(key_mask_t special_key_mask, uint8_t *keyboard_cmd, uint8_t num_key)
+{
+    esp_hidd_send_keyboard_value(hid_conn_id, special_key_mask, keyboard_cmd, num_key);
 }
 
 esp_err_t ble_controller_init()

@@ -9,15 +9,15 @@ A very flexible and easy-to-use macropad for HELLDIVERS&trade; 2 for live config
 Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/) or [PS5&trade;](https://www.playstation.com/games/helldivers-2/)
 
 > [!IMPORTANT]  
-> The device is not able to connect to the PS5&trade; directly. We're currently working on the [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) which plugs into the USB port of a PS5&trade; directly and connects to the HD2 Macropad via Bluetooth.
+> The device is not able to connect to the PS5&trade; directly. We're currently working on the [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) which plugs into the USB port of a PS5&trade; directly and connects to the HD2 Macropad via Bluetooth or USB.
 
-Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC or PS5&trade; since it's connected via Bluetooth as a keyboard input device.
+Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC or PS5&trade; since it's connected via Bluetooth or USB as a keyboard input device.
 
 > HELLDIVERS and PS5 are registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC.
 
 ## Prerequesites
 - The specific device [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR)
-- USB-C data cable to communicate with a PC for flashing the firmware once. After successful operation the device will connect only via Bluetooth.
+- USB-C data cable to communicate with a PC for flashing the firmware once. After successful operation the device will connect only via Bluetooth or USB.
 - Normal users
   - Web browser ([Google Chrome](https://www.google.com/intl/en_us/chrome/) or [Microsoft Edge](https://www.microsoft.com/en-us/edge/)) for uploading the firmware to the device
 - Pro users
@@ -55,8 +55,12 @@ Please follow the specific steps for your prefered system.
 
 ### PC
 
+Bluetooth
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. [Pair a Bluetooth device in Windows](https://support.microsoft.com/en-us/windows/pair-a-bluetooth-device-in-windows-2be7b51f-6ae9-b757-a3b9-95ee40c3e242)
+
+USB
+1. Connect a USB-C cable from the device to your computer
 
 ### PS5
 
@@ -86,9 +90,16 @@ Instructions for printing and assembling go along with STL files on...
 - The 4 middle stratagems are the ones you selected in the setup procedure.
 - The 2 + 1 lower stratagems are typical items for most operations (S.E.A.F. artillery, hellbomb) and a 5th custom user stratagem if there a bonus stratagems from high command.
 - Just click a strategem to activate the execution of the macro.
-- The Bluetooth icon in the lower right corner indicates the connection stats.
+
+Bluetooth
+- The Bluetooth icon in the lower right corner indicates the connection state.
   - ![](squareline/assets/bt_dis.png) disconnected
   - ![](squareline/assets/bt_con.png) connected
+
+USB
+- The USB icon in the lower right corner indicates the connection state.
+  - ![](squareline/assets/usb_dis.png) disconnected
+  - ![](squareline/assets/usb_con.png) connected
 
 ### Change selection
 1. If you want to change your selection just click the "back" button at the bottom left corner.

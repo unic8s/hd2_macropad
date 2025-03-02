@@ -2,7 +2,7 @@
 /.pio
 /build
 *.zip
-.vscode/*
+/.vscode
 squareline/cache/*
 *.old
 src/version.h

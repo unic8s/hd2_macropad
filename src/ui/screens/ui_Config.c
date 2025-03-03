@@ -323,7 +323,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_text_align(ui_LblDelay, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_SldDelay = lv_slider_create(ui_Container10);
-    lv_slider_set_range(ui_SldDelay, 5, 20);
+    lv_slider_set_range(ui_SldDelay, 2, 20);
     lv_slider_set_value(ui_SldDelay, 10, LV_ANIM_OFF);
     if(lv_slider_get_mode(ui_SldDelay) == LV_SLIDER_MODE_RANGE) lv_slider_set_left_value(ui_SldDelay, 0, LV_ANIM_OFF);
     lv_obj_set_height(ui_SldDelay, 16);

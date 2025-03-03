@@ -31627,7 +31627,7 @@
                             "nid": 1020,
                             "strtype": "SLIDER/Range",
                             "intarray": [
-                              5,
+                              2,
                               20
                             ],
                             "InheritedType": 7
@@ -37222,7 +37222,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2179,
+    "backup_cnt": 2181,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

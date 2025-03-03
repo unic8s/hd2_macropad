@@ -295,6 +295,8 @@ void bm_info_task(void *pvParameters)
     }
     else
     {
+      lv_obj_add_flag(ui_CntBattery, LV_OBJ_FLAG_HIDDEN);
+
       vTaskDelete(xHandleBMinfo);
     }
   }
@@ -344,18 +346,6 @@ void app_main()
 
   lvglReady = true;
 
-  switch (connectionType)
-  {
-  case 0:
-    // Init bluetooth controller
-    ble_controller_init();
-    break;
-  case 1:
-    // Init usb controller
-    usb_controller_init();
-    break;
-  }
-
   // Playback intro sound
   playbackSound("S:assets/sound/intro.wav");
 
@@ -370,6 +360,18 @@ void app_main()
 
   // Setup Battery Management info task (async)
   xTaskCreate(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo);
+
+  switch (connectionType)
+  {
+  case 0:
+    // Init Bluetooth controller
+    ble_controller_init();
+    break;
+  case 1:
+    // Init USB controller
+    usb_controller_init();
+    break;
+  }
 
   vTaskDelay(500 / portTICK_PERIOD_MS);
 

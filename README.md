@@ -64,8 +64,12 @@ USB
 
 ### PS5
 
+Bluetooth
 1. Connect HD2 Macropad to a power source (either USB-C or battery)
 2. Connect [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) into the PS5 USB port
+
+USB (untested yet - feel free to report if it works... at least it should work)
+1. Connect a USB-C cable from the device to your PS5
 
 ## 3D printing
 

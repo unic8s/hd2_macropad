@@ -21,7 +21,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 > [!IMPORTANT]  
 > The device is only able to connect to the PS5&trade; via USB.
 > It's not able to connect to the PS5&trade; via Bluetooth directly.
-> We're currently working on the [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) which plugs into the USB port of a PS5&trade; directly and connects to the HD2 Macropad via Bluetooth or USB.
+> We're currently working on the [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) which plugs into the USB port of a PS5&trade; directly and connects to the HD2 Macropad via Bluetooth.
 
 ## Screenshots
 

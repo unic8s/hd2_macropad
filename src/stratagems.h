@@ -611,6 +611,15 @@ struct stratagem strategems[] = {
         SOUND_MINES,
         _ui_theme_color_sgGreen,
         &ui_img_sg_gm2_png,
-        SG_GM}};
+        SG_GM},
+
+    // 63
+    // StA-X3 W.A.S.P. Launcher
+    {
+        {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
+        SOUND_WEAPON,
+        _ui_theme_color_sgBlue,
+        &ui_img_sg_wsp2_png,
+        SG_WSP}};
 
 #endif

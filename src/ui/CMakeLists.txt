@@ -22,6 +22,8 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_rg1_png.c
     images/ui_img_sg_rr1_png.c
     images/ui_img_sg_spr1_png.c
+    images/ui_img_sg_wsp1_png.c
+    images/ui_img_sg_wsp2_png.c
     images/ui_img_sg_qc1_png.c
     images/ui_img_sg_lc1_png.c
     images/ui_img_sg_at1_png.c
@@ -85,7 +87,6 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_bt_con_png.c
     images/ui_img_usb_dis_png.c
     images/ui_img_bt_dis_png.c
-    images/ui_img_bt_con_png.c
     images/ui_img_bat_chg_png.c
     images/ui_img_sg_seaf1_png.c
     images/ui_img_sg_hb1_png.c

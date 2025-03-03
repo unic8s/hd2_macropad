@@ -26,6 +26,7 @@ extern "C"
         SG_RG,
         SG_RR,
         SG_SPR,
+        SG_WSP,
         SG_STE,
         SG_SW,
 
@@ -103,6 +104,7 @@ extern "C"
         ui_WeaponsRG->user_data = (void *)SG_RG;
         ui_WeaponsRR->user_data = (void *)SG_RR;
         ui_WeaponsSPR->user_data = (void *)SG_SPR;
+        ui_WeaponsWSP->user_data = (void *)SG_WSP;
         ui_WeaponsSTE->user_data = (void *)SG_STE;
         ui_WeaponsSW->user_data = (void *)SG_SW;
 

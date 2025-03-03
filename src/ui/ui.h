@@ -68,6 +68,8 @@ void ui_event_WeaponsRR(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsRR;
 void ui_event_WeaponsSPR(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsSPR;
+void ui_event_WeaponsWSP(lv_event_t * e);
+extern lv_obj_t * ui_WeaponsWSP;
 void ui_event_WeaponsQC(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsQC;
 void ui_event_WeaponsLC(lv_event_t * e);
@@ -316,6 +318,7 @@ LV_IMG_DECLARE(ui_img_sg_gl1_png);    // assets/sg/GL1.png
 LV_IMG_DECLARE(ui_img_sg_rg1_png);    // assets/sg/RG1.png
 LV_IMG_DECLARE(ui_img_sg_rr1_png);    // assets/sg/RR1.png
 LV_IMG_DECLARE(ui_img_sg_spr1_png);    // assets/sg/SPR1.png
+LV_IMG_DECLARE(ui_img_sg_wsp1_png);    // assets/sg/WSP1.png
 LV_IMG_DECLARE(ui_img_sg_qc1_png);    // assets/sg/QC1.png
 LV_IMG_DECLARE(ui_img_sg_lc1_png);    // assets/sg/LC1.png
 LV_IMG_DECLARE(ui_img_sg_at1_png);    // assets/sg/AT1.png
@@ -478,6 +481,7 @@ LV_IMG_DECLARE(ui_img_bat_100_png);    // assets/bat_100.png
 LV_IMG_DECLARE(ui_img_bat_25_png);    // assets/bat_25.png
 LV_IMG_DECLARE(ui_img_bat_50_png);    // assets/bat_50.png
 LV_IMG_DECLARE(ui_img_bat_75_png);    // assets/bat_75.png
+LV_IMG_DECLARE(ui_img_sg_wsp2_png);    // assets/sg/WSP2.png
 LV_IMG_DECLARE(ui_img_bat_no_png);    // assets/bat_no.png
 
 // UI INIT

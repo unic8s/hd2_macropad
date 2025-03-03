@@ -300,6 +300,26 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsSPR, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
+    ui_WeaponsWSP = lv_btn_create(ui_Container2);
+    lv_obj_set_width(ui_WeaponsWSP, 72);
+    lv_obj_set_height(ui_WeaponsWSP, 72);
+    lv_obj_add_flag(ui_WeaponsWSP, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_WeaponsWSP, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_WeaponsWSP, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_WeaponsWSP, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_WeaponsWSP, &ui_img_sg_wsp1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_WeaponsWSP, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_sgBlue);
+    ui_object_set_themeable_style_property(ui_WeaponsWSP, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_sgBlue);
+    lv_obj_set_style_border_width(ui_WeaponsWSP, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_WeaponsWSP, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
+    lv_obj_set_style_bg_opa(ui_WeaponsWSP, 0, LV_PART_MAIN | LV_STATE_CHECKED);
+    ui_object_set_themeable_style_property(ui_WeaponsWSP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_WeaponsWSP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
+
     ui_WeaponsQC = lv_btn_create(ui_Container2);
     lv_obj_set_width(ui_WeaponsQC, 72);
     lv_obj_set_height(ui_WeaponsQC, 72);
@@ -1531,6 +1551,7 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_WeaponsRG, ui_event_WeaponsRG, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsRR, ui_event_WeaponsRR, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsSPR, ui_event_WeaponsSPR, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_WeaponsWSP, ui_event_WeaponsWSP, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsQC, ui_event_WeaponsQC, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsLC, ui_event_WeaponsLC, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsAT, ui_event_WeaponsAT, LV_EVENT_ALL, NULL);

@@ -6,6 +6,9 @@
 
 A very flexible and easy-to-use macropad for HELLDIVERS&trade; 2 for live configuration on each drop into combat with individual loadouts.
 
+> [!NOTE]
+> **The software requires this specific device [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR)**
+
 Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/) or [PS5&trade;](https://www.playstation.com/games/helldivers-2/)
 
 Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC or PS5&trade; since it's connected via Bluetooth or USB as a keyboard input device.
@@ -14,7 +17,7 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 
 ## Instructions
 
-> [!NOTE]  
+> [!TIP]  
 > For instructions to get your own device and installation - please visit the [Wiki](https://github.com/unic8s/hd2_macropad/wiki)
 > There you will also find lots of details and how to configure and use the device.
 

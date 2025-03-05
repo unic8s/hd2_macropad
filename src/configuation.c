@@ -11,6 +11,13 @@ nvs_handle_t nvsConfig;
 extern bool playerMuted;
 extern int inputDelay;
 extern int screenRotation;
+extern uint8_t keymapIndex;
+extern uint8_t connectionType;
+
+extern esp_err_t ble_controller_init();
+extern esp_err_t ble_controller_deinit();
+extern esp_err_t usb_controller_init();
+extern esp_err_t usb_controller_deinit();
 
 // Init configuration from NVS
 esp_err_t initConfig()
@@ -82,7 +89,7 @@ void setDelay(int delay, bool restore)
     char textDelay[] = "   ";
     itoa(delay, textDelay, 10);
 
-    lv_label_set_text(ui_LblDelay, (void*)textDelay);
+    lv_label_set_text(ui_LblDelay, (void *)textDelay);
 
     if (restore)
     {
@@ -126,7 +133,7 @@ void setBrightness(int brightness, bool restore)
     char textBrightness[] = "   ";
     itoa(brightness, textBrightness, 10);
 
-    lv_label_set_text(ui_LblBrightness, (void*)textBrightness);
+    lv_label_set_text(ui_LblBrightness, (void *)textBrightness);
 
     if (restore)
     {
@@ -163,13 +170,11 @@ void setMuted(bool muted, bool restore)
 }
 
 // Write the keymap assignment to configuration
-void setConnectivity(uint8_t index, bool restore)
+void setConnectivity(int8_t index, bool restore)
 {
-    connectionType = index;
-
     if (restore)
     {
-        lv_dropdown_set_selected(ui_DdConnectivity, index);
+        lv_dropdown_set_selected(ui_DdConnectivity, index - 1);
     }
     else
     {
@@ -177,6 +182,36 @@ void setConnectivity(uint8_t index, bool restore)
     }
 
     playbackSound("S:assets/sound/_swt.wav");
+
+    switch (connectionType)
+    {
+    case 1:
+        // Deinit Bluetooth controller
+        ble_controller_deinit();
+        break;
+    case 2:
+        // Deinit USB controller
+        usb_controller_deinit();
+        break;
+    }
+
+    connectionType = index;
+
+    switch (connectionType)
+    {
+    case 1:
+        // Init Bluetooth controller
+        ble_controller_init();
+        break;
+    case 2:
+        // Init USB controller
+        usb_controller_init();
+        break;
+    }
+
+    vTaskDelay(500 / portTICK_PERIOD_MS);
+
+    updateConnection();
 }
 
 // Write the keymap assignment to configuration

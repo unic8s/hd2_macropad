@@ -10,9 +10,6 @@
 extern "C" {
 #endif
 
-extern uint8_t keymapIndex;
-extern uint8_t connectionType;
-
 extern void assignStratagems(lv_event_t * e);
 void deselectStratagem(lv_event_t * e);
 void selectStratagem(lv_event_t * e);

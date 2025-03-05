@@ -22,7 +22,7 @@
 // Tag for logging
 static const char *TAG = "HD2 Macropad";
 
-// Connection type (0 => Bluetooth, 1 => USB)
+// Connection type (0 => None, 1 => Bluetooth, 2 => USB)
 uint8_t connectionType = 0;
 
 // Flag for ready state of LVGL after init
@@ -106,11 +106,11 @@ void updateConnection()
 
   switch (connectionType)
   {
-  case 0:
+  case 1:
     lv_obj_clear_flag(uic_CntBT, LV_OBJ_FLAG_HIDDEN);
     lv_obj_add_flag(uic_CntUSB, LV_OBJ_FLAG_HIDDEN);
     break;
-  case 1:
+  case 2:
     lv_obj_add_flag(uic_CntBT, LV_OBJ_FLAG_HIDDEN);
     lv_obj_clear_flag(uic_CntUSB, LV_OBJ_FLAG_HIDDEN);
     break;
@@ -152,16 +152,22 @@ void hid_input_task(void *pvParameters)
 
       uint8_t cmdIndex = 0;
 
-      // Send modifier keys (mask)
+      void (*fptr)(unsigned char, unsigned char, unsigned char);
+
       switch (connectionType)
       {
-      case 0:
-        ble_keyboard_send(stratagemMask, 0, 0);
-        break;
       case 1:
-        usb_keyboard_send(stratagemMask, 0, 0);
+        fptr = &ble_keyboard_send;
         break;
+      case 2:
+        fptr = &usb_keyboard_send;
+        break;
+      default:
+        return;
       }
+
+      // Send modifier keys (mask)
+      fptr(stratagemMask, 0, 0);
 
       vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
@@ -169,28 +175,12 @@ void hid_input_task(void *pvParameters)
       while (stratagemCode[cmdIndex] > 0 && cmdIndex < 8)
       {
         // Press key defined by the keycode
-        switch (connectionType)
-        {
-        case 0:
-          ble_keyboard_send(stratagemMask, stratagemCode[cmdIndex], 1);
-          break;
-        case 1:
-          usb_keyboard_send(stratagemMask, stratagemCode[cmdIndex], 1);
-          break;
-        }
+        fptr(stratagemMask, stratagemCode[cmdIndex], 1);
 
         vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
         // Release key defined by the keycode
-        switch (connectionType)
-        {
-        case 0:
-          ble_keyboard_send(stratagemMask, stratagemCode[cmdIndex], 0);
-          break;
-        case 1:
-          usb_keyboard_send(stratagemMask, stratagemCode[cmdIndex], 0);
-          break;
-        }
+        fptr(stratagemMask, stratagemCode[cmdIndex], 0);
 
         vTaskDelay(inputDelay / portTICK_PERIOD_MS);
 
@@ -201,15 +191,7 @@ void hid_input_task(void *pvParameters)
         cmdIndex++;
       }
 
-      switch (connectionType)
-      {
-      case 0:
-        ble_keyboard_send(0, 0, 0);
-        break;
-      case 1:
-        usb_keyboard_send(0, 0, 0);
-        break;
-      }
+      fptr(0, 0, 0);
 
       ESP_LOGI(TAG, "Finish command");
     }
@@ -360,20 +342,4 @@ void app_main()
 
   // Setup Battery Management info task (async)
   xTaskCreate(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo);
-
-  switch (connectionType)
-  {
-  case 0:
-    // Init Bluetooth controller
-    ble_controller_init();
-    break;
-  case 1:
-    // Init USB controller
-    usb_controller_init();
-    break;
-  }
-
-  vTaskDelay(500 / portTICK_PERIOD_MS);
-
-  updateConnection();
 }

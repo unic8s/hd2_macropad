@@ -143,15 +143,15 @@ void resetStratagems(lv_event_t *e)
 // Change connectivity (Bluetooth/USB)
 void ChangeConnectivity(lv_event_t * e)
 {
-	connectionType = lv_dropdown_get_selected(ui_DdConnectivity);
+	uint8_t connectionType = lv_dropdown_get_selected(ui_DdConnectivity);
 
-	setConnectivity(connectionType, false);
+	setConnectivity(connectionType + 1, false);
 }
 
 // Change assigned keymap
 void ChangeKeymap(lv_event_t *e)
 {
-	keymapIndex = lv_dropdown_get_selected(ui_DdKeymap);
+	uint8_t keymapIndex = lv_dropdown_get_selected(ui_DdKeymap);
 
 	setKeymap(keymapIndex, false);
 }

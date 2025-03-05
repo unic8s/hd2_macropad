@@ -154,14 +154,14 @@ void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *par
     }
 }
 
-void ble_keyboard_send(key_mask_t special_key_mask, uint8_t keyboard_cmd, uint8_t num_key)
+void ble_keyboard_send(uint8_t special_key_mask, uint8_t keyboard_cmd, uint8_t num_key)
 {
     if (!sec_conn)
     {
         return;
     }
 
-    esp_hidd_send_keyboard_value(hid_conn_id, special_key_mask, &keyboard_cmd, num_key);
+    esp_hidd_send_keyboard_value(hid_conn_id, (key_mask_t)special_key_mask, &keyboard_cmd, num_key);
 }
 
 bool ble_connected()
@@ -224,6 +224,49 @@ esp_err_t ble_controller_init()
     esp_ble_gap_set_security_param(ESP_BLE_SM_MAX_KEY_SIZE, &key_size, sizeof(uint8_t));
     esp_ble_gap_set_security_param(ESP_BLE_SM_SET_INIT_KEY, &init_key, sizeof(uint8_t));
     esp_ble_gap_set_security_param(ESP_BLE_SM_SET_RSP_KEY, &rsp_key, sizeof(uint8_t));
+
+    return ret;
+}
+
+esp_err_t ble_controller_deinit()
+{
+    esp_err_t ret;
+
+    esp_hidd_register_callbacks(NULL);
+    esp_ble_gap_register_callback(NULL);
+
+    if ((ret = esp_hidd_profile_deinit()) != ESP_OK)
+    {
+        ESP_LOGE(TAG_BLE, "%s deinit bluedroid failed", __func__);
+    }
+
+    ret = esp_bluedroid_disable();
+    if (ret)
+    {
+        ESP_LOGE(TAG_BLE, "%s deinit bluedroid failed", __func__);
+        return ret;
+    }
+
+    ret = esp_bluedroid_deinit();
+    if (ret)
+    {
+        ESP_LOGE(TAG_BLE, "%s deinit bluedroid failed", __func__);
+        return ret;
+    }
+
+    ret = esp_bt_controller_disable();
+    if (ret)
+    {
+        ESP_LOGE(TAG_BLE, "%s disable controller failed", __func__);
+        return ret;
+    }
+
+    ret = esp_bt_controller_deinit();
+    if (ret)
+    {
+        ESP_LOGE(TAG_BLE, "%s deinitialize controller failed", __func__);
+        return ret;
+    }
 
     return ret;
 }

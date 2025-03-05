@@ -100,7 +100,7 @@ bool usb_connected()
     return tud_connected();
 }
 
-void usb_controller_init()
+esp_err_t usb_controller_init()
 {
     ESP_LOGI(TAG_USB, "USB initialization");
     const tinyusb_config_t tusb_cfg = {
@@ -108,15 +108,29 @@ void usb_controller_init()
         .string_descriptor = hid_string_descriptor,
         .string_descriptor_count = sizeof(hid_string_descriptor) / sizeof(hid_string_descriptor[0]),
         .external_phy = false,
-#if (TUD_OPT_HIGH_SPEED)
-        .fs_configuration_descriptor = hid_configuration_descriptor, // HID configuration descriptor for full-speed and high-speed are the same
-        .hs_configuration_descriptor = hid_configuration_descriptor,
-        .qualifier_descriptor = NULL,
-#else
         .configuration_descriptor = hid_configuration_descriptor,
-#endif // TUD_OPT_HIGH_SPEED
     };
 
-    ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
-    ESP_LOGI(TAG_USB, "USB initialization DONE");
+    esp_err_t ret = tinyusb_driver_install(&tusb_cfg);
+
+    if (ret == ESP_OK)
+    {
+        ESP_LOGI(TAG_USB, "USB initialization DONE");
+    }
+
+    return ret;
+}
+
+esp_err_t usb_controller_deinit()
+{
+    tud_disconnect();
+
+    esp_err_t ret = tinyusb_driver_uninstall();
+
+    if (ret == ESP_OK)
+    {
+        ESP_LOGI(TAG_USB, "USB deinitialization DONE");
+    }
+
+    return ret;
 }

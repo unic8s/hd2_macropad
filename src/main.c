@@ -342,4 +342,8 @@ void app_main()
 
   // Setup Battery Management info task (async)
   xTaskCreate(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo);
+
+  vTaskDelay(500 / portTICK_PERIOD_MS);
+
+  updateConnection();
 }

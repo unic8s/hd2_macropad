@@ -28,8 +28,8 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 
 ## Support
 
-We're already pleased with your feedback so far and we try to keep up with your good ideas for new features. Thanks to all of you participating on our journey.
-If you enjoy the project and want to support our private project feel free to make a small donation.
+We're pleased with your feedback so far and we try to keep up with your good ideas for new features. Thanks to all of you participating on our journey.
+If you enjoy the project and want to support our private work feel free to make a small donation.
 
 [<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">](https://www.buymeacoffee.com/unic8)
 
@@ -51,12 +51,12 @@ If you enjoy the project and want to support our private project feel free to ma
 
 ![](screens/game.png)
 
-## Disclaimer and copyright
-> This is a private opensource project and is not associated in any kind with SONY INTERACTIVE ENTERTAINMENT LLC.
-> SONY INTERACTIVE ENTERTAINMENT LLC is not responsible for any function and content that is related to this project.
-> Related assets in this project are either produced by us and free to use for non-commercial usage or respectively published by the owners mentioned here.
-
 ## Credits and special thanks
 
 - [Icon Set](https://github.com/nvigneux/Helldivers-2-Stratagems-icons-svg) from [@nvigneux](https://github.com/nvigneux)
 - [Demo project](https://github.com/NorthernMan54/JC3248W535EN) from [@NorthernMan54](https://github.com/NorthernMan54)
+
+## Disclaimer and copyright
+> This is a private opensource project and is not associated in any kind with SONY INTERACTIVE ENTERTAINMENT LLC.
+> SONY INTERACTIVE ENTERTAINMENT LLC is not responsible for any function and content that is related to this project.
+> Related assets in this project are either produced by us and free to use for non-commercial usage or respectively published by the owners mentioned here.

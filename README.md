@@ -41,11 +41,23 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ### Setup
 
-![](screens/setup.png)
+![](screens/setup_weapons.png)
+
+![](screens/setup_equipment.png)
+
+![](screens/setup_stationary.png)
+
+![](screens/setup_strike.png)
+
+![](screens/setup_eagle.png)
 
 ### Config
 
-![](screens/config.png)
+![](screens/config_display.png)
+
+![](screens/config_audio.png)
+
+![](screens/config_input.png)
 
 ### Game (example configuration)
 

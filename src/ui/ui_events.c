@@ -52,10 +52,12 @@ void selectStratagem(lv_event_t *e)
 				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->target);
 				int index = -1;
 
-				for(int c = 0; c < sizeof(strategems); c++){
+				for (int c = 0; c < sizeof(strategems); c++)
+				{
 					struct stratagem item = strategems[c];
 
-					if(item.type == type){
+					if (item.type == type)
+					{
 						index = c;
 						break;
 					}
@@ -109,7 +111,7 @@ void updateStratagemSelection()
 	char textAmount[] = "0 / 5";
 	textAmount[0] = (char)(strategemsAmount + '0');
 
-	lv_label_set_text(uic_LabelAmount, (void*)textAmount);
+	lv_label_set_text(uic_LabelAmount, (void *)textAmount);
 
 	if (strategemsAmount == userStratagemAmount)
 	{
@@ -141,7 +143,7 @@ void resetStratagems(lv_event_t *e)
 }
 
 // Change connectivity (Bluetooth/USB)
-void ChangeConnectivity(lv_event_t * e)
+void ChangeConnectivity(lv_event_t *e)
 {
 	uint8_t connectionType = lv_dropdown_get_selected(ui_DdConnectivity);
 
@@ -169,9 +171,7 @@ void triggerStratagemStd1(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
-
-	playbackSound("S:assets/sound/reinf.wav");
+	_executeStdStratagem(sequence, "S:assets/sound/reinf.wav");
 }
 
 // Trigger 2nd standard stratagem
@@ -187,9 +187,7 @@ void triggerStratagemStd2(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
-
-	playbackSound("S:assets/sound/supp.wav");
+	_executeStdStratagem(sequence, "S:assets/sound/supp.wav");
 }
 
 // Trigger 3rd standard stratagem
@@ -205,9 +203,7 @@ void triggerStratagemStd3(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
-
-	playbackSound("S:assets/sound/sos.wav");
+	_executeStdStratagem(sequence, "S:assets/sound/sos.wav");
 }
 
 // Trigger 4th standard stratagem
@@ -223,9 +219,7 @@ void triggerStratagemStd4(lv_event_t *e)
 						   0,
 						   0};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
-
-	playbackSound("S:assets/sound/eagrel.wav");
+	_executeStdStratagem(sequence, "S:assets/sound/eagrel.wav");
 }
 
 // Trigger 5th standard stratagem
@@ -241,9 +235,7 @@ void triggerStratagemStd5(lv_event_t *e)
 						   INPUT_DOWN,
 						   INPUT_UP};
 
-	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
-
-	// playbackSound("S:assets/sound/.wav");
+	_executeStdStratagem(sequence, NULL);
 }
 
 // Trigger 6th standard stratagem
@@ -259,9 +251,17 @@ void triggerStratagemStd6(lv_event_t *e)
 						   0,
 						   0};
 
+	_executeStdStratagem(sequence, NULL);
+}
+
+void _executeStdStratagem(uint8_t *sequence, char *path)
+{
 	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
 
-	// playbackSound("S:assets/sound/.wav");
+	if (path != NULL)
+	{
+		playbackSound(path);
+	}
 }
 
 void _executeUserStratagem(uint8_t index)

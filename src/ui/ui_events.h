@@ -37,6 +37,7 @@ void KeyboardDemo(lv_event_t * e);
 void FlipScreen(lv_event_t * e);
 void TabChanged(lv_event_t * e);
 void ChangeConnectivity(lv_event_t * e);
+void _executeStdStratagem(uint8_t *sequence, char *path);
 void _executeUserStratagem(uint8_t index);
 
 #ifdef __cplusplus

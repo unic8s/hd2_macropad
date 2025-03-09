@@ -301,7 +301,6 @@ void resetConfig()
     setDelay(100, true);
     setBrightness(50, true);
     setMuted(0, true);
-    setConnectivity(0, true);
     setKeymap(0, true);
     setRotation(LV_DISP_ROT_90, true);
 }

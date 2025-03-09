@@ -36,17 +36,17 @@ char *soundFiles[] = {
 };
 
 // Struct for stratagem data (command sequence, sound id, button color, hires icon)
-struct stratagem
+typedef struct 
 {
     uint8_t sequence[8];
     uint8_t sound;
     const ui_theme_variable_t *color;
     const lv_img_dsc_t *imgHiRes;
     enum stratagemType type;
-};
+} stratagem;
 
 // List of all available stratagems and corresponding data
-struct stratagem strategems[] = {
+const stratagem strategems[] = {
     // 0
     // MG-43 Machine Gun
     {

@@ -12,9 +12,10 @@
 #include "configration.h"
 #include "ui_assignment.h"
 
+#define MAX_USER_STRATAGEMS 5
+
 // User button list
-lv_obj_t *buttons[5];
-const int userStratagemAmount = 5;
+lv_obj_t *buttons[MAX_USER_STRATAGEMS];
 // Stratagem list index of user buttons
 int indices[5];
 // Amount of user assigned stratagems
@@ -26,7 +27,7 @@ uint8_t strategemsAmount = 0;
 // Unassign stratagem item from button
 void deselectStratagem(lv_event_t *e)
 {
-	for (uint8_t c = 0; c < userStratagemAmount; c++)
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
 		if (buttons[c] == e->target)
 		{
@@ -43,9 +44,9 @@ void deselectStratagem(lv_event_t *e)
 // Assign stratagem item from button
 void selectStratagem(lv_event_t *e)
 {
-	if (strategemsAmount < userStratagemAmount)
+	if (strategemsAmount < MAX_USER_STRATAGEMS)
 	{
-		for (uint8_t c = 0; c < userStratagemAmount; c++)
+		for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 		{
 			if (buttons[c] == NULL)
 			{
@@ -54,7 +55,7 @@ void selectStratagem(lv_event_t *e)
 
 				for (int c = 0; c < sizeof(strategems); c++)
 				{
-					struct stratagem item = strategems[c];
+					stratagem item = strategems[c];
 
 					if (item.type == type)
 					{
@@ -86,7 +87,7 @@ void updateStratagemSelection()
 {
 	strategemsAmount = 0;
 
-	for (uint8_t c = 0; c < userStratagemAmount - 1; c++)
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS - 1; c++)
 	{
 		if (buttons[c] == NULL)
 		{
@@ -98,7 +99,7 @@ void updateStratagemSelection()
 		}
 	}
 
-	for (uint8_t c = 0; c < userStratagemAmount; c++)
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
 		if (buttons[c] != NULL)
 		{
@@ -113,7 +114,7 @@ void updateStratagemSelection()
 
 	lv_label_set_text(uic_LabelAmount, (void *)textAmount);
 
-	if (strategemsAmount == userStratagemAmount)
+	if (strategemsAmount == MAX_USER_STRATAGEMS)
 	{
 		GotoGame(NULL);
 	}
@@ -127,7 +128,7 @@ void resetStratagems(lv_event_t *e)
 		return;
 	}
 
-	for (uint8_t c = 0; c < userStratagemAmount; c++)
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
 		if (buttons[c] != NULL)
 		{
@@ -267,7 +268,7 @@ void _executeStdStratagem(uint8_t *sequence, char *path)
 void _executeUserStratagem(uint8_t index)
 {
 	uint8_t itemIndex = indices[index];
-	struct stratagem item = strategems[itemIndex];
+	stratagem item = strategems[itemIndex];
 
 	setStratagemCode(item.sequence, INPUT_CTRL_MASK, false);
 
@@ -375,7 +376,7 @@ void FlipScreen(lv_event_t *e)
 // Goto game screen
 void GotoGame(lv_event_t *e)
 {
-	for (uint8_t c = 0; c < userStratagemAmount; c++)
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
 		const lv_obj_t *button = buttons[c];
 		const lv_img_dsc_t *bgImg = lv_obj_get_style_bg_img_src(button, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -402,7 +403,7 @@ void GotoGame(lv_event_t *e)
 		}
 
 		uint8_t itemIndex = indices[c];
-		struct stratagem item = strategems[itemIndex];
+		stratagem item = strategems[itemIndex];
 		const lv_img_dsc_t *hires = useHiResIcon ? item.imgHiRes : bgImg;
 
 		if (configured)

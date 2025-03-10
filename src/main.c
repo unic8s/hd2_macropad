@@ -291,7 +291,7 @@ void app_main()
   initConfig();
 
   // Setup HID input task (async)
-  xTaskCreate(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL);
+  xTaskCreatePinnedToCore(&hid_input_task, "hid_input_task", 2048, NULL, 5, NULL, 0);
 
   // Resolve screen rotation from config
   screenRotation = peekConfig("rotation", LV_DISP_ROT_90);
@@ -341,7 +341,7 @@ void app_main()
   bm_init();
 
   // Setup Battery Management info task (async)
-  xTaskCreate(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo);
+  xTaskCreatePinnedToCore(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo, 0);
 
   updateConnection();
 }

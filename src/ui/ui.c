@@ -200,8 +200,7 @@ void ui_event_BtnBack(lv_event_t * e);
 lv_obj_t * ui_BtnBack;
 lv_obj_t * ui_Container16;
 lv_obj_t * ui_CntBattery;
-lv_obj_t * ui_CntUSB;
-lv_obj_t * ui_CntBT;
+lv_obj_t * ui_CntConnection;
 lv_obj_t * ui_Container5;
 void ui_event_CustomStratagem5(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem5;
@@ -211,8 +210,7 @@ void ui_event_BtnHellbomb(lv_event_t * e);
 lv_obj_t * ui_BtnHellbomb;
 // CUSTOM VARIABLES
 lv_obj_t * uic_CntBattery;
-lv_obj_t * uic_CntUSB;
-lv_obj_t * uic_CntBT;
+lv_obj_t * uic_CntConnection;
 
 
 // SCREEN: ui_Config

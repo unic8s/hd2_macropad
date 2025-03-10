@@ -225,33 +225,15 @@ void ui_Game_screen_init(void)
     lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_no_png, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bt_con_png, LV_PART_MAIN | LV_STATE_CHECKED);
 
-    ui_CntUSB = lv_obj_create(ui_Container16);
-    lv_obj_remove_style_all(ui_CntUSB);
-    lv_obj_set_width(ui_CntUSB, 38);
-    lv_obj_set_height(ui_CntUSB, 38);
-    lv_obj_set_x(ui_CntUSB, -40);
-    lv_obj_set_y(ui_CntUSB, -2);
-    lv_obj_set_align(ui_CntUSB, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_CntUSB, LV_OBJ_FLAG_CHECKABLE);     /// Flags
-    lv_obj_clear_flag(ui_CntUSB, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_img_src(ui_CntUSB, &ui_img_usb_dis_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui_CntUSB, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_CntUSB, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_CntUSB, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_CntUSB, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_src(ui_CntUSB, &ui_img_usb_con_png, LV_PART_MAIN | LV_STATE_CHECKED);
-
-    ui_CntBT = lv_obj_create(ui_Container16);
-    lv_obj_remove_style_all(ui_CntBT);
-    lv_obj_set_width(ui_CntBT, 38);
-    lv_obj_set_height(ui_CntBT, 38);
-    lv_obj_set_x(ui_CntBT, -2);
-    lv_obj_set_y(ui_CntBT, -2);
-    lv_obj_set_align(ui_CntBT, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_CntBT, LV_OBJ_FLAG_CHECKABLE);     /// Flags
-    lv_obj_clear_flag(ui_CntBT, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_img_src(ui_CntBT, &ui_img_bt_dis_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_src(ui_CntBT, &ui_img_bt_con_png, LV_PART_MAIN | LV_STATE_CHECKED);
+    ui_CntConnection = lv_obj_create(ui_Container16);
+    lv_obj_remove_style_all(ui_CntConnection);
+    lv_obj_set_width(ui_CntConnection, 38);
+    lv_obj_set_height(ui_CntConnection, 38);
+    lv_obj_set_x(ui_CntConnection, -2);
+    lv_obj_set_y(ui_CntConnection, -2);
+    lv_obj_set_align(ui_CntConnection, LV_ALIGN_CENTER);
+    lv_obj_clear_flag(ui_CntConnection, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_bt_dis_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Container5 = lv_obj_create(ui_Game);
     lv_obj_remove_style_all(ui_Container5);
@@ -339,7 +321,6 @@ void ui_Game_screen_init(void)
     lv_obj_add_event_cb(ui_BtnSEAF, ui_event_BtnSEAF, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnHellbomb, ui_event_BtnHellbomb, LV_EVENT_ALL, NULL);
     uic_CntBattery = ui_CntBattery;
-    uic_CntUSB = ui_CntUSB;
-    uic_CntBT = ui_CntBT;
+    uic_CntConnection = ui_CntConnection;
 
 }

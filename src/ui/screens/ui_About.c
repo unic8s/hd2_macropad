@@ -64,7 +64,7 @@ void ui_About_screen_init(void)
     lv_obj_set_y(ui_Label8, -15);
     lv_obj_set_align(ui_Label8, LV_ALIGN_CENTER);
     lv_label_set_text(ui_Label8,
-                      "Copyright (C) 2024 All rights reserved.\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.\n\nFor more information please visit:\ngithub.com/unic8s/hd2_macropad\n\nA project by\nOliver G.	@Gore66\nErik L.			@unic8s");
+                      "Copyright (C) 2025 All rights reserved.\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.\n\nFor more information please visit:\ngithub.com/unic8s/hd2_macropad\n\nA project by\nOliver G.	@Gore66\nErik L.			@unic8s");
     lv_obj_set_style_text_letter_space(ui_Label8, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_line_space(ui_Label8, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
 

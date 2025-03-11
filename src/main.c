@@ -104,7 +104,7 @@ void updateConnection()
     return;
   }
 
-  lv_img_dsc_t *connectionIcon = &ui_img_bt_con_png;
+  lv_style_selector_t styleSelector = LV_PART_MAIN | LV_STATE_DEFAULT;
 
   switch (connectionType)
   {
@@ -112,26 +112,25 @@ void updateConnection()
     // Check bluetooth connection state
     if (ble_connected())
     {
-      connectionIcon = &ui_img_bt_con_png;
+      lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_bt_con_png, styleSelector);
     }
     else
     {
-      connectionIcon = &ui_img_bt_dis_png;
+      lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_bt_dis_png, styleSelector);
     }
     break;
   case 2:
+    // Check USB connection state
     if (usb_connected())
     {
-      connectionIcon = &ui_img_usb_con_png;
+      lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_usb_con_png, styleSelector);
     }
     else
     {
-      connectionIcon = &ui_img_usb_dis_png;
+      lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_usb_dis_png, styleSelector);
     }
     break;
   }
-
-  lv_obj_set_style_bg_img_src(ui_CntConnection, connectionIcon, LV_PART_MAIN | LV_STATE_DEFAULT);
 }
 
 // Delay for checking if a the stratagem execution buffer is filled
@@ -240,36 +239,36 @@ void bm_info_task(void *pvParameters)
       }
       else
       {
-        lv_img_dsc_t *batteryIcon = &ui_img_bat_0_png;
+        lv_img_dsc_t batteryIcon = ui_img_bat_0_png;
 
         if (batteryStatus > batteryLevel)
         {
           if (batteryLevel >= 80)
           {
             batteryStatus = 80;
-            batteryIcon = &ui_img_bat_100_png;
+            batteryIcon = ui_img_bat_100_png;
           }
           else if (batteryLevel >= 60)
           {
             batteryStatus = 60;
-            batteryIcon = &ui_img_bat_75_png;
+            batteryIcon = ui_img_bat_75_png;
           }
           else if (batteryLevel >= 40)
           {
             batteryStatus = 40;
-            batteryIcon = &ui_img_bat_50_png;
+            batteryIcon = ui_img_bat_50_png;
           }
           else if (batteryLevel >= 20)
           {
             batteryStatus = 20;
-            batteryIcon = &ui_img_bat_25_png;
+            batteryIcon = ui_img_bat_25_png;
           }
           else
           {
             batteryStatus = 0;
           }
 
-          lv_obj_set_style_bg_img_src(ui_CntBattery, batteryIcon, LV_PART_MAIN | LV_STATE_DEFAULT);
+          lv_obj_set_style_bg_img_src(ui_CntBattery, &batteryIcon, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
       }
     }

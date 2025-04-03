@@ -29,7 +29,7 @@ const char *hid_string_descriptor[5] = {
     // array of pointer to string descriptors
     (char[]){0x09, 0x04},    // 0: is supported language is English (0x0409)
     "TinyUSB",               // 1: Manufacturer
-    "HD2 Macropad (USB)",    // 2: Product
+    "HD2 Macropad USB",    // 2: Product
     "123456",                // 3: Serials, should use chip ID
     "TinyUSB HID interface", // 4: HID
 };

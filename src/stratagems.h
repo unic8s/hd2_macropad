@@ -620,6 +620,15 @@ const stratagem strategems[] = {
         SOUND_WEAPON,
         _ui_theme_color_sgBlue,
         &ui_img_sg_wsp2_png,
-        SG_WSP}};
+        SG_WSP},
+
+    // 64
+    // E/GL-21 Grenadier Battlement
+    {
+        {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
+        SOUND_SENTRY,
+        _ui_theme_color_sgGreen,
+        &ui_img_sg_gb2_png,
+        SG_GB}};
 
 #endif

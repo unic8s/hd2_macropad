@@ -808,8 +808,7 @@ void ui_Setup_screen_init(void)
     ui_StationaryFS = lv_btn_create(ui_Container3);
     lv_obj_set_width(ui_StationaryFS, 72);
     lv_obj_set_height(ui_StationaryFS, 72);
-    lv_obj_add_flag(ui_StationaryFS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
-                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);   /// Flags
+    lv_obj_add_flag(ui_StationaryFS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_StationaryFS, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_StationaryFS, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_StationaryFS, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -909,8 +908,7 @@ void ui_Setup_screen_init(void)
     ui_StationaryTT = lv_btn_create(ui_Container3);
     lv_obj_set_width(ui_StationaryTT, 72);
     lv_obj_set_height(ui_StationaryTT, 72);
-    lv_obj_add_flag(ui_StationaryTT, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
-                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);   /// Flags
+    lv_obj_add_flag(ui_StationaryTT, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_StationaryTT, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_StationaryTT, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_StationaryTT, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -1005,6 +1003,26 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryIM, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_StationaryIM, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
+
+    ui_StationaryGB = lv_btn_create(ui_Container3);
+    lv_obj_set_width(ui_StationaryGB, 72);
+    lv_obj_set_height(ui_StationaryGB, 72);
+    lv_obj_add_flag(ui_StationaryGB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_StationaryGB, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_StationaryGB, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_StationaryGB, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_StationaryGB, &ui_img_sg_gb1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_StationaryGB, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_sgGreen);
+    ui_object_set_themeable_style_property(ui_StationaryGB, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_sgGreen);
+    lv_obj_set_style_border_width(ui_StationaryGB, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_StationaryGB, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
+    lv_obj_set_style_bg_opa(ui_StationaryGB, 0, LV_PART_MAIN | LV_STATE_CHECKED);
+    ui_object_set_themeable_style_property(ui_StationaryGB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_StationaryGB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
     ui_Strike = lv_tabview_add_tab(ui_TabStratagems, "Strike");
@@ -1584,6 +1602,7 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_StationaryAPM, ui_event_StationaryAPM, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryATM, ui_event_StationaryATM, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryIM, ui_event_StationaryIM, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_StationaryGB, ui_event_StationaryGB, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Strikes120, ui_event_Strikes120, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Strikes380, ui_event_Strikes380, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StrikesORS, ui_event_StrikesORS, LV_EVENT_ALL, NULL);

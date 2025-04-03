@@ -60,6 +60,7 @@ extern "C"
         SG_ATE,
         SG_FS,
         SG_GM,
+        SG_GB,
 
         // Strikes
         SG_120,
@@ -138,6 +139,7 @@ extern "C"
         ui_StationaryATE->user_data = (void *)SG_ATE;
         ui_StationaryFS->user_data = (void *)SG_FS;
         ui_StationaryGM->user_data = (void *)SG_GM;
+        ui_StationaryGB->user_data = (void *)SG_GB;
 
         // Strikes
         ui_Strikes120->user_data = (void *)SG_120;

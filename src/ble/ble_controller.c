@@ -12,7 +12,7 @@
 #include "main.h"
 
 const char *TAG_BLE = "BLE Controller";
-#define HIDD_DEVICE_NAME "HD2 Macropad (BT)"
+#define HIDD_DEVICE_NAME "HD2 Macropad BT"
 
 uint16_t hid_conn_id = 0;
 bool sec_conn = false;

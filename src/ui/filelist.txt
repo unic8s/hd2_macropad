@@ -23,7 +23,6 @@ images/ui_img_sg_rg1_png.c
 images/ui_img_sg_rr1_png.c
 images/ui_img_sg_spr1_png.c
 images/ui_img_sg_wsp1_png.c
-images/ui_img_sg_wsp2_png.c
 images/ui_img_sg_qc1_png.c
 images/ui_img_sg_lc1_png.c
 images/ui_img_sg_at1_png.c
@@ -56,6 +55,7 @@ images/ui_img_sg_sgr1_png.c
 images/ui_img_sg_apm1_png.c
 images/ui_img_sg_atm1_png.c
 images/ui_img_sg_im1_png.c
+images/ui_img_sg_gb1_png.c
 images/ui_img_sg_1201_png.c
 images/ui_img_sg_3801_png.c
 images/ui_img_sg_ors1_png.c
@@ -124,6 +124,7 @@ images/ui_img_sg_ess2_png.c
 images/ui_img_sg_frv2_png.c
 images/ui_img_sg_fs2_png.c
 images/ui_img_sg_ft2_png.c
+images/ui_img_sg_gb2_png.c
 images/ui_img_sg_gd2_png.c
 images/ui_img_sg_gdb2_png.c
 images/ui_img_sg_gdr2_png.c
@@ -180,6 +181,7 @@ images/ui_img_sg_td2_png.c
 images/ui_img_sg_tt2_png.c
 images/ui_img_sg_ud1_png.c
 images/ui_img_sg_ud2_png.c
+images/ui_img_sg_wsp2_png.c
 images/ui_img_bat_0_png.c
 images/ui_img_bat_100_png.c
 images/ui_img_bat_25_png.c

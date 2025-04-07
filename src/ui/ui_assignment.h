@@ -43,6 +43,7 @@ extern "C"
         SG_DS,
         SG_FRV,
         SG_PH,
+        SG_HP,
 
         // Stationary
         SG_ACS,
@@ -122,6 +123,7 @@ extern "C"
         ui_BackpacksDS->user_data = (void *)SG_DS;
         ui_BackpacksFRV->user_data = (void *)SG_FRV;
         ui_BackpacksPH->user_data = (void *)SG_PH;
+        ui_BackpacksHP->user_data = (void *)SG_HP;
 
         // Stationary
         ui_StationaryACS->user_data = (void *)SG_ACS;

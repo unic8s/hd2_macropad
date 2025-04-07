@@ -526,7 +526,8 @@ void ui_Setup_screen_init(void)
     ui_BackpacksGDB = lv_btn_create(ui_Container1);
     lv_obj_set_width(ui_BackpacksGDB, 72);
     lv_obj_set_height(ui_BackpacksGDB, 72);
-    lv_obj_add_flag(ui_BackpacksGDB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_add_flag(ui_BackpacksGDB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
+                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);   /// Flags
     lv_obj_clear_flag(ui_BackpacksGDB, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_BackpacksGDB, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_BackpacksGDB, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -621,6 +622,27 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksJP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_BackpacksJP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
+
+    ui_BackpacksHP = lv_btn_create(ui_Container1);
+    lv_obj_set_width(ui_BackpacksHP, 72);
+    lv_obj_set_height(ui_BackpacksHP, 72);
+    lv_obj_add_flag(ui_BackpacksHP, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
+                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_BackpacksHP, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_BackpacksHP, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_BackpacksHP, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_BackpacksHP, &ui_img_sg_hp1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_BackpacksHP, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_sgBlue);
+    ui_object_set_themeable_style_property(ui_BackpacksHP, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_sgBlue);
+    lv_obj_set_style_border_width(ui_BackpacksHP, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_BackpacksHP, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
+    lv_obj_set_style_bg_opa(ui_BackpacksHP, 0, LV_PART_MAIN | LV_STATE_CHECKED);
+    ui_object_set_themeable_style_property(ui_BackpacksHP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_BackpacksHP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
     ui_BackpacksPE = lv_btn_create(ui_Container1);
@@ -808,7 +830,8 @@ void ui_Setup_screen_init(void)
     ui_StationaryFS = lv_btn_create(ui_Container3);
     lv_obj_set_width(ui_StationaryFS, 72);
     lv_obj_set_height(ui_StationaryFS, 72);
-    lv_obj_add_flag(ui_StationaryFS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_add_flag(ui_StationaryFS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
+                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);   /// Flags
     lv_obj_clear_flag(ui_StationaryFS, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_StationaryFS, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_StationaryFS, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -1584,6 +1607,7 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_BackpacksSUP, ui_event_BackpacksSUP, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksPH, ui_event_BackpacksPH, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksJP, ui_event_BackpacksJP, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_BackpacksHP, ui_event_BackpacksHP, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksPE, ui_event_BackpacksPE, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksEE, ui_event_BackpacksEE, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksFRV, ui_event_BackpacksFRV, LV_EVENT_ALL, NULL);

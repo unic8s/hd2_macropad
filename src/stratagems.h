@@ -36,7 +36,7 @@ char *soundFiles[] = {
 };
 
 // Struct for stratagem data (command sequence, sound id, button color, hires icon)
-typedef struct 
+typedef struct
 {
     uint8_t sequence[8];
     uint8_t sound;
@@ -629,6 +629,15 @@ const stratagem strategems[] = {
         SOUND_SENTRY,
         _ui_theme_color_sgGreen,
         &ui_img_sg_gb2_png,
-        SG_GB}};
+        SG_GB},
+
+    // 65
+    // LIFT-860 Hover Pack
+    {
+        {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0},
+        SOUND_BACKPACK,
+        _ui_theme_color_sgBlue,
+        &ui_img_sg_hp2_png,
+        SG_HP}};
 
 #endif

@@ -90,6 +90,8 @@ void ui_event_BackpacksEE(lv_event_t * e);
 lv_obj_t * ui_BackpacksEE;
 void ui_event_BackpacksFRV(lv_event_t * e);
 lv_obj_t * ui_BackpacksFRV;
+void ui_event_BackpacksOTF(lv_event_t * e);
+lv_obj_t * ui_BackpacksOTF;
 lv_obj_t * ui_Stationary;
 lv_obj_t * ui_Container3;
 void ui_event_StationaryMGS(lv_event_t * e);
@@ -375,8 +377,9 @@ const lv_img_dsc_t * ui_imgset_sw[2] = {&ui_img_sg_sw1_png, &ui_img_sg_sw2_png};
 const lv_img_dsc_t * ui_imgset_td[2] = {&ui_img_sg_td1_png, &ui_img_sg_td2_png};
 const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
 const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
-const lv_img_dsc_t * ui_imgset_bat_[5] = {&ui_img_bat_0_png, &ui_img_bat_100_png, &ui_img_bat_25_png, &ui_img_bat_50_png, &ui_img_bat_75_png};
 const lv_img_dsc_t * ui_imgset_wsp[2] = {&ui_img_sg_wsp1_png, &ui_img_sg_wsp2_png};
+const lv_img_dsc_t * ui_imgset_bat_[5] = {&ui_img_bat_0_png, &ui_img_bat_100_png, &ui_img_bat_25_png, &ui_img_bat_50_png, &ui_img_bat_75_png};
+const lv_img_dsc_t * ui_imgset_otf[2] = {&ui_img_sg_otf1_png, &ui_img_sg_otf2_png};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16
@@ -832,6 +835,19 @@ void ui_event_BackpacksEE(lv_event_t * e)
 }
 
 void ui_event_BackpacksFRV(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_BackpacksOTF(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);

@@ -41,6 +41,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_pe1_png.c
     images/ui_img_sg_ee1_png.c
     images/ui_img_sg_frv1_png.c
+    images/ui_img_sg_otf1_png.c
     images/ui_img_sg_mgs1_png.c
     images/ui_img_sg_gs1_png.c
     images/ui_img_sg_acs1_png.c
@@ -189,6 +190,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_bat_50_png.c
     images/ui_img_bat_75_png.c
     images/ui_img_bat_no_png.c
+    images/ui_img_sg_otf2_png.c
     images/ui_img_usb_con_png.c)
 
 add_library(ui ${SOURCES})

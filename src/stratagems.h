@@ -638,6 +638,15 @@ const stratagem strategems[] = {
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
         &ui_img_sg_hp2_png,
-        SG_HP}};
+        SG_HP},
+
+    // 66
+    // One True Flag
+    {
+        {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
+        SOUND_BACKPACK,
+        _ui_theme_color_sgBlue,
+        &ui_img_sg_otf2_png,
+        SG_OTF}};
 
 #endif

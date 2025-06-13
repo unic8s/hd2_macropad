@@ -11,6 +11,7 @@ extern "C"
 
     enum stratagemType
     {
+        // Weapons
         SG_AC,
         SG_AMR,
         SG_ARL,
@@ -29,6 +30,7 @@ extern "C"
         SG_WSP,
         SG_STE,
         SG_SW,
+        SG_DE,
 
         // Backpacks
         SG_BSB,
@@ -45,6 +47,7 @@ extern "C"
         SG_PH,
         SG_HP,
         SG_OTF,
+        SG_GDK,
 
         // Stationary
         SG_ACS,
@@ -110,6 +113,7 @@ extern "C"
         ui_WeaponsWSP->user_data = (void *)SG_WSP;
         ui_WeaponsSTE->user_data = (void *)SG_STE;
         ui_WeaponsSW->user_data = (void *)SG_SW;
+        ui_WeaponsDE->user_data = (void *)SG_DE;
 
         // Backpacks
         ui_BackpacksBSB->user_data = (void *)SG_BSB;
@@ -126,6 +130,7 @@ extern "C"
         ui_BackpacksPH->user_data = (void *)SG_PH;
         ui_BackpacksHP->user_data = (void *)SG_HP;
         ui_BackpacksOTF->user_data = (void *)SG_OTF;
+        ui_BackpacksGDK->user_data = (void *)SG_GDK;
 
         // Stationary
         ui_StationaryACS->user_data = (void *)SG_ACS;

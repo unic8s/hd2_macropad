@@ -80,6 +80,8 @@ void ui_event_WeaponsFT(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsFT;
 void ui_event_WeaponsSTE(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsSTE;
+void ui_event_WeaponsDE(lv_event_t * e);
+extern lv_obj_t * ui_WeaponsDE;
 extern lv_obj_t * ui_Equipment;
 extern lv_obj_t * ui_Container1;
 void ui_event_BackpacksBSB(lv_event_t * e);
@@ -94,10 +96,14 @@ void ui_event_BackpacksGDB(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksGDB;
 void ui_event_BackpacksGDR(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksGDR;
+void ui_event_BackpacksGDK(lv_event_t * e);
+extern lv_obj_t * ui_BackpacksGDK;
 void ui_event_BackpacksSUP(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksSUP;
 void ui_event_BackpacksPH(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksPH;
+void ui_event_BackpacksFRV(lv_event_t * e);
+extern lv_obj_t * ui_BackpacksFRV;
 void ui_event_BackpacksJP(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksJP;
 void ui_event_BackpacksHP(lv_event_t * e);
@@ -106,8 +112,6 @@ void ui_event_BackpacksPE(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksPE;
 void ui_event_BackpacksEE(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksEE;
-void ui_event_BackpacksFRV(lv_event_t * e);
-extern lv_obj_t * ui_BackpacksFRV;
 void ui_event_BackpacksOTF(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksOTF;
 extern lv_obj_t * ui_Stationary;
@@ -328,19 +332,21 @@ LV_IMG_DECLARE(ui_img_sg_lc1_png);    // assets/sg/LC1.png
 LV_IMG_DECLARE(ui_img_sg_at1_png);    // assets/sg/AT1.png
 LV_IMG_DECLARE(ui_img_sg_ft1_png);    // assets/sg/FT1.png
 LV_IMG_DECLARE(ui_img_sg_ste1_png);    // assets/sg/STE1.png
+LV_IMG_DECLARE(ui_img_sg_de1_png);    // assets/sg/DE1.png
 LV_IMG_DECLARE(ui_img_sg_bsb1_png);    // assets/sg/BSB1.png
 LV_IMG_DECLARE(ui_img_sg_sgp1_png);    // assets/sg/SGP1.png
 LV_IMG_DECLARE(ui_img_sg_ds1_png);    // assets/sg/DS1.png
 LV_IMG_DECLARE(ui_img_sg_gd1_png);    // assets/sg/GD1.png
 LV_IMG_DECLARE(ui_img_sg_gdb1_png);    // assets/sg/GDB1.png
 LV_IMG_DECLARE(ui_img_sg_gdr1_png);    // assets/sg/GDR1.png
+LV_IMG_DECLARE(ui_img_sg_gdk1_png);    // assets/sg/GDK1.png
 LV_IMG_DECLARE(ui_img_sg_sup1_png);    // assets/sg/SUP1.png
 LV_IMG_DECLARE(ui_img_sg_ph1_png);    // assets/sg/PH1.png
+LV_IMG_DECLARE(ui_img_sg_frv1_png);    // assets/sg/FRV1.png
 LV_IMG_DECLARE(ui_img_sg_jp1_png);    // assets/sg/JP1.png
 LV_IMG_DECLARE(ui_img_sg_hp1_png);    // assets/sg/HP1.png
 LV_IMG_DECLARE(ui_img_sg_pe1_png);    // assets/sg/PE1.png
 LV_IMG_DECLARE(ui_img_sg_ee1_png);    // assets/sg/EE1.png
-LV_IMG_DECLARE(ui_img_sg_frv1_png);    // assets/sg/FRV1.png
 LV_IMG_DECLARE(ui_img_sg_otf1_png);    // assets/sg/OTF1.png
 LV_IMG_DECLARE(ui_img_sg_mgs1_png);    // assets/sg/MGS1.png
 LV_IMG_DECLARE(ui_img_sg_gs1_png);    // assets/sg/GS1.png
@@ -410,6 +416,7 @@ LV_IMG_DECLARE(ui_img_sg_ate2_png);    // assets/sg/ATE2.png
 LV_IMG_DECLARE(ui_img_sg_atm2_png);    // assets/sg/ATM2.png
 LV_IMG_DECLARE(ui_img_sg_bsb2_png);    // assets/sg/BSB2.png
 LV_IMG_DECLARE(ui_img_sg_c2_png);    // assets/sg/C2.png
+LV_IMG_DECLARE(ui_img_sg_de2_png);    // assets/sg/DE2.png
 LV_IMG_DECLARE(ui_img_sg_dfv1_png);    // assets/sg/DFV1.png
 LV_IMG_DECLARE(ui_img_sg_dfv2_png);    // assets/sg/DFV2.png
 LV_IMG_DECLARE(ui_img_sg_ds2_png);    // assets/sg/DS2.png
@@ -430,6 +437,7 @@ LV_IMG_DECLARE(ui_img_sg_ft2_png);    // assets/sg/FT2.png
 LV_IMG_DECLARE(ui_img_sg_gb2_png);    // assets/sg/GB2.png
 LV_IMG_DECLARE(ui_img_sg_gd2_png);    // assets/sg/GD2.png
 LV_IMG_DECLARE(ui_img_sg_gdb2_png);    // assets/sg/GDB2.png
+LV_IMG_DECLARE(ui_img_sg_gdk2_png);    // assets/sg/GDK2.png
 LV_IMG_DECLARE(ui_img_sg_gdr2_png);    // assets/sg/GDR2.png
 LV_IMG_DECLARE(ui_img_sg_gl2_png);    // assets/sg/GL2.png
 LV_IMG_DECLARE(ui_img_sg_gm2_png);    // assets/sg/GM2.png
@@ -457,6 +465,7 @@ LV_IMG_DECLARE(ui_img_sg_onb2_png);    // assets/sg/ONB2.png
 LV_IMG_DECLARE(ui_img_sg_ops2_png);    // assets/sg/OPS2.png
 LV_IMG_DECLARE(ui_img_sg_ors2_png);    // assets/sg/ORS2.png
 LV_IMG_DECLARE(ui_img_sg_oss2_png);    // assets/sg/OSS2.png
+LV_IMG_DECLARE(ui_img_sg_otf2_png);    // assets/sg/OTF2.png
 LV_IMG_DECLARE(ui_img_sg_owb2_png);    // assets/sg/OWB2.png
 LV_IMG_DECLARE(ui_img_sg_pd1_png);    // assets/sg/PD1.png
 LV_IMG_DECLARE(ui_img_sg_pd2_png);    // assets/sg/PD2.png

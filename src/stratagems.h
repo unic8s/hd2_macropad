@@ -647,6 +647,24 @@ const stratagem strategems[] = {
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
         &ui_img_sg_otf2_png,
-        SG_OTF}};
+        SG_OTF},
+
+    // 67
+    // De-escalator
+    {
+        {INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
+        SOUND_WEAPON,
+        _ui_theme_color_sgBlue,
+        &ui_img_sg_de2_png,
+        SG_DE},
+
+    // 68
+    // Guard Dog K-9
+    {
+        {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, 0, 0},
+        SOUND_BACKPACK,
+        _ui_theme_color_sgBlue,
+        &ui_img_sg_gdk2_png,
+        SG_GDK}};
 
 #endif

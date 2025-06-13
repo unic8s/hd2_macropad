@@ -28,19 +28,21 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_at1_png.c
     images/ui_img_sg_ft1_png.c
     images/ui_img_sg_ste1_png.c
+    images/ui_img_sg_de1_png.c
     images/ui_img_sg_bsb1_png.c
     images/ui_img_sg_sgp1_png.c
     images/ui_img_sg_ds1_png.c
     images/ui_img_sg_gd1_png.c
     images/ui_img_sg_gdb1_png.c
     images/ui_img_sg_gdr1_png.c
+    images/ui_img_sg_gdk1_png.c
     images/ui_img_sg_sup1_png.c
     images/ui_img_sg_ph1_png.c
+    images/ui_img_sg_frv1_png.c
     images/ui_img_sg_jp1_png.c
     images/ui_img_sg_hp1_png.c
     images/ui_img_sg_pe1_png.c
     images/ui_img_sg_ee1_png.c
-    images/ui_img_sg_frv1_png.c
     images/ui_img_sg_otf1_png.c
     images/ui_img_sg_mgs1_png.c
     images/ui_img_sg_gs1_png.c
@@ -108,6 +110,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_atm2_png.c
     images/ui_img_sg_bsb2_png.c
     images/ui_img_sg_c2_png.c
+    images/ui_img_sg_de2_png.c
     images/ui_img_sg_dfv1_png.c
     images/ui_img_sg_dfv2_png.c
     images/ui_img_sg_ds2_png.c
@@ -128,6 +131,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_gb2_png.c
     images/ui_img_sg_gd2_png.c
     images/ui_img_sg_gdb2_png.c
+    images/ui_img_sg_gdk2_png.c
     images/ui_img_sg_gdr2_png.c
     images/ui_img_sg_gl2_png.c
     images/ui_img_sg_gm2_png.c
@@ -155,6 +159,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_ops2_png.c
     images/ui_img_sg_ors2_png.c
     images/ui_img_sg_oss2_png.c
+    images/ui_img_sg_otf2_png.c
     images/ui_img_sg_owb2_png.c
     images/ui_img_sg_pd1_png.c
     images/ui_img_sg_pd2_png.c

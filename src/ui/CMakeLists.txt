@@ -29,6 +29,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_ft1_png.c
     images/ui_img_sg_ste1_png.c
     images/ui_img_sg_de1_png.c
+    images/ui_img_sg_e1_png.c
     images/ui_img_sg_bsb1_png.c
     images/ui_img_sg_sgp1_png.c
     images/ui_img_sg_ds1_png.c
@@ -39,11 +40,12 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_sup1_png.c
     images/ui_img_sg_ph1_png.c
     images/ui_img_sg_frv1_png.c
+    images/ui_img_sg_otf1_png.c
     images/ui_img_sg_jp1_png.c
     images/ui_img_sg_hp1_png.c
+    images/ui_img_sg_wp1_png.c
     images/ui_img_sg_pe1_png.c
     images/ui_img_sg_ee1_png.c
-    images/ui_img_sg_otf1_png.c
     images/ui_img_sg_mgs1_png.c
     images/ui_img_sg_gs1_png.c
     images/ui_img_sg_acs1_png.c
@@ -53,6 +55,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_ms1_png.c
     images/ui_img_sg_rs1_png.c
     images/ui_img_sg_ems1_png.c
+    images/ui_img_sg_ls1_png.c
     images/ui_img_sg_gm1_png.c
     images/ui_img_sg_tt1_png.c
     images/ui_img_sg_sgr1_png.c
@@ -87,11 +90,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_sos2_png.c
     images/ui_img_sg_er2_png.c
     images/ui_img_1050696822.c
-    images/ui_img_bat_no_png.c
-    images/ui_img_bt_con_png.c
-    images/ui_img_usb_dis_png.c
     images/ui_img_bt_dis_png.c
-    images/ui_img_bat_chg_png.c
     images/ui_img_sg_seaf1_png.c
     images/ui_img_sg_hb1_png.c
     images/ui_img_1566825004.c
@@ -194,8 +193,8 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_bat_25_png.c
     images/ui_img_bat_50_png.c
     images/ui_img_bat_75_png.c
-    images/ui_img_bat_no_png.c
-    images/ui_img_sg_otf2_png.c
-    images/ui_img_usb_con_png.c)
+    images/ui_img_sg_e2_png.c
+    images/ui_img_sg_ls2_png.c
+    images/ui_img_sg_wp2_png.c)
 
 add_library(ui ${SOURCES})

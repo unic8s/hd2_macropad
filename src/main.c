@@ -12,7 +12,6 @@
 #include "driver/gpio.h"
 #include "hid_dev.h"
 #include "i2s_player.h"
-#include "bm/bm_controller.h"
 #include "ble/ble_controller.h"
 #include "usb/usb_controller.h"
 #include "configration.h"
@@ -207,80 +206,6 @@ void hid_input_task(void *pvParameters)
   }
 }
 
-// Delay for checking if a the stratagem execution buffer is filled
-#define BATTERY_CHECK_DELAY 2000
-
-// Task for exeuction of HID inputs
-void bm_info_task(void *pvParameters)
-{
-  while (1)
-  {
-    vTaskDelay(BATTERY_CHECK_DELAY / portTICK_PERIOD_MS);
-
-    if (bm_error_state() == ESP_OK)
-    {
-      bool hasBattery = !bm_check_charging_status();
-      bool isCharging = !bm_check_battery_status();
-      uint8_t batteryLevel = bm_get_battery_level();
-
-      ESP_LOGI(TAG, "Battery %d, charging %d, level %d", hasBattery, isCharging, batteryLevel);
-
-      if (!hasBattery && batteryStatus != -2)
-      {
-        batteryStatus = -2;
-
-        lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_no_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-      }
-      else if (isCharging && batteryStatus != -1)
-      {
-        batteryStatus = -1;
-
-        lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_chg_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-      }
-      else
-      {
-        lv_img_dsc_t batteryIcon = ui_img_bat_0_png;
-
-        if (batteryStatus > batteryLevel)
-        {
-          if (batteryLevel >= 80)
-          {
-            batteryStatus = 80;
-            batteryIcon = ui_img_bat_100_png;
-          }
-          else if (batteryLevel >= 60)
-          {
-            batteryStatus = 60;
-            batteryIcon = ui_img_bat_75_png;
-          }
-          else if (batteryLevel >= 40)
-          {
-            batteryStatus = 40;
-            batteryIcon = ui_img_bat_50_png;
-          }
-          else if (batteryLevel >= 20)
-          {
-            batteryStatus = 20;
-            batteryIcon = ui_img_bat_25_png;
-          }
-          else
-          {
-            batteryStatus = 0;
-          }
-
-          lv_obj_set_style_bg_img_src(ui_CntBattery, &batteryIcon, LV_PART_MAIN | LV_STATE_DEFAULT);
-        }
-      }
-    }
-    else
-    {
-      lv_obj_add_flag(ui_CntBattery, LV_OBJ_FLAG_HIDDEN);
-
-      vTaskDelete(xHandleBMinfo);
-    }
-  }
-}
-
 // App main function
 void app_main()
 {
@@ -333,12 +258,6 @@ void app_main()
   strcpy(softwareVersion, SW_VER);
 
   lv_label_set_text(ui_LblVersion, softwareVersion);
-
-  // Init battery management controller
-  bm_init();
-
-  // Setup Battery Management info task (async)
-  xTaskCreatePinnedToCore(&bm_info_task, "bm_info_task", 2048, NULL, 5, &xHandleBMinfo, 0);
 
   updateConnection();
 }

@@ -204,34 +204,13 @@ void ui_Game_screen_init(void)
     ui_object_set_themeable_style_property(ui_BtnBack, LV_PART_MAIN | LV_STATE_PRESSED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_Container16 = lv_obj_create(ui_Game);
-    lv_obj_remove_style_all(ui_Container16);
-    lv_obj_set_width(ui_Container16, 120);
-    lv_obj_set_height(ui_Container16, 38);
-    lv_obj_set_align(ui_Container16, LV_ALIGN_BOTTOM_RIGHT);
-    lv_obj_set_flex_flow(ui_Container16, LV_FLEX_FLOW_ROW);
-    lv_obj_set_flex_align(ui_Container16, LV_FLEX_ALIGN_END, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
-    lv_obj_clear_flag(ui_Container16, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-
-    ui_CntBattery = lv_obj_create(ui_Container16);
-    lv_obj_remove_style_all(ui_CntBattery);
-    lv_obj_set_width(ui_CntBattery, 38);
-    lv_obj_set_height(ui_CntBattery, 38);
-    lv_obj_set_x(ui_CntBattery, -72);
-    lv_obj_set_y(ui_CntBattery, -2);
-    lv_obj_set_align(ui_CntBattery, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_CntBattery, LV_OBJ_FLAG_CHECKABLE);     /// Flags
-    lv_obj_clear_flag(ui_CntBattery, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bat_no_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_src(ui_CntBattery, &ui_img_bt_con_png, LV_PART_MAIN | LV_STATE_CHECKED);
-
-    ui_CntConnection = lv_obj_create(ui_Container16);
+    ui_CntConnection = lv_obj_create(ui_Game);
     lv_obj_remove_style_all(ui_CntConnection);
     lv_obj_set_width(ui_CntConnection, 38);
     lv_obj_set_height(ui_CntConnection, 38);
     lv_obj_set_x(ui_CntConnection, -2);
     lv_obj_set_y(ui_CntConnection, -2);
-    lv_obj_set_align(ui_CntConnection, LV_ALIGN_CENTER);
+    lv_obj_set_align(ui_CntConnection, LV_ALIGN_BOTTOM_RIGHT);
     lv_obj_clear_flag(ui_CntConnection, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_bt_dis_png, LV_PART_MAIN | LV_STATE_DEFAULT);
 
@@ -320,7 +299,6 @@ void ui_Game_screen_init(void)
     lv_obj_add_event_cb(ui_CustomStratagem5, ui_event_CustomStratagem5, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnSEAF, ui_event_BtnSEAF, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnHellbomb, ui_event_BtnHellbomb, LV_EVENT_ALL, NULL);
-    uic_CntBattery = ui_CntBattery;
     uic_CntConnection = ui_CntConnection;
 
 }

@@ -31,6 +31,7 @@ extern "C"
         SG_STE,
         SG_SW,
         SG_DE,
+        SG_E,
 
         // Backpacks
         SG_BSB,
@@ -48,6 +49,7 @@ extern "C"
         SG_HP,
         SG_OTF,
         SG_GDK,
+        SG_WP,
 
         // Stationary
         SG_ACS,
@@ -66,6 +68,7 @@ extern "C"
         SG_FS,
         SG_GM,
         SG_GB,
+        SG_LS,
 
         // Strikes
         SG_120,
@@ -114,6 +117,7 @@ extern "C"
         ui_WeaponsSTE->user_data = (void *)SG_STE;
         ui_WeaponsSW->user_data = (void *)SG_SW;
         ui_WeaponsDE->user_data = (void *)SG_DE;
+        ui_WeaponsE->user_data = (void *)SG_E;
 
         // Backpacks
         ui_BackpacksBSB->user_data = (void *)SG_BSB;
@@ -131,6 +135,7 @@ extern "C"
         ui_BackpacksHP->user_data = (void *)SG_HP;
         ui_BackpacksOTF->user_data = (void *)SG_OTF;
         ui_BackpacksGDK->user_data = (void *)SG_GDK;
+        ui_BackpacksWP->user_data = (void *)SG_WP;
 
         // Stationary
         ui_StationaryACS->user_data = (void *)SG_ACS;
@@ -149,6 +154,7 @@ extern "C"
         ui_StationaryFS->user_data = (void *)SG_FS;
         ui_StationaryGM->user_data = (void *)SG_GM;
         ui_StationaryGB->user_data = (void *)SG_GB;
+        ui_StationaryLS->user_data = (void *)SG_LS;
 
         // Strikes
         ui_Strikes120->user_data = (void *)SG_120;

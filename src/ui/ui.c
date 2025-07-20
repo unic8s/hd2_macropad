@@ -64,6 +64,8 @@ void ui_event_WeaponsSTE(lv_event_t * e);
 lv_obj_t * ui_WeaponsSTE;
 void ui_event_WeaponsDE(lv_event_t * e);
 lv_obj_t * ui_WeaponsDE;
+void ui_event_WeaponsE(lv_event_t * e);
+lv_obj_t * ui_WeaponsE;
 lv_obj_t * ui_Equipment;
 lv_obj_t * ui_Container1;
 void ui_event_BackpacksBSB(lv_event_t * e);
@@ -86,16 +88,18 @@ void ui_event_BackpacksPH(lv_event_t * e);
 lv_obj_t * ui_BackpacksPH;
 void ui_event_BackpacksFRV(lv_event_t * e);
 lv_obj_t * ui_BackpacksFRV;
+void ui_event_BackpacksOTF(lv_event_t * e);
+lv_obj_t * ui_BackpacksOTF;
 void ui_event_BackpacksJP(lv_event_t * e);
 lv_obj_t * ui_BackpacksJP;
 void ui_event_BackpacksHP(lv_event_t * e);
 lv_obj_t * ui_BackpacksHP;
+void ui_event_BackpacksWP(lv_event_t * e);
+lv_obj_t * ui_BackpacksWP;
 void ui_event_BackpacksPE(lv_event_t * e);
 lv_obj_t * ui_BackpacksPE;
 void ui_event_BackpacksEE(lv_event_t * e);
 lv_obj_t * ui_BackpacksEE;
-void ui_event_BackpacksOTF(lv_event_t * e);
-lv_obj_t * ui_BackpacksOTF;
 lv_obj_t * ui_Stationary;
 lv_obj_t * ui_Container3;
 void ui_event_StationaryMGS(lv_event_t * e);
@@ -116,6 +120,8 @@ void ui_event_StationaryRS(lv_event_t * e);
 lv_obj_t * ui_StationaryRS;
 void ui_event_StationaryEMS(lv_event_t * e);
 lv_obj_t * ui_StationaryEMS;
+void ui_event_StationaryLS(lv_event_t * e);
+lv_obj_t * ui_StationaryLS;
 void ui_event_StationaryGM(lv_event_t * e);
 lv_obj_t * ui_StationaryGM;
 void ui_event_StationaryTT(lv_event_t * e);
@@ -208,8 +214,6 @@ void ui_event_CustomStratagem4(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem4;
 void ui_event_BtnBack(lv_event_t * e);
 lv_obj_t * ui_BtnBack;
-lv_obj_t * ui_Container16;
-lv_obj_t * ui_CntBattery;
 lv_obj_t * ui_CntConnection;
 lv_obj_t * ui_Container5;
 void ui_event_CustomStratagem5(lv_event_t * e);
@@ -219,7 +223,6 @@ lv_obj_t * ui_BtnSEAF;
 void ui_event_BtnHellbomb(lv_event_t * e);
 lv_obj_t * ui_BtnHellbomb;
 // CUSTOM VARIABLES
-lv_obj_t * uic_CntBattery;
 lv_obj_t * uic_CntConnection;
 
 
@@ -318,7 +321,7 @@ const lv_img_dsc_t * ui_imgset_c[2] = {&ui_img_sg_c1_png, &ui_img_sg_c2_png};
 const lv_img_dsc_t * ui_imgset_de[2] = {&ui_img_sg_de1_png, &ui_img_sg_de2_png};
 const lv_img_dsc_t * ui_imgset_dfv[2] = {&ui_img_sg_dfv1_png, &ui_img_sg_dfv2_png};
 const lv_img_dsc_t * ui_imgset_ds[2] = {&ui_img_sg_ds1_png, &ui_img_sg_ds2_png};
-const lv_img_dsc_t * ui_imgset_e[4] = {&ui_img_sg_e1101_png, &ui_img_sg_e1102_png, &ui_img_sg_e5001_png, &ui_img_sg_e5002_png};
+const lv_img_dsc_t * ui_imgset_e[6] = {&ui_img_sg_e1101_png, &ui_img_sg_e1_png, &ui_img_sg_e1102_png, &ui_img_sg_e5001_png, &ui_img_sg_e5002_png, &ui_img_sg_e2_png};
 const lv_img_dsc_t * ui_imgset_ea[2] = {&ui_img_sg_ea1_png, &ui_img_sg_ea2_png};
 const lv_img_dsc_t * ui_imgset_eat[2] = {&ui_img_sg_eat1_png, &ui_img_sg_eat2_png};
 const lv_img_dsc_t * ui_imgset_ecb[2] = {&ui_img_sg_ecb1_png, &ui_img_sg_ecb2_png};
@@ -386,6 +389,8 @@ const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
 const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
 const lv_img_dsc_t * ui_imgset_wsp[2] = {&ui_img_sg_wsp1_png, &ui_img_sg_wsp2_png};
 const lv_img_dsc_t * ui_imgset_bat_[5] = {&ui_img_bat_0_png, &ui_img_bat_100_png, &ui_img_bat_25_png, &ui_img_bat_50_png, &ui_img_bat_75_png};
+const lv_img_dsc_t * ui_imgset_ls[2] = {&ui_img_sg_ls1_png, &ui_img_sg_ls2_png};
+const lv_img_dsc_t * ui_imgset_wp[2] = {&ui_img_sg_wp1_png, &ui_img_sg_wp2_png};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16
@@ -697,6 +702,19 @@ void ui_event_WeaponsDE(lv_event_t * e)
     }
 }
 
+void ui_event_WeaponsE(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
 void ui_event_BackpacksBSB(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -827,6 +845,19 @@ void ui_event_BackpacksFRV(lv_event_t * e)
     }
 }
 
+void ui_event_BackpacksOTF(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
 void ui_event_BackpacksJP(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -853,6 +884,19 @@ void ui_event_BackpacksHP(lv_event_t * e)
     }
 }
 
+void ui_event_BackpacksWP(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
 void ui_event_BackpacksPE(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -867,19 +911,6 @@ void ui_event_BackpacksPE(lv_event_t * e)
 }
 
 void ui_event_BackpacksEE(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        deselectStratagem(e);
-    }
-    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
-        selectStratagem(e);
-    }
-}
-
-void ui_event_BackpacksOTF(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -997,6 +1028,19 @@ void ui_event_StationaryRS(lv_event_t * e)
 }
 
 void ui_event_StationaryEMS(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        deselectStratagem(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target, LV_STATE_CHECKED)) {
+        selectStratagem(e);
+    }
+}
+
+void ui_event_StationaryLS(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);

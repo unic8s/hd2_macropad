@@ -665,6 +665,33 @@ const stratagem strategems[] = {
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
         &ui_img_sg_gdk2_png,
-        SG_GDK}};
+        SG_GDK},
+
+    // 69
+    // PLAS-45 Epoch
+    {
+        {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
+        SOUND_WEAPON,
+        _ui_theme_color_sgBlue,
+        &ui_img_sg_e2_png,
+        SG_E},
+
+    // 70
+    // A/LAS-98 Laser Sentry
+    {
+        {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0},
+        SOUND_SENTRY,
+        _ui_theme_color_sgGreen,
+        &ui_img_sg_ls2_png,
+        SG_LS},
+
+    // 71
+    // LIFT-182 Warp Pack
+    {
+        {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0},
+        SOUND_BACKPACK,
+        _ui_theme_color_sgBlue,
+        &ui_img_sg_wp2_png,
+        SG_WP}};
 
 #endif

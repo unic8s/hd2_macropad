@@ -9,11 +9,12 @@ A very flexible and easy-to-use macropad for HELLDIVERS&trade; 2 for live config
 > [!NOTE]
 > **The software requires this specific device [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR)**
 
-Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/) or [PS5&trade;](https://www.playstation.com/games/helldivers-2/)
+Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/), [Playstation&trade;](https://www.playstation.com/games/helldivers-2/) or [Xbox&trade;](https://www.xbox.com/us-EN/games/store/helldivers-2/9mx9wn9dfpgt)
 
-Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC or PS5&trade; since it's connected via Bluetooth or USB as a keyboard input device.
+Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC, Playstation&trade; and Xbox&trade; since it's connected via Bluetooth or USB as a keyboard input device.
 
 > HELLDIVERS and PS5 are registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC.
+> XBOX is a registered trademark of MICROSOFT COPERATION.
 
 ## Instructions
 

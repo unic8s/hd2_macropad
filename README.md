@@ -13,7 +13,7 @@ Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/), [
 
 Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC, Playstation&trade; and Xbox&trade; since it's connected via Bluetooth or USB as a keyboard input device.
 
-> HELLDIVERS and PS5 are registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC.
+> HELLDIVERS and Playstation are registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC.
 > XBOX is a registered trademark of MICROSOFT COPERATION.
 
 ## Instructions
@@ -23,9 +23,9 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 > There you will also find lots of details and how to configure and use the device.
 
 > [!IMPORTANT]  
-> The device is only able to connect to the PS5&trade; via USB.
-> It's not able to connect to the PS5&trade; via Bluetooth directly.
-> We're currently working on the [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) which plugs into the USB port of a PS5&trade; directly and connects to the HD2 Macropad via Bluetooth.
+> The device is only able to connect to the Playstation&trade; or Xbox&trade; via USB.
+> It's not able to connect to the Playstation&trade; or Xbox&trade; via Bluetooth directly.
+> We're currently working on the [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) which plugs into the USB port of a Playstation&trade; or Xbox&trade; directly and connects to the HD2 Macropad via Bluetooth.
 
 ## Support
 

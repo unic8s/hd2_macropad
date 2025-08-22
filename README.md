@@ -14,6 +14,7 @@ Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/), [
 Based on an affordable IoT platform device with a capacitive touchscreen it's very handy for a PC, Playstation&trade; and Xbox&trade; since it's connected via Bluetooth or USB as a keyboard input device.
 
 > HELLDIVERS and Playstation are registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC.
+> 
 > XBOX is a registered trademark of MICROSOFT COPERATION.
 
 ## Instructions

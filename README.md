@@ -37,17 +37,15 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ## Screenshots
 
-### Intro
-
-![](squareline/assets/intro.png)
-
 ### Setup
 
-![](screens/setup_weapons.png)
+![](screens/setup_rifle.png)
 
-![](screens/setup_equipment.png)
+![](screens/setup_special.png)
 
-![](screens/setup_stationary.png)
+![](screens/setup_supply.png)
+
+![](screens/setup_sentry.png)
 
 ![](screens/setup_strike.png)
 

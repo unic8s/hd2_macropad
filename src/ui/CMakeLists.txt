@@ -91,6 +91,7 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_er2_png.c
     images/ui_img_1050696822.c
     images/ui_img_bt_dis_png.c
+    images/ui_img_usb_dis_png.c
     images/ui_img_sg_seaf1_png.c
     images/ui_img_sg_hb1_png.c
     images/ui_img_1566825004.c

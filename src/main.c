@@ -61,6 +61,24 @@ TaskHandle_t xHandleBMinfo = NULL;
 // plain - resolve via keymap or send directly (raw)
 void setStratagemCode(uint8_t sequence[8], uint8_t mask, bool plain)
 {
+  switch (connectionType)
+  {
+  case 1:
+    if (!ble_connected())
+    {
+      return;
+    }
+    break;
+  case 2:
+    if (!usb_connected())
+    {
+      return;
+    }
+    break;
+  default:
+    return;
+  }
+
   uint8_t sequenceLength = 0;
 
   for (uint8_t c = 0; c < 8; c++)

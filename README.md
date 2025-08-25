@@ -33,7 +33,8 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 We're pleased with your feedback so far and we try to keep up with your good ideas for new features. Thanks to all of you participating on our journey.
 If you enjoy the project and want to support our private work feel free to make a small donation.
 
-[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 45px !important">](https://www.buymeacoffee.com/unic8)
+[<img src="https://camo.githubusercontent.com/6e0df12df1fdf5c39e8afea60fda5e925322922f07e59e54f7af0f0d9166e771/68747470733a2f2f6769746875622e6769746875626173736574732e636f6d2f696d616765732f6d6f64756c65732f736974652f73706f6e736f72732f6c6f676f2d6d6f6e612e737667" height="45">](https://github.com/sponsors/unic8s)
+[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="45">](https://www.buymeacoffee.com/unic8)
 
 ## Screenshots
 

@@ -1676,7 +1676,7 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_alpha_colorActive);
 
     ui_BarAmount = lv_bar_create(ui_SetupFooter);
-    lv_bar_set_range(ui_BarAmount, 0, 5);
+    lv_bar_set_range(ui_BarAmount, 0, 6);
     lv_obj_set_width(ui_BarAmount, 192);
     lv_obj_set_height(ui_BarAmount, 8);
     lv_obj_set_x(ui_BarAmount, 0);
@@ -1694,7 +1694,7 @@ void ui_Setup_screen_init(void)
     lv_obj_set_width(ui_LblAmount, 40);
     lv_obj_set_height(ui_LblAmount, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_LblAmount, LV_ALIGN_TOP_MID);
-    lv_label_set_text(ui_LblAmount, "0 / 5");
+    lv_label_set_text(ui_LblAmount, "0 / 6");
     ui_object_set_themeable_style_property(ui_LblAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_LblAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,

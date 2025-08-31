@@ -220,6 +220,8 @@ lv_obj_t * ui_CntConnection;
 lv_obj_t * ui_Container5;
 void ui_event_CustomStratagem5(lv_event_t * e);
 lv_obj_t * ui_CustomStratagem5;
+void ui_event_CustomStratagem6(lv_event_t * e);
+lv_obj_t * ui_CustomStratagem6;
 void ui_event_BtnSEAF(lv_event_t * e);
 lv_obj_t * ui_BtnSEAF;
 void ui_event_BtnHellbomb(lv_event_t * e);
@@ -1505,6 +1507,15 @@ void ui_event_CustomStratagem5(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         triggerStratagemUser5(e);
+    }
+}
+
+void ui_event_CustomStratagem6(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        triggerStratagemUser6(e);
     }
 }
 

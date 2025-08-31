@@ -12,12 +12,12 @@
 #include "configration.h"
 #include "ui_assignment.h"
 
-#define MAX_USER_STRATAGEMS 5
+#define MAX_USER_STRATAGEMS 6
 
 // User button list
 lv_obj_t *buttons[MAX_USER_STRATAGEMS];
 // Stratagem list index of user buttons
-int indices[5];
+int indices[MAX_USER_STRATAGEMS];
 // Amount of user assigned stratagems
 uint8_t strategemsAmount = 0;
 
@@ -308,6 +308,12 @@ void triggerStratagemUser5(lv_event_t *e)
 	_executeUserStratagem(4);
 }
 
+// Trigger 6th user stratagem
+void triggerStratagemUser6(lv_event_t *e)
+{
+	_executeUserStratagem(5);
+}
+
 // Change HID input delay
 void ChangeDelay(lv_event_t *e)
 {
@@ -398,6 +404,10 @@ void GotoGame(lv_event_t *e)
 			break;
 		case 4:
 			targetButton = ui_CustomStratagem5;
+			useHiResIcon = false;
+			break;
+		case 5:
+			targetButton = ui_CustomStratagem6;
 			useHiResIcon = false;
 			break;
 		}

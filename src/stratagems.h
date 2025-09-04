@@ -539,7 +539,7 @@ const stratagem strategems[] = {
         SOUND_EAGLE,
         _ui_theme_color_sgRed,
         &ui_img_sg_ess2_png,
-        SG_SS},
+        SG_ESS},
 
     // 55
     // Eagle 110MM Rocket Pods
@@ -692,6 +692,33 @@ const stratagem strategems[] = {
         SOUND_BACKPACK,
         _ui_theme_color_sgBlue,
         &ui_img_sg_wp2_png,
-        SG_WP}};
+        SG_WP},
+
+    // 72
+    // Exandable Napalm
+    {
+        {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, 0, 0, 0},
+        SOUND_BACKPACK,
+        _ui_theme_color_sgBlue,
+        &ui_img_sg_en2_png,
+        SG_EN},
+
+    // 73
+    // Solo Silo
+    {
+        {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
+        SOUND_BACKPACK,
+        _ui_theme_color_sgGreen,
+        &ui_img_sg_ss2_png,
+        SG_SS},
+
+    // 74
+    // Speargun
+    {
+        {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0},
+        SOUND_BACKPACK,
+        _ui_theme_color_sgBlue,
+        &ui_img_sg_sg2_png,
+        SG_SG}};
 
 #endif

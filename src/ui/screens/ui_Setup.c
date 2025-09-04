@@ -163,8 +163,7 @@ void ui_Setup_screen_init(void)
     ui_WeaponsRG = lv_btn_create(ui_Container2);
     lv_obj_set_width(ui_WeaponsRG, 76);
     lv_obj_set_height(ui_WeaponsRG, 76);
-    lv_obj_add_flag(ui_WeaponsRG, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
-                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_add_flag(ui_WeaponsRG, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_WeaponsRG, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_WeaponsRG, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_WeaponsRG, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -263,6 +262,28 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
+    ui_WeaponsSG = lv_btn_create(ui_Container2);
+    lv_obj_set_width(ui_WeaponsSG, 76);
+    lv_obj_set_height(ui_WeaponsSG, 76);
+    lv_obj_set_x(ui_WeaponsSG, -1);
+    lv_obj_set_y(ui_WeaponsSG, 0);
+    lv_obj_add_flag(ui_WeaponsSG, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_WeaponsSG, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_WeaponsSG, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_WeaponsSG, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_WeaponsSG, &ui_img_sg_sg1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_WeaponsSG, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_sgBlue);
+    ui_object_set_themeable_style_property(ui_WeaponsSG, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_sgBlue);
+    lv_obj_set_style_border_width(ui_WeaponsSG, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_WeaponsSG, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
+    lv_obj_set_style_bg_opa(ui_WeaponsSG, 0, LV_PART_MAIN | LV_STATE_CHECKED);
+    ui_object_set_themeable_style_property(ui_WeaponsSG, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_WeaponsSG, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
+
     ui_Special = lv_tabview_add_tab(ui_TabStratagems, "Special");
     lv_obj_set_style_pad_left(ui_Special, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_right(ui_Special, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -343,6 +364,26 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsEAT, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
+    ui_WeaponsEN = lv_btn_create(ui_Container16);
+    lv_obj_set_width(ui_WeaponsEN, 76);
+    lv_obj_set_height(ui_WeaponsEN, 76);
+    lv_obj_add_flag(ui_WeaponsEN, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_WeaponsEN, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_WeaponsEN, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_WeaponsEN, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_WeaponsEN, &ui_img_sg_en1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_WeaponsEN, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_sgBlue);
+    ui_object_set_themeable_style_property(ui_WeaponsEN, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_sgBlue);
+    lv_obj_set_style_border_width(ui_WeaponsEN, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_WeaponsEN, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
+    lv_obj_set_style_bg_opa(ui_WeaponsEN, 0, LV_PART_MAIN | LV_STATE_CHECKED);
+    ui_object_set_themeable_style_property(ui_WeaponsEN, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_WeaponsEN, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
+
     ui_WeaponsRR = lv_btn_create(ui_Container16);
     lv_obj_set_width(ui_WeaponsRR, 76);
     lv_obj_set_height(ui_WeaponsRR, 76);
@@ -386,8 +427,7 @@ void ui_Setup_screen_init(void)
     ui_WeaponsWSP = lv_btn_create(ui_Container16);
     lv_obj_set_width(ui_WeaponsWSP, 76);
     lv_obj_set_height(ui_WeaponsWSP, 76);
-    lv_obj_add_flag(ui_WeaponsWSP, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
-                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_add_flag(ui_WeaponsWSP, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_WeaponsWSP, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_WeaponsWSP, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_WeaponsWSP, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -974,8 +1014,7 @@ void ui_Setup_screen_init(void)
     ui_StationaryMS = lv_btn_create(ui_Container3);
     lv_obj_set_width(ui_StationaryMS, 76);
     lv_obj_set_height(ui_StationaryMS, 76);
-    lv_obj_add_flag(ui_StationaryMS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
-                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);   /// Flags
+    lv_obj_add_flag(ui_StationaryMS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_StationaryMS, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_StationaryMS, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_StationaryMS, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -1075,8 +1114,7 @@ void ui_Setup_screen_init(void)
     ui_StationaryTT = lv_btn_create(ui_Container3);
     lv_obj_set_width(ui_StationaryTT, 76);
     lv_obj_set_height(ui_StationaryTT, 76);
-    lv_obj_add_flag(ui_StationaryTT, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
-                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);   /// Flags
+    lv_obj_add_flag(ui_StationaryTT, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_StationaryTT, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_StationaryTT, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_StationaryTT, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -1191,6 +1229,26 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryGB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_StationaryGB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
+
+    ui_StationarySS = lv_btn_create(ui_Container3);
+    lv_obj_set_width(ui_StationarySS, 76);
+    lv_obj_set_height(ui_StationarySS, 76);
+    lv_obj_add_flag(ui_StationarySS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_StationarySS, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_StationarySS, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_StationarySS, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_StationarySS, &ui_img_sg_ss1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_sgGreen);
+    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_sgGreen);
+    lv_obj_set_style_border_width(ui_StationarySS, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_StationarySS, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
+    lv_obj_set_style_bg_opa(ui_StationarySS, 0, LV_PART_MAIN | LV_STATE_CHECKED);
+    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
     ui_Strike = lv_tabview_add_tab(ui_TabStratagems, "Strike");
@@ -1736,9 +1794,11 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_WeaponsLC, ui_event_WeaponsLC, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsAT, ui_event_WeaponsAT, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsE, ui_event_WeaponsE, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_WeaponsSG, ui_event_WeaponsSG, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsARL, ui_event_WeaponsARL, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsC, ui_event_WeaponsC, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsEAT, ui_event_WeaponsEAT, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_WeaponsEN, ui_event_WeaponsEN, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsRR, ui_event_WeaponsRR, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsSPR, ui_event_WeaponsSPR, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsWSP, ui_event_WeaponsWSP, LV_EVENT_ALL, NULL);
@@ -1779,6 +1839,7 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_StationaryATM, ui_event_StationaryATM, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryIM, ui_event_StationaryIM, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryGB, ui_event_StationaryGB, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_StationarySS, ui_event_StationarySS, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Strikes120, ui_event_Strikes120, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Strikes380, ui_event_Strikes380, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StrikesORS, ui_event_StrikesORS, LV_EVENT_ALL, NULL);

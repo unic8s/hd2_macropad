@@ -64,6 +64,8 @@ void ui_event_WeaponsAT(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsAT;
 void ui_event_WeaponsE(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsE;
+void ui_event_WeaponsSG(lv_event_t * e);
+extern lv_obj_t * ui_WeaponsSG;
 extern lv_obj_t * ui_Special;
 extern lv_obj_t * ui_Container16;
 void ui_event_WeaponsARL(lv_event_t * e);
@@ -72,6 +74,8 @@ void ui_event_WeaponsC(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsC;
 void ui_event_WeaponsEAT(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsEAT;
+void ui_event_WeaponsEN(lv_event_t * e);
+extern lv_obj_t * ui_WeaponsEN;
 void ui_event_WeaponsRR(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsRR;
 void ui_event_WeaponsSPR(lv_event_t * e);
@@ -156,6 +160,8 @@ void ui_event_StationaryIM(lv_event_t * e);
 extern lv_obj_t * ui_StationaryIM;
 void ui_event_StationaryGB(lv_event_t * e);
 extern lv_obj_t * ui_StationaryGB;
+void ui_event_StationarySS(lv_event_t * e);
+extern lv_obj_t * ui_StationarySS;
 extern lv_obj_t * ui_Strike;
 extern lv_obj_t * ui_Container4;
 void ui_event_Strikes120(lv_event_t * e);
@@ -307,10 +313,7 @@ void ui_About_screen_init(void);
 extern lv_obj_t * ui_About;
 void ui_event_Container14(lv_event_t * e);
 extern lv_obj_t * ui_Container14;
-extern lv_obj_t * ui_Label7;
 extern lv_obj_t * ui_LblVersion;
-extern lv_obj_t * ui_Label8;
-extern lv_obj_t * ui_Image1;
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -329,9 +332,11 @@ LV_IMG_DECLARE(ui_img_sg_qc1_png);    // assets/sg/QC1.png
 LV_IMG_DECLARE(ui_img_sg_lc1_png);    // assets/sg/LC1.png
 LV_IMG_DECLARE(ui_img_sg_at1_png);    // assets/sg/AT1.png
 LV_IMG_DECLARE(ui_img_sg_e1_png);    // assets/sg/E1.png
+LV_IMG_DECLARE(ui_img_sg_sg1_png);    // assets/sg/SG1.png
 LV_IMG_DECLARE(ui_img_sg_arl1_png);    // assets/sg/ARL1.png
 LV_IMG_DECLARE(ui_img_sg_c1_png);    // assets/sg/C1.png
 LV_IMG_DECLARE(ui_img_sg_eat1_png);    // assets/sg/EAT1.png
+LV_IMG_DECLARE(ui_img_sg_en1_png);    // assets/sg/EN1.png
 LV_IMG_DECLARE(ui_img_sg_rr1_png);    // assets/sg/RR1.png
 LV_IMG_DECLARE(ui_img_sg_spr1_png);    // assets/sg/SPR1.png
 LV_IMG_DECLARE(ui_img_sg_wsp1_png);    // assets/sg/WSP1.png
@@ -372,6 +377,7 @@ LV_IMG_DECLARE(ui_img_sg_apm1_png);    // assets/sg/APM1.png
 LV_IMG_DECLARE(ui_img_sg_atm1_png);    // assets/sg/ATM1.png
 LV_IMG_DECLARE(ui_img_sg_im1_png);    // assets/sg/IM1.png
 LV_IMG_DECLARE(ui_img_sg_gb1_png);    // assets/sg/GB1.png
+LV_IMG_DECLARE(ui_img_sg_ss1_png);    // assets/sg/SS1.png
 LV_IMG_DECLARE(ui_img_sg_1201_png);    // assets/sg/1201.png
 LV_IMG_DECLARE(ui_img_sg_3801_png);    // assets/sg/3801.png
 LV_IMG_DECLARE(ui_img_sg_ors1_png);    // assets/sg/ORS1.png
@@ -408,7 +414,7 @@ LV_IMG_DECLARE(ui_img_sg_hb1_png);    // assets/sg/HB1.png
 LV_IMG_DECLARE(ui_img_1566825004);    // assets/icons/icons8-about-32.png
 LV_IMG_DECLARE(ui_img_165882922);    // assets/icons/icons8-reset-32.png
 LV_IMG_DECLARE(ui_img_1132554101);    // assets/icons/icons8-shutdown-32.png
-LV_IMG_DECLARE(ui_img_qrcode_png);    // assets/qrcode.png
+LV_IMG_DECLARE(ui_img_about_png);    // assets/about.png
 LV_IMG_DECLARE(ui_img_sg_1202_png);    // assets/sg/1202.png
 LV_IMG_DECLARE(ui_img_sg_3802_png);    // assets/sg/3802.png
 LV_IMG_DECLARE(ui_img_sg_ac2_png);    // assets/sg/AC2.png
@@ -433,6 +439,7 @@ LV_IMG_DECLARE(ui_img_sg_eat2_png);    // assets/sg/EAT2.png
 LV_IMG_DECLARE(ui_img_sg_ecb2_png);    // assets/sg/ECB2.png
 LV_IMG_DECLARE(ui_img_sg_ee2_png);    // assets/sg/EE2.png
 LV_IMG_DECLARE(ui_img_sg_ems2_png);    // assets/sg/EMS2.png
+LV_IMG_DECLARE(ui_img_sg_en2_png);    // assets/sg/EN2.png
 LV_IMG_DECLARE(ui_img_sg_ena2_png);    // assets/sg/ENA2.png
 LV_IMG_DECLARE(ui_img_sg_er1_png);    // assets/sg/ER1.png
 LV_IMG_DECLARE(ui_img_sg_esr2_png);    // assets/sg/ESR2.png
@@ -487,12 +494,14 @@ LV_IMG_DECLARE(ui_img_sg_rs2_png);    // assets/sg/RS2.png
 LV_IMG_DECLARE(ui_img_sg_seaf2_png);    // assets/sg/SEAF2.png
 LV_IMG_DECLARE(ui_img_sg_sef1_png);    // assets/sg/SEF1.png
 LV_IMG_DECLARE(ui_img_sg_sef2_png);    // assets/sg/SEF2.png
+LV_IMG_DECLARE(ui_img_sg_sg2_png);    // assets/sg/SG2.png
 LV_IMG_DECLARE(ui_img_sg_sgp2_png);    // assets/sg/SGP2.png
 LV_IMG_DECLARE(ui_img_sg_sgr2_png);    // assets/sg/SGR2.png
 LV_IMG_DECLARE(ui_img_sg_sos1_png);    // assets/sg/SOS1.png
 LV_IMG_DECLARE(ui_img_sg_sp1_png);    // assets/sg/SP1.png
 LV_IMG_DECLARE(ui_img_sg_sp2_png);    // assets/sg/SP2.png
 LV_IMG_DECLARE(ui_img_sg_spr2_png);    // assets/sg/SPR2.png
+LV_IMG_DECLARE(ui_img_sg_ss2_png);    // assets/sg/SS2.png
 LV_IMG_DECLARE(ui_img_sg_ste2_png);    // assets/sg/STE2.png
 LV_IMG_DECLARE(ui_img_sg_sup2_png);    // assets/sg/SUP2.png
 LV_IMG_DECLARE(ui_img_sg_sw2_png);    // assets/sg/SW2.png

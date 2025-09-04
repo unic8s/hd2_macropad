@@ -194,6 +194,13 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_bat_25_png.c
     images/ui_img_bat_50_png.c
     images/ui_img_bat_75_png.c
+    images/ui_img_about_png.c
+    images/ui_img_sg_ss1_png.c
+    images/ui_img_sg_ss2_png.c
+    images/ui_img_sg_en1_png.c
+    images/ui_img_sg_en2_png.c
+    images/ui_img_sg_sg1_png.c
+    images/ui_img_sg_sg2_png.c
     images/ui_img_sg_e2_png.c
     images/ui_img_sg_ls2_png.c
     images/ui_img_sg_wp2_png.c)

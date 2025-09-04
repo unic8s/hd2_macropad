@@ -32,6 +32,8 @@ extern "C"
         SG_SW,
         SG_DE,
         SG_E,
+        SG_EN,
+        SG_SG,
 
         // Backpacks
         SG_BSB,
@@ -69,6 +71,7 @@ extern "C"
         SG_GM,
         SG_GB,
         SG_LS,
+        SG_SS,
 
         // Strikes
         SG_120,
@@ -91,7 +94,7 @@ extern "C"
         SG_CB,
         SG_NA,
         SG_SR,
-        SG_SS
+        SG_ESS
     };
 
     // Assign stratagems index to UI buttons
@@ -118,6 +121,8 @@ extern "C"
         ui_WeaponsSW->user_data = (void *)SG_SW;
         ui_WeaponsDE->user_data = (void *)SG_DE;
         ui_WeaponsE->user_data = (void *)SG_E;
+        ui_WeaponsEN->user_data = (void *)SG_EN;
+        ui_WeaponsSG->user_data = (void *)SG_SG;
 
         // Backpacks
         ui_BackpacksBSB->user_data = (void *)SG_BSB;
@@ -155,6 +160,7 @@ extern "C"
         ui_StationaryGM->user_data = (void *)SG_GM;
         ui_StationaryGB->user_data = (void *)SG_GB;
         ui_StationaryLS->user_data = (void *)SG_LS;
+        ui_StationarySS->user_data = (void *)SG_SS;
 
         // Strikes
         ui_Strikes120->user_data = (void *)SG_120;
@@ -177,7 +183,7 @@ extern "C"
         ui_EagleCB->user_data = (void *)SG_CB;
         ui_EagleNA->user_data = (void *)SG_NA;
         ui_EagleSR->user_data = (void *)SG_SR;
-        ui_EagleSS->user_data = (void *)SG_SS;
+        ui_EagleSS->user_data = (void *)SG_ESS;
     }
 
 #ifdef __cplusplus

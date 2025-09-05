@@ -104,6 +104,8 @@ void setDelay(int delay, bool restore)
 // Write the display rotation to configuration
 void setRotation(int rotation, bool restore)
 {
+    bool restart = screenRotation != rotation;
+
     screenRotation = rotation;
 
     if (restore)
@@ -123,6 +125,10 @@ void setRotation(int rotation, bool restore)
     }
 
     playbackSound("S:assets/sound/_swt.wav");
+
+    if(restart){
+        esp_restart();
+    }
 }
 
 // Write the display brightness to configuration

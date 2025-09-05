@@ -377,6 +377,8 @@ void FlipScreen(lv_event_t *e)
 	bool flip = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
 
 	setRotation(flip ? LV_DISP_ROT_270 : LV_DISP_ROT_90, false);
+
+	esp_restart();
 }
 
 // Goto game screen

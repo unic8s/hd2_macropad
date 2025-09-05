@@ -251,7 +251,6 @@ lv_obj_t * ui_Container13;
 lv_obj_t * ui_Label5;
 void ui_event_ChbFlip(lv_event_t * e);
 lv_obj_t * ui_ChbFlip;
-lv_obj_t * ui_Label4;
 lv_obj_t * ui_Audio;
 lv_obj_t * ui_Container8;
 lv_obj_t * ui_Label1;
@@ -268,15 +267,13 @@ lv_obj_t * ui_Container15;
 lv_obj_t * ui_Label10;
 void ui_event_DdConnectivity(lv_event_t * e);
 lv_obj_t * ui_DdConnectivity;
+void ui_event_BtnTest(lv_event_t * e);
+lv_obj_t * ui_BtnTest;
+lv_obj_t * ui_LblTest;
 lv_obj_t * ui_Container12;
 lv_obj_t * ui_Label9;
 void ui_event_DdKeymap(lv_event_t * e);
 lv_obj_t * ui_DdKeymap;
-lv_obj_t * ui_Container6;
-void ui_event_BtnTest(lv_event_t * e);
-lv_obj_t * ui_BtnTest;
-lv_obj_t * ui_LblTest;
-lv_obj_t * ui_Label16;
 void ui_event_SetupFooter2(lv_event_t * e);
 lv_obj_t * ui_SetupFooter2;
 void ui_event_BtnSetup(lv_event_t * e);
@@ -295,9 +292,8 @@ lv_obj_t * uic_ChbMute;
 
 // SCREEN: ui_About
 void ui_About_screen_init(void);
+void ui_event_About(lv_event_t * e);
 lv_obj_t * ui_About;
-void ui_event_Container14(lv_event_t * e);
-lv_obj_t * ui_Container14;
 lv_obj_t * ui_LblVersion;
 // CUSTOM VARIABLES
 
@@ -423,7 +419,7 @@ void SplashFade_Animation(lv_obj_t * TargetObject, int delay)
     lv_anim_set_custom_exec_cb(&PropertyAnimation_0, _ui_anim_callback_set_opacity);
     lv_anim_set_values(&PropertyAnimation_0, 0, 255);
     lv_anim_set_path_cb(&PropertyAnimation_0, lv_anim_path_ease_in);
-    lv_anim_set_delay(&PropertyAnimation_0, delay + 0);
+    lv_anim_set_delay(&PropertyAnimation_0, delay + 100);
     lv_anim_set_deleted_cb(&PropertyAnimation_0, _ui_anim_callback_free_user_data);
     lv_anim_set_playback_time(&PropertyAnimation_0, 0);
     lv_anim_set_playback_delay(&PropertyAnimation_0, 0);
@@ -1636,21 +1632,21 @@ void ui_event_DdConnectivity(lv_event_t * e)
     }
 }
 
-void ui_event_DdKeymap(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    if(event_code == LV_EVENT_VALUE_CHANGED) {
-        ChangeKeymap(e);
-    }
-}
-
 void ui_event_BtnTest(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
         KeyboardDemo(e);
+    }
+}
+
+void ui_event_DdKeymap(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        ChangeKeymap(e);
     }
 }
 
@@ -1699,7 +1695,7 @@ void ui_event_BtnReboot(lv_event_t * e)
     }
 }
 
-void ui_event_Container14(lv_event_t * e)
+void ui_event_About(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 

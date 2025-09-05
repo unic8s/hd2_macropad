@@ -267,7 +267,6 @@ extern lv_obj_t * ui_Container13;
 extern lv_obj_t * ui_Label5;
 void ui_event_ChbFlip(lv_event_t * e);
 extern lv_obj_t * ui_ChbFlip;
-extern lv_obj_t * ui_Label4;
 extern lv_obj_t * ui_Audio;
 extern lv_obj_t * ui_Container8;
 extern lv_obj_t * ui_Label1;
@@ -284,15 +283,13 @@ extern lv_obj_t * ui_Container15;
 extern lv_obj_t * ui_Label10;
 void ui_event_DdConnectivity(lv_event_t * e);
 extern lv_obj_t * ui_DdConnectivity;
+void ui_event_BtnTest(lv_event_t * e);
+extern lv_obj_t * ui_BtnTest;
+extern lv_obj_t * ui_LblTest;
 extern lv_obj_t * ui_Container12;
 extern lv_obj_t * ui_Label9;
 void ui_event_DdKeymap(lv_event_t * e);
 extern lv_obj_t * ui_DdKeymap;
-extern lv_obj_t * ui_Container6;
-void ui_event_BtnTest(lv_event_t * e);
-extern lv_obj_t * ui_BtnTest;
-extern lv_obj_t * ui_LblTest;
-extern lv_obj_t * ui_Label16;
 void ui_event_SetupFooter2(lv_event_t * e);
 extern lv_obj_t * ui_SetupFooter2;
 void ui_event_BtnSetup(lv_event_t * e);
@@ -310,9 +307,8 @@ extern lv_obj_t * uic_ChbMute;
 
 // SCREEN: ui_About
 void ui_About_screen_init(void);
+void ui_event_About(lv_event_t * e);
 extern lv_obj_t * ui_About;
-void ui_event_Container14(lv_event_t * e);
-extern lv_obj_t * ui_Container14;
 extern lv_obj_t * ui_LblVersion;
 // CUSTOM VARIABLES
 

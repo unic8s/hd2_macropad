@@ -9,13 +9,15 @@ void ui_Intro_screen_init(void)
 {
     ui_Intro = lv_obj_create(NULL);
     lv_obj_clear_flag(ui_Intro, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_Intro, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Intro, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Splash = lv_img_create(ui_Intro);
     lv_img_set_src(ui_Splash, &ui_img_intro_png);
-    lv_obj_set_width(ui_Splash, 480);
-    lv_obj_set_height(ui_Splash, 320);
+    lv_obj_set_width(ui_Splash, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Splash, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Splash, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_Splash, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    lv_obj_add_flag(ui_Splash, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_Splash, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
     lv_obj_add_event_cb(ui_Intro, ui_event_Intro, LV_EVENT_ALL, NULL);

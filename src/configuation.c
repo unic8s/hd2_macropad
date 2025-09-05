@@ -104,7 +104,7 @@ void setDelay(int delay, bool restore)
 // Write the display rotation to configuration
 void setRotation(int rotation, bool restore)
 {
-    bool restart = screenRotation != rotation;
+    bool restart = !restore && screenRotation != rotation;
 
     screenRotation = rotation;
 

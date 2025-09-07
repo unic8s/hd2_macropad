@@ -1,9 +1,12 @@
 #include <esp_system.h>
+#include "esp_log.h"
 #include "nvs_flash.h"
 #include "i2s_sdcard.h"
 #include <lvgl.h>
 #include "ui/ui.h"
 #include "main.h"
+
+const char *TAG_CFG = "Configuration";
 
 // Handle for NVS config
 nvs_handle_t nvsConfig;
@@ -49,13 +52,13 @@ uint8_t getConfig(char *key, uint8_t defaultValue)
     switch (ret)
     {
     case ESP_OK:
-        printf("%s = %" PRIu8 "\n", key, value);
+        ESP_LOGI(TAG_CFG, "%s = %" PRIu8 "\n", key, value);
         return value;
     case ESP_ERR_NVS_NOT_FOUND:
-        printf("The value is not initialized yet!\n");
+        ESP_LOGI(TAG_CFG, "The value is not initialized yet!\n");
         break;
     default:
-        printf("Error (%s) reading!\n", esp_err_to_name(ret));
+        ESP_LOGE(TAG_CFG, "Error (%s) reading!\n", esp_err_to_name(ret));
     }
 
     return defaultValue;
@@ -71,12 +74,20 @@ void setConfig(char *key, uint8_t value)
     ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
     if (ret != ESP_OK)
     {
-        printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+        ESP_LOGE(TAG_CFG, "Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
         return;
     }
 
     ret = nvs_set_u8(nvsConfig, key, value);
-    printf((ret != ESP_OK) ? "Failed!\n" : "Done\n");
+
+    if (ret != ESP_OK)
+    {
+        ESP_LOGE(TAG_CFG, "Failed!\n");
+    }
+    else
+    {
+        ESP_LOGI(TAG_CFG, "Done\n");
+    }
 
     nvs_close(nvsConfig);
 }
@@ -250,7 +261,7 @@ void loadConfig()
     ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
     if (ret != ESP_OK)
     {
-        printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+        ESP_LOGE(TAG_CFG, "Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
         return;
     }
 
@@ -283,7 +294,7 @@ uint8_t peekConfig(char *key, uint8_t defaultValue)
     ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
     if (ret != ESP_OK)
     {
-        printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+        ESP_LOGE(TAG_CFG, "Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
         return defaultValue;
     }
 
@@ -302,7 +313,7 @@ void resetConfig()
     ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
     if (ret != ESP_OK)
     {
-        printf("Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+        ESP_LOGE(TAG_CFG, "Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
         return;
     }
 

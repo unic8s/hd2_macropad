@@ -272,7 +272,7 @@ void app_main()
   lvglReady = true;
 
   // Playback intro sound
-  playbackSound("S:assets/sound/intro.wav");
+  playbackSound(SND_INTRO);
 
   // Update software version in UI
   char softwareVersion[12];

@@ -124,7 +124,7 @@ void setRotation(int rotation, bool restore)
         setConfig("rotation", screenRotation);
     }
 
-    playbackSound("S:assets/sound/_swt.wav");
+    playbackSound(SND_SWITCH);
 
     if (restart)
     {
@@ -173,7 +173,7 @@ void setMuted(bool muted, bool restore)
         setConfig("muted", playerMuted ? 1 : 0);
     }
 
-    playbackSound("S:assets/sound/_swt.wav");
+    playbackSound(SND_SWITCH);
 }
 
 // Write the keymap assignment to configuration
@@ -188,7 +188,7 @@ void setConnectivity(uint8_t index, bool restore)
         setConfig("connectivity", index);
     }
 
-    playbackSound("S:assets/sound/_swt.wav");
+    playbackSound(SND_SWITCH);
 
     switch (connectionType)
     {
@@ -239,7 +239,7 @@ void setKeymap(uint8_t index, bool restore)
         setConfig("keymap", index);
     }
 
-    playbackSound("S:assets/sound/_swt.wav");
+    playbackSound(SND_SWITCH);
 }
 
 // Load complete configuration from NVS

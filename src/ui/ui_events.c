@@ -38,7 +38,7 @@ void deselectStratagem(lv_event_t *e)
 
 	updateStratagemSelection();
 
-	playbackSound("S:assets/sound/_des.wav");
+	playbackSound(SND_DESELECT);
 }
 
 // Assign stratagem item from button
@@ -72,13 +72,13 @@ void selectStratagem(lv_event_t *e)
 
 		updateStratagemSelection();
 
-		playbackSound("S:assets/sound/_sel.wav");
+		playbackSound(SND_SELECT);
 	}
 	else
 	{
 		lv_obj_clear_state(e->target, LV_STATE_CHECKED);
 
-		playbackSound("S:assets/sound/_des.wav");
+		playbackSound(SND_DESELECT);
 	}
 }
 
@@ -141,7 +141,7 @@ void resetStratagems(lv_event_t *e)
 
 	updateStratagemSelection();
 
-	playbackSound("S:assets/sound/_rst.wav");
+	playbackSound(SND_RESET);
 }
 
 // Change connectivity (Bluetooth/USB)
@@ -173,7 +173,7 @@ void triggerStratagemStd1(lv_event_t *e)
 						   0,
 						   0};
 
-	_executeStdStratagem(sequence, "S:assets/sound/reinf.wav");
+	_executeStdStratagem(sequence, SND_REINFORCE);
 }
 
 // Trigger 2nd standard stratagem
@@ -189,7 +189,7 @@ void triggerStratagemStd2(lv_event_t *e)
 						   0,
 						   0};
 
-	_executeStdStratagem(sequence, "S:assets/sound/supp.wav");
+	_executeStdStratagem(sequence, SND_SUPPLY);
 }
 
 // Trigger 3rd standard stratagem
@@ -205,7 +205,7 @@ void triggerStratagemStd3(lv_event_t *e)
 						   0,
 						   0};
 
-	_executeStdStratagem(sequence, "S:assets/sound/sos.wav");
+	_executeStdStratagem(sequence, SND_SOS);
 }
 
 // Trigger 4th standard stratagem
@@ -221,7 +221,7 @@ void triggerStratagemStd4(lv_event_t *e)
 						   0,
 						   0};
 
-	_executeStdStratagem(sequence, "S:assets/sound/eagrel.wav");
+	_executeStdStratagem(sequence, SND_EAGLE_RELOAD);
 }
 
 // Trigger 5th standard stratagem
@@ -273,8 +273,7 @@ void _executeUserStratagem(uint8_t index)
 
 	setStratagemCode(item.sequence, INPUT_CTRL_MASK, false);
 
-	uint8_t soundIndex = item.sound;
-	char *path = soundFiles[soundIndex];
+	char *path = item.soundPath;
 
 	playbackSound(path);
 }
@@ -369,7 +368,7 @@ void RebootDevice(lv_event_t *e)
 // Trigger when tab navigation has changed
 void TabChanged(lv_event_t *e)
 {
-	playbackSound("S:assets/sound/_swp.wav");
+	playbackSound(SND_SWIPE);
 }
 
 // Change screen orientation

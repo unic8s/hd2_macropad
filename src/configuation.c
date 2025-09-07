@@ -126,7 +126,8 @@ void setRotation(int rotation, bool restore)
 
     playbackSound("S:assets/sound/_swt.wav");
 
-    if(restart){
+    if (restart)
+    {
         esp_restart();
     }
 }
@@ -176,7 +177,7 @@ void setMuted(bool muted, bool restore)
 }
 
 // Write the keymap assignment to configuration
-void setConnectivity(int8_t index, bool restore)
+void setConnectivity(uint8_t index, bool restore)
 {
     if (restore)
     {
@@ -191,13 +192,15 @@ void setConnectivity(int8_t index, bool restore)
 
     switch (connectionType)
     {
-    case 1:
+    case CT_BLUETOOTH:
         // Deinit Bluetooth controller
         ble_controller_deinit();
         break;
-    case 2:
+    case CT_USB:
         // Deinit USB controller
         usb_controller_deinit();
+        break;
+    default:
         break;
     }
 
@@ -205,13 +208,15 @@ void setConnectivity(int8_t index, bool restore)
 
     switch (connectionType)
     {
-    case 1:
+    case CT_BLUETOOTH:
         // Init Bluetooth controller
         ble_controller_init();
         break;
-    case 2:
+    case CT_USB:
         // Init USB controller
         usb_controller_init();
+        break;
+    default:
         break;
     }
 

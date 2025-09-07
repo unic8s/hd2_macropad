@@ -17,12 +17,13 @@
 #include "configration.h"
 #include "keymaps.h"
 #include "version.h"
+#include "main.h"
 
 // Tag for logging
 static const char *TAG = "HD2 Macropad";
 
-// Connection type (0 => None, 1 => Bluetooth, 2 => USB)
-uint8_t connectionType = 0;
+// Connection type
+uint8_t connectionType = CT_NONE;
 
 // Flag for ready state of LVGL after init
 bool lvglReady = false;
@@ -63,13 +64,13 @@ void setStratagemCode(uint8_t sequence[8], uint8_t mask, bool plain)
 {
   switch (connectionType)
   {
-  case 1:
+  case CT_BLUETOOTH:
     if (!ble_connected())
     {
       return;
     }
     break;
-  case 2:
+  case CT_USB:
     if (!usb_connected())
     {
       return;
@@ -125,7 +126,7 @@ void updateConnection()
 
   switch (connectionType)
   {
-  case 1:
+  case CT_BLUETOOTH:
     // Check bluetooth connection state
     if (ble_connected())
     {
@@ -136,7 +137,7 @@ void updateConnection()
       lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_bt_dis_png, styleSelector);
     }
     break;
-  case 2:
+  case CT_USB:
     // Check USB connection state
     if (usb_connected())
     {
@@ -147,6 +148,8 @@ void updateConnection()
       lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_usb_dis_png, styleSelector);
     }
     break;
+  default:
+    return;
   }
 }
 
@@ -170,10 +173,10 @@ void hid_input_task(void *pvParameters)
 
       switch (connectionType)
       {
-      case 1:
+      case CT_BLUETOOTH:
         fptr = &ble_keyboard_send;
         break;
-      case 2:
+      case CT_USB:
         fptr = &usb_keyboard_send;
         break;
       default:

@@ -394,7 +394,6 @@ const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
 const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
 const lv_img_dsc_t * ui_imgset_wp[2] = {&ui_img_sg_wp1_png, &ui_img_sg_wp2_png};
 const lv_img_dsc_t * ui_imgset_wsp[2] = {&ui_img_sg_wsp1_png, &ui_img_sg_wsp2_png};
-const lv_img_dsc_t * ui_imgset_bat_[5] = {&ui_img_bat_0_png, &ui_img_bat_100_png, &ui_img_bat_25_png, &ui_img_bat_50_png, &ui_img_bat_75_png};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16

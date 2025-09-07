@@ -508,11 +508,6 @@ LV_IMG_DECLARE(ui_img_sg_ud1_png);    // assets/sg/UD1.png
 LV_IMG_DECLARE(ui_img_sg_ud2_png);    // assets/sg/UD2.png
 LV_IMG_DECLARE(ui_img_sg_wp2_png);    // assets/sg/WP2.png
 LV_IMG_DECLARE(ui_img_sg_wsp2_png);    // assets/sg/WSP2.png
-LV_IMG_DECLARE(ui_img_bat_0_png);    // assets/bat_0.png
-LV_IMG_DECLARE(ui_img_bat_100_png);    // assets/bat_100.png
-LV_IMG_DECLARE(ui_img_bat_25_png);    // assets/bat_25.png
-LV_IMG_DECLARE(ui_img_bat_50_png);    // assets/bat_50.png
-LV_IMG_DECLARE(ui_img_bat_75_png);    // assets/bat_75.png
 
 // UI INIT
 void ui_init(void);

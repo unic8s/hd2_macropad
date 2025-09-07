@@ -869,14 +869,14 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksEE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_Stationary = lv_tabview_add_tab(ui_TabStratagems, "Sentry");
-    lv_obj_clear_flag(ui_Stationary, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Stationary, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Stationary, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Stationary, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Stationary, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_Sentry = lv_tabview_add_tab(ui_TabStratagems, "Sentry");
+    lv_obj_clear_flag(ui_Sentry, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_pad_left(ui_Sentry, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Sentry, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Sentry, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Sentry, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Container3 = lv_obj_create(ui_Stationary);
+    ui_Container3 = lv_obj_create(ui_Sentry);
     lv_obj_remove_style_all(ui_Container3);
     lv_obj_set_width(ui_Container3, lv_pct(100));
     lv_obj_set_height(ui_Container3, lv_pct(100));
@@ -994,7 +994,8 @@ void ui_Setup_screen_init(void)
     ui_StationaryFS = lv_btn_create(ui_Container3);
     lv_obj_set_width(ui_StationaryFS, 76);
     lv_obj_set_height(ui_StationaryFS, 76);
-    lv_obj_add_flag(ui_StationaryFS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_add_flag(ui_StationaryFS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
+                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);   /// Flags
     lv_obj_clear_flag(ui_StationaryFS, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_StationaryFS, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_StationaryFS, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -1091,7 +1092,29 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryLS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryGM = lv_btn_create(ui_Container3);
+    ui_Ground = lv_tabview_add_tab(ui_TabStratagems, "Ground");
+    lv_obj_clear_flag(ui_Ground, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_pad_left(ui_Ground, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Ground, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Ground, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Ground, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Container6 = lv_obj_create(ui_Ground);
+    lv_obj_remove_style_all(ui_Container6);
+    lv_obj_set_width(ui_Container6, lv_pct(100));
+    lv_obj_set_height(ui_Container6, lv_pct(100));
+    lv_obj_set_align(ui_Container6, LV_ALIGN_CENTER);
+    lv_obj_set_flex_flow(ui_Container6, LV_FLEX_FLOW_ROW_WRAP);
+    lv_obj_set_flex_align(ui_Container6, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
+    lv_obj_clear_flag(ui_Container6, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_pad_left(ui_Container6, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Container6, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Container6, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Container6, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Container6, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Container6, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_StationaryGM = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_StationaryGM, 76);
     lv_obj_set_height(ui_StationaryGM, 76);
     lv_obj_add_flag(ui_StationaryGM, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1111,7 +1134,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryGM, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryTT = lv_btn_create(ui_Container3);
+    ui_StationaryTT = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_StationaryTT, 76);
     lv_obj_set_height(ui_StationaryTT, 76);
     lv_obj_add_flag(ui_StationaryTT, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1131,7 +1154,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryTT, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationarySGR = lv_btn_create(ui_Container3);
+    ui_StationarySGR = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_StationarySGR, 76);
     lv_obj_set_height(ui_StationarySGR, 76);
     lv_obj_add_flag(ui_StationarySGR, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1151,7 +1174,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationarySGR, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryAPM = lv_btn_create(ui_Container3);
+    ui_StationaryAPM = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_StationaryAPM, 76);
     lv_obj_set_height(ui_StationaryAPM, 76);
     lv_obj_add_flag(ui_StationaryAPM, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1171,10 +1194,11 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryAPM, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryATM = lv_btn_create(ui_Container3);
+    ui_StationaryATM = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_StationaryATM, 76);
     lv_obj_set_height(ui_StationaryATM, 76);
-    lv_obj_add_flag(ui_StationaryATM, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_add_flag(ui_StationaryATM, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
+                    LV_OBJ_FLAG_SCROLL_ON_FOCUS);   /// Flags
     lv_obj_clear_flag(ui_StationaryATM, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_StationaryATM, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_StationaryATM, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -1191,7 +1215,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryATM, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryIM = lv_btn_create(ui_Container3);
+    ui_StationaryIM = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_StationaryIM, 76);
     lv_obj_set_height(ui_StationaryIM, 76);
     lv_obj_add_flag(ui_StationaryIM, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1211,7 +1235,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryIM, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryGB = lv_btn_create(ui_Container3);
+    ui_StationaryGB = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_StationaryGB, 76);
     lv_obj_set_height(ui_StationaryGB, 76);
     lv_obj_add_flag(ui_StationaryGB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1231,7 +1255,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryGB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationarySS = lv_btn_create(ui_Container3);
+    ui_StationarySS = lv_btn_create(ui_Container6);
     lv_obj_set_width(ui_StationarySS, 76);
     lv_obj_set_height(ui_StationarySS, 76);
     lv_obj_add_flag(ui_StationarySS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1762,6 +1786,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_LblAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
                                            _ui_theme_alpha_colorTheme);
     lv_obj_set_style_text_align(ui_LblAmount, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_LblAmount, &lv_font_montserrat_14, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_left(ui_LblAmount, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_right(ui_LblAmount, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui_LblAmount, 0, LV_PART_MAIN | LV_STATE_DEFAULT);

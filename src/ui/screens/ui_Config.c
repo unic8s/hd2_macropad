@@ -40,17 +40,17 @@ void ui_Config_screen_init(void)
                                            LV_STYLE_BORDER_OPA, _ui_theme_alpha_colorActive);
     lv_obj_set_style_border_width(lv_tabview_get_tab_btns(ui_TabView1), 2,  LV_PART_ITEMS | LV_STATE_CHECKED);
 
-    ui_Display = lv_tabview_add_tab(ui_TabView1, "Display");
-    lv_obj_set_flex_flow(ui_Display, LV_FLEX_FLOW_ROW_WRAP);
-    lv_obj_set_flex_align(ui_Display, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
-    lv_obj_set_style_pad_left(ui_Display, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Display, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Display, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Display, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Display, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_Display, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_Display_Audio = lv_tabview_add_tab(ui_TabView1, "Display / Audio");
+    lv_obj_set_flex_flow(ui_Display_Audio, LV_FLEX_FLOW_ROW_WRAP);
+    lv_obj_set_flex_align(ui_Display_Audio, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
+    lv_obj_set_style_pad_left(ui_Display_Audio, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Display_Audio, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Display_Audio, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Display_Audio, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Display_Audio, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Display_Audio, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Container9 = lv_obj_create(ui_Display);
+    ui_Container9 = lv_obj_create(ui_Display_Audio);
     lv_obj_remove_style_all(ui_Container9);
     lv_obj_set_width(ui_Container9, lv_pct(100));
     lv_obj_set_height(ui_Container9, LV_SIZE_CONTENT);    /// 50
@@ -70,7 +70,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_width(ui_Label2, lv_pct(50));
     lv_obj_set_height(ui_Label2, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Label2, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label2, "Brightness (%)");
+    lv_label_set_text(ui_Label2, "Screen brightness (%)");
     ui_object_set_themeable_style_property(ui_Label2, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Label2, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
@@ -123,9 +123,9 @@ void ui_Config_screen_init(void)
     lv_obj_set_style_pad_top(ui_SldBrightness, 8, LV_PART_KNOB | LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui_SldBrightness, 8, LV_PART_KNOB | LV_STATE_DEFAULT);
 
-    ui_Container13 = lv_obj_create(ui_Display);
+    ui_Container13 = lv_obj_create(ui_Display_Audio);
     lv_obj_remove_style_all(ui_Container13);
-    lv_obj_set_width(ui_Container13, lv_pct(100));
+    lv_obj_set_width(ui_Container13, lv_pct(49));
     lv_obj_set_height(ui_Container13, LV_SIZE_CONTENT);    /// 50
     lv_obj_set_align(ui_Container13, LV_ALIGN_CENTER);
     lv_obj_set_flex_flow(ui_Container13, LV_FLEX_FLOW_ROW_WRAP);
@@ -142,7 +142,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_width(ui_Label5, lv_pct(100));
     lv_obj_set_height(ui_Label5, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Label5, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label5, "Flip 180°");
+    lv_label_set_text(ui_Label5, "Flip screen 180°");
     ui_object_set_themeable_style_property(ui_Label5, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Label5, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
@@ -182,19 +182,9 @@ void ui_Config_screen_init(void)
     ui_object_set_themeable_style_property(ui_ChbFlip, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_Audio = lv_tabview_add_tab(ui_TabView1, "Audio");
-    lv_obj_set_flex_flow(ui_Audio, LV_FLEX_FLOW_ROW_WRAP);
-    lv_obj_set_flex_align(ui_Audio, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
-    lv_obj_set_style_pad_left(ui_Audio, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Audio, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Audio, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Audio, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Audio, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_Audio, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_Container8 = lv_obj_create(ui_Audio);
+    ui_Container8 = lv_obj_create(ui_Display_Audio);
     lv_obj_remove_style_all(ui_Container8);
-    lv_obj_set_width(ui_Container8, lv_pct(100));
+    lv_obj_set_width(ui_Container8, lv_pct(49));
     lv_obj_set_height(ui_Container8, LV_SIZE_CONTENT);    /// 50
     lv_obj_set_align(ui_Container8, LV_ALIGN_CENTER);
     lv_obj_set_flex_flow(ui_Container8, LV_FLEX_FLOW_ROW_WRAP);
@@ -211,7 +201,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_width(ui_Label1, lv_pct(100));
     lv_obj_set_height(ui_Label1, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Label1, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label1, "Mute");
+    lv_label_set_text(ui_Label1, "Sound mute");
     ui_object_set_themeable_style_property(ui_Label1, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Label1, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
@@ -250,18 +240,6 @@ void ui_Config_screen_init(void)
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_ChbMute, LV_PART_KNOB | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
-
-    ui_Label6 = lv_label_create(ui_Container8);
-    lv_obj_set_width(ui_Label6, LV_SIZE_CONTENT);   /// 50
-    lv_obj_set_height(ui_Label6, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_Label6, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label6, "Requires external speaker");
-    lv_obj_set_style_text_color(ui_Label6, lv_color_hex(0x666666), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_Label6, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui_Label6, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Label6, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Label6, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Label6, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Input = lv_tabview_add_tab(ui_TabView1, "Input");
     lv_obj_set_flex_flow(ui_Input, LV_FLEX_FLOW_ROW_WRAP);

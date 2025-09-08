@@ -191,7 +191,7 @@ const stratagem strategems[] = {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, 0, 0},
         SND_BACKPACK,
         _ui_theme_color_sgBlue,
-        &ui_img_sg_sp2_png,
+        &ui_img_sg_sup2_png,
         SG_SUP},
 
     // 19

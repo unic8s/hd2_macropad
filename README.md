@@ -48,15 +48,15 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ![](screens/setup_sentry.png)
 
+![](screens/setup_ground.png)
+
 ![](screens/setup_strike.png)
 
 ![](screens/setup_eagle.png)
 
 ### Config
 
-![](screens/config_display.png)
-
-![](screens/config_audio.png)
+![](screens/config_display_audio.png)
 
 ![](screens/config_input.png)
 

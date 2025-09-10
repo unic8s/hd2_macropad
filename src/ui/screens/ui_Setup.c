@@ -40,27 +40,17 @@ void ui_Setup_screen_init(void)
     lv_obj_set_style_border_width(lv_tabview_get_tab_btns(ui_TabStratagems), 2,  LV_PART_ITEMS | LV_STATE_CHECKED);
 
     ui_Rifle = lv_tabview_add_tab(ui_TabStratagems, "Rifle");
+    lv_obj_set_flex_flow(ui_Rifle, LV_FLEX_FLOW_ROW_WRAP);
+    lv_obj_set_flex_align(ui_Rifle, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
     lv_obj_clear_flag(ui_Rifle, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Rifle, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Rifle, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Rifle, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Rifle, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui_Rifle, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Rifle, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Rifle, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Rifle, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Rifle, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Rifle, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Container2 = lv_obj_create(ui_Rifle);
-    lv_obj_remove_style_all(ui_Container2);
-    lv_obj_set_width(ui_Container2, lv_pct(100));
-    lv_obj_set_height(ui_Container2, lv_pct(100));
-    lv_obj_set_flex_flow(ui_Container2, LV_FLEX_FLOW_ROW_WRAP);
-    lv_obj_set_flex_align(ui_Container2, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_Container2, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Container2, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Container2, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Container2, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Container2, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container2, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_Container2, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_WeaponsMG = lv_btn_create(ui_Container2);
+    ui_WeaponsMG = lv_btn_create(ui_Rifle);
     lv_obj_set_width(ui_WeaponsMG, 76);
     lv_obj_set_height(ui_WeaponsMG, 76);
     lv_obj_add_flag(ui_WeaponsMG, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -80,7 +70,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsMG, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsHMG = lv_btn_create(ui_Container2);
+    ui_WeaponsHMG = lv_btn_create(ui_Rifle);
     lv_obj_set_width(ui_WeaponsHMG, 76);
     lv_obj_set_height(ui_WeaponsHMG, 76);
     lv_obj_add_flag(ui_WeaponsHMG, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -100,7 +90,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsHMG, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsSW = lv_btn_create(ui_Container2);
+    ui_WeaponsSW = lv_btn_create(ui_Rifle);
     lv_obj_set_width(ui_WeaponsSW, 76);
     lv_obj_set_height(ui_WeaponsSW, 76);
     lv_obj_add_flag(ui_WeaponsSW, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -120,7 +110,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsSW, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsAC = lv_btn_create(ui_Container2);
+    ui_WeaponsAC = lv_btn_create(ui_Rifle);
     lv_obj_set_width(ui_WeaponsAC, 76);
     lv_obj_set_height(ui_WeaponsAC, 76);
     lv_obj_add_flag(ui_WeaponsAC, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -140,7 +130,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsAC, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsAMR = lv_btn_create(ui_Container2);
+    ui_WeaponsAMR = lv_btn_create(ui_Rifle);
     lv_obj_set_width(ui_WeaponsAMR, 76);
     lv_obj_set_height(ui_WeaponsAMR, 76);
     lv_obj_add_flag(ui_WeaponsAMR, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -160,7 +150,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsAMR, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsRG = lv_btn_create(ui_Container2);
+    ui_WeaponsRG = lv_btn_create(ui_Rifle);
     lv_obj_set_width(ui_WeaponsRG, 76);
     lv_obj_set_height(ui_WeaponsRG, 76);
     lv_obj_add_flag(ui_WeaponsRG, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -180,27 +170,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsRG, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsQC = lv_btn_create(ui_Container2);
-    lv_obj_set_width(ui_WeaponsQC, 76);
-    lv_obj_set_height(ui_WeaponsQC, 76);
-    lv_obj_add_flag(ui_WeaponsQC, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_WeaponsQC, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_color(ui_WeaponsQC, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_WeaponsQC, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_src(ui_WeaponsQC, &ui_img_sg_qc1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_WeaponsQC, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_sgBlue);
-    ui_object_set_themeable_style_property(ui_WeaponsQC, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_sgBlue);
-    lv_obj_set_style_border_width(ui_WeaponsQC, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_WeaponsQC, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
-    lv_obj_set_style_bg_opa(ui_WeaponsQC, 0, LV_PART_MAIN | LV_STATE_CHECKED);
-    ui_object_set_themeable_style_property(ui_WeaponsQC, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorActive);
-    ui_object_set_themeable_style_property(ui_WeaponsQC, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorActive);
-
-    ui_WeaponsLC = lv_btn_create(ui_Container2);
+    ui_WeaponsLC = lv_btn_create(ui_Rifle);
     lv_obj_set_width(ui_WeaponsLC, 76);
     lv_obj_set_height(ui_WeaponsLC, 76);
     lv_obj_add_flag(ui_WeaponsLC, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -220,7 +190,27 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsLC, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsAT = lv_btn_create(ui_Container2);
+    ui_WeaponsQC = lv_btn_create(ui_Rifle);
+    lv_obj_set_width(ui_WeaponsQC, 76);
+    lv_obj_set_height(ui_WeaponsQC, 76);
+    lv_obj_add_flag(ui_WeaponsQC, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_WeaponsQC, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_WeaponsQC, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_WeaponsQC, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_WeaponsQC, &ui_img_sg_qc1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_WeaponsQC, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_sgBlue);
+    ui_object_set_themeable_style_property(ui_WeaponsQC, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_sgBlue);
+    lv_obj_set_style_border_width(ui_WeaponsQC, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_WeaponsQC, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
+    lv_obj_set_style_bg_opa(ui_WeaponsQC, 0, LV_PART_MAIN | LV_STATE_CHECKED);
+    ui_object_set_themeable_style_property(ui_WeaponsQC, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_WeaponsQC, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
+
+    ui_WeaponsAT = lv_btn_create(ui_Rifle);
     lv_obj_set_width(ui_WeaponsAT, 76);
     lv_obj_set_height(ui_WeaponsAT, 76);
     lv_obj_add_flag(ui_WeaponsAT, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -240,7 +230,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsAT, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsE = lv_btn_create(ui_Container2);
+    ui_WeaponsE = lv_btn_create(ui_Rifle);
     lv_obj_set_width(ui_WeaponsE, 76);
     lv_obj_set_height(ui_WeaponsE, 76);
     lv_obj_set_x(ui_WeaponsE, -1);
@@ -262,7 +252,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsSG = lv_btn_create(ui_Container2);
+    ui_WeaponsSG = lv_btn_create(ui_Rifle);
     lv_obj_set_width(ui_WeaponsSG, 76);
     lv_obj_set_height(ui_WeaponsSG, 76);
     lv_obj_set_x(ui_WeaponsSG, -1);
@@ -285,26 +275,16 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_alpha_colorActive);
 
     ui_Special = lv_tabview_add_tab(ui_TabStratagems, "Special");
-    lv_obj_set_style_pad_left(ui_Special, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Special, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Special, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Special, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_flex_flow(ui_Special, LV_FLEX_FLOW_ROW_WRAP);
+    lv_obj_set_flex_align(ui_Special, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
+    lv_obj_set_style_pad_left(ui_Special, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Special, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Special, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Special, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Special, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Special, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Container16 = lv_obj_create(ui_Special);
-    lv_obj_remove_style_all(ui_Container16);
-    lv_obj_set_width(ui_Container16, lv_pct(100));
-    lv_obj_set_height(ui_Container16, lv_pct(100));
-    lv_obj_set_flex_flow(ui_Container16, LV_FLEX_FLOW_ROW_WRAP);
-    lv_obj_set_flex_align(ui_Container16, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_Container16, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Container16, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Container16, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Container16, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Container16, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container16, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_Container16, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_WeaponsARL = lv_btn_create(ui_Container16);
+    ui_WeaponsARL = lv_btn_create(ui_Special);
     lv_obj_set_width(ui_WeaponsARL, 76);
     lv_obj_set_height(ui_WeaponsARL, 76);
     lv_obj_add_flag(ui_WeaponsARL, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -324,7 +304,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsARL, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsC = lv_btn_create(ui_Container16);
+    ui_WeaponsC = lv_btn_create(ui_Special);
     lv_obj_set_width(ui_WeaponsC, 76);
     lv_obj_set_height(ui_WeaponsC, 76);
     lv_obj_add_flag(ui_WeaponsC, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -344,7 +324,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsC, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsEAT = lv_btn_create(ui_Container16);
+    ui_WeaponsEAT = lv_btn_create(ui_Special);
     lv_obj_set_width(ui_WeaponsEAT, 76);
     lv_obj_set_height(ui_WeaponsEAT, 76);
     lv_obj_add_flag(ui_WeaponsEAT, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -364,7 +344,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsEAT, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsEN = lv_btn_create(ui_Container16);
+    ui_WeaponsEN = lv_btn_create(ui_Special);
     lv_obj_set_width(ui_WeaponsEN, 76);
     lv_obj_set_height(ui_WeaponsEN, 76);
     lv_obj_add_flag(ui_WeaponsEN, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -384,7 +364,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsEN, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsRR = lv_btn_create(ui_Container16);
+    ui_WeaponsRR = lv_btn_create(ui_Special);
     lv_obj_set_width(ui_WeaponsRR, 76);
     lv_obj_set_height(ui_WeaponsRR, 76);
     lv_obj_add_flag(ui_WeaponsRR, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -404,7 +384,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsRR, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsSPR = lv_btn_create(ui_Container16);
+    ui_WeaponsSPR = lv_btn_create(ui_Special);
     lv_obj_set_width(ui_WeaponsSPR, 76);
     lv_obj_set_height(ui_WeaponsSPR, 76);
     lv_obj_add_flag(ui_WeaponsSPR, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -424,7 +404,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsSPR, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsWSP = lv_btn_create(ui_Container16);
+    ui_WeaponsWSP = lv_btn_create(ui_Special);
     lv_obj_set_width(ui_WeaponsWSP, 76);
     lv_obj_set_height(ui_WeaponsWSP, 76);
     lv_obj_add_flag(ui_WeaponsWSP, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -444,7 +424,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsWSP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsGL = lv_btn_create(ui_Container16);
+    ui_WeaponsGL = lv_btn_create(ui_Special);
     lv_obj_set_width(ui_WeaponsGL, 76);
     lv_obj_set_height(ui_WeaponsGL, 76);
     lv_obj_add_flag(ui_WeaponsGL, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -464,7 +444,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsGL, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsDE = lv_btn_create(ui_Container16);
+    ui_WeaponsDE = lv_btn_create(ui_Special);
     lv_obj_set_width(ui_WeaponsDE, 76);
     lv_obj_set_height(ui_WeaponsDE, 76);
     lv_obj_add_flag(ui_WeaponsDE, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -484,7 +464,27 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsDE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsFT = lv_btn_create(ui_Container16);
+    ui_WeaponsSTE = lv_btn_create(ui_Special);
+    lv_obj_set_width(ui_WeaponsSTE, 76);
+    lv_obj_set_height(ui_WeaponsSTE, 76);
+    lv_obj_add_flag(ui_WeaponsSTE, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_WeaponsSTE, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_WeaponsSTE, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_WeaponsSTE, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_WeaponsSTE, &ui_img_sg_ste1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_WeaponsSTE, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_sgBlue);
+    ui_object_set_themeable_style_property(ui_WeaponsSTE, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_sgBlue);
+    lv_obj_set_style_border_width(ui_WeaponsSTE, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_WeaponsSTE, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
+    lv_obj_set_style_bg_opa(ui_WeaponsSTE, 0, LV_PART_MAIN | LV_STATE_CHECKED);
+    ui_object_set_themeable_style_property(ui_WeaponsSTE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_WeaponsSTE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
+
+    ui_WeaponsFT = lv_btn_create(ui_Special);
     lv_obj_set_width(ui_WeaponsFT, 76);
     lv_obj_set_height(ui_WeaponsFT, 76);
     lv_obj_set_x(ui_WeaponsFT, 27);
@@ -506,48 +506,17 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_WeaponsFT, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_WeaponsSTE = lv_btn_create(ui_Container16);
-    lv_obj_set_width(ui_WeaponsSTE, 76);
-    lv_obj_set_height(ui_WeaponsSTE, 76);
-    lv_obj_add_flag(ui_WeaponsSTE, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_WeaponsSTE, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_color(ui_WeaponsSTE, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_WeaponsSTE, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_src(ui_WeaponsSTE, &ui_img_sg_ste1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_WeaponsSTE, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_sgBlue);
-    ui_object_set_themeable_style_property(ui_WeaponsSTE, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_sgBlue);
-    lv_obj_set_style_border_width(ui_WeaponsSTE, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_WeaponsSTE, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
-    lv_obj_set_style_bg_opa(ui_WeaponsSTE, 0, LV_PART_MAIN | LV_STATE_CHECKED);
-    ui_object_set_themeable_style_property(ui_WeaponsSTE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorActive);
-    ui_object_set_themeable_style_property(ui_WeaponsSTE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorActive);
-
     ui_Supply = lv_tabview_add_tab(ui_TabStratagems, "Supply");
-    lv_obj_set_style_pad_left(ui_Supply, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Supply, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Supply, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Supply, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_flex_flow(ui_Supply, LV_FLEX_FLOW_ROW_WRAP);
+    lv_obj_set_flex_align(ui_Supply, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
+    lv_obj_set_style_pad_left(ui_Supply, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Supply, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Supply, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Supply, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Supply, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Supply, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Container1 = lv_obj_create(ui_Supply);
-    lv_obj_remove_style_all(ui_Container1);
-    lv_obj_set_width(ui_Container1, lv_pct(100));
-    lv_obj_set_height(ui_Container1, lv_pct(100));
-    lv_obj_set_align(ui_Container1, LV_ALIGN_CENTER);
-    lv_obj_set_flex_flow(ui_Container1, LV_FLEX_FLOW_ROW_WRAP);
-    lv_obj_set_flex_align(ui_Container1, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_Container1, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Container1, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Container1, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Container1, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Container1, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container1, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_Container1, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_BackpacksBSB = lv_btn_create(ui_Container1);
+    ui_BackpacksBSB = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksBSB, 76);
     lv_obj_set_height(ui_BackpacksBSB, 76);
     lv_obj_add_flag(ui_BackpacksBSB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -567,7 +536,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksBSB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksSGP = lv_btn_create(ui_Container1);
+    ui_BackpacksSGP = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksSGP, 76);
     lv_obj_set_height(ui_BackpacksSGP, 76);
     lv_obj_add_flag(ui_BackpacksSGP, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -587,7 +556,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksSGP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksDS = lv_btn_create(ui_Container1);
+    ui_BackpacksDS = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksDS, 76);
     lv_obj_set_height(ui_BackpacksDS, 76);
     lv_obj_add_flag(ui_BackpacksDS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -607,7 +576,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksDS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksGD = lv_btn_create(ui_Container1);
+    ui_BackpacksGD = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksGD, 76);
     lv_obj_set_height(ui_BackpacksGD, 76);
     lv_obj_add_flag(ui_BackpacksGD, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -627,7 +596,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksGD, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksGDB = lv_btn_create(ui_Container1);
+    ui_BackpacksGDB = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksGDB, 76);
     lv_obj_set_height(ui_BackpacksGDB, 76);
     lv_obj_add_flag(ui_BackpacksGDB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -647,7 +616,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksGDB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksGDR = lv_btn_create(ui_Container1);
+    ui_BackpacksGDR = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksGDR, 76);
     lv_obj_set_height(ui_BackpacksGDR, 76);
     lv_obj_add_flag(ui_BackpacksGDR, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
@@ -668,7 +637,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksGDR, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksGDK = lv_btn_create(ui_Container1);
+    ui_BackpacksGDK = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksGDK, 76);
     lv_obj_set_height(ui_BackpacksGDK, 76);
     lv_obj_add_flag(ui_BackpacksGDK, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -688,7 +657,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksGDK, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksSUP = lv_btn_create(ui_Container1);
+    ui_BackpacksSUP = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksSUP, 76);
     lv_obj_set_height(ui_BackpacksSUP, 76);
     lv_obj_add_flag(ui_BackpacksSUP, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -708,7 +677,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksSUP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksPH = lv_btn_create(ui_Container1);
+    ui_BackpacksPH = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksPH, 76);
     lv_obj_set_height(ui_BackpacksPH, 76);
     lv_obj_add_flag(ui_BackpacksPH, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -728,7 +697,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksPH, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksFRV = lv_btn_create(ui_Container1);
+    ui_BackpacksFRV = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksFRV, 76);
     lv_obj_set_height(ui_BackpacksFRV, 76);
     lv_obj_add_flag(ui_BackpacksFRV, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -748,7 +717,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksFRV, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksOTF = lv_btn_create(ui_Container1);
+    ui_BackpacksOTF = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksOTF, 76);
     lv_obj_set_height(ui_BackpacksOTF, 76);
     lv_obj_add_flag(ui_BackpacksOTF, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -768,7 +737,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksOTF, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksJP = lv_btn_create(ui_Container1);
+    ui_BackpacksJP = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksJP, 76);
     lv_obj_set_height(ui_BackpacksJP, 76);
     lv_obj_add_flag(ui_BackpacksJP, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
@@ -789,7 +758,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksJP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksHP = lv_btn_create(ui_Container1);
+    ui_BackpacksHP = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksHP, 76);
     lv_obj_set_height(ui_BackpacksHP, 76);
     lv_obj_add_flag(ui_BackpacksHP, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -809,7 +778,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksHP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksWP = lv_btn_create(ui_Container1);
+    ui_BackpacksWP = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksWP, 76);
     lv_obj_set_height(ui_BackpacksWP, 76);
     lv_obj_add_flag(ui_BackpacksWP, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -829,7 +798,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksWP, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksPE = lv_btn_create(ui_Container1);
+    ui_BackpacksPE = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksPE, 76);
     lv_obj_set_height(ui_BackpacksPE, 76);
     lv_obj_add_flag(ui_BackpacksPE, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -849,7 +818,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksPE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_BackpacksEE = lv_btn_create(ui_Container1);
+    ui_BackpacksEE = lv_btn_create(ui_Supply);
     lv_obj_set_width(ui_BackpacksEE, 76);
     lv_obj_set_height(ui_BackpacksEE, 76);
     lv_obj_add_flag(ui_BackpacksEE, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -870,28 +839,17 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_alpha_colorActive);
 
     ui_Sentry = lv_tabview_add_tab(ui_TabStratagems, "Sentry");
+    lv_obj_set_flex_flow(ui_Sentry, LV_FLEX_FLOW_ROW_WRAP);
+    lv_obj_set_flex_align(ui_Sentry, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
     lv_obj_clear_flag(ui_Sentry, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Sentry, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Sentry, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Sentry, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Sentry, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui_Sentry, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Sentry, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Sentry, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Sentry, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Sentry, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Sentry, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Container3 = lv_obj_create(ui_Sentry);
-    lv_obj_remove_style_all(ui_Container3);
-    lv_obj_set_width(ui_Container3, lv_pct(100));
-    lv_obj_set_height(ui_Container3, lv_pct(100));
-    lv_obj_set_align(ui_Container3, LV_ALIGN_CENTER);
-    lv_obj_set_flex_flow(ui_Container3, LV_FLEX_FLOW_ROW_WRAP);
-    lv_obj_set_flex_align(ui_Container3, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_Container3, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Container3, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Container3, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Container3, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Container3, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container3, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_Container3, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_StationaryMGS = lv_btn_create(ui_Container3);
+    ui_StationaryMGS = lv_btn_create(ui_Sentry);
     lv_obj_set_width(ui_StationaryMGS, 76);
     lv_obj_set_height(ui_StationaryMGS, 76);
     lv_obj_add_flag(ui_StationaryMGS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -911,7 +869,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryMGS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryGS = lv_btn_create(ui_Container3);
+    ui_StationaryGS = lv_btn_create(ui_Sentry);
     lv_obj_set_width(ui_StationaryGS, 76);
     lv_obj_set_height(ui_StationaryGS, 76);
     lv_obj_add_flag(ui_StationaryGS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -931,7 +889,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryGS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryACS = lv_btn_create(ui_Container3);
+    ui_StationaryACS = lv_btn_create(ui_Sentry);
     lv_obj_set_width(ui_StationaryACS, 76);
     lv_obj_set_height(ui_StationaryACS, 76);
     lv_obj_add_flag(ui_StationaryACS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -951,7 +909,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryACS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryHMGE = lv_btn_create(ui_Container3);
+    ui_StationaryHMGE = lv_btn_create(ui_Sentry);
     lv_obj_set_width(ui_StationaryHMGE, 76);
     lv_obj_set_height(ui_StationaryHMGE, 76);
     lv_obj_add_flag(ui_StationaryHMGE, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -971,7 +929,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryHMGE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryATE = lv_btn_create(ui_Container3);
+    ui_StationaryATE = lv_btn_create(ui_Sentry);
     lv_obj_set_width(ui_StationaryATE, 76);
     lv_obj_set_height(ui_StationaryATE, 76);
     lv_obj_add_flag(ui_StationaryATE, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -991,7 +949,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryATE, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryFS = lv_btn_create(ui_Container3);
+    ui_StationaryFS = lv_btn_create(ui_Sentry);
     lv_obj_set_width(ui_StationaryFS, 76);
     lv_obj_set_height(ui_StationaryFS, 76);
     lv_obj_add_flag(ui_StationaryFS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
@@ -1012,7 +970,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryFS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryMS = lv_btn_create(ui_Container3);
+    ui_StationaryMS = lv_btn_create(ui_Sentry);
     lv_obj_set_width(ui_StationaryMS, 76);
     lv_obj_set_height(ui_StationaryMS, 76);
     lv_obj_add_flag(ui_StationaryMS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1032,7 +990,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryMS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryRS = lv_btn_create(ui_Container3);
+    ui_StationaryRS = lv_btn_create(ui_Sentry);
     lv_obj_set_width(ui_StationaryRS, 76);
     lv_obj_set_height(ui_StationaryRS, 76);
     lv_obj_add_flag(ui_StationaryRS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1052,7 +1010,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryRS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryEMS = lv_btn_create(ui_Container3);
+    ui_StationaryEMS = lv_btn_create(ui_Sentry);
     lv_obj_set_width(ui_StationaryEMS, 76);
     lv_obj_set_height(ui_StationaryEMS, 76);
     lv_obj_add_flag(ui_StationaryEMS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1072,7 +1030,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryEMS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryLS = lv_btn_create(ui_Container3);
+    ui_StationaryLS = lv_btn_create(ui_Sentry);
     lv_obj_set_width(ui_StationaryLS, 76);
     lv_obj_set_height(ui_StationaryLS, 76);
     lv_obj_add_flag(ui_StationaryLS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1093,28 +1051,17 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_alpha_colorActive);
 
     ui_Ground = lv_tabview_add_tab(ui_TabStratagems, "Ground");
+    lv_obj_set_flex_flow(ui_Ground, LV_FLEX_FLOW_ROW_WRAP);
+    lv_obj_set_flex_align(ui_Ground, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
     lv_obj_clear_flag(ui_Ground, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Ground, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Ground, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Ground, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Ground, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui_Ground, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Ground, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Ground, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Ground, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Ground, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Ground, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Container6 = lv_obj_create(ui_Ground);
-    lv_obj_remove_style_all(ui_Container6);
-    lv_obj_set_width(ui_Container6, lv_pct(100));
-    lv_obj_set_height(ui_Container6, lv_pct(100));
-    lv_obj_set_align(ui_Container6, LV_ALIGN_CENTER);
-    lv_obj_set_flex_flow(ui_Container6, LV_FLEX_FLOW_ROW_WRAP);
-    lv_obj_set_flex_align(ui_Container6, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_Container6, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Container6, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Container6, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Container6, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Container6, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container6, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_Container6, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_StationaryGM = lv_btn_create(ui_Container6);
+    ui_StationaryGM = lv_btn_create(ui_Ground);
     lv_obj_set_width(ui_StationaryGM, 76);
     lv_obj_set_height(ui_StationaryGM, 76);
     lv_obj_add_flag(ui_StationaryGM, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1134,7 +1081,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryGM, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryTT = lv_btn_create(ui_Container6);
+    ui_StationaryTT = lv_btn_create(ui_Ground);
     lv_obj_set_width(ui_StationaryTT, 76);
     lv_obj_set_height(ui_StationaryTT, 76);
     lv_obj_add_flag(ui_StationaryTT, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1154,7 +1101,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryTT, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationarySGR = lv_btn_create(ui_Container6);
+    ui_StationarySGR = lv_btn_create(ui_Ground);
     lv_obj_set_width(ui_StationarySGR, 76);
     lv_obj_set_height(ui_StationarySGR, 76);
     lv_obj_add_flag(ui_StationarySGR, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1174,7 +1121,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationarySGR, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryAPM = lv_btn_create(ui_Container6);
+    ui_StationaryAPM = lv_btn_create(ui_Ground);
     lv_obj_set_width(ui_StationaryAPM, 76);
     lv_obj_set_height(ui_StationaryAPM, 76);
     lv_obj_add_flag(ui_StationaryAPM, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1194,7 +1141,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryAPM, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryATM = lv_btn_create(ui_Container6);
+    ui_StationaryATM = lv_btn_create(ui_Ground);
     lv_obj_set_width(ui_StationaryATM, 76);
     lv_obj_set_height(ui_StationaryATM, 76);
     lv_obj_add_flag(ui_StationaryATM, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
@@ -1215,7 +1162,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryATM, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryIM = lv_btn_create(ui_Container6);
+    ui_StationaryIM = lv_btn_create(ui_Ground);
     lv_obj_set_width(ui_StationaryIM, 76);
     lv_obj_set_height(ui_StationaryIM, 76);
     lv_obj_add_flag(ui_StationaryIM, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1235,7 +1182,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryIM, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationaryGB = lv_btn_create(ui_Container6);
+    ui_StationaryGB = lv_btn_create(ui_Ground);
     lv_obj_set_width(ui_StationaryGB, 76);
     lv_obj_set_height(ui_StationaryGB, 76);
     lv_obj_add_flag(ui_StationaryGB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1255,7 +1202,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryGB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StationarySS = lv_btn_create(ui_Container6);
+    ui_StationarySS = lv_btn_create(ui_Ground);
     lv_obj_set_width(ui_StationarySS, 76);
     lv_obj_set_height(ui_StationarySS, 76);
     lv_obj_add_flag(ui_StationarySS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1276,28 +1223,17 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_alpha_colorActive);
 
     ui_Strike = lv_tabview_add_tab(ui_TabStratagems, "Strike");
+    lv_obj_set_flex_flow(ui_Strike, LV_FLEX_FLOW_ROW_WRAP);
+    lv_obj_set_flex_align(ui_Strike, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
     lv_obj_clear_flag(ui_Strike, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Strike, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Strike, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Strike, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Strike, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui_Strike, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Strike, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Strike, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Strike, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Strike, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Strike, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Container4 = lv_obj_create(ui_Strike);
-    lv_obj_remove_style_all(ui_Container4);
-    lv_obj_set_width(ui_Container4, lv_pct(100));
-    lv_obj_set_height(ui_Container4, lv_pct(100));
-    lv_obj_set_align(ui_Container4, LV_ALIGN_CENTER);
-    lv_obj_set_flex_flow(ui_Container4, LV_FLEX_FLOW_ROW_WRAP);
-    lv_obj_set_flex_align(ui_Container4, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_Container4, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Container4, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Container4, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Container4, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Container4, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container4, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_Container4, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_Strikes120 = lv_btn_create(ui_Container4);
+    ui_Strikes120 = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_Strikes120, 76);
     lv_obj_set_height(ui_Strikes120, 76);
     lv_obj_add_flag(ui_Strikes120, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1317,7 +1253,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_Strikes120, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_Strikes380 = lv_btn_create(ui_Container4);
+    ui_Strikes380 = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_Strikes380, 76);
     lv_obj_set_height(ui_Strikes380, 76);
     lv_obj_add_flag(ui_Strikes380, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1337,7 +1273,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_Strikes380, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StrikesORS = lv_btn_create(ui_Container4);
+    ui_StrikesORS = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_StrikesORS, 76);
     lv_obj_set_height(ui_StrikesORS, 76);
     lv_obj_add_flag(ui_StrikesORS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1357,7 +1293,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StrikesORS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StrikesOGB = lv_btn_create(ui_Container4);
+    ui_StrikesOGB = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_StrikesOGB, 76);
     lv_obj_set_height(ui_StrikesOGB, 76);
     lv_obj_add_flag(ui_StrikesOGB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1377,7 +1313,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StrikesOGB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StrikesOAS = lv_btn_create(ui_Container4);
+    ui_StrikesOAS = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_StrikesOAS, 76);
     lv_obj_set_height(ui_StrikesOAS, 76);
     lv_obj_add_flag(ui_StrikesOAS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1397,7 +1333,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StrikesOAS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StrikesOL = lv_btn_create(ui_Container4);
+    ui_StrikesOL = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_StrikesOL, 76);
     lv_obj_set_height(ui_StrikesOL, 76);
     lv_obj_add_flag(ui_StrikesOL, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1417,7 +1353,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StrikesOL, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StrikesOPS = lv_btn_create(ui_Container4);
+    ui_StrikesOPS = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_StrikesOPS, 76);
     lv_obj_set_height(ui_StrikesOPS, 76);
     lv_obj_add_flag(ui_StrikesOPS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
@@ -1438,7 +1374,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StrikesOPS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StrikesOWB = lv_btn_create(ui_Container4);
+    ui_StrikesOWB = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_StrikesOWB, 76);
     lv_obj_set_height(ui_StrikesOWB, 76);
     lv_obj_add_flag(ui_StrikesOWB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1458,7 +1394,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StrikesOWB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StrikesOES = lv_btn_create(ui_Container4);
+    ui_StrikesOES = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_StrikesOES, 76);
     lv_obj_set_height(ui_StrikesOES, 76);
     lv_obj_add_flag(ui_StrikesOES, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1478,7 +1414,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StrikesOES, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StrikesONB = lv_btn_create(ui_Container4);
+    ui_StrikesONB = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_StrikesONB, 76);
     lv_obj_set_height(ui_StrikesONB, 76);
     lv_obj_add_flag(ui_StrikesONB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1498,7 +1434,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StrikesONB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StrikesOGS = lv_btn_create(ui_Container4);
+    ui_StrikesOGS = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_StrikesOGS, 76);
     lv_obj_set_height(ui_StrikesOGS, 76);
     lv_obj_add_flag(ui_StrikesOGS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1518,7 +1454,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StrikesOGS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_StrikesOSS = lv_btn_create(ui_Container4);
+    ui_StrikesOSS = lv_btn_create(ui_Strike);
     lv_obj_set_width(ui_StrikesOSS, 76);
     lv_obj_set_height(ui_StrikesOSS, 76);
     lv_obj_add_flag(ui_StrikesOSS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1539,28 +1475,17 @@ void ui_Setup_screen_init(void)
                                            _ui_theme_alpha_colorActive);
 
     ui_Eagle = lv_tabview_add_tab(ui_TabStratagems, "Eagle");
+    lv_obj_set_flex_flow(ui_Eagle, LV_FLEX_FLOW_ROW_WRAP);
+    lv_obj_set_flex_align(ui_Eagle, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
     lv_obj_clear_flag(ui_Eagle, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Eagle, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Eagle, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Eagle, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Eagle, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui_Eagle, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui_Eagle, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui_Eagle, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui_Eagle, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_row(ui_Eagle, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_column(ui_Eagle, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Container7 = lv_obj_create(ui_Eagle);
-    lv_obj_remove_style_all(ui_Container7);
-    lv_obj_set_width(ui_Container7, lv_pct(100));
-    lv_obj_set_height(ui_Container7, lv_pct(100));
-    lv_obj_set_align(ui_Container7, LV_ALIGN_CENTER);
-    lv_obj_set_flex_flow(ui_Container7, LV_FLEX_FLOW_ROW_WRAP);
-    lv_obj_set_flex_align(ui_Container7, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_Container7, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_pad_left(ui_Container7, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui_Container7, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui_Container7, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui_Container7, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_row(ui_Container7, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_column(ui_Container7, 3, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_Eagle110 = lv_btn_create(ui_Container7);
+    ui_Eagle110 = lv_btn_create(ui_Eagle);
     lv_obj_set_width(ui_Eagle110, 76);
     lv_obj_set_height(ui_Eagle110, 76);
     lv_obj_add_flag(ui_Eagle110, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1580,7 +1505,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_Eagle110, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_Eagle500 = lv_btn_create(ui_Container7);
+    ui_Eagle500 = lv_btn_create(ui_Eagle);
     lv_obj_set_width(ui_Eagle500, 76);
     lv_obj_set_height(ui_Eagle500, 76);
     lv_obj_add_flag(ui_Eagle500, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1600,7 +1525,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_Eagle500, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_EagleA = lv_btn_create(ui_Container7);
+    ui_EagleA = lv_btn_create(ui_Eagle);
     lv_obj_set_width(ui_EagleA, 76);
     lv_obj_set_height(ui_EagleA, 76);
     lv_obj_add_flag(ui_EagleA, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1620,7 +1545,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_EagleA, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_EagleCB = lv_btn_create(ui_Container7);
+    ui_EagleCB = lv_btn_create(ui_Eagle);
     lv_obj_set_width(ui_EagleCB, 76);
     lv_obj_set_height(ui_EagleCB, 76);
     lv_obj_add_flag(ui_EagleCB, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1640,7 +1565,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_EagleCB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_EagleSR = lv_btn_create(ui_Container7);
+    ui_EagleSR = lv_btn_create(ui_Eagle);
     lv_obj_set_width(ui_EagleSR, 76);
     lv_obj_set_height(ui_EagleSR, 76);
     lv_obj_add_flag(ui_EagleSR, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_FLEX_IN_NEW_TRACK |
@@ -1661,7 +1586,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_EagleSR, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_EagleNA = lv_btn_create(ui_Container7);
+    ui_EagleNA = lv_btn_create(ui_Eagle);
     lv_obj_set_width(ui_EagleNA, 76);
     lv_obj_set_height(ui_EagleNA, 76);
     lv_obj_add_flag(ui_EagleNA, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1681,7 +1606,7 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_EagleNA, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
-    ui_EagleSS = lv_btn_create(ui_Container7);
+    ui_EagleSS = lv_btn_create(ui_Eagle);
     lv_obj_set_width(ui_EagleSS, 76);
     lv_obj_set_height(ui_EagleSS, 76);
     lv_obj_add_flag(ui_EagleSS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -1819,8 +1744,8 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_WeaponsAC, ui_event_WeaponsAC, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsAMR, ui_event_WeaponsAMR, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsRG, ui_event_WeaponsRG, LV_EVENT_ALL, NULL);
-    lv_obj_add_event_cb(ui_WeaponsQC, ui_event_WeaponsQC, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsLC, ui_event_WeaponsLC, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_WeaponsQC, ui_event_WeaponsQC, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsAT, ui_event_WeaponsAT, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsE, ui_event_WeaponsE, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsSG, ui_event_WeaponsSG, LV_EVENT_ALL, NULL);
@@ -1833,8 +1758,8 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_WeaponsWSP, ui_event_WeaponsWSP, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsGL, ui_event_WeaponsGL, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsDE, ui_event_WeaponsDE, LV_EVENT_ALL, NULL);
-    lv_obj_add_event_cb(ui_WeaponsFT, ui_event_WeaponsFT, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WeaponsSTE, ui_event_WeaponsSTE, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_WeaponsFT, ui_event_WeaponsFT, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksBSB, ui_event_BackpacksBSB, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksSGP, ui_event_BackpacksSGP, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksDS, ui_event_BackpacksDS, LV_EVENT_ALL, NULL);

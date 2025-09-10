@@ -25,7 +25,6 @@ lv_obj_t * ui_Setup;
 void ui_event_TabStratagems(lv_event_t * e);
 lv_obj_t * ui_TabStratagems;
 lv_obj_t * ui_Rifle;
-lv_obj_t * ui_Container2;
 void ui_event_WeaponsMG(lv_event_t * e);
 lv_obj_t * ui_WeaponsMG;
 void ui_event_WeaponsHMG(lv_event_t * e);
@@ -38,10 +37,10 @@ void ui_event_WeaponsAMR(lv_event_t * e);
 lv_obj_t * ui_WeaponsAMR;
 void ui_event_WeaponsRG(lv_event_t * e);
 lv_obj_t * ui_WeaponsRG;
-void ui_event_WeaponsQC(lv_event_t * e);
-lv_obj_t * ui_WeaponsQC;
 void ui_event_WeaponsLC(lv_event_t * e);
 lv_obj_t * ui_WeaponsLC;
+void ui_event_WeaponsQC(lv_event_t * e);
+lv_obj_t * ui_WeaponsQC;
 void ui_event_WeaponsAT(lv_event_t * e);
 lv_obj_t * ui_WeaponsAT;
 void ui_event_WeaponsE(lv_event_t * e);
@@ -49,7 +48,6 @@ lv_obj_t * ui_WeaponsE;
 void ui_event_WeaponsSG(lv_event_t * e);
 lv_obj_t * ui_WeaponsSG;
 lv_obj_t * ui_Special;
-lv_obj_t * ui_Container16;
 void ui_event_WeaponsARL(lv_event_t * e);
 lv_obj_t * ui_WeaponsARL;
 void ui_event_WeaponsC(lv_event_t * e);
@@ -68,12 +66,11 @@ void ui_event_WeaponsGL(lv_event_t * e);
 lv_obj_t * ui_WeaponsGL;
 void ui_event_WeaponsDE(lv_event_t * e);
 lv_obj_t * ui_WeaponsDE;
-void ui_event_WeaponsFT(lv_event_t * e);
-lv_obj_t * ui_WeaponsFT;
 void ui_event_WeaponsSTE(lv_event_t * e);
 lv_obj_t * ui_WeaponsSTE;
+void ui_event_WeaponsFT(lv_event_t * e);
+lv_obj_t * ui_WeaponsFT;
 lv_obj_t * ui_Supply;
-lv_obj_t * ui_Container1;
 void ui_event_BackpacksBSB(lv_event_t * e);
 lv_obj_t * ui_BackpacksBSB;
 void ui_event_BackpacksSGP(lv_event_t * e);
@@ -107,7 +104,6 @@ lv_obj_t * ui_BackpacksPE;
 void ui_event_BackpacksEE(lv_event_t * e);
 lv_obj_t * ui_BackpacksEE;
 lv_obj_t * ui_Sentry;
-lv_obj_t * ui_Container3;
 void ui_event_StationaryMGS(lv_event_t * e);
 lv_obj_t * ui_StationaryMGS;
 void ui_event_StationaryGS(lv_event_t * e);
@@ -129,7 +125,6 @@ lv_obj_t * ui_StationaryEMS;
 void ui_event_StationaryLS(lv_event_t * e);
 lv_obj_t * ui_StationaryLS;
 lv_obj_t * ui_Ground;
-lv_obj_t * ui_Container6;
 void ui_event_StationaryGM(lv_event_t * e);
 lv_obj_t * ui_StationaryGM;
 void ui_event_StationaryTT(lv_event_t * e);
@@ -147,7 +142,6 @@ lv_obj_t * ui_StationaryGB;
 void ui_event_StationarySS(lv_event_t * e);
 lv_obj_t * ui_StationarySS;
 lv_obj_t * ui_Strike;
-lv_obj_t * ui_Container4;
 void ui_event_Strikes120(lv_event_t * e);
 lv_obj_t * ui_Strikes120;
 void ui_event_Strikes380(lv_event_t * e);
@@ -173,7 +167,6 @@ lv_obj_t * ui_StrikesOGS;
 void ui_event_StrikesOSS(lv_event_t * e);
 lv_obj_t * ui_StrikesOSS;
 lv_obj_t * ui_Eagle;
-lv_obj_t * ui_Container7;
 void ui_event_Eagle110(lv_event_t * e);
 lv_obj_t * ui_Eagle110;
 void ui_event_Eagle500(lv_event_t * e);
@@ -274,17 +267,12 @@ lv_obj_t * ui_Container12;
 lv_obj_t * ui_Label9;
 void ui_event_DdKeymap(lv_event_t * e);
 lv_obj_t * ui_DdKeymap;
-void ui_event_SetupFooter2(lv_event_t * e);
-lv_obj_t * ui_SetupFooter2;
 void ui_event_BtnSetup(lv_event_t * e);
 lv_obj_t * ui_BtnSetup;
 void ui_event_BtnAbout(lv_event_t * e);
 lv_obj_t * ui_BtnAbout;
-lv_obj_t * ui_Container11;
 void ui_event_BtnDefault(lv_event_t * e);
 lv_obj_t * ui_BtnDefault;
-void ui_event_BtnReboot(lv_event_t * e);
-lv_obj_t * ui_BtnReboot;
 // CUSTOM VARIABLES
 lv_obj_t * uic_ChbFlip;
 lv_obj_t * uic_ChbMute;
@@ -536,7 +524,7 @@ void ui_event_WeaponsRG(lv_event_t * e)
     }
 }
 
-void ui_event_WeaponsQC(lv_event_t * e)
+void ui_event_WeaponsLC(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -549,7 +537,7 @@ void ui_event_WeaponsQC(lv_event_t * e)
     }
 }
 
-void ui_event_WeaponsLC(lv_event_t * e)
+void ui_event_WeaponsQC(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -718,7 +706,7 @@ void ui_event_WeaponsDE(lv_event_t * e)
     }
 }
 
-void ui_event_WeaponsFT(lv_event_t * e)
+void ui_event_WeaponsSTE(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -731,7 +719,7 @@ void ui_event_WeaponsFT(lv_event_t * e)
     }
 }
 
-void ui_event_WeaponsSTE(lv_event_t * e)
+void ui_event_WeaponsFT(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
@@ -1649,15 +1637,6 @@ void ui_event_DdKeymap(lv_event_t * e)
     }
 }
 
-void ui_event_SetupFooter2(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    if(event_code == LV_EVENT_CLICKED) {
-        _ui_screen_change(&ui_Setup, LV_SCR_LOAD_ANIM_OVER_BOTTOM, 1000, 0, &ui_Setup_screen_init);
-    }
-}
-
 void ui_event_BtnSetup(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -1682,15 +1661,6 @@ void ui_event_BtnDefault(lv_event_t * e)
 
     if(event_code == LV_EVENT_CLICKED) {
         ResetConfig(e);
-    }
-}
-
-void ui_event_BtnReboot(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    if(event_code == LV_EVENT_CLICKED) {
-        RebootDevice(e);
     }
 }
 

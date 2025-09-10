@@ -359,12 +359,6 @@ void KeyboardDemo(lv_event_t *e)
 	setStratagemCode(sequence, 0, true);
 }
 
-// Reboot the device
-void RebootDevice(lv_event_t *e)
-{
-	esp_restart();
-}
-
 // Trigger when tab navigation has changed
 void TabChanged(lv_event_t *e)
 {

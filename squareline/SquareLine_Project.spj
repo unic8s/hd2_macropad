@@ -6,153 +6,6 @@
       {
         "guid": "GUID27888171-395418S4663316",
         "deepid": -992127801,
-        "children": [
-          {
-            "guid": "GUID93568819-628130S3344248",
-            "deepid": 2007790438,
-            "dont_export": false,
-            "locked": false,
-            "properties": [
-              {
-                "nid": 10,
-                "strtype": "OBJECT/Name",
-                "strval": "Splash",
-                "InheritedType": 10
-              },
-              {
-                "nid": 20,
-                "strtype": "OBJECT/Layout",
-                "InheritedType": 1
-              },
-              {
-                "Flow": 0,
-                "Wrap": false,
-                "Reversed": false,
-                "MainAlignment": 0,
-                "CrossAlignment": 0,
-                "TrackAlignment": 0,
-                "LayoutType": 0,
-                "nid": 30,
-                "strtype": "OBJECT/Layout_type",
-                "strval": "No_layout",
-                "InheritedType": 13
-              },
-              {
-                "nid": 40,
-                "strtype": "OBJECT/Transform",
-                "InheritedType": 1
-              },
-              {
-                "nid": 50,
-                "flags": 17,
-                "strtype": "OBJECT/Position",
-                "intarray": [
-                  0,
-                  0
-                ],
-                "InheritedType": 7
-              },
-              {
-                "nid": 60,
-                "flags": 51,
-                "strtype": "OBJECT/Size",
-                "intarray": [
-                  1,
-                  1
-                ],
-                "InheritedType": 7
-              },
-              {
-                "nid": 70,
-                "strtype": "OBJECT/Align",
-                "strval": "CENTER",
-                "InheritedType": 3
-              },
-              {
-                "nid": 90,
-                "flags": 1048576,
-                "strtype": "OBJECT/Flags",
-                "InheritedType": 1
-              },
-              {
-                "nid": 110,
-                "strtype": "OBJECT/Clickable",
-                "strval": "False",
-                "InheritedType": 2
-              },
-              {
-                "nid": 150,
-                "strtype": "OBJECT/Adv_hittest",
-                "strval": "True",
-                "InheritedType": 2
-              },
-              {
-                "nid": 230,
-                "strtype": "OBJECT/Scrollable",
-                "strval": "False",
-                "InheritedType": 2
-              },
-              {
-                "nid": 300,
-                "strtype": "OBJECT/Scrollbar_mode",
-                "strval": "AUTO",
-                "InheritedType": 3
-              },
-              {
-                "nid": 310,
-                "strtype": "OBJECT/Scroll_direction",
-                "strval": "ALL",
-                "InheritedType": 3
-              },
-              {
-                "nid": 320,
-                "flags": 1048576,
-                "strtype": "OBJECT/States",
-                "InheritedType": 1
-              },
-              {
-                "nid": 1010,
-                "strtype": "IMAGE/Image",
-                "InheritedType": 1
-              },
-              {
-                "nid": 1020,
-                "strtype": "IMAGE/Asset",
-                "strval": "assets/intro.png",
-                "InheritedType": 5
-              },
-              {
-                "nid": 1030,
-                "strtype": "IMAGE/Pivot",
-                "intarray": [
-                  0,
-                  0
-                ],
-                "InheritedType": 7
-              },
-              {
-                "nid": 1040,
-                "strtype": "IMAGE/Rotation",
-                "InheritedType": 6
-              },
-              {
-                "nid": 1050,
-                "strtype": "IMAGE/Scale",
-                "integer": 256,
-                "InheritedType": 6
-              },
-              {
-                "part": "lv.PART.MAIN",
-                "childs": [],
-                "nid": 1060,
-                "strtype": "IMAGE/Style_main",
-                "strval": "lv.PART.MAIN, Rectangle, Image, Transform",
-                "InheritedType": 11
-              }
-            ],
-            "saved_objtypeKey": "IMAGE"
-          }
-        ],
         "isPage": true,
         "editor_posx": 1170,
         "editor_posy": -1050,
@@ -226,7 +79,7 @@
           {
             "nid": 1020,
             "strtype": "SCREEN/Temporary",
-            "strval": "False",
+            "strval": "True",
             "InheritedType": 2
           },
           {
@@ -247,6 +100,12 @@
                       255
                     ],
                     "InheritedType": 7
+                  },
+                  {
+                    "nid": 10610,
+                    "strtype": "_style/Bg_Image",
+                    "strval": "assets/intro.png",
+                    "InheritedType": 5
                   }
                 ],
                 "InheritedType": 1
@@ -335,55 +194,6 @@
                     "strtype": "CHANGE SCREEN/Delay",
                     "integer": 2000,
                     "InheritedType": 6
-                  }
-                ],
-                "InheritedType": 10
-              },
-              {
-                "nid": 1001505,
-                "strtype": "_event/action",
-                "strval": "PLAY ANIMATION",
-                "childs": [
-                  {
-                    "nid": 1001506,
-                    "strtype": "PLAY ANIMATION/Name",
-                    "strval": "PLAY ANIMATION",
-                    "InheritedType": 10
-                  },
-                  {
-                    "nid": 1001507,
-                    "strtype": "PLAY ANIMATION/FunctionName",
-                    "strval": "SplashFade_Animation",
-                    "InheritedType": 10
-                  },
-                  {
-                    "nid": 1001508,
-                    "strtype": "PLAY ANIMATION/Animation",
-                    "strval": "SplashFade",
-                    "InheritedType": 8
-                  },
-                  {
-                    "nid": 1001509,
-                    "strtype": "PLAY ANIMATION/Target",
-                    "strval": "GUID93568819-628130S3344248",
-                    "InheritedType": 9
-                  },
-                  {
-                    "nid": 1001510,
-                    "strtype": "PLAY ANIMATION/Delay",
-                    "InheritedType": 6
-                  },
-                  {
-                    "nid": 1001511,
-                    "strtype": "PLAY ANIMATION/Call",
-                    "strval": "<{FunctionName}>(<{Target}>, <{Delay}>)",
-                    "InheritedType": 10
-                  },
-                  {
-                    "nid": 1001512,
-                    "strtype": "PLAY ANIMATION/CallC",
-                    "strval": "<{FunctionName}>(<{Target}>, <{Delay}>);",
-                    "InheritedType": 10
                   }
                 ],
                 "InheritedType": 10
@@ -38272,208 +38082,7 @@
     ],
     "saved_objtypeKey": "STARTEVENTS"
   },
-  "animations": [
-    {
-      "propertyAnimations": [
-        {
-          "Path": 1,
-          "KeyFrames": [
-            {
-              "Value": 0,
-              "Time": 100.0,
-              "InheritedType": 1
-            },
-            {
-              "Value": 255,
-              "Time": 1100.0,
-              "InheritedType": 1
-            }
-          ],
-          "TimeReference": 0,
-          "ValueReference": 0,
-          "EarlyApply": false,
-          "ImageSet": "",
-          "PlaybackTime": 0,
-          "PlaybackDelay": 0,
-          "LoopCount": 0,
-          "LoopDelay": 0,
-          "LoopInfinite": false,
-          "guid": "GUID64612165-227619S75223320",
-          "deepid": 1376704653,
-          "dont_export": false,
-          "locked": false,
-          "properties": [
-            {
-              "nid": 1001429,
-              "strtype": "PROPERTYANIMATION/Name",
-              "strval": "Opacity",
-              "InheritedType": 10
-            },
-            {
-              "nid": 1001430,
-              "strtype": "PROPERTYANIMATION/VariableName",
-              "strval": "PropertyAnimation_0",
-              "InheritedType": 10
-            },
-            {
-              "nid": 1001431,
-              "strtype": "PROPERTYANIMATION/PropertyFunction",
-              "strval": "anim_callback_set_opacity",
-              "InheritedType": 10
-            },
-            {
-              "nid": 1001432,
-              "strtype": "PROPERTYANIMATION/StartValue",
-              "InheritedType": 6
-            },
-            {
-              "nid": 1001433,
-              "strtype": "PROPERTYANIMATION/EndValue",
-              "integer": 255,
-              "InheritedType": 6
-            },
-            {
-              "nid": 1001434,
-              "strtype": "PROPERTYANIMATION/AbsoluteReference",
-              "strval": "True",
-              "InheritedType": 2
-            },
-            {
-              "nid": 1001435,
-              "strtype": "PROPERTYANIMATION/Delay",
-              "integer": 100,
-              "InheritedType": 6
-            },
-            {
-              "nid": 1001436,
-              "strtype": "PROPERTYANIMATION/Duration",
-              "integer": 1000,
-              "InheritedType": 6
-            },
-            {
-              "nid": 1001437,
-              "strtype": "PROPERTYANIMATION/Path",
-              "strval": "ease_in",
-              "InheritedType": 3
-            },
-            {
-              "nid": 1001438,
-              "strtype": "PROPERTYANIMATION/FullAnimationDuration",
-              "integer": 1100,
-              "InheritedType": 6
-            },
-            {
-              "nid": 1001439,
-              "strtype": "PROPERTYANIMATION/LoopCount",
-              "InheritedType": 6
-            },
-            {
-              "nid": 1001440,
-              "strtype": "PROPERTYANIMATION/Forward",
-              "strval": "True",
-              "InheritedType": 2
-            },
-            {
-              "nid": 1001441,
-              "strtype": "PROPERTYANIMATION/Backward",
-              "strval": "False",
-              "InheritedType": 2
-            },
-            {
-              "nid": 1001442,
-              "strtype": "PROPERTYANIMATION/EarlyApply",
-              "strval": "False",
-              "InheritedType": 2
-            },
-            {
-              "nid": 1001443,
-              "strtype": "PROPERTYANIMATION/PropertyGetter",
-              "strval": "anim_callback_get_opacity",
-              "InheritedType": 10
-            },
-            {
-              "nid": 1001444,
-              "strtype": "PROPERTYANIMATION/LoopDelay",
-              "InheritedType": 6
-            },
-            {
-              "nid": 1001445,
-              "strtype": "PROPERTYANIMATION/PlaybackDelay",
-              "InheritedType": 6
-            },
-            {
-              "nid": 1001446,
-              "strtype": "PROPERTYANIMATION/PlaybackTime",
-              "InheritedType": 6
-            },
-            {
-              "nid": 1001447,
-              "strtype": "PROPERTYANIMATION/LoopInfinite",
-              "strval": "False",
-              "InheritedType": 2
-            },
-            {
-              "nid": 1001448,
-              "strtype": "PROPERTYANIMATION/ImageSet",
-              "strval": "",
-              "InheritedType": 14
-            }
-          ],
-          "saved_objtypeKey": "PROPERTYANIMATION",
-          "InheritedType": 1
-        }
-      ],
-      "guid": "GUID67876291-227617S8623320",
-      "deepid": 375122560,
-      "dont_export": false,
-      "locked": false,
-      "properties": [
-        {
-          "nid": 1001422,
-          "strtype": "ELOANIMATION/Name",
-          "strval": "SplashFade",
-          "InheritedType": 10
-        },
-        {
-          "nid": 1001423,
-          "strtype": "ELOANIMATION/FunctionName",
-          "strval": "SplashFade_Animation",
-          "InheritedType": 10
-        },
-        {
-          "nid": 1001424,
-          "strtype": "ELOANIMATION/AnimationTargetObjectType",
-          "strval": "BASIC",
-          "InheritedType": 10
-        },
-        {
-          "nid": 1001425,
-          "strtype": "ELOANIMATION/PlayType",
-          "strval": "Forward",
-          "InheritedType": 3
-        },
-        {
-          "nid": 1001426,
-          "strtype": "ELOANIMATION/Loop",
-          "strval": "False",
-          "InheritedType": 2
-        },
-        {
-          "nid": 1001427,
-          "strtype": "ELOANIMATION/TestTarget",
-          "strval": "GUID27888171-395418S4663316",
-          "InheritedType": 10
-        },
-        {
-          "nid": 1001428,
-          "strtype": "ELOANIMATION/TargetTypeFilter",
-          "strval": "",
-          "InheritedType": 10
-        }
-      ],
-      "saved_objtypeKey": "ELOANIMATION"
-    }
-  ],
+  "animations": [],
   "selected_theme": "Default",
   "info": {
     "name": "SquareLine_Project.spj",
@@ -38502,7 +38111,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2623,
+    "backup_cnt": 2650,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

@@ -8,6 +8,7 @@
 
 ///////////////////// VARIABLES ////////////////////
 void PresetSaveAnim_Animation(lv_obj_t * TargetObject, int delay);
+void PresetLoadAnim_Animation(lv_obj_t * TargetObject, int delay);
 
 
 // SCREEN: ui_Intro
@@ -296,6 +297,8 @@ lv_obj_t * ui____initial_actions0;
 const lv_img_dsc_t * ui_imgset_792859353[1] = {&ui_img_1566825004};
 const lv_img_dsc_t * ui_imgset_1388782467[1] = {&ui_img_1050696822};
 const lv_img_dsc_t * ui_imgset_1570572463[1] = {&ui_img_738976508};
+const lv_img_dsc_t * ui_imgset_623321993[1] = {&ui_img_2107362454};
+const lv_img_dsc_t * ui_imgset_623321992[1] = {&ui_img_986101477};
 const lv_img_dsc_t * ui_imgset_313891012[1] = {&ui_img_2089845529};
 const lv_img_dsc_t * ui_imgset_2008775657[1] = {&ui_img_165882922};
 const lv_img_dsc_t * ui_imgset_1732230296[1] = {&ui_img_1132554101};
@@ -386,8 +389,6 @@ const lv_img_dsc_t * ui_imgset_tt[2] = {&ui_img_sg_tt1_png, &ui_img_sg_tt2_png};
 const lv_img_dsc_t * ui_imgset_ud[2] = {&ui_img_sg_ud1_png, &ui_img_sg_ud2_png};
 const lv_img_dsc_t * ui_imgset_wp[2] = {&ui_img_sg_wp1_png, &ui_img_sg_wp2_png};
 const lv_img_dsc_t * ui_imgset_wsp[2] = {&ui_img_sg_wsp1_png, &ui_img_sg_wsp2_png};
-const lv_img_dsc_t * ui_imgset_623321993[1] = {&ui_img_2107362454};
-const lv_img_dsc_t * ui_imgset_623321992[1] = {&ui_img_986101477};
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
 #if LV_COLOR_DEPTH != 16
@@ -407,10 +408,10 @@ void PresetSaveAnim_Animation(lv_obj_t * TargetObject, int delay)
     PropertyAnimation_0_user_data->val = -1;
     lv_anim_t PropertyAnimation_0;
     lv_anim_init(&PropertyAnimation_0);
-    lv_anim_set_time(&PropertyAnimation_0, 500);
+    lv_anim_set_time(&PropertyAnimation_0, 150);
     lv_anim_set_user_data(&PropertyAnimation_0, PropertyAnimation_0_user_data);
-    lv_anim_set_custom_exec_cb(&PropertyAnimation_0, _ui_anim_callback_set_opacity);
-    lv_anim_set_values(&PropertyAnimation_0, 0, 255);
+    lv_anim_set_custom_exec_cb(&PropertyAnimation_0, _ui_anim_callback_set_height);
+    lv_anim_set_values(&PropertyAnimation_0, 38, 30);
     lv_anim_set_path_cb(&PropertyAnimation_0, lv_anim_path_linear);
     lv_anim_set_delay(&PropertyAnimation_0, delay + 0);
     lv_anim_set_deleted_cb(&PropertyAnimation_0, _ui_anim_callback_free_user_data);
@@ -419,8 +420,71 @@ void PresetSaveAnim_Animation(lv_obj_t * TargetObject, int delay)
     lv_anim_set_repeat_count(&PropertyAnimation_0, 0);
     lv_anim_set_repeat_delay(&PropertyAnimation_0, 0);
     lv_anim_set_early_apply(&PropertyAnimation_0, false);
-    lv_anim_set_get_value_cb(&PropertyAnimation_0, &_ui_anim_callback_get_opacity);
     lv_anim_start(&PropertyAnimation_0);
+    ui_anim_user_data_t * PropertyAnimation_1_user_data = lv_mem_alloc(sizeof(ui_anim_user_data_t));
+    PropertyAnimation_1_user_data->target = TargetObject;
+    PropertyAnimation_1_user_data->imgset = (lv_img_dsc_t **)ui_imgset_;
+    PropertyAnimation_1_user_data->imgset_size = sizeof(ui_imgset_) / (sizeof(lv_img_dsc_t *));
+    PropertyAnimation_1_user_data->val = -1;
+    lv_anim_t PropertyAnimation_1;
+    lv_anim_init(&PropertyAnimation_1);
+    lv_anim_set_time(&PropertyAnimation_1, 150);
+    lv_anim_set_user_data(&PropertyAnimation_1, PropertyAnimation_1_user_data);
+    lv_anim_set_custom_exec_cb(&PropertyAnimation_1, _ui_anim_callback_set_height);
+    lv_anim_set_values(&PropertyAnimation_1, 30, 38);
+    lv_anim_set_path_cb(&PropertyAnimation_1, lv_anim_path_linear);
+    lv_anim_set_delay(&PropertyAnimation_1, delay + 150);
+    lv_anim_set_deleted_cb(&PropertyAnimation_1, _ui_anim_callback_free_user_data);
+    lv_anim_set_playback_time(&PropertyAnimation_1, 0);
+    lv_anim_set_playback_delay(&PropertyAnimation_1, 0);
+    lv_anim_set_repeat_count(&PropertyAnimation_1, 0);
+    lv_anim_set_repeat_delay(&PropertyAnimation_1, 0);
+    lv_anim_set_early_apply(&PropertyAnimation_1, false);
+    lv_anim_start(&PropertyAnimation_1);
+
+}
+void PresetLoadAnim_Animation(lv_obj_t * TargetObject, int delay)
+{
+    ui_anim_user_data_t * PropertyAnimation_0_user_data = lv_mem_alloc(sizeof(ui_anim_user_data_t));
+    PropertyAnimation_0_user_data->target = TargetObject;
+    PropertyAnimation_0_user_data->imgset = (lv_img_dsc_t **)ui_imgset_;
+    PropertyAnimation_0_user_data->imgset_size = sizeof(ui_imgset_) / (sizeof(lv_img_dsc_t *));
+    PropertyAnimation_0_user_data->val = -1;
+    lv_anim_t PropertyAnimation_0;
+    lv_anim_init(&PropertyAnimation_0);
+    lv_anim_set_time(&PropertyAnimation_0, 150);
+    lv_anim_set_user_data(&PropertyAnimation_0, PropertyAnimation_0_user_data);
+    lv_anim_set_custom_exec_cb(&PropertyAnimation_0, _ui_anim_callback_set_height);
+    lv_anim_set_values(&PropertyAnimation_0, 38, 46);
+    lv_anim_set_path_cb(&PropertyAnimation_0, lv_anim_path_linear);
+    lv_anim_set_delay(&PropertyAnimation_0, delay + 0);
+    lv_anim_set_deleted_cb(&PropertyAnimation_0, _ui_anim_callback_free_user_data);
+    lv_anim_set_playback_time(&PropertyAnimation_0, 0);
+    lv_anim_set_playback_delay(&PropertyAnimation_0, 0);
+    lv_anim_set_repeat_count(&PropertyAnimation_0, 0);
+    lv_anim_set_repeat_delay(&PropertyAnimation_0, 0);
+    lv_anim_set_early_apply(&PropertyAnimation_0, false);
+    lv_anim_start(&PropertyAnimation_0);
+    ui_anim_user_data_t * PropertyAnimation_1_user_data = lv_mem_alloc(sizeof(ui_anim_user_data_t));
+    PropertyAnimation_1_user_data->target = TargetObject;
+    PropertyAnimation_1_user_data->imgset = (lv_img_dsc_t **)ui_imgset_;
+    PropertyAnimation_1_user_data->imgset_size = sizeof(ui_imgset_) / (sizeof(lv_img_dsc_t *));
+    PropertyAnimation_1_user_data->val = -1;
+    lv_anim_t PropertyAnimation_1;
+    lv_anim_init(&PropertyAnimation_1);
+    lv_anim_set_time(&PropertyAnimation_1, 150);
+    lv_anim_set_user_data(&PropertyAnimation_1, PropertyAnimation_1_user_data);
+    lv_anim_set_custom_exec_cb(&PropertyAnimation_1, _ui_anim_callback_set_height);
+    lv_anim_set_values(&PropertyAnimation_1, 46, 38);
+    lv_anim_set_path_cb(&PropertyAnimation_1, lv_anim_path_linear);
+    lv_anim_set_delay(&PropertyAnimation_1, delay + 150);
+    lv_anim_set_deleted_cb(&PropertyAnimation_1, _ui_anim_callback_free_user_data);
+    lv_anim_set_playback_time(&PropertyAnimation_1, 0);
+    lv_anim_set_playback_delay(&PropertyAnimation_1, 0);
+    lv_anim_set_repeat_count(&PropertyAnimation_1, 0);
+    lv_anim_set_repeat_delay(&PropertyAnimation_1, 0);
+    lv_anim_set_early_apply(&PropertyAnimation_1, false);
+    lv_anim_start(&PropertyAnimation_1);
 
 }
 
@@ -1460,10 +1524,11 @@ void ui_event_BtnPreset1(lv_event_t * e)
 
     if(event_code == LV_EVENT_SHORT_CLICKED) {
         GetPreset(e);
+        PresetLoadAnim_Animation(ui_BtnPreset1, 0);
     }
     if(event_code == LV_EVENT_LONG_PRESSED) {
         SetPreset(e);
-        PresetSaveAnim_Animation(ui_TabStratagems, 0);
+        PresetSaveAnim_Animation(ui_BtnPreset1, 0);
     }
 }
 
@@ -1473,10 +1538,11 @@ void ui_event_BtnPreset2(lv_event_t * e)
 
     if(event_code == LV_EVENT_SHORT_CLICKED) {
         GetPreset(e);
+        PresetLoadAnim_Animation(ui_BtnPreset2, 0);
     }
     if(event_code == LV_EVENT_LONG_PRESSED) {
         SetPreset(e);
-        PresetSaveAnim_Animation(ui_TabStratagems, 0);
+        PresetSaveAnim_Animation(ui_BtnPreset2, 0);
     }
 }
 

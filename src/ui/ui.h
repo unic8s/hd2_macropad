@@ -28,6 +28,7 @@ extern "C" {
 #include "ui_themes.h"
 
 void PresetSaveAnim_Animation(lv_obj_t * TargetObject, int delay);
+void PresetLoadAnim_Animation(lv_obj_t * TargetObject, int delay);
 
 // SCREEN: ui_Intro
 void ui_Intro_screen_init(void);

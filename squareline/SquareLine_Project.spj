@@ -28001,6 +28001,55 @@
                       }
                     ],
                     "InheritedType": 10
+                  },
+                  {
+                    "nid": 1002377,
+                    "strtype": "_event/action",
+                    "strval": "PLAY ANIMATION",
+                    "childs": [
+                      {
+                        "nid": 1002378,
+                        "strtype": "PLAY ANIMATION/Name",
+                        "strval": "PLAY ANIMATION",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 1002379,
+                        "strtype": "PLAY ANIMATION/FunctionName",
+                        "strval": "PresetLoadAnim_Animation",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 1002380,
+                        "strtype": "PLAY ANIMATION/Animation",
+                        "strval": "PresetLoadAnim",
+                        "InheritedType": 8
+                      },
+                      {
+                        "nid": 1002381,
+                        "strtype": "PLAY ANIMATION/Target",
+                        "strval": "GUID25530628-823811S4044264",
+                        "InheritedType": 9
+                      },
+                      {
+                        "nid": 1002382,
+                        "strtype": "PLAY ANIMATION/Delay",
+                        "InheritedType": 6
+                      },
+                      {
+                        "nid": 1002383,
+                        "strtype": "PLAY ANIMATION/Call",
+                        "strval": "<{FunctionName}>(<{Target}>, <{Delay}>)",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 1002384,
+                        "strtype": "PLAY ANIMATION/CallC",
+                        "strval": "<{FunctionName}>(<{Target}>, <{Delay}>);",
+                        "InheritedType": 10
+                      }
+                    ],
+                    "InheritedType": 10
                   }
                 ],
                 "InheritedType": 4
@@ -28093,7 +28142,7 @@
                       {
                         "nid": 1002326,
                         "strtype": "PLAY ANIMATION/Target",
-                        "strval": "GUID41842278-171696S8013306",
+                        "strval": "GUID25530628-823811S4044264",
                         "InheritedType": 9
                       },
                       {
@@ -28354,6 +28403,55 @@
                       }
                     ],
                     "InheritedType": 10
+                  },
+                  {
+                    "nid": 1002392,
+                    "strtype": "_event/action",
+                    "strval": "PLAY ANIMATION",
+                    "childs": [
+                      {
+                        "nid": 1002393,
+                        "strtype": "PLAY ANIMATION/Name",
+                        "strval": "PLAY ANIMATION",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 1002394,
+                        "strtype": "PLAY ANIMATION/FunctionName",
+                        "strval": "PresetLoadAnim_Animation",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 1002395,
+                        "strtype": "PLAY ANIMATION/Animation",
+                        "strval": "PresetLoadAnim",
+                        "InheritedType": 8
+                      },
+                      {
+                        "nid": 1002396,
+                        "strtype": "PLAY ANIMATION/Target",
+                        "strval": "GUID47951113-447619S317214264",
+                        "InheritedType": 9
+                      },
+                      {
+                        "nid": 1002397,
+                        "strtype": "PLAY ANIMATION/Delay",
+                        "InheritedType": 6
+                      },
+                      {
+                        "nid": 1002398,
+                        "strtype": "PLAY ANIMATION/Call",
+                        "strval": "<{FunctionName}>(<{Target}>, <{Delay}>)",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 1002399,
+                        "strtype": "PLAY ANIMATION/CallC",
+                        "strval": "<{FunctionName}>(<{Target}>, <{Delay}>);",
+                        "InheritedType": 10
+                      }
+                    ],
+                    "InheritedType": 10
                   }
                 ],
                 "InheritedType": 4
@@ -28446,7 +28544,7 @@
                       {
                         "nid": 1002311,
                         "strtype": "PLAY ANIMATION/Target",
-                        "strval": "GUID41842278-171696S8013306",
+                        "strval": "GUID47951113-447619S317214264",
                         "InheritedType": 9
                       },
                       {
@@ -38658,18 +38756,18 @@
           "Path": 0,
           "KeyFrames": [
             {
-              "Value": 0,
+              "Value": 38,
               "Time": 0.0,
               "InheritedType": 1
             },
             {
-              "Value": 255,
-              "Time": 500.0,
+              "Value": 30,
+              "Time": 150.0,
               "InheritedType": 1
             }
           ],
           "TimeReference": 0,
-          "ValueReference": 1,
+          "ValueReference": 0,
           "EarlyApply": false,
           "ImageSet": "",
           "PlaybackTime": 0,
@@ -38677,121 +38775,270 @@
           "LoopCount": 0,
           "LoopDelay": 0,
           "LoopInfinite": false,
-          "guid": "GUID45326863-447634S4314264",
-          "deepid": -1726602404,
+          "guid": "GUID4016670-828866S318174264",
+          "deepid": 1324564124,
           "dont_export": false,
           "locked": false,
           "properties": [
             {
-              "nid": 1002287,
+              "nid": 1002330,
               "strtype": "PROPERTYANIMATION/Name",
-              "strval": "Opacity",
+              "strval": "Height",
               "InheritedType": 10
             },
             {
-              "nid": 1002288,
+              "nid": 1002331,
               "strtype": "PROPERTYANIMATION/VariableName",
               "strval": "PropertyAnimation_0",
               "InheritedType": 10
             },
             {
-              "nid": 1002289,
+              "nid": 1002332,
               "strtype": "PROPERTYANIMATION/PropertyFunction",
-              "strval": "anim_callback_set_opacity",
+              "strval": "anim_callback_set_height",
               "InheritedType": 10
             },
             {
-              "nid": 1002290,
+              "nid": 1002333,
               "strtype": "PROPERTYANIMATION/StartValue",
+              "integer": 38,
               "InheritedType": 6
             },
             {
-              "nid": 1002291,
+              "nid": 1002334,
               "strtype": "PROPERTYANIMATION/EndValue",
-              "integer": 255,
+              "integer": 30,
               "InheritedType": 6
             },
             {
-              "nid": 1002292,
+              "nid": 1002335,
               "strtype": "PROPERTYANIMATION/AbsoluteReference",
-              "strval": "False",
+              "strval": "True",
               "InheritedType": 2
             },
             {
-              "nid": 1002293,
+              "nid": 1002336,
               "strtype": "PROPERTYANIMATION/Delay",
               "InheritedType": 6
             },
             {
-              "nid": 1002294,
+              "nid": 1002337,
               "strtype": "PROPERTYANIMATION/Duration",
-              "integer": 500,
+              "integer": 150,
               "InheritedType": 6
             },
             {
-              "nid": 1002295,
+              "nid": 1002338,
               "strtype": "PROPERTYANIMATION/Path",
               "strval": "linear",
               "InheritedType": 3
             },
             {
-              "nid": 1002296,
+              "nid": 1002339,
               "strtype": "PROPERTYANIMATION/FullAnimationDuration",
-              "integer": 500,
+              "integer": 300,
               "InheritedType": 6
             },
             {
-              "nid": 1002297,
+              "nid": 1002340,
               "strtype": "PROPERTYANIMATION/LoopCount",
               "InheritedType": 6
             },
             {
-              "nid": 1002298,
+              "nid": 1002341,
               "strtype": "PROPERTYANIMATION/Forward",
               "strval": "True",
               "InheritedType": 2
             },
             {
-              "nid": 1002299,
+              "nid": 1002342,
               "strtype": "PROPERTYANIMATION/Backward",
               "strval": "False",
               "InheritedType": 2
             },
             {
-              "nid": 1002300,
+              "nid": 1002343,
               "strtype": "PROPERTYANIMATION/EarlyApply",
               "strval": "False",
               "InheritedType": 2
             },
             {
-              "nid": 1002301,
+              "nid": 1002344,
               "strtype": "PROPERTYANIMATION/PropertyGetter",
-              "strval": "anim_callback_get_opacity",
+              "strval": "anim_callback_get_height",
               "InheritedType": 10
             },
             {
-              "nid": 1002302,
+              "nid": 1002345,
               "strtype": "PROPERTYANIMATION/LoopDelay",
               "InheritedType": 6
             },
             {
-              "nid": 1002303,
+              "nid": 1002346,
               "strtype": "PROPERTYANIMATION/PlaybackDelay",
               "InheritedType": 6
             },
             {
-              "nid": 1002304,
+              "nid": 1002347,
               "strtype": "PROPERTYANIMATION/PlaybackTime",
               "InheritedType": 6
             },
             {
-              "nid": 1002305,
+              "nid": 1002348,
               "strtype": "PROPERTYANIMATION/LoopInfinite",
               "strval": "False",
               "InheritedType": 2
             },
             {
-              "nid": 1002306,
+              "nid": 1002349,
+              "strtype": "PROPERTYANIMATION/ImageSet",
+              "strval": "",
+              "InheritedType": 14
+            }
+          ],
+          "saved_objtypeKey": "PROPERTYANIMATION",
+          "InheritedType": 1
+        },
+        {
+          "Path": 0,
+          "KeyFrames": [
+            {
+              "Value": 30,
+              "Time": 150.0,
+              "InheritedType": 1
+            },
+            {
+              "Value": 38,
+              "Time": 300.0,
+              "InheritedType": 1
+            }
+          ],
+          "TimeReference": 0,
+          "ValueReference": 0,
+          "EarlyApply": false,
+          "ImageSet": "",
+          "PlaybackTime": 0,
+          "PlaybackDelay": 0,
+          "LoopCount": 0,
+          "LoopDelay": 0,
+          "LoopInfinite": false,
+          "guid": "GUID15562756-828874S418044264",
+          "deepid": -1459735269,
+          "dont_export": false,
+          "locked": false,
+          "properties": [
+            {
+              "nid": 1002420,
+              "strtype": "PROPERTYANIMATION/Name",
+              "strval": "Height",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002421,
+              "strtype": "PROPERTYANIMATION/VariableName",
+              "strval": "PropertyAnimation_1",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002422,
+              "strtype": "PROPERTYANIMATION/PropertyFunction",
+              "strval": "anim_callback_set_height",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002423,
+              "strtype": "PROPERTYANIMATION/StartValue",
+              "integer": 30,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002424,
+              "strtype": "PROPERTYANIMATION/EndValue",
+              "integer": 38,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002425,
+              "strtype": "PROPERTYANIMATION/AbsoluteReference",
+              "strval": "True",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002426,
+              "strtype": "PROPERTYANIMATION/Delay",
+              "integer": 150,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002427,
+              "strtype": "PROPERTYANIMATION/Duration",
+              "integer": 150,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002428,
+              "strtype": "PROPERTYANIMATION/Path",
+              "strval": "linear",
+              "InheritedType": 3
+            },
+            {
+              "nid": 1002429,
+              "strtype": "PROPERTYANIMATION/FullAnimationDuration",
+              "integer": 300,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002430,
+              "strtype": "PROPERTYANIMATION/LoopCount",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002431,
+              "strtype": "PROPERTYANIMATION/Forward",
+              "strval": "True",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002432,
+              "strtype": "PROPERTYANIMATION/Backward",
+              "strval": "False",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002433,
+              "strtype": "PROPERTYANIMATION/EarlyApply",
+              "strval": "False",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002434,
+              "strtype": "PROPERTYANIMATION/PropertyGetter",
+              "strval": "anim_callback_get_height",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002435,
+              "strtype": "PROPERTYANIMATION/LoopDelay",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002436,
+              "strtype": "PROPERTYANIMATION/PlaybackDelay",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002437,
+              "strtype": "PROPERTYANIMATION/PlaybackTime",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002438,
+              "strtype": "PROPERTYANIMATION/LoopInfinite",
+              "strval": "False",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002439,
               "strtype": "PROPERTYANIMATION/ImageSet",
               "strval": "",
               "InheritedType": 14
@@ -38839,11 +39086,359 @@
         {
           "nid": 1002265,
           "strtype": "ELOANIMATION/TestTarget",
-          "strval": "GUID41842278-171696S8013306",
+          "strval": "GUID25530628-823811S4044264",
           "InheritedType": 10
         },
         {
           "nid": 1002266,
+          "strtype": "ELOANIMATION/TargetTypeFilter",
+          "strval": "",
+          "InheritedType": 10
+        }
+      ],
+      "saved_objtypeKey": "ELOANIMATION"
+    },
+    {
+      "propertyAnimations": [
+        {
+          "Path": 0,
+          "KeyFrames": [
+            {
+              "Value": 38,
+              "Time": 0.0,
+              "InheritedType": 1
+            },
+            {
+              "Value": 46,
+              "Time": 150.0,
+              "InheritedType": 1
+            }
+          ],
+          "TimeReference": 0,
+          "ValueReference": 0,
+          "EarlyApply": false,
+          "ImageSet": "",
+          "PlaybackTime": 0,
+          "PlaybackDelay": 0,
+          "LoopCount": 0,
+          "LoopDelay": 0,
+          "LoopInfinite": false,
+          "guid": "GUID19143588-828870S106474264",
+          "deepid": 1314023943,
+          "dont_export": false,
+          "locked": false,
+          "properties": [
+            {
+              "nid": 1002357,
+              "strtype": "PROPERTYANIMATION/Name",
+              "strval": "Height",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002358,
+              "strtype": "PROPERTYANIMATION/VariableName",
+              "strval": "PropertyAnimation_0",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002359,
+              "strtype": "PROPERTYANIMATION/PropertyFunction",
+              "strval": "anim_callback_set_height",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002360,
+              "strtype": "PROPERTYANIMATION/StartValue",
+              "integer": 38,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002361,
+              "strtype": "PROPERTYANIMATION/EndValue",
+              "integer": 46,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002362,
+              "strtype": "PROPERTYANIMATION/AbsoluteReference",
+              "strval": "True",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002363,
+              "strtype": "PROPERTYANIMATION/Delay",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002364,
+              "strtype": "PROPERTYANIMATION/Duration",
+              "integer": 150,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002365,
+              "strtype": "PROPERTYANIMATION/Path",
+              "strval": "linear",
+              "InheritedType": 3
+            },
+            {
+              "nid": 1002366,
+              "strtype": "PROPERTYANIMATION/FullAnimationDuration",
+              "integer": 300,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002367,
+              "strtype": "PROPERTYANIMATION/LoopCount",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002368,
+              "strtype": "PROPERTYANIMATION/Forward",
+              "strval": "True",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002369,
+              "strtype": "PROPERTYANIMATION/Backward",
+              "strval": "False",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002370,
+              "strtype": "PROPERTYANIMATION/EarlyApply",
+              "strval": "False",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002371,
+              "strtype": "PROPERTYANIMATION/PropertyGetter",
+              "strval": "anim_callback_get_height",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002372,
+              "strtype": "PROPERTYANIMATION/LoopDelay",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002373,
+              "strtype": "PROPERTYANIMATION/PlaybackDelay",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002374,
+              "strtype": "PROPERTYANIMATION/PlaybackTime",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002375,
+              "strtype": "PROPERTYANIMATION/LoopInfinite",
+              "strval": "False",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002376,
+              "strtype": "PROPERTYANIMATION/ImageSet",
+              "strval": "",
+              "InheritedType": 14
+            }
+          ],
+          "saved_objtypeKey": "PROPERTYANIMATION",
+          "InheritedType": 1
+        },
+        {
+          "Path": 0,
+          "KeyFrames": [
+            {
+              "Value": 46,
+              "Time": 150.0,
+              "InheritedType": 1
+            },
+            {
+              "Value": 38,
+              "Time": 300.0,
+              "InheritedType": 1
+            }
+          ],
+          "TimeReference": 0,
+          "ValueReference": 0,
+          "EarlyApply": false,
+          "ImageSet": "",
+          "PlaybackTime": 0,
+          "PlaybackDelay": 0,
+          "LoopCount": 0,
+          "LoopDelay": 0,
+          "LoopInfinite": false,
+          "guid": "GUID40787555-828872S5534264",
+          "deepid": 1831157775,
+          "dont_export": false,
+          "locked": false,
+          "properties": [
+            {
+              "nid": 1002400,
+              "strtype": "PROPERTYANIMATION/Name",
+              "strval": "Height",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002401,
+              "strtype": "PROPERTYANIMATION/VariableName",
+              "strval": "PropertyAnimation_1",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002402,
+              "strtype": "PROPERTYANIMATION/PropertyFunction",
+              "strval": "anim_callback_set_height",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002403,
+              "strtype": "PROPERTYANIMATION/StartValue",
+              "integer": 46,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002404,
+              "strtype": "PROPERTYANIMATION/EndValue",
+              "integer": 38,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002405,
+              "strtype": "PROPERTYANIMATION/AbsoluteReference",
+              "strval": "True",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002406,
+              "strtype": "PROPERTYANIMATION/Delay",
+              "integer": 150,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002407,
+              "strtype": "PROPERTYANIMATION/Duration",
+              "integer": 150,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002408,
+              "strtype": "PROPERTYANIMATION/Path",
+              "strval": "linear",
+              "InheritedType": 3
+            },
+            {
+              "nid": 1002409,
+              "strtype": "PROPERTYANIMATION/FullAnimationDuration",
+              "integer": 300,
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002410,
+              "strtype": "PROPERTYANIMATION/LoopCount",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002411,
+              "strtype": "PROPERTYANIMATION/Forward",
+              "strval": "True",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002412,
+              "strtype": "PROPERTYANIMATION/Backward",
+              "strval": "False",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002413,
+              "strtype": "PROPERTYANIMATION/EarlyApply",
+              "strval": "False",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002414,
+              "strtype": "PROPERTYANIMATION/PropertyGetter",
+              "strval": "anim_callback_get_height",
+              "InheritedType": 10
+            },
+            {
+              "nid": 1002415,
+              "strtype": "PROPERTYANIMATION/LoopDelay",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002416,
+              "strtype": "PROPERTYANIMATION/PlaybackDelay",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002417,
+              "strtype": "PROPERTYANIMATION/PlaybackTime",
+              "InheritedType": 6
+            },
+            {
+              "nid": 1002418,
+              "strtype": "PROPERTYANIMATION/LoopInfinite",
+              "strval": "False",
+              "InheritedType": 2
+            },
+            {
+              "nid": 1002419,
+              "strtype": "PROPERTYANIMATION/ImageSet",
+              "strval": "",
+              "InheritedType": 14
+            }
+          ],
+          "saved_objtypeKey": "PROPERTYANIMATION",
+          "InheritedType": 1
+        }
+      ],
+      "guid": "GUID78637975-828868S9614264",
+      "deepid": -369882900,
+      "dont_export": false,
+      "locked": false,
+      "properties": [
+        {
+          "nid": 1002350,
+          "strtype": "ELOANIMATION/Name",
+          "strval": "PresetLoadAnim",
+          "InheritedType": 10
+        },
+        {
+          "nid": 1002351,
+          "strtype": "ELOANIMATION/FunctionName",
+          "strval": "PresetLoadAnim_Animation",
+          "InheritedType": 10
+        },
+        {
+          "nid": 1002352,
+          "strtype": "ELOANIMATION/AnimationTargetObjectType",
+          "strval": "BASIC",
+          "InheritedType": 10
+        },
+        {
+          "nid": 1002353,
+          "strtype": "ELOANIMATION/PlayType",
+          "strval": "Forward",
+          "InheritedType": 3
+        },
+        {
+          "nid": 1002354,
+          "strtype": "ELOANIMATION/Loop",
+          "strval": "False",
+          "InheritedType": 2
+        },
+        {
+          "nid": 1002355,
+          "strtype": "ELOANIMATION/TestTarget",
+          "strval": "GUID25530628-823811S4044264",
+          "InheritedType": 10
+        },
+        {
+          "nid": 1002356,
           "strtype": "ELOANIMATION/TargetTypeFilter",
           "strval": "",
           "InheritedType": 10
@@ -38880,7 +39475,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2687,
+    "backup_cnt": 2703,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",
@@ -38896,7 +39491,7 @@
     "drive_fatfs_path": "/",
     "naming": "Name",
     "naming_force_lowercase": false,
-    "nidcnt": 1002330,
+    "nidcnt": 1002440,
     "BitDepth": 16,
     "Name": "SquareLine_Project"
   }

@@ -109,26 +109,23 @@ void updateStratagemSelection()
 
 	lv_bar_set_value(uic_BarAmount, strategemsAmount, LV_ANIM_OFF);
 
-	if (strategemsAmount == 0)
+	ui_theme_variable_t barColor = _ui_theme_color_colorTheme[0];
+
+	if (strategemsAmount > 0 && strategemsAmount < 4)
 	{
-		ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_colorTheme);
-		ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_colorTheme);
-	}
-	if (strategemsAmount < 4)
-	{
-		ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_sgRed);
-		ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_sgRed);
+		barColor = _ui_theme_color_sgRed[0];
 	}
 	else if (strategemsAmount == 4)
 	{
-		ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_sgGreen);
-		ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_sgGreen);
+		barColor = _ui_theme_color_sgGreen[0];
 	}
 	else if (strategemsAmount > 4)
 	{
-		ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_sgBlue);
-		ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_sgBlue);
+		barColor = _ui_theme_color_sgBlue[0];
 	}
+
+	ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, &barColor);
+	ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, &barColor);
 
 	char textAmount[] = "0 / 0";
 	textAmount[0] = (char)(strategemsAmount + '0');

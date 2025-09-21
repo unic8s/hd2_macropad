@@ -17,8 +17,8 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_ac1_png.c
     images/ui_img_sg_amr1_png.c
     images/ui_img_sg_rg1_png.c
-    images/ui_img_sg_qc1_png.c
     images/ui_img_sg_lc1_png.c
+    images/ui_img_sg_qc1_png.c
     images/ui_img_sg_at1_png.c
     images/ui_img_sg_e1_png.c
     images/ui_img_sg_sg1_png.c
@@ -31,8 +31,8 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_wsp1_png.c
     images/ui_img_sg_gl1_png.c
     images/ui_img_sg_de1_png.c
-    images/ui_img_sg_ft1_png.c
     images/ui_img_sg_ste1_png.c
+    images/ui_img_sg_ft1_png.c
     images/ui_img_sg_bsb1_png.c
     images/ui_img_sg_sgp1_png.c
     images/ui_img_sg_ds1_png.c
@@ -89,6 +89,8 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_619782496.c
     images/ui_img_738976508.c
     images/ui_img_2089845529.c
+    images/ui_img_2107362454.c
+    images/ui_img_986101477.c
     images/ui_img_sg_rf2_png.c
     images/ui_img_sg_res2_png.c
     images/ui_img_sg_sos2_png.c

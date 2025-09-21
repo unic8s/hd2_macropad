@@ -43,7 +43,7 @@ esp_err_t initConfig()
 // Read configuration value by key
 // key - Identifier for configuration value
 // defaultValue - Default value which will be returned if the key/value does not exist
-uint8_t getConfig(char *key, uint8_t defaultValue)
+uint8_t getConfig(char *key, int8_t defaultValue)
 {
     uint8_t value;
 
@@ -253,15 +253,28 @@ void setKeymap(uint8_t index, bool restore)
     playbackSound(SND_SWITCH);
 }
 
-// Load complete configuration from NVS
-void loadConfig()
+esp_err_t openConfig()
 {
-    esp_err_t ret;
+    esp_err_t ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
 
-    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
     if (ret != ESP_OK)
     {
         ESP_LOGE(TAG_CFG, "Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+        return ret;
+    }
+    
+    return ret;
+}
+
+void closeConfig()
+{
+    nvs_close(nvsConfig);
+}
+
+// Load complete configuration from NVS
+void loadConfig()
+{
+    if(openConfig() != ESP_OK){
         return;
     }
 
@@ -283,24 +296,19 @@ void loadConfig()
     uint8_t keymap_index = getConfig("keymap", 0);
     setKeymap(keymap_index, true);
 
-    nvs_close(nvsConfig);
+    closeConfig();
 }
 
 // Load single configuration of a key/value from NVS
-uint8_t peekConfig(char *key, uint8_t defaultValue)
+int8_t peekConfig(char *key, int8_t defaultValue)
 {
-    esp_err_t ret;
-
-    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
-    if (ret != ESP_OK)
-    {
-        ESP_LOGE(TAG_CFG, "Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+    if(openConfig() != ESP_OK){
         return defaultValue;
     }
 
-    uint8_t value = getConfig(key, defaultValue);
+    int8_t value = getConfig(key, defaultValue);
 
-    nvs_close(nvsConfig);
+    closeConfig();
 
     return value;
 }
@@ -308,17 +316,13 @@ uint8_t peekConfig(char *key, uint8_t defaultValue)
 // Clear all stored configuration in NVS and write it to default values
 void resetConfig()
 {
-    esp_err_t ret;
-
-    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
-    if (ret != ESP_OK)
-    {
-        ESP_LOGE(TAG_CFG, "Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+    if(openConfig() != ESP_OK){
         return;
     }
 
     nvs_erase_all(nvsConfig);
-    nvs_close(nvsConfig);
+    
+    closeConfig();
 
     setDelay(100, true);
     setBrightness(50, true);

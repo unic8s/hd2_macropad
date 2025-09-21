@@ -27,6 +27,8 @@ extern "C" {
 #include "ui_theme_manager.h"
 #include "ui_themes.h"
 
+void PresetSaveAnim_Animation(lv_obj_t * TargetObject, int delay);
+
 // SCREEN: ui_Intro
 void ui_Intro_screen_init(void);
 void ui_event_Intro(lv_event_t * e);
@@ -196,16 +198,21 @@ void ui_event_EagleNA(lv_event_t * e);
 extern lv_obj_t * ui_EagleNA;
 void ui_event_EagleSS(lv_event_t * e);
 extern lv_obj_t * ui_EagleSS;
-extern lv_obj_t * ui_SetupFooter;
 void ui_event_BtnConfig(lv_event_t * e);
 extern lv_obj_t * ui_BtnConfig;
 void ui_event_BtnReset(lv_event_t * e);
 extern lv_obj_t * ui_BtnReset;
-extern lv_obj_t * ui_BarAmount;
-extern lv_obj_t * ui_LblAmount;
 void ui_event_BtnPlay(lv_event_t * e);
 extern lv_obj_t * ui_BtnPlay;
+extern lv_obj_t * ui_BarAmount;
+extern lv_obj_t * ui_LblAmount;
+void ui_event_BtnPreset1(lv_event_t * e);
+extern lv_obj_t * ui_BtnPreset1;
+void ui_event_BtnPreset2(lv_event_t * e);
+extern lv_obj_t * ui_BtnPreset2;
 // CUSTOM VARIABLES
+extern lv_obj_t * uic_Rifle;
+extern lv_obj_t * uic_Eagle;
 extern lv_obj_t * uic_BarAmount;
 extern lv_obj_t * uic_LabelAmount;
 
@@ -382,6 +389,8 @@ LV_IMG_DECLARE(ui_img_sg_ess1_png);    // assets/sg/ESS1.png
 LV_IMG_DECLARE(ui_img_619782496);    // assets/icons/icons8-slider-32.png
 LV_IMG_DECLARE(ui_img_738976508);    // assets/icons/icons8-clear-32.png
 LV_IMG_DECLARE(ui_img_2089845529);    // assets/icons/icons8-play-32.png
+LV_IMG_DECLARE(ui_img_2107362454);    // assets/icons/icons8-number-1-32.png
+LV_IMG_DECLARE(ui_img_986101477);    // assets/icons/icons8-number-2-32.png
 LV_IMG_DECLARE(ui_img_sg_rf2_png);    // assets/sg/RF2.png
 LV_IMG_DECLARE(ui_img_sg_res2_png);    // assets/sg/RES2.png
 LV_IMG_DECLARE(ui_img_sg_sos2_png);    // assets/sg/SOS2.png

@@ -281,4 +281,6 @@ void app_main()
   lv_label_set_text(ui_LblVersion, softwareVersion);
 
   updateConnection();
+  updateStratagemSelection();
+  updatePresets();
 }

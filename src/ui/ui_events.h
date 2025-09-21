@@ -13,18 +13,10 @@ extern "C" {
 extern void assignStratagems(lv_event_t * e);
 void deselectStratagem(lv_event_t * e);
 void selectStratagem(lv_event_t * e);
-void triggerStratagemStd1(lv_event_t * e);
-void triggerStratagemStd2(lv_event_t * e);
-void triggerStratagemStd3(lv_event_t * e);
-void triggerStratagemStd4(lv_event_t * e);
-void triggerStratagemUser1(lv_event_t * e);
-void triggerStratagemUser2(lv_event_t * e);
-void triggerStratagemUser3(lv_event_t * e);
-void triggerStratagemUser4(lv_event_t * e);
-void triggerStratagemUser5(lv_event_t * e);
-void triggerStratagemUser6(lv_event_t * e);
-void triggerStratagemStd5(lv_event_t * e);
-void triggerStratagemStd6(lv_event_t * e);
+void GetPreset(lv_event_t * e);
+void SetPreset(lv_event_t * e);
+void triggerStratagemStd(lv_event_t * e);
+void triggerStratagemUser(lv_event_t * e);
 void resetStratagems(lv_event_t * e);
 void ChangeKeymap(lv_event_t * e);
 void updateStratagemSelection();
@@ -39,6 +31,7 @@ void TabChanged(lv_event_t * e);
 void ChangeConnectivity(lv_event_t * e);
 void _executeStdStratagem(uint8_t *sequence, char *path);
 void _executeUserStratagem(uint8_t index);
+void updatePresets();
 
 #ifdef __cplusplus
 } /*extern "C"*/

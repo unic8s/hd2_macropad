@@ -174,3 +174,35 @@ def triggerStratagemUser6(event_struct):
 def ChangeConnectivity(event_struct):
     return
 
+
+def GetPreset1(event_struct):
+    return
+
+
+def GetPreset2(event_struct):
+    return
+
+
+def SetPreset1(event_struct):
+    return
+
+
+def SetPreset2(event_struct):
+    return
+
+
+def triggerStratagemStd(event_struct):
+    return
+
+
+def triggerStratagemUser(event_struct):
+    return
+
+
+def GetPreset(event_struct):
+    return
+
+
+def SetPreset(event_struct):
+    return
+

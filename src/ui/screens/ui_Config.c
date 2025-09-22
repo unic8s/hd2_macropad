@@ -97,6 +97,8 @@ void ui_Config_screen_init(void)
     lv_obj_set_x(ui_SldBrightness, -61);
     lv_obj_set_y(ui_SldBrightness, -24);
     lv_obj_set_align(ui_SldBrightness, LV_ALIGN_CENTER);
+    lv_obj_set_style_bg_color(ui_SldBrightness, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_SldBrightness, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_SldBrightness, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_SldBrightness, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
@@ -297,6 +299,8 @@ void ui_Config_screen_init(void)
     lv_obj_set_x(ui_SldDelay, -61);
     lv_obj_set_y(ui_SldDelay, -24);
     lv_obj_set_align(ui_SldDelay, LV_ALIGN_CENTER);
+    lv_obj_set_style_bg_color(ui_SldDelay, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_SldDelay, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     ui_object_set_themeable_style_property(ui_SldDelay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_SldDelay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,

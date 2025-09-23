@@ -279,6 +279,7 @@
                       },
                       {
                         "nid": 90,
+                        "flags": 1048576,
                         "strtype": "OBJECT/Flags",
                         "InheritedType": 1
                       },
@@ -3793,7 +3794,6 @@
                   },
                   {
                     "nid": 1000593,
-                    "flags": 1048576,
                     "strtype": "TABPAGE/Flags",
                     "InheritedType": 1
                   },
@@ -13053,7 +13053,6 @@
                   },
                   {
                     "nid": 1000632,
-                    "flags": 1048576,
                     "strtype": "TABPAGE/Flags",
                     "InheritedType": 1
                   },
@@ -13138,7 +13137,7 @@
                   {
                     "nid": 1000646,
                     "strtype": "TABPAGE/Scrollable",
-                    "strval": "True",
+                    "strval": "False",
                     "InheritedType": 2
                   },
                   {
@@ -16559,7 +16558,6 @@
                   },
                   {
                     "nid": 1000632,
-                    "flags": 1048576,
                     "strtype": "TABPAGE/Flags",
                     "InheritedType": 1
                   },
@@ -19419,7 +19417,6 @@
                   },
                   {
                     "nid": 1002071,
-                    "flags": 1048576,
                     "strtype": "TABPAGE/Flags",
                     "InheritedType": 1
                   },
@@ -23570,7 +23567,6 @@
                   },
                   {
                     "nid": 1000632,
-                    "flags": 1048576,
                     "strtype": "TABPAGE/Flags",
                     "InheritedType": 1
                   },
@@ -26118,7 +26114,6 @@
                   },
                   {
                     "nid": 1000632,
-                    "flags": 1048576,
                     "strtype": "TABPAGE/Flags",
                     "InheritedType": 1
                   },
@@ -26428,7 +26423,6 @@
               },
               {
                 "nid": 90,
-                "flags": 1048576,
                 "strtype": "OBJECT/Flags",
                 "InheritedType": 1
               },
@@ -26549,9 +26543,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -26812,9 +26806,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -27062,9 +27056,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -27301,9 +27295,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -27461,7 +27455,7 @@
                 "strtype": "OBJECT/Position",
                 "intarray": [
                   120,
-                  -24
+                  -26
                 ],
                 "InheritedType": 7
               },
@@ -27542,8 +27536,8 @@
                         "strtype": "_style/Bg_Color",
                         "intarray": [
                           255,
-                          223,
-                          0,
+                          255,
+                          255,
                           63
                         ],
                         "InheritedType": 7
@@ -27571,9 +27565,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -27640,7 +27634,7 @@
                 "strtype": "OBJECT/Position",
                 "intarray": [
                   120,
-                  -4
+                  -6
                 ],
                 "InheritedType": 7
               },
@@ -27727,9 +27721,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -29836,9 +29830,9 @@
                             "strval": "colorTheme",
                             "integer": 1000825,
                             "intarray": [
-                              204,
-                              204,
-                              204,
+                              255,
+                              255,
+                              255,
                               255
                             ],
                             "InheritedType": 7
@@ -30070,9 +30064,9 @@
                             "strval": "colorTheme",
                             "integer": 1000825,
                             "intarray": [
-                              204,
-                              204,
-                              204,
+                              255,
+                              255,
+                              255,
                               255
                             ],
                             "InheritedType": 7
@@ -30304,9 +30298,9 @@
                             "strval": "colorTheme",
                             "integer": 1000825,
                             "intarray": [
-                              204,
-                              204,
-                              204,
+                              255,
+                              255,
+                              255,
                               255
                             ],
                             "InheritedType": 7
@@ -30538,9 +30532,9 @@
                             "strval": "colorTheme",
                             "integer": 1000825,
                             "intarray": [
-                              204,
-                              204,
-                              204,
+                              255,
+                              255,
+                              255,
                               255
                             ],
                             "InheritedType": 7
@@ -30921,9 +30915,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -31308,9 +31302,9 @@
                             "strval": "colorTheme",
                             "integer": 1000825,
                             "intarray": [
-                              204,
-                              204,
-                              204,
+                              255,
+                              255,
+                              255,
                               255
                             ],
                             "InheritedType": 7
@@ -31541,9 +31535,9 @@
                             "strval": "colorTheme",
                             "integer": 1000825,
                             "intarray": [
-                              204,
-                              204,
-                              204,
+                              255,
+                              255,
+                              255,
                               255
                             ],
                             "InheritedType": 7
@@ -32532,9 +32526,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -32834,9 +32828,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -33310,9 +33304,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -33435,9 +33429,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -33537,9 +33531,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -33923,9 +33917,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -34049,9 +34043,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -34151,9 +34145,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -34820,9 +34814,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -35123,9 +35117,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -35600,9 +35594,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -35741,7 +35735,32 @@
                           },
                           {
                             "part": "lv.PART.MAIN",
-                            "childs": [],
+                            "childs": [
+                              {
+                                "nid": 10000,
+                                "strtype": "_style/StyleState",
+                                "strval": "DEFAULT",
+                                "childs": [
+                                  {
+                                    "nid": 10520,
+                                    "strtype": "_style/Bg_Color",
+                                    "intarray": [
+                                      51,
+                                      51,
+                                      51,
+                                      255
+                                    ],
+                                    "InheritedType": 7
+                                  },
+                                  {
+                                    "nid": 10720,
+                                    "strtype": "_style/Border width",
+                                    "InheritedType": 6
+                                  }
+                                ],
+                                "InheritedType": 1
+                              }
+                            ],
                             "nid": 1060,
                             "strtype": "DROPDOWN/Style_main",
                             "strval": "lv.PART.MAIN, Text, Rectangle, Pad, Transform",
@@ -35757,7 +35776,21 @@
                           },
                           {
                             "part": " lv.PART.MAIN",
-                            "childs": [],
+                            "childs": [
+                              {
+                                "nid": 10000,
+                                "strtype": "_style/StyleState",
+                                "strval": "DEFAULT",
+                                "childs": [
+                                  {
+                                    "nid": 10720,
+                                    "strtype": "_style/Border width",
+                                    "InheritedType": 6
+                                  }
+                                ],
+                                "InheritedType": 1
+                              }
+                            ],
                             "nid": 1080,
                             "strtype": "DROPDOWN/Style_list_main",
                             "strval": "{\"python\":\"{0}.get_list()\",\"c\":\"lv_dropdown_get_list({0})\"} lv.PART.MAIN, Text, Rectangle, Pad",
@@ -36012,9 +36045,9 @@
                                         "strval": "colorTheme",
                                         "integer": 1000825,
                                         "intarray": [
-                                          204,
-                                          204,
-                                          204,
+                                          255,
+                                          255,
+                                          255,
                                           255
                                         ],
                                         "InheritedType": 7
@@ -36152,9 +36185,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -36538,9 +36571,9 @@
                                     "strval": "colorTheme",
                                     "integer": 1000825,
                                     "intarray": [
-                                      204,
-                                      204,
-                                      204,
+                                      255,
+                                      255,
+                                      255,
                                       255
                                     ],
                                     "InheritedType": 7
@@ -36679,7 +36712,32 @@
                           },
                           {
                             "part": "lv.PART.MAIN",
-                            "childs": [],
+                            "childs": [
+                              {
+                                "nid": 10000,
+                                "strtype": "_style/StyleState",
+                                "strval": "DEFAULT",
+                                "childs": [
+                                  {
+                                    "nid": 10520,
+                                    "strtype": "_style/Bg_Color",
+                                    "intarray": [
+                                      51,
+                                      51,
+                                      51,
+                                      255
+                                    ],
+                                    "InheritedType": 7
+                                  },
+                                  {
+                                    "nid": 10720,
+                                    "strtype": "_style/Border width",
+                                    "InheritedType": 6
+                                  }
+                                ],
+                                "InheritedType": 1
+                              }
+                            ],
                             "nid": 1060,
                             "strtype": "DROPDOWN/Style_main",
                             "strval": "lv.PART.MAIN, Text, Rectangle, Pad, Transform",
@@ -36695,7 +36753,21 @@
                           },
                           {
                             "part": " lv.PART.MAIN",
-                            "childs": [],
+                            "childs": [
+                              {
+                                "nid": 10000,
+                                "strtype": "_style/StyleState",
+                                "strval": "DEFAULT",
+                                "childs": [
+                                  {
+                                    "nid": 10720,
+                                    "strtype": "_style/Border width",
+                                    "InheritedType": 6
+                                  }
+                                ],
+                                "InheritedType": 1
+                              }
+                            ],
                             "nid": 1080,
                             "strtype": "DROPDOWN/Style_list_main",
                             "strval": "{\"python\":\"{0}.get_list()\",\"c\":\"lv_dropdown_get_list({0})\"} lv.PART.MAIN, Text, Rectangle, Pad",
@@ -37407,9 +37479,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -37681,9 +37753,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -37931,9 +38003,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -38181,9 +38253,9 @@
                         "strval": "colorTheme",
                         "integer": 1000825,
                         "intarray": [
-                          204,
-                          204,
-                          204,
+                          255,
+                          255,
+                          255,
                           255
                         ],
                         "InheritedType": 7
@@ -39510,7 +39582,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2713,
+    "backup_cnt": 2748,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

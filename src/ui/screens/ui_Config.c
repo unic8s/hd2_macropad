@@ -358,7 +358,11 @@ void ui_Config_screen_init(void)
     lv_obj_set_width(ui_DdConnectivity, lv_pct(100));
     lv_obj_set_align(ui_DdConnectivity, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_DdConnectivity, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_set_style_bg_color(ui_DdConnectivity, lv_color_hex(0x333333), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_DdConnectivity, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui_DdConnectivity, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    lv_obj_set_style_border_width(lv_dropdown_get_list(ui_DdConnectivity), 0,  LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_set_style_text_color(lv_dropdown_get_list(ui_DdConnectivity), lv_color_hex(0x000000),
                                 LV_PART_SELECTED | LV_STATE_CHECKED);
@@ -429,7 +433,11 @@ void ui_Config_screen_init(void)
     lv_obj_set_width(ui_DdKeymap, lv_pct(100));
     lv_obj_set_align(ui_DdKeymap, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_DdKeymap, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_set_style_bg_color(ui_DdKeymap, lv_color_hex(0x333333), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_DdKeymap, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui_DdKeymap, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    lv_obj_set_style_border_width(lv_dropdown_get_list(ui_DdKeymap), 0,  LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_set_style_text_color(lv_dropdown_get_list(ui_DdKeymap), lv_color_hex(0x000000),
                                 LV_PART_SELECTED | LV_STATE_CHECKED);

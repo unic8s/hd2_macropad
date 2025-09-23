@@ -7,9 +7,9 @@
         "strtype": "THEME_COLOR",
         "strval": "colorTheme",
         "intarray": [
-          204,
-          204,
-          204,
+          255,
+          255,
+          255,
           255
         ],
         "InheritedType": 0

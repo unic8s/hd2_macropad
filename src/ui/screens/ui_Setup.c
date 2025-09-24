@@ -19,7 +19,7 @@ void ui_Setup_screen_init(void)
     lv_obj_set_style_bg_color(ui_TabStratagems, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_TabStratagems, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_set_style_bg_img_src(lv_tabview_get_tab_btns(ui_TabStratagems), &ui_img_tabs_mixed_png,
+    lv_obj_set_style_bg_img_src(lv_tabview_get_tab_btns(ui_TabStratagems), &ui_img_tabs_icons_png,
                                 LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_object_set_themeable_style_property(lv_tabview_get_tab_btns(ui_TabStratagems),  LV_PART_ITEMS | LV_STATE_DEFAULT,

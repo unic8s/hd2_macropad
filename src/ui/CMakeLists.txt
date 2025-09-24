@@ -10,7 +10,7 @@ SET(SOURCES screens/ui_Intro.c
     ui_helpers.c
     ui_events.c
     images/ui_img_intro_png.c
-    images/ui_img_tabs_mixed_png.c
+    images/ui_img_tabs_icons_png.c
     images/ui_img_sg_mg1_png.c
     images/ui_img_sg_hmg1_png.c
     images/ui_img_sg_sw1_png.c

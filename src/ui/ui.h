@@ -312,7 +312,7 @@ extern lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
 LV_IMG_DECLARE(ui_img_intro_png);    // assets/intro.png
-LV_IMG_DECLARE(ui_img_tabs_mixed_png);    // assets/tabs_mixed.png
+LV_IMG_DECLARE(ui_img_tabs_icons_png);    // assets/tabs_icons.png
 LV_IMG_DECLARE(ui_img_sg_mg1_png);    // assets/sg/MG1.png
 LV_IMG_DECLARE(ui_img_sg_hmg1_png);    // assets/sg/HMG1.png
 LV_IMG_DECLARE(ui_img_sg_sw1_png);    // assets/sg/SW1.png

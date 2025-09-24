@@ -26768,12 +26768,6 @@
                           0
                         ],
                         "InheritedType": 7
-                      },
-                      {
-                        "nid": 10610,
-                        "strtype": "_style/Bg_Image",
-                        "strval": "assets/tabs_mixed.png",
-                        "InheritedType": 5
                       }
                     ],
                     "InheritedType": 1

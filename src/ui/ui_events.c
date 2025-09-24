@@ -580,19 +580,12 @@ void GetPreset(lv_event_t *e)
 
 void SetPreset(lv_event_t *e)
 {
-	if (openConfig() != ESP_OK)
-	{
-		return;
-	}
-
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
 		char *key = presetKey(e->target, c);
 
 		setConfig(key, types[c]);
 	}
-
-	closeConfig();
 
 	updatePresets();
 

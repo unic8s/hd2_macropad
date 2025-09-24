@@ -519,9 +519,10 @@ void GetPreset(lv_event_t *e)
 		uint8_t listIndex = 0;
 		uint16_t childIndex = 0;
 
-		lv_obj_t *lists[7] = {
+		lv_obj_t *lists[8] = {
 			ui_Rifle,
 			ui_Special,
+			ui_Backpack,
 			ui_Supply,
 			ui_Sentry,
 			ui_Ground,

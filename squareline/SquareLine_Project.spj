@@ -3991,7 +3991,7 @@
                   {
                     "nid": 1000626,
                     "strtype": "TABPAGE/Title",
-                    "strval": "Rifle",
+                    "strval": " ",
                     "InheritedType": 10
                   },
                   {
@@ -7811,7 +7811,7 @@
                   {
                     "nid": 1002041,
                     "strtype": "TABPAGE/Title",
-                    "strval": "Special",
+                    "strval": " ",
                     "InheritedType": 10
                   },
                   {
@@ -7863,8 +7863,8 @@
                 "saved_objtypeKey": "TABPAGE"
               },
               {
-                "guid": "GUID70106398-171774S3653306",
-                "deepid": -1122861937,
+                "guid": "GUID85155244-316697S7454267",
+                "deepid": 1910872760,
                 "children": [
                   {
                     "guid": "GUID99989986-619313S340933317",
@@ -9548,12 +9548,6 @@
                         "InheritedType": 2
                       },
                       {
-                        "nid": 190,
-                        "strtype": "OBJECT/Flex_in_new_track",
-                        "strval": "True",
-                        "InheritedType": 2
-                      },
-                      {
                         "nid": 230,
                         "strtype": "OBJECT/Scrollable",
                         "strval": "False",
@@ -10767,650 +10761,6 @@
                     "tree_closed": true
                   },
                   {
-                    "guid": "GUID90846959-275531S5543355",
-                    "deepid": -1337098522,
-                    "dont_export": false,
-                    "locked": false,
-                    "properties": [
-                      {
-                        "nid": 10,
-                        "strtype": "OBJECT/Name",
-                        "strval": "BackpacksFRV",
-                        "InheritedType": 10
-                      },
-                      {
-                        "nid": 20,
-                        "strtype": "OBJECT/Layout",
-                        "InheritedType": 1
-                      },
-                      {
-                        "Flow": 0,
-                        "Wrap": false,
-                        "Reversed": false,
-                        "MainAlignment": 0,
-                        "CrossAlignment": 0,
-                        "TrackAlignment": 0,
-                        "LayoutType": 0,
-                        "nid": 30,
-                        "strtype": "OBJECT/Layout_type",
-                        "strval": "No_layout",
-                        "InheritedType": 13
-                      },
-                      {
-                        "nid": 40,
-                        "strtype": "OBJECT/Transform",
-                        "InheritedType": 1
-                      },
-                      {
-                        "nid": 50,
-                        "flags": 17,
-                        "strtype": "OBJECT/Position",
-                        "intarray": [
-                          0,
-                          0
-                        ],
-                        "InheritedType": 7
-                      },
-                      {
-                        "nid": 60,
-                        "flags": 17,
-                        "strtype": "OBJECT/Size",
-                        "intarray": [
-                          76,
-                          76
-                        ],
-                        "InheritedType": 7
-                      },
-                      {
-                        "nid": 70,
-                        "strtype": "OBJECT/Align",
-                        "strval": "TOP_LEFT",
-                        "InheritedType": 3
-                      },
-                      {
-                        "nid": 90,
-                        "flags": 1048576,
-                        "strtype": "OBJECT/Flags",
-                        "InheritedType": 1
-                      },
-                      {
-                        "nid": 120,
-                        "strtype": "OBJECT/Checkable",
-                        "strval": "True",
-                        "InheritedType": 2
-                      },
-                      {
-                        "nid": 230,
-                        "strtype": "OBJECT/Scrollable",
-                        "strval": "False",
-                        "InheritedType": 2
-                      },
-                      {
-                        "nid": 260,
-                        "strtype": "OBJECT/Scroll_on_focus",
-                        "strval": "True",
-                        "InheritedType": 2
-                      },
-                      {
-                        "nid": 300,
-                        "strtype": "OBJECT/Scrollbar_mode",
-                        "strval": "AUTO",
-                        "InheritedType": 3
-                      },
-                      {
-                        "nid": 310,
-                        "strtype": "OBJECT/Scroll_direction",
-                        "strval": "ALL",
-                        "InheritedType": 3
-                      },
-                      {
-                        "nid": 320,
-                        "flags": 1048576,
-                        "strtype": "OBJECT/States",
-                        "InheritedType": 1
-                      },
-                      {
-                        "part": "lv.PART.MAIN",
-                        "childs": [
-                          {
-                            "nid": 10000,
-                            "strtype": "_style/StyleState",
-                            "strval": "DEFAULT",
-                            "childs": [
-                              {
-                                "nid": 10520,
-                                "strtype": "_style/Bg_Color",
-                                "intarray": [
-                                  255,
-                                  223,
-                                  0,
-                                  0
-                                ],
-                                "InheritedType": 7
-                              },
-                              {
-                                "nid": 10610,
-                                "strtype": "_style/Bg_Image",
-                                "strval": "assets/sg/FRV1.png",
-                                "InheritedType": 5
-                              },
-                              {
-                                "nid": 10710,
-                                "strtype": "_style/Border_Color",
-                                "strval": "sgBlue",
-                                "integer": 1001964,
-                                "intarray": [
-                                  73,
-                                  173,
-                                  201,
-                                  255
-                                ],
-                                "InheritedType": 7
-                              },
-                              {
-                                "nid": 10720,
-                                "strtype": "_style/Border width",
-                                "integer": 2,
-                                "InheritedType": 6
-                              }
-                            ],
-                            "InheritedType": 1
-                          },
-                          {
-                            "nid": 20000,
-                            "strtype": "_style/StyleState",
-                            "strval": "CHECKED",
-                            "childs": [
-                              {
-                                "nid": 20520,
-                                "strtype": "_style/Bg_Color",
-                                "intarray": [
-                                  255,
-                                  255,
-                                  255,
-                                  0
-                                ],
-                                "InheritedType": 7
-                              },
-                              {
-                                "nid": 20710,
-                                "strtype": "_style/Border_Color",
-                                "strval": "colorActive",
-                                "integer": 1000867,
-                                "intarray": [
-                                  255,
-                                  223,
-                                  0,
-                                  255
-                                ],
-                                "InheritedType": 7
-                              }
-                            ],
-                            "InheritedType": 1
-                          }
-                        ],
-                        "nid": 1010,
-                        "strtype": "BUTTON/Style_main",
-                        "strval": "lv.PART.MAIN, Rectangle, Pad, Text, Transform",
-                        "InheritedType": 11
-                      },
-                      {
-                        "disabled": false,
-                        "nid": 1000894,
-                        "strtype": "_event/EventHandler",
-                        "strval": "UNCHECKED(VALUE_CHANGED)",
-                        "childs": [
-                          {
-                            "nid": 1000895,
-                            "strtype": "_event/name",
-                            "strval": "Event4",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1000896,
-                            "strtype": "_event/condition_C",
-                            "strval": "",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1000897,
-                            "strtype": "_event/condition_P",
-                            "strval": "",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1001169,
-                            "strtype": "_event/action",
-                            "strval": "CALL FUNCTION",
-                            "childs": [
-                              {
-                                "nid": 1001170,
-                                "strtype": "CALL FUNCTION/Name",
-                                "strval": "CALL FUNCTION",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001171,
-                                "strtype": "CALL FUNCTION/Call",
-                                "strval": "<{Function_name}>( event_struct )",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001172,
-                                "strtype": "CALL FUNCTION/CallC",
-                                "strval": "<{Function_name}>( e );",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001173,
-                                "strtype": "CALL FUNCTION/Function_name",
-                                "strval": "deselectStratagem",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001174,
-                                "strtype": "CALL FUNCTION/Dont_export_function",
-                                "strval": "False",
-                                "InheritedType": 2
-                              }
-                            ],
-                            "InheritedType": 10
-                          }
-                        ],
-                        "InheritedType": 4
-                      },
-                      {
-                        "disabled": false,
-                        "nid": 1000959,
-                        "strtype": "_event/EventHandler",
-                        "strval": "CHECKED(VALUE_CHANGED)",
-                        "childs": [
-                          {
-                            "nid": 1000960,
-                            "strtype": "_event/name",
-                            "strval": "Event6",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1000961,
-                            "strtype": "_event/condition_C",
-                            "strval": "",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1000962,
-                            "strtype": "_event/condition_P",
-                            "strval": "",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1001163,
-                            "strtype": "_event/action",
-                            "strval": "CALL FUNCTION",
-                            "childs": [
-                              {
-                                "nid": 1001164,
-                                "strtype": "CALL FUNCTION/Name",
-                                "strval": "CALL FUNCTION",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001165,
-                                "strtype": "CALL FUNCTION/Call",
-                                "strval": "<{Function_name}>( event_struct )",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001166,
-                                "strtype": "CALL FUNCTION/CallC",
-                                "strval": "<{Function_name}>( e );",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001167,
-                                "strtype": "CALL FUNCTION/Function_name",
-                                "strval": "selectStratagem",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001168,
-                                "strtype": "CALL FUNCTION/Dont_export_function",
-                                "strval": "False",
-                                "InheritedType": 2
-                              }
-                            ],
-                            "InheritedType": 10
-                          }
-                        ],
-                        "InheritedType": 4
-                      }
-                    ],
-                    "saved_objtypeKey": "BUTTON",
-                    "tree_closed": true
-                  },
-                  {
-                    "guid": "GUID21727492-589293S6534143",
-                    "deepid": -1337098522,
-                    "dont_export": false,
-                    "locked": false,
-                    "properties": [
-                      {
-                        "nid": 10,
-                        "strtype": "OBJECT/Name",
-                        "strval": "BackpacksOTF",
-                        "InheritedType": 10
-                      },
-                      {
-                        "nid": 20,
-                        "strtype": "OBJECT/Layout",
-                        "InheritedType": 1
-                      },
-                      {
-                        "Flow": 0,
-                        "Wrap": false,
-                        "Reversed": false,
-                        "MainAlignment": 0,
-                        "CrossAlignment": 0,
-                        "TrackAlignment": 0,
-                        "LayoutType": 0,
-                        "nid": 30,
-                        "strtype": "OBJECT/Layout_type",
-                        "strval": "No_layout",
-                        "InheritedType": 13
-                      },
-                      {
-                        "nid": 40,
-                        "strtype": "OBJECT/Transform",
-                        "InheritedType": 1
-                      },
-                      {
-                        "nid": 50,
-                        "flags": 17,
-                        "strtype": "OBJECT/Position",
-                        "intarray": [
-                          0,
-                          0
-                        ],
-                        "InheritedType": 7
-                      },
-                      {
-                        "nid": 60,
-                        "flags": 17,
-                        "strtype": "OBJECT/Size",
-                        "intarray": [
-                          76,
-                          76
-                        ],
-                        "InheritedType": 7
-                      },
-                      {
-                        "nid": 70,
-                        "strtype": "OBJECT/Align",
-                        "strval": "TOP_LEFT",
-                        "InheritedType": 3
-                      },
-                      {
-                        "nid": 90,
-                        "flags": 1048576,
-                        "strtype": "OBJECT/Flags",
-                        "InheritedType": 1
-                      },
-                      {
-                        "nid": 120,
-                        "strtype": "OBJECT/Checkable",
-                        "strval": "True",
-                        "InheritedType": 2
-                      },
-                      {
-                        "nid": 230,
-                        "strtype": "OBJECT/Scrollable",
-                        "strval": "False",
-                        "InheritedType": 2
-                      },
-                      {
-                        "nid": 260,
-                        "strtype": "OBJECT/Scroll_on_focus",
-                        "strval": "True",
-                        "InheritedType": 2
-                      },
-                      {
-                        "nid": 300,
-                        "strtype": "OBJECT/Scrollbar_mode",
-                        "strval": "AUTO",
-                        "InheritedType": 3
-                      },
-                      {
-                        "nid": 310,
-                        "strtype": "OBJECT/Scroll_direction",
-                        "strval": "ALL",
-                        "InheritedType": 3
-                      },
-                      {
-                        "nid": 320,
-                        "flags": 1048576,
-                        "strtype": "OBJECT/States",
-                        "InheritedType": 1
-                      },
-                      {
-                        "part": "lv.PART.MAIN",
-                        "childs": [
-                          {
-                            "nid": 10000,
-                            "strtype": "_style/StyleState",
-                            "strval": "DEFAULT",
-                            "childs": [
-                              {
-                                "nid": 10520,
-                                "strtype": "_style/Bg_Color",
-                                "intarray": [
-                                  255,
-                                  223,
-                                  0,
-                                  0
-                                ],
-                                "InheritedType": 7
-                              },
-                              {
-                                "nid": 10610,
-                                "strtype": "_style/Bg_Image",
-                                "strval": "assets/sg/OTF1.png",
-                                "InheritedType": 5
-                              },
-                              {
-                                "nid": 10710,
-                                "strtype": "_style/Border_Color",
-                                "strval": "sgBlue",
-                                "integer": 1001964,
-                                "intarray": [
-                                  73,
-                                  173,
-                                  201,
-                                  255
-                                ],
-                                "InheritedType": 7
-                              },
-                              {
-                                "nid": 10720,
-                                "strtype": "_style/Border width",
-                                "integer": 2,
-                                "InheritedType": 6
-                              }
-                            ],
-                            "InheritedType": 1
-                          },
-                          {
-                            "nid": 20000,
-                            "strtype": "_style/StyleState",
-                            "strval": "CHECKED",
-                            "childs": [
-                              {
-                                "nid": 20520,
-                                "strtype": "_style/Bg_Color",
-                                "intarray": [
-                                  255,
-                                  255,
-                                  255,
-                                  0
-                                ],
-                                "InheritedType": 7
-                              },
-                              {
-                                "nid": 20710,
-                                "strtype": "_style/Border_Color",
-                                "strval": "colorActive",
-                                "integer": 1000867,
-                                "intarray": [
-                                  255,
-                                  223,
-                                  0,
-                                  255
-                                ],
-                                "InheritedType": 7
-                              }
-                            ],
-                            "InheritedType": 1
-                          }
-                        ],
-                        "nid": 1010,
-                        "strtype": "BUTTON/Style_main",
-                        "strval": "lv.PART.MAIN, Rectangle, Pad, Text, Transform",
-                        "InheritedType": 11
-                      },
-                      {
-                        "disabled": false,
-                        "nid": 1000894,
-                        "strtype": "_event/EventHandler",
-                        "strval": "UNCHECKED(VALUE_CHANGED)",
-                        "childs": [
-                          {
-                            "nid": 1000895,
-                            "strtype": "_event/name",
-                            "strval": "Event4",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1000896,
-                            "strtype": "_event/condition_C",
-                            "strval": "",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1000897,
-                            "strtype": "_event/condition_P",
-                            "strval": "",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1001169,
-                            "strtype": "_event/action",
-                            "strval": "CALL FUNCTION",
-                            "childs": [
-                              {
-                                "nid": 1001170,
-                                "strtype": "CALL FUNCTION/Name",
-                                "strval": "CALL FUNCTION",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001171,
-                                "strtype": "CALL FUNCTION/Call",
-                                "strval": "<{Function_name}>( event_struct )",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001172,
-                                "strtype": "CALL FUNCTION/CallC",
-                                "strval": "<{Function_name}>( e );",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001173,
-                                "strtype": "CALL FUNCTION/Function_name",
-                                "strval": "deselectStratagem",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001174,
-                                "strtype": "CALL FUNCTION/Dont_export_function",
-                                "strval": "False",
-                                "InheritedType": 2
-                              }
-                            ],
-                            "InheritedType": 10
-                          }
-                        ],
-                        "InheritedType": 4
-                      },
-                      {
-                        "disabled": false,
-                        "nid": 1000959,
-                        "strtype": "_event/EventHandler",
-                        "strval": "CHECKED(VALUE_CHANGED)",
-                        "childs": [
-                          {
-                            "nid": 1000960,
-                            "strtype": "_event/name",
-                            "strval": "Event6",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1000961,
-                            "strtype": "_event/condition_C",
-                            "strval": "",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1000962,
-                            "strtype": "_event/condition_P",
-                            "strval": "",
-                            "InheritedType": 10
-                          },
-                          {
-                            "nid": 1001163,
-                            "strtype": "_event/action",
-                            "strval": "CALL FUNCTION",
-                            "childs": [
-                              {
-                                "nid": 1001164,
-                                "strtype": "CALL FUNCTION/Name",
-                                "strval": "CALL FUNCTION",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001165,
-                                "strtype": "CALL FUNCTION/Call",
-                                "strval": "<{Function_name}>( event_struct )",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001166,
-                                "strtype": "CALL FUNCTION/CallC",
-                                "strval": "<{Function_name}>( e );",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001167,
-                                "strtype": "CALL FUNCTION/Function_name",
-                                "strval": "selectStratagem",
-                                "InheritedType": 10
-                              },
-                              {
-                                "nid": 1001168,
-                                "strtype": "CALL FUNCTION/Dont_export_function",
-                                "strval": "False",
-                                "InheritedType": 2
-                              }
-                            ],
-                            "InheritedType": 10
-                          }
-                        ],
-                        "InheritedType": 4
-                      }
-                    ],
-                    "saved_objtypeKey": "BUTTON",
-                    "tree_closed": true
-                  },
-                  {
                     "guid": "GUID59001476-619318S37763317",
                     "deepid": -1337098522,
                     "dont_export": false,
@@ -11479,12 +10829,6 @@
                       {
                         "nid": 120,
                         "strtype": "OBJECT/Checkable",
-                        "strval": "True",
-                        "InheritedType": 2
-                      },
-                      {
-                        "nid": 190,
-                        "strtype": "OBJECT/Flex_in_new_track",
                         "strval": "True",
                         "InheritedType": 2
                       },
@@ -12379,6 +11723,611 @@
                     ],
                     "saved_objtypeKey": "BUTTON",
                     "tree_closed": true
+                  }
+                ],
+                "dont_export": false,
+                "locked": false,
+                "properties": [
+                  {
+                    "nid": 1002440,
+                    "strtype": "TABPAGE/Name",
+                    "strval": "Backpack",
+                    "InheritedType": 10
+                  },
+                  {
+                    "nid": 1002441,
+                    "strtype": "TABPAGE/Layout",
+                    "InheritedType": 1
+                  },
+                  {
+                    "Flow": 0,
+                    "Wrap": true,
+                    "Reversed": false,
+                    "MainAlignment": 1,
+                    "CrossAlignment": 1,
+                    "TrackAlignment": 1,
+                    "LayoutType": 1,
+                    "nid": 1002442,
+                    "strtype": "TABPAGE/Layout_type",
+                    "strval": "No_layout",
+                    "InheritedType": 13
+                  },
+                  {
+                    "nid": 1002443,
+                    "flags": 1048576,
+                    "strtype": "TABPAGE/Flags",
+                    "InheritedType": 1
+                  },
+                  {
+                    "nid": 1002444,
+                    "strtype": "TABPAGE/Hidden",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002445,
+                    "strtype": "TABPAGE/Clickable",
+                    "strval": "True",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002446,
+                    "strtype": "TABPAGE/Checkable",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002447,
+                    "strtype": "TABPAGE/Press_lock",
+                    "strval": "True",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002448,
+                    "strtype": "TABPAGE/Click_focusable",
+                    "strval": "True",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002449,
+                    "strtype": "TABPAGE/Adv_hittest",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002450,
+                    "strtype": "TABPAGE/Ignore_layout",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002451,
+                    "strtype": "TABPAGE/Floating",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002452,
+                    "strtype": "TABPAGE/Overflow_visible",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002453,
+                    "strtype": "TABPAGE/Flex_in_new_track",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002454,
+                    "strtype": "TABPAGE/Event_bubble",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002455,
+                    "strtype": "TABPAGE/Gesture_bubble",
+                    "strval": "True",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002456,
+                    "strtype": "TABPAGE/Snappable",
+                    "strval": "True",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002457,
+                    "strtype": "TABPAGE/Scrollable",
+                    "strval": "True",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002458,
+                    "strtype": "TABPAGE/Scroll_elastic",
+                    "strval": "True",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002459,
+                    "strtype": "TABPAGE/Scroll_momentum",
+                    "strval": "True",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002460,
+                    "strtype": "TABPAGE/Scroll_on_focus",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002461,
+                    "strtype": "TABPAGE/Scroll_chain",
+                    "strval": "True",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002462,
+                    "strtype": "TABPAGE/Scroll_with_arrow",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002463,
+                    "strtype": "TABPAGE/Scroll_one",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002464,
+                    "strtype": "TABPAGE/Scrollbar_mode",
+                    "strval": "AUTO",
+                    "InheritedType": 3
+                  },
+                  {
+                    "nid": 1002465,
+                    "strtype": "TABPAGE/Scroll_direction",
+                    "strval": "ALL",
+                    "InheritedType": 3
+                  },
+                  {
+                    "nid": 1002466,
+                    "flags": 1048576,
+                    "strtype": "TABPAGE/States",
+                    "InheritedType": 1
+                  },
+                  {
+                    "nid": 1002467,
+                    "strtype": "TABPAGE/Checked",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002468,
+                    "strtype": "TABPAGE/Disabled",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002469,
+                    "strtype": "TABPAGE/Focused",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002470,
+                    "strtype": "TABPAGE/Pressed",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002471,
+                    "strtype": "TABPAGE/User_1",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002472,
+                    "strtype": "TABPAGE/User_2",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002473,
+                    "strtype": "TABPAGE/User_3",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002474,
+                    "strtype": "TABPAGE/User_4",
+                    "strval": "False",
+                    "InheritedType": 2
+                  },
+                  {
+                    "nid": 1002475,
+                    "strtype": "TABPAGE/TabPage",
+                    "InheritedType": 1
+                  },
+                  {
+                    "nid": 1002476,
+                    "strtype": "TABPAGE/Title",
+                    "strval": " ",
+                    "InheritedType": 10
+                  },
+                  {
+                    "part": "lv.PART.MAIN",
+                    "childs": [
+                      {
+                        "nid": 10000,
+                        "strtype": "_style/StyleState",
+                        "strval": "DEFAULT",
+                        "childs": [
+                          {
+                            "nid": 11110,
+                            "strtype": "_style/Padding",
+                            "intarray": [
+                              2,
+                              2,
+                              2,
+                              2
+                            ],
+                            "InheritedType": 7
+                          },
+                          {
+                            "nid": 11120,
+                            "strtype": "_style/Padding_RowCol",
+                            "intarray": [
+                              3,
+                              3
+                            ],
+                            "InheritedType": 7
+                          }
+                        ],
+                        "InheritedType": 1
+                      }
+                    ],
+                    "nid": 1002477,
+                    "strtype": "TABPAGE/Style_main",
+                    "strval": "lv.PART.MAIN, Rectangle, Pad, Text, Transform",
+                    "InheritedType": 11
+                  },
+                  {
+                    "part": "lv.PART.SCROLLBAR",
+                    "childs": [],
+                    "nid": 1002478,
+                    "strtype": "TABPAGE/Style_scrollbar",
+                    "strval": "lv.PART.SCROLLBAR, Rectangle, Pad",
+                    "InheritedType": 11
+                  }
+                ],
+                "saved_objtypeKey": "TABPAGE"
+              },
+              {
+                "guid": "GUID70106398-171774S3653306",
+                "deepid": -1122861937,
+                "children": [
+                  {
+                    "guid": "GUID90846959-275531S5543355",
+                    "deepid": -1337098522,
+                    "dont_export": false,
+                    "locked": false,
+                    "properties": [
+                      {
+                        "nid": 10,
+                        "strtype": "OBJECT/Name",
+                        "strval": "BackpacksFRV",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 20,
+                        "strtype": "OBJECT/Layout",
+                        "InheritedType": 1
+                      },
+                      {
+                        "Flow": 0,
+                        "Wrap": false,
+                        "Reversed": false,
+                        "MainAlignment": 0,
+                        "CrossAlignment": 0,
+                        "TrackAlignment": 0,
+                        "LayoutType": 0,
+                        "nid": 30,
+                        "strtype": "OBJECT/Layout_type",
+                        "strval": "No_layout",
+                        "InheritedType": 13
+                      },
+                      {
+                        "nid": 40,
+                        "strtype": "OBJECT/Transform",
+                        "InheritedType": 1
+                      },
+                      {
+                        "nid": 50,
+                        "flags": 17,
+                        "strtype": "OBJECT/Position",
+                        "intarray": [
+                          0,
+                          0
+                        ],
+                        "InheritedType": 7
+                      },
+                      {
+                        "nid": 60,
+                        "flags": 17,
+                        "strtype": "OBJECT/Size",
+                        "intarray": [
+                          76,
+                          76
+                        ],
+                        "InheritedType": 7
+                      },
+                      {
+                        "nid": 70,
+                        "strtype": "OBJECT/Align",
+                        "strval": "TOP_LEFT",
+                        "InheritedType": 3
+                      },
+                      {
+                        "nid": 90,
+                        "flags": 1048576,
+                        "strtype": "OBJECT/Flags",
+                        "InheritedType": 1
+                      },
+                      {
+                        "nid": 120,
+                        "strtype": "OBJECT/Checkable",
+                        "strval": "True",
+                        "InheritedType": 2
+                      },
+                      {
+                        "nid": 230,
+                        "strtype": "OBJECT/Scrollable",
+                        "strval": "False",
+                        "InheritedType": 2
+                      },
+                      {
+                        "nid": 260,
+                        "strtype": "OBJECT/Scroll_on_focus",
+                        "strval": "True",
+                        "InheritedType": 2
+                      },
+                      {
+                        "nid": 300,
+                        "strtype": "OBJECT/Scrollbar_mode",
+                        "strval": "AUTO",
+                        "InheritedType": 3
+                      },
+                      {
+                        "nid": 310,
+                        "strtype": "OBJECT/Scroll_direction",
+                        "strval": "ALL",
+                        "InheritedType": 3
+                      },
+                      {
+                        "nid": 320,
+                        "flags": 1048576,
+                        "strtype": "OBJECT/States",
+                        "InheritedType": 1
+                      },
+                      {
+                        "part": "lv.PART.MAIN",
+                        "childs": [
+                          {
+                            "nid": 10000,
+                            "strtype": "_style/StyleState",
+                            "strval": "DEFAULT",
+                            "childs": [
+                              {
+                                "nid": 10520,
+                                "strtype": "_style/Bg_Color",
+                                "intarray": [
+                                  255,
+                                  223,
+                                  0,
+                                  0
+                                ],
+                                "InheritedType": 7
+                              },
+                              {
+                                "nid": 10610,
+                                "strtype": "_style/Bg_Image",
+                                "strval": "assets/sg/FRV1.png",
+                                "InheritedType": 5
+                              },
+                              {
+                                "nid": 10710,
+                                "strtype": "_style/Border_Color",
+                                "strval": "sgBlue",
+                                "integer": 1001964,
+                                "intarray": [
+                                  73,
+                                  173,
+                                  201,
+                                  255
+                                ],
+                                "InheritedType": 7
+                              },
+                              {
+                                "nid": 10720,
+                                "strtype": "_style/Border width",
+                                "integer": 2,
+                                "InheritedType": 6
+                              }
+                            ],
+                            "InheritedType": 1
+                          },
+                          {
+                            "nid": 20000,
+                            "strtype": "_style/StyleState",
+                            "strval": "CHECKED",
+                            "childs": [
+                              {
+                                "nid": 20520,
+                                "strtype": "_style/Bg_Color",
+                                "intarray": [
+                                  255,
+                                  255,
+                                  255,
+                                  0
+                                ],
+                                "InheritedType": 7
+                              },
+                              {
+                                "nid": 20710,
+                                "strtype": "_style/Border_Color",
+                                "strval": "colorActive",
+                                "integer": 1000867,
+                                "intarray": [
+                                  255,
+                                  223,
+                                  0,
+                                  255
+                                ],
+                                "InheritedType": 7
+                              }
+                            ],
+                            "InheritedType": 1
+                          }
+                        ],
+                        "nid": 1010,
+                        "strtype": "BUTTON/Style_main",
+                        "strval": "lv.PART.MAIN, Rectangle, Pad, Text, Transform",
+                        "InheritedType": 11
+                      },
+                      {
+                        "disabled": false,
+                        "nid": 1000894,
+                        "strtype": "_event/EventHandler",
+                        "strval": "UNCHECKED(VALUE_CHANGED)",
+                        "childs": [
+                          {
+                            "nid": 1000895,
+                            "strtype": "_event/name",
+                            "strval": "Event4",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1000896,
+                            "strtype": "_event/condition_C",
+                            "strval": "",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1000897,
+                            "strtype": "_event/condition_P",
+                            "strval": "",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1001169,
+                            "strtype": "_event/action",
+                            "strval": "CALL FUNCTION",
+                            "childs": [
+                              {
+                                "nid": 1001170,
+                                "strtype": "CALL FUNCTION/Name",
+                                "strval": "CALL FUNCTION",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001171,
+                                "strtype": "CALL FUNCTION/Call",
+                                "strval": "<{Function_name}>( event_struct )",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001172,
+                                "strtype": "CALL FUNCTION/CallC",
+                                "strval": "<{Function_name}>( e );",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001173,
+                                "strtype": "CALL FUNCTION/Function_name",
+                                "strval": "deselectStratagem",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001174,
+                                "strtype": "CALL FUNCTION/Dont_export_function",
+                                "strval": "False",
+                                "InheritedType": 2
+                              }
+                            ],
+                            "InheritedType": 10
+                          }
+                        ],
+                        "InheritedType": 4
+                      },
+                      {
+                        "disabled": false,
+                        "nid": 1000959,
+                        "strtype": "_event/EventHandler",
+                        "strval": "CHECKED(VALUE_CHANGED)",
+                        "childs": [
+                          {
+                            "nid": 1000960,
+                            "strtype": "_event/name",
+                            "strval": "Event6",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1000961,
+                            "strtype": "_event/condition_C",
+                            "strval": "",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1000962,
+                            "strtype": "_event/condition_P",
+                            "strval": "",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1001163,
+                            "strtype": "_event/action",
+                            "strval": "CALL FUNCTION",
+                            "childs": [
+                              {
+                                "nid": 1001164,
+                                "strtype": "CALL FUNCTION/Name",
+                                "strval": "CALL FUNCTION",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001165,
+                                "strtype": "CALL FUNCTION/Call",
+                                "strval": "<{Function_name}>( event_struct )",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001166,
+                                "strtype": "CALL FUNCTION/CallC",
+                                "strval": "<{Function_name}>( e );",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001167,
+                                "strtype": "CALL FUNCTION/Function_name",
+                                "strval": "selectStratagem",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001168,
+                                "strtype": "CALL FUNCTION/Dont_export_function",
+                                "strval": "False",
+                                "InheritedType": 2
+                              }
+                            ],
+                            "InheritedType": 10
+                          }
+                        ],
+                        "InheritedType": 4
+                      }
+                    ],
+                    "saved_objtypeKey": "BUTTON",
+                    "tree_closed": true
                   },
                   {
                     "guid": "GUID31258178-619319S42533317",
@@ -13022,6 +12971,328 @@
                     ],
                     "saved_objtypeKey": "BUTTON",
                     "tree_closed": true
+                  },
+                  {
+                    "guid": "GUID21727492-589293S6534143",
+                    "deepid": -1337098522,
+                    "dont_export": false,
+                    "locked": false,
+                    "properties": [
+                      {
+                        "nid": 10,
+                        "strtype": "OBJECT/Name",
+                        "strval": "BackpacksOTF",
+                        "InheritedType": 10
+                      },
+                      {
+                        "nid": 20,
+                        "strtype": "OBJECT/Layout",
+                        "InheritedType": 1
+                      },
+                      {
+                        "Flow": 0,
+                        "Wrap": false,
+                        "Reversed": false,
+                        "MainAlignment": 0,
+                        "CrossAlignment": 0,
+                        "TrackAlignment": 0,
+                        "LayoutType": 0,
+                        "nid": 30,
+                        "strtype": "OBJECT/Layout_type",
+                        "strval": "No_layout",
+                        "InheritedType": 13
+                      },
+                      {
+                        "nid": 40,
+                        "strtype": "OBJECT/Transform",
+                        "InheritedType": 1
+                      },
+                      {
+                        "nid": 50,
+                        "flags": 17,
+                        "strtype": "OBJECT/Position",
+                        "intarray": [
+                          0,
+                          0
+                        ],
+                        "InheritedType": 7
+                      },
+                      {
+                        "nid": 60,
+                        "flags": 17,
+                        "strtype": "OBJECT/Size",
+                        "intarray": [
+                          76,
+                          76
+                        ],
+                        "InheritedType": 7
+                      },
+                      {
+                        "nid": 70,
+                        "strtype": "OBJECT/Align",
+                        "strval": "TOP_LEFT",
+                        "InheritedType": 3
+                      },
+                      {
+                        "nid": 90,
+                        "flags": 1048576,
+                        "strtype": "OBJECT/Flags",
+                        "InheritedType": 1
+                      },
+                      {
+                        "nid": 120,
+                        "strtype": "OBJECT/Checkable",
+                        "strval": "True",
+                        "InheritedType": 2
+                      },
+                      {
+                        "nid": 230,
+                        "strtype": "OBJECT/Scrollable",
+                        "strval": "False",
+                        "InheritedType": 2
+                      },
+                      {
+                        "nid": 260,
+                        "strtype": "OBJECT/Scroll_on_focus",
+                        "strval": "True",
+                        "InheritedType": 2
+                      },
+                      {
+                        "nid": 300,
+                        "strtype": "OBJECT/Scrollbar_mode",
+                        "strval": "AUTO",
+                        "InheritedType": 3
+                      },
+                      {
+                        "nid": 310,
+                        "strtype": "OBJECT/Scroll_direction",
+                        "strval": "ALL",
+                        "InheritedType": 3
+                      },
+                      {
+                        "nid": 320,
+                        "flags": 1048576,
+                        "strtype": "OBJECT/States",
+                        "InheritedType": 1
+                      },
+                      {
+                        "part": "lv.PART.MAIN",
+                        "childs": [
+                          {
+                            "nid": 10000,
+                            "strtype": "_style/StyleState",
+                            "strval": "DEFAULT",
+                            "childs": [
+                              {
+                                "nid": 10520,
+                                "strtype": "_style/Bg_Color",
+                                "intarray": [
+                                  255,
+                                  223,
+                                  0,
+                                  0
+                                ],
+                                "InheritedType": 7
+                              },
+                              {
+                                "nid": 10610,
+                                "strtype": "_style/Bg_Image",
+                                "strval": "assets/sg/OTF1.png",
+                                "InheritedType": 5
+                              },
+                              {
+                                "nid": 10710,
+                                "strtype": "_style/Border_Color",
+                                "strval": "sgBlue",
+                                "integer": 1001964,
+                                "intarray": [
+                                  73,
+                                  173,
+                                  201,
+                                  255
+                                ],
+                                "InheritedType": 7
+                              },
+                              {
+                                "nid": 10720,
+                                "strtype": "_style/Border width",
+                                "integer": 2,
+                                "InheritedType": 6
+                              }
+                            ],
+                            "InheritedType": 1
+                          },
+                          {
+                            "nid": 20000,
+                            "strtype": "_style/StyleState",
+                            "strval": "CHECKED",
+                            "childs": [
+                              {
+                                "nid": 20520,
+                                "strtype": "_style/Bg_Color",
+                                "intarray": [
+                                  255,
+                                  255,
+                                  255,
+                                  0
+                                ],
+                                "InheritedType": 7
+                              },
+                              {
+                                "nid": 20710,
+                                "strtype": "_style/Border_Color",
+                                "strval": "colorActive",
+                                "integer": 1000867,
+                                "intarray": [
+                                  255,
+                                  223,
+                                  0,
+                                  255
+                                ],
+                                "InheritedType": 7
+                              }
+                            ],
+                            "InheritedType": 1
+                          }
+                        ],
+                        "nid": 1010,
+                        "strtype": "BUTTON/Style_main",
+                        "strval": "lv.PART.MAIN, Rectangle, Pad, Text, Transform",
+                        "InheritedType": 11
+                      },
+                      {
+                        "disabled": false,
+                        "nid": 1000894,
+                        "strtype": "_event/EventHandler",
+                        "strval": "UNCHECKED(VALUE_CHANGED)",
+                        "childs": [
+                          {
+                            "nid": 1000895,
+                            "strtype": "_event/name",
+                            "strval": "Event4",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1000896,
+                            "strtype": "_event/condition_C",
+                            "strval": "",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1000897,
+                            "strtype": "_event/condition_P",
+                            "strval": "",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1001169,
+                            "strtype": "_event/action",
+                            "strval": "CALL FUNCTION",
+                            "childs": [
+                              {
+                                "nid": 1001170,
+                                "strtype": "CALL FUNCTION/Name",
+                                "strval": "CALL FUNCTION",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001171,
+                                "strtype": "CALL FUNCTION/Call",
+                                "strval": "<{Function_name}>( event_struct )",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001172,
+                                "strtype": "CALL FUNCTION/CallC",
+                                "strval": "<{Function_name}>( e );",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001173,
+                                "strtype": "CALL FUNCTION/Function_name",
+                                "strval": "deselectStratagem",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001174,
+                                "strtype": "CALL FUNCTION/Dont_export_function",
+                                "strval": "False",
+                                "InheritedType": 2
+                              }
+                            ],
+                            "InheritedType": 10
+                          }
+                        ],
+                        "InheritedType": 4
+                      },
+                      {
+                        "disabled": false,
+                        "nid": 1000959,
+                        "strtype": "_event/EventHandler",
+                        "strval": "CHECKED(VALUE_CHANGED)",
+                        "childs": [
+                          {
+                            "nid": 1000960,
+                            "strtype": "_event/name",
+                            "strval": "Event6",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1000961,
+                            "strtype": "_event/condition_C",
+                            "strval": "",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1000962,
+                            "strtype": "_event/condition_P",
+                            "strval": "",
+                            "InheritedType": 10
+                          },
+                          {
+                            "nid": 1001163,
+                            "strtype": "_event/action",
+                            "strval": "CALL FUNCTION",
+                            "childs": [
+                              {
+                                "nid": 1001164,
+                                "strtype": "CALL FUNCTION/Name",
+                                "strval": "CALL FUNCTION",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001165,
+                                "strtype": "CALL FUNCTION/Call",
+                                "strval": "<{Function_name}>( event_struct )",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001166,
+                                "strtype": "CALL FUNCTION/CallC",
+                                "strval": "<{Function_name}>( e );",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001167,
+                                "strtype": "CALL FUNCTION/Function_name",
+                                "strval": "selectStratagem",
+                                "InheritedType": 10
+                              },
+                              {
+                                "nid": 1001168,
+                                "strtype": "CALL FUNCTION/Dont_export_function",
+                                "strval": "False",
+                                "InheritedType": 2
+                              }
+                            ],
+                            "InheritedType": 10
+                          }
+                        ],
+                        "InheritedType": 4
+                      }
+                    ],
+                    "saved_objtypeKey": "BUTTON",
+                    "tree_closed": true
                   }
                 ],
                 "dont_export": false,
@@ -13250,7 +13521,7 @@
                   {
                     "nid": 1000665,
                     "strtype": "TABPAGE/Title",
-                    "strval": "Supply",
+                    "strval": " ",
                     "InheritedType": 10
                   },
                   {
@@ -16755,7 +17026,7 @@
                   {
                     "nid": 1000665,
                     "strtype": "TABPAGE/Title",
-                    "strval": "Sentry",
+                    "strval": " ",
                     "InheritedType": 10
                   },
                   {
@@ -19614,7 +19885,7 @@
                   {
                     "nid": 1002104,
                     "strtype": "TABPAGE/Title",
-                    "strval": "Ground",
+                    "strval": " ",
                     "InheritedType": 10
                   },
                   {
@@ -23764,7 +24035,7 @@
                   {
                     "nid": 1000665,
                     "strtype": "TABPAGE/Title",
-                    "strval": "Strike",
+                    "strval": " ",
                     "InheritedType": 10
                   },
                   {
@@ -26311,7 +26582,7 @@
                   {
                     "nid": 1000665,
                     "strtype": "TABPAGE/Title",
-                    "strval": "Eagle",
+                    "strval": " ",
                     "InheritedType": 10
                   },
                   {
@@ -26423,6 +26694,7 @@
               },
               {
                 "nid": 90,
+                "flags": 1048576,
                 "strtype": "OBJECT/Flags",
                 "InheritedType": 1
               },
@@ -26517,7 +26789,7 @@
                       {
                         "nid": 10610,
                         "strtype": "_style/Bg_Image",
-                        "strval": "assets/tabs_header.png",
+                        "strval": "assets/tabs_mixed.png",
                         "InheritedType": 5
                       }
                     ],
@@ -26575,10 +26847,10 @@
                         "nid": 20520,
                         "strtype": "_style/Bg_Color",
                         "intarray": [
-                          51,
-                          51,
-                          51,
-                          255
+                          68,
+                          68,
+                          68,
+                          127
                         ],
                         "InheritedType": 7
                       },
@@ -26600,6 +26872,18 @@
                         "strtype": "_style/Border width",
                         "integer": 2,
                         "InheritedType": 6
+                      },
+                      {
+                        "nid": 20730,
+                        "strtype": "_style/Border side",
+                        "strval": "BOTTOM",
+                        "InheritedType": 3
+                      },
+                      {
+                        "nid": 21010,
+                        "strtype": "_style/Blend mode",
+                        "strval": "NORMAL",
+                        "InheritedType": 3
                       }
                     ],
                     "InheritedType": 1
@@ -37522,10 +37806,10 @@
                         "nid": 20520,
                         "strtype": "_style/Bg_Color",
                         "intarray": [
-                          51,
-                          51,
-                          51,
-                          255
+                          68,
+                          68,
+                          68,
+                          127
                         ],
                         "InheritedType": 7
                       },
@@ -39582,7 +39866,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2748,
+    "backup_cnt": 2769,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",
@@ -39598,7 +39882,7 @@
     "drive_fatfs_path": "/",
     "naming": "Name",
     "naming_force_lowercase": false,
-    "nidcnt": 1002440,
+    "nidcnt": 1002479,
     "BitDepth": 16,
     "Name": "SquareLine_Project"
   }

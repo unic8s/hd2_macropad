@@ -44,6 +44,8 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ![](screens/setup_special.png)
 
+![](screens/setup_backpack.png)
+
 ![](screens/setup_supply.png)
 
 ![](screens/setup_sentry.png)

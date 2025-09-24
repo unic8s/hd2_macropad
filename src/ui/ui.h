@@ -88,7 +88,7 @@ void ui_event_WeaponsSTE(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsSTE;
 void ui_event_WeaponsFT(lv_event_t * e);
 extern lv_obj_t * ui_WeaponsFT;
-extern lv_obj_t * ui_Supply;
+extern lv_obj_t * ui_Backpack;
 void ui_event_BackpacksBSB(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksBSB;
 void ui_event_BackpacksSGP(lv_event_t * e);
@@ -107,20 +107,21 @@ void ui_event_BackpacksSUP(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksSUP;
 void ui_event_BackpacksPH(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksPH;
-void ui_event_BackpacksFRV(lv_event_t * e);
-extern lv_obj_t * ui_BackpacksFRV;
-void ui_event_BackpacksOTF(lv_event_t * e);
-extern lv_obj_t * ui_BackpacksOTF;
 void ui_event_BackpacksJP(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksJP;
 void ui_event_BackpacksHP(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksHP;
 void ui_event_BackpacksWP(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksWP;
+extern lv_obj_t * ui_Supply;
+void ui_event_BackpacksFRV(lv_event_t * e);
+extern lv_obj_t * ui_BackpacksFRV;
 void ui_event_BackpacksPE(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksPE;
 void ui_event_BackpacksEE(lv_event_t * e);
 extern lv_obj_t * ui_BackpacksEE;
+void ui_event_BackpacksOTF(lv_event_t * e);
+extern lv_obj_t * ui_BackpacksOTF;
 extern lv_obj_t * ui_Sentry;
 void ui_event_StationaryMGS(lv_event_t * e);
 extern lv_obj_t * ui_StationaryMGS;
@@ -311,7 +312,7 @@ extern lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
 LV_IMG_DECLARE(ui_img_intro_png);    // assets/intro.png
-LV_IMG_DECLARE(ui_img_tabs_header_png);    // assets/tabs_header.png
+LV_IMG_DECLARE(ui_img_tabs_mixed_png);    // assets/tabs_mixed.png
 LV_IMG_DECLARE(ui_img_sg_mg1_png);    // assets/sg/MG1.png
 LV_IMG_DECLARE(ui_img_sg_hmg1_png);    // assets/sg/HMG1.png
 LV_IMG_DECLARE(ui_img_sg_sw1_png);    // assets/sg/SW1.png
@@ -343,13 +344,13 @@ LV_IMG_DECLARE(ui_img_sg_gdr1_png);    // assets/sg/GDR1.png
 LV_IMG_DECLARE(ui_img_sg_gdk1_png);    // assets/sg/GDK1.png
 LV_IMG_DECLARE(ui_img_sg_sup1_png);    // assets/sg/SUP1.png
 LV_IMG_DECLARE(ui_img_sg_ph1_png);    // assets/sg/PH1.png
-LV_IMG_DECLARE(ui_img_sg_frv1_png);    // assets/sg/FRV1.png
-LV_IMG_DECLARE(ui_img_sg_otf1_png);    // assets/sg/OTF1.png
 LV_IMG_DECLARE(ui_img_sg_jp1_png);    // assets/sg/JP1.png
 LV_IMG_DECLARE(ui_img_sg_hp1_png);    // assets/sg/HP1.png
 LV_IMG_DECLARE(ui_img_sg_wp1_png);    // assets/sg/WP1.png
+LV_IMG_DECLARE(ui_img_sg_frv1_png);    // assets/sg/FRV1.png
 LV_IMG_DECLARE(ui_img_sg_pe1_png);    // assets/sg/PE1.png
 LV_IMG_DECLARE(ui_img_sg_ee1_png);    // assets/sg/EE1.png
+LV_IMG_DECLARE(ui_img_sg_otf1_png);    // assets/sg/OTF1.png
 LV_IMG_DECLARE(ui_img_sg_mgs1_png);    // assets/sg/MGS1.png
 LV_IMG_DECLARE(ui_img_sg_gs1_png);    // assets/sg/GS1.png
 LV_IMG_DECLARE(ui_img_sg_acs1_png);    // assets/sg/ACS1.png

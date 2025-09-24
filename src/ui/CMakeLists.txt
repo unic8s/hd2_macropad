@@ -10,7 +10,7 @@ SET(SOURCES screens/ui_Intro.c
     ui_helpers.c
     ui_events.c
     images/ui_img_intro_png.c
-    images/ui_img_tabs_header_png.c
+    images/ui_img_tabs_mixed_png.c
     images/ui_img_sg_mg1_png.c
     images/ui_img_sg_hmg1_png.c
     images/ui_img_sg_sw1_png.c
@@ -42,13 +42,13 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_gdk1_png.c
     images/ui_img_sg_sup1_png.c
     images/ui_img_sg_ph1_png.c
-    images/ui_img_sg_frv1_png.c
-    images/ui_img_sg_otf1_png.c
     images/ui_img_sg_jp1_png.c
     images/ui_img_sg_hp1_png.c
     images/ui_img_sg_wp1_png.c
+    images/ui_img_sg_frv1_png.c
     images/ui_img_sg_pe1_png.c
     images/ui_img_sg_ee1_png.c
+    images/ui_img_sg_otf1_png.c
     images/ui_img_sg_mgs1_png.c
     images/ui_img_sg_gs1_png.c
     images/ui_img_sg_acs1_png.c
@@ -102,8 +102,8 @@ SET(SOURCES screens/ui_Intro.c
     images/ui_img_sg_hb1_png.c
     images/ui_img_1566825004.c
     images/ui_img_165882922.c
-    images/ui_img_1132554101.c
     images/ui_img_about_png.c
+    images/ui_img_1132554101.c
     images/ui_img_sg_1202_png.c
     images/ui_img_sg_3802_png.c
     images/ui_img_sg_ac2_png.c

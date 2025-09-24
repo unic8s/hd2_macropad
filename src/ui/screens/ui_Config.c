@@ -31,9 +31,9 @@ void ui_Config_screen_init(void)
                                            LV_STYLE_TEXT_COLOR, _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(lv_tabview_get_tab_btns(ui_TabView1),  LV_PART_ITEMS | LV_STATE_CHECKED,
                                            LV_STYLE_TEXT_OPA, _ui_theme_alpha_colorActive);
-    lv_obj_set_style_bg_color(lv_tabview_get_tab_btns(ui_TabView1), lv_color_hex(0x333333),
+    lv_obj_set_style_bg_color(lv_tabview_get_tab_btns(ui_TabView1), lv_color_hex(0x444444),
                               LV_PART_ITEMS | LV_STATE_CHECKED);
-    lv_obj_set_style_bg_opa(lv_tabview_get_tab_btns(ui_TabView1), 255,  LV_PART_ITEMS | LV_STATE_CHECKED);
+    lv_obj_set_style_bg_opa(lv_tabview_get_tab_btns(ui_TabView1), 127,  LV_PART_ITEMS | LV_STATE_CHECKED);
     ui_object_set_themeable_style_property(lv_tabview_get_tab_btns(ui_TabView1),  LV_PART_ITEMS | LV_STATE_CHECKED,
                                            LV_STYLE_BORDER_COLOR, _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(lv_tabview_get_tab_btns(ui_TabView1),  LV_PART_ITEMS | LV_STATE_CHECKED,

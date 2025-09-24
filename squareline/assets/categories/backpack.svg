@@ -1,0 +1,31 @@
+<svg width="125.99999999999999" height="125.99999999999999" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1" fill="#49adc9">
+   <path id="svg_2" d="m58.5,47l9,0l0,10l-9,0l0,-10z"/>
+   <path id="svg_3" d="m54.5,47l-11,0l-10,-9l0,14l11,4l0,48l39,0l9,-9l0,-57l-10,9l-11,0l0,14l-17,0l0,-14z"/>
+   <path id="svg_4" d="m33.5,33l11,10l37,0l11,-10l0,-11l-59,0l0,11z"/>
+  </g>
+  <g>
+   <g>
+    <title>Layer 1</title>
+    <g fill="#49adc9" id="svg_6">
+     <path d="m58.5,47l9,0l0,10l-9,0l0,-10z" id="svg_9"/>
+     <path d="m54.5,47l-11,0l-10,-9l0,14l11,4l0,48l39,0l9,-9l0,-57l-10,9l-11,0l0,14l-17,0l0,-14z" id="svg_8"/>
+     <path d="m33.5,33l11,10l37,0l11,-10l0,-11l-59,0l0,11z" id="svg_7"/>
+    </g>
+   </g>
+  </g>
+  <g stroke="null">
+   <g stroke="null">
+    <title stroke="null">Layer 1</title>
+    <g stroke="null" fill="#49adc9" id="svg_10">
+     <path stroke="null" d="m67.44375,47.15691l-9.04017,0l0,9.96276l9.04017,0l0,-9.96276z" id="svg_13"/>
+     <path stroke="null" d="m71.46161,47.15691l11.0491,0l10.04464,-8.96649l0,13.94787l-11.0491,3.98511l0,47.82126l-39.17409,0l-9.04017,-8.96649l0,-56.78775l10.04464,8.96649l11.0491,0l0,13.94787l17.07588,0l0,-13.94787z" id="svg_12"/>
+     <path stroke="null" d="m92.55535,33.20904l-11.0491,9.96276l-37.16516,0l-11.0491,-9.96276l0,-10.95904l59.26336,0l0,10.95904z" id="svg_11"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

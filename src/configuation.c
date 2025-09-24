@@ -97,8 +97,8 @@ void setDelay(int delay, bool restore)
 {
     inputDelay = delay;
 
-    char textDelay[] = "   ";
-    itoa(delay, textDelay, 10);
+    char *textDelay = (char *)malloc(7 * sizeof(char));
+    sprintf(textDelay, "%d %s", delay, " ms");
 
     lv_label_set_text(ui_LblDelay, (void *)textDelay);
 
@@ -148,8 +148,8 @@ void setBrightness(int brightness, bool restore)
 {
     dimScreen(brightness);
 
-    char textBrightness[] = "   ";
-    itoa(brightness, textBrightness, 10);
+    char *textBrightness = (char *)malloc(5 * sizeof(char));
+    sprintf(textBrightness, "%d %s", brightness, " %");
 
     lv_label_set_text(ui_LblBrightness, (void *)textBrightness);
 
@@ -262,7 +262,7 @@ esp_err_t openConfig()
         ESP_LOGE(TAG_CFG, "Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
         return ret;
     }
-    
+
     return ret;
 }
 
@@ -274,7 +274,8 @@ void closeConfig()
 // Load complete configuration from NVS
 void loadConfig()
 {
-    if(openConfig() != ESP_OK){
+    if (openConfig() != ESP_OK)
+    {
         return;
     }
 
@@ -302,7 +303,8 @@ void loadConfig()
 // Load single configuration of a key/value from NVS
 int8_t peekConfig(char *key, int8_t defaultValue)
 {
-    if(openConfig() != ESP_OK){
+    if (openConfig() != ESP_OK)
+    {
         return defaultValue;
     }
 
@@ -316,12 +318,13 @@ int8_t peekConfig(char *key, int8_t defaultValue)
 // Clear all stored configuration in NVS and write it to default values
 void resetConfig()
 {
-    if(openConfig() != ESP_OK){
+    if (openConfig() != ESP_OK)
+    {
         return;
     }
 
     nvs_erase_all(nvsConfig);
-    
+
     closeConfig();
 
     setDelay(100, true);

@@ -70,7 +70,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_width(ui_Label2, lv_pct(50));
     lv_obj_set_height(ui_Label2, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Label2, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label2, "Screen brightness (%)");
+    lv_label_set_text(ui_Label2, "Screen brightness");
     ui_object_set_themeable_style_property(ui_Label2, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Label2, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
@@ -80,7 +80,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_width(ui_LblBrightness, lv_pct(50));
     lv_obj_set_height(ui_LblBrightness, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_LblBrightness, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_LblBrightness, "100");
+    lv_label_set_text(ui_LblBrightness, "100 %");
     ui_object_set_themeable_style_property(ui_LblBrightness, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_LblBrightness, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
@@ -273,7 +273,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_width(ui_Label3, lv_pct(50));
     lv_obj_set_height(ui_Label3, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Label3, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label3, "Delay (ms)");
+    lv_label_set_text(ui_Label3, "Delay");
     ui_object_set_themeable_style_property(ui_Label3, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorTheme);
     ui_object_set_themeable_style_property(ui_Label3, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
@@ -283,7 +283,7 @@ void ui_Config_screen_init(void)
     lv_obj_set_width(ui_LblDelay, lv_pct(50));
     lv_obj_set_height(ui_LblDelay, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_LblDelay, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_LblDelay, "100");
+    lv_label_set_text(ui_LblDelay, "100 ms");
     ui_object_set_themeable_style_property(ui_LblDelay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_LblDelay, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,

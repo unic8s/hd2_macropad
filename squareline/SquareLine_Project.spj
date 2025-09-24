@@ -32787,7 +32787,7 @@
                           {
                             "nid": 1030,
                             "strtype": "LABEL/Text",
-                            "strval": "Screen brightness (%)",
+                            "strval": "Screen brightness",
                             "InheritedType": 10
                           },
                           {
@@ -32934,7 +32934,7 @@
                           {
                             "nid": 1030,
                             "strtype": "LABEL/Text",
-                            "strval": "100",
+                            "strval": "100 %",
                             "InheritedType": 10
                           },
                           {
@@ -35075,7 +35075,7 @@
                           {
                             "nid": 1030,
                             "strtype": "LABEL/Text",
-                            "strval": "Delay (ms)",
+                            "strval": "Delay",
                             "InheritedType": 10
                           },
                           {
@@ -35223,7 +35223,7 @@
                           {
                             "nid": 1030,
                             "strtype": "LABEL/Text",
-                            "strval": "100",
+                            "strval": "100 ms",
                             "InheritedType": 10
                           },
                           {
@@ -39866,7 +39866,7 @@
     "uiExportFolderPath": "C:\\Users\\erikl\\Documents\\Arduino\\sketches\\hd2_macropad",
     "projectExportFolderPath": "C:/Users/erikl/Documents/Arduino/sketches/hd2_macropad",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 2770,
+    "backup_cnt": 2773,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

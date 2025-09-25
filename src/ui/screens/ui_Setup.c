@@ -851,6 +851,26 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_BackpacksOTF, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
+    ui_StationarySS = lv_btn_create(ui_Supply);
+    lv_obj_set_width(ui_StationarySS, 76);
+    lv_obj_set_height(ui_StationarySS, 76);
+    lv_obj_add_flag(ui_StationarySS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_StationarySS, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_StationarySS, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_StationarySS, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui_StationarySS, &ui_img_sg_ss1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_sgBlue);
+    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_sgBlue);
+    lv_obj_set_style_border_width(ui_StationarySS, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_StationarySS, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
+    lv_obj_set_style_bg_opa(ui_StationarySS, 0, LV_PART_MAIN | LV_STATE_CHECKED);
+    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
+                                           _ui_theme_color_colorActive);
+    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
+                                           _ui_theme_alpha_colorActive);
+
     ui_Sentry = lv_tabview_add_tab(ui_TabStratagems, " ");
     lv_obj_set_flex_flow(ui_Sentry, LV_FLEX_FLOW_ROW_WRAP);
     lv_obj_set_flex_align(ui_Sentry, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
@@ -1213,26 +1233,6 @@ void ui_Setup_screen_init(void)
     ui_object_set_themeable_style_property(ui_StationaryGB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
                                            _ui_theme_color_colorActive);
     ui_object_set_themeable_style_property(ui_StationaryGB, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_colorActive);
-
-    ui_StationarySS = lv_btn_create(ui_Ground);
-    lv_obj_set_width(ui_StationarySS, 76);
-    lv_obj_set_height(ui_StationarySS, 76);
-    lv_obj_add_flag(ui_StationarySS, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_StationarySS, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_color(ui_StationarySS, lv_color_hex(0xFFDF00), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_StationarySS, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_src(ui_StationarySS, &ui_img_sg_ss1_png, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_sgGreen);
-    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_OPA,
-                                           _ui_theme_alpha_sgGreen);
-    lv_obj_set_style_border_width(ui_StationarySS, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_StationarySS, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED);
-    lv_obj_set_style_bg_opa(ui_StationarySS, 0, LV_PART_MAIN | LV_STATE_CHECKED);
-    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_COLOR,
-                                           _ui_theme_color_colorActive);
-    ui_object_set_themeable_style_property(ui_StationarySS, LV_PART_MAIN | LV_STATE_CHECKED, LV_STYLE_BORDER_OPA,
                                            _ui_theme_alpha_colorActive);
 
     ui_Strike = lv_tabview_add_tab(ui_TabStratagems, " ");
@@ -1815,6 +1815,7 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_BackpacksPE, ui_event_BackpacksPE, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksEE, ui_event_BackpacksEE, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BackpacksOTF, ui_event_BackpacksOTF, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_StationarySS, ui_event_StationarySS, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryMGS, ui_event_StationaryMGS, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryGS, ui_event_StationaryGS, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryACS, ui_event_StationaryACS, LV_EVENT_ALL, NULL);
@@ -1832,7 +1833,6 @@ void ui_Setup_screen_init(void)
     lv_obj_add_event_cb(ui_StationaryATM, ui_event_StationaryATM, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryIM, ui_event_StationaryIM, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StationaryGB, ui_event_StationaryGB, LV_EVENT_ALL, NULL);
-    lv_obj_add_event_cb(ui_StationarySS, ui_event_StationarySS, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Strikes120, ui_event_Strikes120, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Strikes380, ui_event_Strikes380, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_StrikesORS, ui_event_StrikesORS, LV_EVENT_ALL, NULL);

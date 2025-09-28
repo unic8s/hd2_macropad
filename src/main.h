@@ -1,6 +1,7 @@
 #ifndef MAIN
 #define MAIN
 
+#include <lvgl.h>
 #include <esp_system.h>
 
 #ifdef __cplusplus
@@ -43,6 +44,12 @@ extern "C"
 #define SND_SHIELD "S:assets/sound/shd.wav"
 #define SND_SENTRY "S:assets/sound/snt.wav"
 #define SND_WEAPON "S:assets/sound/weap.wav"
+
+lv_color_t colorTheme;
+lv_color_t colorActive;
+lv_color_t sgRed;
+lv_color_t sgGreen;
+lv_color_t sgBlue;
 
 void app_main();
 void playbackSound(char *path);

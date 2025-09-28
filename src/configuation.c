@@ -4,6 +4,7 @@
 #include "i2s_sdcard.h"
 #include <lvgl.h>
 #include "ui/ui.h"
+#include "ui/screens.h"
 #include "main.h"
 
 const char *TAG_CFG = "Configuration";
@@ -100,11 +101,11 @@ void setDelay(int delay, bool restore)
     char *textDelay = (char *)malloc(7 * sizeof(char));
     sprintf(textDelay, "%d %s", delay, " ms");
 
-    lv_label_set_text(ui_LblDelay, (void *)textDelay);
+    lv_label_set_text(objects.lbl_delay, (void *)textDelay);
 
     if (restore)
     {
-        lv_slider_set_value(ui_SldDelay, (int)(delay / 10), LV_ANIM_OFF);
+        lv_slider_set_value(objects.sld_delay, (int)(delay / 10), LV_ANIM_OFF);
     }
     else
     {
@@ -123,11 +124,11 @@ void setRotation(int rotation, bool restore)
     {
         if (screenRotation == LV_DISP_ROT_270)
         {
-            lv_obj_add_state(ui_ChbFlip, LV_STATE_CHECKED);
+            lv_obj_add_state(objects.chb_flip, LV_STATE_CHECKED);
         }
         else
         {
-            lv_obj_clear_state(ui_ChbFlip, LV_STATE_CHECKED);
+            lv_obj_clear_state(objects.chb_flip, LV_STATE_CHECKED);
         }
     }
     else
@@ -151,11 +152,11 @@ void setBrightness(int brightness, bool restore)
     char *textBrightness = (char *)malloc(5 * sizeof(char));
     sprintf(textBrightness, "%d %s", brightness, " %");
 
-    lv_label_set_text(ui_LblBrightness, (void *)textBrightness);
+    lv_label_set_text(objects.lbl_brightness, (void *)textBrightness);
 
     if (restore)
     {
-        lv_slider_set_value(ui_SldBrightness, (int)(brightness / 10), LV_ANIM_OFF);
+        lv_slider_set_value(objects.sld_brightness, (int)(brightness / 10), LV_ANIM_OFF);
     }
     else
     {
@@ -172,11 +173,11 @@ void setMuted(bool muted, bool restore)
     {
         if (muted)
         {
-            lv_obj_add_state(ui_ChbMute, LV_STATE_CHECKED);
+            lv_obj_add_state(objects.chb_mute, LV_STATE_CHECKED);
         }
         else
         {
-            lv_obj_clear_state(ui_ChbMute, LV_STATE_CHECKED);
+            lv_obj_clear_state(objects.chb_mute, LV_STATE_CHECKED);
         }
     }
     else
@@ -192,7 +193,7 @@ void setConnectivity(uint8_t index, bool restore)
 {
     if (restore)
     {
-        lv_dropdown_set_selected(ui_DdConnectivity, index - 1);
+        lv_dropdown_set_selected(objects.dd_connectivity, index - 1);
     }
     else
     {
@@ -243,7 +244,7 @@ void setKeymap(uint8_t index, bool restore)
 
     if (restore)
     {
-        lv_dropdown_set_selected(ui_DdKeymap, index);
+        lv_dropdown_set_selected(objects.dd_keymap, index);
     }
     else
     {

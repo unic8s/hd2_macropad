@@ -4,6 +4,7 @@
 // Project name: SquareLine_Project
 
 #include "ui.h"
+#include "screens.h"
 #include "hid_dev.h"
 #include "esp_log.h"
 #include "stratagems.h"
@@ -27,6 +28,117 @@ uint8_t strategemsAmount = 0;
 
 // HID input mask for special keys
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
+
+// Goto game screen
+void action_goto_game(lv_event_t *e)
+{
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
+	{
+		const lv_obj_t *button = buttons[c];
+		const lv_img_dsc_t *bgImg = lv_obj_get_style_bg_img_src(button, LV_PART_MAIN | LV_STATE_DEFAULT);
+		const bool configured = buttons[c] != NULL;
+		lv_obj_t *targetButton = objects.custom_stratagem1;
+
+		bool useHiResIcon = true;
+
+		switch (c)
+		{
+		case 1:
+			targetButton = objects.custom_stratagem2;
+			break;
+		case 2:
+			targetButton = objects.custom_stratagem3;
+			break;
+		case 3:
+			targetButton = objects.custom_stratagem4;
+			break;
+		case 4:
+			targetButton = objects.custom_stratagem5;
+			useHiResIcon = false;
+			break;
+		case 5:
+			targetButton = objects.custom_stratagem6;
+			useHiResIcon = false;
+			break;
+		}
+
+		uint8_t itemIndex = indices[c];
+		stratagem item = strategems[itemIndex];
+		const lv_img_dsc_t *hires = useHiResIcon ? item.imgHiRes : bgImg;
+
+		if (configured)
+		{
+			lv_obj_set_style_border_color(targetButton, *item.color, LV_PART_MAIN | LV_STATE_DEFAULT);
+			lv_obj_set_style_bg_img_src(targetButton, hires, LV_PART_MAIN | LV_STATE_DEFAULT);
+			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
+		}
+		else
+		{
+			lv_obj_add_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
+		}
+	}
+
+	lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 100, false);
+}
+
+// Update selection in UI (text and bar)
+void updateStratagemSelection()
+{
+	strategemsAmount = 0;
+
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS - 1; c++)
+	{
+		if (buttons[c] == NULL)
+		{
+			buttons[c] = buttons[c + 1];
+			indices[c] = indices[c + 1];
+			types[c] = types[c + 1];
+
+			buttons[c + 1] = NULL;
+			indices[c + 1] = -1;
+			types[c + 1] = -1;
+		}
+	}
+
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
+	{
+		if (buttons[c] != NULL)
+		{
+			strategemsAmount++;
+		}
+	}
+
+	lv_bar_set_value(objects.bar_amount, strategemsAmount, LV_ANIM_OFF);
+
+	lv_color_t barColor = lv_color_hex(0xFFFFFF);
+
+	if (strategemsAmount > 0 && strategemsAmount < 4)
+	{
+		barColor = sgRed;
+	}
+	else if (strategemsAmount == 4)
+	{
+		barColor = sgGreen;
+	}
+	else if (strategemsAmount > 4)
+	{
+		barColor = sgBlue;
+	}
+
+	lv_obj_set_style_border_color(objects.bar_amount, barColor, LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.bar_amount, barColor, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+
+	char textAmount[] = "0 / 0";
+	textAmount[0] = (char)(strategemsAmount + '0');
+	textAmount[4] = (char)(MAX_USER_STRATAGEMS + '0');
+
+	lv_label_set_text(objects.label_amount, (void *)textAmount);
+
+	if (strategemsAmount == MAX_USER_STRATAGEMS)
+	{
+		action_goto_game(NULL);
+	}
+}
 
 // Unassign stratagem item from button
 void deselectStratagem(lv_event_t *e)
@@ -88,67 +200,8 @@ void selectStratagem(lv_event_t *e)
 	}
 }
 
-// Update selection in UI (text and bar)
-void updateStratagemSelection()
-{
-	strategemsAmount = 0;
-
-	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS - 1; c++)
-	{
-		if (buttons[c] == NULL)
-		{
-			buttons[c] = buttons[c + 1];
-			indices[c] = indices[c + 1];
-			types[c] = types[c + 1];
-
-			buttons[c + 1] = NULL;
-			indices[c + 1] = -1;
-			types[c + 1] = -1;
-		}
-	}
-
-	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
-	{
-		if (buttons[c] != NULL)
-		{
-			strategemsAmount++;
-		}
-	}
-
-	lv_bar_set_value(uic_BarAmount, strategemsAmount, LV_ANIM_OFF);
-
-	ui_theme_variable_t barColor = _ui_theme_color_colorTheme[0];
-
-	if (strategemsAmount > 0 && strategemsAmount < 4)
-	{
-		barColor = _ui_theme_color_sgRed[0];
-	}
-	else if (strategemsAmount == 4)
-	{
-		barColor = _ui_theme_color_sgGreen[0];
-	}
-	else if (strategemsAmount > 4)
-	{
-		barColor = _ui_theme_color_sgBlue[0];
-	}
-
-	ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, &barColor);
-	ui_object_set_themeable_style_property(uic_BarAmount, LV_PART_INDICATOR | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, &barColor);
-
-	char textAmount[] = "0 / 0";
-	textAmount[0] = (char)(strategemsAmount + '0');
-	textAmount[4] = (char)(MAX_USER_STRATAGEMS + '0');
-
-	lv_label_set_text(uic_LabelAmount, (void *)textAmount);
-
-	if (strategemsAmount == MAX_USER_STRATAGEMS)
-	{
-		GotoGame(NULL);
-	}
-}
-
 // Reset all selected stratagems from user
-void resetStratagems(lv_event_t *e)
+void action_reset_stratagems(lv_event_t *e)
 {
 	if (strategemsAmount == 0)
 	{
@@ -174,7 +227,7 @@ void resetStratagems(lv_event_t *e)
 // Change connectivity (Bluetooth/USB)
 void ChangeConnectivity(lv_event_t *e)
 {
-	uint8_t connectionType = lv_dropdown_get_selected(ui_DdConnectivity);
+	uint8_t connectionType = lv_dropdown_get_selected(objects.dd_connectivity);
 
 	setConnectivity(connectionType + 1, false);
 }
@@ -182,105 +235,9 @@ void ChangeConnectivity(lv_event_t *e)
 // Change assigned keymap
 void ChangeKeymap(lv_event_t *e)
 {
-	uint8_t keymapIndex = lv_dropdown_get_selected(ui_DdKeymap);
+	uint8_t keymapIndex = lv_dropdown_get_selected(objects.dd_keymap);
 
 	setKeymap(keymapIndex, false);
-}
-
-// Trigger 1st standard stratagem
-void triggerStratagemStd(lv_event_t *e)
-{
-	if (e->target == ui_BtnReinforce)
-	{
-		uint8_t sequence[8] = {INPUT_UP,
-							   INPUT_DOWN,
-							   INPUT_RIGHT,
-							   INPUT_LEFT,
-							   INPUT_UP,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence,
-							 SND_REINFORCE);
-	}
-	else if (e->target == ui_BtnResupply)
-	{
-		uint8_t sequence[8] = {INPUT_DOWN,
-							   INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_RIGHT,
-							   0,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, SND_SUPPLY);
-	}
-	else if (e->target == ui_BtnSOS)
-	{
-		uint8_t sequence[8] = {INPUT_UP,
-							   INPUT_DOWN,
-							   INPUT_RIGHT,
-							   INPUT_UP,
-							   0,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, SND_SOS);
-	}
-	else if (e->target == ui_BtnRearm)
-	{
-		uint8_t sequence[8] = {INPUT_UP,
-							   INPUT_UP,
-							   INPUT_LEFT,
-							   INPUT_UP,
-							   INPUT_RIGHT,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, SND_EAGLE_RELOAD);
-	}
-	else if (e->target == ui_BtnHellbomb)
-	{
-		uint8_t sequence[8] = {INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_LEFT,
-							   INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_RIGHT,
-							   INPUT_DOWN,
-							   INPUT_UP};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == ui_BtnSEAF)
-	{
-		uint8_t sequence[8] = {INPUT_RIGHT,
-							   INPUT_UP,
-							   INPUT_UP,
-							   INPUT_DOWN,
-							   0,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == ui_BtnResupply)
-	{
-	}
-	else if (e->target == ui_BtnResupply)
-	{
-	}
-	else if (e->target == ui_BtnResupply)
-	{
-	}
-	else if (e->target == ui_BtnResupply)
-	{
-	}
 }
 
 void _executeStdStratagem(uint8_t *sequence, char *path)
@@ -305,32 +262,116 @@ void _executeUserStratagem(uint8_t index)
 	playbackSound(path);
 }
 
+// Trigger 1st standard stratagem
+void triggerStratagemStd(lv_event_t *e)
+{
+	if (e->target == objects.btn_reinforce)
+	{
+		uint8_t sequence[8] = {INPUT_UP,
+							   INPUT_DOWN,
+							   INPUT_RIGHT,
+							   INPUT_LEFT,
+							   INPUT_UP,
+							   0,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence,
+							 SND_REINFORCE);
+	}
+	else if (e->target == objects.btn_resupply)
+	{
+		uint8_t sequence[8] = {INPUT_DOWN,
+							   INPUT_DOWN,
+							   INPUT_UP,
+							   INPUT_RIGHT,
+							   0,
+							   0,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, SND_SUPPLY);
+	}
+	else if (e->target == objects.btn_sos)
+	{
+		uint8_t sequence[8] = {INPUT_UP,
+							   INPUT_DOWN,
+							   INPUT_RIGHT,
+							   INPUT_UP,
+							   0,
+							   0,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, SND_SOS);
+	}
+	else if (e->target == objects.btn_rearm)
+	{
+		uint8_t sequence[8] = {INPUT_UP,
+							   INPUT_UP,
+							   INPUT_LEFT,
+							   INPUT_UP,
+							   INPUT_RIGHT,
+							   0,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, SND_EAGLE_RELOAD);
+	}
+	else if (e->target == objects.btn_hellbomb)
+	{
+		uint8_t sequence[8] = {INPUT_DOWN,
+							   INPUT_UP,
+							   INPUT_LEFT,
+							   INPUT_DOWN,
+							   INPUT_UP,
+							   INPUT_RIGHT,
+							   INPUT_DOWN,
+							   INPUT_UP};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+	else if (e->target == objects.btn_seaf)
+	{
+		uint8_t sequence[8] = {INPUT_RIGHT,
+							   INPUT_UP,
+							   INPUT_UP,
+							   INPUT_DOWN,
+							   0,
+							   0,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+}
+
 // Trigger 1st user stratagem
 void triggerStratagemUser(lv_event_t *e)
 {
 	int8_t index = -1;
 
-	if (e->target == ui_CustomStratagem1)
+	if (e->target == objects.custom_stratagem1)
 	{
 		index = 0;
 	}
-	else if (e->target == ui_CustomStratagem2)
+	else if (e->target == objects.custom_stratagem2)
 	{
 		index = 1;
 	}
-	else if (e->target == ui_CustomStratagem3)
+	else if (e->target == objects.custom_stratagem3)
 	{
 		index = 2;
 	}
-	else if (e->target == ui_CustomStratagem4)
+	else if (e->target == objects.custom_stratagem4)
 	{
 		index = 3;
 	}
-	else if (e->target == ui_CustomStratagem5)
+	else if (e->target == objects.custom_stratagem5)
 	{
 		index = 4;
 	}
-	else if (e->target == ui_CustomStratagem6)
+	else if (e->target == objects.custom_stratagem6)
 	{
 		index = 5;
 	}
@@ -402,70 +443,17 @@ void FlipScreen(lv_event_t *e)
 	esp_restart();
 }
 
-// Goto game screen
-void GotoGame(lv_event_t *e)
-{
-	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
-	{
-		const lv_obj_t *button = buttons[c];
-		const lv_img_dsc_t *bgImg = lv_obj_get_style_bg_img_src(button, LV_PART_MAIN | LV_STATE_DEFAULT);
-		const bool configured = buttons[c] != NULL;
-		lv_obj_t *targetButton = ui_CustomStratagem1;
-
-		bool useHiResIcon = true;
-
-		switch (c)
-		{
-		case 1:
-			targetButton = ui_CustomStratagem2;
-			break;
-		case 2:
-			targetButton = ui_CustomStratagem3;
-			break;
-		case 3:
-			targetButton = ui_CustomStratagem4;
-			break;
-		case 4:
-			targetButton = ui_CustomStratagem5;
-			useHiResIcon = false;
-			break;
-		case 5:
-			targetButton = ui_CustomStratagem6;
-			useHiResIcon = false;
-			break;
-		}
-
-		uint8_t itemIndex = indices[c];
-		stratagem item = strategems[itemIndex];
-		const lv_img_dsc_t *hires = useHiResIcon ? item.imgHiRes : bgImg;
-
-		if (configured)
-		{
-			ui_object_set_themeable_style_property(targetButton, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR,
-												   item.color);
-			lv_obj_set_style_bg_img_src(targetButton, hires, LV_PART_MAIN | LV_STATE_DEFAULT);
-			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
-		}
-		else
-		{
-			lv_obj_add_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
-		}
-	}
-
-	_ui_screen_change(&ui_Game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 100, &ui_Game_screen_init);
-}
-
 char *presetKey(lv_obj_t *button, uint8_t itemIndex)
 {
 	static char key[3] = "p00";
 
 	char presetIndex = '0';
 
-	if (button == ui_BtnPreset1)
+	if (button == objects.btn_preset1)
 	{
 		presetIndex = '1';
 	}
-	else if (button == ui_BtnPreset2)
+	else if (button == objects.btn_preset2)
 	{
 		presetIndex = '2';
 	}
@@ -491,8 +479,8 @@ void updatePresets()
 
 	closeConfig();
 
-	ui_object_set_themeable_style_property(ui_BtnPreset1, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR, hasPreset1 ? _ui_theme_color_sgGreen : _ui_theme_color_sgRed);
-	ui_object_set_themeable_style_property(ui_BtnPreset2, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BORDER_COLOR, hasPreset2 ? _ui_theme_color_sgGreen : _ui_theme_color_sgRed);
+	lv_obj_set_style_border_color(objects.btn_preset1, hasPreset1 ? sgGreen : sgRed, LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset2, hasPreset2 ? sgGreen : sgRed, LV_PART_MAIN | LV_STATE_DEFAULT);
 }
 
 void GetPreset(lv_event_t *e)
@@ -502,7 +490,7 @@ void GetPreset(lv_event_t *e)
 		return;
 	}
 
-	resetStratagems(NULL);
+	action_reset_stratagems(NULL);
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
@@ -520,14 +508,14 @@ void GetPreset(lv_event_t *e)
 		uint16_t childIndex = 0;
 
 		lv_obj_t *lists[8] = {
-			ui_Rifle,
-			ui_Special,
-			ui_Backpack,
-			ui_Supply,
-			ui_Sentry,
-			ui_Ground,
-			ui_Strike,
-			ui_Eagle};
+			objects.tab_rifle,
+			objects.tab_special,
+			objects.tab_backpack,
+			objects.tab_supply,
+			objects.tab_sentry,
+			objects.tab_ground,
+			objects.tab_strike,
+			objects.tab_eagle};
 
 		while (1)
 		{

@@ -1,0 +1,48 @@
+#ifndef EEZ_LVGL_UI_STYLES_H
+#define EEZ_LVGL_UI_STYLES_H
+
+#include <lvgl.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// Style: ButtonStd
+lv_style_t *get_style_button_std_MAIN_DEFAULT();
+lv_style_t *get_style_button_std_MAIN_CHECKED();
+void add_style_button_std(lv_obj_t *obj);
+void remove_style_button_std(lv_obj_t *obj);
+
+// Style: TabStratagem
+lv_style_t *get_style_tab_stratagem_MAIN_DEFAULT();
+void add_style_tab_stratagem(lv_obj_t *obj);
+void remove_style_tab_stratagem(lv_obj_t *obj);
+
+// Style: TabConfig
+lv_style_t *get_style_tab_config_MAIN_DEFAULT();
+void add_style_tab_config(lv_obj_t *obj);
+void remove_style_tab_config(lv_obj_t *obj);
+
+// Style: SliderConfig
+lv_style_t *get_style_slider_config_MAIN_DEFAULT();
+lv_style_t *get_style_slider_config_INDICATOR_DEFAULT();
+lv_style_t *get_style_slider_config_KNOB_DEFAULT();
+void add_style_slider_config(lv_obj_t *obj);
+void remove_style_slider_config(lv_obj_t *obj);
+
+// Style: CheckboxConfig
+lv_style_t *get_style_checkbox_config_MAIN_DEFAULT();
+lv_style_t *get_style_checkbox_config_MAIN_CHECKED();
+lv_style_t *get_style_checkbox_config_KNOB_DEFAULT();
+lv_style_t *get_style_checkbox_config_KNOB_CHECKED();
+lv_style_t *get_style_checkbox_config_INDICATOR_CHECKED();
+void add_style_checkbox_config(lv_obj_t *obj);
+void remove_style_checkbox_config(lv_obj_t *obj);
+
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /*EEZ_LVGL_UI_STYLES_H*/

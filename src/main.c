@@ -7,12 +7,10 @@
 #include <esp_chip_info.h>
 #include <esp_system.h>
 #include <esp_heap_caps.h>
-#include <eez-framework.h>
 #include <ui/ui.h>
 #include <ui/vars.h>
 #include <ui/screens.h>
 #include <ui/ui_events.h>
-
 #include "driver/gpio.h"
 #include "hid_dev.h"
 #include "i2s_player.h"

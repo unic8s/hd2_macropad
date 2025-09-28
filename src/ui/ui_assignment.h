@@ -99,7 +99,7 @@ extern "C"
     };
 
     // Assign stratagems index to UI buttons
-    void assignStratagems(lv_event_t *e)
+    void assignStratagems()
     {
         // Weapons
         objects.weapons_ac->user_data = (void *)SG_AC;

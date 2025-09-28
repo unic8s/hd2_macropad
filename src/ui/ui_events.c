@@ -30,7 +30,7 @@ uint8_t strategemsAmount = 0;
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
 
 // Goto game screen
-void action_goto_game(lv_event_t *e)
+void action_setup_2_game(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
@@ -78,7 +78,7 @@ void action_goto_game(lv_event_t *e)
 		}
 	}
 
-	lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 100, false);
+	lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 0, false);
 }
 
 // Update selection in UI (text and bar)
@@ -136,12 +136,12 @@ void updateStratagemSelection()
 
 	if (strategemsAmount == MAX_USER_STRATAGEMS)
 	{
-		action_goto_game(NULL);
+		action_setup_2_game(NULL);
 	}
 }
 
 // Unassign stratagem item from button
-void deselectStratagem(lv_event_t *e)
+void action_deselect_stratagem(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
@@ -159,7 +159,7 @@ void deselectStratagem(lv_event_t *e)
 }
 
 // Assign stratagem item from button
-void selectStratagem(lv_event_t *e)
+void action_select_stratagem(lv_event_t *e)
 {
 	if (strategemsAmount < MAX_USER_STRATAGEMS)
 	{
@@ -225,7 +225,7 @@ void action_reset_stratagems(lv_event_t *e)
 }
 
 // Change connectivity (Bluetooth/USB)
-void ChangeConnectivity(lv_event_t *e)
+void action_change_connectivity(lv_event_t *e)
 {
 	uint8_t connectionType = lv_dropdown_get_selected(objects.dd_connectivity);
 
@@ -233,7 +233,7 @@ void ChangeConnectivity(lv_event_t *e)
 }
 
 // Change assigned keymap
-void ChangeKeymap(lv_event_t *e)
+void action_change_keymap(lv_event_t *e)
 {
 	uint8_t keymapIndex = lv_dropdown_get_selected(objects.dd_keymap);
 
@@ -263,7 +263,7 @@ void _executeUserStratagem(uint8_t index)
 }
 
 // Trigger 1st standard stratagem
-void triggerStratagemStd(lv_event_t *e)
+void action_trigger_stratagem_std(lv_event_t *e)
 {
 	if (e->target == objects.btn_reinforce)
 	{
@@ -347,7 +347,7 @@ void triggerStratagemStd(lv_event_t *e)
 }
 
 // Trigger 1st user stratagem
-void triggerStratagemUser(lv_event_t *e)
+void action_trigger_stratagem_user(lv_event_t *e)
 {
 	int8_t index = -1;
 
@@ -383,7 +383,7 @@ void triggerStratagemUser(lv_event_t *e)
 }
 
 // Change HID input delay
-void ChangeDelay(lv_event_t *e)
+void action_change_delay(lv_event_t *e)
 {
 	int32_t delay = lv_slider_get_value(e->target);
 
@@ -391,7 +391,7 @@ void ChangeDelay(lv_event_t *e)
 }
 
 // Change display brightness
-void ChangeBrightness(lv_event_t *e)
+void action_change_brightness(lv_event_t *e)
 {
 	int32_t brightness = lv_slider_get_value(e->target);
 
@@ -399,21 +399,15 @@ void ChangeBrightness(lv_event_t *e)
 }
 
 // Change sound mute (on/off)
-void MuteSound(lv_event_t *e)
+void action_mute_sound(lv_event_t *e)
 {
 	bool muted = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
 
 	setMuted(muted, false);
 }
 
-// Reset configuration to default
-void ResetConfig(lv_event_t *e)
-{
-	resetConfig();
-}
-
 // Trigger keyboard demo (send "hello" via bluetooth connection to host)
-void KeyboardDemo(lv_event_t *e)
+void action_keyboard_demo(lv_event_t *e)
 {
 	uint8_t sequence[8] = {HID_KEY_H,
 						   HID_KEY_E,
@@ -428,13 +422,13 @@ void KeyboardDemo(lv_event_t *e)
 }
 
 // Trigger when tab navigation has changed
-void TabChanged(lv_event_t *e)
+void action_tab_changed(lv_event_t *e)
 {
 	playbackSound(SND_SWIPE);
 }
 
 // Change screen orientation
-void FlipScreen(lv_event_t *e)
+void action_flip_screen(lv_event_t *e)
 {
 	bool flip = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
 
@@ -483,7 +477,7 @@ void updatePresets()
 	lv_obj_set_style_border_color(objects.btn_preset2, hasPreset2 ? sgGreen : sgRed, LV_PART_MAIN | LV_STATE_DEFAULT);
 }
 
-void GetPreset(lv_event_t *e)
+void action_get_preset(lv_event_t *e)
 {
 	if (openConfig() != ESP_OK)
 	{
@@ -566,7 +560,7 @@ void GetPreset(lv_event_t *e)
 	updateStratagemSelection();
 }
 
-void SetPreset(lv_event_t *e)
+void action_set_preset(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
@@ -578,4 +572,53 @@ void SetPreset(lv_event_t *e)
 	updatePresets();
 
 	playbackSound(SND_DESELECT);
+}
+
+void action_reset_cancel(lv_event_t *e)
+{
+	lv_scr_load_anim(objects.config, LV_SCR_LOAD_ANIM_FADE_OUT, 500, 0, false);
+}
+
+void action_reset_confirm(lv_event_t *e)
+{
+	resetConfig();
+
+	lv_scr_load_anim(objects.config, LV_SCR_LOAD_ANIM_FADE_OUT, 500, 0, false);
+}
+
+void action_intro_2_setup(lv_event_t *e)
+{
+	assignStratagems();
+
+	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 1000, 1000, false);
+}
+
+void action_setup_2_config(lv_event_t *e)
+{
+	lv_scr_load_anim(objects.config, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, false);
+}
+
+void action_config_2_about(lv_event_t *e)
+{
+	lv_scr_load_anim(objects.about, LV_SCR_LOAD_ANIM_MOVE_TOP, 1000, 0, false);
+}
+
+void action_about_2_config(lv_event_t *e)
+{
+	lv_scr_load_anim(objects.config, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 1000, 0, false);
+}
+
+void action_config_2_reset(lv_event_t *e)
+{
+	lv_scr_load_anim(objects.reset, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
+}
+
+void action_config_2_setup(lv_event_t *e)
+{
+	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 0, false);
+}
+
+void action_game_2_setup(lv_event_t *e)
+{
+	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, false);
 }

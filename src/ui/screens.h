@@ -14,9 +14,9 @@ typedef struct _objects_t {
     lv_obj_t *game;
     lv_obj_t *about;
     lv_obj_t *reset;
+    lv_obj_t *weapons_mg;
     lv_obj_t *obj0;
     lv_obj_t *tab_rifle;
-    lv_obj_t *weapons_mg;
     lv_obj_t *weapons_hmg;
     lv_obj_t *weapons_sw;
     lv_obj_t *weapons_ac;

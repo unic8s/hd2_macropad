@@ -10,23 +10,8 @@
 extern "C" {
 #endif
 
-extern void assignStratagems(lv_event_t * e);
-void deselectStratagem(lv_event_t * e);
-void selectStratagem(lv_event_t * e);
-void GetPreset(lv_event_t * e);
-void SetPreset(lv_event_t * e);
-void triggerStratagemStd(lv_event_t * e);
-void triggerStratagemUser(lv_event_t * e);
-void ChangeKeymap(lv_event_t * e);
+extern void assignStratagems();
 void updateStratagemSelection();
-void ChangeDelay(lv_event_t * e);
-void ChangeBrightness(lv_event_t * e);
-void MuteSound(lv_event_t * e);
-void ResetConfig(lv_event_t * e);
-void KeyboardDemo(lv_event_t * e);
-void FlipScreen(lv_event_t * e);
-void TabChanged(lv_event_t * e);
-void ChangeConnectivity(lv_event_t * e);
 void _executeStdStratagem(uint8_t *sequence, char *path);
 void _executeUserStratagem(uint8_t index);
 void updatePresets();

@@ -45,11 +45,11 @@ extern "C"
 #define SND_SENTRY "S:assets/sound/snt.wav"
 #define SND_WEAPON "S:assets/sound/weap.wav"
 
-lv_color_t colorTheme;
-lv_color_t colorActive;
-lv_color_t sgRed;
-lv_color_t sgGreen;
-lv_color_t sgBlue;
+static lv_color_t colorTheme;
+static lv_color_t colorActive;
+static lv_color_t sgRed;
+static lv_color_t sgGreen;
+static lv_color_t sgBlue;
 
 void app_main();
 void playbackSound(char *path);

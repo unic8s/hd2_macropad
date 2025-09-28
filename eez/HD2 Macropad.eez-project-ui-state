@@ -1,10 +1,11 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/0",
-    "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/1",
+    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/1",
+    "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/24",
     "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/1",
     "selectedThemeObject": "[HD2 Macropad.eez-project]:/themes/0",
     "selectedThemeColorObject": "[HD2 Macropad.eez-project]:/colors/0",
+    "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/2",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Global"
     }
@@ -27,7 +28,7 @@
           },
           {
             "type": "border",
-            "selected": 3,
+            "selected": 2,
             "size": 240,
             "location": "right",
             "children": [
@@ -194,10 +195,21 @@
               "type": "tabset",
               "id": "EDITORS",
               "weight": 65,
-              "selected": 1,
+              "selected": 2,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
+                {
+                  "type": "tab",
+                  "id": "#9d05bf41-ffae-46cd-b228-7fe117b04011",
+                  "name": "Config",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/2",
+                    "permanent": true
+                  },
+                  "icon": "svg:page"
+                },
                 {
                   "type": "tab",
                   "id": "#efeb9692-742c-4382-ae5f-531e047f8e87",
@@ -213,16 +225,15 @@
                 {
                   "type": "tab",
                   "id": "#b14621c8-5400-4b28-bc5c-28fc47379849",
-                  "name": "Intro",
+                  "name": "Setup",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/0",
-                    "permanent": false
+                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/1",
+                    "permanent": true
                   },
                   "icon": "svg:page"
                 }
-              ],
-              "active": true
+              ]
             },
             {
               "type": "row",
@@ -242,7 +253,8 @@
                       "enableClose": false,
                       "icon": "svg:properties"
                     }
-                  ]
+                  ],
+                  "active": true
                 },
                 {
                   "type": "tabset",
@@ -256,14 +268,6 @@
                       "component": "componentsPalette",
                       "enableClose": false,
                       "icon": "svg:components"
-                    },
-                    {
-                      "type": "tab",
-                      "id": "BREAKPOINTS_PALETTE",
-                      "name": "Breakpoints",
-                      "component": "breakpointsPanel",
-                      "enableClose": false,
-                      "icon": "svg:breakpoints_panel"
                     }
                   ]
                 }
@@ -1015,13 +1019,12 @@
       "selection": {
         "0": {
           "0": {}
-        },
-        "1": {}
+        }
       },
       "transform": {
         "translate": {
-          "x": -247,
-          "y": -182
+          "x": -300,
+          "y": -200
         },
         "scale": 1.25
       },
@@ -1036,8 +1039,24 @@
       "selection": {
         "0": {
           "0": {
+            "0": {
+              "0": {
+                "$selected": true
+              }
+            },
+            "3": {
+              "0": {},
+              "1": {}
+            },
+            "4": {
+              "0": {}
+            },
+            "5": {
+              "0": {}
+            },
             "7": {
-              "6": {}
+              "5": {},
+              "8": {}
             }
           },
           "2": {
@@ -1049,8 +1068,8 @@
       },
       "transform": {
         "translate": {
-          "x": -220,
-          "y": -246
+          "x": -300,
+          "y": -200
         },
         "scale": 1.25
       },
@@ -1075,9 +1094,7 @@
                 "2": {}
               },
               "1": {
-                "1": {
-                  "$selected": true
-                },
+                "1": {},
                 "2": {}
               },
               "2": {}
@@ -1094,8 +1111,8 @@
       },
       "transform": {
         "translate": {
-          "x": -395,
-          "y": -261
+          "x": -300,
+          "y": -200
         },
         "scale": 1.25
       },
@@ -1131,22 +1148,22 @@
         "0": {
           "0": {
             "0": {},
-            "4": {
+            "4": {}
+          },
+          "1": {
+            "0": {},
+            "3": {
               "$selected": true
             }
           },
-          "1": {
-            "0": {}
-          },
           "2": {},
           "6": {}
-        },
-        "1": {}
+        }
       },
       "transform": {
         "translate": {
-          "x": -223,
-          "y": -195
+          "x": -215,
+          "y": -165
         },
         "scale": 1.25
       },
@@ -1168,19 +1185,16 @@
         "0": {
           "0": {
             "0": {},
-            "1": {
-              "$selected": true
-            }
+            "1": {}
           },
           "1": {},
           "2": {}
-        },
-        "1": {}
+        }
       },
       "transform": {
         "translate": {
-          "x": -241,
-          "y": -160
+          "x": -300,
+          "y": -200
         },
         "scale": 1.25
       },
@@ -1196,14 +1210,15 @@
         "0": {
           "0": {
             "1": {},
-            "2": {}
+            "2": {},
+            "$selected": true
           }
         }
       },
       "transform": {
         "translate": {
-          "x": -240,
-          "y": -160
+          "x": -300,
+          "y": -200
         },
         "scale": 1.25
       },
@@ -1252,7 +1267,8 @@
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
     "BORDER",
-    "BACKGROUND"
+    "BACKGROUND",
+    "POSITION AND SIZE"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,

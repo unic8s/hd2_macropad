@@ -11,6 +11,7 @@
 #include <ui/vars.h>
 #include <ui/screens.h>
 #include <ui/ui_events.h>
+#include <ui/ui_post.h>
 #include "driver/gpio.h"
 #include "hid_dev.h"
 #include "i2s_player.h"
@@ -260,14 +261,9 @@ void app_main()
   // Lock the mutex due to the LVGL APIs are not thread-safe
   bsp_display_lock(0);
 
-  colorTheme = lv_color_hex(0xFFFFFF);
-  colorActive = lv_color_hex(0xFFFFFF);
-  sgRed = lv_color_hex(0xFFFFFF);
-  sgGreen = lv_color_hex(0xFFFFFF);
-  sgBlue = lv_color_hex(0xFFFFFF);
-
   // Start LVGL
   ui_init();
+  ui_post();
 
   // Release the mutex
   bsp_display_unlock();

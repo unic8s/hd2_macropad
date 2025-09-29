@@ -18,7 +18,7 @@ typedef struct
 {
     uint8_t sequence[8];
     char *soundPath;
-    const lv_color_t *color;
+    const int color;
     const lv_img_dsc_t *imgHiRes;
     enum stratagemType type;
 } stratagem;
@@ -30,7 +30,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_mg2,
         SG_MG},
     // 1
@@ -38,7 +38,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_DOWN, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_amr2,
         SG_AMR},
 
@@ -47,7 +47,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_sw2,
         SG_SW},
 
@@ -56,7 +56,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_eat2,
         SG_EAT},
 
@@ -65,7 +65,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_c2,
         SG_C},
 
@@ -74,7 +74,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_rr2,
         SG_RR},
 
@@ -83,7 +83,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_ft2,
         SG_FT},
 
@@ -92,7 +92,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_RIGHT, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_ac2,
         SG_AC},
 
@@ -101,7 +101,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_hmg2,
         SG_HMG},
 
@@ -110,7 +110,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_rg2,
         SG_RG},
 
@@ -119,7 +119,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_spr2,
         SG_SPR},
 
@@ -128,7 +128,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_gl2,
         SG_GL},
 
@@ -137,7 +137,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_lc2,
         SG_LC},
 
@@ -146,7 +146,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_LEFT, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_at2,
         SG_AT},
 
@@ -155,7 +155,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_qc2,
         SG_QC},
 
@@ -164,7 +164,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_arl2,
         SG_ARL},
 
@@ -173,7 +173,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_LEFT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_ste2,
         SG_STE},
 
@@ -182,7 +182,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_jp2,
         SG_JP},
 
@@ -191,7 +191,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_sup2,
         SG_SUP},
 
@@ -200,7 +200,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_LEFT, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_bsb2,
         SG_BSB},
 
@@ -209,7 +209,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_sgp2,
         SG_SGP},
 
@@ -218,7 +218,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_gd2,
         SG_GD},
 
@@ -227,7 +227,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_gdr2,
         SG_GDR},
 
@@ -236,7 +236,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_UP, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_gdb2,
         SG_GDB},
 
@@ -245,7 +245,7 @@ const stratagem strategems[] = {
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, 0},
         SND_BOT,
-        &sgBlue,
+        sgBlue,
         &img_pe2,
         SG_PE},
 
@@ -254,7 +254,7 @@ const stratagem strategems[] = {
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_UP, 0},
         SND_BOT,
-        &sgBlue,
+        sgBlue,
         &img_ee2,
         SG_EE},
 
@@ -263,7 +263,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0},
         SND_SENTRY,
-        &sgGreen,
+        sgGreen,
         &img_hmge2,
         SG_HMGE},
 
@@ -272,7 +272,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_SHIELD,
-        &sgGreen,
+        sgGreen,
         &img_sgr2,
         SG_SGR},
 
@@ -281,7 +281,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_SHIELD,
-        &sgGreen,
+        sgGreen,
         &img_tt2,
         SG_TT},
 
@@ -290,7 +290,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
         SND_MINES,
-        &sgGreen,
+        sgGreen,
         &img_apm2,
         SG_APM},
 
@@ -299,7 +299,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0},
         SND_MINES,
-        &sgGreen,
+        sgGreen,
         &img_im2,
         SG_IM},
 
@@ -308,7 +308,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0, 0},
         SND_MINES,
-        &sgGreen,
+        sgGreen,
         &img_atm2,
         SG_ATM},
 
@@ -317,7 +317,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
         SND_SENTRY,
-        &sgGreen,
+        sgGreen,
         &img_mgs2,
         SG_MGS},
 
@@ -326,7 +326,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0, 0},
         SND_SENTRY,
-        &sgGreen,
+        sgGreen,
         &img_gs2,
         SG_GS},
 
@@ -335,7 +335,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
         SND_MORTAR,
-        &sgGreen,
+        sgGreen,
         &img_ms2,
         SG_MS},
 
@@ -344,7 +344,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_UP, 0, 0},
         SND_SENTRY,
-        &sgGreen,
+        sgGreen,
         &img_acs2,
         SG_ACS},
 
@@ -353,7 +353,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0},
         SND_SENTRY,
-        &sgGreen,
+        sgGreen,
         &img_rs2,
         SG_RS},
 
@@ -362,7 +362,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SND_MORTAR,
-        &sgGreen,
+        sgGreen,
         &img_ems2,
         SG_EMS},
 
@@ -371,7 +371,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_ogb2,
         SG_OGB},
 
@@ -380,7 +380,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_oas2,
         SG_OAS},
 
@@ -389,7 +389,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_1202,
         SG_120},
 
@@ -398,7 +398,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_3802,
         SG_380},
 
@@ -407,7 +407,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_owb2,
         SG_OWB},
 
@@ -416,7 +416,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_ol2,
         SG_OL},
 
@@ -425,7 +425,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_UP, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_ors2,
         SG_ORS},
 
@@ -434,7 +434,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_ops2,
         SG_OPS},
 
@@ -443,7 +443,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_ogs2,
         SG_OGS},
 
@@ -452,7 +452,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_oes2,
         SG_OES},
 
@@ -461,7 +461,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_oss2,
         SG_OSS},
 
@@ -470,7 +470,7 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, 0, 0},
         SND_ORBITAL,
-        &sgRed,
+        sgRed,
         &img_onb2,
         SG_ONB},
 
@@ -479,7 +479,7 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0, 0, 0},
         SND_EAGLE,
-        &sgRed,
+        sgRed,
         &img_esr2,
         SG_SR},
 
@@ -488,7 +488,7 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         SND_EAGLE,
-        &sgRed,
+        sgRed,
         &img_ea2,
         SG_A},
 
@@ -497,7 +497,7 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SND_EAGLE,
-        &sgRed,
+        sgRed,
         &img_ecb2,
         SG_CB},
 
@@ -506,7 +506,7 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
         SND_EAGLE,
-        &sgRed,
+        sgRed,
         &img_ena2,
         SG_NA},
 
@@ -515,7 +515,7 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0},
         SND_EAGLE,
-        &sgRed,
+        sgRed,
         &img_ess2,
         SG_ESS},
 
@@ -524,7 +524,7 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, 0, 0, 0, 0},
         SND_EAGLE,
-        &sgRed,
+        sgRed,
         &img_e1102,
         SG_110},
 
@@ -533,7 +533,7 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SND_EAGLE,
-        &sgRed,
+        sgRed,
         &img_e5002,
         SG_500},
 
@@ -542,7 +542,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_UP, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_ds2,
         SG_DS},
 
@@ -551,7 +551,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_RIGHT, 0, 0},
         SND_MINES,
-        &sgGreen,
+        sgGreen,
         &img_ate2,
         SG_ATE},
 
@@ -560,7 +560,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0},
         SND_SENTRY,
-        &sgGreen,
+        sgGreen,
         &img_fs2,
         SG_FS},
 
@@ -569,7 +569,7 @@ const stratagem strategems[] = {
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_frv2,
         SG_FRV},
 
@@ -578,7 +578,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_UP, 0, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_ph2,
         SG_PH},
 
@@ -587,7 +587,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
         SND_MINES,
-        &sgGreen,
+        sgGreen,
         &img_gm2,
         SG_GM},
 
@@ -596,7 +596,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_wsp2,
         SG_WSP},
 
@@ -605,7 +605,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_SENTRY,
-        &sgGreen,
+        sgGreen,
         &img_gb2,
         SG_GB},
 
@@ -614,7 +614,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_hp2,
         SG_HP},
 
@@ -623,7 +623,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_otf2,
         SG_OTF},
 
@@ -632,7 +632,7 @@ const stratagem strategems[] = {
     {
         {INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_de2,
         SG_DE},
 
@@ -641,7 +641,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_gdk2,
         SG_GDK},
 
@@ -650,7 +650,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        &sgBlue,
+        sgBlue,
         &img_e2,
         SG_E},
 
@@ -659,7 +659,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0},
         SND_SENTRY,
-        &sgGreen,
+        sgGreen,
         &img_ls2,
         SG_LS},
 
@@ -668,7 +668,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_wp2,
         SG_WP},
 
@@ -677,7 +677,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, 0, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_en2,
         SG_EN},
 
@@ -686,7 +686,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_ss2,
         SG_SS},
 
@@ -695,7 +695,7 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0},
         SND_BACKPACK,
-        &sgBlue,
+        sgBlue,
         &img_sg2,
         SG_SG}};
 

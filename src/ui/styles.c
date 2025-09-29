@@ -74,8 +74,8 @@ void init_style_tab_stratagem_MAIN_DEFAULT(lv_style_t *style) {
     lv_style_set_pad_right(style, 2);
     lv_style_set_pad_row(style, 3);
     lv_style_set_pad_column(style, 3);
-    lv_style_set_pad_top(style, 2);
     lv_style_set_flex_flow(style, LV_FLEX_FLOW_ROW_WRAP);
+    lv_style_set_pad_top(style, 16);
 };
 
 lv_style_t *get_style_tab_stratagem_MAIN_DEFAULT() {

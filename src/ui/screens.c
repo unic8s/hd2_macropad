@@ -1293,8 +1293,9 @@ void create_screen_setup() {
     {
         lv_obj_t *parent_obj = obj;
         {
+            // TabViewSetup
             lv_obj_t *obj = lv_tabview_create(parent_obj, LV_DIR_TOP, 38);
-            objects.obj6 = obj;
+            objects.tab_view_setup = obj;
             lv_obj_set_pos(obj, 0, 0);
             lv_obj_set_size(obj, LV_PCT(100), 280);
             lv_obj_add_event_cb(obj, action_tab_changed, LV_EVENT_VALUE_CHANGED, (void *)0);
@@ -2601,8 +2602,9 @@ void create_screen_config() {
     {
         lv_obj_t *parent_obj = obj;
         {
+            // TabViewConfig
             lv_obj_t *obj = lv_tabview_create(parent_obj, LV_DIR_TOP, 38);
-            objects.obj7 = obj;
+            objects.tab_view_config = obj;
             lv_obj_set_pos(obj, 0, 0);
             lv_obj_set_size(obj, LV_PCT(100), 280);
             lv_obj_add_event_cb(obj, action_tab_changed, LV_EVENT_VALUE_CHANGED, (void *)0);
@@ -2611,7 +2613,7 @@ void create_screen_config() {
                 lv_obj_t *parent_obj = obj;
                 {
                     lv_obj_t *obj = lv_tabview_add_tab(parent_obj, "Display / Audio");
-                    objects.obj8 = obj;
+                    objects.obj6 = obj;
                     add_style_tab_config(obj);
                     lv_obj_set_style_border_color(obj, lv_color_hex(0xff000000), LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_flex_track_place(obj, LV_FLEX_ALIGN_START, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -2923,6 +2925,7 @@ void create_screen_config() {
             lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_add_flag(obj, LV_OBJ_FLAG_OVERFLOW_VISIBLE);
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -2932,6 +2935,14 @@ void create_screen_config() {
                     lv_obj_add_event_cb(obj, action_config_2_reset, LV_EVENT_CLICKED, (void *)0);
                     add_style_button_std(obj);
                     lv_obj_set_style_bg_img_src(obj, &img_icon_reset, LV_PART_MAIN | LV_STATE_DEFAULT);
+                }
+                {
+                    lv_obj_t *obj = lv_btn_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, 76, LV_PCT(100));
+                    lv_obj_add_event_cb(obj, action_restart_device, LV_EVENT_CLICKED, (void *)0);
+                    add_style_button_std(obj);
+                    lv_obj_set_style_bg_img_src(obj, &img_icon_restart, LV_PART_MAIN | LV_STATE_DEFAULT);
                 }
             }
         }
@@ -3197,7 +3208,7 @@ void create_screen_about() {
                 lv_obj_t *parent_obj = obj;
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
-                    objects.obj9 = obj;
+                    objects.obj7 = obj;
                     lv_obj_set_pos(obj, 8, 8);
                     lv_obj_set_size(obj, LV_PCT(49), LV_SIZE_CONTENT);
                     lv_obj_set_style_text_color(obj, lv_color_hex(0xffffdf00), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3286,6 +3297,7 @@ void create_screen_reset() {
             lv_obj_set_style_flex_main_place(obj, LV_FLEX_ALIGN_SPACE_BETWEEN, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_flex_cross_place(obj, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_flex_track_place(obj, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_row(obj, 38, LV_PART_MAIN | LV_STATE_DEFAULT);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -3296,21 +3308,23 @@ void create_screen_reset() {
                 }
                 {
                     lv_obj_t *obj = lv_btn_create(parent_obj);
-                    objects.obj10 = obj;
+                    objects.obj8 = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 76, 38);
                     lv_obj_add_event_cb(obj, action_reset_confirm, LV_EVENT_CLICKED, (void *)0);
                     add_style_button_std(obj);
                     lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][2]), LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_bg_img_src(obj, &img_icon_yes, LV_PART_MAIN | LV_STATE_DEFAULT);
                 }
                 {
                     lv_obj_t *obj = lv_btn_create(parent_obj);
-                    objects.obj11 = obj;
+                    objects.obj9 = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 76, 38);
                     lv_obj_add_event_cb(obj, action_reset_cancel, LV_EVENT_CLICKED, (void *)0);
                     add_style_button_std(obj);
                     lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][4]), LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_bg_img_src(obj, &img_icon_no, LV_PART_MAIN | LV_STATE_DEFAULT);
                 }
             }
         }
@@ -3511,9 +3525,9 @@ void change_color_theme(uint32_t theme_index) {
     
     lv_obj_set_style_border_color(objects.btn_hellbomb, lv_color_hex(theme_colors[theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
     
-    lv_obj_set_style_border_color(objects.obj10, lv_color_hex(theme_colors[theme_index][2]), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(objects.obj8, lv_color_hex(theme_colors[theme_index][2]), LV_PART_MAIN | LV_STATE_DEFAULT);
     
-    lv_obj_set_style_border_color(objects.obj11, lv_color_hex(theme_colors[theme_index][4]), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(objects.obj9, lv_color_hex(theme_colors[theme_index][4]), LV_PART_MAIN | LV_STATE_DEFAULT);
     
     lv_obj_invalidate(objects.intro);
     lv_obj_invalidate(objects.setup);

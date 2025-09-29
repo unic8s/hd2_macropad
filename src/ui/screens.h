@@ -103,13 +103,13 @@ typedef struct _objects_t {
     lv_obj_t *eagle_sr;
     lv_obj_t *eagle_na;
     lv_obj_t *eagle_ss;
-    lv_obj_t *obj6;
+    lv_obj_t *tab_view_setup;
     lv_obj_t *btn_preset1;
     lv_obj_t *btn_preset2;
     lv_obj_t *bar_amount;
     lv_obj_t *label_amount;
-    lv_obj_t *obj7;
-    lv_obj_t *obj8;
+    lv_obj_t *tab_view_config;
+    lv_obj_t *obj6;
     lv_obj_t *lbl_brightness;
     lv_obj_t *sld_brightness;
     lv_obj_t *chb_flip;
@@ -134,10 +134,10 @@ typedef struct _objects_t {
     lv_obj_t *img_btdis;
     lv_obj_t *img_us_bcon;
     lv_obj_t *img_us_bdis;
-    lv_obj_t *obj9;
+    lv_obj_t *obj7;
     lv_obj_t *lbl_version;
-    lv_obj_t *obj10;
-    lv_obj_t *obj11;
+    lv_obj_t *obj8;
+    lv_obj_t *obj9;
 } objects_t;
 
 extern objects_t objects;

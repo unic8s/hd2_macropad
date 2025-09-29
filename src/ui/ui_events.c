@@ -10,6 +10,7 @@
 #include "stratagems.h"
 #include "i2s_player.h"
 #include "main.h"
+#include "ui_post.h"
 #include "configration.h"
 #include "ui_assignment.h"
 
@@ -68,7 +69,7 @@ void action_setup_2_game(lv_event_t *e)
 
 		if (configured)
 		{
-			lv_obj_set_style_border_color(targetButton, *item.color, LV_PART_MAIN | LV_STATE_DEFAULT);
+			lv_obj_set_style_border_color(targetButton, lv_color_hex(item.color), LV_PART_MAIN | LV_STATE_DEFAULT);
 			lv_obj_set_style_bg_img_src(targetButton, hires, LV_PART_MAIN | LV_STATE_DEFAULT);
 			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
 		}
@@ -110,7 +111,7 @@ void updateStratagemSelection()
 
 	lv_bar_set_value(objects.bar_amount, strategemsAmount, LV_ANIM_OFF);
 
-	lv_color_t barColor = lv_color_hex(0xFFFFFF);
+	int barColor = colorTheme;
 
 	if (strategemsAmount > 0 && strategemsAmount < 4)
 	{
@@ -125,8 +126,8 @@ void updateStratagemSelection()
 		barColor = sgBlue;
 	}
 
-	lv_obj_set_style_border_color(objects.bar_amount, barColor, LV_PART_MAIN | LV_STATE_DEFAULT);
-	lv_obj_set_style_border_color(objects.bar_amount, barColor, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(objects.bar_amount, lv_color_hex(barColor), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(objects.bar_amount, lv_color_hex(barColor), LV_PART_INDICATOR | LV_STATE_DEFAULT);
 
 	char textAmount[] = "0 / 0";
 	textAmount[0] = (char)(strategemsAmount + '0');
@@ -437,6 +438,11 @@ void action_flip_screen(lv_event_t *e)
 	esp_restart();
 }
 
+void action_restart_device(lv_event_t *e)
+{
+	esp_restart();
+}
+
 char *presetKey(lv_obj_t *button, uint8_t itemIndex)
 {
 	static char key[3] = "p00";
@@ -473,8 +479,8 @@ void updatePresets()
 
 	closeConfig();
 
-	lv_obj_set_style_border_color(objects.btn_preset1, hasPreset1 ? sgGreen : sgRed, LV_PART_MAIN | LV_STATE_DEFAULT);
-	lv_obj_set_style_border_color(objects.btn_preset2, hasPreset2 ? sgGreen : sgRed, LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset1, lv_color_hex(hasPreset1 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset2, lv_color_hex(hasPreset2 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
 }
 
 void action_get_preset(lv_event_t *e)
@@ -558,6 +564,8 @@ void action_get_preset(lv_event_t *e)
 	closeConfig();
 
 	updateStratagemSelection();
+
+	PresetLoadAnim_Animation(e, 0);
 }
 
 void action_set_preset(lv_event_t *e)
@@ -572,6 +580,8 @@ void action_set_preset(lv_event_t *e)
 	updatePresets();
 
 	playbackSound(SND_DESELECT);
+
+	PresetSaveAnim_Animation(e, 0);
 }
 
 void action_reset_cancel(lv_event_t *e)

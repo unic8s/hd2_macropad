@@ -5,7 +5,7 @@
     "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/1",
     "selectedThemeObject": "[HD2 Macropad.eez-project]:/themes/0",
     "selectedThemeColorObject": "[HD2 Macropad.eez-project]:/colors/0",
-    "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/2",
+    "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/0",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Global"
     }
@@ -28,7 +28,7 @@
           },
           {
             "type": "border",
-            "selected": 2,
+            "selected": 0,
             "size": 240,
             "location": "right",
             "children": [
@@ -195,10 +195,21 @@
               "type": "tabset",
               "id": "EDITORS",
               "weight": 65,
-              "selected": 2,
+              "selected": 3,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
+                {
+                  "type": "tab",
+                  "id": "#641a102b-ef1a-4f2b-93ea-821ca23d0741",
+                  "name": "Reset",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/5",
+                    "permanent": false
+                  },
+                  "icon": "svg:page"
+                },
                 {
                   "type": "tab",
                   "id": "#9d05bf41-ffae-46cd-b228-7fe117b04011",
@@ -233,7 +244,8 @@
                   },
                   "icon": "svg:page"
                 }
-              ]
+              ],
+              "active": true
             },
             {
               "type": "row",
@@ -253,8 +265,7 @@
                       "enableClose": false,
                       "icon": "svg:properties"
                     }
-                  ],
-                  "active": true
+                  ]
                 },
                 {
                   "type": "tabset",
@@ -1039,25 +1050,7 @@
       "selection": {
         "0": {
           "0": {
-            "0": {
-              "0": {
-                "$selected": true
-              }
-            },
-            "3": {
-              "0": {},
-              "1": {}
-            },
-            "4": {
-              "0": {}
-            },
-            "5": {
-              "0": {}
-            },
-            "7": {
-              "5": {},
-              "8": {}
-            }
+            "0": {}
           },
           "2": {
             "4": {
@@ -1097,7 +1090,11 @@
                 "1": {},
                 "2": {}
               },
-              "2": {}
+              "2": {
+                "1": {
+                  "$selected": true
+                }
+              }
             }
           },
           "1": {
@@ -1176,7 +1173,9 @@
     },
     "[HD2 Macropad.eez-project]:/lvglStyles/styles[tree-state]": {
       "0": {},
-      "1": {},
+      "1": {
+        "$selected": true
+      },
       "2": {},
       "3": {}
     },
@@ -1210,8 +1209,7 @@
         "0": {
           "0": {
             "1": {},
-            "2": {},
-            "$selected": true
+            "2": {}
           }
         }
       },
@@ -1266,9 +1264,8 @@
   "lvglPart": "MAIN",
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
-    "BORDER",
-    "BACKGROUND",
-    "POSITION AND SIZE"
+    "PADDING",
+    "BORDER"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,

@@ -484,23 +484,6 @@ void updatePresets()
 	lv_obj_set_style_border_color(objects.btn_preset2, lv_color_hex(hasPreset2 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
 }
 
-void hideMsgBox(lv_timer_t * timer)
-{
-	lv_obj_add_flag(objects.msg_box, LV_OBJ_FLAG_HIDDEN);
-
-	if(timer != NULL){
-		lv_timer_del(timer);
-	}
-}
-
-void showMsgBox(char *msg)
-{
-	lv_obj_clear_flag(objects.msg_box, LV_OBJ_FLAG_HIDDEN);
-	lv_label_set_text(objects.msg_label, msg);
-
-	lv_timer_create(hideMsgBox, 1000, NULL);
-}
-
 void action_get_preset(lv_event_t *e)
 {
 	if (openConfig() != ESP_OK)
@@ -582,6 +565,8 @@ void action_get_preset(lv_event_t *e)
 	closeConfig();
 
 	updateStratagemSelection();
+
+	animate_preset_load(e->target);
 }
 
 void action_set_preset(lv_event_t *e)
@@ -597,7 +582,7 @@ void action_set_preset(lv_event_t *e)
 
 	playbackSound(SND_DESELECT);
 
-	showMsgBox("Preset\nsaved");
+	animate_preset_save(e->target);
 }
 
 void action_reset_cancel(lv_event_t *e)

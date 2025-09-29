@@ -8,6 +8,8 @@ extern "C" {
 #include "ui.h"
 
 void ui_post();
+void animate_preset_load(lv_obj_t *target);
+void animate_preset_save(lv_obj_t *target);
 
 #ifdef __cplusplus
 } /*extern "C"*/

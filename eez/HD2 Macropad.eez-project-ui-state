@@ -5,7 +5,7 @@
     "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/1",
     "selectedThemeObject": "[HD2 Macropad.eez-project]:/themes/0",
     "selectedThemeColorObject": "[HD2 Macropad.eez-project]:/colors/0",
-    "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/13",
+    "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/18",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Global"
     }
@@ -28,7 +28,7 @@
           },
           {
             "type": "border",
-            "selected": 3,
+            "selected": 2,
             "size": 240,
             "location": "right",
             "children": [
@@ -202,10 +202,10 @@
                 {
                   "type": "tab",
                   "id": "#641a102b-ef1a-4f2b-93ea-821ca23d0741",
-                  "name": "Intro",
+                  "name": "Game",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/0",
+                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/3",
                     "permanent": false
                   },
                   "icon": "svg:page"
@@ -244,8 +244,7 @@
                   },
                   "icon": "svg:page"
                 }
-              ],
-              "active": true
+              ]
             },
             {
               "type": "row",
@@ -265,7 +264,8 @@
                       "enableClose": false,
                       "icon": "svg:properties"
                     }
-                  ]
+                  ],
+                  "active": true
                 },
                 {
                   "type": "tabset",
@@ -1052,13 +1052,16 @@
           "0": {
             "0": {}
           },
+          "2": {
+            "4": {}
+          },
           "3": {}
         }
       },
       "transform": {
         "translate": {
           "x": -274,
-          "y": -182
+          "y": 18
         },
         "scale": 1.25
       },
@@ -1080,6 +1083,9 @@
             },
             "1": {
               "0": {
+                "0": {
+                  "$selected": true
+                },
                 "2": {}
               },
               "1": {
@@ -1177,10 +1183,9 @@
       "selection": {
         "0": {
           "0": {
-            "0": {
-              "$selected": true
-            },
-            "1": {}
+            "0": {},
+            "1": {},
+            "4": {}
           },
           "1": {},
           "2": {}
@@ -1266,7 +1271,9 @@
     "POSITION AND SIZE",
     "LINE",
     "TEXT",
-    "ARC"
+    "ARC",
+    "LAYOUT",
+    "SHADOW"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,

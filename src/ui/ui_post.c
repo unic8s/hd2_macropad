@@ -3,6 +3,9 @@
 #include "ui_events.h"
 
 
+#define ANIMATION_DURATION 100
+
+
 void ui_post()
 {
   lv_obj_t *tabsBtnsList[] = {
@@ -32,6 +35,49 @@ void ui_post()
     lv_obj_set_style_text_color(dropDownItem, lv_color_hex(0x000000), LV_PART_SELECTED | LV_STATE_CHECKED);
     lv_obj_set_style_bg_color(dropDownItem, itemColorActive, LV_PART_SELECTED | LV_STATE_CHECKED);
   }
-
-  hideMsgBox(NULL);
 }
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wcast-function-type"
+
+void animate_preset_load(lv_obj_t *target)
+{
+  lv_anim_t a, b;
+
+  lv_anim_init(&a);
+  lv_anim_set_exec_cb(&a, (lv_anim_exec_xcb_t)lv_obj_set_height);
+  lv_anim_set_var(&a, target);
+  lv_anim_set_time(&a, ANIMATION_DURATION);
+  lv_anim_set_values(&a, 38, 46);
+  lv_anim_start(&a);
+
+  lv_anim_init(&b);
+  lv_anim_set_exec_cb(&b, (lv_anim_exec_xcb_t)lv_obj_set_height);
+  lv_anim_set_var(&b, target);
+  lv_anim_set_time(&b, ANIMATION_DURATION);
+  lv_anim_set_delay(&b, ANIMATION_DURATION);
+  lv_anim_set_values(&b, 46, 38);
+  lv_anim_start(&b);
+}
+
+void animate_preset_save(lv_obj_t *target)
+{
+  lv_anim_t a, b;
+  
+  lv_anim_init(&a);
+  lv_anim_set_exec_cb(&a, (lv_anim_exec_xcb_t)lv_obj_set_height);
+  lv_anim_set_var(&a, target);
+  lv_anim_set_time(&a, ANIMATION_DURATION);
+  lv_anim_set_values(&a, 38, 30);
+  lv_anim_start(&a); 
+
+  lv_anim_init(&b);
+  lv_anim_set_exec_cb(&b, (lv_anim_exec_xcb_t)lv_obj_set_height);
+  lv_anim_set_var(&b, target);
+  lv_anim_set_time(&b, ANIMATION_DURATION);
+  lv_anim_set_delay(&b, ANIMATION_DURATION);
+  lv_anim_set_values(&b, 30, 38);
+  lv_anim_start(&b);
+}
+
+#pragma GCC diagnostic pop

@@ -108,6 +108,8 @@ typedef struct _objects_t {
     lv_obj_t *btn_preset2;
     lv_obj_t *bar_amount;
     lv_obj_t *label_amount;
+    lv_obj_t *msg_box;
+    lv_obj_t *msg_label;
     lv_obj_t *tab_view_config;
     lv_obj_t *obj6;
     lv_obj_t *lbl_brightness;

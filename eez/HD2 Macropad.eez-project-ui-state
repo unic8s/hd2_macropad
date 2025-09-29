@@ -1,11 +1,11 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/1",
-    "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/24",
+    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/2",
+    "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/25",
     "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/1",
     "selectedThemeObject": "[HD2 Macropad.eez-project]:/themes/0",
     "selectedThemeColorObject": "[HD2 Macropad.eez-project]:/colors/0",
-    "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/0",
+    "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/13",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Global"
     }
@@ -28,7 +28,7 @@
           },
           {
             "type": "border",
-            "selected": 0,
+            "selected": 2,
             "size": 240,
             "location": "right",
             "children": [
@@ -202,10 +202,10 @@
                 {
                   "type": "tab",
                   "id": "#641a102b-ef1a-4f2b-93ea-821ca23d0741",
-                  "name": "Reset",
+                  "name": "Game",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/5",
+                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/3",
                     "permanent": false
                   },
                   "icon": "svg:page"
@@ -491,10 +491,10 @@
                 {
                   "type": "tab",
                   "id": "#2423c199-a64c-4dcc-8dd0-bd91c30d0962",
-                  "name": "Setup",
+                  "name": "Config",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/1",
+                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/2",
                     "permanent": false
                   },
                   "icon": "svg:page"
@@ -1091,9 +1091,7 @@
                 "2": {}
               },
               "2": {
-                "1": {
-                  "$selected": true
-                }
+                "1": {}
               }
             }
           },
@@ -1102,7 +1100,7 @@
             "1": {}
           },
           "2": {
-            "0": {}
+            "1": {}
           }
         }
       },
@@ -1149,12 +1147,12 @@
           },
           "1": {
             "0": {},
-            "3": {
-              "$selected": true
-            }
+            "3": {}
           },
           "2": {},
-          "6": {}
+          "3": {
+            "2": {}
+          }
         }
       },
       "transform": {
@@ -1255,7 +1253,7 @@
   "replaceEnabled": false,
   "replaceText": "",
   "pageEditorFrontFace": false,
-  "pageRuntimeFrontFace": true,
+  "pageRuntimeFrontFace": false,
   "breakpoints": {},
   "watchExpressions": [],
   "showComponentDescriptions": true,
@@ -1265,7 +1263,9 @@
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
     "PADDING",
-    "BORDER"
+    "BORDER",
+    "BACKGROUND",
+    "LAYOUT"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,

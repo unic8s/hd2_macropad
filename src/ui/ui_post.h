@@ -8,8 +8,6 @@ extern "C" {
 #include "ui.h"
 
 void ui_post();
-void PresetSaveAnim_Animation(lv_obj_t * TargetObject, int delay);
-void PresetLoadAnim_Animation(lv_obj_t * TargetObject, int delay);
 
 #ifdef __cplusplus
 } /*extern "C"*/

@@ -130,10 +130,10 @@ typedef struct _objects_t {
     lv_obj_t *custom_stratagem6;
     lv_obj_t *btn_seaf;
     lv_obj_t *btn_hellbomb;
-    lv_obj_t *img_btcon;
     lv_obj_t *img_btdis;
-    lv_obj_t *img_us_bcon;
+    lv_obj_t *img_btcon;
     lv_obj_t *img_us_bdis;
+    lv_obj_t *img_us_bcon;
     lv_obj_t *obj7;
     lv_obj_t *lbl_version;
     lv_obj_t *obj8;

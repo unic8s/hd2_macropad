@@ -2,6 +2,9 @@
 #include "ui.h"
 
 
+#define ANIMATION_DURATION 150
+
+
 typedef struct _ui_anim_user_data_t {
     lv_obj_t * target;
     lv_img_dsc_t ** imgset;
@@ -48,7 +51,7 @@ void PresetSaveAnim_Animation(lv_obj_t * TargetObject, int delay)
     PropertyAnimation_0_user_data->target = TargetObject;
     lv_anim_t PropertyAnimation_0;
     lv_anim_init(&PropertyAnimation_0);
-    lv_anim_set_time(&PropertyAnimation_0, 150);
+    lv_anim_set_time(&PropertyAnimation_0, ANIMATION_DURATION);
     lv_anim_set_user_data(&PropertyAnimation_0, PropertyAnimation_0_user_data);
     lv_anim_set_values(&PropertyAnimation_0, 38, 30);
     lv_anim_set_path_cb(&PropertyAnimation_0, lv_anim_path_linear);
@@ -63,11 +66,11 @@ void PresetSaveAnim_Animation(lv_obj_t * TargetObject, int delay)
     PropertyAnimation_1_user_data->target = TargetObject;
     lv_anim_t PropertyAnimation_1;
     lv_anim_init(&PropertyAnimation_1);
-    lv_anim_set_time(&PropertyAnimation_1, 150);
+    lv_anim_set_time(&PropertyAnimation_1, ANIMATION_DURATION);
     lv_anim_set_user_data(&PropertyAnimation_1, PropertyAnimation_1_user_data);
     lv_anim_set_values(&PropertyAnimation_1, 30, 38);
     lv_anim_set_path_cb(&PropertyAnimation_1, lv_anim_path_linear);
-    lv_anim_set_delay(&PropertyAnimation_1, delay + 150);
+    lv_anim_set_delay(&PropertyAnimation_1, delay + ANIMATION_DURATION);
     lv_anim_set_playback_time(&PropertyAnimation_1, 0);
     lv_anim_set_playback_delay(&PropertyAnimation_1, 0);
     lv_anim_set_repeat_count(&PropertyAnimation_1, 0);
@@ -82,7 +85,7 @@ void PresetLoadAnim_Animation(lv_obj_t * TargetObject, int delay)
     PropertyAnimation_0_user_data->target = TargetObject;
     lv_anim_t PropertyAnimation_0;
     lv_anim_init(&PropertyAnimation_0);
-    lv_anim_set_time(&PropertyAnimation_0, 150);
+    lv_anim_set_time(&PropertyAnimation_0, ANIMATION_DURATION);
     lv_anim_set_user_data(&PropertyAnimation_0, PropertyAnimation_0_user_data);
     lv_anim_set_values(&PropertyAnimation_0, 38, 46);
     lv_anim_set_path_cb(&PropertyAnimation_0, lv_anim_path_linear);
@@ -97,11 +100,11 @@ void PresetLoadAnim_Animation(lv_obj_t * TargetObject, int delay)
     PropertyAnimation_1_user_data->target = TargetObject;
     lv_anim_t PropertyAnimation_1;
     lv_anim_init(&PropertyAnimation_1);
-    lv_anim_set_time(&PropertyAnimation_1, 150);
+    lv_anim_set_time(&PropertyAnimation_1, ANIMATION_DURATION);
     lv_anim_set_user_data(&PropertyAnimation_1, PropertyAnimation_1_user_data);
     lv_anim_set_values(&PropertyAnimation_1, 46, 38);
     lv_anim_set_path_cb(&PropertyAnimation_1, lv_anim_path_linear);
-    lv_anim_set_delay(&PropertyAnimation_1, delay + 150);
+    lv_anim_set_delay(&PropertyAnimation_1, delay + ANIMATION_DURATION);
     lv_anim_set_playback_time(&PropertyAnimation_1, 0);
     lv_anim_set_playback_delay(&PropertyAnimation_1, 0);
     lv_anim_set_repeat_count(&PropertyAnimation_1, 0);

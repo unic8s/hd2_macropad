@@ -565,7 +565,7 @@ void action_get_preset(lv_event_t *e)
 
 	updateStratagemSelection();
 
-	PresetLoadAnim_Animation(e, 0);
+	PresetLoadAnim_Animation(e->target, 0);
 }
 
 void action_set_preset(lv_event_t *e)
@@ -581,7 +581,7 @@ void action_set_preset(lv_event_t *e)
 
 	playbackSound(SND_DESELECT);
 
-	PresetSaveAnim_Animation(e, 0);
+	PresetSaveAnim_Animation(e->target, 0);
 }
 
 void action_reset_cancel(lv_event_t *e)

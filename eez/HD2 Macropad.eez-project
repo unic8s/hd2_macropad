@@ -6564,7 +6564,8 @@
                           },
                           "MAIN": {
                             "DEFAULT": {
-                              "bg_color": "ffffff"
+                              "bg_color": "ffffff",
+                              "bg_opa": 63
                             }
                           }
                         }
@@ -6749,8 +6750,8 @@
               "type": "LVGLContainerWidget",
               "left": 0,
               "top": 0,
-              "width": 67,
-              "height": 68,
+              "width": 63,
+              "height": 64,
               "customInputs": [],
               "customOutputs": [],
               "style": {
@@ -6806,8 +6807,8 @@
                     "definition": {
                       "MAIN": {
                         "DEFAULT": {
-                          "text_color": "colorTheme",
-                          "text_font": "MONTSERRAT_20"
+                          "text_font": "MONTSERRAT_20",
+                          "text_color": "colorActive"
                         }
                       }
                     }
@@ -6837,15 +6838,13 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "bg_color": "#000000",
                       "align": "CENTER",
                       "pad_top": 10,
                       "pad_bottom": 10,
                       "pad_left": 10,
                       "pad_right": 10,
-                      "border_color": "colorActive",
-                      "border_width": 2,
-                      "bg_opa": 191
+                      "bg_opa": 191,
+                      "bg_color": "#000000"
                     }
                   }
                 }

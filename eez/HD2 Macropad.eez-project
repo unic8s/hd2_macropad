@@ -6749,8 +6749,8 @@
               "type": "LVGLContainerWidget",
               "left": 0,
               "top": 0,
-              "width": 71,
-              "height": 48,
+              "width": 67,
+              "height": 68,
               "customInputs": [],
               "customOutputs": [],
               "style": {
@@ -6772,8 +6772,8 @@
                   "type": "LVGLLabelWidget",
                   "left": 0,
                   "top": 0,
-                  "width": 47,
-                  "height": 24,
+                  "width": 43,
+                  "height": 44,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -6807,14 +6807,14 @@
                       "MAIN": {
                         "DEFAULT": {
                           "text_color": "colorTheme",
-                          "text_font": "MONTSERRAT_22"
+                          "text_font": "MONTSERRAT_20"
                         }
                       }
                     }
                   },
                   "group": "",
                   "groupIndex": 0,
-                  "text": "Msg",
+                  "text": "Msg\\nBox",
                   "textType": "literal",
                   "longMode": "WRAP",
                   "recolor": false
@@ -9917,7 +9917,14 @@
                   "disabledStateType": "literal",
                   "states": "",
                   "localStyles": {
-                    "objID": "aa05cf48-c661-411d-b790-840c69a2ee0e"
+                    "objID": "aa05cf48-c661-411d-b790-840c69a2ee0e",
+                    "definition": {
+                      "MAIN": {
+                        "DEFAULT": {
+                          "text_font": "MONTSERRAT_14"
+                        }
+                      }
+                    }
                   },
                   "group": "",
                   "groupIndex": 0,
@@ -10130,7 +10137,7 @@
               "type": "LVGLContainerWidget",
               "left": 0,
               "top": 0,
-              "width": 330,
+              "width": 200,
               "height": 38,
               "customInputs": [],
               "customOutputs": [],
@@ -10152,8 +10159,8 @@
                   "type": "LVGLLabelWidget",
                   "left": -15,
                   "top": -45,
-                  "width": 330,
-                  "height": 22,
+                  "width": 171,
+                  "height": 44,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -10184,14 +10191,15 @@
                     "definition": {
                       "MAIN": {
                         "DEFAULT": {
-                          "text_font": "MONTSERRAT_20"
+                          "text_font": "MONTSERRAT_20",
+                          "text_align": "CENTER"
                         }
                       }
                     }
                   },
                   "group": "",
                   "groupIndex": 0,
-                  "text": "Reset device to default settings?",
+                  "text": "Reset device to\\ndefault settings?",
                   "textType": "literal",
                   "longMode": "WRAP",
                   "recolor": false
@@ -10309,9 +10317,9 @@
                   "groupIndex": 0
                 }
               ],
-              "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE|OVERFLOW_VISIBLE",
+              "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE|OVERFLOW_VISIBLE",
               "hiddenFlagType": "literal",
-              "clickableFlag": true,
+              "clickableFlag": false,
               "clickableFlagType": "literal",
               "flagScrollbarMode": "",
               "flagScrollDirection": "",
@@ -10327,11 +10335,12 @@
                     "DEFAULT": {
                       "align": "CENTER",
                       "layout": "FLEX",
-                      "flex_flow": "ROW_WRAP",
-                      "flex_main_place": "SPACE_BETWEEN",
                       "flex_cross_place": "CENTER",
                       "flex_track_place": "CENTER",
-                      "pad_row": 38
+                      "pad_row": 16,
+                      "pad_column": 16,
+                      "flex_main_place": "CENTER",
+                      "flex_flow": "ROW_WRAP"
                     }
                   }
                 }

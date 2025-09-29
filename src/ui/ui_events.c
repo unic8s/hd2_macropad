@@ -19,8 +19,6 @@ const char *TAG_EVT = "Events";
 
 #define MAX_USER_STRATAGEMS 6
 
-char MSG_PRESET_SAVE[] = "Preset saved";
-
 // User button list
 lv_obj_t *buttons[MAX_USER_STRATAGEMS];
 // Stratagem list index of user buttons
@@ -599,7 +597,7 @@ void action_set_preset(lv_event_t *e)
 
 	playbackSound(SND_DESELECT);
 
-	showMsgBox(MSG_PRESET_SAVE);
+	showMsgBox("Preset\nsaved");
 }
 
 void action_reset_cancel(lv_event_t *e)

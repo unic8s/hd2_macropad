@@ -3,7 +3,7 @@
 /build
 *.zip
 /.vscode
-squareline/cache/*
 *.old
 src/version.h
 dependencies.lock
+eez/HD2 Macropad.eez-project-ui-state

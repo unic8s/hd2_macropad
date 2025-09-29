@@ -10,6 +10,7 @@ extern "C" {
 // Style: ButtonStd
 lv_style_t *get_style_button_std_MAIN_DEFAULT();
 lv_style_t *get_style_button_std_MAIN_CHECKED();
+lv_style_t *get_style_button_std_MAIN_PRESSED();
 void add_style_button_std(lv_obj_t *obj);
 void remove_style_button_std(lv_obj_t *obj);
 

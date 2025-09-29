@@ -9221,6 +9221,7 @@
               "flagScrollDirection": "",
               "scrollSnapX": "",
               "scrollSnapY": "",
+              "checkedState": false,
               "checkedStateType": "literal",
               "disabledStateType": "literal",
               "states": "",
@@ -10295,6 +10296,9 @@
               "CHECKED": {
                 "bg_color": "#000000",
                 "border_color": "colorActive"
+              },
+              "PRESSED": {
+                "bg_img_opa": 127
               }
             }
           }

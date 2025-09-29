@@ -1,11 +1,10 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/3",
+    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/1",
     "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/25",
-    "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/0",
+    "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/1",
     "selectedThemeObject": "[HD2 Macropad.eez-project]:/themes/0",
     "selectedThemeColorObject": "[HD2 Macropad.eez-project]:/colors/0",
-    "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/18",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Global"
     }
@@ -155,8 +154,7 @@
                       "enableClose": false,
                       "icon": "material:code"
                     }
-                  ],
-                  "active": true
+                  ]
                 },
                 {
                   "type": "tabset",
@@ -172,7 +170,8 @@
                       "enableClose": false,
                       "icon": "svg:hierarchy"
                     }
-                  ]
+                  ],
+                  "active": true
                 },
                 {
                   "type": "tabset",
@@ -201,46 +200,12 @@
               "children": [
                 {
                   "type": "tab",
-                  "id": "#641a102b-ef1a-4f2b-93ea-821ca23d0741",
-                  "name": "Game",
-                  "component": "editor",
-                  "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/3",
-                    "permanent": false
-                  },
-                  "icon": "svg:page"
-                },
-                {
-                  "type": "tab",
-                  "id": "#9d05bf41-ffae-46cd-b228-7fe117b04011",
-                  "name": "Config",
-                  "component": "editor",
-                  "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/2",
-                    "permanent": true
-                  },
-                  "icon": "svg:page"
-                },
-                {
-                  "type": "tab",
-                  "id": "#efeb9692-742c-4382-ae5f-531e047f8e87",
-                  "name": "Settings",
-                  "component": "editor",
-                  "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/settings",
-                    "subObjectPath": "[HD2 Macropad.eez-project]:/settings",
-                    "permanent": false
-                  },
-                  "icon": "material:settings"
-                },
-                {
-                  "type": "tab",
-                  "id": "#b14621c8-5400-4b28-bc5c-28fc47379849",
+                  "id": "#748fcecb-6938-4078-b397-ffe5c7f445c0",
                   "name": "Setup",
                   "component": "editor",
                   "config": {
                     "objectPath": "[HD2 Macropad.eez-project]:/userPages/1",
-                    "permanent": true
+                    "permanent": false
                   },
                   "icon": "svg:page"
                 }
@@ -1033,10 +998,10 @@
       },
       "transform": {
         "translate": {
-          "x": -300,
-          "y": -200
+          "x": -240,
+          "y": -160
         },
-        "scale": 1.25
+        "scale": 1
       },
       "timeline": {
         "isEditorActive": false,
@@ -1049,7 +1014,9 @@
       "selection": {
         "0": {
           "0": {
-            "0": {}
+            "7": {
+              "$selected": true
+            }
           },
           "2": {
             "4": {}
@@ -1058,10 +1025,10 @@
       },
       "transform": {
         "translate": {
-          "x": -300,
-          "y": -200
+          "x": -240,
+          "y": -160
         },
-        "scale": 1.25
+        "scale": 1
       },
       "timeline": {
         "isEditorActive": false,
@@ -1081,12 +1048,11 @@
             },
             "1": {
               "0": {
-                "0": {
-                  "$selected": true
-                },
+                "0": {},
                 "2": {}
               },
               "1": {
+                "0": {},
                 "1": {},
                 "2": {}
               },
@@ -1106,10 +1072,10 @@
       },
       "transform": {
         "translate": {
-          "x": -300,
-          "y": -200
+          "x": -240,
+          "y": -160
         },
-        "scale": 1.25
+        "scale": 1
       },
       "timeline": {
         "isEditorActive": false,
@@ -1142,9 +1108,7 @@
       "selection": {
         "0": {
           "0": {
-            "0": {
-              "$selected": true
-            },
+            "0": {},
             "4": {}
           },
           "1": {
@@ -1159,10 +1123,10 @@
       },
       "transform": {
         "translate": {
-          "x": -300,
-          "y": -200
+          "x": -240,
+          "y": -160
         },
-        "scale": 1.25
+        "scale": 1
       },
       "timeline": {
         "isEditorActive": false,
@@ -1172,10 +1136,10 @@
       }
     },
     "[HD2 Macropad.eez-project]:/lvglStyles/styles[tree-state]": {
-      "0": {
+      "0": {},
+      "1": {
         "$selected": true
       },
-      "1": {},
       "2": {},
       "3": {}
     },
@@ -1193,10 +1157,10 @@
       },
       "transform": {
         "translate": {
-          "x": -300,
-          "y": -200
+          "x": -240,
+          "y": -160
         },
-        "scale": 1.25
+        "scale": 1
       },
       "timeline": {
         "isEditorActive": false,
@@ -1216,10 +1180,10 @@
       },
       "transform": {
         "translate": {
-          "x": -300,
-          "y": -200
+          "x": -240,
+          "y": -160
         },
-        "scale": 1.25
+        "scale": 1
       },
       "timeline": {
         "isEditorActive": false,
@@ -1263,7 +1227,7 @@
   "logsPanelFilter": "all",
   "selectedStylePropertyName": "",
   "lvglPart": "MAIN",
-  "lvglState": "PRESSED",
+  "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
     "PADDING",
     "BORDER",
@@ -1273,10 +1237,11 @@
     "TEXT",
     "ARC",
     "LAYOUT",
-    "SHADOW"
+    "SHADOW",
+    "MISCELLANEOUS"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,
-  "flowZoom": 1.25,
+  "flowZoom": 1,
   "implementationLanguage": "C"
 }

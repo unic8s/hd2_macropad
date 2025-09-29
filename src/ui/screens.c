@@ -1309,6 +1309,7 @@ void create_screen_setup() {
                     objects.tab_rifle = obj;
                     lv_obj_add_event_cb(obj, event_handler_checked_cb_setup_tab_rifle, LV_EVENT_VALUE_CHANGED, (void *)0);
                     lv_obj_add_event_cb(obj, event_handler_unchecked_cb_setup_tab_rifle, LV_EVENT_VALUE_CHANGED, (void *)0);
+                    lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
                     add_style_tab_stratagem(obj);
                     {
                         lv_obj_t *parent_obj = obj;
@@ -1463,6 +1464,7 @@ void create_screen_setup() {
                     objects.tab_special = obj;
                     lv_obj_add_event_cb(obj, event_handler_checked_cb_setup_tab_special, LV_EVENT_VALUE_CHANGED, (void *)0);
                     lv_obj_add_event_cb(obj, event_handler_unchecked_cb_setup_tab_special, LV_EVENT_VALUE_CHANGED, (void *)0);
+                    lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
                     add_style_tab_stratagem(obj);
                     {
                         lv_obj_t *parent_obj = obj;
@@ -1617,6 +1619,7 @@ void create_screen_setup() {
                     objects.tab_backpack = obj;
                     lv_obj_add_event_cb(obj, event_handler_checked_cb_setup_tab_backpack, LV_EVENT_VALUE_CHANGED, (void *)0);
                     lv_obj_add_event_cb(obj, event_handler_unchecked_cb_setup_tab_backpack, LV_EVENT_VALUE_CHANGED, (void *)0);
+                    lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
                     add_style_tab_stratagem(obj);
                     {
                         lv_obj_t *parent_obj = obj;
@@ -1784,6 +1787,7 @@ void create_screen_setup() {
                     objects.tab_supply = obj;
                     lv_obj_add_event_cb(obj, event_handler_checked_cb_setup_tab_supply, LV_EVENT_VALUE_CHANGED, (void *)0);
                     lv_obj_add_event_cb(obj, event_handler_unchecked_cb_setup_tab_supply, LV_EVENT_VALUE_CHANGED, (void *)0);
+                    lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
                     add_style_tab_stratagem(obj);
                     {
                         lv_obj_t *parent_obj = obj;
@@ -1860,6 +1864,7 @@ void create_screen_setup() {
                     objects.tab_sentry = obj;
                     lv_obj_add_event_cb(obj, event_handler_checked_cb_setup_tab_sentry, LV_EVENT_VALUE_CHANGED, (void *)0);
                     lv_obj_add_event_cb(obj, event_handler_unchecked_cb_setup_tab_sentry, LV_EVENT_VALUE_CHANGED, (void *)0);
+                    lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
                     add_style_tab_stratagem(obj);
                     {
                         lv_obj_t *parent_obj = obj;
@@ -1867,7 +1872,7 @@ void create_screen_setup() {
                             lv_obj_t *obj = lv_obj_create(parent_obj);
                             objects.obj0 = obj;
                             lv_obj_set_pos(obj, 0, 0);
-                            lv_obj_set_size(obj, 38, 76);
+                            lv_obj_set_size(obj, 19, 76);
                             lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -1948,7 +1953,7 @@ void create_screen_setup() {
                             lv_obj_t *obj = lv_obj_create(parent_obj);
                             objects.obj1 = obj;
                             lv_obj_set_pos(obj, 0, 0);
-                            lv_obj_set_size(obj, 38, 76);
+                            lv_obj_set_size(obj, 19, 76);
                             lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -2033,6 +2038,7 @@ void create_screen_setup() {
                     objects.tab_ground = obj;
                     lv_obj_add_event_cb(obj, event_handler_checked_cb_setup_tab_ground, LV_EVENT_VALUE_CHANGED, (void *)0);
                     lv_obj_add_event_cb(obj, event_handler_unchecked_cb_setup_tab_ground, LV_EVENT_VALUE_CHANGED, (void *)0);
+                    lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
                     add_style_tab_stratagem(obj);
                     {
                         lv_obj_t *parent_obj = obj;
@@ -2167,6 +2173,7 @@ void create_screen_setup() {
                     objects.tab_strike = obj;
                     lv_obj_add_event_cb(obj, event_handler_checked_cb_setup_tab_strike, LV_EVENT_VALUE_CHANGED, (void *)0);
                     lv_obj_add_event_cb(obj, event_handler_unchecked_cb_setup_tab_strike, LV_EVENT_VALUE_CHANGED, (void *)0);
+                    lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
                     add_style_tab_stratagem(obj);
                     {
                         lv_obj_t *parent_obj = obj;

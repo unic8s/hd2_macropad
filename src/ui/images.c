@@ -19,7 +19,6 @@ const ext_img_desc_t images[196] = {
     { "BTdis", &img_btdis },
     { "USBcon", &img_us_bcon },
     { "USBdis", &img_us_bdis },
-    { "WSP2", &img_wsp2 },
     { "1201", &img_1201 },
     { "1202", &img_1202 },
     { "3801", &img_3801 },
@@ -197,4 +196,5 @@ const ext_img_desc_t images[196] = {
     { "WP1", &img_wp1 },
     { "WP2", &img_wp2 },
     { "WSP1", &img_wsp1 },
+    { "WSP2", &img_wsp2 },
 };

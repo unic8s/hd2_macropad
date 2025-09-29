@@ -1,8 +1,8 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/1",
+    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/3",
     "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/25",
-    "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/1",
+    "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/0",
     "selectedThemeObject": "[HD2 Macropad.eez-project]:/themes/0",
     "selectedThemeColorObject": "[HD2 Macropad.eez-project]:/colors/0",
     "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/18",
@@ -28,7 +28,7 @@
           },
           {
             "type": "border",
-            "selected": 2,
+            "selected": 0,
             "size": 240,
             "location": "right",
             "children": [
@@ -155,7 +155,8 @@
                       "enableClose": false,
                       "icon": "material:code"
                     }
-                  ]
+                  ],
+                  "active": true
                 },
                 {
                   "type": "tabset",
@@ -171,8 +172,7 @@
                       "enableClose": false,
                       "icon": "svg:hierarchy"
                     }
-                  ],
-                  "active": true
+                  ]
                 },
                 {
                   "type": "tabset",
@@ -196,7 +196,6 @@
               "type": "tabset",
               "id": "EDITORS",
               "weight": 65,
-              "selected": 3,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
@@ -1143,7 +1142,9 @@
       "selection": {
         "0": {
           "0": {
-            "0": {},
+            "0": {
+              "$selected": true
+            },
             "4": {}
           },
           "1": {
@@ -1171,10 +1172,10 @@
       }
     },
     "[HD2 Macropad.eez-project]:/lvglStyles/styles[tree-state]": {
-      "0": {},
-      "1": {
+      "0": {
         "$selected": true
       },
+      "1": {},
       "2": {},
       "3": {}
     },
@@ -1262,7 +1263,7 @@
   "logsPanelFilter": "all",
   "selectedStylePropertyName": "",
   "lvglPart": "MAIN",
-  "lvglState": "DEFAULT",
+  "lvglState": "PRESSED",
   "lvglExpandedPropertiesGroup": [
     "PADDING",
     "BORDER",

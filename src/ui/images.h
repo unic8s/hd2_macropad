@@ -25,7 +25,6 @@ extern const lv_img_dsc_t img_btcon;
 extern const lv_img_dsc_t img_btdis;
 extern const lv_img_dsc_t img_us_bcon;
 extern const lv_img_dsc_t img_us_bdis;
-extern const lv_img_dsc_t img_wsp2;
 extern const lv_img_dsc_t img_1201;
 extern const lv_img_dsc_t img_1202;
 extern const lv_img_dsc_t img_3801;
@@ -203,6 +202,7 @@ extern const lv_img_dsc_t img_ud2;
 extern const lv_img_dsc_t img_wp1;
 extern const lv_img_dsc_t img_wp2;
 extern const lv_img_dsc_t img_wsp1;
+extern const lv_img_dsc_t img_wsp2;
 
 #ifndef EXT_IMG_DESC_T
 #define EXT_IMG_DESC_T

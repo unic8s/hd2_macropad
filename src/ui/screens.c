@@ -1270,7 +1270,9 @@ void create_screen_intro() {
     {
         lv_obj_t *parent_obj = obj;
         {
+            // ImgSplash
             lv_obj_t *obj = lv_img_create(parent_obj);
+            objects.img_splash = obj;
             lv_obj_set_pos(obj, 0, 0);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
             lv_img_set_src(obj, &img_splash);

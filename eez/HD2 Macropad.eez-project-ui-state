@@ -170,8 +170,7 @@
                       "enableClose": false,
                       "icon": "svg:hierarchy"
                     }
-                  ],
-                  "active": true
+                  ]
                 },
                 {
                   "type": "tabset",
@@ -209,7 +208,8 @@
                   },
                   "icon": "svg:page"
                 }
-              ]
+              ],
+              "active": true
             },
             {
               "type": "row",
@@ -1014,9 +1014,7 @@
       "selection": {
         "0": {
           "0": {
-            "7": {
-              "$selected": true
-            }
+            "7": {}
           },
           "2": {
             "4": {}

@@ -103,6 +103,7 @@ typedef struct _objects_t {
     lv_obj_t *eagle_sr;
     lv_obj_t *eagle_na;
     lv_obj_t *eagle_ss;
+    lv_obj_t *img_splash;
     lv_obj_t *tab_view_setup;
     lv_obj_t *btn_preset1;
     lv_obj_t *btn_preset2;

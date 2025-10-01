@@ -31,8 +31,11 @@ extern void action_select_stratagem(lv_event_t * e);
 extern void action_deselect_stratagem(lv_event_t * e);
 extern void action_tab_changed(lv_event_t * e);
 extern void action_trigger_stratagem_std(lv_event_t * e);
+extern void action_trigger_stratagem_mission(lv_event_t * e);
 extern void action_trigger_stratagem_user(lv_event_t * e);
 extern void action_restart_device(lv_event_t * e);
+extern void action_game_2_mission(lv_event_t * e);
+extern void action_mission_2_game(lv_event_t * e);
 
 
 #ifdef __cplusplus

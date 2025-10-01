@@ -13,6 +13,7 @@
 #include "main.h"
 #include "ui_post.h"
 #include "configration.h"
+#include "actions.h"
 #include "ui_assignment.h"
 
 const char *TAG_EVT = "Events";
@@ -350,6 +351,129 @@ void action_trigger_stratagem_std(lv_event_t *e)
 	}
 }
 
+void action_trigger_stratagem_mission(lv_event_t *e)
+{
+	if (e->target == objects.btn_sssd)
+	{
+		uint8_t sequence[8] = {INPUT_DOWN,
+							   INPUT_DOWN,
+							   INPUT_DOWN,
+							   INPUT_UP,
+							   INPUT_UP,
+							   0,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+	else if (e->target == objects.btn_ud)
+	{
+		uint8_t sequence[8] = {INPUT_LEFT,
+							   INPUT_RIGHT,
+							   INPUT_UP,
+							   INPUT_UP,
+							   INPUT_UP,
+							   0,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+	else if (e->target == objects.btn_sef)
+	{
+		uint8_t sequence[8] = {INPUT_DOWN,
+							   INPUT_UP,
+							   INPUT_DOWN,
+							   INPUT_UP,
+							   0,
+							   0,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+	else if (e->target == objects.btn_hbd)
+	{
+		uint8_t sequence[8] = {INPUT_LEFT,
+							   INPUT_UP,
+							   INPUT_DOWN,
+							   INPUT_RIGHT,
+							   INPUT_DOWN,
+							   INPUT_DOWN,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+	else if (e->target == objects.btn_td)
+	{
+		uint8_t sequence[8] = {INPUT_UP,
+							   INPUT_DOWN,
+							   INPUT_UP,
+							   INPUT_DOWN,
+							   INPUT_UP,
+							   INPUT_DOWN,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+	else if (e->target == objects.btn_pd)
+	{
+		uint8_t sequence[8] = {INPUT_DOWN,
+							   INPUT_DOWN,
+							   INPUT_LEFT,
+							   INPUT_RIGHT,
+							   INPUT_DOWN,
+							   INPUT_DOWN,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+	else if (e->target == objects.btn_sp)
+	{
+		uint8_t sequence[8] = {INPUT_UP,
+							   INPUT_UP,
+							   INPUT_LEFT,
+							   INPUT_RIGHT,
+							   INPUT_DOWN,
+							   INPUT_DOWN,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+	else if (e->target == objects.btn_oif)
+	{
+		uint8_t sequence[8] = {INPUT_RIGHT,
+							   INPUT_RIGHT,
+							   INPUT_LEFT,
+							   INPUT_LEFT,
+							   0,
+							   0,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+	else if (e->target == objects.btn_dfv)
+	{
+		uint8_t sequence[8] = {INPUT_UP,
+							   INPUT_LEFT,
+							   INPUT_RIGHT,
+							   INPUT_DOWN,
+							   INPUT_UP,
+							   INPUT_UP,
+							   0,
+							   0};
+
+		_executeStdStratagem(sequence, NULL);
+	}
+
+	action_mission_2_game(NULL);
+}
+
 // Trigger 1st user stratagem
 void action_trigger_stratagem_user(lv_event_t *e)
 {
@@ -599,55 +723,6 @@ void action_set_preset(lv_event_t *e)
 	{
 		showMsgBox("Preset\nsaved");
 	}
-}
-
-void action_reset_cancel(lv_event_t *e)
-{
-	lv_scr_load_anim(objects.config, LV_SCR_LOAD_ANIM_FADE_OUT, 500, 0, false);
-}
-
-void action_reset_confirm(lv_event_t *e)
-{
-	resetConfig();
-
-	lv_scr_load_anim(objects.config, LV_SCR_LOAD_ANIM_FADE_OUT, 500, 0, false);
-}
-
-void action_intro_2_setup(lv_event_t *e)
-{
-	assignStratagems();
-
-	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 1000, 1000, false);
-}
-
-void action_setup_2_config(lv_event_t *e)
-{
-	lv_scr_load_anim(objects.config, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, false);
-}
-
-void action_config_2_about(lv_event_t *e)
-{
-	lv_scr_load_anim(objects.about, LV_SCR_LOAD_ANIM_MOVE_TOP, 1000, 0, false);
-}
-
-void action_about_2_config(lv_event_t *e)
-{
-	lv_scr_load_anim(objects.config, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 1000, 0, false);
-}
-
-void action_config_2_reset(lv_event_t *e)
-{
-	lv_scr_load_anim(objects.reset, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
-}
-
-void action_config_2_setup(lv_event_t *e)
-{
-	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 0, false);
-}
-
-void action_game_2_setup(lv_event_t *e)
-{
-	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, false);
 }
 
 void showMsgBox(char *msg)

@@ -20,6 +20,7 @@ extern const lv_img_dsc_t img_icon2;
 extern const lv_img_dsc_t img_icon_no;
 extern const lv_img_dsc_t img_icon_yes;
 extern const lv_img_dsc_t img_icon_restart;
+extern const lv_img_dsc_t img_icon_flag;
 extern const lv_img_dsc_t img_btcon;
 extern const lv_img_dsc_t img_btdis;
 extern const lv_img_dsc_t img_us_bcon;
@@ -211,7 +212,7 @@ typedef struct _ext_img_desc_t {
 } ext_img_desc_t;
 #endif
 
-extern const ext_img_desc_t images[195];
+extern const ext_img_desc_t images[196];
 
 
 #ifdef __cplusplus

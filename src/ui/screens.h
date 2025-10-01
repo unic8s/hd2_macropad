@@ -14,6 +14,7 @@ typedef struct _objects_t {
     lv_obj_t *game;
     lv_obj_t *about;
     lv_obj_t *reset;
+    lv_obj_t *mission;
     lv_obj_t *tab_rifle;
     lv_obj_t *weapons_mg;
     lv_obj_t *weapons_hmg;
@@ -138,6 +139,15 @@ typedef struct _objects_t {
     lv_obj_t *lbl_version;
     lv_obj_t *obj8;
     lv_obj_t *obj9;
+    lv_obj_t *btn_sssd;
+    lv_obj_t *btn_ud;
+    lv_obj_t *btn_sef;
+    lv_obj_t *btn_hbd;
+    lv_obj_t *btn_td;
+    lv_obj_t *btn_pd;
+    lv_obj_t *btn_sp;
+    lv_obj_t *btn_oif;
+    lv_obj_t *btn_dfv;
 } objects_t;
 
 extern objects_t objects;
@@ -149,6 +159,7 @@ enum ScreensEnum {
     SCREEN_ID_GAME = 4,
     SCREEN_ID_ABOUT = 5,
     SCREEN_ID_RESET = 6,
+    SCREEN_ID_MISSION = 7,
 };
 
 void create_screen_intro();
@@ -168,6 +179,9 @@ void tick_screen_about();
 
 void create_screen_reset();
 void tick_screen_reset();
+
+void create_screen_mission();
+void tick_screen_mission();
 
 enum Themes {
     THEME_ID_DEFAULT,

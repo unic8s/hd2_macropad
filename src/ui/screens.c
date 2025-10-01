@@ -3323,10 +3323,11 @@ void create_screen_about() {
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_LEFT, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
         {
-            lv_obj_t *obj = lv_img_create(parent_obj);
+            lv_obj_t *obj = lv_qrcode_create(parent_obj, 160, lv_color_hex(0xff000000), lv_color_hex(0xffe2f5fe));
             lv_obj_set_pos(obj, -8, -8);
-            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_img_set_src(obj, &img_github_qr);
+            lv_obj_set_size(obj, 160, 160);
+            lv_qrcode_update(obj, "github.com/unic8s/hd2_macropad", 30);
+            lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
     }

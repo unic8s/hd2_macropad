@@ -10023,16 +10023,16 @@
               "groupIndex": 0
             },
             {
-              "objID": "e8c88fc5-cb81-4ce0-b787-88eefabd8375",
-              "type": "LVGLImageWidget",
+              "objID": "ee9b1b17-3682-4ac0-e508-a926ae47747a",
+              "type": "LVGLQRCodeWidget",
               "left": -8,
               "top": -8,
-              "width": 150,
-              "height": 150,
+              "width": 160,
+              "height": 160,
               "customInputs": [],
               "customOutputs": [],
               "style": {
-                "objID": "6dd06c36-a31b-42df-ff9f-fa916bfc2277",
+                "objID": "8b44ba46-1871-4c01-ab19-0b5e159f27e8",
                 "useStyle": "default",
                 "conditionalStyles": [],
                 "childStyles": []
@@ -10041,11 +10041,12 @@
               "eventHandlers": [],
               "leftUnit": "px",
               "topUnit": "px",
-              "widthUnit": "content",
-              "heightUnit": "content",
+              "widthUnit": "px",
+              "heightUnit": "px",
               "children": [],
-              "widgetFlags": "ADV_HITTEST|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+              "widgetFlags": "CLICK_FOCUSABLE|SCROLLABLE|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_CHAIN|SCROLL_WITH_ARROW|SNAPPABLE|PRESS_LOCK|GESTURE_BUBBLE|ADV_HITTEST",
               "hiddenFlagType": "literal",
+              "clickableFlag": true,
               "clickableFlagType": "literal",
               "flagScrollbarMode": "",
               "flagScrollDirection": "",
@@ -10055,7 +10056,7 @@
               "disabledStateType": "literal",
               "states": "",
               "localStyles": {
-                "objID": "1d4b3064-5e14-47ab-edbc-7e73607cac85",
+                "objID": "7f7e3255-0f78-49c5-b94d-2235c523eae7",
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
@@ -10066,13 +10067,9 @@
               },
               "group": "",
               "groupIndex": 0,
-              "image": "GithubQR",
-              "setPivot": false,
-              "pivotX": 0,
-              "pivotY": 0,
-              "zoom": 256,
-              "angle": 0,
-              "innerAlign": "CENTER"
+              "text": "github.com/unic8s/hd2_macropad",
+              "darkColor": "#000000",
+              "lightColor": "#E2F5FE"
             }
           ],
           "widgetFlags": "CLICKABLE|PRESS_LOCK|CLICK_FOCUSABLE|GESTURE_BUBBLE|SNAPPABLE|SCROLLABLE|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER",
@@ -10552,15 +10549,6 @@
       "alwaysBuild": false,
       "lvglBinaryOutputFormat": 3,
       "lvglDither": true
-    },
-    {
-      "objID": "91fbbec6-3686-4f38-b3a9-f7cf7c8fc4e4",
-      "name": "GithubQR",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWAQMAAAAGz+OhAAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABa0lEQVRIib2WMa6DQAxEHVG45Ah7kYhcLFKQuBiIi+wRKF18MX/sJUrqxGRFAY/CWs94dkWSVw/gT3StMhQs/MCYz0aRe9FZdIEumzhIZxPsLtJVzCKXDftZrGD1XdmZTIzK3CqWk1j0zwj2wr299fRD5poXam5D0XcfJLK2aC331fzu4DzGuvaAXSk4S/fNWslMQgxdIYNwPqw1NJf1qAro7APIKbG2t2Q2gcMhHfgek7h9x3ygUbFWeCXRXfJZT1ONxX/eYuSiV9ls8orwjlUWRdTNZmD/3FdUokVHPpNHpbXkSnXCu9HTZOb27cD8s1s8w5EvXzBvFX26e27Y0Goks2LhXY6DYjsiMJlNlZnt3l1cfG5vTGexwruDn6SvjE1kLcfRjOtnj0g+axF45WR4jtvled/4lMWZrDwXLmDoNc3PYat/sa7iVTeb0bvH2iSfjRGzfvYU3fvnVSyXNc39LuACtf4lsx+sf6rqJ6W6iG4kAAAAAElFTkSuQmCC",
-      "bpp": 41,
-      "alwaysBuild": false,
-      "lvglBinaryOutputFormat": 3,
-      "lvglDither": false
     },
     {
       "objID": "37e1b0fa-f06f-4cf7-b429-93c437f63d92",

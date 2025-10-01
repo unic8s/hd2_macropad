@@ -28,6 +28,8 @@ int types[MAX_USER_STRATAGEMS];
 // Amount of user assigned stratagems
 uint8_t strategemsAmount = 0;
 
+lv_timer_t *timerMsg = NULL;
+
 // HID input mask for special keys
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
 
@@ -566,7 +568,14 @@ void action_get_preset(lv_event_t *e)
 
 	updateStratagemSelection();
 
-	animate_preset_load(e->target);
+	if (strategemsAmount == 0)
+	{
+		showMsgBox("Preset\nempty");
+	}
+	else
+	{
+		showMsgBox("Preset\nloaded");
+	}
 }
 
 void action_set_preset(lv_event_t *e)
@@ -582,7 +591,14 @@ void action_set_preset(lv_event_t *e)
 
 	playbackSound(SND_DESELECT);
 
-	animate_preset_save(e->target);
+	if (strategemsAmount == 0)
+	{
+		showMsgBox("Preset\ncleared");
+	}
+	else
+	{
+		showMsgBox("Preset\nsaved");
+	}
 }
 
 void action_reset_cancel(lv_event_t *e)
@@ -632,4 +648,29 @@ void action_config_2_setup(lv_event_t *e)
 void action_game_2_setup(lv_event_t *e)
 {
 	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, false);
+}
+
+void showMsgBox(char *msg)
+{
+	lv_label_set_text(objects.msg_label, msg);
+	lv_obj_clear_flag(objects.msg_box, LV_OBJ_FLAG_HIDDEN);
+
+	if (timerMsg != NULL)
+	{
+		lv_timer_del(timerMsg);
+		timerMsg = NULL;
+	}
+
+	timerMsg = lv_timer_create(hideMsgBox, 1000, NULL);
+}
+
+void hideMsgBox(lv_timer_t *timer)
+{
+	if (timerMsg != NULL)
+	{
+		lv_timer_del(timerMsg);
+		timerMsg = NULL;
+	}
+
+	lv_obj_add_flag(objects.msg_box, LV_OBJ_FLAG_HIDDEN);
 }

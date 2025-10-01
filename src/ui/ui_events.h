@@ -15,6 +15,8 @@ void updateStratagemSelection();
 void _executeStdStratagem(uint8_t *sequence, char *path);
 void _executeUserStratagem(uint8_t index);
 void updatePresets();
+void showMsgBox(char *msg);
+void hideMsgBox();
 
 #ifdef __cplusplus
 } /*extern "C"*/

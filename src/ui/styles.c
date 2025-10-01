@@ -84,6 +84,7 @@ void init_style_tab_stratagem_MAIN_DEFAULT(lv_style_t *style) {
     lv_style_set_flex_flow(style, LV_FLEX_FLOW_ROW_WRAP);
     lv_style_set_pad_top(style, 2);
     lv_style_set_pad_row(style, 4);
+    lv_style_set_bg_color(style, lv_color_hex(0xff282b30));
 };
 
 lv_style_t *get_style_tab_stratagem_MAIN_DEFAULT() {

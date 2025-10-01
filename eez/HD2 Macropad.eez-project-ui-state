@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/1",
+    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/3",
     "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/25",
     "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/1",
     "selectedThemeObject": "[HD2 Macropad.eez-project]:/themes/0",
@@ -27,7 +27,7 @@
           },
           {
             "type": "border",
-            "selected": 0,
+            "selected": 2,
             "size": 240,
             "location": "right",
             "children": [
@@ -200,10 +200,10 @@
                 {
                   "type": "tab",
                   "id": "#748fcecb-6938-4078-b397-ffe5c7f445c0",
-                  "name": "Setup",
+                  "name": "Game",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/1",
+                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/3",
                     "permanent": false
                   },
                   "icon": "svg:page"
@@ -1148,8 +1148,7 @@
             "1": {},
             "4": {}
           },
-          "1": {},
-          "2": {}
+          "1": {}
         }
       },
       "transform": {

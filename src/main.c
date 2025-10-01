@@ -10,6 +10,7 @@
 #include <ui/ui.h>
 #include <ui/vars.h>
 #include <ui/screens.h>
+#include <ui/images.h>
 #include <ui/ui_events.h>
 #include <ui/ui_post.h>
 #include "driver/gpio.h"
@@ -125,33 +126,28 @@ void updateConnection()
     return;
   }
 
-  lv_obj_add_flag(objects.img_btcon, LV_OBJ_FLAG_HIDDEN);
-  lv_obj_add_flag(objects.img_btdis, LV_OBJ_FLAG_HIDDEN);
-  lv_obj_add_flag(objects.img_us_bcon, LV_OBJ_FLAG_HIDDEN);
-  lv_obj_add_flag(objects.img_us_bdis, LV_OBJ_FLAG_HIDDEN);
-
   switch (connectionType)
   {
   case CT_BLUETOOTH:
     // Check bluetooth connection state
     if (ble_connected())
     {
-      lv_obj_clear_flag(objects.img_btcon, LV_OBJ_FLAG_HIDDEN);
+      lv_obj_set_style_bg_img_src(objects.img_connection, &img_btcon, LV_PART_MAIN | LV_STATE_DEFAULT);
     }
     else
     {
-      lv_obj_clear_flag(objects.img_btdis, LV_OBJ_FLAG_HIDDEN);
+      lv_obj_set_style_bg_img_src(objects.img_connection, &img_btdis, LV_PART_MAIN | LV_STATE_DEFAULT);
     }
     break;
   case CT_USB:
     // Check USB connection state
     if (usb_connected())
     {
-      lv_obj_clear_flag(objects.img_us_bcon, LV_OBJ_FLAG_HIDDEN);
+      lv_obj_set_style_bg_img_src(objects.img_connection, &img_us_bcon, LV_PART_MAIN | LV_STATE_DEFAULT);
     }
     else
     {
-      lv_obj_clear_flag(objects.img_us_bdis, LV_OBJ_FLAG_HIDDEN);
+      lv_obj_set_style_bg_img_src(objects.img_connection, &img_us_bdis, LV_PART_MAIN | LV_STATE_DEFAULT);
     }
     break;
   default:

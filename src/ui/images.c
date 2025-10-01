@@ -1,8 +1,7 @@
 #include "images.h"
 
-const ext_img_desc_t images[196] = {
+const ext_img_desc_t images[195] = {
     { "splash", &img_splash },
-    { "GithubQR", &img_github_qr },
     { "tabIcons", &img_tab_icons },
     { "IconBack", &img_icon_back },
     { "IconInfo", &img_icon_info },

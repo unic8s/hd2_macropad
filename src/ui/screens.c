@@ -3179,62 +3179,13 @@ void create_screen_game() {
             lv_obj_set_style_bg_img_src(obj, &img_icon_back, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
         {
-            lv_obj_t *obj = lv_obj_create(parent_obj);
+            // ImgConnection
+            lv_obj_t *obj = lv_img_create(parent_obj);
+            objects.img_connection = obj;
             lv_obj_set_pos(obj, -2, -2);
-            lv_obj_set_size(obj, 76, 76);
-            lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_size(obj, 36, 36);
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW_WRAP, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_pad_row(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_pad_column(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_flex_main_place(obj, LV_FLEX_ALIGN_END, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_flex_track_place(obj, LV_FLEX_ALIGN_END, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_pad_right(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_pad_bottom(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
-            {
-                lv_obj_t *parent_obj = obj;
-                {
-                    // ImgBTdis
-                    lv_obj_t *obj = lv_img_create(parent_obj);
-                    objects.img_btdis = obj;
-                    lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, 36, 36);
-                    lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_obj_set_style_bg_img_src(obj, &img_btdis, LV_PART_MAIN | LV_STATE_DEFAULT);
-                }
-                {
-                    // ImgBTcon
-                    lv_obj_t *obj = lv_img_create(parent_obj);
-                    objects.img_btcon = obj;
-                    lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, 36, 36);
-                    lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_obj_set_style_bg_img_src(obj, &img_btcon, LV_PART_MAIN | LV_STATE_DEFAULT);
-                }
-                {
-                    // ImgUSBdis
-                    lv_obj_t *obj = lv_img_create(parent_obj);
-                    objects.img_us_bdis = obj;
-                    lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, 36, 36);
-                    lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_obj_set_style_bg_img_src(obj, &img_us_bdis, LV_PART_MAIN | LV_STATE_DEFAULT);
-                }
-                {
-                    // ImgUSBcon
-                    lv_obj_t *obj = lv_img_create(parent_obj);
-                    objects.img_us_bcon = obj;
-                    lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, 36, 36);
-                    lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_obj_set_style_bg_img_src(obj, &img_us_bcon, LV_PART_MAIN | LV_STATE_DEFAULT);
-                }
-            }
+            lv_obj_set_style_bg_img_src(obj, &img_btdis, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
     }
     

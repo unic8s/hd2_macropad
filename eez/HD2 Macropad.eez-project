@@ -9591,7 +9591,7 @@
                   "left": 54,
                   "top": 113,
                   "width": 100,
-                  "height": 48,
+                  "height": 64,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -9622,7 +9622,7 @@
                   },
                   "group": "",
                   "groupIndex": 0,
-                  "text": "Copyright (C) 2024 All rights reserved.\\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.",
+                  "text": "Copyright (C) 2024 All rights reserved.\\n\\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.",
                   "textType": "literal",
                   "longMode": "WRAP",
                   "recolor": false
@@ -9811,8 +9811,8 @@
               "type": "LVGLQRCodeWidget",
               "left": -8,
               "top": -8,
-              "width": 160,
-              "height": 160,
+              "width": 152,
+              "height": 152,
               "customInputs": [],
               "customOutputs": [],
               "style": {

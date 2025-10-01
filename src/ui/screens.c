@@ -3247,7 +3247,7 @@ void create_screen_about() {
                     lv_obj_t *obj = lv_label_create(parent_obj);
                     lv_obj_set_pos(obj, 54, 113);
                     lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
-                    lv_label_set_text(obj, "Copyright (C) 2024 All rights reserved.\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.");
+                    lv_label_set_text(obj, "Copyright (C) 2024 All rights reserved.\n\nThis software is released under the Creative Commons Attribution-NonCommercial 4.0 International Public License.");
                 }
                 {
                     lv_obj_t *obj = lv_label_create(parent_obj);
@@ -3274,9 +3274,9 @@ void create_screen_about() {
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_LEFT, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
         {
-            lv_obj_t *obj = lv_qrcode_create(parent_obj, 160, lv_color_hex(0xff000000), lv_color_hex(0xffe2f5fe));
+            lv_obj_t *obj = lv_qrcode_create(parent_obj, 152, lv_color_hex(0xff000000), lv_color_hex(0xffe2f5fe));
             lv_obj_set_pos(obj, -8, -8);
-            lv_obj_set_size(obj, 160, 160);
+            lv_obj_set_size(obj, 152, 152);
             lv_qrcode_update(obj, "github.com/unic8s/hd2_macropad", 30);
             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);

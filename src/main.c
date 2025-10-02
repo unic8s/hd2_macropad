@@ -10,6 +10,7 @@
 #include <ui/ui.h>
 #include <ui/vars.h>
 #include <ui/screens.h>
+#include <ui/actions.h>
 #include <ui/images.h>
 #include <ui/ui_events.h>
 #include <ui/ui_post.h>
@@ -169,6 +170,12 @@ void updateConnection()
   else
   {
     lv_obj_clear_flag(objects.cnt_connection_status, LV_OBJ_FLAG_HIDDEN);
+
+    lv_obj_t *currentScreen = lv_scr_act();
+
+    if(currentScreen == objects.mission){
+      action_mission_2_game(NULL);
+    }
   }
 }
 

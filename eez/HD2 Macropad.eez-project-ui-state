@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/3",
+    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/0",
     "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/23",
     "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/1",
     "selectedThemeObject": "[HD2 Macropad.eez-project]:/themes/0",
@@ -201,10 +201,10 @@
                 {
                   "type": "tab",
                   "id": "#748fcecb-6938-4078-b397-ffe5c7f445c0",
-                  "name": "Game",
+                  "name": "Intro",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/3",
+                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/0",
                     "permanent": false
                   },
                   "icon": "svg:page"
@@ -1058,9 +1058,7 @@
               "1": {
                 "0": {},
                 "1": {},
-                "2": {
-                  "$selected": true
-                }
+                "2": {}
               },
               "2": {
                 "1": {}

@@ -37,4 +37,5 @@ void ui_post()
   }
 
   lv_obj_add_flag(objects.msg_box, LV_OBJ_FLAG_HIDDEN);
+  lv_obj_add_flag(objects.cnt_connection_status, LV_OBJ_FLAG_HIDDEN);
 }

@@ -270,14 +270,14 @@ void _executeUserStratagem(uint8_t index)
 // Trigger 1st standard stratagem
 void action_trigger_stratagem_base(lv_event_t *e)
 {
-
-	uint8_t index = (uint8_t)e->user_data;
-	uint8_t *sequence = strategemBaseList[index].sequence;
+	int index = (int)e->user_data;
+	uint8_t *sequence = (uint8_t *)strategemBaseList[index].sequence;
 	char *path = strategemBaseList[index].soundPath;
 
 	_executeStdStratagem(sequence, path);
 
-	if(index > 5){ // Mission stratagems
+	if (index > 5) // Mission stratagems
+	{
 		action_mission_2_game(NULL);
 	}
 }
@@ -285,7 +285,7 @@ void action_trigger_stratagem_base(lv_event_t *e)
 // Trigger 1st user stratagem
 void action_trigger_stratagem_user(lv_event_t *e)
 {
-	int8_t index = e->user_data;
+	int index = (int)e->user_data;
 
 	_executeUserStratagem(index);
 }

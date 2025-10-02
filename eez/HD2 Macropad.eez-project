@@ -10275,7 +10275,7 @@
               "left": 0,
               "top": 0,
               "width": 100,
-              "height": 100,
+              "height": 282,
               "customInputs": [],
               "customOutputs": [],
               "style": {
@@ -10289,7 +10289,7 @@
               "leftUnit": "px",
               "topUnit": "px",
               "widthUnit": "%",
-              "heightUnit": "%",
+              "heightUnit": "px",
               "children": [
                 {
                   "objID": "78d96c8f-3f1a-495e-bd43-862b0d78ece7",
@@ -10438,7 +10438,8 @@
                         "DEFAULT": {
                           "layout": "FLEX",
                           "flex_flow": "ROW_WRAP",
-                          "flex_cross_place": "CENTER"
+                          "flex_cross_place": "CENTER",
+                          "pad_column": 8
                         }
                       }
                     }
@@ -10593,7 +10594,8 @@
                         "DEFAULT": {
                           "layout": "FLEX",
                           "flex_flow": "ROW_WRAP",
-                          "flex_cross_place": "CENTER"
+                          "flex_cross_place": "CENTER",
+                          "pad_column": 8
                         }
                       }
                     }
@@ -10748,7 +10750,8 @@
                         "DEFAULT": {
                           "layout": "FLEX",
                           "flex_flow": "ROW_WRAP",
-                          "flex_cross_place": "CENTER"
+                          "flex_cross_place": "CENTER",
+                          "pad_column": 8
                         }
                       }
                     }
@@ -10903,7 +10906,8 @@
                         "DEFAULT": {
                           "layout": "FLEX",
                           "flex_flow": "ROW_WRAP",
-                          "flex_cross_place": "CENTER"
+                          "flex_cross_place": "CENTER",
+                          "pad_column": 8
                         }
                       }
                     }
@@ -11058,7 +11062,8 @@
                         "DEFAULT": {
                           "layout": "FLEX",
                           "flex_flow": "ROW_WRAP",
-                          "flex_cross_place": "CENTER"
+                          "flex_cross_place": "CENTER",
+                          "pad_column": 8
                         }
                       }
                     }
@@ -11213,7 +11218,8 @@
                         "DEFAULT": {
                           "layout": "FLEX",
                           "flex_flow": "ROW_WRAP",
-                          "flex_cross_place": "CENTER"
+                          "flex_cross_place": "CENTER",
+                          "pad_column": 8
                         }
                       }
                     }
@@ -11368,7 +11374,8 @@
                         "DEFAULT": {
                           "layout": "FLEX",
                           "flex_flow": "ROW_WRAP",
-                          "flex_cross_place": "CENTER"
+                          "flex_cross_place": "CENTER",
+                          "pad_column": 8
                         }
                       }
                     }
@@ -11523,7 +11530,8 @@
                         "DEFAULT": {
                           "layout": "FLEX",
                           "flex_flow": "ROW_WRAP",
-                          "flex_cross_place": "CENTER"
+                          "flex_cross_place": "CENTER",
+                          "pad_column": 8
                         }
                       }
                     }
@@ -11615,8 +11623,8 @@
                       "type": "LVGLLabelWidget",
                       "left": 0,
                       "top": 0,
-                      "width": 37,
-                      "height": 45,
+                      "width": 62,
+                      "height": 30,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -11654,7 +11662,7 @@
                       },
                       "group": "",
                       "groupIndex": 0,
-                      "text": "Dark\\nFluid\\nVessel",
+                      "text": "Dark Fluid\\nVessel",
                       "textType": "literal",
                       "longMode": "WRAP",
                       "recolor": false
@@ -11678,7 +11686,8 @@
                         "DEFAULT": {
                           "layout": "FLEX",
                           "flex_flow": "ROW_WRAP",
-                          "flex_cross_place": "CENTER"
+                          "flex_cross_place": "CENTER",
+                          "pad_column": 8
                         }
                       }
                     }
@@ -11705,12 +11714,14 @@
                     "DEFAULT": {
                       "layout": "FLEX",
                       "flex_flow": "ROW_WRAP",
+                      "pad_column": 8,
+                      "flex_main_place": "CENTER",
+                      "flex_track_place": "CENTER",
+                      "pad_row": 16,
                       "pad_top": 8,
                       "pad_bottom": 8,
                       "pad_left": 8,
-                      "pad_right": 8,
-                      "pad_row": 16,
-                      "pad_column": 8
+                      "pad_right": 8
                     }
                   }
                 }

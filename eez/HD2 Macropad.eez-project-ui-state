@@ -1,11 +1,11 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/3",
-    "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/25",
+    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/6",
+    "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/24",
     "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/1",
     "selectedThemeObject": "[HD2 Macropad.eez-project]:/themes/0",
     "selectedThemeColorObject": "[HD2 Macropad.eez-project]:/colors/0",
-    "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/0",
+    "selectedBitmapObject": "[HD2 Macropad.eez-project]:/bitmaps/13",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Global"
     }
@@ -155,8 +155,7 @@
                       "enableClose": false,
                       "icon": "material:code"
                     }
-                  ],
-                  "active": true
+                  ]
                 },
                 {
                   "type": "tabset",
@@ -202,15 +201,16 @@
                 {
                   "type": "tab",
                   "id": "#748fcecb-6938-4078-b397-ffe5c7f445c0",
-                  "name": "Game",
+                  "name": "Mission",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/3",
+                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/6",
                     "permanent": false
                   },
                   "icon": "svg:page"
                 }
-              ]
+              ],
+              "active": true
             },
             {
               "type": "row",
@@ -1018,13 +1018,19 @@
             "0": {},
             "7": {}
           },
+          "1": {
+            "$selected": true
+          },
+          "2": {
+            "4": {}
+          },
           "3": {}
         }
       },
       "transform": {
         "translate": {
           "x": -240,
-          "y": -260
+          "y": -160
         },
         "scale": 1
       },
@@ -1055,7 +1061,9 @@
                 "2": {}
               },
               "2": {
-                "1": {}
+                "1": {
+                  "$selected": true
+                }
               }
             }
           },
@@ -1113,8 +1121,7 @@
             "0": {},
             "3": {}
           },
-          "2": {},
-          "3": {}
+          "2": {}
         }
       },
       "transform": {
@@ -1205,6 +1212,40 @@
           "y": 0
         },
         "scale": 1
+      }
+    },
+    "[HD2 Macropad.eez-project]:/userPages/6[flow-state]": {
+      "selection": {
+        "0": {
+          "0": {
+            "0": {
+              "0": {}
+            },
+            "1": {},
+            "2": {},
+            "3": {},
+            "4": {},
+            "5": {},
+            "6": {
+              "1": {}
+            },
+            "7": {},
+            "8": {}
+          }
+        }
+      },
+      "transform": {
+        "translate": {
+          "x": -240,
+          "y": -160
+        },
+        "scale": 1
+      },
+      "timeline": {
+        "isEditorActive": false,
+        "position": 0,
+        "secondToPx": 200,
+        "scrollLeft": 0
       }
     }
   },

@@ -68,7 +68,7 @@ void action_setup_2_game(lv_event_t *e)
 		}
 
 		uint8_t itemIndex = indices[c];
-		stratagem item = strategems[itemIndex];
+		stratagemItem item = strategemItemList[itemIndex];
 		const lv_img_dsc_t *hires = useHiResIcon ? item.imgHiRes : bgImg;
 
 		if (configured)
@@ -175,9 +175,9 @@ void action_select_stratagem(lv_event_t *e)
 				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->target);
 				int index = -1;
 
-				for (int c = 0; c < sizeof(strategems); c++)
+				for (int c = 0; c < sizeof(strategemItemList); c++)
 				{
-					stratagem item = strategems[c];
+					stratagemItem item = strategemItemList[c];
 
 					if (item.type == type)
 					{
@@ -258,7 +258,7 @@ void _executeStdStratagem(uint8_t *sequence, char *path)
 void _executeUserStratagem(uint8_t index)
 {
 	uint8_t itemIndex = indices[index];
-	stratagem item = strategems[itemIndex];
+	stratagemItem item = strategemItemList[itemIndex];
 
 	setStratagemCode(item.sequence, INPUT_CTRL_MASK, false);
 
@@ -268,270 +268,26 @@ void _executeUserStratagem(uint8_t index)
 }
 
 // Trigger 1st standard stratagem
-void action_trigger_stratagem_std(lv_event_t *e)
+void action_trigger_stratagem_base(lv_event_t *e)
 {
-	if (e->target == objects.btn_reinforce)
-	{
-		uint8_t sequence[8] = {INPUT_UP,
-							   INPUT_DOWN,
-							   INPUT_RIGHT,
-							   INPUT_LEFT,
-							   INPUT_UP,
-							   0,
-							   0,
-							   0};
 
-		_executeStdStratagem(sequence,
-							 SND_REINFORCE);
+	uint8_t index = (uint8_t)e->user_data;
+	uint8_t *sequence = strategemBaseList[index].sequence;
+	char *path = strategemBaseList[index].soundPath;
+
+	_executeStdStratagem(sequence, path);
+
+	if(index > 5){ // Mission stratagems
+		action_mission_2_game(NULL);
 	}
-	else if (e->target == objects.btn_resupply)
-	{
-		uint8_t sequence[8] = {INPUT_DOWN,
-							   INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_RIGHT,
-							   0,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, SND_SUPPLY);
-	}
-	else if (e->target == objects.btn_sos)
-	{
-		uint8_t sequence[8] = {INPUT_UP,
-							   INPUT_DOWN,
-							   INPUT_RIGHT,
-							   INPUT_UP,
-							   0,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, SND_SOS);
-	}
-	else if (e->target == objects.btn_rearm)
-	{
-		uint8_t sequence[8] = {INPUT_UP,
-							   INPUT_UP,
-							   INPUT_LEFT,
-							   INPUT_UP,
-							   INPUT_RIGHT,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, SND_EAGLE_RELOAD);
-	}
-	else if (e->target == objects.btn_hellbomb)
-	{
-		uint8_t sequence[8] = {INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_LEFT,
-							   INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_RIGHT,
-							   INPUT_DOWN,
-							   INPUT_UP};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == objects.btn_seaf)
-	{
-		uint8_t sequence[8] = {INPUT_RIGHT,
-							   INPUT_UP,
-							   INPUT_UP,
-							   INPUT_DOWN,
-							   0,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-}
-
-void action_trigger_stratagem_mission(lv_event_t *e)
-{
-	if (e->target == objects.btn_sssd)
-	{
-		uint8_t sequence[8] = {INPUT_DOWN,
-							   INPUT_DOWN,
-							   INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_UP,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == objects.btn_ud)
-	{
-		uint8_t sequence[8] = {INPUT_LEFT,
-							   INPUT_RIGHT,
-							   INPUT_UP,
-							   INPUT_UP,
-							   INPUT_UP,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == objects.btn_sef)
-	{
-		uint8_t sequence[8] = {INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_DOWN,
-							   INPUT_UP,
-							   0,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == objects.btn_hbd)
-	{
-		uint8_t sequence[8] = {INPUT_LEFT,
-							   INPUT_UP,
-							   INPUT_DOWN,
-							   INPUT_RIGHT,
-							   INPUT_DOWN,
-							   INPUT_DOWN,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == objects.btn_td)
-	{
-		uint8_t sequence[8] = {INPUT_UP,
-							   INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_DOWN,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == objects.btn_pd)
-	{
-		uint8_t sequence[8] = {INPUT_DOWN,
-							   INPUT_DOWN,
-							   INPUT_LEFT,
-							   INPUT_RIGHT,
-							   INPUT_DOWN,
-							   INPUT_DOWN,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == objects.btn_sp)
-	{
-		uint8_t sequence[8] = {INPUT_UP,
-							   INPUT_UP,
-							   INPUT_LEFT,
-							   INPUT_RIGHT,
-							   INPUT_DOWN,
-							   INPUT_DOWN,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == objects.btn_oif)
-	{
-		uint8_t sequence[8] = {INPUT_RIGHT,
-							   INPUT_RIGHT,
-							   INPUT_LEFT,
-							   INPUT_LEFT,
-							   0,
-							   0,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-	else if (e->target == objects.btn_dfv)
-	{
-		uint8_t sequence[8] = {INPUT_UP,
-							   INPUT_LEFT,
-							   INPUT_RIGHT,
-							   INPUT_DOWN,
-							   INPUT_UP,
-							   INPUT_UP,
-							   0,
-							   0};
-
-		_executeStdStratagem(sequence, NULL);
-	}
-
-	action_mission_2_game(NULL);
 }
 
 // Trigger 1st user stratagem
 void action_trigger_stratagem_user(lv_event_t *e)
 {
-	int8_t index = -1;
+	int8_t index = e->user_data;
 
-	if (e->target == objects.custom_stratagem1)
-	{
-		index = 0;
-	}
-	else if (e->target == objects.custom_stratagem2)
-	{
-		index = 1;
-	}
-	else if (e->target == objects.custom_stratagem3)
-	{
-		index = 2;
-	}
-	else if (e->target == objects.custom_stratagem4)
-	{
-		index = 3;
-	}
-	else if (e->target == objects.custom_stratagem5)
-	{
-		index = 4;
-	}
-	else if (e->target == objects.custom_stratagem6)
-	{
-		index = 5;
-	}
-
-	if (index >= 0)
-	{
-		_executeUserStratagem(index);
-	}
-}
-
-// Change HID input delay
-void action_change_delay(lv_event_t *e)
-{
-	int32_t delay = lv_slider_get_value(e->target);
-
-	setDelay(delay * 10, false);
-}
-
-// Change display brightness
-void action_change_brightness(lv_event_t *e)
-{
-	int32_t brightness = lv_slider_get_value(e->target);
-
-	setBrightness(brightness * 10, false);
-}
-
-// Change sound mute (on/off)
-void action_mute_sound(lv_event_t *e)
-{
-	bool muted = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
-
-	setMuted(muted, false);
+	_executeUserStratagem(index);
 }
 
 // Trigger keyboard demo (send "hello" via bluetooth connection to host)
@@ -547,27 +303,6 @@ void action_keyboard_demo(lv_event_t *e)
 						   0};
 
 	setStratagemCode(sequence, 0, true);
-}
-
-// Trigger when tab navigation has changed
-void action_tab_changed(lv_event_t *e)
-{
-	playbackSound(SND_SWIPE);
-}
-
-// Change screen orientation
-void action_flip_screen(lv_event_t *e)
-{
-	bool flip = lv_obj_get_state(e->target) & LV_STATE_CHECKED ? true : false;
-
-	setRotation(flip ? LV_DISP_ROT_270 : LV_DISP_ROT_90, false);
-
-	esp_restart();
-}
-
-void action_restart_device(lv_event_t *e)
-{
-	esp_restart();
 }
 
 char *presetKey(lv_obj_t *button, uint8_t itemIndex)
@@ -666,9 +401,9 @@ void action_get_preset(lv_event_t *e)
 			{
 				int index = -1;
 
-				for (int c = 0; c < sizeof(strategems); c++)
+				for (int c = 0; c < sizeof(strategemItemList); c++)
 				{
-					stratagem item = strategems[c];
+					stratagemItem item = strategemItemList[c];
 
 					if (item.type == type)
 					{

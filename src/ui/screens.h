@@ -121,6 +121,7 @@ typedef struct _objects_t {
     lv_obj_t *lbl_delay;
     lv_obj_t *sld_delay;
     lv_obj_t *dd_connectivity;
+    lv_obj_t *img_connection1;
     lv_obj_t *dd_keymap;
     lv_obj_t *btn_reinforce;
     lv_obj_t *btn_resupply;
@@ -134,7 +135,7 @@ typedef struct _objects_t {
     lv_obj_t *custom_stratagem6;
     lv_obj_t *btn_seaf;
     lv_obj_t *btn_hellbomb;
-    lv_obj_t *img_connection;
+    lv_obj_t *img_connection2;
     lv_obj_t *obj7;
     lv_obj_t *lbl_version;
     lv_obj_t *obj8;

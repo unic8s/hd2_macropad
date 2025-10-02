@@ -2841,7 +2841,7 @@ void create_screen_config() {
                             lv_obj_set_style_pad_left(obj, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_pad_right(obj, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_pad_row(obj, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_pad_column(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_column(obj, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW_WRAP, LV_PART_MAIN | LV_STATE_DEFAULT);
                             {
@@ -2861,6 +2861,14 @@ void create_screen_config() {
                                     lv_dropdown_set_options(obj, "Bluetooth\nUSB");
                                     lv_dropdown_set_selected(obj, 0);
                                     lv_obj_add_event_cb(obj, action_change_connectivity, LV_EVENT_VALUE_CHANGED, (void *)0);
+                                }
+                                {
+                                    // ImgConnection1
+                                    lv_obj_t *obj = lv_img_create(parent_obj);
+                                    objects.img_connection1 = obj;
+                                    lv_obj_set_pos(obj, -2, -42);
+                                    lv_obj_set_size(obj, 36, 36);
+                                    lv_obj_set_style_bg_img_src(obj, &img_btdis, LV_PART_MAIN | LV_STATE_DEFAULT);
                                 }
                                 {
                                     lv_obj_t *obj = lv_btn_create(parent_obj);
@@ -3030,7 +3038,7 @@ void create_screen_game() {
                     objects.btn_reinforce = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 116, 116);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_std, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)0);
                     add_style_button_std(obj);
                     lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_bg_img_src(obj, &img_rf2, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3041,7 +3049,7 @@ void create_screen_game() {
                     objects.btn_resupply = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 116, 116);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_std, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)1);
                     add_style_button_std(obj);
                     lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_bg_img_src(obj, &img_res2, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3052,7 +3060,7 @@ void create_screen_game() {
                     objects.btn_sos = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 116, 116);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_std, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)2);
                     add_style_button_std(obj);
                     lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_bg_img_src(obj, &img_sos2, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3063,7 +3071,7 @@ void create_screen_game() {
                     objects.btn_rearm = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 116, 116);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_std, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)3);
                     add_style_button_std(obj);
                     lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_bg_img_src(obj, &img_er2, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3083,7 +3091,7 @@ void create_screen_game() {
                     objects.custom_stratagem2 = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 116, 116);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_user, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_user, LV_EVENT_CLICKED, (void *)1);
                     add_style_button_std(obj);
                 }
                 {
@@ -3092,7 +3100,7 @@ void create_screen_game() {
                     objects.custom_stratagem3 = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 116, 116);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_user, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_user, LV_EVENT_CLICKED, (void *)2);
                     add_style_button_std(obj);
                 }
                 {
@@ -3101,7 +3109,7 @@ void create_screen_game() {
                     objects.custom_stratagem4 = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 116, 116);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_user, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_user, LV_EVENT_CLICKED, (void *)3);
                     add_style_button_std(obj);
                 }
             }
@@ -3133,7 +3141,7 @@ void create_screen_game() {
                     objects.custom_stratagem5 = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 76, 76);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_user, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_user, LV_EVENT_CLICKED, (void *)4);
                     add_style_button_std(obj);
                 }
                 {
@@ -3142,7 +3150,7 @@ void create_screen_game() {
                     objects.custom_stratagem6 = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 76, 76);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_user, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_user, LV_EVENT_CLICKED, (void *)5);
                     add_style_button_std(obj);
                 }
                 {
@@ -3151,7 +3159,7 @@ void create_screen_game() {
                     objects.btn_seaf = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 76, 76);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_std, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)5);
                     add_style_button_std(obj);
                     lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_bg_img_src(obj, &img_seaf1, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3162,7 +3170,7 @@ void create_screen_game() {
                     objects.btn_hellbomb = obj;
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 76, 76);
-                    lv_obj_add_event_cb(obj, action_trigger_stratagem_std, LV_EVENT_CLICKED, (void *)0);
+                    lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)4);
                     add_style_button_std(obj);
                     lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_bg_img_src(obj, &img_hb1, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3179,15 +3187,6 @@ void create_screen_game() {
             lv_obj_set_style_bg_img_src(obj, &img_icon_back, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
         {
-            // ImgConnection
-            lv_obj_t *obj = lv_img_create(parent_obj);
-            objects.img_connection = obj;
-            lv_obj_set_pos(obj, -2, -42);
-            lv_obj_set_size(obj, 36, 36);
-            lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_bg_img_src(obj, &img_btdis, LV_PART_MAIN | LV_STATE_DEFAULT);
-        }
-        {
             lv_obj_t *obj = lv_btn_create(parent_obj);
             lv_obj_set_pos(obj, -2, -2);
             lv_obj_set_size(obj, 76, 38);
@@ -3195,6 +3194,15 @@ void create_screen_game() {
             add_style_button_std(obj);
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_bg_img_src(obj, &img_icon_flag, LV_PART_MAIN | LV_STATE_DEFAULT);
+        }
+        {
+            // ImgConnection2
+            lv_obj_t *obj = lv_img_create(parent_obj);
+            objects.img_connection2 = obj;
+            lv_obj_set_pos(obj, -2, -42);
+            lv_obj_set_size(obj, 36, 36);
+            lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_bg_img_src(obj, &img_btdis, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
     }
     
@@ -3419,7 +3427,7 @@ void create_screen_mission() {
                             objects.btn_sssd = obj;
                             lv_obj_set_pos(obj, 0, 0);
                             lv_obj_set_size(obj, 76, 76);
-                            lv_obj_add_event_cb(obj, action_trigger_stratagem_mission, LV_EVENT_CLICKED, (void *)0);
+                            lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)6);
                             add_style_button_std(obj);
                             lv_obj_set_style_bg_img_src(obj, &img_ud1, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3457,7 +3465,7 @@ void create_screen_mission() {
                             objects.btn_ud = obj;
                             lv_obj_set_pos(obj, 223, -29);
                             lv_obj_set_size(obj, 76, 76);
-                            lv_obj_add_event_cb(obj, action_trigger_stratagem_mission, LV_EVENT_CLICKED, (void *)0);
+                            lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)7);
                             add_style_button_std(obj);
                             lv_obj_set_style_bg_img_src(obj, &img_ud1, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3495,7 +3503,7 @@ void create_screen_mission() {
                             objects.btn_sef = obj;
                             lv_obj_set_pos(obj, 223, -29);
                             lv_obj_set_size(obj, 76, 76);
-                            lv_obj_add_event_cb(obj, action_trigger_stratagem_mission, LV_EVENT_CLICKED, (void *)0);
+                            lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)8);
                             add_style_button_std(obj);
                             lv_obj_set_style_bg_img_src(obj, &img_sef1, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3533,7 +3541,7 @@ void create_screen_mission() {
                             objects.btn_hbd = obj;
                             lv_obj_set_pos(obj, 110, -136);
                             lv_obj_set_size(obj, 76, 76);
-                            lv_obj_add_event_cb(obj, action_trigger_stratagem_mission, LV_EVENT_CLICKED, (void *)0);
+                            lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)9);
                             add_style_button_std(obj);
                             lv_obj_set_style_bg_img_src(obj, &img_hbd1, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3571,7 +3579,7 @@ void create_screen_mission() {
                             objects.btn_td = obj;
                             lv_obj_set_pos(obj, 223, -29);
                             lv_obj_set_size(obj, 76, 76);
-                            lv_obj_add_event_cb(obj, action_trigger_stratagem_mission, LV_EVENT_CLICKED, (void *)0);
+                            lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)10);
                             add_style_button_std(obj);
                             lv_obj_set_style_bg_img_src(obj, &img_td1, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3609,7 +3617,7 @@ void create_screen_mission() {
                             objects.btn_pd = obj;
                             lv_obj_set_pos(obj, 186, -14);
                             lv_obj_set_size(obj, 76, 76);
-                            lv_obj_add_event_cb(obj, action_trigger_stratagem_mission, LV_EVENT_CLICKED, (void *)0);
+                            lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)11);
                             add_style_button_std(obj);
                             lv_obj_set_style_bg_img_src(obj, &img_hbd1, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3647,7 +3655,7 @@ void create_screen_mission() {
                             objects.btn_sp = obj;
                             lv_obj_set_pos(obj, 223, -29);
                             lv_obj_set_size(obj, 76, 76);
-                            lv_obj_add_event_cb(obj, action_trigger_stratagem_mission, LV_EVENT_CLICKED, (void *)0);
+                            lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)12);
                             add_style_button_std(obj);
                             lv_obj_set_style_bg_img_src(obj, &img_sp1, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3685,7 +3693,7 @@ void create_screen_mission() {
                             objects.btn_oif = obj;
                             lv_obj_set_pos(obj, 110, -136);
                             lv_obj_set_size(obj, 76, 76);
-                            lv_obj_add_event_cb(obj, action_trigger_stratagem_mission, LV_EVENT_CLICKED, (void *)0);
+                            lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)13);
                             add_style_button_std(obj);
                             lv_obj_set_style_bg_img_src(obj, &img_oif1, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -3723,7 +3731,7 @@ void create_screen_mission() {
                             objects.btn_dfv = obj;
                             lv_obj_set_pos(obj, 110, -136);
                             lv_obj_set_size(obj, 76, 76);
-                            lv_obj_add_event_cb(obj, action_trigger_stratagem_mission, LV_EVENT_CLICKED, (void *)0);
+                            lv_obj_add_event_cb(obj, action_trigger_stratagem_base, LV_EVENT_CLICKED, (void *)14);
                             add_style_button_std(obj);
                             lv_obj_set_style_bg_img_src(obj, &img_dfv1, LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[active_theme_index][5]), LV_PART_MAIN | LV_STATE_DEFAULT);

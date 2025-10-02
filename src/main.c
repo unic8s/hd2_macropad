@@ -126,33 +126,43 @@ void updateConnection()
     return;
   }
 
+  lv_img_dsc_t *imgConnection;
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
+
   switch (connectionType)
   {
   case CT_BLUETOOTH:
     // Check bluetooth connection state
     if (ble_connected())
     {
-      lv_obj_set_style_bg_img_src(objects.img_connection, &img_btcon, LV_PART_MAIN | LV_STATE_DEFAULT);
+      imgConnection = &img_btcon;
     }
     else
     {
-      lv_obj_set_style_bg_img_src(objects.img_connection, &img_btdis, LV_PART_MAIN | LV_STATE_DEFAULT);
+      imgConnection = &img_btdis;
     }
     break;
   case CT_USB:
     // Check USB connection state
     if (usb_connected())
     {
-      lv_obj_set_style_bg_img_src(objects.img_connection, &img_us_bcon, LV_PART_MAIN | LV_STATE_DEFAULT);
+      imgConnection = &img_us_bcon;
     }
     else
     {
-      lv_obj_set_style_bg_img_src(objects.img_connection, &img_us_bdis, LV_PART_MAIN | LV_STATE_DEFAULT);
+      imgConnection = &img_us_bdis;
     }
     break;
   default:
     return;
   }
+
+#pragma GCC diagnostic pop
+
+  lv_obj_set_style_bg_img_src(objects.img_connection1, imgConnection, LV_PART_MAIN | LV_STATE_DEFAULT);
+  lv_obj_set_style_bg_img_src(objects.img_connection2, imgConnection, LV_PART_MAIN | LV_STATE_DEFAULT);
 }
 
 // Delay for checking if a the stratagem execution buffer is filled

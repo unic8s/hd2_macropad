@@ -1,7 +1,7 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/6",
-    "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/24",
+    "selectedUserPageObject": "[HD2 Macropad.eez-project]:/userPages/3",
+    "selectedActionObject": "[HD2 Macropad.eez-project]:/actions/23",
     "selectedStyleObject": "[HD2 Macropad.eez-project]:/lvglStyles/styles/1",
     "selectedThemeObject": "[HD2 Macropad.eez-project]:/themes/0",
     "selectedThemeColorObject": "[HD2 Macropad.eez-project]:/colors/0",
@@ -28,7 +28,7 @@
           },
           {
             "type": "border",
-            "selected": 2,
+            "selected": 3,
             "size": 240,
             "location": "right",
             "children": [
@@ -201,10 +201,10 @@
                 {
                   "type": "tab",
                   "id": "#748fcecb-6938-4078-b397-ffe5c7f445c0",
-                  "name": "Mission",
+                  "name": "Game",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/6",
+                    "objectPath": "[HD2 Macropad.eez-project]:/userPages/3",
                     "permanent": false
                   },
                   "icon": "svg:page"
@@ -1058,12 +1058,12 @@
               "1": {
                 "0": {},
                 "1": {},
-                "2": {}
-              },
-              "2": {
-                "1": {
+                "2": {
                   "$selected": true
                 }
+              },
+              "2": {
+                "1": {}
               }
             }
           },
@@ -1115,13 +1115,18 @@
         "0": {
           "0": {
             "0": {},
+            "3": {},
             "4": {}
           },
           "1": {
             "0": {},
+            "2": {},
             "3": {}
           },
-          "2": {}
+          "3": {
+            "0": {}
+          },
+          "4": {}
         }
       },
       "transform": {
@@ -1230,7 +1235,11 @@
               "1": {}
             },
             "7": {},
-            "8": {}
+            "8": {
+              "0": {
+                "$selected": true
+              }
+            }
           }
         }
       },

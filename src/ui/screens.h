@@ -135,7 +135,6 @@ typedef struct _objects_t {
     lv_obj_t *custom_stratagem6;
     lv_obj_t *btn_seaf;
     lv_obj_t *btn_hellbomb;
-    lv_obj_t *cnt_connection_status;
     lv_obj_t *img_connection2;
     lv_obj_t *obj7;
     lv_obj_t *lbl_version;

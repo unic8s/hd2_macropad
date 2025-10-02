@@ -99,10 +99,10 @@ void action_game_2_setup(lv_event_t *e)
 
 void action_game_2_mission(lv_event_t *e)
 {
-	lv_scr_load_anim(objects.mission, LV_SCR_LOAD_ANIM_NONE, 250, 0, false);
+	lv_scr_load_anim(objects.mission, LV_SCR_LOAD_ANIM_NONE, 0, 0, false);
 }
 
 void action_mission_2_game(lv_event_t *e)
 {
-	lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_FADE_IN, 250, 0, false);
+	lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_NONE, 0, 0, false);
 }

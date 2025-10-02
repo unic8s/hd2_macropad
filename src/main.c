@@ -162,21 +162,6 @@ void updateConnection()
 
   lv_obj_set_style_bg_img_src(objects.img_connection1, imgConnection, LV_PART_MAIN | LV_STATE_DEFAULT);
   lv_obj_set_style_bg_img_src(objects.img_connection2, imgConnection, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-  if (connected)
-  {
-    lv_obj_add_flag(objects.cnt_connection_status, LV_OBJ_FLAG_HIDDEN);
-  }
-  else
-  {
-    lv_obj_clear_flag(objects.cnt_connection_status, LV_OBJ_FLAG_HIDDEN);
-
-    lv_obj_t *currentScreen = lv_scr_act();
-
-    if(currentScreen == objects.mission){
-      action_mission_2_game(NULL);
-    }
-  }
 }
 
 // Delay for checking if a the stratagem execution buffer is filled

@@ -2977,11 +2977,12 @@ void create_screen_config() {
             lv_obj_add_flag(obj, LV_OBJ_FLAG_OVERFLOW_VISIBLE);
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_column(obj, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
             {
                 lv_obj_t *parent_obj = obj;
                 {
                     lv_obj_t *obj = lv_btn_create(parent_obj);
-                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_pos(obj, 3, 0);
                     lv_obj_set_size(obj, 76, LV_PCT(100));
                     lv_obj_add_event_cb(obj, action_config_2_reset, LV_EVENT_CLICKED, (void *)0);
                     add_style_button_std(obj);

@@ -40,21 +40,7 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ### Setup
 
-![](screens/setup_rifle.png)
-
-![](screens/setup_special.png)
-
-![](screens/setup_backpack.png)
-
-![](screens/setup_supply.png)
-
-![](screens/setup_sentry.png)
-
-![](screens/setup_ground.png)
-
-![](screens/setup_strike.png)
-
-![](screens/setup_eagle.png)
+![](screens/setup.png)
 
 ### Config
 
@@ -65,6 +51,10 @@ If you enjoy the project and want to support our private work feel free to make 
 ### Game (example configuration)
 
 ![](screens/game.png)
+
+### Mission
+
+![](screens/mission.png)
 
 ## Credits and special thanks
 

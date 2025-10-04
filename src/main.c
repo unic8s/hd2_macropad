@@ -7,8 +7,13 @@
 #include <esp_chip_info.h>
 #include <esp_system.h>
 #include <esp_heap_caps.h>
-#include "ui/ui.h"
-
+#include <ui/ui.h>
+#include <ui/vars.h>
+#include <ui/screens.h>
+#include <ui/actions.h>
+#include <ui/images.h>
+#include <ui/ui_events.h>
+#include <ui/ui_post.h>
 #include "driver/gpio.h"
 #include "hid_dev.h"
 #include "i2s_player.h"
@@ -122,7 +127,8 @@ void updateConnection()
     return;
   }
 
-  lv_style_selector_t styleSelector = LV_PART_MAIN | LV_STATE_DEFAULT;
+  lv_img_dsc_t *imgConnection;
+  bool connected = false;
 
   switch (connectionType)
   {
@@ -130,27 +136,32 @@ void updateConnection()
     // Check bluetooth connection state
     if (ble_connected())
     {
-      lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_bt_con_png, styleSelector);
+      imgConnection = (lv_img_dsc_t *)&img_btcon;
+      connected = true;
     }
     else
     {
-      lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_bt_dis_png, styleSelector);
+      imgConnection = (lv_img_dsc_t *)&img_btdis;
     }
     break;
   case CT_USB:
     // Check USB connection state
     if (usb_connected())
     {
-      lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_usb_con_png, styleSelector);
+      imgConnection = (lv_img_dsc_t *)&img_us_bcon;
+      connected = true;
     }
     else
     {
-      lv_obj_set_style_bg_img_src(ui_CntConnection, &ui_img_usb_dis_png, styleSelector);
+      imgConnection = (lv_img_dsc_t *)&img_us_bdis;
     }
     break;
   default:
     return;
   }
+
+  lv_obj_set_style_bg_img_src(objects.img_connection1, imgConnection, LV_PART_MAIN | LV_STATE_DEFAULT);
+  lv_obj_set_style_bg_img_src(objects.img_connection2, imgConnection, LV_PART_MAIN | LV_STATE_DEFAULT);
 }
 
 // Delay for checking if a the stratagem execution buffer is filled
@@ -257,6 +268,7 @@ void app_main()
 
   // Start LVGL
   ui_init();
+  ui_post();
 
   // Release the mutex
   bsp_display_unlock();
@@ -278,7 +290,7 @@ void app_main()
   char softwareVersion[12];
   strcpy(softwareVersion, SW_VER);
 
-  lv_label_set_text(ui_LblVersion, softwareVersion);
+  lv_label_set_text(objects.lbl_version, softwareVersion);
 
   updateConnection();
   updateStratagemSelection();

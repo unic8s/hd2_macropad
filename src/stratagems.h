@@ -3,6 +3,7 @@
 
 #include <esp_system.h>
 #include "ui/ui_assignment.h"
+#include "ui/images.h"
 #include "main.h"
 
 // Identifiers for inputs (UP/DOWN/LEFT/RIGHT)
@@ -17,28 +18,34 @@ typedef struct
 {
     uint8_t sequence[8];
     char *soundPath;
-    const ui_theme_variable_t *color;
+    const int color;
     const lv_img_dsc_t *imgHiRes;
     enum stratagemType type;
-} stratagem;
+} stratagemItem;
+
+typedef struct
+{
+    uint8_t sequence[8];
+    char *soundPath;
+} stratagemBase;
 
 // List of all available stratagems and corresponding data
-const stratagem strategems[] = {
+const stratagemItem strategemItemList[] = {
     // 0
     // MG-43 Machine Gun
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_mg2_png,
+        sgBlue,
+        &img_mg2,
         SG_MG},
     // 1
     // APW-1 Anti-Materiel Rifle
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_DOWN, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_amr2_png,
+        sgBlue,
+        &img_amr2,
         SG_AMR},
 
     // 2
@@ -46,8 +53,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_sw2_png,
+        sgBlue,
+        &img_sw2,
         SG_SW},
 
     // 3
@@ -55,8 +62,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_eat2_png,
+        sgBlue,
+        &img_eat2,
         SG_EAT},
 
     // 4
@@ -64,8 +71,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_c2_png,
+        sgBlue,
+        &img_c2,
         SG_C},
 
     // 5
@@ -73,8 +80,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_rr2_png,
+        sgBlue,
+        &img_rr2,
         SG_RR},
 
     // 6
@@ -82,8 +89,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_ft2_png,
+        sgBlue,
+        &img_ft2,
         SG_FT},
 
     // 7
@@ -91,8 +98,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_RIGHT, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_ac2_png,
+        sgBlue,
+        &img_ac2,
         SG_AC},
 
     // 8
@@ -100,8 +107,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_hmg2_png,
+        sgBlue,
+        &img_hmg2,
         SG_HMG},
 
     // 9
@@ -109,8 +116,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_rg2_png,
+        sgBlue,
+        &img_rg2,
         SG_RG},
 
     // 10
@@ -118,8 +125,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_spr2_png,
+        sgBlue,
+        &img_spr2,
         SG_SPR},
 
     // 11
@@ -127,8 +134,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_gl2_png,
+        sgBlue,
+        &img_gl2,
         SG_GL},
 
     // 12
@@ -136,8 +143,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_lc2_png,
+        sgBlue,
+        &img_lc2,
         SG_LC},
 
     // 13
@@ -145,8 +152,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_LEFT, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_at2_png,
+        sgBlue,
+        &img_at2,
         SG_AT},
 
     // 14
@@ -154,8 +161,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_qc2_png,
+        sgBlue,
+        &img_qc2,
         SG_QC},
 
     // 15
@@ -163,8 +170,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_arl2_png,
+        sgBlue,
+        &img_arl2,
         SG_ARL},
 
     // 16
@@ -172,8 +179,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_LEFT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_ste2_png,
+        sgBlue,
+        &img_ste2,
         SG_STE},
 
     // 17
@@ -181,8 +188,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_jp2_png,
+        sgBlue,
+        &img_jp2,
         SG_JP},
 
     // 18
@@ -190,8 +197,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_sup2_png,
+        sgBlue,
+        &img_sup2,
         SG_SUP},
 
     // 19
@@ -199,8 +206,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_LEFT, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_bsb2_png,
+        sgBlue,
+        &img_bsb2,
         SG_BSB},
 
     // 20
@@ -208,8 +215,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_sgp2_png,
+        sgBlue,
+        &img_sgp2,
         SG_SGP},
 
     // 21
@@ -217,8 +224,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_gd2_png,
+        sgBlue,
+        &img_gd2,
         SG_GD},
 
     // 22
@@ -226,8 +233,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_gdr2_png,
+        sgBlue,
+        &img_gdr2,
         SG_GDR},
 
     // 23
@@ -235,8 +242,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_UP, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_gdb2_png,
+        sgBlue,
+        &img_gdb2,
         SG_GDB},
 
     // 24
@@ -244,8 +251,8 @@ const stratagem strategems[] = {
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, 0},
         SND_BOT,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_pe2_png,
+        sgBlue,
+        &img_pe2,
         SG_PE},
 
     // 25
@@ -253,8 +260,8 @@ const stratagem strategems[] = {
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_UP, 0},
         SND_BOT,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_ee2_png,
+        sgBlue,
+        &img_ee2,
         SG_EE},
 
     // 26
@@ -262,8 +269,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0},
         SND_SENTRY,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_hmge2_png,
+        sgGreen,
+        &img_hmge2,
         SG_HMGE},
 
     // 27
@@ -271,8 +278,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_SHIELD,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_sgr2_png,
+        sgGreen,
+        &img_sgr2,
         SG_SGR},
 
     // 28
@@ -280,8 +287,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_SHIELD,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_tt2_png,
+        sgGreen,
+        &img_tt2,
         SG_TT},
 
     // 29
@@ -289,8 +296,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
         SND_MINES,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_apm2_png,
+        sgGreen,
+        &img_apm2,
         SG_APM},
 
     // 30
@@ -298,8 +305,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0},
         SND_MINES,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_im2_png,
+        sgGreen,
+        &img_im2,
         SG_IM},
 
     // 31
@@ -307,8 +314,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0, 0},
         SND_MINES,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_atm2_png,
+        sgGreen,
+        &img_atm2,
         SG_ATM},
 
     // 32
@@ -316,8 +323,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
         SND_SENTRY,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_mgs2_png,
+        sgGreen,
+        &img_mgs2,
         SG_MGS},
 
     // 33
@@ -325,8 +332,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0, 0},
         SND_SENTRY,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_gs2_png,
+        sgGreen,
+        &img_gs2,
         SG_GS},
 
     // 34
@@ -334,8 +341,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
         SND_MORTAR,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_ms2_png,
+        sgGreen,
+        &img_ms2,
         SG_MS},
 
     // 35
@@ -343,8 +350,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_UP, 0, 0},
         SND_SENTRY,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_acs2_png,
+        sgGreen,
+        &img_acs2,
         SG_ACS},
 
     // 36
@@ -352,8 +359,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0},
         SND_SENTRY,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_rs2_png,
+        sgGreen,
+        &img_rs2,
         SG_RS},
 
     // 37
@@ -361,8 +368,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SND_MORTAR,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_ems2_png,
+        sgGreen,
+        &img_ems2,
         SG_EMS},
 
     // 38
@@ -370,8 +377,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_ogb2_png,
+        sgRed,
+        &img_ogb2,
         SG_OGB},
 
     // 39
@@ -379,8 +386,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_oas2_png,
+        sgRed,
+        &img_oas2,
         SG_OAS},
 
     // 40
@@ -388,8 +395,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_1202_png,
+        sgRed,
+        &img_1202,
         SG_120},
 
     // 41
@@ -397,8 +404,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_3802_png,
+        sgRed,
+        &img_3802,
         SG_380},
 
     // 42
@@ -406,8 +413,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_owb2_png,
+        sgRed,
+        &img_owb2,
         SG_OWB},
 
     // 43
@@ -415,8 +422,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_ol2_png,
+        sgRed,
+        &img_ol2,
         SG_OL},
 
     // 44
@@ -424,8 +431,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_UP, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_ors2_png,
+        sgRed,
+        &img_ors2,
         SG_ORS},
 
     // 45
@@ -433,8 +440,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_ops2_png,
+        sgRed,
+        &img_ops2,
         SG_OPS},
 
     // 46
@@ -442,8 +449,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_ogs2_png,
+        sgRed,
+        &img_ogs2,
         SG_OGS},
 
     // 47
@@ -451,8 +458,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_oes2_png,
+        sgRed,
+        &img_oes2,
         SG_OES},
 
     // 48
@@ -460,8 +467,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_oss2_png,
+        sgRed,
+        &img_oss2,
         SG_OSS},
 
     // 49
@@ -469,8 +476,8 @@ const stratagem strategems[] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, 0, 0},
         SND_ORBITAL,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_onb2_png,
+        sgRed,
+        &img_onb2,
         SG_ONB},
 
     // 50
@@ -478,8 +485,8 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0, 0, 0},
         SND_EAGLE,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_esr2_png,
+        sgRed,
+        &img_esr2,
         SG_SR},
 
     // 51
@@ -487,8 +494,8 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         SND_EAGLE,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_ea2_png,
+        sgRed,
+        &img_ea2,
         SG_A},
 
     // 52
@@ -496,8 +503,8 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SND_EAGLE,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_ecb2_png,
+        sgRed,
+        &img_ecb2,
         SG_CB},
 
     // 53
@@ -505,8 +512,8 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
         SND_EAGLE,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_ena2_png,
+        sgRed,
+        &img_ena2,
         SG_NA},
 
     // 54
@@ -514,8 +521,8 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0},
         SND_EAGLE,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_ess2_png,
+        sgRed,
+        &img_ess2,
         SG_ESS},
 
     // 55
@@ -523,8 +530,8 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, 0, 0, 0, 0},
         SND_EAGLE,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_e1102_png,
+        sgRed,
+        &img_e1102,
         SG_110},
 
     // 56
@@ -532,8 +539,8 @@ const stratagem strategems[] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SND_EAGLE,
-        _ui_theme_color_sgRed,
-        &ui_img_sg_e5002_png,
+        sgRed,
+        &img_e5002,
         SG_500},
 
     // 57
@@ -541,8 +548,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_UP, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_ds2_png,
+        sgBlue,
+        &img_ds2,
         SG_DS},
 
     // 58
@@ -550,8 +557,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_RIGHT, 0, 0},
         SND_MINES,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_ate2_png,
+        sgGreen,
+        &img_ate2,
         SG_ATE},
 
     // 59
@@ -559,8 +566,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0},
         SND_SENTRY,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_fs2_png,
+        sgGreen,
+        &img_fs2,
         SG_FS},
 
     // 60
@@ -568,8 +575,8 @@ const stratagem strategems[] = {
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_frv2_png,
+        sgBlue,
+        &img_frv2,
         SG_FRV},
 
     // 61
@@ -577,8 +584,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_UP, 0, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_ph2_png,
+        sgBlue,
+        &img_ph2,
         SG_PH},
 
     // 62
@@ -586,8 +593,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
         SND_MINES,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_gm2_png,
+        sgGreen,
+        &img_gm2,
         SG_GM},
 
     // 63
@@ -595,8 +602,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_wsp2_png,
+        sgBlue,
+        &img_wsp2,
         SG_WSP},
 
     // 64
@@ -604,8 +611,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_SENTRY,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_gb2_png,
+        sgGreen,
+        &img_gb2,
         SG_GB},
 
     // 65
@@ -613,8 +620,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_hp2_png,
+        sgBlue,
+        &img_hp2,
         SG_HP},
 
     // 66
@@ -622,8 +629,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_otf2_png,
+        sgBlue,
+        &img_otf2,
         SG_OTF},
 
     // 67
@@ -631,8 +638,8 @@ const stratagem strategems[] = {
     {
         {INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_de2_png,
+        sgBlue,
+        &img_de2,
         SG_DE},
 
     // 68
@@ -640,8 +647,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_gdk2_png,
+        sgBlue,
+        &img_gdk2,
         SG_GDK},
 
     // 69
@@ -649,8 +656,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_e2_png,
+        sgBlue,
+        &img_e2,
         SG_E},
 
     // 70
@@ -658,8 +665,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0},
         SND_SENTRY,
-        _ui_theme_color_sgGreen,
-        &ui_img_sg_ls2_png,
+        sgGreen,
+        &img_ls2,
         SG_LS},
 
     // 71
@@ -667,8 +674,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_wp2_png,
+        sgBlue,
+        &img_wp2,
         SG_WP},
 
     // 72
@@ -676,8 +683,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, 0, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_en2_png,
+        sgBlue,
+        &img_en2,
         SG_EN},
 
     // 73
@@ -685,8 +692,8 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_ss2_png,
+        sgBlue,
+        &img_ss2,
         SG_SS},
 
     // 74
@@ -694,8 +701,99 @@ const stratagem strategems[] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0},
         SND_BACKPACK,
-        _ui_theme_color_sgBlue,
-        &ui_img_sg_sg2_png,
+        sgBlue,
+        &img_sg2,
         SG_SG}};
+
+const stratagemBase strategemBaseList[] = {
+    // 0
+    // Reinforce
+    {
+        {INPUT_UP, INPUT_DOWN, INPUT_RIGHT, INPUT_LEFT, INPUT_UP, 0, 0, 0},
+        NULL},
+
+    // 1
+    // Resupply
+    {
+        {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
+        NULL},
+
+    // 2
+    // SOS
+    {
+        {INPUT_UP, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0},
+        NULL},
+
+    // 3
+    // Eagle rearm
+    {
+        {INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
+        NULL},
+
+    // 4
+    // Hellbomb
+    {
+        {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP},
+        NULL},
+
+    // 5
+    // S.E.A.F.
+    {
+        {INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0},
+        NULL},
+
+    // 6
+    // SSSD Delivery
+    {
+        {INPUT_DOWN, INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0, 0},
+        NULL},
+
+    // 7
+    // Upload data
+    {
+        {INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_UP, 0, 0, 0},
+        NULL},
+
+    // 8
+    // Super Earth Flag
+    {
+        {INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
+        NULL},
+
+    // 9
+    // Hive breaker drill
+    {
+        {INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0},
+        NULL},
+
+    // 10
+    // Tectonic drill
+    {
+        {INPUT_UP, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_UP, INPUT_DOWN, 0, 0},
+        NULL},
+
+    // 11
+    // Prospection drill
+    {
+        {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0},
+        NULL},
+
+    // 12
+    // Seismic probe
+    {
+        {INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0},
+        NULL},
+
+    // 13
+    // Orbital illumination flare
+    {
+        {INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, INPUT_LEFT, 0, 0, 0, 0},
+        NULL},
+
+    // 14
+    // Dark fluid vessel
+    {
+        {INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0},
+        NULL}};
 
 #endif

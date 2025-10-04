@@ -44,6 +44,15 @@ extern "C"
 #define SND_SENTRY "S:assets/sound/snt.wav"
 #define SND_WEAPON "S:assets/sound/weap.wav"
 
+enum styleColors
+{
+    colorTheme = 0xFFFFFF,
+    colorActive = 0xFFDF00,
+    sgRed = 0xDE7B6C,
+    sgGreen = 0x679552,
+    sgBlue = 0x49ADC9
+};
+
 void app_main();
 void playbackSound(char *path);
 void setStratagemCode(uint8_t sequence[8], uint8_t mask, bool plain);

@@ -7,6 +7,7 @@ extern "C"
 #endif
 
 #include "ui.h"
+#include "screens.h"
 #include <esp_system.h>
 
     enum stratagemType
@@ -98,92 +99,92 @@ extern "C"
     };
 
     // Assign stratagems index to UI buttons
-    void assignStratagems(lv_event_t *e)
+    void assignStratagems()
     {
         // Weapons
-        ui_WeaponsAC->user_data = (void *)SG_AC;
-        ui_WeaponsAMR->user_data = (void *)SG_AMR;
-        ui_WeaponsARL->user_data = (void *)SG_ARL;
-        ui_WeaponsAT->user_data = (void *)SG_AT;
-        ui_WeaponsC->user_data = (void *)SG_C;
-        ui_WeaponsEAT->user_data = (void *)SG_EAT;
-        ui_WeaponsFT->user_data = (void *)SG_FT;
-        ui_WeaponsGL->user_data = (void *)SG_GL;
-        ui_WeaponsHMG->user_data = (void *)SG_HMG;
-        ui_WeaponsLC->user_data = (void *)SG_LC;
-        ui_WeaponsMG->user_data = (void *)SG_MG;
-        ui_WeaponsQC->user_data = (void *)SG_QC;
-        ui_WeaponsRG->user_data = (void *)SG_RG;
-        ui_WeaponsRR->user_data = (void *)SG_RR;
-        ui_WeaponsSPR->user_data = (void *)SG_SPR;
-        ui_WeaponsWSP->user_data = (void *)SG_WSP;
-        ui_WeaponsSTE->user_data = (void *)SG_STE;
-        ui_WeaponsSW->user_data = (void *)SG_SW;
-        ui_WeaponsDE->user_data = (void *)SG_DE;
-        ui_WeaponsE->user_data = (void *)SG_E;
-        ui_WeaponsEN->user_data = (void *)SG_EN;
-        ui_WeaponsSG->user_data = (void *)SG_SG;
+        objects.weapons_ac->user_data = (void *)SG_AC;
+        objects.weapons_amr->user_data = (void *)SG_AMR;
+        objects.weapons_arl->user_data = (void *)SG_ARL;
+        objects.weapons_at->user_data = (void *)SG_AT;
+        objects.weapons_c->user_data = (void *)SG_C;
+        objects.weapons_eat->user_data = (void *)SG_EAT;
+        objects.weapons_ft->user_data = (void *)SG_FT;
+        objects.weapons_gl->user_data = (void *)SG_GL;
+        objects.weapons_hmg->user_data = (void *)SG_HMG;
+        objects.weapons_lc->user_data = (void *)SG_LC;
+        objects.weapons_mg->user_data = (void *)SG_MG;
+        objects.weapons_qc->user_data = (void *)SG_QC;
+        objects.weapons_rg->user_data = (void *)SG_RG;
+        objects.weapons_rr->user_data = (void *)SG_RR;
+        objects.weapons_spr->user_data = (void *)SG_SPR;
+        objects.weapons_wsp->user_data = (void *)SG_WSP;
+        objects.weapons_ste->user_data = (void *)SG_STE;
+        objects.weapons_sw->user_data = (void *)SG_SW;
+        objects.weapons_de->user_data = (void *)SG_DE;
+        objects.weapons_e->user_data = (void *)SG_E;
+        objects.weapons_en->user_data = (void *)SG_EN;
+        objects.weapons_sg->user_data = (void *)SG_SG;
 
         // Backpacks
-        ui_BackpacksBSB->user_data = (void *)SG_BSB;
-        ui_BackpacksEE->user_data = (void *)SG_EE;
-        ui_BackpacksGD->user_data = (void *)SG_GD;
-        ui_BackpacksGDB->user_data = (void *)SG_GDB;
-        ui_BackpacksGDR->user_data = (void *)SG_GDR;
-        ui_BackpacksJP->user_data = (void *)SG_JP;
-        ui_BackpacksPE->user_data = (void *)SG_PE;
-        ui_BackpacksSGP->user_data = (void *)SG_SGP;
-        ui_BackpacksSUP->user_data = (void *)SG_SUP;
-        ui_BackpacksDS->user_data = (void *)SG_DS;
-        ui_BackpacksFRV->user_data = (void *)SG_FRV;
-        ui_BackpacksPH->user_data = (void *)SG_PH;
-        ui_BackpacksHP->user_data = (void *)SG_HP;
-        ui_BackpacksOTF->user_data = (void *)SG_OTF;
-        ui_BackpacksGDK->user_data = (void *)SG_GDK;
-        ui_BackpacksWP->user_data = (void *)SG_WP;
+        objects.backpack_bsb->user_data = (void *)SG_BSB;
+        objects.supply_ee->user_data = (void *)SG_EE;
+        objects.backpack_gd->user_data = (void *)SG_GD;
+        objects.backpack_gdb->user_data = (void *)SG_GDB;
+        objects.backpack_gdr->user_data = (void *)SG_GDR;
+        objects.backpack_jp->user_data = (void *)SG_JP;
+        objects.supply_pe->user_data = (void *)SG_PE;
+        objects.backpack_sgp->user_data = (void *)SG_SGP;
+        objects.backpack_sup->user_data = (void *)SG_SUP;
+        objects.backpack_ds->user_data = (void *)SG_DS;
+        objects.supply_frv->user_data = (void *)SG_FRV;
+        objects.backpack_ph->user_data = (void *)SG_PH;
+        objects.backpack_hp->user_data = (void *)SG_HP;
+        objects.supply_otf->user_data = (void *)SG_OTF;
+        objects.backpack_gdk->user_data = (void *)SG_GDK;
+        objects.backpack_wp->user_data = (void *)SG_WP;
 
         // Stationary
-        ui_StationaryACS->user_data = (void *)SG_ACS;
-        ui_StationaryAPM->user_data = (void *)SG_APM;
-        ui_StationaryATM->user_data = (void *)SG_ATM;
-        ui_StationaryEMS->user_data = (void *)SG_EMS;
-        ui_StationaryGS->user_data = (void *)SG_GS;
-        ui_StationaryHMGE->user_data = (void *)SG_HMGE;
-        ui_StationaryIM->user_data = (void *)SG_IM;
-        ui_StationaryMGS->user_data = (void *)SG_MGS;
-        ui_StationaryMS->user_data = (void *)SG_MS;
-        ui_StationaryRS->user_data = (void *)SG_RS;
-        ui_StationarySGR->user_data = (void *)SG_SGR;
-        ui_StationaryTT->user_data = (void *)SG_TT;
-        ui_StationaryATE->user_data = (void *)SG_ATE;
-        ui_StationaryFS->user_data = (void *)SG_FS;
-        ui_StationaryGM->user_data = (void *)SG_GM;
-        ui_StationaryGB->user_data = (void *)SG_GB;
-        ui_StationaryLS->user_data = (void *)SG_LS;
-        ui_StationarySS->user_data = (void *)SG_SS;
+        objects.sentry_acs->user_data = (void *)SG_ACS;
+        objects.ground_apm->user_data = (void *)SG_APM;
+        objects.ground_atm->user_data = (void *)SG_ATM;
+        objects.sentry_ems->user_data = (void *)SG_EMS;
+        objects.sentry_gs->user_data = (void *)SG_GS;
+        objects.sentry_hmge->user_data = (void *)SG_HMGE;
+        objects.ground_im->user_data = (void *)SG_IM;
+        objects.sentry_mgs->user_data = (void *)SG_MGS;
+        objects.sentry_ms->user_data = (void *)SG_MS;
+        objects.sentry_rs->user_data = (void *)SG_RS;
+        objects.ground_sgr->user_data = (void *)SG_SGR;
+        objects.ground_tt->user_data = (void *)SG_TT;
+        objects.sentry_ate->user_data = (void *)SG_ATE;
+        objects.sentry_fs->user_data = (void *)SG_FS;
+        objects.ground_gm->user_data = (void *)SG_GM;
+        objects.ground_gb->user_data = (void *)SG_GB;
+        objects.sentry_ls->user_data = (void *)SG_LS;
+        objects.supply_ss->user_data = (void *)SG_SS;
 
         // Strikes
-        ui_Strikes120->user_data = (void *)SG_120;
-        ui_Strikes380->user_data = (void *)SG_380;
-        ui_StrikesOAS->user_data = (void *)SG_OAS;
-        ui_StrikesOES->user_data = (void *)SG_OES;
-        ui_StrikesOGB->user_data = (void *)SG_OGB;
-        ui_StrikesOGS->user_data = (void *)SG_OGS;
-        ui_StrikesOL->user_data = (void *)SG_OL;
-        ui_StrikesONB->user_data = (void *)SG_ONB;
-        ui_StrikesOPS->user_data = (void *)SG_OPS;
-        ui_StrikesORS->user_data = (void *)SG_ORS;
-        ui_StrikesOSS->user_data = (void *)SG_OSS;
-        ui_StrikesOWB->user_data = (void *)SG_OWB;
+        objects.strike120->user_data = (void *)SG_120;
+        objects.strike380->user_data = (void *)SG_380;
+        objects.strike_oas->user_data = (void *)SG_OAS;
+        objects.strike_oes->user_data = (void *)SG_OES;
+        objects.strike_ogb->user_data = (void *)SG_OGB;
+        objects.strike_ogs->user_data = (void *)SG_OGS;
+        objects.strike_ol->user_data = (void *)SG_OL;
+        objects.strike_onb->user_data = (void *)SG_ONB;
+        objects.strike_ops->user_data = (void *)SG_OPS;
+        objects.strike_ors->user_data = (void *)SG_ORS;
+        objects.strike_oss->user_data = (void *)SG_OSS;
+        objects.strike_owb->user_data = (void *)SG_OWB;
 
         // Eagle
-        ui_Eagle110->user_data = (void *)SG_110;
-        ui_Eagle500->user_data = (void *)SG_500;
-        ui_EagleA->user_data = (void *)SG_A;
-        ui_EagleCB->user_data = (void *)SG_CB;
-        ui_EagleNA->user_data = (void *)SG_NA;
-        ui_EagleSR->user_data = (void *)SG_SR;
-        ui_EagleSS->user_data = (void *)SG_ESS;
+        objects.eagle110->user_data = (void *)SG_110;
+        objects.eagle500->user_data = (void *)SG_500;
+        objects.eagle_a->user_data = (void *)SG_A;
+        objects.eagle_cb->user_data = (void *)SG_CB;
+        objects.eagle_na->user_data = (void *)SG_NA;
+        objects.eagle_sr->user_data = (void *)SG_SR;
+        objects.eagle_ss->user_data = (void *)SG_ESS;
     }
 
 #ifdef __cplusplus

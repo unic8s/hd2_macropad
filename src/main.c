@@ -128,7 +128,6 @@ void updateConnection()
   }
 
   lv_img_dsc_t *imgConnection;
-  bool connected = false;
 
   switch (connectionType)
   {
@@ -137,7 +136,6 @@ void updateConnection()
     if (ble_connected())
     {
       imgConnection = (lv_img_dsc_t *)&img_btcon;
-      connected = true;
     }
     else
     {
@@ -149,7 +147,6 @@ void updateConnection()
     if (usb_connected())
     {
       imgConnection = (lv_img_dsc_t *)&img_us_bcon;
-      connected = true;
     }
     else
     {

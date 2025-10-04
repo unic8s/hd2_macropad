@@ -385,7 +385,7 @@ void action_get_preset(lv_event_t *e)
 
 			if (child == NULL)
 			{
-				if (listIndex < 6)
+				if (listIndex < sizeof(lists))
 				{
 					listIndex++;
 					childIndex = 0;

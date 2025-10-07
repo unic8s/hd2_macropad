@@ -55,12 +55,6 @@ int inputDelay = 100;
 // Rotation of screen (default: 90)
 int screenRotation = LV_DISP_ROT_90;
 
-// Battery status (0-4 level / -1 charging / -2 no battery)
-int batteryStatus = -2;
-
-// Batter Management info task handle
-TaskHandle_t xHandleBMinfo = NULL;
-
 // Set stratagem code sequence which should be executed
 // sequence - keycode buffer
 // mask - modifier keys

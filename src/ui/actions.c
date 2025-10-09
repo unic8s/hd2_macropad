@@ -94,6 +94,8 @@ void action_config_2_setup(lv_event_t *e)
 
 void action_game_2_setup(lv_event_t *e)
 {
+	resetCooldowns();
+
 	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 1000, 0, false);
 }
 

@@ -3,7 +3,7 @@
 #include "ui_events.h"
 
 
-#define ANIMATION_DURATION 100
+extern lv_obj_t *cooldownLabels[MAX_USER_STRATAGEMS];
 
 
 void ui_post()
@@ -37,4 +37,13 @@ void ui_post()
   }
 
   lv_obj_add_flag(objects.msg_box, LV_OBJ_FLAG_HIDDEN);
+
+  cooldownLabels[0] = objects.label_cooldown1;
+  cooldownLabels[1] = objects.label_cooldown2;
+  cooldownLabels[2] = objects.label_cooldown3;
+  cooldownLabels[3] = objects.label_cooldown4;
+  cooldownLabels[4] = objects.label_cooldown5;
+  cooldownLabels[5] = objects.label_cooldown6;
+
+  resetCooldowns();
 }

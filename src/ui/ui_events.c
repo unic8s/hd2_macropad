@@ -8,6 +8,7 @@
 #include "screens.h"
 #include "hid_dev.h"
 #include "esp_log.h"
+#include "esp_timer.h"
 #include "stratagems.h"
 #include "i2s_player.h"
 #include "main.h"
@@ -18,8 +19,6 @@
 
 const char *TAG_EVT = "Events";
 
-#define MAX_USER_STRATAGEMS 6
-
 // User button list
 lv_obj_t *buttons[MAX_USER_STRATAGEMS];
 // Stratagem list index of user buttons
@@ -28,6 +27,9 @@ int indices[MAX_USER_STRATAGEMS];
 int types[MAX_USER_STRATAGEMS];
 // Amount of user assigned stratagems
 uint8_t strategemsAmount = 0;
+
+lv_obj_t *cooldownLabels[MAX_USER_STRATAGEMS];
+uint64_t cooldownValues[MAX_USER_STRATAGEMS];
 
 lv_timer_t *timerMsg = NULL;
 
@@ -262,6 +264,8 @@ void _executeUserStratagem(uint8_t index)
 
 	setStratagemCode(item.sequence, INPUT_CTRL_MASK, false);
 
+	cooldownValues[index] = getNow() + item.cooldown;
+
 	char *path = item.soundPath;
 
 	playbackSound(path);
@@ -483,4 +487,19 @@ void hideMsgBox(lv_timer_t *timer)
 	}
 
 	lv_obj_add_flag(objects.msg_box, LV_OBJ_FLAG_HIDDEN);
+}
+
+void resetCooldowns()
+{
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
+	{
+		lv_obj_add_flag(cooldownLabels[c], LV_OBJ_FLAG_HIDDEN);
+
+		cooldownValues[c] = 0;
+	}
+}
+
+uint64_t getNow()
+{
+	return esp_timer_get_time() / 1000000;
 }

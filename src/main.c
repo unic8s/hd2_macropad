@@ -55,6 +55,10 @@ int inputDelay = 100;
 // Rotation of screen (default: 90)
 int screenRotation = LV_DISP_ROT_90;
 
+extern lv_obj_t *cooldownLabels[MAX_USER_STRATAGEMS];
+extern uint64_t cooldownValues[MAX_USER_STRATAGEMS];
+uint16_t lastCooldownDiffs[MAX_USER_STRATAGEMS];
+
 // Set stratagem code sequence which should be executed
 // sequence - keycode buffer
 // mask - modifier keys
@@ -229,6 +233,54 @@ void hid_input_task(void *pvParameters)
   }
 }
 
+void ui_update_task(lv_timer_t *timer)
+{
+  for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
+  {
+    uint64_t cooldownValue = cooldownValues[c];
+    lv_obj_t *cooldownLabel = cooldownLabels[c];
+    int16_t diff = cooldownValue - getNow();
+
+    if (cooldownValue > 0 && diff > 0)
+    {
+      if (lastCooldownDiffs[c] == diff)
+      {
+        continue;
+      }
+
+      lastCooldownDiffs[c] = diff;
+
+      uint8_t min = 0;
+      uint16_t sec = diff;
+
+      while (sec >= 60)
+      {
+        min++;
+        sec -= 60;
+      }
+
+      char *textCooldown = (char *)malloc(8 * sizeof(char));
+      sprintf(textCooldown, "%d:%02d", min, sec);
+
+      lv_label_set_text(cooldownLabel, (void *)textCooldown);
+
+      if (lv_obj_has_flag(cooldownLabel, LV_OBJ_FLAG_HIDDEN))
+      {
+        lv_obj_clear_flag(cooldownLabel, LV_OBJ_FLAG_HIDDEN);
+      }
+    }
+    else
+    {
+      cooldownValues[c] = 0;
+
+      if (!lv_obj_has_flag(cooldownLabel, LV_OBJ_FLAG_HIDDEN))
+      {
+        lv_obj_add_flag(cooldownLabel, LV_OBJ_FLAG_HIDDEN);
+      }
+    }
+  }
+}
+
 // App main function
 void app_main()
 {
@@ -286,4 +338,7 @@ void app_main()
   updateConnection();
   updateStratagemSelection();
   updatePresets();
+
+  lv_timer_t *uiUpdateTimer = lv_timer_create(ui_update_task, 100, NULL);
+  uiUpdateTimer->repeat_count = -1;
 }

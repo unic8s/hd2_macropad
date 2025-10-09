@@ -10,6 +10,8 @@
 extern "C" {
 #endif
 
+#define MAX_USER_STRATAGEMS 6
+
 extern void assignStratagems();
 void updateStratagemSelection();
 void _executeStdStratagem(uint8_t *sequence, char *path);
@@ -17,6 +19,8 @@ void _executeUserStratagem(uint8_t index);
 void updatePresets();
 void showMsgBox(char *msg);
 void hideMsgBox();
+void resetCooldowns();
+uint64_t getNow();
 
 #ifdef __cplusplus
 } /*extern "C"*/

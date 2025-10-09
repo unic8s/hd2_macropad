@@ -10,11 +10,11 @@ extern "C" {
 typedef struct _objects_t {
     lv_obj_t *intro;
     lv_obj_t *setup;
-    lv_obj_t *config;
     lv_obj_t *game;
-    lv_obj_t *about;
-    lv_obj_t *reset;
     lv_obj_t *mission;
+    lv_obj_t *config;
+    lv_obj_t *reset;
+    lv_obj_t *about;
     lv_obj_t *tab_rifle;
     lv_obj_t *weapons_mg;
     lv_obj_t *weapons_hmg;
@@ -112,6 +112,34 @@ typedef struct _objects_t {
     lv_obj_t *label_amount;
     lv_obj_t *msg_box;
     lv_obj_t *msg_label;
+    lv_obj_t *btn_reinforce;
+    lv_obj_t *btn_resupply;
+    lv_obj_t *btn_sos;
+    lv_obj_t *btn_rearm;
+    lv_obj_t *custom_stratagem1;
+    lv_obj_t *label_cooldown1;
+    lv_obj_t *custom_stratagem2;
+    lv_obj_t *label_cooldown2;
+    lv_obj_t *custom_stratagem3;
+    lv_obj_t *label_cooldown3;
+    lv_obj_t *custom_stratagem4;
+    lv_obj_t *label_cooldown4;
+    lv_obj_t *custom_stratagem5;
+    lv_obj_t *label_cooldown5;
+    lv_obj_t *custom_stratagem6;
+    lv_obj_t *label_cooldown6;
+    lv_obj_t *btn_seaf;
+    lv_obj_t *btn_hellbomb;
+    lv_obj_t *img_connection2;
+    lv_obj_t *btn_sssd;
+    lv_obj_t *btn_ud;
+    lv_obj_t *btn_sef;
+    lv_obj_t *btn_hbd;
+    lv_obj_t *btn_td;
+    lv_obj_t *btn_pd;
+    lv_obj_t *btn_sp;
+    lv_obj_t *btn_oif;
+    lv_obj_t *btn_dfv;
     lv_obj_t *tab_view_config;
     lv_obj_t *obj6;
     lv_obj_t *lbl_brightness;
@@ -123,32 +151,10 @@ typedef struct _objects_t {
     lv_obj_t *dd_connectivity;
     lv_obj_t *img_connection1;
     lv_obj_t *dd_keymap;
-    lv_obj_t *btn_reinforce;
-    lv_obj_t *btn_resupply;
-    lv_obj_t *btn_sos;
-    lv_obj_t *btn_rearm;
-    lv_obj_t *custom_stratagem1;
-    lv_obj_t *custom_stratagem2;
-    lv_obj_t *custom_stratagem3;
-    lv_obj_t *custom_stratagem4;
-    lv_obj_t *custom_stratagem5;
-    lv_obj_t *custom_stratagem6;
-    lv_obj_t *btn_seaf;
-    lv_obj_t *btn_hellbomb;
-    lv_obj_t *img_connection2;
     lv_obj_t *obj7;
-    lv_obj_t *lbl_version;
     lv_obj_t *obj8;
     lv_obj_t *obj9;
-    lv_obj_t *btn_sssd;
-    lv_obj_t *btn_ud;
-    lv_obj_t *btn_sef;
-    lv_obj_t *btn_hbd;
-    lv_obj_t *btn_td;
-    lv_obj_t *btn_pd;
-    lv_obj_t *btn_sp;
-    lv_obj_t *btn_oif;
-    lv_obj_t *btn_dfv;
+    lv_obj_t *lbl_version;
 } objects_t;
 
 extern objects_t objects;
@@ -156,11 +162,11 @@ extern objects_t objects;
 enum ScreensEnum {
     SCREEN_ID_INTRO = 1,
     SCREEN_ID_SETUP = 2,
-    SCREEN_ID_CONFIG = 3,
-    SCREEN_ID_GAME = 4,
-    SCREEN_ID_ABOUT = 5,
+    SCREEN_ID_GAME = 3,
+    SCREEN_ID_MISSION = 4,
+    SCREEN_ID_CONFIG = 5,
     SCREEN_ID_RESET = 6,
-    SCREEN_ID_MISSION = 7,
+    SCREEN_ID_ABOUT = 7,
 };
 
 void create_screen_intro();
@@ -169,20 +175,20 @@ void tick_screen_intro();
 void create_screen_setup();
 void tick_screen_setup();
 
-void create_screen_config();
-void tick_screen_config();
-
 void create_screen_game();
 void tick_screen_game();
 
-void create_screen_about();
-void tick_screen_about();
+void create_screen_mission();
+void tick_screen_mission();
+
+void create_screen_config();
+void tick_screen_config();
 
 void create_screen_reset();
 void tick_screen_reset();
 
-void create_screen_mission();
-void tick_screen_mission();
+void create_screen_about();
+void tick_screen_about();
 
 enum Themes {
     THEME_ID_DEFAULT,

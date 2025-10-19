@@ -295,8 +295,8 @@
           "timeline": [],
           "eventHandlers": [
             {
-              "objID": "5bb1ef50-b417-4d9d-caa5-42089050e9b8",
-              "eventName": "PRESSED",
+              "objID": "687dc0bc-f2f7-478d-e976-cb3023b64b08",
+              "eventName": "SCREEN_LOADED",
               "handlerType": "flow",
               "action": "resetStratagems",
               "userData": 0
@@ -377,8 +377,8 @@
         {
           "objID": "baf9c7dd-bbc0-4a44-f493-0e4848e8e145",
           "type": "LVGLActionComponent",
-          "left": 553,
-          "top": 205,
+          "left": 526,
+          "top": 28,
           "width": 342,
           "height": 54,
           "customInputs": [],
@@ -403,8 +403,8 @@
         {
           "objID": "73ef9fb5-4f26-4529-bd67-a4910d25f9b3",
           "type": "CallActionActionComponent",
-          "left": 553,
-          "top": 94,
+          "left": 740,
+          "top": 136,
           "width": 137,
           "height": 24,
           "customInputs": [],
@@ -418,16 +418,16 @@
       ],
       "connectionLines": [
         {
-          "objID": "ecc6208f-e629-4f07-de6f-26dea2e0c853",
-          "source": "f90b60d0-0665-1f2d-d7bb-8672ca4b6e2e",
-          "output": "PRESSED",
+          "objID": "fca5ddef-9f5f-499f-d75b-fcadbed7285a",
+          "source": "baf9c7dd-bbc0-4a44-f493-0e4848e8e145",
+          "output": "@seqout",
           "target": "73ef9fb5-4f26-4529-bd67-a4910d25f9b3",
           "input": "@seqin"
         },
         {
-          "objID": "2e704915-1fe1-4a95-db79-0b2e3d9977d8",
+          "objID": "8d3f81af-ee2c-4453-c4b5-514b38a1eca7",
           "source": "f90b60d0-0665-1f2d-d7bb-8672ca4b6e2e",
-          "output": "PRESSED",
+          "output": "SCREEN_LOADED",
           "target": "baf9c7dd-bbc0-4a44-f493-0e4848e8e145",
           "input": "@seqin"
         }

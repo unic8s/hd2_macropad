@@ -25,6 +25,7 @@ extern void action_trigger_stratagem_base(lv_event_t * e);
 extern void action_trigger_stratagem_user(lv_event_t * e);
 extern void action_restart_device(lv_event_t * e);
 extern void action_assign_stratagems(lv_event_t * e);
+extern void action_goto_game(lv_event_t * e);
 
 
 #ifdef __cplusplus

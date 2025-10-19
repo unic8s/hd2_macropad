@@ -1464,7 +1464,7 @@ static void event_handler_cb_setup_obj6(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 93, 0, e);
     }
@@ -1516,7 +1516,7 @@ static void event_handler_cb_setup_obj8(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 100, 0, e);
     }
@@ -1659,7 +1659,7 @@ static void event_handler_cb_game_obj9(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 15, 0, e);
     }
@@ -1670,7 +1670,7 @@ static void event_handler_cb_game_obj10(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 16, 0, e);
     }
@@ -1780,7 +1780,7 @@ static void event_handler_cb_mission_obj11(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 29, 0, e);
     }
@@ -1879,7 +1879,7 @@ static void event_handler_cb_config_obj13(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 28, 0, e);
     }
@@ -1890,7 +1890,7 @@ static void event_handler_cb_config_obj14(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 29, 0, e);
     }
@@ -1901,7 +1901,7 @@ static void event_handler_cb_config_obj15(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 31, 0, e);
     }
@@ -1923,7 +1923,7 @@ static void event_handler_cb_reset_obj17(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 3, 0, e);
     }
@@ -1934,7 +1934,7 @@ static void event_handler_cb_reset_obj18(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 4, 0, e);
     }
@@ -1945,7 +1945,7 @@ static void event_handler_cb_about_obj19(lv_event_t *e) {
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_PRESSED) {
+    if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
         flowPropagateValueLVGLEvent(flowState, 7, 0, e);
     }

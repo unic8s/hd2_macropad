@@ -35,7 +35,7 @@ lv_timer_t *timerMsg = NULL;
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
 
 // Goto game screen
-void action_setup_2_game(lv_event_t *e)
+void action_goto_game(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
@@ -141,7 +141,7 @@ void updateStratagemSelection()
 
 	if (strategemsAmount == MAX_USER_STRATAGEMS)
 	{
-		action_setup_2_game(NULL);
+		action_goto_game(NULL);
 	}
 }
 

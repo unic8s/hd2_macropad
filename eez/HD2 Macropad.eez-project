@@ -271,6 +271,15 @@
       "userProperties": [],
       "name": "assignStratagems",
       "implementationType": "native"
+    },
+    {
+      "objID": "4f91f9ec-4742-469e-82ac-be9c4d37bcd3",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "GotoGame",
+      "implementationType": "native"
     }
   ],
   "userPages": [
@@ -403,8 +412,8 @@
         {
           "objID": "73ef9fb5-4f26-4529-bd67-a4910d25f9b3",
           "type": "CallActionActionComponent",
-          "left": 740,
-          "top": 136,
+          "left": 605,
+          "top": 234,
           "width": 137,
           "height": 24,
           "customInputs": [],
@@ -418,17 +427,17 @@
       ],
       "connectionLines": [
         {
-          "objID": "fca5ddef-9f5f-499f-d75b-fcadbed7285a",
-          "source": "baf9c7dd-bbc0-4a44-f493-0e4848e8e145",
-          "output": "@seqout",
-          "target": "73ef9fb5-4f26-4529-bd67-a4910d25f9b3",
-          "input": "@seqin"
-        },
-        {
           "objID": "8d3f81af-ee2c-4453-c4b5-514b38a1eca7",
           "source": "f90b60d0-0665-1f2d-d7bb-8672ca4b6e2e",
           "output": "SCREEN_LOADED",
           "target": "baf9c7dd-bbc0-4a44-f493-0e4848e8e145",
+          "input": "@seqin"
+        },
+        {
+          "objID": "0dd82115-3de9-495e-feac-a727809cfe6c",
+          "source": "f90b60d0-0665-1f2d-d7bb-8672ca4b6e2e",
+          "output": "SCREEN_LOADED",
+          "target": "73ef9fb5-4f26-4529-bd67-a4910d25f9b3",
           "input": "@seqin"
         }
       ],
@@ -6284,7 +6293,7 @@
                   "eventHandlers": [
                     {
                       "objID": "f1511db9-2458-4e90-a63a-9f3be87068cc",
-                      "eventName": "PRESSED",
+                      "eventName": "CLICKED",
                       "handlerType": "flow",
                       "action": "setup_2_game",
                       "userData": 0
@@ -6688,7 +6697,7 @@
                   "eventHandlers": [
                     {
                       "objID": "aa88821f-16c7-444c-f434-bd28fe8c686c",
-                      "eventName": "PRESSED",
+                      "eventName": "CLICKED",
                       "handlerType": "flow",
                       "action": "setup_2_game",
                       "userData": 0
@@ -6933,21 +6942,43 @@
               "useStackType": "literal"
             }
           ]
+        },
+        {
+          "objID": "65d98cb3-927d-4540-c856-c7cc79aac59a",
+          "type": "CallActionActionComponent",
+          "left": 593,
+          "top": 209,
+          "width": 95,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "GotoGame",
+          "userPropertyValues": {
+            "objID": "01fdd281-264d-4ef0-fcc4-51dc1c852058",
+            "values": {}
+          }
         }
       ],
       "connectionLines": [
         {
           "objID": "a4ea13fd-7492-4164-8104-9ad67bc9ff74",
           "source": "03739a41-3f8d-4ea3-faab-667e98cac915",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "b5d55bd6-2075-4b93-e2e0-d427984baede",
           "input": "@seqin"
         },
         {
           "objID": "3f764050-3617-4cc0-b66c-de126fa35dbf",
           "source": "3afd72a6-e105-4f0e-fb38-1855380a222a",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "6e9f0a1b-685c-42d0-95f9-4b45bb5c06c1",
+          "input": "@seqin"
+        },
+        {
+          "objID": "3d0f8b28-a4c7-4d9d-a1b0-e78a799499e2",
+          "source": "03739a41-3f8d-4ea3-faab-667e98cac915",
+          "output": "CLICKED",
+          "target": "65d98cb3-927d-4540-c856-c7cc79aac59a",
           "input": "@seqin"
         }
       ],
@@ -7754,7 +7785,7 @@
               "eventHandlers": [
                 {
                   "objID": "a72d46d8-5c33-4482-dbe6-7d0fdcb110df",
-                  "eventName": "PRESSED",
+                  "eventName": "CLICKED",
                   "handlerType": "flow",
                   "action": "setup_2_game",
                   "userData": 0
@@ -7811,7 +7842,7 @@
               "eventHandlers": [
                 {
                   "objID": "6cf9f7c1-48e2-40e3-9012-28b16575858c",
-                  "eventName": "PRESSED",
+                  "eventName": "CLICKED",
                   "handlerType": "flow",
                   "action": "setup_2_game",
                   "userData": 0
@@ -7980,14 +8011,14 @@
         {
           "objID": "4f791e7f-413b-447e-fe50-a3dc6bce764a",
           "source": "e5c16e65-b0dc-49ef-cc18-c8df0b6b2e7c",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "e3f0aa3e-20a3-4a4b-bdad-0c42130c59e9",
           "input": "@seqin"
         },
         {
           "objID": "5c08c9a3-557e-48e5-b6fc-1f30f11e6bf4",
           "source": "54a11e59-23cc-45a4-e624-3925e605d7d3",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "e2406fdd-b8a7-4d1d-b12f-cc73622bba49",
           "input": "@seqin"
         }
@@ -9507,7 +9538,7 @@
               "eventHandlers": [
                 {
                   "objID": "58a2bddd-a921-47fd-ba75-9c67a1626bc5",
-                  "eventName": "PRESSED",
+                  "eventName": "CLICKED",
                   "handlerType": "flow",
                   "action": "setup_2_game",
                   "userData": 0
@@ -9596,7 +9627,7 @@
         {
           "objID": "638f1955-a7da-459d-e16f-ba9007be292e",
           "source": "44340985-3b03-447c-8df1-c49eb41ee9be",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "6be62012-3fda-44e1-8144-1990f031732a",
           "input": "@seqin"
         }
@@ -10988,7 +11019,7 @@
                   "eventHandlers": [
                     {
                       "objID": "3632a2e5-764e-4b05-e78e-78312417b5ba",
-                      "eventName": "PRESSED",
+                      "eventName": "CLICKED",
                       "handlerType": "flow",
                       "action": "setup_2_game",
                       "userData": 0
@@ -11043,7 +11074,7 @@
                   "eventHandlers": [
                     {
                       "objID": "db17c667-f96e-44be-88a7-d22275f0fbf3",
-                      "eventName": "PRESSED",
+                      "eventName": "CLICKED",
                       "handlerType": "flow",
                       "action": "setup_2_game",
                       "userData": 0
@@ -11147,7 +11178,7 @@
                   "eventHandlers": [
                     {
                       "objID": "5052a262-dea2-43ee-9c25-2a9af039d62e",
-                      "eventName": "PRESSED",
+                      "eventName": "CLICKED",
                       "handlerType": "flow",
                       "action": "resetStratagems",
                       "userData": 0
@@ -11368,21 +11399,21 @@
         {
           "objID": "eb0ae635-ce95-407a-a163-64c613ff588a",
           "source": "0df4e875-231b-45a0-9627-3fc55820a123",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "1e1d954b-7995-4343-c1ab-02a237f16c15",
           "input": "@seqin"
         },
         {
           "objID": "72675e28-0feb-4891-d0ce-248145c98220",
           "source": "71fb1be1-e076-45e9-d8fd-34d7fb411371",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "d8a096d3-a824-4a55-bec6-68ecf6b7acb9",
           "input": "@seqin"
         },
         {
           "objID": "3ddca025-6fe4-4863-f629-1fccb7742abc",
           "source": "247cb222-9fb2-4e82-e6b0-9e6c71d38870",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "b256208f-1016-4af8-d1ea-6611bce9402e",
           "input": "@seqin"
         }
@@ -11514,7 +11545,7 @@
                   "eventHandlers": [
                     {
                       "objID": "501fd59f-9b8d-432f-bc0c-5654214f314c",
-                      "eventName": "PRESSED",
+                      "eventName": "CLICKED",
                       "handlerType": "flow",
                       "action": "resetStratagems",
                       "userData": 0
@@ -11570,7 +11601,7 @@
                   "eventHandlers": [
                     {
                       "objID": "25400c5a-718e-4d24-90ef-dbbe528f291d",
-                      "eventName": "PRESSED",
+                      "eventName": "CLICKED",
                       "handlerType": "flow",
                       "action": "resetStratagems",
                       "userData": 0
@@ -11714,8 +11745,8 @@
         {
           "objID": "d2077491-b7ec-4404-fa66-74a4044cd588",
           "type": "CallActionActionComponent",
-          "left": 202,
-          "top": 355,
+          "left": 315,
+          "top": 349,
           "width": 112,
           "height": 24,
           "customInputs": [],
@@ -11731,21 +11762,21 @@
         {
           "objID": "5cd17cd0-cf35-4ddc-a7c7-e04995ce86a6",
           "source": "baea6088-aed5-45a7-bffb-0febc7efbc47",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "292dddd0-14db-43d5-a4a2-a4a5e87d1bf0",
           "input": "@seqin"
         },
         {
           "objID": "1869498a-3e8e-42ed-9ea0-b8222708c8a0",
           "source": "b2ce5956-d412-4f74-94bc-7ec9c6e07312",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "b09008dd-11f4-4e69-c53f-c050b8da2504",
           "input": "@seqin"
         },
         {
-          "objID": "19157bd3-dc14-4d88-a20f-2deaedf84890",
+          "objID": "d5f88295-7c86-4f21-ad4d-cc460f023235",
           "source": "b2ce5956-d412-4f74-94bc-7ec9c6e07312",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "d2077491-b7ec-4404-fa66-74a4044cd588",
           "input": "@seqin"
         }
@@ -12095,7 +12126,7 @@
               "eventHandlers": [
                 {
                   "objID": "16bd73ba-bafb-49e6-fd44-a879e2ae54ec",
-                  "eventName": "PRESSED",
+                  "eventName": "CLICKED",
                   "handlerType": "flow",
                   "action": "setup_2_game",
                   "userData": 0
@@ -12233,7 +12264,7 @@
         {
           "objID": "2871f82d-2393-4f8d-b28c-2116369b5310",
           "source": "fe5bccc5-576e-45a2-827d-8c52c3010ca6",
-          "output": "PRESSED",
+          "output": "CLICKED",
           "target": "19a95e3f-3bdf-471d-f061-3e4091dbb50c",
           "input": "@seqin"
         }

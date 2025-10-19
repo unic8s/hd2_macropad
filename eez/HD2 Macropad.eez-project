@@ -10,7 +10,7 @@
       "lvglVersion": "8.3",
       "extensions": [],
       "imports": [],
-      "flowSupport": false,
+      "flowSupport": true,
       "displayWidth": 480,
       "displayHeight": 320,
       "displayBorderRadius": 0,
@@ -111,15 +111,6 @@
   },
   "actions": [
     {
-      "objID": "a2b14775-7ca9-4acc-83a0-09432304aeed",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "setup_2_game",
-      "implementationType": "native"
-    },
-    {
       "objID": "9cbc49f5-c4d8-489d-e91c-ee8e2c24f35e",
       "components": [],
       "connectionLines": [],
@@ -129,60 +120,13 @@
       "implementationType": "native"
     },
     {
-      "objID": "bb755a4a-6404-4160-d507-23bbbe442bab",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "Intro_2_Setup"
-    },
-    {
-      "objID": "bc5b6026-5f5f-4feb-b341-9cc4826874ba",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "setup_2_config"
-    },
-    {
-      "objID": "2c4835e1-9c21-43ec-a49a-199267566c12",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "config_2_about"
-    },
-    {
-      "objID": "44a77a3a-16b6-4f99-af29-ade9c7901f1c",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "about_2_config"
-    },
-    {
-      "objID": "1129b24d-cfad-4dfe-e85f-f444a6b73d67",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "config_2_reset"
-    },
-    {
-      "objID": "67177a96-a9ed-4301-c4f0-3ef0b8481fd9",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "reset_cancel"
-    },
-    {
       "objID": "a53404f5-b329-4ef9-c1c6-bd5134d54a21",
       "components": [],
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "reset_confirm"
+      "name": "reset_confirm",
+      "implementationType": "native"
     },
     {
       "objID": "359dab56-aa23-403b-d4e4-4007931b7da2",
@@ -190,7 +134,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "GetPreset"
+      "name": "GetPreset",
+      "implementationType": "native"
     },
     {
       "objID": "5d01739a-31fb-4119-d52b-9a8eee807bf0",
@@ -198,23 +143,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "SetPreset"
-    },
-    {
-      "objID": "3f2c1f86-823a-46a8-9c86-d01d61aabd55",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "config_2_setup"
-    },
-    {
-      "objID": "6573755a-9a53-4c18-a35d-9819224cb531",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "game_2_setup"
+      "name": "SetPreset",
+      "implementationType": "native"
     },
     {
       "objID": "c5364c39-415b-44ee-91ec-90ed6fc8fe6c",
@@ -222,7 +152,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "ChangeBrightness"
+      "name": "ChangeBrightness",
+      "implementationType": "native"
     },
     {
       "objID": "3aa0bc38-52d8-42ee-b82e-5abccacb6772",
@@ -230,7 +161,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "FlipScreen"
+      "name": "FlipScreen",
+      "implementationType": "native"
     },
     {
       "objID": "2dc10ad2-a2b1-48bc-fa72-6a2df227f76d",
@@ -238,7 +170,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "MuteSound"
+      "name": "MuteSound",
+      "implementationType": "native"
     },
     {
       "objID": "179cabfa-c85d-462f-dd3f-37f7131da246",
@@ -246,7 +179,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "ChangeDelay"
+      "name": "ChangeDelay",
+      "implementationType": "native"
     },
     {
       "objID": "7fbaf7a8-5719-42c3-f37c-42c51d30db09",
@@ -254,7 +188,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "ChangeConnectivity"
+      "name": "ChangeConnectivity",
+      "implementationType": "native"
     },
     {
       "objID": "5586cb51-2f2a-4dd9-ed4b-36ffb045971d",
@@ -262,7 +197,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "ChangeKeymap"
+      "name": "ChangeKeymap",
+      "implementationType": "native"
     },
     {
       "objID": "998deaa0-00fa-47ca-e5d3-190c6a64b2d7",
@@ -270,7 +206,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "KeyboardDemo"
+      "name": "KeyboardDemo",
+      "implementationType": "native"
     },
     {
       "objID": "533c6566-b712-4b64-da96-c462c9c1c962",
@@ -278,7 +215,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "selectStratagem"
+      "name": "selectStratagem",
+      "implementationType": "native"
     },
     {
       "objID": "5fad3722-77ef-4cdf-b58d-6fb825374722",
@@ -286,7 +224,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "deselectStratagem"
+      "name": "deselectStratagem",
+      "implementationType": "native"
     },
     {
       "objID": "330db872-a3bc-4398-b581-3c814d2a1175",
@@ -294,7 +233,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "TabChanged"
+      "name": "TabChanged",
+      "implementationType": "native"
     },
     {
       "objID": "5efadc86-82ae-4caa-9dd5-706370d0f93a",
@@ -302,7 +242,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "triggerStratagemBase"
+      "name": "triggerStratagemBase",
+      "implementationType": "native"
     },
     {
       "objID": "4af3668d-65bd-4c8f-ed7d-d9faa653ab29",
@@ -310,7 +251,8 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "triggerStratagemUser"
+      "name": "triggerStratagemUser",
+      "implementationType": "native"
     },
     {
       "objID": "41abb279-94a0-4377-a7a9-4df5f50e8a17",
@@ -318,23 +260,17 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "RestartDevice"
+      "name": "RestartDevice",
+      "implementationType": "native"
     },
     {
-      "objID": "22208972-e65e-4549-cec4-241f9186219e",
+      "objID": "f84046ae-4efb-4454-f152-15f0ac67b4c5",
       "components": [],
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "game_2_mission"
-    },
-    {
-      "objID": "c5046ce0-6ccd-47ab-bd53-26b4fd3f9814",
-      "components": [],
-      "connectionLines": [],
-      "localVariables": [],
-      "userProperties": [],
-      "name": "mission_2_game"
+      "name": "assignStratagems",
+      "implementationType": "native"
     }
   ],
   "userPages": [
@@ -359,10 +295,10 @@
           "timeline": [],
           "eventHandlers": [
             {
-              "objID": "826eb9de-17dc-4856-8cca-339149b6a365",
-              "eventName": "SCREEN_LOADED",
-              "handlerType": "action",
-              "action": "Intro_2_Setup",
+              "objID": "5bb1ef50-b417-4d9d-caa5-42089050e9b8",
+              "eventName": "PRESSED",
+              "handlerType": "flow",
+              "action": "resetStratagems",
               "userData": 0
             }
           ],
@@ -437,9 +373,65 @@
             }
           },
           "groupIndex": 0
+        },
+        {
+          "objID": "baf9c7dd-bbc0-4a44-f493-0e4848e8e145",
+          "type": "LVGLActionComponent",
+          "left": 553,
+          "top": 205,
+          "width": 342,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "1f6bd4dc-3c33-46c3-cc5e-aa5ca74edc29",
+              "action": "changeScreen",
+              "screen": "Setup",
+              "screenType": "literal",
+              "fadeMode": "MOVE_BOTTOM",
+              "fadeModeType": "literal",
+              "speed": 1000,
+              "speedType": "literal",
+              "delay": 1000,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
+        },
+        {
+          "objID": "73ef9fb5-4f26-4529-bd67-a4910d25f9b3",
+          "type": "CallActionActionComponent",
+          "left": 553,
+          "top": 94,
+          "width": 137,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "assignStratagems",
+          "userPropertyValues": {
+            "objID": "d3729b21-c6b8-4b17-c168-b403513163e0",
+            "values": {}
+          }
         }
       ],
-      "connectionLines": [],
+      "connectionLines": [
+        {
+          "objID": "ecc6208f-e629-4f07-de6f-26dea2e0c853",
+          "source": "f90b60d0-0665-1f2d-d7bb-8672ca4b6e2e",
+          "output": "PRESSED",
+          "target": "73ef9fb5-4f26-4529-bd67-a4910d25f9b3",
+          "input": "@seqin"
+        },
+        {
+          "objID": "2e704915-1fe1-4a95-db79-0b2e3d9977d8",
+          "source": "f90b60d0-0665-1f2d-d7bb-8672ca4b6e2e",
+          "output": "PRESSED",
+          "target": "baf9c7dd-bbc0-4a44-f493-0e4848e8e145",
+          "input": "@seqin"
+        }
+      ],
       "localVariables": [],
       "userProperties": [],
       "name": "Intro",
@@ -6291,10 +6283,10 @@
                   "timeline": [],
                   "eventHandlers": [
                     {
-                      "objID": "b88b9bbe-3b1f-45f9-b78a-cf64462b1380",
-                      "eventName": "CLICKED",
-                      "handlerType": "action",
-                      "action": "setup_2_config",
+                      "objID": "f1511db9-2458-4e90-a63a-9f3be87068cc",
+                      "eventName": "PRESSED",
+                      "handlerType": "flow",
+                      "action": "setup_2_game",
                       "userData": 0
                     }
                   ],
@@ -6695,9 +6687,9 @@
                   "timeline": [],
                   "eventHandlers": [
                     {
-                      "objID": "07f4d271-3891-4d44-bf31-5a9144069dce",
-                      "eventName": "CLICKED",
-                      "handlerType": "action",
+                      "objID": "aa88821f-16c7-444c-f434-bd28fe8c686c",
+                      "eventName": "PRESSED",
+                      "handlerType": "flow",
                       "action": "setup_2_game",
                       "userData": 0
                     }
@@ -6889,9 +6881,76 @@
             }
           },
           "groupIndex": 0
+        },
+        {
+          "objID": "b5d55bd6-2075-4b93-e2e0-d427984baede",
+          "type": "LVGLActionComponent",
+          "left": 578,
+          "top": 286,
+          "width": 305,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "956a09bb-f14a-4c4d-b5d6-f987a5ff9839",
+              "action": "changeScreen",
+              "screen": "Game",
+              "screenType": "literal",
+              "fadeMode": "MOVE_LEFT",
+              "fadeModeType": "literal",
+              "speed": 1000,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
+        },
+        {
+          "objID": "6e9f0a1b-685c-42d0-95f9-4b45bb5c06c1",
+          "type": "LVGLActionComponent",
+          "left": 51,
+          "top": 456,
+          "width": 323,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "f59e7709-01f3-4d2e-8d90-649a369954ea",
+              "action": "changeScreen",
+              "screen": "Config",
+              "screenType": "literal",
+              "fadeMode": "MOVE_RIGHT",
+              "fadeModeType": "literal",
+              "speed": 1000,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
         }
       ],
-      "connectionLines": [],
+      "connectionLines": [
+        {
+          "objID": "a4ea13fd-7492-4164-8104-9ad67bc9ff74",
+          "source": "03739a41-3f8d-4ea3-faab-667e98cac915",
+          "output": "PRESSED",
+          "target": "b5d55bd6-2075-4b93-e2e0-d427984baede",
+          "input": "@seqin"
+        },
+        {
+          "objID": "3f764050-3617-4cc0-b66c-de126fa35dbf",
+          "source": "3afd72a6-e105-4f0e-fb38-1855380a222a",
+          "output": "PRESSED",
+          "target": "6e9f0a1b-685c-42d0-95f9-4b45bb5c06c1",
+          "input": "@seqin"
+        }
+      ],
       "localVariables": [],
       "userProperties": [],
       "name": "Setup",
@@ -7694,10 +7753,10 @@
               "timeline": [],
               "eventHandlers": [
                 {
-                  "objID": "33ae0209-ce67-463a-e9e5-def304d1ccf4",
-                  "eventName": "CLICKED",
-                  "handlerType": "action",
-                  "action": "game_2_mission",
+                  "objID": "a72d46d8-5c33-4482-dbe6-7d0fdcb110df",
+                  "eventName": "PRESSED",
+                  "handlerType": "flow",
+                  "action": "setup_2_game",
                   "userData": 0
                 }
               ],
@@ -7751,10 +7810,10 @@
               "timeline": [],
               "eventHandlers": [
                 {
-                  "objID": "73ebf57e-5a8d-4409-e2c1-acb739a8d6b5",
-                  "eventName": "CLICKED",
-                  "handlerType": "action",
-                  "action": "game_2_setup",
+                  "objID": "6cf9f7c1-48e2-40e3-9012-28b16575858c",
+                  "eventName": "PRESSED",
+                  "handlerType": "flow",
+                  "action": "setup_2_game",
                   "userData": 0
                 }
               ],
@@ -7863,9 +7922,76 @@
             }
           },
           "groupIndex": 0
+        },
+        {
+          "objID": "e3f0aa3e-20a3-4a4b-bdad-0c42130c59e9",
+          "type": "LVGLActionComponent",
+          "left": 57,
+          "top": 436,
+          "width": 317,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "c8ce4386-15fc-408f-f959-1cdd5ce84e23",
+              "action": "changeScreen",
+              "screen": "Setup",
+              "screenType": "literal",
+              "fadeMode": "MOVE_RIGHT",
+              "fadeModeType": "literal",
+              "speed": 1000,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
+        },
+        {
+          "objID": "e2406fdd-b8a7-4d1d-b12f-cc73622bba49",
+          "type": "LVGLActionComponent",
+          "left": 470,
+          "top": 400,
+          "width": 274,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "8c24aa0f-8bc0-41a8-d0b5-a8c67c4d1450",
+              "action": "changeScreen",
+              "screen": "Mission",
+              "screenType": "literal",
+              "fadeMode": "NONE",
+              "fadeModeType": "literal",
+              "speed": 0,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
         }
       ],
-      "connectionLines": [],
+      "connectionLines": [
+        {
+          "objID": "4f791e7f-413b-447e-fe50-a3dc6bce764a",
+          "source": "e5c16e65-b0dc-49ef-cc18-c8df0b6b2e7c",
+          "output": "PRESSED",
+          "target": "e3f0aa3e-20a3-4a4b-bdad-0c42130c59e9",
+          "input": "@seqin"
+        },
+        {
+          "objID": "5c08c9a3-557e-48e5-b6fc-1f30f11e6bf4",
+          "source": "54a11e59-23cc-45a4-e624-3925e605d7d3",
+          "output": "PRESSED",
+          "target": "e2406fdd-b8a7-4d1d-b12f-cc73622bba49",
+          "input": "@seqin"
+        }
+      ],
       "localVariables": [],
       "userProperties": [],
       "name": "Game",
@@ -9380,10 +9506,10 @@
               "timeline": [],
               "eventHandlers": [
                 {
-                  "objID": "a8e25c3c-efa8-40f0-9ba2-fb3f24f6b774",
-                  "eventName": "CLICKED",
-                  "handlerType": "action",
-                  "action": "mission_2_game",
+                  "objID": "58a2bddd-a921-47fd-ba75-9c67a1626bc5",
+                  "eventName": "PRESSED",
+                  "handlerType": "flow",
+                  "action": "setup_2_game",
                   "userData": 0
                 }
               ],
@@ -9438,9 +9564,43 @@
             }
           },
           "groupIndex": 0
+        },
+        {
+          "objID": "6be62012-3fda-44e1-8144-1990f031732a",
+          "type": "LVGLActionComponent",
+          "left": 409,
+          "top": 352,
+          "width": 256,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "f0046c2e-ade1-431a-cd45-63e5343a254d",
+              "action": "changeScreen",
+              "screen": "Game",
+              "screenType": "literal",
+              "fadeMode": "NONE",
+              "fadeModeType": "literal",
+              "speed": 0,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
         }
       ],
-      "connectionLines": [],
+      "connectionLines": [
+        {
+          "objID": "638f1955-a7da-459d-e16f-ba9007be292e",
+          "source": "44340985-3b03-447c-8df1-c49eb41ee9be",
+          "output": "PRESSED",
+          "target": "6be62012-3fda-44e1-8144-1990f031732a",
+          "input": "@seqin"
+        }
+      ],
       "localVariables": [],
       "userProperties": [],
       "name": "Mission",
@@ -10827,10 +10987,10 @@
                   "timeline": [],
                   "eventHandlers": [
                     {
-                      "objID": "6b609f4d-c16b-4082-83fe-3807909994d6",
-                      "eventName": "CLICKED",
-                      "handlerType": "action",
-                      "action": "config_2_setup",
+                      "objID": "3632a2e5-764e-4b05-e78e-78312417b5ba",
+                      "eventName": "PRESSED",
+                      "handlerType": "flow",
+                      "action": "setup_2_game",
                       "userData": 0
                     }
                   ],
@@ -10882,10 +11042,10 @@
                   "timeline": [],
                   "eventHandlers": [
                     {
-                      "objID": "3740b9d2-ffad-42ab-9d12-2199dc70ba53",
-                      "eventName": "CLICKED",
-                      "handlerType": "action",
-                      "action": "config_2_about",
+                      "objID": "db17c667-f96e-44be-88a7-d22275f0fbf3",
+                      "eventName": "PRESSED",
+                      "handlerType": "flow",
+                      "action": "setup_2_game",
                       "userData": 0
                     }
                   ],
@@ -10986,10 +11146,10 @@
                   "timeline": [],
                   "eventHandlers": [
                     {
-                      "objID": "5ca3890e-f9bd-44ba-e9fa-bcd30a45f7f2",
-                      "eventName": "CLICKED",
-                      "handlerType": "action",
-                      "action": "config_2_reset",
+                      "objID": "5052a262-dea2-43ee-9c25-2a9af039d62e",
+                      "eventName": "PRESSED",
+                      "handlerType": "flow",
+                      "action": "resetStratagems",
                       "userData": 0
                     }
                   ],
@@ -11124,9 +11284,109 @@
             }
           },
           "groupIndex": 0
+        },
+        {
+          "objID": "1e1d954b-7995-4343-c1ab-02a237f16c15",
+          "type": "LVGLActionComponent",
+          "left": 195,
+          "top": 506,
+          "width": 311,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "9b14aec3-7adb-4ff1-acce-3254ca784073",
+              "action": "changeScreen",
+              "screen": "Setup",
+              "screenType": "literal",
+              "fadeMode": "MOVE_LEFT",
+              "fadeModeType": "literal",
+              "speed": 1000,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
+        },
+        {
+          "objID": "d8a096d3-a824-4a55-bec6-68ecf6b7acb9",
+          "type": "LVGLActionComponent",
+          "left": 306,
+          "top": 421,
+          "width": 305,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "d3df89e2-aa17-43e2-b483-07bf66f7e4b4",
+              "action": "changeScreen",
+              "screen": "About",
+              "screenType": "literal",
+              "fadeMode": "MOVE_TOP",
+              "fadeModeType": "literal",
+              "speed": 1000,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
+        },
+        {
+          "objID": "b256208f-1016-4af8-d1ea-6611bce9402e",
+          "type": "LVGLActionComponent",
+          "left": 440,
+          "top": 351,
+          "width": 293,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "611ef373-604d-4a79-cb49-5f8b2e4cda2f",
+              "action": "changeScreen",
+              "screen": "Reset",
+              "screenType": "literal",
+              "fadeMode": "FADE_IN",
+              "fadeModeType": "literal",
+              "speed": 500,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
         }
       ],
-      "connectionLines": [],
+      "connectionLines": [
+        {
+          "objID": "eb0ae635-ce95-407a-a163-64c613ff588a",
+          "source": "0df4e875-231b-45a0-9627-3fc55820a123",
+          "output": "PRESSED",
+          "target": "1e1d954b-7995-4343-c1ab-02a237f16c15",
+          "input": "@seqin"
+        },
+        {
+          "objID": "72675e28-0feb-4891-d0ce-248145c98220",
+          "source": "71fb1be1-e076-45e9-d8fd-34d7fb411371",
+          "output": "PRESSED",
+          "target": "d8a096d3-a824-4a55-bec6-68ecf6b7acb9",
+          "input": "@seqin"
+        },
+        {
+          "objID": "3ddca025-6fe4-4863-f629-1fccb7742abc",
+          "source": "247cb222-9fb2-4e82-e6b0-9e6c71d38870",
+          "output": "PRESSED",
+          "target": "b256208f-1016-4af8-d1ea-6611bce9402e",
+          "input": "@seqin"
+        }
+      ],
       "localVariables": [],
       "userProperties": [],
       "name": "Config",
@@ -11253,10 +11513,10 @@
                   "timeline": [],
                   "eventHandlers": [
                     {
-                      "objID": "2a91050e-4bc3-465f-d311-eded860a4d7b",
-                      "eventName": "CLICKED",
-                      "handlerType": "action",
-                      "action": "reset_confirm",
+                      "objID": "501fd59f-9b8d-432f-bc0c-5654214f314c",
+                      "eventName": "PRESSED",
+                      "handlerType": "flow",
+                      "action": "resetStratagems",
                       "userData": 0
                     }
                   ],
@@ -11309,10 +11569,10 @@
                   "timeline": [],
                   "eventHandlers": [
                     {
-                      "objID": "3447b348-1fe6-4f6c-8a8b-f65f68b4c556",
-                      "eventName": "CLICKED",
-                      "handlerType": "action",
-                      "action": "reset_cancel",
+                      "objID": "25400c5a-718e-4d24-90ef-dbbe528f291d",
+                      "eventName": "PRESSED",
+                      "handlerType": "flow",
+                      "action": "resetStratagems",
                       "userData": 0
                     }
                   ],
@@ -11398,9 +11658,98 @@
             }
           },
           "groupIndex": 0
+        },
+        {
+          "objID": "292dddd0-14db-43d5-a4a2-a4a5e87d1bf0",
+          "type": "LVGLActionComponent",
+          "left": 419,
+          "top": 244,
+          "width": 305,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "40597698-69cd-432d-82f5-f91ef40ab167",
+              "action": "changeScreen",
+              "screen": "Config",
+              "screenType": "literal",
+              "fadeMode": "FADE_OUT",
+              "fadeModeType": "literal",
+              "speed": 500,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
+        },
+        {
+          "objID": "b09008dd-11f4-4e69-c53f-c050b8da2504",
+          "type": "LVGLActionComponent",
+          "left": 184,
+          "top": 396,
+          "width": 305,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "b29ca734-8f1a-4c2d-b97e-fc278a21ebc7",
+              "action": "changeScreen",
+              "screen": "Config",
+              "screenType": "literal",
+              "fadeMode": "FADE_OUT",
+              "fadeModeType": "literal",
+              "speed": 500,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
+        },
+        {
+          "objID": "d2077491-b7ec-4404-fa66-74a4044cd588",
+          "type": "CallActionActionComponent",
+          "left": 202,
+          "top": 355,
+          "width": 112,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "reset_confirm",
+          "userPropertyValues": {
+            "objID": "6c1af4ef-d1bc-4e69-a56d-127d65f5bdda",
+            "values": {}
+          }
         }
       ],
-      "connectionLines": [],
+      "connectionLines": [
+        {
+          "objID": "5cd17cd0-cf35-4ddc-a7c7-e04995ce86a6",
+          "source": "baea6088-aed5-45a7-bffb-0febc7efbc47",
+          "output": "PRESSED",
+          "target": "292dddd0-14db-43d5-a4a2-a4a5e87d1bf0",
+          "input": "@seqin"
+        },
+        {
+          "objID": "1869498a-3e8e-42ed-9ea0-b8222708c8a0",
+          "source": "b2ce5956-d412-4f74-94bc-7ec9c6e07312",
+          "output": "PRESSED",
+          "target": "b09008dd-11f4-4e69-c53f-c050b8da2504",
+          "input": "@seqin"
+        },
+        {
+          "objID": "19157bd3-dc14-4d88-a20f-2deaedf84890",
+          "source": "b2ce5956-d412-4f74-94bc-7ec9c6e07312",
+          "output": "PRESSED",
+          "target": "d2077491-b7ec-4404-fa66-74a4044cd588",
+          "input": "@seqin"
+        }
+      ],
       "localVariables": [],
       "userProperties": [],
       "name": "Reset",
@@ -11745,10 +12094,10 @@
               "timeline": [],
               "eventHandlers": [
                 {
-                  "objID": "8c5531d1-48b2-4822-aa19-44c3aa96620d",
-                  "eventName": "CLICKED",
-                  "handlerType": "action",
-                  "action": "about_2_config",
+                  "objID": "16bd73ba-bafb-49e6-fd44-a879e2ae54ec",
+                  "eventName": "PRESSED",
+                  "handlerType": "flow",
+                  "action": "setup_2_game",
                   "userData": 0
                 }
               ],
@@ -11852,9 +12201,43 @@
             }
           },
           "groupIndex": 0
+        },
+        {
+          "objID": "19a95e3f-3bdf-471d-f061-3e4091dbb50c",
+          "type": "LVGLActionComponent",
+          "left": 80,
+          "top": 427,
+          "width": 330,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "1e42d2b2-4cb8-4285-bc89-4b6e6cc04e53",
+              "action": "changeScreen",
+              "screen": "Config",
+              "screenType": "literal",
+              "fadeMode": "MOVE_BOTTOM",
+              "fadeModeType": "literal",
+              "speed": 1000,
+              "speedType": "literal",
+              "delay": 0,
+              "delayType": "literal",
+              "useStack": true,
+              "useStackType": "literal"
+            }
+          ]
         }
       ],
-      "connectionLines": [],
+      "connectionLines": [
+        {
+          "objID": "2871f82d-2393-4f8d-b28c-2116369b5310",
+          "source": "fe5bccc5-576e-45a2-827d-8c52c3010ca6",
+          "output": "PRESSED",
+          "target": "19a95e3f-3bdf-471d-f061-3e4091dbb50c",
+          "input": "@seqin"
+        }
+      ],
       "localVariables": [],
       "userProperties": [],
       "name": "About",

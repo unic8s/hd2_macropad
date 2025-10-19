@@ -150,7 +150,7 @@ void action_deselect_stratagem(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		if (buttons[c] == e->target)
+		if (buttons[c] == e->current_target)
 		{
 			buttons[c] = NULL;
 			indices[c] = -1;
@@ -172,7 +172,7 @@ void action_select_stratagem(lv_event_t *e)
 		{
 			if (buttons[c] == NULL)
 			{
-				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->target);
+				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->current_target);
 				int index = -1;
 
 				for (int c = 0; c < sizeof(strategemItemList); c++)
@@ -186,7 +186,7 @@ void action_select_stratagem(lv_event_t *e)
 					}
 				}
 
-				buttons[c] = e->target;
+				buttons[c] = e->current_target;
 				indices[c] = index;
 				types[c] = type;
 				break;
@@ -199,7 +199,7 @@ void action_select_stratagem(lv_event_t *e)
 	}
 	else
 	{
-		lv_obj_clear_state(e->target, LV_STATE_CHECKED);
+		lv_obj_clear_state(e->current_target, LV_STATE_CHECKED);
 
 		playbackSound(SND_DESELECT);
 	}
@@ -278,7 +278,7 @@ void action_trigger_stratagem_base(lv_event_t *e)
 
 	if (index > 5) // Mission stratagems
 	{
-		action_mission_2_game(NULL);
+		//action_mission_2_game(NULL);
 	}
 }
 
@@ -356,7 +356,7 @@ void action_get_preset(lv_event_t *e)
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		char *key = presetKey(e->target, c);
+		char *key = presetKey(e->current_target, c);
 
 		int8_t presetIndex = getConfig(key, -1);
 		types[c] = presetIndex;
@@ -441,7 +441,7 @@ void action_set_preset(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		char *key = presetKey(e->target, c);
+		char *key = presetKey(e->current_target, c);
 
 		setConfig(key, types[c]);
 	}

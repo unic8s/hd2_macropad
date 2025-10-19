@@ -9599,8 +9599,8 @@
         {
           "objID": "6be62012-3fda-44e1-8144-1990f031732a",
           "type": "LVGLActionComponent",
-          "left": 409,
-          "top": 352,
+          "left": 593,
+          "top": 356,
           "width": 256,
           "height": 54,
           "customInputs": [],

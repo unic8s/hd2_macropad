@@ -294,6 +294,7 @@ void app_main()
   updateStratagemSelection();
   updatePresets();
 
+  // Setup timer for EEZ Flow ui tick
   lv_timer_t *flowTickTimer = lv_timer_create(flow_tick_task, 10, NULL);
   flowTickTimer->repeat_count = -1;
 }

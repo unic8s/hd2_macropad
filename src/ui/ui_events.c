@@ -278,7 +278,7 @@ void action_trigger_stratagem_base(lv_event_t *e)
 
 	if (index > 5) // Mission stratagems
 	{
-		//action_mission_2_game(NULL);
+		lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_NONE, 0, 0, false);
 	}
 }
 

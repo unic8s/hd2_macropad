@@ -6957,6 +6957,36 @@
             "objID": "01fdd281-264d-4ef0-fcc4-51dc1c852058",
             "values": {}
           }
+        },
+        {
+          "objID": "49f3d7a0-915d-4f11-8930-994354ba849a",
+          "type": "LVGLActionComponent",
+          "left": 192,
+          "top": -120,
+          "width": 182,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "4e971119-8c40-4c63-d767-1bacfe6fcd34",
+              "action": "objAddFlag",
+              "object": "msg_box",
+              "objectType": "literal",
+              "flag": "HIDDEN",
+              "flagType": "literal"
+            }
+          ]
+        },
+        {
+          "objID": "7e793ae5-305d-4208-d64f-4adc44f3a5a6",
+          "type": "StartActionComponent",
+          "left": 8,
+          "top": -120,
+          "width": 87,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": []
         }
       ],
       "connectionLines": [
@@ -6979,6 +7009,13 @@
           "source": "03739a41-3f8d-4ea3-faab-667e98cac915",
           "output": "CLICKED",
           "target": "65d98cb3-927d-4540-c856-c7cc79aac59a",
+          "input": "@seqin"
+        },
+        {
+          "objID": "03a5add9-1bc0-49fb-c3e0-a890a4c4377c",
+          "source": "7e793ae5-305d-4208-d64f-4adc44f3a5a6",
+          "output": "@seqout",
+          "target": "49f3d7a0-915d-4f11-8930-994354ba849a",
           "input": "@seqin"
         }
       ],

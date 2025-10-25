@@ -36,6 +36,4 @@ void ui_post()
     lv_obj_set_style_text_color(dropDownItem, lv_color_hex(0x000000), LV_PART_SELECTED | LV_STATE_CHECKED);
     lv_obj_set_style_bg_color(dropDownItem, itemColorActive, LV_PART_SELECTED | LV_STATE_CHECKED);
   }
-
-  lv_obj_add_flag(objects.msg_box, LV_OBJ_FLAG_HIDDEN);
 }

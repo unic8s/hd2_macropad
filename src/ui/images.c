@@ -1,6 +1,6 @@
 #include "images.h"
 
-const ext_img_desc_t images[196] = {
+const ext_img_desc_t images[201] = {
     { "splash", &img_splash },
     { "tabIcons", &img_tab_icons },
     { "IconBack", &img_icon_back },
@@ -11,10 +11,15 @@ const ext_img_desc_t images[196] = {
     { "IconConfig", &img_icon_config },
     { "Icon1", &img_icon1 },
     { "Icon2", &img_icon2 },
+    { "Icon3", &img_icon3 },
+    { "Icon4", &img_icon4 },
+    { "Icon5", &img_icon5 },
+    { "Icon6", &img_icon6 },
     { "IconNo", &img_icon_no },
     { "IconYes", &img_icon_yes },
     { "IconRestart", &img_icon_restart },
     { "IconFlag", &img_icon_flag },
+    { "IconSelection", &img_icon_selection },
     { "BTcon", &img_btcon },
     { "BTdis", &img_btdis },
     { "USBcon", &img_us_bcon },

@@ -319,6 +319,22 @@ char *presetKey(lv_obj_t *button, uint8_t itemIndex)
 	{
 		presetIndex = '2';
 	}
+	else if (button == objects.btn_preset3)
+	{
+		presetIndex = '3';
+	}
+	else if (button == objects.btn_preset4)
+	{
+		presetIndex = '4';
+	}
+	else if (button == objects.btn_preset5)
+	{
+		presetIndex = '5';
+	}
+	else if (button == objects.btn_preset6)
+	{
+		presetIndex = '6';
+	}
 
 	char buffer[1];
 	itoa(itemIndex, buffer, 10);
@@ -338,11 +354,19 @@ void updatePresets()
 
 	bool hasPreset1 = getConfig("p10", -1) != -1;
 	bool hasPreset2 = getConfig("p20", -1) != -1;
+	bool hasPreset3 = getConfig("p30", -1) != -1;
+	bool hasPreset4 = getConfig("p40", -1) != -1;
+	bool hasPreset5 = getConfig("p50", -1) != -1;
+	bool hasPreset6 = getConfig("p60", -1) != -1;
 
 	closeConfig();
 
 	lv_obj_set_style_border_color(objects.btn_preset1, lv_color_hex(hasPreset1 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_border_color(objects.btn_preset2, lv_color_hex(hasPreset2 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset3, lv_color_hex(hasPreset3 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset4, lv_color_hex(hasPreset4 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset5, lv_color_hex(hasPreset5 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset6, lv_color_hex(hasPreset6 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
 }
 
 void action_get_preset(lv_event_t *e)
@@ -435,6 +459,8 @@ void action_get_preset(lv_event_t *e)
 	{
 		showMsgBox("Preset\nloaded");
 	}
+
+	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
 }
 
 void action_set_preset(lv_event_t *e)
@@ -458,6 +484,8 @@ void action_set_preset(lv_event_t *e)
 	{
 		showMsgBox("Preset\nsaved");
 	}
+
+	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
 }
 
 void showMsgBox(char *msg)
@@ -471,7 +499,7 @@ void showMsgBox(char *msg)
 		timerMsg = NULL;
 	}
 
-	timerMsg = lv_timer_create(hideMsgBox, 1000, NULL);
+	timerMsg = lv_timer_create(hideMsgBox, 1500, NULL);
 }
 
 void hideMsgBox(lv_timer_t *timer)

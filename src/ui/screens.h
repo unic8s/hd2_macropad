@@ -10,6 +10,7 @@ extern "C" {
 typedef struct _objects_t {
     lv_obj_t *intro;
     lv_obj_t *setup;
+    lv_obj_t *preset;
     lv_obj_t *game;
     lv_obj_t *mission;
     lv_obj_t *config;
@@ -107,9 +108,15 @@ typedef struct _objects_t {
     lv_obj_t *eagle_ss;
     lv_obj_t *obj6;
     lv_obj_t *obj7;
+    lv_obj_t *obj8;
+    lv_obj_t *obj9;
     lv_obj_t *btn_preset1;
     lv_obj_t *btn_preset2;
-    lv_obj_t *obj8;
+    lv_obj_t *btn_preset3;
+    lv_obj_t *btn_preset4;
+    lv_obj_t *btn_preset5;
+    lv_obj_t *btn_preset6;
+    lv_obj_t *obj10;
     lv_obj_t *btn_reinforce;
     lv_obj_t *btn_resupply;
     lv_obj_t *btn_sos;
@@ -122,8 +129,8 @@ typedef struct _objects_t {
     lv_obj_t *custom_stratagem6;
     lv_obj_t *btn_seaf;
     lv_obj_t *btn_hellbomb;
-    lv_obj_t *obj9;
-    lv_obj_t *obj10;
+    lv_obj_t *obj11;
+    lv_obj_t *obj12;
     lv_obj_t *btn_sssd;
     lv_obj_t *btn_ud;
     lv_obj_t *btn_sef;
@@ -133,33 +140,33 @@ typedef struct _objects_t {
     lv_obj_t *btn_sp;
     lv_obj_t *btn_oif;
     lv_obj_t *btn_dfv;
-    lv_obj_t *obj11;
+    lv_obj_t *obj13;
     lv_obj_t *tab_view_config;
     lv_obj_t *sld_brightness;
     lv_obj_t *chb_flip;
     lv_obj_t *chb_mute;
     lv_obj_t *sld_delay;
     lv_obj_t *dd_connectivity;
-    lv_obj_t *obj12;
-    lv_obj_t *dd_keymap;
-    lv_obj_t *obj13;
     lv_obj_t *obj14;
+    lv_obj_t *dd_keymap;
     lv_obj_t *obj15;
     lv_obj_t *obj16;
     lv_obj_t *obj17;
     lv_obj_t *obj18;
     lv_obj_t *obj19;
+    lv_obj_t *obj20;
+    lv_obj_t *obj21;
     lv_obj_t *img_splash;
     lv_obj_t *bar_amount;
     lv_obj_t *label_amount;
     lv_obj_t *msg_box;
     lv_obj_t *msg_label;
     lv_obj_t *img_connection2;
-    lv_obj_t *obj20;
+    lv_obj_t *obj22;
     lv_obj_t *lbl_brightness;
     lv_obj_t *lbl_delay;
     lv_obj_t *img_connection1;
-    lv_obj_t *obj21;
+    lv_obj_t *obj23;
     lv_obj_t *lbl_version;
 } objects_t;
 
@@ -168,11 +175,12 @@ extern objects_t objects;
 enum ScreensEnum {
     SCREEN_ID_INTRO = 1,
     SCREEN_ID_SETUP = 2,
-    SCREEN_ID_GAME = 3,
-    SCREEN_ID_MISSION = 4,
-    SCREEN_ID_CONFIG = 5,
-    SCREEN_ID_RESET = 6,
-    SCREEN_ID_ABOUT = 7,
+    SCREEN_ID_PRESET = 3,
+    SCREEN_ID_GAME = 4,
+    SCREEN_ID_MISSION = 5,
+    SCREEN_ID_CONFIG = 6,
+    SCREEN_ID_RESET = 7,
+    SCREEN_ID_ABOUT = 8,
 };
 
 void create_screen_intro();
@@ -180,6 +188,9 @@ void tick_screen_intro();
 
 void create_screen_setup();
 void tick_screen_setup();
+
+void create_screen_preset();
+void tick_screen_preset();
 
 void create_screen_game();
 void tick_screen_game();

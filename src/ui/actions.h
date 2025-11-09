@@ -7,19 +7,10 @@
 extern "C" {
 #endif
 
-extern void action_setup_2_game(lv_event_t * e);
 extern void action_reset_stratagems(lv_event_t * e);
-extern void action_intro_2_setup(lv_event_t * e);
-extern void action_setup_2_config(lv_event_t * e);
-extern void action_config_2_about(lv_event_t * e);
-extern void action_about_2_config(lv_event_t * e);
-extern void action_config_2_reset(lv_event_t * e);
-extern void action_reset_cancel(lv_event_t * e);
 extern void action_reset_confirm(lv_event_t * e);
 extern void action_get_preset(lv_event_t * e);
 extern void action_set_preset(lv_event_t * e);
-extern void action_config_2_setup(lv_event_t * e);
-extern void action_game_2_setup(lv_event_t * e);
 extern void action_change_brightness(lv_event_t * e);
 extern void action_flip_screen(lv_event_t * e);
 extern void action_mute_sound(lv_event_t * e);
@@ -33,8 +24,8 @@ extern void action_tab_changed(lv_event_t * e);
 extern void action_trigger_stratagem_base(lv_event_t * e);
 extern void action_trigger_stratagem_user(lv_event_t * e);
 extern void action_restart_device(lv_event_t * e);
-extern void action_game_2_mission(lv_event_t * e);
-extern void action_mission_2_game(lv_event_t * e);
+extern void action_assign_stratagems(lv_event_t * e);
+extern void action_goto_game(lv_event_t * e);
 
 
 #ifdef __cplusplus

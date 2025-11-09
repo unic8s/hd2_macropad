@@ -229,6 +229,12 @@ void hid_input_task(void *pvParameters)
   }
 }
 
+// Task for exeuction of EEZ Flows
+void flow_tick_task(lv_timer_t *timer)
+{
+  ui_tick();
+}
+
 // App main function
 void app_main()
 {
@@ -259,6 +265,7 @@ void app_main()
 
   // Start LVGL
   ui_init();
+  // UI post processing
   ui_post();
 
   // Release the mutex
@@ -286,4 +293,8 @@ void app_main()
   updateConnection();
   updateStratagemSelection();
   updatePresets();
+
+  // Setup timer for EEZ Flow ui tick
+  lv_timer_t *flowTickTimer = lv_timer_create(flow_tick_task, 10, NULL);
+  flowTickTimer->repeat_count = -1;
 }

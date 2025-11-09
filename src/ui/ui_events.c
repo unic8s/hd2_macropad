@@ -35,7 +35,7 @@ lv_timer_t *timerMsg = NULL;
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
 
 // Goto game screen
-void action_setup_2_game(lv_event_t *e)
+void action_goto_game(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
@@ -141,7 +141,7 @@ void updateStratagemSelection()
 
 	if (strategemsAmount == MAX_USER_STRATAGEMS)
 	{
-		action_setup_2_game(NULL);
+		action_goto_game(NULL);
 	}
 }
 
@@ -150,7 +150,7 @@ void action_deselect_stratagem(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		if (buttons[c] == e->target)
+		if (buttons[c] == e->current_target)
 		{
 			buttons[c] = NULL;
 			indices[c] = -1;
@@ -172,7 +172,7 @@ void action_select_stratagem(lv_event_t *e)
 		{
 			if (buttons[c] == NULL)
 			{
-				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->target);
+				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->current_target);
 				int index = -1;
 
 				for (int c = 0; c < sizeof(strategemItemList); c++)
@@ -186,7 +186,7 @@ void action_select_stratagem(lv_event_t *e)
 					}
 				}
 
-				buttons[c] = e->target;
+				buttons[c] = e->current_target;
 				indices[c] = index;
 				types[c] = type;
 				break;
@@ -199,7 +199,7 @@ void action_select_stratagem(lv_event_t *e)
 	}
 	else
 	{
-		lv_obj_clear_state(e->target, LV_STATE_CHECKED);
+		lv_obj_clear_state(e->current_target, LV_STATE_CHECKED);
 
 		playbackSound(SND_DESELECT);
 	}
@@ -278,7 +278,7 @@ void action_trigger_stratagem_base(lv_event_t *e)
 
 	if (index > 5) // Mission stratagems
 	{
-		action_mission_2_game(NULL);
+		lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_NONE, 0, 0, false);
 	}
 }
 
@@ -319,6 +319,22 @@ char *presetKey(lv_obj_t *button, uint8_t itemIndex)
 	{
 		presetIndex = '2';
 	}
+	else if (button == objects.btn_preset3)
+	{
+		presetIndex = '3';
+	}
+	else if (button == objects.btn_preset4)
+	{
+		presetIndex = '4';
+	}
+	else if (button == objects.btn_preset5)
+	{
+		presetIndex = '5';
+	}
+	else if (button == objects.btn_preset6)
+	{
+		presetIndex = '6';
+	}
 
 	char buffer[1];
 	itoa(itemIndex, buffer, 10);
@@ -338,11 +354,19 @@ void updatePresets()
 
 	bool hasPreset1 = getConfig("p10", -1) != -1;
 	bool hasPreset2 = getConfig("p20", -1) != -1;
+	bool hasPreset3 = getConfig("p30", -1) != -1;
+	bool hasPreset4 = getConfig("p40", -1) != -1;
+	bool hasPreset5 = getConfig("p50", -1) != -1;
+	bool hasPreset6 = getConfig("p60", -1) != -1;
 
 	closeConfig();
 
 	lv_obj_set_style_border_color(objects.btn_preset1, lv_color_hex(hasPreset1 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_border_color(objects.btn_preset2, lv_color_hex(hasPreset2 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset3, lv_color_hex(hasPreset3 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset4, lv_color_hex(hasPreset4 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset5, lv_color_hex(hasPreset5 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(objects.btn_preset6, lv_color_hex(hasPreset6 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
 }
 
 void action_get_preset(lv_event_t *e)
@@ -356,7 +380,7 @@ void action_get_preset(lv_event_t *e)
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		char *key = presetKey(e->target, c);
+		char *key = presetKey(e->current_target, c);
 
 		int8_t presetIndex = getConfig(key, -1);
 		types[c] = presetIndex;
@@ -435,13 +459,15 @@ void action_get_preset(lv_event_t *e)
 	{
 		showMsgBox("Preset\nloaded");
 	}
+
+	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
 }
 
 void action_set_preset(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		char *key = presetKey(e->target, c);
+		char *key = presetKey(e->current_target, c);
 
 		setConfig(key, types[c]);
 	}
@@ -458,6 +484,8 @@ void action_set_preset(lv_event_t *e)
 	{
 		showMsgBox("Preset\nsaved");
 	}
+
+	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
 }
 
 void showMsgBox(char *msg)
@@ -471,7 +499,7 @@ void showMsgBox(char *msg)
 		timerMsg = NULL;
 	}
 
-	timerMsg = lv_timer_create(hideMsgBox, 1000, NULL);
+	timerMsg = lv_timer_create(hideMsgBox, 1500, NULL);
 }
 
 void hideMsgBox(lv_timer_t *timer)

@@ -42,6 +42,10 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ![](screens/setup.png)
 
+### Presets
+
+![](screens/preset.png)
+
 ### Config
 
 ![](screens/config_display_audio.png)

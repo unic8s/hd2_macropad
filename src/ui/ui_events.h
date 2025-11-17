@@ -20,7 +20,7 @@ void hideMsgBox();
 void enableImageMode();
 void disableImageMode();
 void resolvePresetImages();
-void resolveImageKey(int itemIndex);
+char *resolvePresetKey(lv_obj_t *button, int8_t itemIndex);
 void resetPresets();
 
 #ifdef __cplusplus

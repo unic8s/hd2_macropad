@@ -32,7 +32,7 @@ uint8_t strategemsAmount = 0;
 
 lv_timer_t *timerMsg = NULL;
 bool presetImageMode = false;
-char presetImageKey[3] = "p0i";
+char presetKey[3] = "p0i";
 
 const lv_img_dsc_t *presetImageList[] = {
 	&img_icon1,
@@ -328,7 +328,7 @@ void action_keyboard_demo(lv_event_t *e)
 	setStratagemCode(sequence, 0, true);
 }
 
-char *presetKey(lv_obj_t *button, int8_t itemIndex)
+char *resolvePresetKey(lv_obj_t *button, int8_t itemIndex)
 {
 	static char key[3] = "p00";
 
@@ -383,23 +383,35 @@ void updatePresets()
 		return;
 	}
 
-	bool hasPreset1 = getConfig("p10", -1) != -1;
-	bool hasPreset2 = getConfig("p20", -1) != -1;
-	bool hasPreset3 = getConfig("p30", -1) != -1;
-	bool hasPreset4 = getConfig("p40", -1) != -1;
-	bool hasPreset5 = getConfig("p50", -1) != -1;
-	bool hasPreset6 = getConfig("p60", -1) != -1;
+	bool hasPresetList[MAX_USER_PRESETS] = {};
+
+	for (uint8_t c = 0; c < MAX_USER_PRESETS; c++)
+	{
+		char buffer[1];
+		itoa(c + 1, buffer, 10);
+
+		presetKey[1] = buffer[0];
+		presetKey[2] = '0';
+
+		hasPresetList[c] = getConfig(presetKey, -1) != -1;
+	}
 
 	closeConfig();
 
 	resolvePresetImages();
 
-	lv_obj_set_style_border_color(objects.btn_preset1, lv_color_hex(hasPreset1 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
-	lv_obj_set_style_border_color(objects.btn_preset2, lv_color_hex(hasPreset2 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
-	lv_obj_set_style_border_color(objects.btn_preset3, lv_color_hex(hasPreset3 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
-	lv_obj_set_style_border_color(objects.btn_preset4, lv_color_hex(hasPreset4 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
-	lv_obj_set_style_border_color(objects.btn_preset5, lv_color_hex(hasPreset5 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
-	lv_obj_set_style_border_color(objects.btn_preset6, lv_color_hex(hasPreset6 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	lv_obj_t *presetButtons[] = {
+		objects.btn_preset1,
+		objects.btn_preset2,
+		objects.btn_preset3,
+		objects.btn_preset4,
+		objects.btn_preset5,
+		objects.btn_preset6};
+
+	for (uint8_t c = 0; c < MAX_USER_PRESETS; c++)
+	{
+		lv_obj_set_style_border_color(presetButtons[c], lv_color_hex(hasPresetList[c] ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
+	}
 }
 
 void action_get_preset(lv_event_t *e)
@@ -417,27 +429,27 @@ void action_get_preset(lv_event_t *e)
 
 		if (button == objects.btn_preset1)
 		{
-			presetImageKey[1] = '1';
+			presetKey[1] = '1';
 		}
 		else if (button == objects.btn_preset2)
 		{
-			presetImageKey[1] = '2';
+			presetKey[1] = '2';
 		}
 		else if (button == objects.btn_preset3)
 		{
-			presetImageKey[1] = '3';
+			presetKey[1] = '3';
 		}
 		else if (button == objects.btn_preset4)
 		{
-			presetImageKey[1] = '4';
+			presetKey[1] = '4';
 		}
 		else if (button == objects.btn_preset5)
 		{
-			presetImageKey[1] = '5';
+			presetKey[1] = '5';
 		}
 		else if (button == objects.btn_preset6)
 		{
-			presetImageKey[1] = '6';
+			presetKey[1] = '6';
 		}
 
 		disableImageMode();
@@ -451,7 +463,7 @@ void action_get_preset(lv_event_t *e)
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		char *key = presetKey(e->current_target, c);
+		char *key = resolvePresetKey(e->current_target, c);
 
 		int8_t presetIndex = getConfig(key, -1);
 		types[c] = presetIndex;
@@ -543,7 +555,7 @@ void action_set_preset(lv_event_t *e)
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		char *key = presetKey(e->current_target, c);
+		char *key = resolvePresetKey(e->current_target, c);
 
 		setConfig(key, types[c]);
 	}
@@ -604,9 +616,7 @@ void action_assign_preset_image(lv_event_t *e)
 {
 	int userData = (int)e->user_data;
 
-	ESP_LOGI(TAG_EVT, "userData [%d]", userData);
-	setConfig(presetImageKey, userData);
-
+	setConfig(presetKey, userData);
 	resolvePresetImages();
 
 	lv_scr_load_anim(objects.preset, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
@@ -614,8 +624,7 @@ void action_assign_preset_image(lv_event_t *e)
 
 void action_clear_preset_image(lv_event_t *e)
 {
-	setConfig(presetImageKey, 0);
-
+	setConfig(presetKey, 0);
 	resolvePresetImages();
 
 	lv_scr_load_anim(objects.preset, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
@@ -641,21 +650,16 @@ void resolvePresetImages()
 		char buffer[1];
 		itoa(c + 1, buffer, 10);
 
-		presetImageKey[1] = buffer[0];
+		presetKey[1] = buffer[0];
+		presetKey[2] = 'i';
 
-		ESP_LOGI(TAG_EVT, "presetImageKey %s", presetImageKey);
-
-		uint8_t imageIndex = getConfig(presetImageKey, 0);
-
+		uint8_t imageIndex = getConfig(presetKey, 0);
 		uint8_t offset = imageIndex == 0 ? 0 : 5;
 
 		if (imageIndex == 0)
 		{
 			imageIndex = c;
 		}
-
-		ESP_LOGI(TAG_EVT, "imageIndex %d", imageIndex);
-		ESP_LOGI(TAG_EVT, "offset %d", offset);
 
 		const lv_img_dsc_t *presetImage = presetImageList[imageIndex + offset];
 		lv_obj_t *button = presetButtons[c];
@@ -668,7 +672,7 @@ void resolvePresetImages()
 
 void resetPresets()
 {
-if (openConfig() != ESP_OK)
+	if (openConfig() != ESP_OK)
 	{
 		return;
 	}
@@ -678,17 +682,16 @@ if (openConfig() != ESP_OK)
 		char buffer[1];
 		itoa(c + 1, buffer, 10);
 
-		presetImageKey[1] = buffer[0];
+		// Define preset index
+		presetKey[1] = buffer[0];
 
-		ESP_LOGI(TAG_EVT, "presetImageKey %s", presetImageKey);
+		// Delete image
+		presetKey[2] = 'i';
+		setConfig(presetKey, 0);
 
-		setConfig(presetImageKey, 0);
-
-		presetImageKey[2] = '0';
-
-		setConfig(presetImageKey, -1);
-
-		presetImageKey[2] = 'i';
+		// Delete stratagems
+		presetKey[2] = '0';
+		setConfig(presetKey, -1);
 	}
 
 	closeConfig();

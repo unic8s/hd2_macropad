@@ -26,6 +26,7 @@ extern const lv_img_dsc_t img_icon_yes;
 extern const lv_img_dsc_t img_icon_restart;
 extern const lv_img_dsc_t img_icon_flag;
 extern const lv_img_dsc_t img_icon_selection;
+extern const lv_img_dsc_t img_icon_image;
 extern const lv_img_dsc_t img_btcon;
 extern const lv_img_dsc_t img_btdis;
 extern const lv_img_dsc_t img_us_bcon;
@@ -208,6 +209,18 @@ extern const lv_img_dsc_t img_wp1;
 extern const lv_img_dsc_t img_wp2;
 extern const lv_img_dsc_t img_wsp1;
 extern const lv_img_dsc_t img_wsp2;
+extern const lv_img_dsc_t img_mission_conduct_geological_survey;
+extern const lv_img_dsc_t img_mission_emergency_evacuation;
+extern const lv_img_dsc_t img_mission_enable_e_710_extraction;
+extern const lv_img_dsc_t img_mission_eradicate_automaton_forces;
+extern const lv_img_dsc_t img_mission_eradicate_terminid_swarm;
+extern const lv_img_dsc_t img_mission_evacuate_high_value_assets;
+extern const lv_img_dsc_t img_mission_launch_icbm;
+extern const lv_img_dsc_t img_mission_retrieve_essential_personnel;
+extern const lv_img_dsc_t img_mission_retrieve_valuable_data;
+extern const lv_img_dsc_t img_mission_spread_democracy;
+extern const lv_img_dsc_t img_mission_terminate_illegal_broadcast;
+extern const lv_img_dsc_t img_mission_upload_escape_pod_data;
 
 #ifndef EXT_IMG_DESC_T
 #define EXT_IMG_DESC_T
@@ -217,7 +230,7 @@ typedef struct _ext_img_desc_t {
 } ext_img_desc_t;
 #endif
 
-extern const ext_img_desc_t images[201];
+extern const ext_img_desc_t images[214];
 
 
 #ifdef __cplusplus

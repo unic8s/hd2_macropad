@@ -57,3 +57,17 @@ void action_assign_stratagems(lv_event_t *e)
 {
 	assignStratagems();
 }
+
+void action_enable_image_mode(lv_event_t *e)
+{
+	enableImageMode();
+}
+
+void action_reset_presets(lv_event_t *e)
+{
+	resetPresets();
+}
+
+void action_disable_image_mode(lv_event_t * e){
+	disableImageMode();
+}

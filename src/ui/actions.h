@@ -26,6 +26,11 @@ extern void action_trigger_stratagem_user(lv_event_t * e);
 extern void action_restart_device(lv_event_t * e);
 extern void action_assign_stratagems(lv_event_t * e);
 extern void action_goto_game(lv_event_t * e);
+extern void action_enable_image_mode(lv_event_t * e);
+extern void action_assign_preset_image(lv_event_t * e);
+extern void action_clear_preset_image(lv_event_t * e);
+extern void action_reset_presets(lv_event_t * e);
+extern void action_disable_image_mode(lv_event_t * e);
 
 
 #ifdef __cplusplus

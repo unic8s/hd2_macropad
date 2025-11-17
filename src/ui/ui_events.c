@@ -19,6 +19,7 @@
 const char *TAG_EVT = "Events";
 
 #define MAX_USER_STRATAGEMS 6
+#define MAX_USER_PRESETS 6
 
 // User button list
 lv_obj_t *buttons[MAX_USER_STRATAGEMS];
@@ -30,6 +31,28 @@ int types[MAX_USER_STRATAGEMS];
 uint8_t strategemsAmount = 0;
 
 lv_timer_t *timerMsg = NULL;
+bool presetImageMode = false;
+char presetImageKey[3] = "p0i";
+
+const lv_img_dsc_t *presetImageList[] = {
+	&img_icon1,
+	&img_icon2,
+	&img_icon3,
+	&img_icon4,
+	&img_icon5,
+	&img_icon6,
+	&img_mission_conduct_geological_survey,
+	&img_mission_emergency_evacuation,
+	&img_mission_enable_e_710_extraction,
+	&img_mission_eradicate_automaton_forces,
+	&img_mission_eradicate_terminid_swarm,
+	&img_mission_evacuate_high_value_assets,
+	&img_mission_launch_icbm,
+	&img_mission_retrieve_essential_personnel,
+	&img_mission_retrieve_valuable_data,
+	&img_mission_spread_democracy,
+	&img_mission_terminate_illegal_broadcast,
+	&img_mission_upload_escape_pod_data};
 
 // HID input mask for special keys
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
@@ -305,7 +328,7 @@ void action_keyboard_demo(lv_event_t *e)
 	setStratagemCode(sequence, 0, true);
 }
 
-char *presetKey(lv_obj_t *button, uint8_t itemIndex)
+char *presetKey(lv_obj_t *button, int8_t itemIndex)
 {
 	static char key[3] = "p00";
 
@@ -337,7 +360,15 @@ char *presetKey(lv_obj_t *button, uint8_t itemIndex)
 	}
 
 	char buffer[1];
-	itoa(itemIndex, buffer, 10);
+
+	if (itemIndex >= 0)
+	{
+		itoa(itemIndex, buffer, 10);
+	}
+	else
+	{
+		buffer[1] = 'i';
+	}
 
 	key[1] = presetIndex;
 	key[2] = buffer[0];
@@ -361,6 +392,8 @@ void updatePresets()
 
 	closeConfig();
 
+	resolvePresetImages();
+
 	lv_obj_set_style_border_color(objects.btn_preset1, lv_color_hex(hasPreset1 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_border_color(objects.btn_preset2, lv_color_hex(hasPreset2 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_border_color(objects.btn_preset3, lv_color_hex(hasPreset3 ? sgGreen : sgRed), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -373,6 +406,44 @@ void action_get_preset(lv_event_t *e)
 {
 	if (openConfig() != ESP_OK)
 	{
+		return;
+	}
+
+	if (presetImageMode)
+	{
+		presetImageMode = false;
+
+		lv_obj_t *button = e->current_target;
+
+		if (button == objects.btn_preset1)
+		{
+			presetImageKey[1] = '1';
+		}
+		else if (button == objects.btn_preset2)
+		{
+			presetImageKey[1] = '2';
+		}
+		else if (button == objects.btn_preset3)
+		{
+			presetImageKey[1] = '3';
+		}
+		else if (button == objects.btn_preset4)
+		{
+			presetImageKey[1] = '4';
+		}
+		else if (button == objects.btn_preset5)
+		{
+			presetImageKey[1] = '5';
+		}
+		else if (button == objects.btn_preset6)
+		{
+			presetImageKey[1] = '6';
+		}
+
+		disableImageMode();
+
+		lv_scr_load_anim(objects.image, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
+
 		return;
 	}
 
@@ -465,6 +536,11 @@ void action_get_preset(lv_event_t *e)
 
 void action_set_preset(lv_event_t *e)
 {
+	if (presetImageMode)
+	{
+		return;
+	}
+
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
 		char *key = presetKey(e->current_target, c);
@@ -511,4 +587,111 @@ void hideMsgBox(lv_timer_t *timer)
 	}
 
 	lv_obj_add_flag(objects.msg_box, LV_OBJ_FLAG_HIDDEN);
+}
+
+void enableImageMode()
+{
+	presetImageMode = lv_obj_has_state(objects.btn_preset_image, LV_STATE_CHECKED);
+}
+
+void disableImageMode()
+{
+	lv_obj_clear_state(objects.btn_preset_image, LV_STATE_CHECKED);
+	presetImageMode = false;
+}
+
+void action_assign_preset_image(lv_event_t *e)
+{
+	int userData = (int)e->user_data;
+
+	ESP_LOGI(TAG_EVT, "userData [%d]", userData);
+	setConfig(presetImageKey, userData);
+
+	resolvePresetImages();
+
+	lv_scr_load_anim(objects.preset, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
+}
+
+void action_clear_preset_image(lv_event_t *e)
+{
+	setConfig(presetImageKey, 0);
+
+	resolvePresetImages();
+
+	lv_scr_load_anim(objects.preset, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
+}
+
+void resolvePresetImages()
+{
+	if (openConfig() != ESP_OK)
+	{
+		return;
+	}
+
+	lv_obj_t *presetButtons[] = {
+		objects.btn_preset1,
+		objects.btn_preset2,
+		objects.btn_preset3,
+		objects.btn_preset4,
+		objects.btn_preset5,
+		objects.btn_preset6};
+
+	for (uint8_t c = 0; c < MAX_USER_PRESETS; c++)
+	{
+		char buffer[1];
+		itoa(c + 1, buffer, 10);
+
+		presetImageKey[1] = buffer[0];
+
+		ESP_LOGI(TAG_EVT, "presetImageKey %s", presetImageKey);
+
+		uint8_t imageIndex = getConfig(presetImageKey, 0);
+
+		uint8_t offset = imageIndex == 0 ? 0 : 5;
+
+		if (imageIndex == 0)
+		{
+			imageIndex = c;
+		}
+
+		ESP_LOGI(TAG_EVT, "imageIndex %d", imageIndex);
+		ESP_LOGI(TAG_EVT, "offset %d", offset);
+
+		const lv_img_dsc_t *presetImage = presetImageList[imageIndex + offset];
+		lv_obj_t *button = presetButtons[c];
+
+		lv_obj_set_style_bg_img_src(button, presetImage, LV_PART_MAIN | LV_STATE_DEFAULT);
+	}
+
+	closeConfig();
+}
+
+void resetPresets()
+{
+if (openConfig() != ESP_OK)
+	{
+		return;
+	}
+
+	for (uint8_t c = 0; c < MAX_USER_PRESETS; c++)
+	{
+		char buffer[1];
+		itoa(c + 1, buffer, 10);
+
+		presetImageKey[1] = buffer[0];
+
+		ESP_LOGI(TAG_EVT, "presetImageKey %s", presetImageKey);
+
+		setConfig(presetImageKey, 0);
+
+		presetImageKey[2] = '0';
+
+		setConfig(presetImageKey, -1);
+
+		presetImageKey[2] = 'i';
+	}
+
+	closeConfig();
+
+	updatePresets();
 }

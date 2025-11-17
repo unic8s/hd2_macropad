@@ -17,6 +17,11 @@ void _executeUserStratagem(uint8_t index);
 void updatePresets();
 void showMsgBox(char *msg);
 void hideMsgBox();
+void enableImageMode();
+void disableImageMode();
+void resolvePresetImages();
+void resolveImageKey(int itemIndex);
+void resetPresets();
 
 #ifdef __cplusplus
 } /*extern "C"*/

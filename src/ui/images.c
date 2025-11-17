@@ -1,6 +1,6 @@
 #include "images.h"
 
-const ext_img_desc_t images[201] = {
+const ext_img_desc_t images[214] = {
     { "splash", &img_splash },
     { "tabIcons", &img_tab_icons },
     { "IconBack", &img_icon_back },
@@ -20,6 +20,7 @@ const ext_img_desc_t images[201] = {
     { "IconRestart", &img_icon_restart },
     { "IconFlag", &img_icon_flag },
     { "IconSelection", &img_icon_selection },
+    { "IconImage", &img_icon_image },
     { "BTcon", &img_btcon },
     { "BTdis", &img_btdis },
     { "USBcon", &img_us_bcon },
@@ -202,4 +203,16 @@ const ext_img_desc_t images[201] = {
     { "WP2", &img_wp2 },
     { "WSP1", &img_wsp1 },
     { "WSP2", &img_wsp2 },
+    { "Mission_Conduct_Geological_Survey", &img_mission_conduct_geological_survey },
+    { "Mission_Emergency_Evacuation", &img_mission_emergency_evacuation },
+    { "Mission_Enable_E-710_Extraction", &img_mission_enable_e_710_extraction },
+    { "Mission_Eradicate_Automaton_Forces", &img_mission_eradicate_automaton_forces },
+    { "Mission_Eradicate_Terminid_Swarm", &img_mission_eradicate_terminid_swarm },
+    { "Mission_Evacuate_High-Value_Assets", &img_mission_evacuate_high_value_assets },
+    { "Mission_Launch_ICBM", &img_mission_launch_icbm },
+    { "Mission_Retrieve_Essential_Personnel", &img_mission_retrieve_essential_personnel },
+    { "Mission_Retrieve_Valuable_Data", &img_mission_retrieve_valuable_data },
+    { "Mission_Spread_Democracy", &img_mission_spread_democracy },
+    { "Mission_Terminate_Illegal_Broadcast", &img_mission_terminate_illegal_broadcast },
+    { "Mission_Upload_Escape_Pod_Data", &img_mission_upload_escape_pod_data },
 };

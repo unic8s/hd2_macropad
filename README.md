@@ -42,9 +42,11 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ![](screens/setup.png)
 
-### Presets
+### Presets & User-defined icons
 
 ![](screens/preset.png)
+
+![](screens/image.png)
 
 ### Config
 

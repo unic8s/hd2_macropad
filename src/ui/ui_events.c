@@ -328,36 +328,9 @@ void action_keyboard_demo(lv_event_t *e)
 	setStratagemCode(sequence, 0, true);
 }
 
-char *resolvePresetKey(lv_obj_t *button, int8_t itemIndex)
+char *resolvePresetKey(char presetIndex, int8_t itemIndex)
 {
 	static char key[3] = "p00";
-
-	char presetIndex = '0';
-
-	if (button == objects.btn_preset1)
-	{
-		presetIndex = '1';
-	}
-	else if (button == objects.btn_preset2)
-	{
-		presetIndex = '2';
-	}
-	else if (button == objects.btn_preset3)
-	{
-		presetIndex = '3';
-	}
-	else if (button == objects.btn_preset4)
-	{
-		presetIndex = '4';
-	}
-	else if (button == objects.btn_preset5)
-	{
-		presetIndex = '5';
-	}
-	else if (button == objects.btn_preset6)
-	{
-		presetIndex = '6';
-	}
 
 	char buffer[1];
 
@@ -421,36 +394,16 @@ void action_get_preset(lv_event_t *e)
 		return;
 	}
 
+	int userData = (int)e->user_data;
+
+	char buffer[1];
+	itoa(userData, buffer, 10);
+
+	presetKey[1] = buffer[0];
+
 	if (presetImageMode)
 	{
 		presetImageMode = false;
-
-		lv_obj_t *button = e->current_target;
-
-		if (button == objects.btn_preset1)
-		{
-			presetKey[1] = '1';
-		}
-		else if (button == objects.btn_preset2)
-		{
-			presetKey[1] = '2';
-		}
-		else if (button == objects.btn_preset3)
-		{
-			presetKey[1] = '3';
-		}
-		else if (button == objects.btn_preset4)
-		{
-			presetKey[1] = '4';
-		}
-		else if (button == objects.btn_preset5)
-		{
-			presetKey[1] = '5';
-		}
-		else if (button == objects.btn_preset6)
-		{
-			presetKey[1] = '6';
-		}
 
 		disableImageMode();
 
@@ -463,7 +416,7 @@ void action_get_preset(lv_event_t *e)
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		char *key = resolvePresetKey(e->current_target, c);
+		char *key = resolvePresetKey(presetKey[1], c);
 
 		int8_t presetIndex = getConfig(key, -1);
 		types[c] = presetIndex;
@@ -553,9 +506,16 @@ void action_set_preset(lv_event_t *e)
 		return;
 	}
 
+	int userData = (int)e->user_data;
+
+	char buffer[1];
+	itoa(userData, buffer, 10);
+
+	presetKey[1] = buffer[0];
+
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		char *key = resolvePresetKey(e->current_target, c);
+		char *key = resolvePresetKey(presetKey[1], c);
 
 		setConfig(key, types[c]);
 	}

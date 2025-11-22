@@ -2,8 +2,6 @@
 
 ![The device including the 3D printed frame](screens/device.jpg)
 
-[Video preview](https://www.youtube.com/watch?v=zbW8vrxIuko) on YouTube.
-
 A very flexible and easy-to-use macropad for HELLDIVERS&trade; 2 for live configuration on each drop into combat with individual loadouts.
 
 > [!NOTE]
@@ -16,6 +14,12 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 > HELLDIVERS and Playstation are registered trademarks of SONY INTERACTIVE ENTERTAINMENT LLC.
 > 
 > XBOX is a registered trademark of MICROSOFT COPERATION.
+
+## Videos
+
+[Video preview](https://www.youtube.com/watch?v=zbW8vrxIuko) on YouTube.
+
+[Demo on PC](https://www.youtube.com/watch?v=QH1CfI5M_fw) on YouTube.
 
 ## Instructions
 

@@ -221,6 +221,12 @@ extern const lv_img_dsc_t img_mission_retrieve_valuable_data;
 extern const lv_img_dsc_t img_mission_spread_democracy;
 extern const lv_img_dsc_t img_mission_terminate_illegal_broadcast;
 extern const lv_img_dsc_t img_mission_upload_escape_pod_data;
+extern const lv_img_dsc_t img_dt1;
+extern const lv_img_dsc_t img_gdhd1;
+extern const lv_img_dsc_t img_mxg1;
+extern const lv_img_dsc_t img_dt2;
+extern const lv_img_dsc_t img_gdhd2;
+extern const lv_img_dsc_t img_mxg2;
 
 #ifndef EXT_IMG_DESC_T
 #define EXT_IMG_DESC_T
@@ -230,7 +236,7 @@ typedef struct _ext_img_desc_t {
 } ext_img_desc_t;
 #endif
 
-extern const ext_img_desc_t images[214];
+extern const ext_img_desc_t images[220];
 
 
 #ifdef __cplusplus

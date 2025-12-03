@@ -35,6 +35,8 @@ extern "C"
         SG_E,
         SG_EN,
         SG_SG,
+        SG_MXG,
+        SG_DT,
 
         // Backpacks
         SG_BSB,
@@ -42,6 +44,7 @@ extern "C"
         SG_GD,
         SG_GDB,
         SG_GDR,
+        SG_GDHD,
         SG_JP,
         SG_PE,
         SG_SGP,
@@ -124,6 +127,8 @@ extern "C"
         objects.weapons_e->user_data = (void *)SG_E;
         objects.weapons_en->user_data = (void *)SG_EN;
         objects.weapons_sg->user_data = (void *)SG_SG;
+        objects.weapons_mxg->user_data = (void *)SG_MXG;
+        objects.weapons_dt->user_data = (void *)SG_DT;
 
         // Backpacks
         objects.backpack_bsb->user_data = (void *)SG_BSB;
@@ -142,6 +147,7 @@ extern "C"
         objects.supply_otf->user_data = (void *)SG_OTF;
         objects.backpack_gdk->user_data = (void *)SG_GDK;
         objects.backpack_wp->user_data = (void *)SG_WP;
+        objects.backpack_gdhd->user_data = (void *)SG_GDHD;
 
         // Stationary
         objects.sentry_acs->user_data = (void *)SG_ACS;

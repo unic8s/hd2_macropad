@@ -703,7 +703,34 @@ const stratagemItem strategemItemList[] = {
         SND_BACKPACK,
         sgBlue,
         &img_sg2,
-        SG_SG}};
+        SG_SG},
+
+    // 75
+    // CQC-9 Defoliation Tool
+    {
+        {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
+        SND_WEAPON,
+        sgBlue,
+        &img_dt2,
+        SG_DT},
+
+    // 76
+    // M-1000 Maxigun
+    {
+        {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0},
+        SND_WEAPON,
+        sgBlue,
+        &img_mxg2,
+        SG_MXG},
+
+    // 77
+    // AX/FLAM-75 "Guard Dog" Hot Dog
+    {
+        {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_LEFT, 0, 0},
+        SND_BACKPACK,
+        sgBlue,
+        &img_gdhd2,
+        SG_GDHD}};
 
 const stratagemBase strategemBaseList[] = {
     // 0

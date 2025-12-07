@@ -52,7 +52,10 @@ const lv_img_dsc_t *presetImageList[] = {
 	&img_mission_retrieve_valuable_data,
 	&img_mission_spread_democracy,
 	&img_mission_terminate_illegal_broadcast,
-	&img_mission_upload_escape_pod_data};
+	&img_mission_upload_escape_pod_data,
+	&img_faction_terminid,
+	&img_faction_automaton,
+	&img_faction_illuminate};
 
 // HID input mask for special keys
 #define INPUT_CTRL_MASK 1 // 1 CTRL left

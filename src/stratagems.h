@@ -636,7 +636,7 @@ const stratagemItem strategemItemList[] = {
     // 67
     // De-escalator
     {
-        {INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
+        {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         SND_WEAPON,
         sgBlue,
         &img_de2,

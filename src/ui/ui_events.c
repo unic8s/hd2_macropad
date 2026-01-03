@@ -212,8 +212,9 @@ void action_select_stratagem(lv_event_t *e)
 			{
 				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->current_target);
 				int index = -1;
+				uint8_t itemListLength = sizeof(strategemItemList);
 
-				for (int c = 0; c < sizeof(strategemItemList); c++)
+				for (int c = 0; c < itemListLength; c++)
 				{
 					stratagemItem item = strategemItemList[c];
 
@@ -460,7 +461,9 @@ void action_get_preset(lv_event_t *e)
 
 			if (child == NULL)
 			{
-				if (listIndex < sizeof(lists))
+				uint8_t listsLength = (uint8_t)sizeof(lists);
+
+				if (listIndex < listsLength)
 				{
 					listIndex++;
 					childIndex = 0;
@@ -475,8 +478,9 @@ void action_get_preset(lv_event_t *e)
 			if (type == presetIndex)
 			{
 				int index = -1;
+				uint8_t itemListLength = (uint8_t)sizeof(strategemItemList);
 
-				for (int c = 0; c < sizeof(strategemItemList); c++)
+				for (int c = 0; c < itemListLength; c++)
 				{
 					stratagemItem item = strategemItemList[c];
 
@@ -774,8 +778,9 @@ void updateManualSequence()
 void lookupManualSequence()
 {
 	int matchCount = 0;
+	uint8_t itemListLength = (uint8_t)sizeof(strategemItemList);
 
-	for (int c1 = 0; c1 < sizeof(strategemItemList); c1++)
+	for (uint8_t c1 = 0; c1 < itemListLength; c1++)
 	{
 		stratagemItem item = strategemItemList[c1];
 		bool match = true;
@@ -801,15 +806,12 @@ void lookupManualSequence()
 
 	if (matchCount == 0)
 	{
-		for (int c1 = 0; c1 < sizeof(strategemBaseList); c1++)
+		uint8_t baseListLength = (uint8_t)sizeof(strategemBaseList);
+
+		for (uint8_t c1 = 0; c1 < baseListLength; c1++)
 		{
 			stratagemBase item = strategemBaseList[c1];
 			bool match = true;
-
-			if (item.imgHiRes == NULL)
-			{
-				continue;
-			}
 
 			for (uint8_t c2 = 0; c2 < manualIndex; c2++)
 			{
@@ -834,6 +836,10 @@ void lookupManualSequence()
 	if (matchCount == 1)
 	{
 		const lv_img_dsc_t *imgHiRes = manualList == 0 ? strategemItemList[manualMatch].imgHiRes : strategemBaseList[manualMatch].imgHiRes;
+
+		if(imgHiRes == NULL){
+			return;
+		}
 
 		lv_obj_set_style_bg_img_src(objects.manual_preview_item, imgHiRes, LV_PART_MAIN | LV_STATE_DEFAULT);
 	}

@@ -64,7 +64,7 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ![](screens/mission.png)
 
-### Manual input
+### Manual input - if you want to put it on your wrist for cosplayers or more intense experience while diving
 
 ![](screens/manual.png)
 

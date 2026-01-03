@@ -64,6 +64,10 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ![](screens/mission.png)
 
+### Manual input
+
+![](screens/manual.png)
+
 ## Credits and special thanks
 
 - [Icon Set](https://github.com/nvigneux/Helldivers-2-Stratagems-icons-svg) from [@nvigneux](https://github.com/nvigneux)

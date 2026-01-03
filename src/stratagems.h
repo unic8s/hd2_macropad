@@ -737,31 +737,31 @@ const stratagemBase strategemBaseList[] = {
     // Reinforce
     {
         {INPUT_UP, INPUT_DOWN, INPUT_RIGHT, INPUT_LEFT, INPUT_UP, 0, 0, 0},
-        NULL},
+        SND_REINFORCE},
 
     // 1
     // Resupply
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
-        NULL},
+        SND_SUPPLY},
 
     // 2
     // SOS
     {
         {INPUT_UP, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0},
-        NULL},
+        SND_SOS},
 
     // 3
     // Eagle rearm
     {
         {INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
-        NULL},
+        SND_EAGLE_RELOAD},
 
     // 4
     // Hellbomb
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP},
-        NULL},
+        SND_BACKPACK},
 
     // 5
     // S.E.A.F.

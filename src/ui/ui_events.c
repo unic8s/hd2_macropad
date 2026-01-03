@@ -31,6 +31,7 @@ int types[MAX_USER_STRATAGEMS];
 uint8_t strategemsAmount = 0;
 
 int manualIndex = 0;
+int manualList = 0;
 int manualSequence[] = {0, 0, 0, 0, 0, 0, 0, 0};
 int manualMatch = -1;
 lv_timer_t *timerManual = NULL;
@@ -704,10 +705,25 @@ void action_manual_execute(lv_event_t *e)
 
 void finalizeManualExecution()
 {
-	if(manualMatch >= 0){
-		stratagemItem item = strategemItemList[manualMatch];
+	if (manualMatch >= 0)
+	{
+		uint8_t *sequence;
+		char *soundPath;
 
-		_executeStdStratagem(item.sequence, item.soundPath);
+		if (manualList == 0)
+		{
+			stratagemItem item = strategemItemList[manualMatch];
+			sequence = item.sequence;
+			soundPath = item.soundPath;
+		}
+		else
+		{
+			stratagemBase item = strategemBaseList[manualMatch];
+			sequence = item.sequence;
+			soundPath = item.soundPath;
+		}
+
+		_executeStdStratagem(sequence, soundPath);
 	}
 
 	manualMatch = -1;
@@ -777,16 +793,49 @@ void lookupManualSequence()
 
 		if (match)
 		{
+			manualList = 0;
 			matchCount++;
 			manualMatch = c1;
 		}
 	}
 
+	if (matchCount == 0)
+	{
+		for (int c1 = 0; c1 < sizeof(strategemBaseList); c1++)
+		{
+			stratagemBase item = strategemBaseList[c1];
+			bool match = true;
+
+			if (item.imgHiRes == NULL)
+			{
+				continue;
+			}
+
+			for (uint8_t c2 = 0; c2 < manualIndex; c2++)
+			{
+				const uint8_t manualStep = manualSequence[c2];
+
+				if (item.sequence[c2] != manualStep)
+				{
+					match = false;
+					break;
+				}
+			}
+
+			if (match)
+			{
+				manualList = 1;
+				matchCount++;
+				manualMatch = c1;
+			}
+		}
+	}
+
 	if (matchCount == 1)
 	{
-		stratagemItem item = strategemItemList[manualMatch];
+		const lv_img_dsc_t *imgHiRes = manualList == 0 ? strategemItemList[manualMatch].imgHiRes : strategemBaseList[manualMatch].imgHiRes;
 
-		lv_obj_set_style_bg_img_src(objects.manual_preview_item, item.imgHiRes, LV_PART_MAIN | LV_STATE_DEFAULT);
+		lv_obj_set_style_bg_img_src(objects.manual_preview_item, imgHiRes, LV_PART_MAIN | LV_STATE_DEFAULT);
 	}
 	else
 	{

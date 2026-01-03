@@ -27,6 +27,7 @@ typedef struct
 {
     uint8_t sequence[8];
     char *soundPath;
+    const lv_img_dsc_t *imgHiRes;
 } stratagemBase;
 
 // List of all available stratagems and corresponding data
@@ -737,90 +738,105 @@ const stratagemBase strategemBaseList[] = {
     // Reinforce
     {
         {INPUT_UP, INPUT_DOWN, INPUT_RIGHT, INPUT_LEFT, INPUT_UP, 0, 0, 0},
-        SND_REINFORCE},
+        SND_REINFORCE,
+        &img_rf2},
 
     // 1
     // Resupply
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
-        SND_SUPPLY},
+        SND_SUPPLY,
+        &img_res2},
 
     // 2
     // SOS
     {
         {INPUT_UP, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0},
-        SND_SOS},
+        SND_SOS,
+        &img_sos2},
 
     // 3
     // Eagle rearm
     {
         {INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
-        SND_EAGLE_RELOAD},
+        SND_EAGLE_RELOAD,
+        &img_er2},
 
     // 4
     // Hellbomb
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP},
-        SND_BACKPACK},
+        SND_BACKPACK,
+        &img_hb2},
 
     // 5
     // S.E.A.F.
     {
         {INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0},
-        NULL},
+        NULL,
+        &img_seaf2},
 
     // 6
     // SSSD Delivery
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0, 0},
+        NULL,
         NULL},
 
     // 7
     // Upload data
     {
         {INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_UP, 0, 0, 0},
+        NULL,
         NULL},
 
     // 8
     // Super Earth Flag
     {
         {INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
+        NULL,
         NULL},
 
     // 9
     // Hive breaker drill
     {
         {INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0},
+        NULL,
         NULL},
 
     // 10
     // Tectonic drill
     {
         {INPUT_UP, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_UP, INPUT_DOWN, 0, 0},
+        NULL,
         NULL},
 
     // 11
     // Prospection drill
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0},
+        NULL,
         NULL},
 
     // 12
     // Seismic probe
     {
         {INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0},
+        NULL,
         NULL},
 
     // 13
     // Orbital illumination flare
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, INPUT_LEFT, 0, 0, 0, 0},
+        NULL,
         NULL},
 
     // 14
     // Dark fluid vessel
     {
         {INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0},
+        NULL,
         NULL}};
 
 #endif

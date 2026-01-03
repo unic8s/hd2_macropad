@@ -22,6 +22,9 @@ void disableImageMode();
 void resolvePresetImages();
 char *resolvePresetKey(char presetIndex, int8_t itemIndex);
 void resetPresets();
+void finalizeManualExecution();
+void updateManualSequence();
+void lookupManualSequence();
 
 #ifdef __cplusplus
 } /*extern "C"*/

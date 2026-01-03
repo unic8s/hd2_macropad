@@ -27,6 +27,7 @@ extern const lv_img_dsc_t img_icon_restart;
 extern const lv_img_dsc_t img_icon_flag;
 extern const lv_img_dsc_t img_icon_selection;
 extern const lv_img_dsc_t img_icon_image;
+extern const lv_img_dsc_t img_icon_arrow_keys;
 extern const lv_img_dsc_t img_btcon;
 extern const lv_img_dsc_t img_btdis;
 extern const lv_img_dsc_t img_us_bcon;
@@ -230,6 +231,14 @@ extern const lv_img_dsc_t img_mxg2;
 extern const lv_img_dsc_t img_faction_automaton;
 extern const lv_img_dsc_t img_faction_illuminate;
 extern const lv_img_dsc_t img_faction_terminid;
+extern const lv_img_dsc_t img_stratagem_arrow_down2;
+extern const lv_img_dsc_t img_stratagem_arrow_left2;
+extern const lv_img_dsc_t img_stratagem_arrow_right2;
+extern const lv_img_dsc_t img_stratagem_arrow_up2;
+extern const lv_img_dsc_t img_stratagem_arrow_right1;
+extern const lv_img_dsc_t img_stratagem_arrow_up1;
+extern const lv_img_dsc_t img_stratagem_arrow_left1;
+extern const lv_img_dsc_t img_stratagem_arrow_down1;
 
 #ifndef EXT_IMG_DESC_T
 #define EXT_IMG_DESC_T
@@ -239,7 +248,7 @@ typedef struct _ext_img_desc_t {
 } ext_img_desc_t;
 #endif
 
-extern const ext_img_desc_t images[223];
+extern const ext_img_desc_t images[232];
 
 
 #ifdef __cplusplus

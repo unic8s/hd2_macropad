@@ -30,6 +30,11 @@ int types[MAX_USER_STRATAGEMS];
 // Amount of user assigned stratagems
 uint8_t strategemsAmount = 0;
 
+int manualIndex = 0;
+int manualSequence[] = {0, 0, 0, 0, 0, 0, 0, 0};
+int manualMatch = -1;
+lv_timer_t *timerManual = NULL;
+
 lv_timer_t *timerMsg = NULL;
 bool presetImageMode = false;
 char presetKey[3] = "p0i";
@@ -56,6 +61,12 @@ const lv_img_dsc_t *presetImageList[] = {
 	&img_faction_terminid,
 	&img_faction_automaton,
 	&img_faction_illuminate};
+
+const lv_img_dsc_t *manualArrowList[] = {
+	&img_stratagem_arrow_up1,
+	&img_stratagem_arrow_down1,
+	&img_stratagem_arrow_left1,
+	&img_stratagem_arrow_right1};
 
 // HID input mask for special keys
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
@@ -660,4 +671,127 @@ void resetPresets()
 	closeConfig();
 
 	updatePresets();
+}
+
+void action_manual_execute(lv_event_t *e)
+{
+	int arrowDirection = (int)e->user_data;
+
+	manualSequence[manualIndex] = arrowDirection;
+
+	if (manualIndex < 7)
+	{
+		manualIndex++;
+
+		lookupManualSequence();
+		updateManualSequence();
+	}
+	else
+	{
+		finalizeManualExecution();
+	}
+
+	if (timerManual != NULL)
+	{
+		lv_timer_del(timerManual);
+		timerManual = NULL;
+	}
+
+	int timeout = manualMatch >= 0 ? 1000 : 1500;
+
+	timerManual = lv_timer_create(finalizeManualExecution, timeout, NULL);
+}
+
+void finalizeManualExecution()
+{
+	if(manualMatch >= 0){
+		stratagemItem item = strategemItemList[manualMatch];
+
+		_executeStdStratagem(item.sequence, item.soundPath);
+	}
+
+	manualMatch = -1;
+	manualIndex = 0;
+
+	for (uint8_t c = 0; c < 8; c++)
+	{
+		manualSequence[c] = 0;
+	}
+
+	lv_obj_set_style_bg_img_src(objects.manual_preview_item, "", LV_PART_MAIN | LV_STATE_DEFAULT);
+
+	updateManualSequence();
+}
+
+void updateManualSequence()
+{
+	lv_obj_t *cmdImages[] = {
+		objects.manual_cmd1,
+		objects.manual_cmd2,
+		objects.manual_cmd3,
+		objects.manual_cmd4,
+		objects.manual_cmd5,
+		objects.manual_cmd6,
+		objects.manual_cmd7,
+		objects.manual_cmd8};
+
+	for (uint8_t c = 0; c < 8; c++)
+	{
+		const uint8_t currentCmd = manualSequence[c];
+		lv_obj_t *target = cmdImages[c];
+
+		if (currentCmd > 0)
+		{
+			const uint8_t imageIndex = currentCmd - 1;
+			const lv_img_dsc_t *arrowImage = manualArrowList[imageIndex];
+
+			lv_img_set_src(target, arrowImage);
+			lv_obj_clear_flag(target, LV_OBJ_FLAG_HIDDEN);
+		}
+		else
+		{
+			lv_obj_add_flag(target, LV_OBJ_FLAG_HIDDEN);
+		}
+	}
+}
+
+void lookupManualSequence()
+{
+	int matchCount = 0;
+
+	for (int c1 = 0; c1 < sizeof(strategemItemList); c1++)
+	{
+		stratagemItem item = strategemItemList[c1];
+		bool match = true;
+
+		for (uint8_t c2 = 0; c2 < manualIndex; c2++)
+		{
+			const uint8_t manualStep = manualSequence[c2];
+
+			if (item.sequence[c2] != manualStep)
+			{
+				match = false;
+				break;
+			}
+		}
+
+		if (match)
+		{
+			matchCount++;
+			manualMatch = c1;
+		}
+	}
+
+	if (matchCount == 1)
+	{
+		stratagemItem item = strategemItemList[manualMatch];
+
+		lv_obj_set_style_bg_img_src(objects.manual_preview_item, item.imgHiRes, LV_PART_MAIN | LV_STATE_DEFAULT);
+	}
+	else
+	{
+		manualMatch = -1;
+
+		lv_obj_set_style_bg_img_src(objects.manual_preview_item, "", LV_PART_MAIN | LV_STATE_DEFAULT);
+	}
 }

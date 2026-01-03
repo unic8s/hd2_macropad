@@ -68,6 +68,12 @@ void action_reset_presets(lv_event_t *e)
 	resetPresets();
 }
 
-void action_disable_image_mode(lv_event_t * e){
+void action_disable_image_mode(lv_event_t *e)
+{
 	disableImageMode();
+}
+
+void action_finalize_manual_execution(lv_event_t *e)
+{
+	finalizeManualExecution();
 }

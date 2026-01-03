@@ -18,6 +18,7 @@ typedef struct _objects_t {
     lv_obj_t *config;
     lv_obj_t *reset_config;
     lv_obj_t *about;
+    lv_obj_t *manual;
     lv_obj_t *tab_view_setup;
     lv_obj_t *tab_rifle;
     lv_obj_t *weapons_mg;
@@ -120,15 +121,15 @@ typedef struct _objects_t {
     lv_obj_t *obj12;
     lv_obj_t *obj13;
     lv_obj_t *obj14;
+    lv_obj_t *obj15;
     lv_obj_t *btn_preset1;
     lv_obj_t *btn_preset2;
     lv_obj_t *btn_preset3;
     lv_obj_t *btn_preset4;
     lv_obj_t *btn_preset5;
     lv_obj_t *btn_preset6;
-    lv_obj_t *obj15;
-    lv_obj_t *btn_preset_image;
     lv_obj_t *obj16;
+    lv_obj_t *btn_preset_image;
     lv_obj_t *obj17;
     lv_obj_t *obj18;
     lv_obj_t *obj19;
@@ -148,6 +149,7 @@ typedef struct _objects_t {
     lv_obj_t *obj33;
     lv_obj_t *obj34;
     lv_obj_t *obj35;
+    lv_obj_t *obj36;
     lv_obj_t *btn_reinforce;
     lv_obj_t *btn_resupply;
     lv_obj_t *btn_sos;
@@ -160,8 +162,8 @@ typedef struct _objects_t {
     lv_obj_t *custom_stratagem6;
     lv_obj_t *btn_seaf;
     lv_obj_t *btn_hellbomb;
-    lv_obj_t *obj36;
     lv_obj_t *obj37;
+    lv_obj_t *obj38;
     lv_obj_t *btn_sssd;
     lv_obj_t *btn_ud;
     lv_obj_t *btn_sef;
@@ -171,34 +173,48 @@ typedef struct _objects_t {
     lv_obj_t *btn_sp;
     lv_obj_t *btn_oif;
     lv_obj_t *btn_dfv;
-    lv_obj_t *obj38;
+    lv_obj_t *obj39;
     lv_obj_t *tab_view_config;
     lv_obj_t *sld_brightness;
     lv_obj_t *chb_flip;
     lv_obj_t *chb_mute;
     lv_obj_t *sld_delay;
     lv_obj_t *dd_connectivity;
-    lv_obj_t *obj39;
-    lv_obj_t *dd_keymap;
     lv_obj_t *obj40;
+    lv_obj_t *dd_keymap;
     lv_obj_t *obj41;
     lv_obj_t *obj42;
     lv_obj_t *obj43;
     lv_obj_t *obj44;
     lv_obj_t *obj45;
     lv_obj_t *obj46;
+    lv_obj_t *obj47;
+    lv_obj_t *manual_arrow_left;
+    lv_obj_t *manual_arrow_up;
+    lv_obj_t *manual_arrow_down;
+    lv_obj_t *manual_arrow_right;
+    lv_obj_t *obj48;
     lv_obj_t *img_splash;
     lv_obj_t *bar_amount;
     lv_obj_t *label_amount;
     lv_obj_t *msg_box;
     lv_obj_t *msg_label;
     lv_obj_t *img_connection2;
-    lv_obj_t *obj47;
+    lv_obj_t *obj49;
     lv_obj_t *lbl_brightness;
     lv_obj_t *lbl_delay;
     lv_obj_t *img_connection1;
-    lv_obj_t *obj48;
+    lv_obj_t *obj50;
     lv_obj_t *lbl_version;
+    lv_obj_t *manual_preview_item;
+    lv_obj_t *manual_cmd1;
+    lv_obj_t *manual_cmd2;
+    lv_obj_t *manual_cmd3;
+    lv_obj_t *manual_cmd4;
+    lv_obj_t *manual_cmd5;
+    lv_obj_t *manual_cmd6;
+    lv_obj_t *manual_cmd7;
+    lv_obj_t *manual_cmd8;
 } objects_t;
 
 extern objects_t objects;
@@ -214,6 +230,7 @@ enum ScreensEnum {
     SCREEN_ID_CONFIG = 8,
     SCREEN_ID_RESET_CONFIG = 9,
     SCREEN_ID_ABOUT = 10,
+    SCREEN_ID_MANUAL = 11,
 };
 
 void create_screen_intro();
@@ -245,6 +262,9 @@ void tick_screen_reset_config();
 
 void create_screen_about();
 void tick_screen_about();
+
+void create_screen_manual();
+void tick_screen_manual();
 
 enum Themes {
     THEME_ID_DEFAULT,

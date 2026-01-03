@@ -31,6 +31,8 @@ extern void action_assign_preset_image(lv_event_t * e);
 extern void action_clear_preset_image(lv_event_t * e);
 extern void action_reset_presets(lv_event_t * e);
 extern void action_disable_image_mode(lv_event_t * e);
+extern void action_manual_execute(lv_event_t * e);
+extern void action_finalize_manual_execution(lv_event_t * e);
 
 
 #ifdef __cplusplus

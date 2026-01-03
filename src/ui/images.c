@@ -1,6 +1,6 @@
 #include "images.h"
 
-const ext_img_desc_t images[223] = {
+const ext_img_desc_t images[232] = {
     { "splash", &img_splash },
     { "tabIcons", &img_tab_icons },
     { "IconBack", &img_icon_back },
@@ -21,6 +21,7 @@ const ext_img_desc_t images[223] = {
     { "IconFlag", &img_icon_flag },
     { "IconSelection", &img_icon_selection },
     { "IconImage", &img_icon_image },
+    { "IconArrowKeys", &img_icon_arrow_keys },
     { "BTcon", &img_btcon },
     { "BTdis", &img_btdis },
     { "USBcon", &img_us_bcon },
@@ -224,4 +225,12 @@ const ext_img_desc_t images[223] = {
     { "Faction_Automaton", &img_faction_automaton },
     { "Faction_Illuminate", &img_faction_illuminate },
     { "Faction_Terminid", &img_faction_terminid },
+    { "Stratagem_Arrow_Down2", &img_stratagem_arrow_down2 },
+    { "Stratagem_Arrow_Left2", &img_stratagem_arrow_left2 },
+    { "Stratagem_Arrow_Right2", &img_stratagem_arrow_right2 },
+    { "Stratagem_Arrow_Up2", &img_stratagem_arrow_up2 },
+    { "Stratagem_Arrow_Right1", &img_stratagem_arrow_right1 },
+    { "Stratagem_Arrow_Up1", &img_stratagem_arrow_up1 },
+    { "Stratagem_Arrow_Left1", &img_stratagem_arrow_left1 },
+    { "Stratagem_Arrow_Down1", &img_stratagem_arrow_down1 },
 };

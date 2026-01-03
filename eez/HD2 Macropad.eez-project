@@ -15371,7 +15371,7 @@
               "objID": "8e4997d1-5b59-4aee-f263-a37c5acdf53b",
               "type": "LVGLContainerWidget",
               "left": 0,
-              "top": 20,
+              "top": -20,
               "width": 356,
               "height": 237,
               "customInputs": [],
@@ -15395,7 +15395,7 @@
                   "left": -74,
                   "top": -4,
                   "width": 116,
-                  "height": 58,
+                  "height": 56,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -15602,7 +15602,7 @@
                   "left": -90.5,
                   "top": -119.5,
                   "width": 116,
-                  "height": 58,
+                  "height": 56,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -15713,7 +15713,7 @@
                       "flex_flow": "COLUMN_WRAP",
                       "pad_row": 4,
                       "pad_column": 4,
-                      "align": "CENTER"
+                      "align": "BOTTOM_MID"
                     }
                   }
                 }
@@ -16099,7 +16099,14 @@
                   "disabledStateType": "literal",
                   "states": "",
                   "localStyles": {
-                    "objID": "6e8391c7-0ef4-4e8c-c465-8122435e102c"
+                    "objID": "6e8391c7-0ef4-4e8c-c465-8122435e102c",
+                    "definition": {
+                      "MAIN": {
+                        "DEFAULT": {
+                          "opa": 255
+                        }
+                      }
+                    }
                   },
                   "group": "",
                   "groupIndex": 0,
@@ -16219,8 +16226,8 @@
         {
           "objID": "d5686555-5f30-44d1-d797-e7ff0f5a6fad",
           "type": "LVGLActionComponent",
-          "left": 90,
-          "top": 424,
+          "left": 99,
+          "top": 374,
           "width": 323,
           "height": 54,
           "customInputs": [],

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><XnView_script version="1.0" name="export_sg_large">
+    <Crop method="1" value_1="4" value_2="4" value_3="4" value_4="4"/>
+    <Resize mode="0" width="96" height="96" unit="0" ratio="true" orientation="false" enlarge="0" resample="10" gamma_correct="false"/>
+    <Replace_color src_color="#000000" dst_color="#444444" tolerance="0" active="false"/>
+    <Remove_alpha_channel/>
+    <Output folder="" filename="{Filename}2" case="0" startIndex="1" format="PNG">
+        <Options overwrite="1" orgDate="false" keepMeta="true" keepICC="false" keepFolder="false" checkFilesize="false" keepParentFolder="false" keepExtension="false" delOrg="false" multipage="false" allPages="false" openExplorer="false" beep="true" openBrowser="false" clearItems="false"/>
+        <PNG level="6" interlaced="false" filter="0"/>
+    </Output>
+</XnView_script>

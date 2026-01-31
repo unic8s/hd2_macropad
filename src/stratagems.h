@@ -731,7 +731,16 @@ const stratagemItem strategemItemList[] = {
         SND_BACKPACK,
         sgBlue,
         &img_gdhd2,
-        SG_GDHD}};
+        SG_GDHD},
+
+    // 78
+    // B/MD C4 Pack
+    {
+        {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_RIGHT, INPUT_UP, 0, 0},
+        SND_BACKPACK,
+        sgBlue,
+        &img_c4p2,
+        SG_C4P}};
 
 const stratagemBase strategemBaseList[] = {
     // 0
@@ -836,6 +845,13 @@ const stratagemBase strategemBaseList[] = {
     // Dark fluid vessel
     {
         {INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0},
+        NULL,
+        NULL},
+
+    // 15
+    // Call in Super Destroyer
+    {
+        {INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT},
         NULL,
         NULL}};
 

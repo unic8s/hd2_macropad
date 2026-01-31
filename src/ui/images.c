@@ -1,6 +1,6 @@
 #include "images.h"
 
-const ext_img_desc_t images[232] = {
+const ext_img_desc_t images[236] = {
     { "splash", &img_splash },
     { "tabIcons", &img_tab_icons },
     { "IconBack", &img_icon_back },
@@ -204,6 +204,10 @@ const ext_img_desc_t images[232] = {
     { "WP2", &img_wp2 },
     { "WSP1", &img_wsp1 },
     { "WSP2", &img_wsp2 },
+    { "CSD1", &img_csd1 },
+    { "CSD2", &img_csd2 },
+    { "C4P1", &img_c4p1 },
+    { "C4P2", &img_c4p2 },
     { "Mission_Conduct_Geological_Survey", &img_mission_conduct_geological_survey },
     { "Mission_Emergency_Evacuation", &img_mission_emergency_evacuation },
     { "Mission_Enable_E-710_Extraction", &img_mission_enable_e_710_extraction },

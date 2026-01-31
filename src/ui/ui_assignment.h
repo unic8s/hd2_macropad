@@ -98,7 +98,9 @@ extern "C"
         SG_CB,
         SG_NA,
         SG_SR,
-        SG_ESS
+        SG_ESS,
+
+        SG_C4P
     };
 
     // Assign stratagems index to UI buttons
@@ -148,6 +150,7 @@ extern "C"
         objects.backpack_gdk->user_data = (void *)SG_GDK;
         objects.backpack_wp->user_data = (void *)SG_WP;
         objects.backpack_gdhd->user_data = (void *)SG_GDHD;
+        objects.backpack_c4_p->user_data = (void *)SG_C4P;
 
         // Stationary
         objects.sentry_acs->user_data = (void *)SG_ACS;

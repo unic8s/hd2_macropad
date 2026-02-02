@@ -29,10 +29,6 @@ Based on an affordable IoT platform device with a capacitive touchscreen it's ve
 > The device is only able to connect to the Playstation&trade; via USB.
 > It's not able to connect to the Playstation&trade; via Bluetooth directly.
 > We're currently working on the [BT2USB bridge](https://github.com/unic8s/bt2usb_bridge) which plugs into the USB port of a Playstation&trade; directly and connects to the HD2 Macropad via Bluetooth.
->
-> There is a very interesting [PicoGamepadConverter](https://github.com/Loc15/PicoGamepadConverter) which should probably also work as a translation device.
-> Probably this could also help to make this project work with an XBOX since it supports translation to XBOX Controller (XINPUT).
-> The combination would be to connect the macropad via USB to the Pico and the Pico itself to the XBOX since it only allowes wired controllers from 3rd parties.
 
 ## Support
 

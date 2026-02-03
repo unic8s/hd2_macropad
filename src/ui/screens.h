@@ -173,6 +173,7 @@ typedef struct _objects_t {
     lv_obj_t *btn_sp;
     lv_obj_t *btn_oif;
     lv_obj_t *btn_dfv;
+    lv_obj_t *btn_cc;
     lv_obj_t *btn_csd;
     lv_obj_t *obj38;
     lv_obj_t *tab_view_config;

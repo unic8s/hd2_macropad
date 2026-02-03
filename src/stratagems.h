@@ -849,6 +849,13 @@ const stratagemBase strategemBaseList[] = {
         NULL},
 
     // 15
+    // Cargo container
+    {
+        {INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, 0, 0},
+        NULL,
+        NULL},
+
+    // 16
     // Call in Super Destroyer
     {
         {INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT},

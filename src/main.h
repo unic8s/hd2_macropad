@@ -53,6 +53,10 @@ enum styleColors
     sgBlue = 0x49ADC9
 };
 
+#define MAX_CMD_LENGTH 9
+#define SG_BASE_AMOUNT 17
+#define SG_ITEM_AMOUNT 83
+
 void app_main();
 void playbackSound(char *path);
 void setStratagemCode(uint8_t sequence[9], uint8_t mask, bool plain);

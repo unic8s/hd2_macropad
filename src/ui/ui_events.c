@@ -32,7 +32,7 @@ uint8_t strategemsAmount = 0;
 
 int manualIndex = 0;
 int manualList = 0;
-int manualSequence[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+int manualSequence[MAX_CMD_LENGTH] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 int manualMatch = -1;
 lv_timer_t *timerManual = NULL;
 
@@ -213,7 +213,7 @@ void action_select_stratagem(lv_event_t *e)
 				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->current_target);
 				int index = -1;
 
-				for (uint8_t c = 0; c < 83; c++)
+				for (uint8_t c = 0; c < SG_ITEM_AMOUNT; c++)
 				{
 					stratagemItem item = strategemItemList[c];
 
@@ -331,7 +331,7 @@ void action_trigger_stratagem_user(lv_event_t *e)
 // Trigger keyboard demo (send "hello" via bluetooth connection to host)
 void action_keyboard_demo(lv_event_t *e)
 {
-	uint8_t sequence[9] = {HID_KEY_H,
+	uint8_t sequence[MAX_CMD_LENGTH] = {HID_KEY_H,
 						   HID_KEY_E,
 						   HID_KEY_L,
 						   HID_KEY_L,
@@ -478,7 +478,7 @@ void action_get_preset(lv_event_t *e)
 			{
 				int index = -1;
 
-				for (int c = 0; c < 83; c++)
+				for (int c = 0; c < SG_ITEM_AMOUNT; c++)
 				{
 					stratagemItem item = strategemItemList[c];
 
@@ -682,7 +682,7 @@ void action_manual_execute(lv_event_t *e)
 
 	manualSequence[manualIndex] = arrowDirection;
 
-	if (manualIndex < 8)
+	if (manualIndex < MAX_CMD_LENGTH - 1)
 	{
 		manualIndex++;
 
@@ -731,7 +731,7 @@ void finalizeManualExecution()
 	manualMatch = -1;
 	manualIndex = 0;
 
-	for (uint8_t c = 0; c < 9; c++)
+	for (uint8_t c = 0; c < MAX_CMD_LENGTH; c++)
 	{
 		manualSequence[c] = 0;
 	}
@@ -743,7 +743,7 @@ void finalizeManualExecution()
 
 void updateManualSequence()
 {
-	lv_obj_t *cmdImages[] = {
+	lv_obj_t *cmdImages[MAX_CMD_LENGTH] = {
 		objects.manual_cmd1,
 		objects.manual_cmd2,
 		objects.manual_cmd3,
@@ -754,7 +754,7 @@ void updateManualSequence()
 		objects.manual_cmd8,
 		objects.manual_cmd9};
 
-	for (uint8_t c = 0; c < 9; c++)
+	for (uint8_t c = 0; c < MAX_CMD_LENGTH; c++)
 	{
 		const uint8_t currentCmd = manualSequence[c];
 		lv_obj_t *target = cmdImages[c];
@@ -778,7 +778,7 @@ void lookupManualSequence()
 {
 	int matchCount = 0;
 
-	for (uint8_t c1 = 0; c1 < 83; c1++)
+	for (uint8_t c1 = 0; c1 < SG_ITEM_AMOUNT; c1++)
 	{
 		stratagemItem item = strategemItemList[c1];
 		bool match = true;
@@ -804,7 +804,7 @@ void lookupManualSequence()
 
 	if (matchCount == 0)
 	{
-		for (uint8_t c1 = 0; c1 < 17; c1++)
+		for (uint8_t c1 = 0; c1 < SG_BASE_AMOUNT; c1++)
 		{
 			stratagemBase item = strategemBaseList[c1];
 			bool match = true;

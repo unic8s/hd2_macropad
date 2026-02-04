@@ -31,7 +31,7 @@ typedef struct
 } stratagemBase;
 
 // List of all available stratagems and corresponding data
-const stratagemItem strategemItemList[] = {
+const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // 0
     // MG-43 Machine Gun
     {
@@ -778,7 +778,7 @@ const stratagemItem strategemItemList[] = {
         &img_bfgl2,
         SG_BFGL}};
 
-const stratagemBase strategemBaseList[17] = {
+const stratagemBase strategemBaseList[SG_BASE_AMOUNT] = {
     // 0
     // Reinforce
     {

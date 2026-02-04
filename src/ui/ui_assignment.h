@@ -100,7 +100,12 @@ extern "C"
         SG_SR,
         SG_ESS,
 
-        SG_C4P
+        SG_C4P,
+
+        SG_BMK,
+        SG_BFGL,
+        SG_EATL,
+        SG_CQC
     };
 
     // Assign stratagems index to UI buttons
@@ -131,26 +136,33 @@ extern "C"
         objects.weapons_sg->user_data = (void *)SG_SG;
         objects.weapons_mxg->user_data = (void *)SG_MXG;
         objects.weapons_dt->user_data = (void *)SG_DT;
+        objects.weapons_bfgl->user_data = (void *)SG_BFGL;
+        objects.weapons_eatl->user_data = (void *)SG_EATL;
 
         // Backpacks
         objects.backpack_bsb->user_data = (void *)SG_BSB;
-        objects.supply_ee->user_data = (void *)SG_EE;
         objects.backpack_gd->user_data = (void *)SG_GD;
         objects.backpack_gdb->user_data = (void *)SG_GDB;
         objects.backpack_gdr->user_data = (void *)SG_GDR;
         objects.backpack_jp->user_data = (void *)SG_JP;
-        objects.supply_pe->user_data = (void *)SG_PE;
         objects.backpack_sgp->user_data = (void *)SG_SGP;
         objects.backpack_sup->user_data = (void *)SG_SUP;
         objects.backpack_ds->user_data = (void *)SG_DS;
-        objects.supply_frv->user_data = (void *)SG_FRV;
         objects.backpack_ph->user_data = (void *)SG_PH;
         objects.backpack_hp->user_data = (void *)SG_HP;
-        objects.supply_otf->user_data = (void *)SG_OTF;
         objects.backpack_gdk->user_data = (void *)SG_GDK;
         objects.backpack_wp->user_data = (void *)SG_WP;
         objects.backpack_gdhd->user_data = (void *)SG_GDHD;
         objects.backpack_c4_p->user_data = (void *)SG_C4P;
+
+        // Supply
+        objects.supply_ee->user_data = (void *)SG_EE;
+        objects.supply_frv->user_data = (void *)SG_FRV;
+        objects.supply_otf->user_data = (void *)SG_OTF;
+        objects.supply_pe->user_data = (void *)SG_PE;
+        objects.supply_cqc->user_data = (void *)SG_CQC;
+        objects.supply_bmk->user_data = (void *)SG_BMK;
+        objects.supply_ss->user_data = (void *)SG_SS;
 
         // Stationary
         objects.sentry_acs->user_data = (void *)SG_ACS;
@@ -170,7 +182,6 @@ extern "C"
         objects.ground_gm->user_data = (void *)SG_GM;
         objects.ground_gb->user_data = (void *)SG_GB;
         objects.sentry_ls->user_data = (void *)SG_LS;
-        objects.supply_ss->user_data = (void *)SG_SS;
 
         // Strikes
         objects.strike120->user_data = (void *)SG_120;

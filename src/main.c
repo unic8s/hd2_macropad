@@ -38,7 +38,7 @@ bool lvglReady = false;
   ESP_LOGI(TAG, "\n\n************* %s **************\n", section);
 
 // Stratagem code sequence (buffer) for execution
-uint8_t stratagemCode[8];
+uint8_t stratagemCode[9];
 // Stratagem mask for modifier key combination (ctrl, alt, etc.)
 uint8_t stratagemMask;
 
@@ -59,7 +59,7 @@ int screenRotation = LV_DISP_ROT_90;
 // sequence - keycode buffer
 // mask - modifier keys
 // plain - resolve via keymap or send directly (raw)
-void setStratagemCode(uint8_t sequence[8], uint8_t mask, bool plain)
+void setStratagemCode(uint8_t sequence[9], uint8_t mask, bool plain)
 {
   switch (connectionType)
   {
@@ -81,7 +81,7 @@ void setStratagemCode(uint8_t sequence[8], uint8_t mask, bool plain)
 
   uint8_t sequenceLength = 0;
 
-  for (uint8_t c = 0; c < 8; c++)
+  for (uint8_t c = 0; c < 9; c++)
   {
     if (sequence[c] > 0)
     {

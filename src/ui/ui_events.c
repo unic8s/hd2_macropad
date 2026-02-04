@@ -32,7 +32,7 @@ uint8_t strategemsAmount = 0;
 
 int manualIndex = 0;
 int manualList = 0;
-int manualSequence[] = {0, 0, 0, 0, 0, 0, 0, 0};
+int manualSequence[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 int manualMatch = -1;
 lv_timer_t *timerManual = NULL;
 
@@ -212,9 +212,8 @@ void action_select_stratagem(lv_event_t *e)
 			{
 				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->current_target);
 				int index = -1;
-				uint8_t itemListLength = sizeof(strategemItemList);
 
-				for (int c = 0; c < itemListLength; c++)
+				for (uint8_t c = 0; c < 83; c++)
 				{
 					stratagemItem item = strategemItemList[c];
 
@@ -332,7 +331,7 @@ void action_trigger_stratagem_user(lv_event_t *e)
 // Trigger keyboard demo (send "hello" via bluetooth connection to host)
 void action_keyboard_demo(lv_event_t *e)
 {
-	uint8_t sequence[8] = {HID_KEY_H,
+	uint8_t sequence[9] = {HID_KEY_H,
 						   HID_KEY_E,
 						   HID_KEY_L,
 						   HID_KEY_L,
@@ -478,9 +477,8 @@ void action_get_preset(lv_event_t *e)
 			if (type == presetIndex)
 			{
 				int index = -1;
-				uint8_t itemListLength = (uint8_t)sizeof(strategemItemList);
 
-				for (int c = 0; c < itemListLength; c++)
+				for (int c = 0; c < 83; c++)
 				{
 					stratagemItem item = strategemItemList[c];
 
@@ -684,7 +682,7 @@ void action_manual_execute(lv_event_t *e)
 
 	manualSequence[manualIndex] = arrowDirection;
 
-	if (manualIndex < 7)
+	if (manualIndex < 8)
 	{
 		manualIndex++;
 
@@ -733,7 +731,7 @@ void finalizeManualExecution()
 	manualMatch = -1;
 	manualIndex = 0;
 
-	for (uint8_t c = 0; c < 8; c++)
+	for (uint8_t c = 0; c < 9; c++)
 	{
 		manualSequence[c] = 0;
 	}
@@ -753,9 +751,10 @@ void updateManualSequence()
 		objects.manual_cmd5,
 		objects.manual_cmd6,
 		objects.manual_cmd7,
-		objects.manual_cmd8};
+		objects.manual_cmd8,
+		objects.manual_cmd9};
 
-	for (uint8_t c = 0; c < 8; c++)
+	for (uint8_t c = 0; c < 9; c++)
 	{
 		const uint8_t currentCmd = manualSequence[c];
 		lv_obj_t *target = cmdImages[c];
@@ -778,9 +777,8 @@ void updateManualSequence()
 void lookupManualSequence()
 {
 	int matchCount = 0;
-	uint8_t itemListLength = (uint8_t)sizeof(strategemItemList);
 
-	for (uint8_t c1 = 0; c1 < itemListLength; c1++)
+	for (uint8_t c1 = 0; c1 < 83; c1++)
 	{
 		stratagemItem item = strategemItemList[c1];
 		bool match = true;
@@ -806,9 +804,7 @@ void lookupManualSequence()
 
 	if (matchCount == 0)
 	{
-		uint8_t baseListLength = (uint8_t)sizeof(strategemBaseList);
-
-		for (uint8_t c1 = 0; c1 < baseListLength; c1++)
+		for (uint8_t c1 = 0; c1 < 17; c1++)
 		{
 			stratagemBase item = strategemBaseList[c1];
 			bool match = true;

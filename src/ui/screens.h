@@ -176,9 +176,9 @@ typedef struct _objects_t {
     lv_obj_t *obj43;
     lv_obj_t *btn_sssd;
     lv_obj_t *btn_ud;
-    lv_obj_t *btn_sef;
     lv_obj_t *btn_hbd;
     lv_obj_t *btn_pd;
+    lv_obj_t *btn_sef;
     lv_obj_t *btn_td;
     lv_obj_t *btn_sp;
     lv_obj_t *btn_oif;

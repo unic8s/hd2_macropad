@@ -19,6 +19,7 @@ typedef struct _objects_t {
     lv_obj_t *reset_config;
     lv_obj_t *about;
     lv_obj_t *manual;
+    lv_obj_t *img_splash;
     lv_obj_t *tab_view_setup;
     lv_obj_t *tab_rifle;
     lv_obj_t *weapons_mg;
@@ -206,7 +207,7 @@ typedef struct _objects_t {
     lv_obj_t *manual_arrow_down;
     lv_obj_t *manual_arrow_right;
     lv_obj_t *obj53;
-    lv_obj_t *img_splash;
+    lv_obj_t *cnt_progress;
     lv_obj_t *bar_amount;
     lv_obj_t *label_amount;
     lv_obj_t *msg_box;

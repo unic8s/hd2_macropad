@@ -11674,7 +11674,7 @@
               "type": "LVGLContainerWidget",
               "left": 0,
               "top": 0,
-              "width": 100,
+              "width": 70,
               "height": 282,
               "customInputs": [],
               "customOutputs": [],
@@ -11781,7 +11781,9 @@
                             "definition": {
                               "MAIN": {
                                 "DEFAULT": {
-                                  "text_font": "MONTSERRAT_12"
+                                  "text_font": "MONTSERRAT_12",
+                                  "bg_color": "#000000",
+                                  "bg_opa": 191
                                 }
                               }
                             }
@@ -11830,7 +11832,9 @@
                             "definition": {
                               "MAIN": {
                                 "DEFAULT": {
-                                  "text_font": "MONTSERRAT_12"
+                                  "text_font": "MONTSERRAT_12",
+                                  "bg_color": "#000000",
+                                  "bg_opa": 191
                                 }
                               }
                             }
@@ -11867,8 +11871,8 @@
                               "flex_flow": "COLUMN",
                               "flex_track_place": "CENTER",
                               "flex_cross_place": "CENTER",
-                              "pad_top": 0,
-                              "pad_bottom": 0
+                              "pad_top": 2,
+                              "pad_bottom": 2
                             }
                           }
                         }
@@ -11994,7 +11998,9 @@
                             "definition": {
                               "MAIN": {
                                 "DEFAULT": {
-                                  "text_font": "MONTSERRAT_12"
+                                  "text_font": "MONTSERRAT_12",
+                                  "bg_color": "#000000",
+                                  "bg_opa": 191
                                 }
                               }
                             }
@@ -12043,7 +12049,9 @@
                             "definition": {
                               "MAIN": {
                                 "DEFAULT": {
-                                  "text_font": "MONTSERRAT_12"
+                                  "text_font": "MONTSERRAT_12",
+                                  "bg_color": "#000000",
+                                  "bg_opa": 191
                                 }
                               }
                             }
@@ -12080,8 +12088,8 @@
                               "flex_main_place": "SPACE_BETWEEN",
                               "flex_cross_place": "CENTER",
                               "flex_track_place": "CENTER",
-                              "pad_top": 0,
-                              "pad_bottom": 0
+                              "pad_top": 2,
+                              "pad_bottom": 2
                             }
                           }
                         }
@@ -12176,7 +12184,7 @@
                           "left": 0,
                           "top": 0,
                           "width": 47,
-                          "height": 30,
+                          "height": 15,
                           "customInputs": [],
                           "customOutputs": [],
                           "style": {
@@ -12207,14 +12215,16 @@
                             "definition": {
                               "MAIN": {
                                 "DEFAULT": {
-                                  "text_font": "MONTSERRAT_12"
+                                  "text_font": "MONTSERRAT_12",
+                                  "bg_color": "#000000",
+                                  "bg_opa": 191
                                 }
                               }
                             }
                           },
                           "group": "",
                           "groupIndex": 0,
-                          "text": "Hive\\nBreaker",
+                          "text": "Hive Br.",
                           "textType": "literal",
                           "longMode": "WRAP",
                           "recolor": false
@@ -12256,7 +12266,9 @@
                             "definition": {
                               "MAIN": {
                                 "DEFAULT": {
-                                  "text_font": "MONTSERRAT_12"
+                                  "text_font": "MONTSERRAT_12",
+                                  "bg_color": "#000000",
+                                  "bg_opa": 191
                                 }
                               }
                             }
@@ -12293,8 +12305,8 @@
                               "flex_main_place": "SPACE_BETWEEN",
                               "flex_cross_place": "CENTER",
                               "flex_track_place": "CENTER",
-                              "pad_top": 0,
-                              "pad_bottom": 0
+                              "pad_top": 2,
+                              "pad_bottom": 2
                             }
                           }
                         }
@@ -12420,7 +12432,9 @@
                             "definition": {
                               "MAIN": {
                                 "DEFAULT": {
-                                  "text_font": "MONTSERRAT_12"
+                                  "text_font": "MONTSERRAT_12",
+                                  "bg_color": "#000000",
+                                  "bg_opa": 191
                                 }
                               }
                             }
@@ -12469,7 +12483,9 @@
                             "definition": {
                               "MAIN": {
                                 "DEFAULT": {
-                                  "text_font": "MONTSERRAT_12"
+                                  "text_font": "MONTSERRAT_12",
+                                  "bg_color": "#000000",
+                                  "bg_opa": 191
                                 }
                               }
                             }
@@ -12506,8 +12522,8 @@
                               "flex_main_place": "SPACE_BETWEEN",
                               "flex_cross_place": "CENTER",
                               "flex_track_place": "CENTER",
-                              "pad_top": 0,
-                              "pad_bottom": 0
+                              "pad_top": 2,
+                              "pad_bottom": 2
                             }
                           }
                         }
@@ -12539,6 +12555,45 @@
                         }
                       }
                     }
+                  },
+                  "group": "",
+                  "groupIndex": 0
+                },
+                {
+                  "objID": "f93256e9-a1d5-4476-c5fa-76eabc210d97",
+                  "type": "LVGLContainerWidget",
+                  "left": 0,
+                  "top": 0,
+                  "width": 38,
+                  "height": 76,
+                  "customInputs": [],
+                  "customOutputs": [],
+                  "style": {
+                    "objID": "abdb3d17-b95c-4784-a3b9-a862adf79768",
+                    "useStyle": "default",
+                    "conditionalStyles": [],
+                    "childStyles": []
+                  },
+                  "timeline": [],
+                  "eventHandlers": [],
+                  "leftUnit": "px",
+                  "topUnit": "px",
+                  "widthUnit": "px",
+                  "heightUnit": "px",
+                  "children": [],
+                  "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                  "hiddenFlagType": "literal",
+                  "clickableFlag": true,
+                  "clickableFlagType": "literal",
+                  "flagScrollbarMode": "",
+                  "flagScrollDirection": "",
+                  "scrollSnapX": "",
+                  "scrollSnapY": "",
+                  "checkedStateType": "literal",
+                  "disabledStateType": "literal",
+                  "states": "",
+                  "localStyles": {
+                    "objID": "2d501114-db51-4819-f2bd-5573357c3a8c"
                   },
                   "group": "",
                   "groupIndex": 0
@@ -12860,6 +12915,45 @@
                         }
                       }
                     }
+                  },
+                  "group": "",
+                  "groupIndex": 0
+                },
+                {
+                  "objID": "62c99327-9d75-4db2-d2ec-3bccc3cfd007",
+                  "type": "LVGLContainerWidget",
+                  "left": 0,
+                  "top": 0,
+                  "width": 38,
+                  "height": 76,
+                  "customInputs": [],
+                  "customOutputs": [],
+                  "style": {
+                    "objID": "46262c1b-5fa1-4a4f-b5fb-44fe328bb9c1",
+                    "useStyle": "default",
+                    "conditionalStyles": [],
+                    "childStyles": []
+                  },
+                  "timeline": [],
+                  "eventHandlers": [],
+                  "leftUnit": "px",
+                  "topUnit": "px",
+                  "widthUnit": "px",
+                  "heightUnit": "px",
+                  "children": [],
+                  "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                  "hiddenFlagType": "literal",
+                  "clickableFlag": true,
+                  "clickableFlagType": "literal",
+                  "flagScrollbarMode": "",
+                  "flagScrollDirection": "",
+                  "scrollSnapX": "",
+                  "scrollSnapY": "",
+                  "checkedStateType": "literal",
+                  "disabledStateType": "literal",
+                  "states": "",
+                  "localStyles": {
+                    "objID": "c43860dd-849f-4915-9722-90a050374a6c"
                   },
                   "group": "",
                   "groupIndex": 0
@@ -13314,7 +13408,8 @@
                       "pad_column": 4,
                       "flex_main_place": "CENTER",
                       "flex_track_place": "CENTER",
-                      "pad_row": 4
+                      "pad_row": 4,
+                      "align": "TOP_MID"
                     }
                   }
                 }

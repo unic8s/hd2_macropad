@@ -18,6 +18,7 @@ extern int screenRotation;
 extern uint8_t keymapIndex;
 extern uint8_t connectionType;
 extern bool manualAutoComplete;
+extern bool showCooldowns;
 
 extern esp_err_t ble_controller_init();
 extern esp_err_t ble_controller_deinit();
@@ -57,7 +58,7 @@ uint8_t getConfig(char *key, int8_t defaultValue)
         ESP_LOGI(TAG_CFG, "%s = %" PRIu8 "\n", key, value);
         return value;
     case ESP_ERR_NVS_NOT_FOUND:
-        ESP_LOGI(TAG_CFG, "The value is not initialized yet!\n");
+        ESP_LOGI(TAG_CFG, "The value of (%s) is not initialized yet!\n", key);
         break;
     default:
         ESP_LOGE(TAG_CFG, "Error (%s) reading!\n", esp_err_to_name(ret));
@@ -84,7 +85,7 @@ void setConfig(char *key, uint8_t value)
 
     if (ret != ESP_OK)
     {
-        ESP_LOGE(TAG_CFG, "Failed!\n");
+        ESP_LOGE(TAG_CFG, "Write (%s) failed!\n", key);
     }
     else
     {
@@ -255,7 +256,6 @@ void setKeymap(uint8_t index, bool restore)
     playbackSound(SND_SWITCH);
 }
 
-// Write the keymap assignment to configuration
 void setAutoComplete(bool enable, bool restore)
 {
     manualAutoComplete = enable;
@@ -274,6 +274,29 @@ void setAutoComplete(bool enable, bool restore)
     else
     {
         setConfig("autoComplete", manualAutoComplete ? 1 : 0);
+    }
+
+    playbackSound(SND_SWITCH);
+}
+
+void setCooldown(bool enable, bool restore)
+{
+    showCooldowns = enable;
+
+    if (restore)
+    {
+        if (enable)
+        {
+            lv_obj_add_state(objects.chb_cooldowns, LV_STATE_CHECKED);
+        }
+        else
+        {
+            lv_obj_clear_state(objects.chb_cooldowns, LV_STATE_CHECKED);
+        }
+    }
+    else
+    {
+        setConfig("showCooldown", showCooldowns ? 1 : 0);
     }
 
     playbackSound(SND_SWITCH);
@@ -326,6 +349,9 @@ void loadConfig()
     uint8_t auto_complete = getConfig("autoComplete", 0);
     setAutoComplete(auto_complete == 1, true);
 
+    uint8_t show_cooldown = getConfig("showCooldown", 0);
+    setCooldown(show_cooldown == 1, true);
+
     closeConfig();
 }
 
@@ -361,6 +387,7 @@ void resetConfig()
     setMuted(0, true);
     setKeymap(0, true);
     setAutoComplete(1, true);
+    setCooldown(0, true);
 
     setRotation(LV_DISP_ROT_90, true);
 }

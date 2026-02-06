@@ -2289,7 +2289,7 @@ static void event_handler_cb_game_obj42(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 15, 0, e);
+        flowPropagateValueLVGLEvent(flowState, 21, 0, e);
     }
 }
 
@@ -2300,7 +2300,7 @@ static void event_handler_cb_game_obj43(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 16, 0, e);
+        flowPropagateValueLVGLEvent(flowState, 22, 0, e);
     }
 }
 
@@ -2535,6 +2535,17 @@ static void event_handler_cb_config_chb_auto_complete(lv_event_t *e) {
     }
 }
 
+static void event_handler_cb_config_chb_cooldowns(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_VALUE_CHANGED) {
+        e->user_data = (void *)0;
+        action_set_cooldown(e);
+    }
+}
+
 static void event_handler_cb_config_obj46(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
@@ -2542,7 +2553,7 @@ static void event_handler_cb_config_obj46(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 32, 0, e);
+        flowPropagateValueLVGLEvent(flowState, 35, 0, e);
     }
 }
 
@@ -2553,7 +2564,7 @@ static void event_handler_cb_config_obj47(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 33, 0, e);
+        flowPropagateValueLVGLEvent(flowState, 36, 0, e);
     }
 }
 
@@ -2564,7 +2575,7 @@ static void event_handler_cb_config_obj48(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 35, 0, e);
+        flowPropagateValueLVGLEvent(flowState, 38, 0, e);
     }
 }
 
@@ -4730,6 +4741,22 @@ void create_screen_game() {
                     lv_obj_set_size(obj, 116, 116);
                     lv_obj_add_event_cb(obj, event_handler_cb_game_custom_stratagem1, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
+                    lv_obj_set_style_pad_top(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_left(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // LabelCooldown1
+                            lv_obj_t *obj = lv_label_create(parent_obj);
+                            objects.label_cooldown1 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            add_style_label_cooldown(obj);
+                            lv_label_set_text(obj, "0:00");
+                        }
+                    }
                 }
                 {
                     // CustomStratagem2
@@ -4739,6 +4766,22 @@ void create_screen_game() {
                     lv_obj_set_size(obj, 116, 116);
                     lv_obj_add_event_cb(obj, event_handler_cb_game_custom_stratagem2, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
+                    lv_obj_set_style_pad_top(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_left(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // LabelCooldown2
+                            lv_obj_t *obj = lv_label_create(parent_obj);
+                            objects.label_cooldown2 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            add_style_label_cooldown(obj);
+                            lv_label_set_text(obj, "0:00");
+                        }
+                    }
                 }
                 {
                     // CustomStratagem3
@@ -4748,6 +4791,22 @@ void create_screen_game() {
                     lv_obj_set_size(obj, 116, 116);
                     lv_obj_add_event_cb(obj, event_handler_cb_game_custom_stratagem3, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
+                    lv_obj_set_style_pad_top(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_left(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // LabelCooldown3
+                            lv_obj_t *obj = lv_label_create(parent_obj);
+                            objects.label_cooldown3 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            add_style_label_cooldown(obj);
+                            lv_label_set_text(obj, "0:00");
+                        }
+                    }
                 }
                 {
                     // CustomStratagem4
@@ -4757,6 +4816,22 @@ void create_screen_game() {
                     lv_obj_set_size(obj, 116, 116);
                     lv_obj_add_event_cb(obj, event_handler_cb_game_custom_stratagem4, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
+                    lv_obj_set_style_pad_top(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_left(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // LabelCooldown4
+                            lv_obj_t *obj = lv_label_create(parent_obj);
+                            objects.label_cooldown4 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            add_style_label_cooldown(obj);
+                            lv_label_set_text(obj, "0:00");
+                        }
+                    }
                 }
             }
         }
@@ -4789,6 +4864,22 @@ void create_screen_game() {
                     lv_obj_set_size(obj, 76, 76);
                     lv_obj_add_event_cb(obj, event_handler_cb_game_custom_stratagem5, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
+                    lv_obj_set_style_pad_top(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_left(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // LabelCooldown5
+                            lv_obj_t *obj = lv_label_create(parent_obj);
+                            objects.label_cooldown5 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            add_style_label_cooldown(obj);
+                            lv_label_set_text(obj, "0:00");
+                        }
+                    }
                 }
                 {
                     // CustomStratagem6
@@ -4798,6 +4889,22 @@ void create_screen_game() {
                     lv_obj_set_size(obj, 76, 76);
                     lv_obj_add_event_cb(obj, event_handler_cb_game_custom_stratagem6, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
+                    lv_obj_set_style_pad_top(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_left(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // LabelCooldown6
+                            lv_obj_t *obj = lv_label_create(parent_obj);
+                            objects.label_cooldown6 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            add_style_label_cooldown(obj);
+                            lv_label_set_text(obj, "0:00");
+                        }
+                    }
                 }
                 {
                     // BtnSEAF
@@ -5736,6 +5843,40 @@ void create_screen_config() {
                                 }
                             }
                         }
+                        {
+                            lv_obj_t *obj = lv_obj_create(parent_obj);
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_PCT(49), LV_SIZE_CONTENT);
+                            lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_top(obj, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_bottom(obj, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_left(obj, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_right(obj, 20, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_row(obj, 16, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_column(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW_WRAP, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            {
+                                lv_obj_t *parent_obj = obj;
+                                {
+                                    lv_obj_t *obj = lv_label_create(parent_obj);
+                                    lv_obj_set_pos(obj, 0, 0);
+                                    lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
+                                    lv_label_set_text(obj, "Show cooldowns");
+                                }
+                                {
+                                    // ChbCooldowns
+                                    lv_obj_t *obj = lv_switch_create(parent_obj);
+                                    objects.chb_cooldowns = obj;
+                                    lv_obj_set_pos(obj, 0, 0);
+                                    lv_obj_set_size(obj, 64, 32);
+                                    lv_obj_add_event_cb(obj, event_handler_cb_config_chb_cooldowns, LV_EVENT_ALL, flowState);
+                                    add_style_checkbox_config(obj);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -6484,8 +6625,8 @@ extern void add_style(lv_obj_t *obj, int32_t styleIndex);
 extern void remove_style(lv_obj_t *obj, int32_t styleIndex);
 
 static const char *screen_names[] = { "Intro", "Setup", "Preset", "ResetPreset", "Image", "Game", "Mission", "Config", "ResetConfig", "About", "Manual" };
-static const char *object_names[] = { "intro", "setup", "preset", "reset_preset", "image", "game", "mission", "config", "reset_config", "about", "manual", "img_splash", "tab_view_setup", "tab_rifle", "weapons_mg", "weapons_hmg", "weapons_sw", "weapons_ac", "weapons_amr", "weapons_rg", "weapons_lc", "weapons_qc", "weapons_at", "weapons_e", "weapons_sg", "weapons_mxg", "tab_special", "obj0", "weapons_arl", "weapons_c", "weapons_eat", "weapons_en", "weapons_rr", "obj1", "obj2", "weapons_eatl", "weapons_spr", "weapons_wsp", "weapons_gl", "obj3", "weapons_bfgl", "weapons_de", "weapons_ste", "weapons_ft", "weapons_dt", "tab_backpack", "obj4", "backpack_bsb", "backpack_sgp", "backpack_ds", "backpack_gd", "backpack_gdb", "obj5", "obj6", "backpack_gdr", "backpack_gdk", "backpack_gdhd", "backpack_sup", "obj7", "backpack_ph", "backpack_c4_p", "backpack_jp", "backpack_hp", "backpack_wp", "tab_supply", "obj8", "supply_frv", "supply_bmk", "supply_pe", "supply_ee", "obj9", "supply_otf", "supply_cqc", "supply_ss", "tab_sentry", "obj10", "sentry_mgs", "sentry_gs", "sentry_acs", "sentry_hmge", "sentry_ate", "obj11", "sentry_fs", "sentry_ms", "sentry_rs", "sentry_ems", "sentry_ls", "tab_ground", "obj12", "ground_gm", "ground_tt", "ground_sgr", "ground_apm", "obj13", "ground_atm", "ground_im", "ground_gb", "tab_strike", "strike120", "strike380", "strike_ors", "strike_ogb", "strike_oas", "strike_ol", "strike_ops", "strike_owb", "strike_oes", "strike_onb", "strike_ogs", "strike_oss", "tab_eagle", "obj14", "eagle110", "eagle500", "eagle_a", "eagle_cb", "obj15", "eagle_sr", "eagle_na", "eagle_ss", "obj16", "obj17", "obj18", "obj19", "obj20", "btn_preset1", "btn_preset2", "btn_preset3", "btn_preset4", "btn_preset5", "btn_preset6", "obj21", "btn_preset_image", "obj22", "obj23", "obj24", "obj25", "obj26", "obj27", "obj28", "obj29", "obj30", "obj31", "obj32", "obj33", "obj34", "obj35", "obj36", "obj37", "obj38", "obj39", "obj40", "obj41", "btn_reinforce", "btn_resupply", "btn_sos", "btn_rearm", "custom_stratagem1", "custom_stratagem2", "custom_stratagem3", "custom_stratagem4", "custom_stratagem5", "custom_stratagem6", "btn_seaf", "btn_hellbomb", "obj42", "obj43", "btn_sssd", "btn_ud", "btn_hbd", "btn_pd", "btn_sef", "btn_td", "btn_sp", "btn_oif", "btn_dfv", "btn_cc", "btn_csd", "obj44", "tab_view_config", "sld_brightness", "chb_flip", "chb_mute", "sld_delay", "dd_connectivity", "obj45", "dd_keymap", "chb_auto_complete", "obj46", "obj47", "obj48", "obj49", "obj50", "obj51", "obj52", "manual_arrow_left", "manual_arrow_up", "manual_arrow_down", "manual_arrow_right", "obj53", "cnt_progress", "bar_amount", "label_amount", "msg_box", "msg_label", "img_connection2", "obj54", "obj55", "obj56", "obj57", "obj58", "obj59", "obj60", "obj61", "obj62", "lbl_brightness", "lbl_delay", "img_connection1", "obj63", "lbl_version", "manual_preview_item", "manual_cmd1", "manual_cmd2", "manual_cmd3", "manual_cmd4", "manual_cmd5", "manual_cmd6", "manual_cmd7", "manual_cmd8", "manual_cmd9" };
-static const char *style_names[] = { "ButtonStd", "TabStratagem", "TabConfig", "SliderConfig", "CheckboxConfig" };
+static const char *object_names[] = { "intro", "setup", "preset", "reset_preset", "image", "game", "mission", "config", "reset_config", "about", "manual", "img_splash", "tab_view_setup", "tab_rifle", "weapons_mg", "weapons_hmg", "weapons_sw", "weapons_ac", "weapons_amr", "weapons_rg", "weapons_lc", "weapons_qc", "weapons_at", "weapons_e", "weapons_sg", "weapons_mxg", "tab_special", "obj0", "weapons_arl", "weapons_c", "weapons_eat", "weapons_en", "weapons_rr", "obj1", "obj2", "weapons_eatl", "weapons_spr", "weapons_wsp", "weapons_gl", "obj3", "weapons_bfgl", "weapons_de", "weapons_ste", "weapons_ft", "weapons_dt", "tab_backpack", "obj4", "backpack_bsb", "backpack_sgp", "backpack_ds", "backpack_gd", "backpack_gdb", "obj5", "obj6", "backpack_gdr", "backpack_gdk", "backpack_gdhd", "backpack_sup", "obj7", "backpack_ph", "backpack_c4_p", "backpack_jp", "backpack_hp", "backpack_wp", "tab_supply", "obj8", "supply_frv", "supply_bmk", "supply_pe", "supply_ee", "obj9", "supply_otf", "supply_cqc", "supply_ss", "tab_sentry", "obj10", "sentry_mgs", "sentry_gs", "sentry_acs", "sentry_hmge", "sentry_ate", "obj11", "sentry_fs", "sentry_ms", "sentry_rs", "sentry_ems", "sentry_ls", "tab_ground", "obj12", "ground_gm", "ground_tt", "ground_sgr", "ground_apm", "obj13", "ground_atm", "ground_im", "ground_gb", "tab_strike", "strike120", "strike380", "strike_ors", "strike_ogb", "strike_oas", "strike_ol", "strike_ops", "strike_owb", "strike_oes", "strike_onb", "strike_ogs", "strike_oss", "tab_eagle", "obj14", "eagle110", "eagle500", "eagle_a", "eagle_cb", "obj15", "eagle_sr", "eagle_na", "eagle_ss", "obj16", "obj17", "obj18", "obj19", "obj20", "btn_preset1", "btn_preset2", "btn_preset3", "btn_preset4", "btn_preset5", "btn_preset6", "obj21", "btn_preset_image", "obj22", "obj23", "obj24", "obj25", "obj26", "obj27", "obj28", "obj29", "obj30", "obj31", "obj32", "obj33", "obj34", "obj35", "obj36", "obj37", "obj38", "obj39", "obj40", "obj41", "btn_reinforce", "btn_resupply", "btn_sos", "btn_rearm", "custom_stratagem1", "custom_stratagem2", "custom_stratagem3", "custom_stratagem4", "custom_stratagem5", "custom_stratagem6", "btn_seaf", "btn_hellbomb", "obj42", "obj43", "btn_sssd", "btn_ud", "btn_hbd", "btn_pd", "btn_sef", "btn_td", "btn_sp", "btn_oif", "btn_dfv", "btn_cc", "btn_csd", "obj44", "tab_view_config", "sld_brightness", "chb_flip", "chb_mute", "sld_delay", "dd_connectivity", "obj45", "dd_keymap", "chb_auto_complete", "chb_cooldowns", "obj46", "obj47", "obj48", "obj49", "obj50", "obj51", "obj52", "manual_arrow_left", "manual_arrow_up", "manual_arrow_down", "manual_arrow_right", "obj53", "cnt_progress", "bar_amount", "label_amount", "msg_box", "msg_label", "label_cooldown1", "label_cooldown2", "label_cooldown3", "label_cooldown4", "label_cooldown5", "label_cooldown6", "img_connection2", "obj54", "obj55", "obj56", "obj57", "obj58", "obj59", "obj60", "obj61", "obj62", "lbl_brightness", "lbl_delay", "img_connection1", "obj63", "lbl_version", "manual_preview_item", "manual_cmd1", "manual_cmd2", "manual_cmd3", "manual_cmd4", "manual_cmd5", "manual_cmd6", "manual_cmd7", "manual_cmd8", "manual_cmd9" };
+static const char *style_names[] = { "ButtonStd", "TabStratagem", "TabConfig", "SliderConfig", "CheckboxConfig", "LabelCooldown" };
 static const char *theme_names[] = { "Default" };
 
 uint32_t theme_colors[1][6] = {

@@ -17,6 +17,7 @@
 typedef struct
 {
     uint8_t sequence[9];
+    uint16_t cooldown;
     char *soundPath;
     const int color;
     const lv_img_dsc_t *imgHiRes;
@@ -36,6 +37,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // MG-43 Machine Gun
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_mg2,
@@ -44,6 +46,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // APW-1 Anti-Materiel Rifle
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_amr2,
@@ -53,6 +56,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // M-105 Stalwart
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_sw2,
@@ -62,6 +66,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // EAT-17 Expendable Anti-tank
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_eat2,
@@ -71,6 +76,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // MLS-4X Commando
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_c2,
@@ -80,6 +86,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // GR-8 Recoilless Rifle
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_rr2,
@@ -89,6 +96,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // FLAM-40 Flamethrower
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_ft2,
@@ -98,6 +106,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // AC-8 Autocannon
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_ac2,
@@ -107,6 +116,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // MG-206 Heavy Machine Gun
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_DOWN, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_hmg2,
@@ -116,6 +126,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // RS-422 Railgun
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_rg2,
@@ -125,6 +136,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // FAF-14 Spear Launcher
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_DOWN, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_spr2,
@@ -134,6 +146,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // GL-21 Grenade Launcher
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_gl2,
@@ -143,6 +156,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // LAS-98 Laser Cannon
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_lc2,
@@ -152,6 +166,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // ARC-3 Arc Thrower
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_LEFT, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_at2,
@@ -161,6 +176,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // LAS-99 Quasar Cannon
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_qc2,
@@ -170,6 +186,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // RL-77 Airburst Rocket Launcher
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_arl2,
@@ -179,6 +196,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // TX-41 Sterilizer
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_LEFT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_ste2,
@@ -188,6 +206,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // LIFT-850 Jump Pack
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_jp2,
@@ -197,6 +216,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // B-1 Supply Pack
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_sup2,
@@ -206,6 +226,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // SH-20 Ballistic Shield Backpack
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_LEFT, 0, 0, 0},
+        300,
         SND_BACKPACK,
         sgBlue,
         &img_bsb2,
@@ -215,6 +236,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // SH-32 Shield Generator Pack
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_sgp2,
@@ -224,6 +246,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // AX/AR-23 "Guard Dog"
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_gd2,
@@ -233,6 +256,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // AX/LAS-5 "Guard Dog" Rover
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_gdr2,
@@ -242,6 +266,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // AX/TX-13 "Guard Dog" Dog Breath
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_gdb2,
@@ -251,6 +276,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // EXO-45 Patriot Exosuit
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, 0, 0},
+        600,
         SND_BOT,
         sgBlue,
         &img_pe2,
@@ -260,6 +286,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // EXO-49 Emancipator Exosuit
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_UP, 0, 0},
+        600,
         SND_BOT,
         sgBlue,
         &img_ee2,
@@ -269,6 +296,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // E/MG-101 HMG Emplacement
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0},
+        180,
         SND_SENTRY,
         sgGreen,
         &img_hmge2,
@@ -278,6 +306,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // FX-12 Shield Generator Relay
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
+        90,
         SND_SHIELD,
         sgGreen,
         &img_sgr2,
@@ -287,6 +316,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // A/ARC-3 Tesla Tower
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
+        120,
         SND_SHIELD,
         sgGreen,
         &img_tt2,
@@ -296,6 +326,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // MD-6 Anti-Personnel Minefield
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0, 0},
+        120,
         SND_MINES,
         sgGreen,
         &img_apm2,
@@ -305,6 +336,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // MD-I4 Incendiary Mines
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0, 0},
+        120,
         SND_MINES,
         sgGreen,
         &img_im2,
@@ -314,6 +346,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // MD-17 Anti-Tank Mines
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0, 0, 0},
+        120,
         SND_MINES,
         sgGreen,
         &img_atm2,
@@ -323,6 +356,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // A/MG-43 Machine Gun Sentry
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0},
+        90,
         SND_SENTRY,
         sgGreen,
         &img_mgs2,
@@ -332,6 +366,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // A/G-16 Gatling Sentry
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0, 0, 0},
+        150,
         SND_SENTRY,
         sgGreen,
         &img_gs2,
@@ -341,6 +376,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // A/M-12 Mortar Sentry
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0, 0},
+        180,
         SND_MORTAR,
         sgGreen,
         &img_ms2,
@@ -350,6 +386,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // A/AC-8 Autocannon Sentry
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_UP, 0, 0, 0},
+        150,
         SND_SENTRY,
         sgGreen,
         &img_acs2,
@@ -359,6 +396,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // A/MLS-4X Rocket Sentry
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0, 0},
+        150,
         SND_SENTRY,
         sgGreen,
         &img_rs2,
@@ -368,6 +406,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // A/M-23 EMS Mortar Sentry
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
+        180,
         SND_MORTAR,
         sgGreen,
         &img_ems2,
@@ -377,6 +416,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital Gatling Barrage
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0, 0},
+        70,
         SND_ORBITAL,
         sgRed,
         &img_ogb2,
@@ -386,6 +426,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital Airburst Strike
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0, 0, 0, 0},
+        100,
         SND_ORBITAL,
         sgRed,
         &img_oas2,
@@ -395,6 +436,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital 120MM HE Barrage
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
+        180,
         SND_ORBITAL,
         sgRed,
         &img_1202,
@@ -404,6 +446,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital 380MM HE Barrage
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, 0, 0},
+        240,
         SND_ORBITAL,
         sgRed,
         &img_3802,
@@ -413,6 +456,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital Walking Barrage
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
+        240,
         SND_ORBITAL,
         sgRed,
         &img_owb2,
@@ -422,6 +466,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital Laser
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0, 0},
+        300,
         SND_ORBITAL,
         sgRed,
         &img_ol2,
@@ -431,6 +476,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital Railcannon Strike
     {
         {INPUT_RIGHT, INPUT_UP, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
+        210,
         SND_ORBITAL,
         sgRed,
         &img_ors2,
@@ -440,6 +486,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital Precision Strike
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0, 0, 0},
+        90,
         SND_ORBITAL,
         sgRed,
         &img_ops2,
@@ -449,6 +496,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital Gas Strike
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0, 0},
+        75,
         SND_ORBITAL,
         sgRed,
         &img_ogs2,
@@ -458,6 +506,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital EMS Strike
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0, 0},
+        75,
         SND_ORBITAL,
         sgRed,
         &img_oes2,
@@ -467,6 +516,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital Smoke Strike
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0, 0},
+        100,
         SND_ORBITAL,
         sgRed,
         &img_oss2,
@@ -476,6 +526,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Orbital Napalm Barrage
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
+        240,
         SND_ORBITAL,
         sgRed,
         &img_onb2,
@@ -485,6 +536,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Eagle Strafing Run
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0, 0, 0, 0},
+        8,
         SND_EAGLE,
         sgRed,
         &img_esr2,
@@ -494,6 +546,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Eagle Airstrike
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0, 0},
+        8,
         SND_EAGLE,
         sgRed,
         &img_ea2,
@@ -503,6 +556,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Eagle Cluster Bomb
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
+        8,
         SND_EAGLE,
         sgRed,
         &img_ecb2,
@@ -512,6 +566,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Eagle Napalm Airstrike
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0, 0},
+        8,
         SND_EAGLE,
         sgRed,
         &img_ena2,
@@ -521,6 +576,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Eagle Smoke Strike
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0, 0},
+        8,
         SND_EAGLE,
         sgRed,
         &img_ess2,
@@ -530,6 +586,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Eagle 110MM Rocket Pods
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, 0, 0, 0, 0, 0},
+        8,
         SND_EAGLE,
         sgRed,
         &img_e1102,
@@ -539,6 +596,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Eagle 500kg Bomb
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, INPUT_DOWN, 0, 0, 0, 0},
+        8,
         SND_EAGLE,
         sgRed,
         &img_e5002,
@@ -548,6 +606,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Directional Shield
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_UP, 0, 0, 0},
+        300,
         SND_BACKPACK,
         sgBlue,
         &img_ds2,
@@ -557,6 +616,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Anti-Tank Emplacement
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0},
+        180,
         SND_MINES,
         sgGreen,
         &img_ate2,
@@ -566,6 +626,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Flame Sentry
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0, 0},
+        100,
         SND_SENTRY,
         sgGreen,
         &img_fs2,
@@ -575,6 +636,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Fast Recon Vehicle
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_frv2,
@@ -584,6 +646,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Portable Hellbomb
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_UP, 0, 0, 0, 0},
+        300,
         SND_BACKPACK,
         sgBlue,
         &img_ph2,
@@ -593,6 +656,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Gas Mines
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0, 0},
+        120,
         SND_MINES,
         sgGreen,
         &img_gm2,
@@ -602,6 +666,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // StA-X3 W.A.S.P. Launcher
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_wsp2,
@@ -611,6 +676,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // E/GL-21 Grenadier Battlement
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
+        120,
         SND_SENTRY,
         sgGreen,
         &img_gb2,
@@ -620,6 +686,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // LIFT-860 Hover Pack
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_hp2,
@@ -629,6 +696,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // One True Flag
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_otf2,
@@ -637,7 +705,8 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // 67
     // De-escalator
     {
-        {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
+        {INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_de2,
@@ -647,6 +716,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Guard Dog K-9
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_gdk2,
@@ -656,6 +726,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // PLAS-45 Epoch
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_e2,
@@ -665,6 +736,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // A/LAS-98 Laser Sentry
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
+        150,
         SND_SENTRY,
         sgGreen,
         &img_ls2,
@@ -674,6 +746,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // LIFT-182 Warp Pack
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_wp2,
@@ -683,6 +756,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Exandable Napalm
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, 0, 0, 0, 0},
+        140,
         SND_BACKPACK,
         sgBlue,
         &img_en2,
@@ -692,6 +766,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // Solo Silo
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0, 0, 0},
+        180,
         SND_BACKPACK,
         sgBlue,
         &img_ss2,
@@ -700,7 +775,8 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // 74
     // Speargun
     {
-        {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
+        {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_sg2,
@@ -710,6 +786,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // CQC-9 Defoliation Tool
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_dt2,
@@ -719,6 +796,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // M-1000 Maxigun
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0, 0},
+        480,
         SND_WEAPON,
         sgBlue,
         &img_mxg2,
@@ -728,6 +806,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // AX/FLAM-75 "Guard Dog" Hot Dog
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_LEFT, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_gdhd2,
@@ -737,6 +816,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // B/MD C4 Pack
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
+        480,
         SND_BACKPACK,
         sgBlue,
         &img_c4p2,
@@ -746,6 +826,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // TD-220 Bastion MK XVI
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_UP},
+        780,
         SND_SUPPLY,
         sgBlue,
         &img_bmk2,
@@ -755,6 +836,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // CQC-20 Breaching Hammer
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_UP, 0, 0, 0, 0},
+        480,
         SND_SUPPLY,
         sgBlue,
         &img_cqc2,
@@ -764,6 +846,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // EAT-411 Leveller
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0},
+        140,
         SND_SUPPLY,
         sgBlue,
         &img_eatl2,
@@ -773,6 +856,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // GL-28 Belt-Fed Grenade Launcher
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0},
+        480,
         SND_SUPPLY,
         sgBlue,
         &img_bfgl2,

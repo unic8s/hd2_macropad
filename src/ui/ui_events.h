@@ -25,6 +25,11 @@ void resetPresets();
 void finalizeManualExecution();
 void updateManualSequence();
 void lookupManualSequence();
+void resetCooldowns();
+uint64_t getNow();
+
+#define MAX_USER_STRATAGEMS 6
+#define MAX_USER_PRESETS 6
 
 #ifdef __cplusplus
 } /*extern "C"*/

@@ -40,6 +40,11 @@ lv_style_t *get_style_checkbox_config_INDICATOR_CHECKED();
 void add_style_checkbox_config(lv_obj_t *obj);
 void remove_style_checkbox_config(lv_obj_t *obj);
 
+// Style: LabelCooldown
+lv_style_t *get_style_label_cooldown_MAIN_DEFAULT();
+void add_style_label_cooldown(lv_obj_t *obj);
+void remove_style_label_cooldown(lv_obj_t *obj);
+
 
 
 #ifdef __cplusplus

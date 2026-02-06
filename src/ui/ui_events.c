@@ -15,11 +15,9 @@
 #include "configration.h"
 #include "actions.h"
 #include "ui_assignment.h"
+#include "esp_timer.h"
 
 const char *TAG_EVT = "Events";
-
-#define MAX_USER_STRATAGEMS 6
-#define MAX_USER_PRESETS 6
 
 // User button list
 lv_obj_t *buttons[MAX_USER_STRATAGEMS];
@@ -30,11 +28,15 @@ int types[MAX_USER_STRATAGEMS];
 // Amount of user assigned stratagems
 uint8_t strategemsAmount = 0;
 
+lv_obj_t *cooldownLabels[MAX_USER_STRATAGEMS];
+uint64_t cooldownValues[MAX_USER_STRATAGEMS];
+
 int manualIndex = 0;
 int manualList = 0;
 int manualSequence[MAX_CMD_LENGTH] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 int manualMatch = -1;
-bool manualAutoComplete = true;
+extern bool manualAutoComplete;
+extern bool showCooldowns;
 lv_timer_t *timerManual = NULL;
 
 lv_timer_t *timerMsg = NULL;
@@ -123,6 +125,11 @@ void action_goto_game(lv_event_t *e)
 	}
 
 	lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 0, false);
+}
+
+void action_goto_setup(lv_event_t *e)
+{
+	resetCooldowns();
 }
 
 // Update selection in UI (text and bar)
@@ -301,6 +308,11 @@ void _executeUserStratagem(uint8_t index)
 
 	setStratagemCode(item.sequence, INPUT_CTRL_MASK, false);
 
+	if (showCooldowns)
+	{
+		cooldownValues[index] = getNow() + item.cooldown;
+	}
+
 	char *path = item.soundPath;
 
 	playbackSound(path);
@@ -315,7 +327,7 @@ void action_trigger_stratagem_base(lv_event_t *e)
 
 	_executeStdStratagem(sequence, path);
 
-	if (index > 5) // Mission stratagems
+	if (index >= MAX_USER_STRATAGEMS) // Mission stratagems
 	{
 		lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_NONE, 0, 0, false);
 	}
@@ -337,6 +349,7 @@ void action_keyboard_demo(lv_event_t *e)
 										HID_KEY_L,
 										HID_KEY_L,
 										HID_KEY_O,
+										0,
 										0,
 										0,
 										0};
@@ -535,7 +548,7 @@ void action_set_preset(lv_event_t *e)
 	{
 		char *key = resolvePresetKey(presetKey[1], c);
 
-		setConfig(key, types[c]);
+		setConfig(key, (uint8_t)types[c]);
 	}
 
 	updatePresets();
@@ -594,7 +607,7 @@ void action_assign_preset_image(lv_event_t *e)
 {
 	int userData = (int)e->user_data;
 
-	setConfig(presetKey, userData);
+	setConfig(presetKey, (uint8_t)userData);
 	resolvePresetImages();
 
 	lv_scr_load_anim(objects.preset, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
@@ -861,4 +874,19 @@ void lookupManualSequence()
 
 		lv_obj_set_style_bg_img_src(objects.manual_preview_item, "", LV_PART_MAIN | LV_STATE_DEFAULT);
 	}
+}
+
+void resetCooldowns()
+{
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
+	{
+		lv_obj_add_flag(cooldownLabels[c], LV_OBJ_FLAG_HIDDEN);
+
+		cooldownValues[c] = 0;
+	}
+}
+
+uint64_t getNow()
+{
+	return esp_timer_get_time() / 1000000;
 }

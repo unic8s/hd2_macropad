@@ -84,3 +84,14 @@ void action_auto_complete(lv_event_t *e)
 
 	setAutoComplete(autoComplete, false);
 }
+
+void action_set_cooldown(lv_event_t *e)
+{
+	bool cooldown = lv_obj_get_state(e->current_target) & LV_STATE_CHECKED ? true : false;
+
+	setCooldown(cooldown, false);
+
+	if(!cooldown){
+		resetCooldowns();
+	}
+}

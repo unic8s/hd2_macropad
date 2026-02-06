@@ -196,6 +196,7 @@ typedef struct _objects_t {
     lv_obj_t *obj45;
     lv_obj_t *dd_keymap;
     lv_obj_t *chb_auto_complete;
+    lv_obj_t *chb_cooldowns;
     lv_obj_t *obj46;
     lv_obj_t *obj47;
     lv_obj_t *obj48;
@@ -213,6 +214,12 @@ typedef struct _objects_t {
     lv_obj_t *label_amount;
     lv_obj_t *msg_box;
     lv_obj_t *msg_label;
+    lv_obj_t *label_cooldown1;
+    lv_obj_t *label_cooldown2;
+    lv_obj_t *label_cooldown3;
+    lv_obj_t *label_cooldown4;
+    lv_obj_t *label_cooldown5;
+    lv_obj_t *label_cooldown6;
     lv_obj_t *img_connection2;
     lv_obj_t *obj54;
     lv_obj_t *obj55;

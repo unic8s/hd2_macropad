@@ -34,6 +34,7 @@ int manualIndex = 0;
 int manualList = 0;
 int manualSequence[MAX_CMD_LENGTH] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 int manualMatch = -1;
+bool manualAutoComplete = true;
 lv_timer_t *timerManual = NULL;
 
 lv_timer_t *timerMsg = NULL;
@@ -332,13 +333,13 @@ void action_trigger_stratagem_user(lv_event_t *e)
 void action_keyboard_demo(lv_event_t *e)
 {
 	uint8_t sequence[MAX_CMD_LENGTH] = {HID_KEY_H,
-						   HID_KEY_E,
-						   HID_KEY_L,
-						   HID_KEY_L,
-						   HID_KEY_O,
-						   0,
-						   0,
-						   0};
+										HID_KEY_E,
+										HID_KEY_L,
+										HID_KEY_L,
+										HID_KEY_O,
+										0,
+										0,
+										0};
 
 	setStratagemCode(sequence, 0, true);
 }
@@ -782,16 +783,23 @@ void lookupManualSequence()
 	{
 		stratagemItem item = strategemItemList[c1];
 		bool match = true;
+		bool matchComplete = false;
 
 		for (uint8_t c2 = 0; c2 < manualIndex; c2++)
 		{
 			const uint8_t manualStep = manualSequence[c2];
+			matchComplete = c2 < MAX_CMD_LENGTH && item.sequence[c2 + 1] == 0;
 
 			if (item.sequence[c2] != manualStep)
 			{
 				match = false;
 				break;
 			}
+		}
+
+		if (!manualAutoComplete && !matchComplete)
+		{
+			match = false;
 		}
 
 		if (match)
@@ -808,16 +816,23 @@ void lookupManualSequence()
 		{
 			stratagemBase item = strategemBaseList[c1];
 			bool match = true;
+			bool matchComplete = false;
 
 			for (uint8_t c2 = 0; c2 < manualIndex; c2++)
 			{
 				const uint8_t manualStep = manualSequence[c2];
+				matchComplete = c2 < MAX_CMD_LENGTH && item.sequence[c2 + 1] == 0;
 
 				if (item.sequence[c2] != manualStep)
 				{
 					match = false;
 					break;
 				}
+			}
+
+			if (!manualAutoComplete && !matchComplete)
+			{
+				match = false;
 			}
 
 			if (match)
@@ -833,7 +848,8 @@ void lookupManualSequence()
 	{
 		const lv_img_dsc_t *imgHiRes = manualList == 0 ? strategemItemList[manualMatch].imgHiRes : strategemBaseList[manualMatch].imgHiRes;
 
-		if(imgHiRes == NULL){
+		if (imgHiRes == NULL)
+		{
 			return;
 		}
 

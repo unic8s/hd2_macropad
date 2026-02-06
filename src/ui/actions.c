@@ -77,3 +77,10 @@ void action_finalize_manual_execution(lv_event_t *e)
 {
 	finalizeManualExecution();
 }
+
+void action_auto_complete(lv_event_t *e)
+{
+	bool autoComplete = lv_obj_get_state(e->current_target) & LV_STATE_CHECKED ? true : false;
+
+	setAutoComplete(autoComplete, false);
+}

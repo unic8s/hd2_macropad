@@ -17,6 +17,7 @@ extern int inputDelay;
 extern int screenRotation;
 extern uint8_t keymapIndex;
 extern uint8_t connectionType;
+extern bool manualAutoComplete;
 
 extern esp_err_t ble_controller_init();
 extern esp_err_t ble_controller_deinit();
@@ -254,6 +255,30 @@ void setKeymap(uint8_t index, bool restore)
     playbackSound(SND_SWITCH);
 }
 
+// Write the keymap assignment to configuration
+void setAutoComplete(bool enable, bool restore)
+{
+    manualAutoComplete = enable;
+
+    if (restore)
+    {
+        if (enable)
+        {
+            lv_obj_add_state(objects.chb_auto_complete, LV_STATE_CHECKED);
+        }
+        else
+        {
+            lv_obj_clear_state(objects.chb_auto_complete, LV_STATE_CHECKED);
+        }
+    }
+    else
+    {
+        setConfig("autoComplete", manualAutoComplete ? 1 : 0);
+    }
+
+    playbackSound(SND_SWITCH);
+}
+
 esp_err_t openConfig()
 {
     esp_err_t ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
@@ -298,6 +323,9 @@ void loadConfig()
     uint8_t keymap_index = getConfig("keymap", 0);
     setKeymap(keymap_index, true);
 
+    uint8_t auto_complete = getConfig("autoComplete", 0);
+    setAutoComplete(auto_complete == 1, true);
+
     closeConfig();
 }
 
@@ -332,5 +360,7 @@ void resetConfig()
     setBrightness(50, true);
     setMuted(0, true);
     setKeymap(0, true);
+    setAutoComplete(1, true);
+
     setRotation(LV_DISP_ROT_90, true);
 }

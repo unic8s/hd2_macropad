@@ -16,6 +16,7 @@ void setBrightness(int brightness, bool restore);
 void setMuted(bool muted, bool restore);
 void setConnectivity(uint8_t index, bool restore);
 void setKeymap(uint8_t index, bool restore);
+void setAutoComplete(bool muted, bool restore);
 void loadConfig();
 esp_err_t openConfig();
 void closeConfig();

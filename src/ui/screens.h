@@ -235,6 +235,9 @@ typedef struct _objects_t {
     lv_obj_t *img_connection1;
     lv_obj_t *obj63;
     lv_obj_t *lbl_version;
+    lv_obj_t *obj64;
+    lv_obj_t *obj65;
+    lv_obj_t *obj66;
     lv_obj_t *manual_preview_item;
     lv_obj_t *manual_cmd1;
     lv_obj_t *manual_cmd2;

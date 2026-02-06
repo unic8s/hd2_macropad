@@ -5,7 +5,9 @@
 A very flexible and easy-to-use macropad for HELLDIVERS&trade; 2 for live configuration on each drop into combat with individual loadouts.
 
 > [!NOTE]
-> **The software requires this specific device [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR)**
+> **The software of this requires this specific device [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR)**
+> 
+> **[@wokka1](https://github.com/wokka1) maintains a fork which supports a [device with a 7" display from Elecrow](https://github.com/wokka1/hd2_macropad)**
 
 Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/), [Playstation&trade;](https://www.playstation.com/games/helldivers-2/)
 

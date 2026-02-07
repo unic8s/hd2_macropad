@@ -315,18 +315,19 @@ void setCooldown(bool enable, bool restore)
 
 void setShipModules(bool restore)
 {
-    shipModule list[] = {
+    shipModule list[MAX_SHIP_MODULES] = {
         {SHIP_LVC, objects.chb_ship_mod_lvc},
         {SHIP_ZBL, objects.chb_ship_mod_zbl},
         {SHIP_HC, objects.chb_ship_mod_hc},
         {SHIP_MA, objects.chb_ship_mod_ma},
-        {SHIP_SRP, objects.chb_ship_mod_srp}};
+        {SHIP_SRP, objects.chb_ship_mod_srp},
+        {SHIP_SS, objects.chb_ship_mod_ss}};
 
     if (restore)
     {
         uint8_t shipModules = getConfig(CFG_KEY_SHIPMODULES, 0);
 
-        for (uint8_t c = 0; c < 5; c++)
+        for (uint8_t c = 0; c < MAX_SHIP_MODULES; c++)
         {
             shipModule item = list[c];
 
@@ -343,7 +344,7 @@ void setShipModules(bool restore)
     {
         uint8_t shipModules = 0;
 
-        for (uint8_t c = 0; c < 5; c++)
+        for (uint8_t c = 0; c < MAX_SHIP_MODULES; c++)
         {
             shipModule item = list[c];
 

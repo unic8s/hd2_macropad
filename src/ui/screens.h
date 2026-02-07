@@ -201,6 +201,7 @@ typedef struct _objects_t {
     lv_obj_t *chb_ship_mod_hc;
     lv_obj_t *chb_ship_mod_zbl;
     lv_obj_t *chb_ship_mod_lvc;
+    lv_obj_t *chb_ship_mod_ss;
     lv_obj_t *chb_auto_complete;
     lv_obj_t *obj46;
     lv_obj_t *obj47;

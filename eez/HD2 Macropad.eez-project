@@ -15484,7 +15484,7 @@
                       "type": "LVGLContainerWidget",
                       "left": 0,
                       "top": 0,
-                      "width": 49,
+                      "width": 100,
                       "height": 80,
                       "customInputs": [],
                       "customOutputs": [],
@@ -15625,12 +15625,61 @@
                       "groupIndex": 0
                     },
                     {
+                      "objID": "bc527e72-0e85-4dc2-c1eb-0d18113eb9ae",
+                      "type": "LVGLLabelWidget",
+                      "left": 0,
+                      "top": 0,
+                      "width": 95,
+                      "height": 16,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "style": {
+                        "objID": "1655e5b4-6909-44c5-b861-6136f940d33c",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": []
+                      },
+                      "timeline": [],
+                      "eventHandlers": [],
+                      "leftUnit": "px",
+                      "topUnit": "px",
+                      "widthUnit": "%",
+                      "heightUnit": "content",
+                      "children": [],
+                      "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                      "hiddenFlagType": "literal",
+                      "clickableFlagType": "literal",
+                      "flagScrollbarMode": "",
+                      "flagScrollDirection": "",
+                      "scrollSnapX": "",
+                      "scrollSnapY": "",
+                      "checkedStateType": "literal",
+                      "disabledStateType": "literal",
+                      "states": "",
+                      "localStyles": {
+                        "objID": "0f7e110f-1ac2-4d04-8133-93908ccdbb4c",
+                        "definition": {
+                          "MAIN": {
+                            "DEFAULT": {
+                              "pad_left": 18
+                            }
+                          }
+                        }
+                      },
+                      "group": "",
+                      "groupIndex": 0,
+                      "text": "Ship modules",
+                      "textType": "literal",
+                      "longMode": "WRAP",
+                      "recolor": false
+                    },
+                    {
                       "objID": "81da8432-a08a-482e-839d-0c81c1dd0757",
                       "type": "LVGLContainerWidget",
                       "left": 0,
                       "top": 0,
                       "width": 49,
-                      "height": 212,
+                      "height": 108,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -15646,48 +15695,6 @@
                       "widthUnit": "%",
                       "heightUnit": "content",
                       "children": [
-                        {
-                          "objID": "bc527e72-0e85-4dc2-c1eb-0d18113eb9ae",
-                          "type": "LVGLLabelWidget",
-                          "left": 0,
-                          "top": 0,
-                          "width": 100,
-                          "height": 16,
-                          "customInputs": [],
-                          "customOutputs": [],
-                          "style": {
-                            "objID": "1655e5b4-6909-44c5-b861-6136f940d33c",
-                            "useStyle": "default",
-                            "conditionalStyles": [],
-                            "childStyles": []
-                          },
-                          "timeline": [],
-                          "eventHandlers": [],
-                          "leftUnit": "px",
-                          "topUnit": "px",
-                          "widthUnit": "%",
-                          "heightUnit": "content",
-                          "children": [],
-                          "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
-                          "hiddenFlagType": "literal",
-                          "clickableFlagType": "literal",
-                          "flagScrollbarMode": "",
-                          "flagScrollDirection": "",
-                          "scrollSnapX": "",
-                          "scrollSnapY": "",
-                          "checkedStateType": "literal",
-                          "disabledStateType": "literal",
-                          "states": "",
-                          "localStyles": {
-                            "objID": "0f7e110f-1ac2-4d04-8133-93908ccdbb4c"
-                          },
-                          "group": "",
-                          "groupIndex": 0,
-                          "text": "Ship modules",
-                          "textType": "literal",
-                          "longMode": "WRAP",
-                          "recolor": false
-                        },
                         {
                           "objID": "2ecddaab-fa37-4049-cf93-399b47db8a9e",
                           "type": "LVGLCheckboxWidget",
@@ -15840,9 +15847,63 @@
                           "groupIndex": 0,
                           "text": "Hand Carts",
                           "textType": "literal"
-                        },
+                        }
+                      ],
+                      "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                      "hiddenFlagType": "literal",
+                      "clickableFlag": true,
+                      "clickableFlagType": "literal",
+                      "flagScrollbarMode": "",
+                      "flagScrollDirection": "",
+                      "scrollSnapX": "",
+                      "scrollSnapY": "",
+                      "checkedStateType": "literal",
+                      "disabledStateType": "literal",
+                      "states": "",
+                      "localStyles": {
+                        "objID": "a5a17677-4647-4bdf-d698-1b7b21d6db4a",
+                        "definition": {
+                          "MAIN": {
+                            "DEFAULT": {
+                              "pad_top": 8,
+                              "pad_bottom": 8,
+                              "pad_left": 20,
+                              "pad_right": 20,
+                              "pad_row": 16,
+                              "pad_column": 0,
+                              "layout": "FLEX",
+                              "flex_flow": "ROW_WRAP"
+                            }
+                          }
+                        }
+                      },
+                      "group": "",
+                      "groupIndex": 0
+                    },
+                    {
+                      "objID": "0edf8ea9-6385-4eec-93db-3081c5af19f1",
+                      "type": "LVGLContainerWidget",
+                      "left": 0,
+                      "top": 0,
+                      "width": 49,
+                      "height": 108,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "style": {
+                        "objID": "1c65678e-e648-40c7-ef15-d52aa5274fe8",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": []
+                      },
+                      "timeline": [],
+                      "eventHandlers": [],
+                      "leftUnit": "px",
+                      "topUnit": "px",
+                      "widthUnit": "%",
+                      "heightUnit": "content",
+                      "children": [
                         {
-                          "objID": "c9fc36eb-d1c0-4069-98ea-a394bc91d3f8",
+                          "objID": "a1fb1565-73bb-4c57-ddc5-93f9bfbdfa6d",
                           "type": "LVGLCheckboxWidget",
                           "left": 0,
                           "top": 0,
@@ -15851,7 +15912,7 @@
                           "customInputs": [],
                           "customOutputs": [],
                           "style": {
-                            "objID": "7473ba14-2877-4c1d-e40a-0a4ec18996a5",
+                            "objID": "07db0c03-f43c-4003-fa11-90c3352566b5",
                             "useStyle": "default",
                             "conditionalStyles": [],
                             "childStyles": []
@@ -15859,7 +15920,7 @@
                           "timeline": [],
                           "eventHandlers": [
                             {
-                              "objID": "d4025713-ec4c-4ea9-d800-75c3f6a4cf4b",
+                              "objID": "4b0355b9-46b2-41f1-b637-97390aca9381",
                               "eventName": "VALUE_CHANGED",
                               "handlerType": "action",
                               "action": "SetShipModules",
@@ -15885,7 +15946,7 @@
                           "states": "",
                           "useStyle": "CheckboxConfig",
                           "localStyles": {
-                            "objID": "c06aa2d8-9f76-4bf0-c3e4-6b254b81bdcd"
+                            "objID": "ae75d3da-677d-4842-bdab-9b31ab4e6dcf"
                           },
                           "group": "",
                           "groupIndex": 0,
@@ -15893,7 +15954,7 @@
                           "textType": "literal"
                         },
                         {
-                          "objID": "148c29cf-b938-4040-a538-437cec108749",
+                          "objID": "56575fa6-8888-427a-bdee-4a50c798e4a6",
                           "type": "LVGLCheckboxWidget",
                           "left": 0,
                           "top": 0,
@@ -15902,7 +15963,7 @@
                           "customInputs": [],
                           "customOutputs": [],
                           "style": {
-                            "objID": "564714f4-17c7-4d03-c2d1-1c0940575965",
+                            "objID": "a3af5bb5-46a0-4e36-fc56-ac3c81a0582e",
                             "useStyle": "default",
                             "conditionalStyles": [],
                             "childStyles": []
@@ -15910,7 +15971,7 @@
                           "timeline": [],
                           "eventHandlers": [
                             {
-                              "objID": "d1141921-ec8c-40d7-936c-51f9706b0592",
+                              "objID": "0f0fe074-9ae3-47e8-8a60-27e7ba291380",
                               "eventName": "VALUE_CHANGED",
                               "handlerType": "action",
                               "action": "SetShipModules",
@@ -15936,11 +15997,62 @@
                           "states": "",
                           "useStyle": "CheckboxConfig",
                           "localStyles": {
-                            "objID": "f0996ce3-6603-45e6-cf02-ed9bdd3477b5"
+                            "objID": "362cfe47-6ee2-48bf-c75a-a7c766260470"
                           },
                           "group": "",
                           "groupIndex": 0,
                           "text": "Liquid-Vent. Cockpit",
+                          "textType": "literal"
+                        },
+                        {
+                          "objID": "53a13a7b-979c-4c60-922b-f5267af11bbb",
+                          "type": "LVGLCheckboxWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 148,
+                          "height": 20,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "8e32e4b6-6bb4-4d45-f2bb-3856d367cfae",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [
+                            {
+                              "objID": "1a491f94-17b0-4d2d-a29e-6d004603e95d",
+                              "eventName": "VALUE_CHANGED",
+                              "handlerType": "action",
+                              "action": "SetShipModules",
+                              "userData": 0
+                            }
+                          ],
+                          "identifier": "ChbShipMod_SS",
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "content",
+                          "heightUnit": "content",
+                          "children": [],
+                          "widgetFlags": "CHECKABLE|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlag": true,
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "useStyle": "CheckboxConfig",
+                          "localStyles": {
+                            "objID": "1ae15543-bf83-4bd1-877e-e8c167c89c5d"
+                          },
+                          "group": "",
+                          "groupIndex": 0,
+                          "text": "Synthetic Suppl.",
                           "textType": "literal"
                         }
                       ],
@@ -15956,7 +16068,7 @@
                       "disabledStateType": "literal",
                       "states": "",
                       "localStyles": {
-                        "objID": "a5a17677-4647-4bdf-d698-1b7b21d6db4a",
+                        "objID": "ae106652-bd2c-46de-bef5-dc08d0841d1a",
                         "definition": {
                           "MAIN": {
                             "DEFAULT": {

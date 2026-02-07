@@ -32,8 +32,11 @@ enum ModuleType
 	SHIP_MA = 2,
 	SHIP_HC = 4,
 	SHIP_ZBL = 8,
-	SHIP_LVC = 16
+	SHIP_LVC = 16,
+	SHIP_SS = 32
 };
+
+#define MAX_SHIP_MODULES 6
 
 typedef struct
 {

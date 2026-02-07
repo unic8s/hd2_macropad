@@ -18,6 +18,7 @@ typedef struct
 {
     uint8_t sequence[9];
     uint16_t cooldown;
+    double callIn;
     char *soundPath;
     const int color;
     const lv_img_dsc_t *imgHiRes;
@@ -38,6 +39,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_mg2,
@@ -47,6 +49,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_amr2,
@@ -57,6 +60,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_sw2,
@@ -67,6 +71,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_eat2,
@@ -77,6 +82,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_c2,
@@ -87,6 +93,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_rr2,
@@ -97,6 +104,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_ft2,
@@ -107,6 +115,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_ac2,
@@ -117,6 +126,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_DOWN, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_hmg2,
@@ -127,6 +137,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_rg2,
@@ -137,6 +148,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_DOWN, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_spr2,
@@ -147,6 +159,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_gl2,
@@ -157,6 +170,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_lc2,
@@ -167,6 +181,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_LEFT, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_at2,
@@ -177,6 +192,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_qc2,
@@ -187,6 +203,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_arl2,
@@ -197,6 +214,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_LEFT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_ste2,
@@ -207,6 +225,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_jp2,
@@ -217,6 +236,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_sup2,
@@ -227,6 +247,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_LEFT, 0, 0, 0},
         300,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_bsb2,
@@ -237,6 +258,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_sgp2,
@@ -247,6 +269,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_gd2,
@@ -257,6 +280,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_gdr2,
@@ -267,6 +291,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_gdb2,
@@ -277,6 +302,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, 0, 0},
         600,
+        10.5,
         SND_BOT,
         sgBlue,
         &img_pe2,
@@ -287,6 +313,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_UP, 0, 0},
         600,
+        10.5,
         SND_BOT,
         sgBlue,
         &img_ee2,
@@ -297,6 +324,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0},
         180,
+        7.75,
         SND_SENTRY,
         sgGreen,
         &img_hmge2,
@@ -307,6 +335,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         90,
+        9.75,
         SND_SHIELD,
         sgGreen,
         &img_sgr2,
@@ -317,6 +346,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         120,
+        9.75,
         SND_SHIELD,
         sgGreen,
         &img_tt2,
@@ -327,6 +357,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0, 0},
         120,
+        7.75,
         SND_MINES,
         sgGreen,
         &img_apm2,
@@ -337,6 +368,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0, 0},
         120,
+        7.75,
         SND_MINES,
         sgGreen,
         &img_im2,
@@ -347,6 +379,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0, 0, 0},
         120,
+        7.75,
         SND_MINES,
         sgGreen,
         &img_atm2,
@@ -357,6 +390,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0},
         90,
+        7.75,
         SND_SENTRY,
         sgGreen,
         &img_mgs2,
@@ -367,6 +401,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0, 0, 0},
         150,
+        7.75,
         SND_SENTRY,
         sgGreen,
         &img_gs2,
@@ -377,6 +412,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0, 0},
         180,
+        7.75,
         SND_MORTAR,
         sgGreen,
         &img_ms2,
@@ -387,6 +423,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_UP, 0, 0, 0},
         150,
+        7.75,
         SND_SENTRY,
         sgGreen,
         &img_acs2,
@@ -397,6 +434,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0, 0},
         150,
+        7.75,
         SND_SENTRY,
         sgGreen,
         &img_rs2,
@@ -407,6 +445,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         180,
+        7.75,
         SND_MORTAR,
         sgGreen,
         &img_ems2,
@@ -417,6 +456,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0, 0},
         70,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_ogb2,
@@ -427,6 +467,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0, 0, 0, 0},
         100,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_oas2,
@@ -437,6 +478,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
         180,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_1202,
@@ -447,6 +489,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_LEFT, INPUT_DOWN, INPUT_DOWN, 0, 0},
         240,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_3802,
@@ -457,6 +500,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0},
         240,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_owb2,
@@ -467,6 +511,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0, 0},
         300,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_ol2,
@@ -477,6 +522,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_UP, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         210,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_ors2,
@@ -487,6 +533,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0, 0, 0},
         90,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_ops2,
@@ -497,6 +544,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0, 0},
         75,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_ogs2,
@@ -507,6 +555,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_LEFT, INPUT_DOWN, 0, 0, 0, 0, 0},
         75,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_oes2,
@@ -517,6 +566,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0, 0},
         100,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_oss2,
@@ -527,6 +577,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
         240,
+        4.75,
         SND_ORBITAL,
         sgRed,
         &img_onb2,
@@ -537,6 +588,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0, 0, 0, 0},
         8,
+        4.1,
         SND_EAGLE,
         sgRed,
         &img_esr2,
@@ -547,6 +599,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0, 0},
         8,
+        4.1,
         SND_EAGLE,
         sgRed,
         &img_ea2,
@@ -557,6 +610,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         8,
+        4.1,
         SND_EAGLE,
         sgRed,
         &img_ecb2,
@@ -567,6 +621,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0, 0, 0, 0},
         8,
+        4.1,
         SND_EAGLE,
         sgRed,
         &img_ena2,
@@ -577,6 +632,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0, 0},
         8,
+        4.1,
         SND_EAGLE,
         sgRed,
         &img_ess2,
@@ -587,6 +643,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, 0, 0, 0, 0, 0},
         8,
+        4.1,
         SND_EAGLE,
         sgRed,
         &img_e1102,
@@ -597,6 +654,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, INPUT_DOWN, 0, 0, 0, 0},
         8,
+        4.1,
         SND_EAGLE,
         sgRed,
         &img_e5002,
@@ -607,6 +665,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_UP, 0, 0, 0},
         300,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_ds2,
@@ -617,6 +676,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_RIGHT, 0, 0, 0},
         180,
+        7.75,
         SND_MINES,
         sgGreen,
         &img_ate2,
@@ -627,6 +687,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0, 0},
         100,
+        7.75,
         SND_SENTRY,
         sgGreen,
         &img_fs2,
@@ -637,6 +698,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_frv2,
@@ -647,6 +709,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_UP, 0, 0, 0, 0},
         300,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_ph2,
@@ -657,6 +720,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0, 0},
         120,
+        7.75,
         SND_MINES,
         sgGreen,
         &img_gm2,
@@ -667,6 +731,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_wsp2,
@@ -677,6 +742,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
         120,
+        7.75,
         SND_SENTRY,
         sgGreen,
         &img_gb2,
@@ -687,6 +753,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_UP, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_hp2,
@@ -697,6 +764,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_UP, 0, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_otf2,
@@ -707,6 +775,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_de2,
@@ -717,6 +786,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_gdk2,
@@ -727,6 +797,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_e2,
@@ -737,6 +808,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0, 0},
         150,
+        7.75,
         SND_SENTRY,
         sgGreen,
         &img_ls2,
@@ -747,6 +819,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_wp2,
@@ -757,6 +830,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, 0, 0, 0, 0},
         140,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_en2,
@@ -767,6 +841,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0, 0, 0},
         180,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_ss2,
@@ -777,6 +852,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_sg2,
@@ -787,6 +863,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_RIGHT, INPUT_DOWN, 0, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_dt2,
@@ -797,6 +874,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0, 0},
         480,
+        7.75,
         SND_WEAPON,
         sgBlue,
         &img_mxg2,
@@ -807,6 +885,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_LEFT, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_gdhd2,
@@ -817,6 +896,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_UP, INPUT_RIGHT, INPUT_UP, 0, 0, 0},
         480,
+        9.75,
         SND_BACKPACK,
         sgBlue,
         &img_c4p2,
@@ -827,6 +907,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_DOWN, INPUT_UP},
         780,
+        10.5,
         SND_SUPPLY,
         sgBlue,
         &img_bmk2,
@@ -837,7 +918,8 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_LEFT, INPUT_UP, 0, 0, 0, 0},
         480,
-        SND_SUPPLY,
+        7.75,
+        SND_WEAPON,
         sgBlue,
         &img_cqc2,
         SG_CQC},
@@ -847,7 +929,8 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, 0, 0, 0, 0},
         140,
-        SND_SUPPLY,
+        7.75,
+        SND_WEAPON,
         sgBlue,
         &img_eatl2,
         SG_EATL},
@@ -857,7 +940,8 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_LEFT, INPUT_UP, INPUT_UP, 0, 0, 0},
         480,
-        SND_SUPPLY,
+        7.75,
+        SND_WEAPON,
         sgBlue,
         &img_bfgl2,
         SG_BFGL}};

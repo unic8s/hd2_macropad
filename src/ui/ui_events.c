@@ -323,13 +323,16 @@ void _executeUserStratagem(uint8_t index)
 		{
 			cooldown *= 0.90; // Zero-G Breech Loading => orbital 10%
 		}
-		else if (item.soundPath == (char *)SND_BACKPACK && lv_obj_has_state(objects.chb_ship_mod_hc, LV_STATE_CHECKED))
+		else if ((item.soundPath == (char *)SND_BACKPACK || item.soundPath == (char *)SND_SHIELD) && lv_obj_has_state(objects.chb_ship_mod_hc, LV_STATE_CHECKED))
 		{
 			cooldown *= 0.90; // Hand Carts => backpack 10%
 		}
 		else if (item.soundPath == (char *)SND_WEAPON && lv_obj_has_state(objects.chb_ship_mod_srp, LV_STATE_CHECKED))
 		{
 			cooldown *= 0.90; // Streamlined Request Process => weapon 10%
+		}else if ((item.soundPath == (char *)SND_SENTRY || item.soundPath == (char *)SND_MORTAR || item.soundPath == (char *)SND_MINES) && lv_obj_has_state(objects.chb_ship_mod_ss, LV_STATE_CHECKED))
+		{
+			cooldown *= 0.90; // Synthetic Supplementation => weapon 10%
 		}
 
 		if (lv_obj_has_state(objects.chb_ship_mod_ma, LV_STATE_CHECKED))
@@ -337,7 +340,7 @@ void _executeUserStratagem(uint8_t index)
 			cooldown *= 0.95; // Morale Augmentation => all 5%
 		}
 
-		cooldownValues[index] = getNow() + cooldown;
+		cooldownValues[index] = getNow() + cooldown + item.callIn;
 
 		if (cooldownTimer->paused)
 		{

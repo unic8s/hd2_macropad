@@ -315,53 +315,29 @@ void _executeUserStratagem(uint8_t index)
 	{
 		double cooldown = item.cooldown;
 
-		shipModule list[] = {
-			{SHIP_LVC, objects.chb_ship_mod_lvc},
-			{SHIP_ZBL, objects.chb_ship_mod_zbl},
-			{SHIP_HC, objects.chb_ship_mod_hc},
-			{SHIP_MA, objects.chb_ship_mod_ma},
-			{SHIP_SRP, objects.chb_ship_mod_srp}};
-
-		for (uint8_t c = 0; c < 5; c++)
+		if (item.soundPath == (char *)SND_EAGLE && lv_obj_has_state(objects.chb_ship_mod_lvc, LV_STATE_CHECKED))
 		{
-			shipModule module = list[c];
-
-			if (lv_obj_has_state(module.checkbox, LV_STATE_CHECKED))
-			{
-				switch (module.value)
-				{
-				case SHIP_LVC: // Liquid-Ventilated Cockpit 	=> eagle 50%
-					if (item.soundPath == (char*)SND_EAGLE)
-					{
-						cooldown *= 0.95;
-					}
-					break;
-				case SHIP_ZBL: // Zero-G Breech Loading		=> orbital 10%
-					if (item.soundPath == (char*)SND_ORBITAL)
-					{
-						cooldown *= 0.90;
-					}
-					break;
-				case SHIP_HC: // Hand Carts 					=> backpack 10%
-					if (item.soundPath == (char*)SND_BACKPACK)
-					{
-						cooldown *= 0.90;
-					}
-					break;
-				case SHIP_MA: // Morale Augmentation			=> all 5%
-					cooldown *= 0.95;
-					break;
-				case SHIP_SRP: // Streamlined Request Process	=> weapon 10%
-					if (item.soundPath == (char*)SND_WEAPON)
-					{
-						cooldown *= 0.90;
-					}
-					break;
-				}
-			}
+			cooldown *= 0.95; // Liquid-Ventilated Cockpit => eagle 50%
+		}
+		else if (item.soundPath == (char *)SND_ORBITAL && lv_obj_has_state(objects.chb_ship_mod_zbl, LV_STATE_CHECKED))
+		{
+			cooldown *= 0.90; // Zero-G Breech Loading => orbital 10%
+		}
+		else if (item.soundPath == (char *)SND_BACKPACK && lv_obj_has_state(objects.chb_ship_mod_hc, LV_STATE_CHECKED))
+		{
+			cooldown *= 0.90; // Hand Carts => backpack 10%
+		}
+		else if (item.soundPath == (char *)SND_WEAPON && lv_obj_has_state(objects.chb_ship_mod_srp, LV_STATE_CHECKED))
+		{
+			cooldown *= 0.90; // Streamlined Request Process => weapon 10%
 		}
 
-		cooldownValues[index] = getNow() + (uint16_t)cooldown;
+		if (lv_obj_has_state(objects.chb_ship_mod_ma, LV_STATE_CHECKED))
+		{
+			cooldown *= 0.95; // Morale Augmentation => all 5%
+		}
+
+		cooldownValues[index] = getNow() + cooldown;
 
 		if (cooldownTimer->paused)
 		{

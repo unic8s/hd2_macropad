@@ -210,10 +210,10 @@ typedef struct _objects_t {
     lv_obj_t *obj50;
     lv_obj_t *obj51;
     lv_obj_t *obj52;
-    lv_obj_t *manual_arrow_left;
     lv_obj_t *manual_arrow_up;
-    lv_obj_t *manual_arrow_down;
+    lv_obj_t *manual_arrow_left;
     lv_obj_t *manual_arrow_right;
+    lv_obj_t *manual_arrow_down;
     lv_obj_t *obj53;
     lv_obj_t *cnt_progress;
     lv_obj_t *bar_amount;

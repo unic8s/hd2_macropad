@@ -5885,7 +5885,7 @@ void create_screen_config() {
                                     lv_obj_t *obj = lv_label_create(parent_obj);
                                     lv_obj_set_pos(obj, 0, 0);
                                     lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
-                                    lv_label_set_text(obj, "Show cooldowns");
+                                    lv_label_set_text(obj, "Show timers");
                                 }
                                 {
                                     // ChbCooldowns
@@ -6001,7 +6001,7 @@ void create_screen_config() {
                                     lv_obj_t *obj = lv_label_create(parent_obj);
                                     lv_obj_set_pos(obj, 0, 0);
                                     lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
-                                    lv_label_set_text(obj, "Auto-complete manual");
+                                    lv_label_set_text(obj, "Auto-complete for manual");
                                 }
                                 {
                                     // ChbAutoComplete

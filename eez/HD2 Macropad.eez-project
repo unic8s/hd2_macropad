@@ -15538,7 +15538,7 @@
                           },
                           "group": "",
                           "groupIndex": 0,
-                          "text": "Show cooldowns",
+                          "text": "Show timers",
                           "textType": "literal",
                           "longMode": "WRAP",
                           "recolor": false
@@ -16077,7 +16077,7 @@
                           },
                           "group": "",
                           "groupIndex": 0,
-                          "text": "Auto-complete manual",
+                          "text": "Auto-complete for manual",
                           "textType": "literal",
                           "longMode": "WRAP",
                           "recolor": false

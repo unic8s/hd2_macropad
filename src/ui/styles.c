@@ -317,7 +317,7 @@ void init_style_label_cooldown_MAIN_DEFAULT(lv_style_t *style) {
     lv_style_set_align(style, LV_ALIGN_BOTTOM_MID);
     lv_style_set_text_color(style, lv_color_hex(0xff000000));
     lv_style_set_border_color(style, lv_color_hex(0xff000000));
-    lv_style_set_border_width(style, 1);
+    lv_style_set_border_width(style, 2);
     lv_style_set_bg_color(style, lv_color_hex(0xffffffff));
     lv_style_set_bg_opa(style, 255);
     lv_style_set_pad_top(style, 0);

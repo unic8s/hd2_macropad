@@ -6,6 +6,7 @@
 #include "ui/ui.h"
 #include "ui/screens.h"
 #include "main.h"
+#include "configuration.h"
 
 const char *TAG_CFG = "Configuration";
 
@@ -24,6 +25,16 @@ extern esp_err_t ble_controller_init();
 extern esp_err_t ble_controller_deinit();
 extern esp_err_t usb_controller_init();
 extern esp_err_t usb_controller_deinit();
+
+#define CFG_KEY_DELAY "delay"
+#define CFG_KEY_ROTATION "rotation"
+#define CFG_KEY_BRIGHTNESS "brightness"
+#define CFG_KEY_MUTED "muted"
+#define CFG_KEY_CONNECTIVITY "connectivity"
+#define CFG_KEY_KEYMAP "keymap"
+#define CFG_KEY_AUTOCOMPLETE "autoComplete"
+#define CFG_KEY_COOLDOWN "showCooldown"
+#define CFG_KEY_SHIPMODULES "shipModules"
 
 // Init configuration from NVS
 esp_err_t initConfig()
@@ -46,7 +57,7 @@ esp_err_t initConfig()
 // Read configuration value by key
 // key - Identifier for configuration value
 // defaultValue - Default value which will be returned if the key/value does not exist
-uint8_t getConfig(char *key, int8_t defaultValue)
+int8_t getConfig(char *key, int8_t defaultValue)
 {
     uint8_t value;
 
@@ -111,7 +122,7 @@ void setDelay(int delay, bool restore)
     }
     else
     {
-        setConfig("delay", delay);
+        setConfig(CFG_KEY_DELAY, delay);
     }
 }
 
@@ -135,7 +146,7 @@ void setRotation(int rotation, bool restore)
     }
     else
     {
-        setConfig("rotation", screenRotation);
+        setConfig(CFG_KEY_ROTATION, screenRotation);
     }
 
     playbackSound(SND_SWITCH);
@@ -162,7 +173,7 @@ void setBrightness(int brightness, bool restore)
     }
     else
     {
-        setConfig("brightness", brightness);
+        setConfig(CFG_KEY_BRIGHTNESS, brightness);
     }
 }
 
@@ -184,7 +195,7 @@ void setMuted(bool muted, bool restore)
     }
     else
     {
-        setConfig("muted", playerMuted ? 1 : 0);
+        setConfig(CFG_KEY_MUTED, playerMuted ? 1 : 0);
     }
 
     playbackSound(SND_SWITCH);
@@ -199,7 +210,7 @@ void setConnectivity(uint8_t index, bool restore)
     }
     else
     {
-        setConfig("connectivity", index);
+        setConfig(CFG_KEY_CONNECTIVITY, index);
     }
 
     playbackSound(SND_SWITCH);
@@ -250,7 +261,7 @@ void setKeymap(uint8_t index, bool restore)
     }
     else
     {
-        setConfig("keymap", index);
+        setConfig(CFG_KEY_KEYMAP, index);
     }
 
     playbackSound(SND_SWITCH);
@@ -273,7 +284,7 @@ void setAutoComplete(bool enable, bool restore)
     }
     else
     {
-        setConfig("autoComplete", manualAutoComplete ? 1 : 0);
+        setConfig(CFG_KEY_AUTOCOMPLETE, manualAutoComplete ? 1 : 0);
     }
 
     playbackSound(SND_SWITCH);
@@ -296,10 +307,54 @@ void setCooldown(bool enable, bool restore)
     }
     else
     {
-        setConfig("showCooldown", showCooldowns ? 1 : 0);
+        setConfig(CFG_KEY_COOLDOWN, showCooldowns ? 1 : 0);
     }
 
     playbackSound(SND_SWITCH);
+}
+
+void setShipModules(bool restore)
+{
+    shipModule list[] = {
+        {SHIP_LVC, objects.chb_ship_mod_lvc},
+        {SHIP_ZBL, objects.chb_ship_mod_zbl},
+        {SHIP_HC, objects.chb_ship_mod_hc},
+        {SHIP_MA, objects.chb_ship_mod_ma},
+        {SHIP_SRP, objects.chb_ship_mod_srp}};
+
+    if (restore)
+    {
+        uint8_t shipModules = getConfig(CFG_KEY_SHIPMODULES, 0);
+
+        for (uint8_t c = 0; c < 5; c++)
+        {
+            shipModule item = list[c];
+
+            if(shipModules >= item.value){
+                shipModules -= item.value;
+
+                lv_obj_add_state(item.checkbox, LV_STATE_CHECKED);
+            }else{
+                lv_obj_clear_state(item.checkbox, LV_STATE_CHECKED);
+            }
+        }
+    }
+    else
+    {
+        uint8_t shipModules = 0;
+
+        for (uint8_t c = 0; c < 5; c++)
+        {
+            shipModule item = list[c];
+
+            if (lv_obj_has_state(item.checkbox, LV_STATE_CHECKED))
+            {
+                shipModules += item.value;
+            }
+        }
+
+        setConfig(CFG_KEY_SHIPMODULES, shipModules);
+    }
 }
 
 esp_err_t openConfig()
@@ -328,29 +383,31 @@ void loadConfig()
         return;
     }
 
-    uint8_t delay = getConfig("delay", 100);
+    uint8_t delay = getConfig(CFG_KEY_DELAY, 100);
     setDelay(delay, true);
 
-    uint8_t rotation = getConfig("rotation", 100);
+    uint8_t rotation = getConfig(CFG_KEY_ROTATION, 100);
     setRotation(rotation, true);
 
-    uint8_t screen_brightness = getConfig("brightness", 50);
+    uint8_t screen_brightness = getConfig(CFG_KEY_BRIGHTNESS, 50);
     setBrightness(screen_brightness, true);
 
-    uint8_t sound_muted = getConfig("muted", 0);
+    uint8_t sound_muted = getConfig(CFG_KEY_MUTED, 0);
     setMuted(sound_muted == 1, true);
 
-    uint8_t connectivity_index = getConfig("connectivity", 0);
+    uint8_t connectivity_index = getConfig(CFG_KEY_CONNECTIVITY, 0);
     setConnectivity(connectivity_index, true);
 
-    uint8_t keymap_index = getConfig("keymap", 0);
+    uint8_t keymap_index = getConfig(CFG_KEY_KEYMAP, 0);
     setKeymap(keymap_index, true);
 
-    uint8_t auto_complete = getConfig("autoComplete", 0);
+    uint8_t auto_complete = getConfig(CFG_KEY_AUTOCOMPLETE, 0);
     setAutoComplete(auto_complete == 1, true);
 
-    uint8_t show_cooldown = getConfig("showCooldown", 0);
+    uint8_t show_cooldown = getConfig(CFG_KEY_COOLDOWN, 0);
     setCooldown(show_cooldown == 1, true);
+
+    setShipModules(true);
 
     closeConfig();
 }
@@ -388,6 +445,7 @@ void resetConfig()
     setKeymap(0, true);
     setAutoComplete(1, true);
     setCooldown(0, true);
+    setShipModules(true);
 
     setRotation(LV_DISP_ROT_90, true);
 }

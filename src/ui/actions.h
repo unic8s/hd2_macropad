@@ -36,6 +36,7 @@ extern void action_finalize_manual_execution(lv_event_t * e);
 extern void action_auto_complete(lv_event_t * e);
 extern void action_goto_setup(lv_event_t * e);
 extern void action_set_cooldown(lv_event_t * e);
+extern void action_set_ship_modules(lv_event_t * e);
 
 
 #ifdef __cplusplus

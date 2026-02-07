@@ -12,7 +12,7 @@
 #include "i2s_player.h"
 #include "main.h"
 #include "ui_post.h"
-#include "configration.h"
+#include "configuration.h"
 #include "actions.h"
 #include "ui_assignment.h"
 #include "esp_timer.h"
@@ -313,9 +313,58 @@ void _executeUserStratagem(uint8_t index)
 
 	if (showCooldowns)
 	{
-		cooldownValues[index] = getNow() + item.cooldown;
+		double cooldown = item.cooldown;
 
-		if(cooldownTimer->paused){
+		shipModule list[] = {
+			{SHIP_LVC, objects.chb_ship_mod_lvc},
+			{SHIP_ZBL, objects.chb_ship_mod_zbl},
+			{SHIP_HC, objects.chb_ship_mod_hc},
+			{SHIP_MA, objects.chb_ship_mod_ma},
+			{SHIP_SRP, objects.chb_ship_mod_srp}};
+
+		for (uint8_t c = 0; c < 5; c++)
+		{
+			shipModule module = list[c];
+
+			if (lv_obj_has_state(module.checkbox, LV_STATE_CHECKED))
+			{
+				switch (module.value)
+				{
+				case SHIP_LVC: // Liquid-Ventilated Cockpit 	=> eagle 50%
+					if (item.soundPath == (char*)SND_EAGLE)
+					{
+						cooldown *= 0.95;
+					}
+					break;
+				case SHIP_ZBL: // Zero-G Breech Loading		=> orbital 10%
+					if (item.soundPath == (char*)SND_ORBITAL)
+					{
+						cooldown *= 0.90;
+					}
+					break;
+				case SHIP_HC: // Hand Carts 					=> backpack 10%
+					if (item.soundPath == (char*)SND_BACKPACK)
+					{
+						cooldown *= 0.90;
+					}
+					break;
+				case SHIP_MA: // Morale Augmentation			=> all 5%
+					cooldown *= 0.95;
+					break;
+				case SHIP_SRP: // Streamlined Request Process	=> weapon 10%
+					if (item.soundPath == (char*)SND_WEAPON)
+					{
+						cooldown *= 0.90;
+					}
+					break;
+				}
+			}
+		}
+
+		cooldownValues[index] = getNow() + (uint16_t)cooldown;
+
+		if (cooldownTimer->paused)
+		{
 			lv_timer_resume(cooldownTimer);
 		}
 	}
@@ -325,7 +374,7 @@ void _executeUserStratagem(uint8_t index)
 	playbackSound(path);
 }
 
-// Trigger 1st standard stratagem
+// Trigger standard stratagem
 void action_trigger_stratagem_base(lv_event_t *e)
 {
 	int index = (int)e->user_data;
@@ -340,7 +389,7 @@ void action_trigger_stratagem_base(lv_event_t *e)
 	}
 }
 
-// Trigger 1st user stratagem
+// Trigger user stratagem
 void action_trigger_stratagem_user(lv_event_t *e)
 {
 	int index = (int)e->user_data;

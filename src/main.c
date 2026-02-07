@@ -19,7 +19,7 @@
 #include "i2s_player.h"
 #include "ble/ble_controller.h"
 #include "usb/usb_controller.h"
-#include "configration.h"
+#include "configuration.h"
 #include "keymaps.h"
 #include "version.h"
 #include "main.h"

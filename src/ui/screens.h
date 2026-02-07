@@ -195,8 +195,13 @@ typedef struct _objects_t {
     lv_obj_t *dd_connectivity;
     lv_obj_t *obj45;
     lv_obj_t *dd_keymap;
-    lv_obj_t *chb_auto_complete;
     lv_obj_t *chb_cooldowns;
+    lv_obj_t *chb_ship_mod_srp;
+    lv_obj_t *chb_ship_mod_ma;
+    lv_obj_t *chb_ship_mod_hc;
+    lv_obj_t *chb_ship_mod_zbl;
+    lv_obj_t *chb_ship_mod_lvc;
+    lv_obj_t *chb_auto_complete;
     lv_obj_t *obj46;
     lv_obj_t *obj47;
     lv_obj_t *obj48;

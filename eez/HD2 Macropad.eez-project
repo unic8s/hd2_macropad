@@ -370,6 +370,15 @@
       "userProperties": [],
       "name": "SetCooldown",
       "implementationType": "native"
+    },
+    {
+      "objID": "84474c01-cd1f-4c33-b3b9-c243882447ce",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "SetShipModules",
+      "implementationType": "native"
     }
   ],
   "userPages": [
@@ -14531,7 +14540,7 @@
                           "checkedStateType": "literal",
                           "disabledStateType": "literal",
                           "states": "",
-                          "useStyle": "CheckboxConfig",
+                          "useStyle": "SwitchConfig",
                           "localStyles": {
                             "objID": "0ce70c9c-aa0c-4d69-e08c-ae4f00b9d28c"
                           },
@@ -14676,7 +14685,7 @@
                           "checkedStateType": "literal",
                           "disabledStateType": "literal",
                           "states": "",
-                          "useStyle": "CheckboxConfig",
+                          "useStyle": "SwitchConfig",
                           "localStyles": {
                             "objID": "cc57ff44-4945-4bcf-c034-d35a914ac26b"
                           },
@@ -15449,6 +15458,545 @@
                   "tabNameType": "literal"
                 },
                 {
+                  "objID": "1e7da7f6-36a3-4efe-9b51-8e8a91538eef",
+                  "type": "LVGLTabWidget",
+                  "left": 0,
+                  "top": 0,
+                  "width": 480,
+                  "height": 242,
+                  "customInputs": [],
+                  "customOutputs": [],
+                  "style": {
+                    "objID": "4086fe81-7bd8-48b7-e8b1-a6b441858e5d",
+                    "useStyle": "default",
+                    "conditionalStyles": [],
+                    "childStyles": []
+                  },
+                  "timeline": [],
+                  "eventHandlers": [],
+                  "leftUnit": "px",
+                  "topUnit": "px",
+                  "widthUnit": "px",
+                  "heightUnit": "px",
+                  "children": [
+                    {
+                      "objID": "db4edbeb-9299-462b-89cc-a3e74f650b03",
+                      "type": "LVGLContainerWidget",
+                      "left": 0,
+                      "top": 0,
+                      "width": 49,
+                      "height": 80,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "style": {
+                        "objID": "f0947efb-7c1e-4945-e7c8-2cef16fabbda",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": []
+                      },
+                      "timeline": [],
+                      "eventHandlers": [],
+                      "leftUnit": "px",
+                      "topUnit": "px",
+                      "widthUnit": "%",
+                      "heightUnit": "content",
+                      "children": [
+                        {
+                          "objID": "b17b6af6-2092-4086-c937-ee44322fb639",
+                          "type": "LVGLLabelWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 100,
+                          "height": 16,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "e2342685-a04e-494d-e8c6-797602380dd9",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [],
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "%",
+                          "heightUnit": "content",
+                          "children": [],
+                          "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "localStyles": {
+                            "objID": "5ee04995-598d-45da-ae62-7b5252f95e6f"
+                          },
+                          "group": "",
+                          "groupIndex": 0,
+                          "text": "Show cooldowns",
+                          "textType": "literal",
+                          "longMode": "WRAP",
+                          "recolor": false
+                        },
+                        {
+                          "objID": "72c5b2ab-d580-4a6a-b674-c06d7c369a3d",
+                          "type": "LVGLSwitchWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 64,
+                          "height": 32,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "e6b989d2-43f9-44fa-aebb-e2aa15f5a02b",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [
+                            {
+                              "objID": "1a341e40-f58d-42e0-f8ed-7ae04947c993",
+                              "eventName": "VALUE_CHANGED",
+                              "handlerType": "action",
+                              "action": "SetCooldown",
+                              "userData": 0
+                            }
+                          ],
+                          "identifier": "ChbCooldowns",
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "px",
+                          "heightUnit": "px",
+                          "children": [],
+                          "widgetFlags": "CHECKABLE|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlag": true,
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "useStyle": "SwitchConfig",
+                          "localStyles": {
+                            "objID": "3a20d8fa-e5ab-40c8-f9be-5b13dc78bff4"
+                          },
+                          "group": "",
+                          "groupIndex": 0
+                        }
+                      ],
+                      "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                      "hiddenFlagType": "literal",
+                      "clickableFlag": true,
+                      "clickableFlagType": "literal",
+                      "flagScrollbarMode": "",
+                      "flagScrollDirection": "",
+                      "scrollSnapX": "",
+                      "scrollSnapY": "",
+                      "checkedStateType": "literal",
+                      "disabledStateType": "literal",
+                      "states": "",
+                      "localStyles": {
+                        "objID": "ac50bfa6-95ee-407f-df69-1ed38960c51e",
+                        "definition": {
+                          "MAIN": {
+                            "DEFAULT": {
+                              "pad_top": 8,
+                              "pad_bottom": 8,
+                              "pad_left": 20,
+                              "pad_right": 20,
+                              "pad_row": 16,
+                              "pad_column": 0,
+                              "layout": "FLEX",
+                              "flex_flow": "ROW_WRAP"
+                            }
+                          }
+                        }
+                      },
+                      "group": "",
+                      "groupIndex": 0
+                    },
+                    {
+                      "objID": "81da8432-a08a-482e-839d-0c81c1dd0757",
+                      "type": "LVGLContainerWidget",
+                      "left": 0,
+                      "top": 0,
+                      "width": 49,
+                      "height": 212,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "style": {
+                        "objID": "0e814df8-31d0-47b1-88f5-f8010998d77c",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": []
+                      },
+                      "timeline": [],
+                      "eventHandlers": [],
+                      "leftUnit": "px",
+                      "topUnit": "px",
+                      "widthUnit": "%",
+                      "heightUnit": "content",
+                      "children": [
+                        {
+                          "objID": "bc527e72-0e85-4dc2-c1eb-0d18113eb9ae",
+                          "type": "LVGLLabelWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 100,
+                          "height": 16,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "1655e5b4-6909-44c5-b861-6136f940d33c",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [],
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "%",
+                          "heightUnit": "content",
+                          "children": [],
+                          "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "localStyles": {
+                            "objID": "0f7e110f-1ac2-4d04-8133-93908ccdbb4c"
+                          },
+                          "group": "",
+                          "groupIndex": 0,
+                          "text": "Ship modules",
+                          "textType": "literal",
+                          "longMode": "WRAP",
+                          "recolor": false
+                        },
+                        {
+                          "objID": "2ecddaab-fa37-4049-cf93-399b47db8a9e",
+                          "type": "LVGLCheckboxWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 183,
+                          "height": 20,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "e8448259-d9d8-4df5-ff71-7f24706f9976",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [
+                            {
+                              "objID": "649ea39a-8591-452d-f698-cf991289ac2c",
+                              "eventName": "VALUE_CHANGED",
+                              "handlerType": "action",
+                              "action": "SetShipModules",
+                              "userData": 0
+                            }
+                          ],
+                          "identifier": "ChbShipMod_SRP",
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "content",
+                          "heightUnit": "content",
+                          "children": [],
+                          "widgetFlags": "CHECKABLE|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlag": true,
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "useStyle": "CheckboxConfig",
+                          "localStyles": {
+                            "objID": "cad8e785-baa1-43cc-db4b-4735b76aeba5"
+                          },
+                          "group": "",
+                          "groupIndex": 0,
+                          "text": "Streaml. Req. Process",
+                          "textType": "literal"
+                        },
+                        {
+                          "objID": "d3c8ff24-89f1-4786-df18-898656774145",
+                          "type": "LVGLCheckboxWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 188,
+                          "height": 20,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "dcc9e96b-162a-42f9-b1da-3df794029d7c",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [
+                            {
+                              "objID": "92e9932f-0ba5-473e-a653-3757815b5f0f",
+                              "eventName": "VALUE_CHANGED",
+                              "handlerType": "action",
+                              "action": "SetShipModules",
+                              "userData": 0
+                            }
+                          ],
+                          "identifier": "ChbShipMod_MA",
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "content",
+                          "heightUnit": "content",
+                          "children": [],
+                          "widgetFlags": "CHECKABLE|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlag": true,
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "useStyle": "CheckboxConfig",
+                          "localStyles": {
+                            "objID": "e65ffffd-40b0-4fe8-e477-a786ce7ac619"
+                          },
+                          "group": "",
+                          "groupIndex": 0,
+                          "text": "Morale Augmentation",
+                          "textType": "literal"
+                        },
+                        {
+                          "objID": "77a0136e-4708-4e3b-a052-45e66ea8556c",
+                          "type": "LVGLCheckboxWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 108,
+                          "height": 20,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "962162f3-861e-483f-ec9b-30d341772e9b",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [
+                            {
+                              "objID": "add0d3a8-39ac-4918-ff53-1ed1194f66d2",
+                              "eventName": "VALUE_CHANGED",
+                              "handlerType": "action",
+                              "action": "SetShipModules",
+                              "userData": 0
+                            }
+                          ],
+                          "identifier": "ChbShipMod_HC",
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "content",
+                          "heightUnit": "content",
+                          "children": [],
+                          "widgetFlags": "CHECKABLE|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlag": true,
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "useStyle": "CheckboxConfig",
+                          "localStyles": {
+                            "objID": "192d8dcf-e4d1-4c07-a8fe-619e7d1075ae"
+                          },
+                          "group": "",
+                          "groupIndex": 0,
+                          "text": "Hand Carts",
+                          "textType": "literal"
+                        },
+                        {
+                          "objID": "c9fc36eb-d1c0-4069-98ea-a394bc91d3f8",
+                          "type": "LVGLCheckboxWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 176,
+                          "height": 20,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "7473ba14-2877-4c1d-e40a-0a4ec18996a5",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [
+                            {
+                              "objID": "d4025713-ec4c-4ea9-d800-75c3f6a4cf4b",
+                              "eventName": "VALUE_CHANGED",
+                              "handlerType": "action",
+                              "action": "SetShipModules",
+                              "userData": 0
+                            }
+                          ],
+                          "identifier": "ChbShipMod_ZBL",
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "content",
+                          "heightUnit": "content",
+                          "children": [],
+                          "widgetFlags": "CHECKABLE|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlag": true,
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "useStyle": "CheckboxConfig",
+                          "localStyles": {
+                            "objID": "c06aa2d8-9f76-4bf0-c3e4-6b254b81bdcd"
+                          },
+                          "group": "",
+                          "groupIndex": 0,
+                          "text": "Zero-G Breech Load.",
+                          "textType": "literal"
+                        },
+                        {
+                          "objID": "148c29cf-b938-4040-a538-437cec108749",
+                          "type": "LVGLCheckboxWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 176,
+                          "height": 20,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "564714f4-17c7-4d03-c2d1-1c0940575965",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [
+                            {
+                              "objID": "d1141921-ec8c-40d7-936c-51f9706b0592",
+                              "eventName": "VALUE_CHANGED",
+                              "handlerType": "action",
+                              "action": "SetShipModules",
+                              "userData": 0
+                            }
+                          ],
+                          "identifier": "ChbShipMod_LVC",
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "content",
+                          "heightUnit": "content",
+                          "children": [],
+                          "widgetFlags": "CHECKABLE|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlag": true,
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "useStyle": "CheckboxConfig",
+                          "localStyles": {
+                            "objID": "f0996ce3-6603-45e6-cf02-ed9bdd3477b5"
+                          },
+                          "group": "",
+                          "groupIndex": 0,
+                          "text": "Liquid-Vent. Cockpit",
+                          "textType": "literal"
+                        }
+                      ],
+                      "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                      "hiddenFlagType": "literal",
+                      "clickableFlag": true,
+                      "clickableFlagType": "literal",
+                      "flagScrollbarMode": "",
+                      "flagScrollDirection": "",
+                      "scrollSnapX": "",
+                      "scrollSnapY": "",
+                      "checkedStateType": "literal",
+                      "disabledStateType": "literal",
+                      "states": "",
+                      "localStyles": {
+                        "objID": "a5a17677-4647-4bdf-d698-1b7b21d6db4a",
+                        "definition": {
+                          "MAIN": {
+                            "DEFAULT": {
+                              "pad_top": 8,
+                              "pad_bottom": 8,
+                              "pad_left": 20,
+                              "pad_right": 20,
+                              "pad_row": 16,
+                              "pad_column": 0,
+                              "layout": "FLEX",
+                              "flex_flow": "ROW_WRAP"
+                            }
+                          }
+                        }
+                      },
+                      "group": "",
+                      "groupIndex": 0
+                    }
+                  ],
+                  "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                  "hiddenFlagType": "literal",
+                  "clickableFlag": true,
+                  "clickableFlagType": "literal",
+                  "flagScrollbarMode": "",
+                  "flagScrollDirection": "",
+                  "scrollSnapX": "",
+                  "scrollSnapY": "",
+                  "checkedStateType": "literal",
+                  "disabledStateType": "literal",
+                  "states": "",
+                  "useStyle": "TabConfig",
+                  "localStyles": {
+                    "objID": "92b8817b-6fdb-471f-86d3-6a42788f63b9"
+                  },
+                  "group": "",
+                  "groupIndex": 0,
+                  "tabName": "Cooldowns",
+                  "tabNameType": "literal"
+                },
+                {
                   "objID": "4c7b4845-2a9c-4e6c-df47-e2e36174f21a",
                   "type": "LVGLTabWidget",
                   "left": 0,
@@ -15576,7 +16124,7 @@
                           "checkedStateType": "literal",
                           "disabledStateType": "literal",
                           "states": "",
-                          "useStyle": "CheckboxConfig",
+                          "useStyle": "SwitchConfig",
                           "localStyles": {
                             "objID": "335df5f2-5a49-4142-dabb-8aad136e1bec"
                           },
@@ -15614,151 +16162,6 @@
                       },
                       "group": "",
                       "groupIndex": 0
-                    },
-                    {
-                      "objID": "db4edbeb-9299-462b-89cc-a3e74f650b03",
-                      "type": "LVGLContainerWidget",
-                      "left": 0,
-                      "top": 0,
-                      "width": 49,
-                      "height": 80,
-                      "customInputs": [],
-                      "customOutputs": [],
-                      "style": {
-                        "objID": "f0947efb-7c1e-4945-e7c8-2cef16fabbda",
-                        "useStyle": "default",
-                        "conditionalStyles": [],
-                        "childStyles": []
-                      },
-                      "timeline": [],
-                      "eventHandlers": [],
-                      "leftUnit": "px",
-                      "topUnit": "px",
-                      "widthUnit": "%",
-                      "heightUnit": "content",
-                      "children": [
-                        {
-                          "objID": "b17b6af6-2092-4086-c937-ee44322fb639",
-                          "type": "LVGLLabelWidget",
-                          "left": 0,
-                          "top": 0,
-                          "width": 100,
-                          "height": 16,
-                          "customInputs": [],
-                          "customOutputs": [],
-                          "style": {
-                            "objID": "e2342685-a04e-494d-e8c6-797602380dd9",
-                            "useStyle": "default",
-                            "conditionalStyles": [],
-                            "childStyles": []
-                          },
-                          "timeline": [],
-                          "eventHandlers": [],
-                          "leftUnit": "px",
-                          "topUnit": "px",
-                          "widthUnit": "%",
-                          "heightUnit": "content",
-                          "children": [],
-                          "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
-                          "hiddenFlagType": "literal",
-                          "clickableFlagType": "literal",
-                          "flagScrollbarMode": "",
-                          "flagScrollDirection": "",
-                          "scrollSnapX": "",
-                          "scrollSnapY": "",
-                          "checkedStateType": "literal",
-                          "disabledStateType": "literal",
-                          "states": "",
-                          "localStyles": {
-                            "objID": "5ee04995-598d-45da-ae62-7b5252f95e6f"
-                          },
-                          "group": "",
-                          "groupIndex": 0,
-                          "text": "Show cooldowns",
-                          "textType": "literal",
-                          "longMode": "WRAP",
-                          "recolor": false
-                        },
-                        {
-                          "objID": "72c5b2ab-d580-4a6a-b674-c06d7c369a3d",
-                          "type": "LVGLSwitchWidget",
-                          "left": 0,
-                          "top": 0,
-                          "width": 64,
-                          "height": 32,
-                          "customInputs": [],
-                          "customOutputs": [],
-                          "style": {
-                            "objID": "e6b989d2-43f9-44fa-aebb-e2aa15f5a02b",
-                            "useStyle": "default",
-                            "conditionalStyles": [],
-                            "childStyles": []
-                          },
-                          "timeline": [],
-                          "eventHandlers": [
-                            {
-                              "objID": "1a341e40-f58d-42e0-f8ed-7ae04947c993",
-                              "eventName": "VALUE_CHANGED",
-                              "handlerType": "action",
-                              "action": "SetCooldown",
-                              "userData": 0
-                            }
-                          ],
-                          "identifier": "ChbCooldowns",
-                          "leftUnit": "px",
-                          "topUnit": "px",
-                          "widthUnit": "px",
-                          "heightUnit": "px",
-                          "children": [],
-                          "widgetFlags": "CHECKABLE|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
-                          "hiddenFlagType": "literal",
-                          "clickableFlag": true,
-                          "clickableFlagType": "literal",
-                          "flagScrollbarMode": "",
-                          "flagScrollDirection": "",
-                          "scrollSnapX": "",
-                          "scrollSnapY": "",
-                          "checkedStateType": "literal",
-                          "disabledStateType": "literal",
-                          "states": "",
-                          "useStyle": "CheckboxConfig",
-                          "localStyles": {
-                            "objID": "3a20d8fa-e5ab-40c8-f9be-5b13dc78bff4"
-                          },
-                          "group": "",
-                          "groupIndex": 0
-                        }
-                      ],
-                      "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
-                      "hiddenFlagType": "literal",
-                      "clickableFlag": true,
-                      "clickableFlagType": "literal",
-                      "flagScrollbarMode": "",
-                      "flagScrollDirection": "",
-                      "scrollSnapX": "",
-                      "scrollSnapY": "",
-                      "checkedStateType": "literal",
-                      "disabledStateType": "literal",
-                      "states": "",
-                      "localStyles": {
-                        "objID": "ac50bfa6-95ee-407f-df69-1ed38960c51e",
-                        "definition": {
-                          "MAIN": {
-                            "DEFAULT": {
-                              "pad_top": 8,
-                              "pad_bottom": 8,
-                              "pad_left": 20,
-                              "pad_right": 20,
-                              "pad_row": 16,
-                              "pad_column": 0,
-                              "layout": "FLEX",
-                              "flex_flow": "ROW_WRAP"
-                            }
-                          }
-                        }
-                      },
-                      "group": "",
-                      "groupIndex": 0
                     }
                   ],
                   "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
@@ -15778,7 +16181,7 @@
                   },
                   "group": "",
                   "groupIndex": 0,
-                  "tabName": "Miscellaneous",
+                  "tabName": "Misc.",
                   "tabNameType": "literal"
                 }
               ],
@@ -16706,7 +17109,7 @@
                     "definition": {
                       "MAIN": {
                         "DEFAULT": {
-                          "text_color": "#FFDF00",
+                          "text_color": "colorActive",
                           "text_font": "MONTSERRAT_28"
                         }
                       }
@@ -17059,7 +17462,7 @@
                     "definition": {
                       "MAIN": {
                         "DEFAULT": {
-                          "text_color": "#FFDF00"
+                          "text_color": "colorActive"
                         }
                       }
                     }
@@ -17197,7 +17600,7 @@
                       "MAIN": {
                         "DEFAULT": {
                           "text_font": "MONTSERRAT_14",
-                          "text_color": "#FFDF00"
+                          "text_color": "colorActive"
                         }
                       }
                     }
@@ -18561,7 +18964,7 @@
       },
       {
         "objID": "11eeb12a-f69c-4b88-ecaf-b49b85fe461b",
-        "name": "CheckboxConfig",
+        "name": "SwitchConfig",
         "forWidgetType": "LVGLSwitchWidget",
         "childStyles": [],
         "definition": {
@@ -18617,6 +19020,27 @@
                 "pad_right": 4,
                 "text_font": "MONTSERRAT_18",
                 "radius": 4
+              }
+            }
+          }
+        }
+      },
+      {
+        "objID": "54cb44ff-ff12-4c41-a88b-80c234b34a89",
+        "name": "CheckboxConfig",
+        "forWidgetType": "LVGLCheckboxWidget",
+        "childStyles": [],
+        "definition": {
+          "objID": "e8fa564b-e74c-4ce1-c4b5-d6925fbe7156",
+          "definition": {
+            "INDICATOR": {
+              "DEFAULT": {
+                "border_width": 0
+              },
+              "CHECKED": {
+                "border_width": 0,
+                "text_color": "colorActive",
+                "bg_color": "#282b30"
               }
             }
           }

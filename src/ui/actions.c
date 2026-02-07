@@ -1,7 +1,8 @@
 #include "main.h"
 #include "ui.h"
 #include "ui_events.h"
-#include "configration.h"
+#include "configuration.h"
+#include "screens.h"
 
 // Change HID input delay
 void action_change_delay(lv_event_t *e)
@@ -91,7 +92,13 @@ void action_set_cooldown(lv_event_t *e)
 
 	setCooldown(cooldown, false);
 
-	if(!cooldown){
+	if (!cooldown)
+	{
 		resetCooldowns();
 	}
+}
+
+void action_set_ship_modules(lv_event_t *e)
+{
+	setShipModules(false);
 }

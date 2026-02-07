@@ -6307,7 +6307,7 @@ void create_screen_about() {
                 {
                     lv_obj_t *obj = lv_obj_create(parent_obj);
                     lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, LV_PCT(100), 16);
+                    lv_obj_set_size(obj, LV_PCT(100), 24);
                     lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6333,7 +6333,7 @@ void create_screen_about() {
                 {
                     lv_obj_t *obj = lv_obj_create(parent_obj);
                     lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, LV_PCT(100), 16);
+                    lv_obj_set_size(obj, LV_PCT(100), 24);
                     lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6371,9 +6371,9 @@ void create_screen_about() {
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_LEFT, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
         {
-            lv_obj_t *obj = lv_qrcode_create(parent_obj, 114, lv_color_hex(0xff000000), lv_color_hex(0xffe2f5fe));
+            lv_obj_t *obj = lv_qrcode_create(parent_obj, 152, lv_color_hex(0xff000000), lv_color_hex(0xffe2f5fe));
             lv_obj_set_pos(obj, -12, -12);
-            lv_obj_set_size(obj, 114, 114);
+            lv_obj_set_size(obj, 152, 152);
             lv_qrcode_update(obj, "https://s.click.aliexpress.com/e/_DneMCLR", 41);
             lv_obj_add_flag(obj, LV_OBJ_FLAG_CLICKABLE);
             lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);

@@ -17462,7 +17462,7 @@
                   "left": 0,
                   "top": 0,
                   "width": 100,
-                  "height": 16,
+                  "height": 24,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -17592,7 +17592,7 @@
                   "left": 0,
                   "top": 0,
                   "width": 100,
-                  "height": 16,
+                  "height": 24,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -17817,8 +17817,8 @@
               "type": "LVGLQRCodeWidget",
               "left": -12,
               "top": -12,
-              "width": 114,
-              "height": 114,
+              "width": 152,
+              "height": 152,
               "customInputs": [],
               "customOutputs": [],
               "style": {

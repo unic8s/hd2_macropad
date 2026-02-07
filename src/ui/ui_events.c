@@ -30,6 +30,7 @@ uint8_t strategemsAmount = 0;
 
 lv_obj_t *cooldownLabels[MAX_USER_STRATAGEMS];
 uint64_t cooldownValues[MAX_USER_STRATAGEMS];
+extern lv_timer_t *cooldownTimer;
 
 int manualIndex = 0;
 int manualList = 0;
@@ -130,6 +131,8 @@ void action_goto_game(lv_event_t *e)
 void action_goto_setup(lv_event_t *e)
 {
 	resetCooldowns();
+
+	lv_timer_pause(cooldownTimer);
 }
 
 // Update selection in UI (text and bar)
@@ -311,6 +314,10 @@ void _executeUserStratagem(uint8_t index)
 	if (showCooldowns)
 	{
 		cooldownValues[index] = getNow() + item.cooldown;
+
+		if(cooldownTimer->paused){
+			lv_timer_resume(cooldownTimer);
+		}
 	}
 
 	char *path = item.soundPath;

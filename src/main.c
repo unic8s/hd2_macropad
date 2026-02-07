@@ -62,6 +62,8 @@ extern lv_obj_t *cooldownLabels[MAX_USER_STRATAGEMS];
 extern uint64_t cooldownValues[MAX_USER_STRATAGEMS];
 uint16_t lastCooldownDiffs[MAX_USER_STRATAGEMS];
 
+lv_timer_t *cooldownTimer;
+
 // Set stratagem code sequence which should be executed
 // sequence - keycode buffer
 // mask - modifier keys
@@ -244,6 +246,8 @@ void flow_tick_task(lv_timer_t *timer)
 
 void ui_update_task(lv_timer_t *timer)
 {
+  bool activeTimer = false;
+
   for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
   {
     uint64_t cooldownValue = cooldownValues[c];
@@ -252,6 +256,8 @@ void ui_update_task(lv_timer_t *timer)
 
     if (cooldownValue > 0 && diff > 0)
     {
+      activeTimer = true;
+
       if (lastCooldownDiffs[c] == diff)
       {
         continue;
@@ -287,6 +293,10 @@ void ui_update_task(lv_timer_t *timer)
         lv_obj_add_flag(cooldownLabel, LV_OBJ_FLAG_HIDDEN);
       }
     }
+  }
+
+  if(!activeTimer && !cooldownTimer->paused){
+    lv_timer_pause(cooldownTimer);
   }
 }
 
@@ -331,6 +341,11 @@ void app_main()
   // Turn on display backlight
   bsp_display_backlight_on();
 
+  // Setup cooldown timer
+  cooldownTimer = lv_timer_create(ui_update_task, 100, NULL);
+  cooldownTimer->repeat_count = -1;
+  lv_timer_pause(cooldownTimer);
+
   // Read config
   loadConfig();
 
@@ -348,9 +363,6 @@ void app_main()
   updateConnection();
   updateStratagemSelection();
   updatePresets();
-
-  lv_timer_t *uiUpdateTimer = lv_timer_create(ui_update_task, 100, NULL);
-  uiUpdateTimer->repeat_count = -1;
 
   // Setup timer for EEZ Flow ui tick
   lv_timer_t *flowTickTimer = lv_timer_create(flow_tick_task, 10, NULL);

@@ -314,32 +314,35 @@ void _executeUserStratagem(uint8_t index)
 	if (showCooldowns)
 	{
 		double cooldown = item.cooldown;
+		double factor = 1.0;
 
 		if (item.soundPath == (char *)SND_EAGLE && lv_obj_has_state(objects.chb_ship_mod_lvc, LV_STATE_CHECKED))
 		{
-			cooldown *= 0.95; // Liquid-Ventilated Cockpit => eagle 50%
+			factor -= 0.5; // Liquid-Ventilated Cockpit => eagle 50%
 		}
 		else if (item.soundPath == (char *)SND_ORBITAL && lv_obj_has_state(objects.chb_ship_mod_zbl, LV_STATE_CHECKED))
 		{
-			cooldown *= 0.90; // Zero-G Breech Loading => orbital 10%
+			factor -= 0.1; // Zero-G Breech Loading => orbital 10%
 		}
 		else if ((item.soundPath == (char *)SND_BACKPACK || item.soundPath == (char *)SND_SHIELD) && lv_obj_has_state(objects.chb_ship_mod_hc, LV_STATE_CHECKED))
 		{
-			cooldown *= 0.90; // Hand Carts => backpack 10%
+			factor -= 0.1; // Hand Carts => backpack 10%
 		}
 		else if (item.soundPath == (char *)SND_WEAPON && lv_obj_has_state(objects.chb_ship_mod_srp, LV_STATE_CHECKED))
 		{
-			cooldown *= 0.90; // Streamlined Request Process => weapon 10%
-		}else if ((item.soundPath == (char *)SND_SENTRY || item.soundPath == (char *)SND_MORTAR || item.soundPath == (char *)SND_MINES) && lv_obj_has_state(objects.chb_ship_mod_ss, LV_STATE_CHECKED))
+			factor -= 0.1; // Streamlined Request Process => weapon 10%
+		}
+		else if ((item.soundPath == (char *)SND_SENTRY || item.soundPath == (char *)SND_MORTAR || item.soundPath == (char *)SND_MINES) && lv_obj_has_state(objects.chb_ship_mod_ss, LV_STATE_CHECKED))
 		{
-			cooldown *= 0.90; // Synthetic Supplementation => weapon 10%
+			factor -= 0.1; // Synthetic Supplementation => supply 10%
 		}
 
 		if (lv_obj_has_state(objects.chb_ship_mod_ma, LV_STATE_CHECKED))
 		{
-			cooldown *= 0.95; // Morale Augmentation => all 5%
+			factor -= 0.05; // Morale Augmentation => all 5%
 		}
 
+		cooldown *= factor;
 		cooldownValues[index] = getNow() + cooldown + item.callIn;
 
 		if (cooldownTimer->paused)

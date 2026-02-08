@@ -64,10 +64,9 @@
     //#define LV_MEM_CUSTOM_ALLOC   malloc
     //#define LV_MEM_CUSTOM_FREE    free
     //#define LV_MEM_CUSTOM_REALLOC realloc
+    #define LV_MEM_POOL_INCLUDE     "esp_heap_caps.h"
+    #define LV_MEM_POOL_ALLOC(size) heap_caps_malloc(size, MALLOC_CAP_SPIRAM)
 #endif     /*LV_MEM_CUSTOM*/
-
-#define LV_MEM_POOL_INCLUDE     "esp_heap_caps.h"
-#define LV_MEM_POOL_ALLOC(size) heap_caps_malloc(size, MALLOC_CAP_SPIRAM)
 
 /*Number of the intermediate memory buffer used during rendering and other internal processing mechanisms.
  *You will see an error log message if there wasn't enough buffers. */

@@ -18005,9 +18005,9 @@
               "objID": "8e4997d1-5b59-4aee-f263-a37c5acdf53b",
               "type": "LVGLContainerWidget",
               "left": 0,
-              "top": -16,
-              "width": 244,
-              "height": 244,
+              "top": 0,
+              "width": 220,
+              "height": 220,
               "customInputs": [],
               "customOutputs": [],
               "style": {
@@ -18028,8 +18028,8 @@
                   "type": "LVGLContainerWidget",
                   "left": -74,
                   "top": -4,
-                  "width": 84,
-                  "height": 84,
+                  "width": 76,
+                  "height": 76,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -18067,8 +18067,8 @@
                   "type": "LVGLButtonWidget",
                   "left": 0,
                   "top": 0,
-                  "width": 84,
-                  "height": 84,
+                  "width": 76,
+                  "height": 76,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -18123,8 +18123,8 @@
                   "type": "LVGLContainerWidget",
                   "left": -74,
                   "top": -4,
-                  "width": 84,
-                  "height": 84,
+                  "width": 76,
+                  "height": 76,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -18162,8 +18162,8 @@
                   "type": "LVGLButtonWidget",
                   "left": 0,
                   "top": 0,
-                  "width": 84,
-                  "height": 84,
+                  "width": 76,
+                  "height": 76,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -18218,8 +18218,8 @@
                   "type": "LVGLContainerWidget",
                   "left": -74,
                   "top": -4,
-                  "width": 84,
-                  "height": 84,
+                  "width": 76,
+                  "height": 76,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -18257,8 +18257,8 @@
                   "type": "LVGLButtonWidget",
                   "left": 0,
                   "top": 0,
-                  "width": 84,
-                  "height": 84,
+                  "width": 76,
+                  "height": 76,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -18313,8 +18313,8 @@
                   "type": "LVGLContainerWidget",
                   "left": -90.5,
                   "top": -119.5,
-                  "width": 84,
-                  "height": 84,
+                  "width": 76,
+                  "height": 76,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -18353,8 +18353,8 @@
                   "type": "LVGLButtonWidget",
                   "left": 0,
                   "top": 0,
-                  "width": 84,
-                  "height": 84,
+                  "width": 76,
+                  "height": 76,
                   "customInputs": [],
                   "customOutputs": [],
                   "style": {
@@ -18425,7 +18425,7 @@
                       "flex_flow": "ROW_WRAP",
                       "pad_row": -4,
                       "pad_column": -4,
-                      "align": "BOTTOM_MID"
+                      "align": "CENTER"
                     }
                   }
                 }

@@ -6416,8 +6416,8 @@ void create_screen_manual() {
         }
         {
             lv_obj_t *obj = lv_obj_create(parent_obj);
-            lv_obj_set_pos(obj, 0, -16);
-            lv_obj_set_size(obj, 244, LV_SIZE_CONTENT);
+            lv_obj_set_pos(obj, 0, 0);
+            lv_obj_set_size(obj, 220, LV_SIZE_CONTENT);
             lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6431,13 +6431,13 @@ void create_screen_manual() {
             lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW_WRAP, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_row(obj, -4, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_column(obj, -4, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_MID, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
             {
                 lv_obj_t *parent_obj = obj;
                 {
                     lv_obj_t *obj = lv_obj_create(parent_obj);
                     lv_obj_set_pos(obj, -74, -4);
-                    lv_obj_set_size(obj, 84, 84);
+                    lv_obj_set_size(obj, 76, 76);
                     lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6452,7 +6452,7 @@ void create_screen_manual() {
                     lv_obj_t *obj = lv_btn_create(parent_obj);
                     objects.manual_arrow_up = obj;
                     lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, 84, 84);
+                    lv_obj_set_size(obj, 76, 76);
                     lv_obj_add_event_cb(obj, event_handler_cb_manual_manual_arrow_up, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
                     lv_obj_set_style_bg_img_src(obj, &img_stratagem_arrow_up2, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6460,7 +6460,7 @@ void create_screen_manual() {
                 {
                     lv_obj_t *obj = lv_obj_create(parent_obj);
                     lv_obj_set_pos(obj, -74, -4);
-                    lv_obj_set_size(obj, 84, 84);
+                    lv_obj_set_size(obj, 76, 76);
                     lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6475,7 +6475,7 @@ void create_screen_manual() {
                     lv_obj_t *obj = lv_btn_create(parent_obj);
                     objects.manual_arrow_left = obj;
                     lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, 84, 84);
+                    lv_obj_set_size(obj, 76, 76);
                     lv_obj_add_event_cb(obj, event_handler_cb_manual_manual_arrow_left, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
                     lv_obj_set_style_bg_img_src(obj, &img_stratagem_arrow_left2, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6483,7 +6483,7 @@ void create_screen_manual() {
                 {
                     lv_obj_t *obj = lv_obj_create(parent_obj);
                     lv_obj_set_pos(obj, -74, -4);
-                    lv_obj_set_size(obj, 84, 84);
+                    lv_obj_set_size(obj, 76, 76);
                     lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6498,7 +6498,7 @@ void create_screen_manual() {
                     lv_obj_t *obj = lv_btn_create(parent_obj);
                     objects.manual_arrow_right = obj;
                     lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, 84, 84);
+                    lv_obj_set_size(obj, 76, 76);
                     lv_obj_add_event_cb(obj, event_handler_cb_manual_manual_arrow_right, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
                     lv_obj_set_style_bg_img_src(obj, &img_stratagem_arrow_right2, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6506,7 +6506,7 @@ void create_screen_manual() {
                 {
                     lv_obj_t *obj = lv_obj_create(parent_obj);
                     lv_obj_set_pos(obj, -90, -119);
-                    lv_obj_set_size(obj, 84, 84);
+                    lv_obj_set_size(obj, 76, 76);
                     lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6521,7 +6521,7 @@ void create_screen_manual() {
                     lv_obj_t *obj = lv_btn_create(parent_obj);
                     objects.manual_arrow_down = obj;
                     lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, 84, 84);
+                    lv_obj_set_size(obj, 76, 76);
                     lv_obj_add_event_cb(obj, event_handler_cb_manual_manual_arrow_down, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
                     lv_obj_set_style_bg_img_src(obj, &img_stratagem_arrow_down2, LV_PART_MAIN | LV_STATE_DEFAULT);

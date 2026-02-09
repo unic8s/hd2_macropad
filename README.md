@@ -57,6 +57,8 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ![](screens/config_input.png)
 
+![](screens/config_cooldowns.png)
+
 ![](screens/config_miscellaneous.png)
 
 ### Game (example configuration)

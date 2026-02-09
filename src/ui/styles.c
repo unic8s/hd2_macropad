@@ -354,6 +354,7 @@ void remove_style_label_cooldown(lv_obj_t *obj) {
 
 void init_style_checkbox_config_INDICATOR_DEFAULT(lv_style_t *style) {
     lv_style_set_border_width(style, 0);
+    lv_style_set_bg_color(style, lv_color_hex(0xff000000));
 };
 
 lv_style_t *get_style_checkbox_config_INDICATOR_DEFAULT() {
@@ -369,7 +370,7 @@ lv_style_t *get_style_checkbox_config_INDICATOR_DEFAULT() {
 void init_style_checkbox_config_INDICATOR_CHECKED(lv_style_t *style) {
     lv_style_set_border_width(style, 0);
     lv_style_set_text_color(style, lv_color_hex(theme_colors[eez_flow_get_selected_theme_index()][1]));
-    lv_style_set_bg_color(style, lv_color_hex(0xff282b30));
+    lv_style_set_bg_color(style, lv_color_hex(0xff000000));
 };
 
 lv_style_t *get_style_checkbox_config_INDICATOR_CHECKED() {

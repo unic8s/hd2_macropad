@@ -78,6 +78,27 @@ int8_t getConfig(char *key, int8_t defaultValue)
     return defaultValue;
 }
 
+int8_t getConfigBig(char *key, int16_t defaultValue)
+{
+    uint8_t value;
+
+    esp_err_t ret = nvs_get_u16(nvsConfig, key, &value);
+
+    switch (ret)
+    {
+    case ESP_OK:
+        ESP_LOGI(TAG_CFG, "%s = %" PRIu16 "\n", key, value);
+        return value;
+    case ESP_ERR_NVS_NOT_FOUND:
+        ESP_LOGI(TAG_CFG, "The value of (%s) is not initialized yet!\n", key);
+        break;
+    default:
+        ESP_LOGE(TAG_CFG, "Error (%s) reading!\n", esp_err_to_name(ret));
+    }
+
+    return defaultValue;
+}
+
 // Write configuration value by key
 // key - Identifier for configuration value
 // value - Value which should be stored
@@ -93,6 +114,31 @@ void setConfig(char *key, uint8_t value)
     }
 
     ret = nvs_set_u8(nvsConfig, key, value);
+
+    if (ret != ESP_OK)
+    {
+        ESP_LOGE(TAG_CFG, "Write (%s) failed!\n", key);
+    }
+    else
+    {
+        ESP_LOGI(TAG_CFG, "Done\n");
+    }
+
+    nvs_close(nvsConfig);
+}
+
+void setConfigBig(char *key, uint16_t value)
+{
+    esp_err_t ret;
+
+    ret = nvs_open("config", NVS_READWRITE, &nvsConfig);
+    if (ret != ESP_OK)
+    {
+        ESP_LOGE(TAG_CFG, "Error (%s) opening NVS handle!\n", esp_err_to_name(ret));
+        return;
+    }
+
+    ret = nvs_set_u16(nvsConfig, key, value);
 
     if (ret != ESP_OK)
     {
@@ -321,28 +367,35 @@ void setShipModules(bool restore)
         {SHIP_HC, objects.chb_ship_mod_hc},
         {SHIP_MA, objects.chb_ship_mod_ma},
         {SHIP_SRP, objects.chb_ship_mod_srp},
-        {SHIP_SS, objects.chb_ship_mod_ss}};
+        {SHIP_SS, objects.chb_ship_mod_ss},
+        {SHIP_ACT, objects.chb_ship_mod_act},
+        {SHIP_TSU, objects.chb_ship_mod_tsu},
+        {SHIP_RLS, objects.chb_ship_mod_rls},
+        {SHIP_DT, objects.chb_ship_mod_dt}};
 
     if (restore)
     {
-        uint8_t shipModules = getConfig(CFG_KEY_SHIPMODULES, 0);
+        uint16_t shipModules = getConfigBig(CFG_KEY_SHIPMODULES, 0);
 
         for (uint8_t c = 0; c < MAX_SHIP_MODULES; c++)
         {
             shipModule item = list[c];
 
-            if(shipModules >= item.value){
+            if (shipModules >= item.value)
+            {
                 shipModules -= item.value;
 
                 lv_obj_add_state(item.checkbox, LV_STATE_CHECKED);
-            }else{
+            }
+            else
+            {
                 lv_obj_clear_state(item.checkbox, LV_STATE_CHECKED);
             }
         }
     }
     else
     {
-        uint8_t shipModules = 0;
+        uint16_t shipModules = 0;
 
         for (uint8_t c = 0; c < MAX_SHIP_MODULES; c++)
         {
@@ -354,7 +407,7 @@ void setShipModules(bool restore)
             }
         }
 
-        setConfig(CFG_KEY_SHIPMODULES, shipModules);
+        setConfigBig(CFG_KEY_SHIPMODULES, shipModules);
     }
 }
 

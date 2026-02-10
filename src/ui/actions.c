@@ -102,3 +102,7 @@ void action_set_ship_modules(lv_event_t *e)
 {
 	setShipModules(false);
 }
+
+void action_reset_cooldowns(lv_event_t *e){
+	resetCooldowns();
+}

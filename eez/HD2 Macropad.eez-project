@@ -105,7 +105,15 @@
   },
   "variables": {
     "objID": "c6c71e16-53e1-217f-d03b-cef56c6b037a",
-    "globalVariables": [],
+    "globalVariables": [
+      {
+        "objID": "e58b4d5d-fd1f-4231-b27a-86e5cbf69beb",
+        "name": "ResetFlag",
+        "type": "boolean",
+        "defaultValue": "false",
+        "persistent": false
+      }
+    ],
     "structures": [],
     "enums": []
   },
@@ -378,6 +386,15 @@
       "localVariables": [],
       "userProperties": [],
       "name": "SetShipModules",
+      "implementationType": "native"
+    },
+    {
+      "objID": "78c93ef5-f03b-424c-b0d5-c89b58edab95",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "ResetCooldowns",
       "implementationType": "native"
     }
   ],
@@ -12039,6 +12056,13 @@
                   "handlerType": "flow",
                   "action": "setup_2_game",
                   "userData": 0
+                },
+                {
+                  "objID": "bb5f1370-8516-4043-e905-1ac5b5f258ec",
+                  "eventName": "LONG_PRESSED",
+                  "handlerType": "flow",
+                  "action": "resetStratagems",
+                  "userData": 0
                 }
               ],
               "leftUnit": "px",
@@ -12150,8 +12174,8 @@
         {
           "objID": "e3f0aa3e-20a3-4a4b-bdad-0c42130c59e9",
           "type": "LVGLActionComponent",
-          "left": 57,
-          "top": 436,
+          "left": 577,
+          "top": 444,
           "width": 317,
           "height": 54,
           "customInputs": [],
@@ -12176,8 +12200,8 @@
         {
           "objID": "e2406fdd-b8a7-4d1d-b12f-cc73622bba49",
           "type": "LVGLActionComponent",
-          "left": 470,
-          "top": 400,
+          "left": 577,
+          "top": 236,
           "width": 274,
           "height": 54,
           "customInputs": [],
@@ -12202,8 +12226,8 @@
         {
           "objID": "a0499b47-1043-4bd2-ff73-bcc17c764ed5",
           "type": "CallActionActionComponent",
-          "left": 98,
-          "top": 388,
+          "left": 446,
+          "top": 444,
           "width": 94,
           "height": 24,
           "customInputs": [],
@@ -12213,16 +12237,75 @@
             "objID": "8bbbc1cb-f8a7-472f-b7bb-512aefca5073",
             "values": {}
           }
+        },
+        {
+          "objID": "40a96e74-6780-49e4-ba16-f603952f227d",
+          "type": "CallActionActionComponent",
+          "left": 70,
+          "top": 480,
+          "width": 130,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "ResetCooldowns",
+          "userPropertyValues": {
+            "objID": "eeb36986-9458-46a9-ea34-56a6065a78da",
+            "values": {}
+          }
+        },
+        {
+          "objID": "7d81797f-742e-4311-aa7f-421fa01668f7",
+          "type": "SetVariableActionComponent",
+          "left": 256,
+          "top": 480,
+          "width": 146,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "2501c817-d954-4fdd-fccc-f27a020dc70c",
+              "variable": "ResetFlag",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "objID": "99416472-ab04-44f6-fd8e-cd23e42cb7b2",
+          "type": "IsTrueActionComponent",
+          "left": 183,
+          "top": 344,
+          "width": 194,
+          "height": 70,
+          "customInputs": [
+            {
+              "objID": "958c942b-31d3-4b89-8243-ad4f130c034a",
+              "name": "value",
+              "type": "any"
+            }
+          ],
+          "customOutputs": [],
+          "value": "ResetFlag == true"
+        },
+        {
+          "objID": "22dfa9d6-4c5c-4ba6-e81b-f866904a9a42",
+          "type": "SetVariableActionComponent",
+          "left": 446,
+          "top": 351,
+          "width": 152,
+          "height": 57,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "ad0c6943-7437-4c51-a136-97abcb1ef5c4",
+              "variable": "ResetFlag",
+              "value": "false"
+            }
+          ]
         }
       ],
       "connectionLines": [
-        {
-          "objID": "4f791e7f-413b-447e-fe50-a3dc6bce764a",
-          "source": "e5c16e65-b0dc-49ef-cc18-c8df0b6b2e7c",
-          "output": "CLICKED",
-          "target": "e3f0aa3e-20a3-4a4b-bdad-0c42130c59e9",
-          "input": "@seqin"
-        },
         {
           "objID": "5c08c9a3-557e-48e5-b6fc-1f30f11e6bf4",
           "source": "54a11e59-23cc-45a4-e624-3925e605d7d3",
@@ -12231,10 +12314,45 @@
           "input": "@seqin"
         },
         {
-          "objID": "e833242e-989a-4c8a-93d0-2c371ef0fa29",
+          "objID": "dc84dad3-a198-4f7b-d43e-fb180a34ef67",
+          "source": "e5c16e65-b0dc-49ef-cc18-c8df0b6b2e7c",
+          "output": "LONG_PRESSED",
+          "target": "40a96e74-6780-49e4-ba16-f603952f227d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "ed796945-38f5-4ec3-efff-fed0064178d5",
+          "source": "40a96e74-6780-49e4-ba16-f603952f227d",
+          "output": "@seqout",
+          "target": "7d81797f-742e-4311-aa7f-421fa01668f7",
+          "input": "@seqin"
+        },
+        {
+          "objID": "b43451f1-1566-4475-fda8-1f9d45cb6a25",
+          "source": "a0499b47-1043-4bd2-ff73-bcc17c764ed5",
+          "output": "@seqout",
+          "target": "e3f0aa3e-20a3-4a4b-bdad-0c42130c59e9",
+          "input": "@seqin"
+        },
+        {
+          "objID": "2acf8075-095a-4416-b4b3-13a4ee2bc8c7",
           "source": "e5c16e65-b0dc-49ef-cc18-c8df0b6b2e7c",
           "output": "CLICKED",
+          "target": "99416472-ab04-44f6-fd8e-cd23e42cb7b2",
+          "input": "value"
+        },
+        {
+          "objID": "6cd57ec8-9657-4322-f419-a94871758595",
+          "source": "99416472-ab04-44f6-fd8e-cd23e42cb7b2",
+          "output": "False",
           "target": "a0499b47-1043-4bd2-ff73-bcc17c764ed5",
+          "input": "@seqin"
+        },
+        {
+          "objID": "e6c9fe7d-18ca-451d-b503-fc4c430de356",
+          "source": "99416472-ab04-44f6-fd8e-cd23e42cb7b2",
+          "output": "True",
+          "target": "22dfa9d6-4c5c-4ba6-e81b-f866904a9a42",
           "input": "@seqin"
         }
       ],

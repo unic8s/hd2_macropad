@@ -314,15 +314,15 @@ void _executeUserStratagem(uint8_t index)
 	if (showCooldowns)
 	{
 		shipModuleDetails shipModuleList[MAX_SHIP_MODULES] = {
-			{SHIP_LVC, 0, 0.5, 0.0},
-			{SHIP_ZBL, 1, 0.1, 0.0},
-			{SHIP_HC, 2, 0.1, 0.0},
-			{SHIP_MA, 3, 0.05, 0.0},
-			{SHIP_SRP, 4, 0.1, 0.0},
-			{SHIP_SS, 5, 0.1, 0.0},
-			{SHIP_TSU, 6, 0.0, 1.0},
-			{SHIP_RLS, 7, 0.0, 3.0},
-			{SHIP_DT, 8, 0.0, 3.0}};
+			{SHIP_LVC, objects.chb_ship_mod_lvc, 0, 0.5, 0.0},
+			{SHIP_ZBL, objects.chb_ship_mod_zbl, 1, 0.1, 0.0},
+			{SHIP_HC, objects.chb_ship_mod_hc, 2, 0.1, 0.0},
+			{SHIP_MA, objects.chb_ship_mod_ma, 3, 0.05, 0.0},
+			{SHIP_SRP, objects.chb_ship_mod_srp, 4, 0.1, 0.0},
+			{SHIP_SS, objects.chb_ship_mod_ss, 5, 0.1, 0.0},
+			{SHIP_TSU, objects.chb_ship_mod_tsu, 6, 0.0, 1.0},
+			{SHIP_RLS, objects.chb_ship_mod_rls, 7, 0.0, 3.0},
+			{SHIP_DT, objects.chb_ship_mod_dt, 8, 0.0, 3.0}};
 
 		double cooldown = item.cooldown;
 		double callin = item.callIn;
@@ -331,7 +331,7 @@ void _executeUserStratagem(uint8_t index)
 		for(uint8_t c = 0; c < MAX_SHIP_MODULES; c++){
 			shipModuleDetails shipModuleItem = shipModuleList[c];
 
-			if(item.shipModules & (1 << shipModuleItem.shift)){
+			if(lv_obj_has_state(shipModuleItem.checkbox, LV_STATE_CHECKED) && item.shipModules & (1 << shipModuleItem.shift)){
 				factor -= shipModuleItem.cooldown;
 				callin += shipModuleItem.callin;
 			}

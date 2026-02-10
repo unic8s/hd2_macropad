@@ -51,6 +51,7 @@ extern "C"
 	typedef struct
 	{
 		uint16_t value;
+		lv_obj_t *checkbox;
 		uint8_t shift;
 		double cooldown;
 		double callin;

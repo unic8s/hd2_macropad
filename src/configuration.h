@@ -29,25 +29,32 @@ extern "C"
 
 	enum ModuleType
 	{
-		SHIP_SRP = 1,
-		SHIP_MA = 2,
+		SHIP_LVC = 1,
+		SHIP_ZBL = 2,
 		SHIP_HC = 4,
-		SHIP_ZBL = 8,
-		SHIP_LVC = 16,
+		SHIP_MA = 8,
+		SHIP_SRP = 16,
 		SHIP_SS = 32,
-		SHIP_ACT = 64,
-		SHIP_TSU = 128,
-		SHIP_RLS = 256,
-		SHIP_DT = 512
+		SHIP_TSU = 64,
+		SHIP_RLS = 128,
+		SHIP_DT = 256
 	};
 
-#define MAX_SHIP_MODULES 10
+#define MAX_SHIP_MODULES 9
 
 	typedef struct
 	{
 		uint16_t value;
 		lv_obj_t *checkbox;
 	} shipModule;
+
+	typedef struct
+	{
+		uint16_t value;
+		uint8_t shift;
+		double cooldown;
+		double callin;
+	} shipModuleDetails;
 
 #ifdef __cplusplus
 } /*extern "C"*/

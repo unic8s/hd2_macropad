@@ -202,7 +202,6 @@ typedef struct _objects_t {
     lv_obj_t *chb_ship_mod_zbl;
     lv_obj_t *chb_ship_mod_lvc;
     lv_obj_t *chb_ship_mod_ss;
-    lv_obj_t *chb_ship_mod_act;
     lv_obj_t *chb_ship_mod_tsu;
     lv_obj_t *chb_ship_mod_rls;
     lv_obj_t *chb_ship_mod_dt;

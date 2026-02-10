@@ -78,9 +78,9 @@ int8_t getConfig(char *key, int8_t defaultValue)
     return defaultValue;
 }
 
-int8_t getConfigBig(char *key, int16_t defaultValue)
+int16_t getConfigBig(char *key, int16_t defaultValue)
 {
-    uint8_t value;
+    uint16_t value;
 
     esp_err_t ret = nvs_get_u16(nvsConfig, key, &value);
 
@@ -368,14 +368,13 @@ void setShipModules(bool restore)
         {SHIP_MA, objects.chb_ship_mod_ma},
         {SHIP_SRP, objects.chb_ship_mod_srp},
         {SHIP_SS, objects.chb_ship_mod_ss},
-        {SHIP_ACT, objects.chb_ship_mod_act},
         {SHIP_TSU, objects.chb_ship_mod_tsu},
         {SHIP_RLS, objects.chb_ship_mod_rls},
         {SHIP_DT, objects.chb_ship_mod_dt}};
 
     if (restore)
     {
-        uint16_t shipModules = getConfigBig(CFG_KEY_SHIPMODULES, 0);
+        int16_t shipModules = getConfigBig(CFG_KEY_SHIPMODULES, 0);
 
         for (uint8_t c = 0; c < MAX_SHIP_MODULES; c++)
         {

@@ -15701,7 +15701,7 @@
                           "left": 0,
                           "top": 0,
                           "width": 100,
-                          "height": 184,
+                          "height": 180,
                           "customInputs": [],
                           "customOutputs": [],
                           "style": {
@@ -16021,57 +16021,6 @@
                               "group": "",
                               "groupIndex": 0,
                               "text": "Synthetic Suppl.",
-                              "textType": "literal"
-                            },
-                            {
-                              "objID": "eed57836-8250-4fbb-c7d1-db0112c7b335",
-                              "type": "LVGLCheckboxWidget",
-                              "left": 0,
-                              "top": 0,
-                              "width": 100,
-                              "height": 20,
-                              "customInputs": [],
-                              "customOutputs": [],
-                              "style": {
-                                "objID": "154d60e9-6744-4e0c-bc6c-7177532758c1",
-                                "useStyle": "default",
-                                "conditionalStyles": [],
-                                "childStyles": []
-                              },
-                              "timeline": [],
-                              "eventHandlers": [
-                                {
-                                  "objID": "98abd98f-a931-47f6-9d25-5231e7e7373d",
-                                  "eventName": "VALUE_CHANGED",
-                                  "handlerType": "action",
-                                  "action": "SetShipModules",
-                                  "userData": 0
-                                }
-                              ],
-                              "identifier": "ChbShipMod_ACT",
-                              "leftUnit": "px",
-                              "topUnit": "px",
-                              "widthUnit": "%",
-                              "heightUnit": "content",
-                              "children": [],
-                              "widgetFlags": "CHECKABLE|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
-                              "hiddenFlagType": "literal",
-                              "clickableFlag": true,
-                              "clickableFlagType": "literal",
-                              "flagScrollbarMode": "",
-                              "flagScrollDirection": "",
-                              "scrollSnapX": "",
-                              "scrollSnapY": "",
-                              "checkedStateType": "literal",
-                              "disabledStateType": "literal",
-                              "states": "",
-                              "useStyle": "CheckboxConfig",
-                              "localStyles": {
-                                "objID": "1ec14a09-3606-4ecc-b376-91a1118c758e"
-                              },
-                              "group": "",
-                              "groupIndex": 0,
-                              "text": "Adv. Crew Train.",
                               "textType": "literal"
                             },
                             {

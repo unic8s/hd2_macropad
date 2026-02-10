@@ -313,59 +313,28 @@ void _executeUserStratagem(uint8_t index)
 
 	if (showCooldowns)
 	{
+		shipModuleDetails shipModuleList[MAX_SHIP_MODULES] = {
+			{SHIP_LVC, 0, 0.5, 0.0},
+			{SHIP_ZBL, 1, 0.1, 0.0},
+			{SHIP_HC, 2, 0.1, 0.0},
+			{SHIP_MA, 3, 0.05, 0.0},
+			{SHIP_SRP, 4, 0.1, 0.0},
+			{SHIP_SS, 5, 0.1, 0.0},
+			{SHIP_TSU, 6, 0.0, 1.0},
+			{SHIP_RLS, 7, 0.0, 3.0},
+			{SHIP_DT, 8, 0.0, 3.0}};
+
 		double cooldown = item.cooldown;
 		double callin = item.callIn;
 		double factor = 1.0;
 
-		if (item.soundPath == (char *)SND_EAGLE && lv_obj_has_state(objects.chb_ship_mod_act, LV_STATE_CHECKED))
-		{
-			factor -= 0.1; // Advanced Crew Training => eagle 10%
-		}
+		for(uint8_t c = 0; c < MAX_SHIP_MODULES; c++){
+			shipModuleDetails shipModuleItem = shipModuleList[c];
 
-		if (item.soundPath == (char *)SND_EAGLE && lv_obj_has_state(objects.chb_ship_mod_lvc, LV_STATE_CHECKED))
-		{
-			factor -= 0.5; // Liquid-Ventilated Cockpit => eagle 50%
-		}
-		
-		if (item.soundPath == (char *)SND_ORBITAL && lv_obj_has_state(objects.chb_ship_mod_zbl, LV_STATE_CHECKED))
-		{
-			factor -= 0.1; // Zero-G Breech Loading => orbital 10%
-		}
-		
-		if ((item.soundPath == (char *)SND_BACKPACK || item.soundPath == (char *)SND_SHIELD) && lv_obj_has_state(objects.chb_ship_mod_hc, LV_STATE_CHECKED))
-		{
-			factor -= 0.1; // Hand Carts => backpack 10%
-		}
-		
-		if (item.soundPath == (char *)SND_WEAPON && lv_obj_has_state(objects.chb_ship_mod_srp, LV_STATE_CHECKED))
-		{
-			factor -= 0.1; // Streamlined Request Process => weapon 10%
-			callin -= 3; // Targeting Software Upgrade => support weapon 3s
-		}
-		
-		if ((item.soundPath == (char *)SND_SENTRY || item.soundPath == (char *)SND_MORTAR || item.soundPath == (char *)SND_MINES) && lv_obj_has_state(objects.chb_ship_mod_ss, LV_STATE_CHECKED))
-		{
-			factor -= 0.1; // Synthetic Supplementation => supply 10%
-		}
-
-		if (lv_obj_has_state(objects.chb_ship_mod_ma, LV_STATE_CHECKED))
-		{
-			factor -= 0.05; // Morale Augmentation => all 5%
-		}		
-
-		if (item.soundPath == (char *)SND_ORBITAL && lv_obj_has_state(objects.chb_ship_mod_tsu, LV_STATE_CHECKED))
-		{
-			callin -= 1; // Targeting Software Upgrade => orbital 1s
-		}
-		
-		if (item.soundPath == (char *)SND_MINES && lv_obj_has_state(objects.chb_ship_mod_rls, LV_STATE_CHECKED))
-		{
-			callin -= 3; // Rapid Launch System => emplacement 3s
-		}
-
-		if (item.soundPath == (char *)SND_SENTRY && lv_obj_has_state(objects.chb_ship_mod_dt, LV_STATE_CHECKED))
-		{
-			callin -= 3; // Dynamic Tracking => emplacement 3s
+			if(item.shipModules & (1 << shipModuleItem.shift)){
+				factor -= shipModuleItem.cooldown;
+				callin += shipModuleItem.callin;
+			}
 		}
 
 		cooldown *= factor;

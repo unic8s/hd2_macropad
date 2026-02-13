@@ -21,7 +21,6 @@
 #include "usb/usb_controller.h"
 #include "configuration.h"
 #include "keymaps.h"
-#include "version.h"
 #include "main.h"
 
 // Tag for logging
@@ -225,7 +224,7 @@ void hid_input_task(void *pvParameters)
     }
 
     // Check if a sound playback is ongoing
-    if (soundPlayback)
+    if (soundPlayback && lvglReady)
     {
       soundPlayback = false;
 
@@ -353,12 +352,6 @@ void app_main()
 
   // Playback intro sound
   playbackSound(SND_INTRO);
-
-  // Update software version in UI
-  char softwareVersion[12];
-  strcpy(softwareVersion, SW_VER);
-
-  lv_label_set_text(objects.lbl_version, softwareVersion);
 
   updateConnection();
   updateStratagemSelection();

@@ -2,6 +2,7 @@
 #include "screens.h"
 #include "ui.h"
 #include "ui_events.h"
+#include "version.h"
 
 
 #define ANIMATION_DURATION 100
@@ -47,4 +48,7 @@ void ui_post()
   cooldownLabels[5] = objects.label_cooldown6;
 
   resetCooldowns();
+
+  // Update software version in UI
+  lv_label_set_text(objects.lbl_version, SW_VER);
 }

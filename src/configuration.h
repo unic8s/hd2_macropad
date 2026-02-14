@@ -22,6 +22,7 @@ extern "C"
 	void setCooldown(bool enable, bool restore);
 	void setShipModules(bool restore);
 	void loadConfig();
+	void initConnection();
 	esp_err_t openConfig();
 	void closeConfig();
 	void resetConfig();

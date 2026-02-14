@@ -448,9 +448,6 @@ void loadConfig()
     uint8_t sound_muted = getConfig(CFG_KEY_MUTED, 0);
     setMuted(sound_muted == 1, true);
 
-    uint8_t connectivity_index = getConfig(CFG_KEY_CONNECTIVITY, 0);
-    setConnectivity(connectivity_index, true);
-
     uint8_t keymap_index = getConfig(CFG_KEY_KEYMAP, 0);
     setKeymap(keymap_index, true);
 
@@ -461,6 +458,19 @@ void loadConfig()
     setCooldown(show_cooldown == 1, true);
 
     setShipModules(true);
+
+    closeConfig();
+}
+
+void initConnection()
+{
+    if (openConfig() != ESP_OK)
+    {
+        return;
+    }
+
+    uint8_t connectivity_index = getConfig(CFG_KEY_CONNECTIVITY, 0);
+    setConnectivity(connectivity_index, true);
 
     closeConfig();
 }

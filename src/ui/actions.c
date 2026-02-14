@@ -106,3 +106,7 @@ void action_set_ship_modules(lv_event_t *e)
 void action_reset_cooldowns(lv_event_t *e){
 	resetCooldowns();
 }
+
+void action_init_hid(lv_event_t *e){
+	initConnection();
+}

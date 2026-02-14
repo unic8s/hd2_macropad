@@ -396,6 +396,15 @@
       "userProperties": [],
       "name": "ResetCooldowns",
       "implementationType": "native"
+    },
+    {
+      "objID": "3644cd0f-8705-4401-a5c9-b1c204e283a9",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "InitHID",
+      "implementationType": "native"
     }
   ],
   "userPages": [
@@ -713,6 +722,21 @@
               "pathType": "literal"
             }
           ]
+        },
+        {
+          "objID": "16000890-bca1-4246-9164-308e86d9e4e6",
+          "type": "CallActionActionComponent",
+          "left": 1257,
+          "top": 49,
+          "width": 87,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "action": "InitHID",
+          "userPropertyValues": {
+            "objID": "ffa8eb9b-f1b1-4fe1-d7f1-30185ac5d037",
+            "values": {}
+          }
         }
       ],
       "connectionLines": [
@@ -784,6 +808,13 @@
           "source": "862e5792-e199-4073-fba7-694e80669080",
           "output": "@seqout",
           "target": "f19ba387-373b-417f-f355-bddbe9bad1b6",
+          "input": "@seqin"
+        },
+        {
+          "objID": "46ec9c3d-773b-4aa7-ae22-9854a92acd0c",
+          "source": "baf9c7dd-bbc0-4a44-f493-0e4848e8e145",
+          "output": "@seqout",
+          "target": "16000890-bca1-4246-9164-308e86d9e4e6",
           "input": "@seqin"
         }
       ],

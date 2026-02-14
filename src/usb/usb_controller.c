@@ -5,9 +5,14 @@
 #include "tinyusb.h"
 #include "class/hid/hid_device.h"
 #include "driver/gpio.h"
+#include "esp_private/usb_phy.h"
 
 const char *TAG_USB = "USB Controller";
 #define HIDD_DEVICE_NAME "HD2 Macropad"
+
+usb_phy_config_t phy_config = {.controller = USB_PHY_CTRL_SERIAL_JTAG,
+                               .target = USB_PHY_TARGET_INT};
+usb_phy_handle_t phy_hdl;
 
 /************* TinyUSB descriptors ****************/
 
@@ -29,7 +34,7 @@ const char *hid_string_descriptor[5] = {
     // array of pointer to string descriptors
     (char[]){0x09, 0x04},    // 0: is supported language is English (0x0409)
     "TinyUSB",               // 1: Manufacturer
-    "HD2 Macropad USB",    // 2: Product
+    "HD2 Macropad USB",      // 2: Product
     "123456",                // 3: Serials, should use chip ID
     "TinyUSB HID interface", // 4: HID
 };
@@ -102,6 +107,9 @@ bool usb_connected()
 
 esp_err_t usb_controller_init()
 {
+    usb_phy_action(phy_hdl, USB_PHY_ACTION_HOST_FORCE_DISCONN);
+    usb_del_phy(phy_hdl);
+
     ESP_LOGI(TAG_USB, "USB initialization");
     const tinyusb_config_t tusb_cfg = {
         .device_descriptor = NULL,
@@ -126,6 +134,9 @@ esp_err_t usb_controller_deinit()
     tud_disconnect();
 
     esp_err_t ret = tinyusb_driver_uninstall();
+
+    usb_phy_action(phy_hdl, USB_PHY_ACTION_HOST_ALLOW_CONN);
+    usb_new_phy(&phy_config, &phy_hdl);
 
     if (ret == ESP_OK)
     {

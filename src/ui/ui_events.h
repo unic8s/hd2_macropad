@@ -25,7 +25,7 @@ void resetPresets();
 void finalizeManualExecution();
 void updateManualSequence();
 void lookupManualSequence();
-void resetCooldowns();
+void resetAllCooldowns();
 uint64_t getNow();
 
 #define MAX_USER_STRATAGEMS 6

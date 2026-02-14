@@ -31,6 +31,7 @@ uint8_t strategemsAmount = 0;
 lv_obj_t *cooldownLabels[MAX_USER_STRATAGEMS];
 uint64_t cooldownValues[MAX_USER_STRATAGEMS];
 extern lv_timer_t *cooldownTimer;
+int cooldownResetIndex = -1;
 
 int manualIndex = 0;
 int manualList = 0;
@@ -130,7 +131,7 @@ void action_goto_game(lv_event_t *e)
 
 void action_goto_setup(lv_event_t *e)
 {
-	resetCooldowns();
+	resetAllCooldowns();
 
 	lv_timer_pause(cooldownTimer);
 }
@@ -328,10 +329,12 @@ void _executeUserStratagem(uint8_t index)
 		double callin = item.callIn;
 		double factor = 1.0;
 
-		for(uint8_t c = 0; c < MAX_SHIP_MODULES; c++){
+		for (uint8_t c = 0; c < MAX_SHIP_MODULES; c++)
+		{
 			shipModuleDetails shipModuleItem = shipModuleList[c];
 
-			if(lv_obj_has_state(shipModuleItem.checkbox, LV_STATE_CHECKED) && item.shipModules & (1 << shipModuleItem.shift)){
+			if (lv_obj_has_state(shipModuleItem.checkbox, LV_STATE_CHECKED) && item.shipModules & (1 << shipModuleItem.shift))
+			{
 				factor -= shipModuleItem.cooldown;
 				callin += shipModuleItem.callin;
 			}
@@ -349,6 +352,15 @@ void _executeUserStratagem(uint8_t index)
 	char *path = item.soundPath;
 
 	playbackSound(path);
+}
+
+void action_reset_cooldown(lv_event_t *e)
+{
+	cooldownResetIndex = (int)e->user_data;
+
+	lv_obj_add_flag(cooldownLabels[cooldownResetIndex], LV_OBJ_FLAG_HIDDEN);
+
+	cooldownValues[cooldownResetIndex] = 0;
 }
 
 // Trigger standard stratagem
@@ -370,6 +382,12 @@ void action_trigger_stratagem_base(lv_event_t *e)
 void action_trigger_stratagem_user(lv_event_t *e)
 {
 	int index = (int)e->user_data;
+
+	if (index == cooldownResetIndex)
+	{
+		cooldownResetIndex = -1;
+		return;
+	}
 
 	_executeUserStratagem(index);
 }
@@ -909,7 +927,7 @@ void lookupManualSequence()
 	}
 }
 
-void resetCooldowns()
+void resetAllCooldowns()
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{

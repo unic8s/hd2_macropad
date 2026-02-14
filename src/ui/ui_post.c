@@ -47,7 +47,7 @@ void ui_post()
   cooldownLabels[4] = objects.label_cooldown5;
   cooldownLabels[5] = objects.label_cooldown6;
 
-  resetCooldowns();
+  resetAllCooldowns();
 
   // Update software version in UI
   lv_label_set_text(objects.lbl_version, SW_VER);

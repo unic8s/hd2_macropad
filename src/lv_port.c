@@ -596,7 +596,7 @@ static void lvgl_port_touchpad_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *
             data->point.x = touchpad_x[0];
             data->point.y = touchpad_y[0];
             data->state = LV_INDEV_STATE_PRESSED;
-            esp_rom_printf("Touchpad pressed: x=%d, y=%d\n", data->point.x, data->point.y);
+            //esp_rom_printf("Touchpad pressed: x=%d, y=%d\n", data->point.x, data->point.y);
         } else {
             data->state = LV_INDEV_STATE_RELEASED;
         }

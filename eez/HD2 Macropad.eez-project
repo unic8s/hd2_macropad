@@ -394,7 +394,7 @@
       "connectionLines": [],
       "localVariables": [],
       "userProperties": [],
-      "name": "ResetCooldowns",
+      "name": "ResetAllCooldowns",
       "implementationType": "native"
     },
     {
@@ -404,6 +404,15 @@
       "localVariables": [],
       "userProperties": [],
       "name": "InitHID",
+      "implementationType": "native"
+    },
+    {
+      "objID": "1d0c4d5b-0d4b-4c52-8113-d7e3ade51a89",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "ResetCooldown",
       "implementationType": "native"
     }
   ],
@@ -568,8 +577,8 @@
         {
           "objID": "baf9c7dd-bbc0-4a44-f493-0e4848e8e145",
           "type": "LVGLActionComponent",
-          "left": 877,
-          "top": 61,
+          "left": 785,
+          "top": 63,
           "width": 323,
           "height": 54,
           "customInputs": [],
@@ -624,8 +633,8 @@
         {
           "objID": "15849dae-cfa5-4a62-fa6e-14601d026dc4",
           "type": "DelayActionComponent",
-          "left": 564,
-          "top": -15,
+          "left": 561,
+          "top": -118,
           "width": 87,
           "height": 54,
           "customInputs": [],
@@ -635,7 +644,7 @@
         {
           "objID": "46852b3a-7d99-4a1c-b9a5-852a8e08b0c2",
           "type": "IsTrueActionComponent",
-          "left": 686,
+          "left": 575,
           "top": -15,
           "width": 147,
           "height": 70,
@@ -726,8 +735,8 @@
         {
           "objID": "16000890-bca1-4246-9164-308e86d9e4e6",
           "type": "CallActionActionComponent",
-          "left": 1257,
-          "top": 49,
+          "left": 1201,
+          "top": 66,
           "width": 87,
           "height": 24,
           "customInputs": [],
@@ -737,6 +746,17 @@
             "objID": "ffa8eb9b-f1b1-4fe1-d7f1-30185ac5d037",
             "values": {}
           }
+        },
+        {
+          "objID": "7c4c68ca-31f0-4b68-a68c-67ad3ff0e259",
+          "type": "DelayActionComponent",
+          "left": 1157,
+          "top": -34,
+          "width": 87,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "milliseconds": "1500"
         }
       ],
       "connectionLines": [
@@ -811,8 +831,15 @@
           "input": "@seqin"
         },
         {
-          "objID": "46ec9c3d-773b-4aa7-ae22-9854a92acd0c",
+          "objID": "356cd52d-cfcc-45f0-f595-59a1d26ee442",
           "source": "baf9c7dd-bbc0-4a44-f493-0e4848e8e145",
+          "output": "@seqout",
+          "target": "7c4c68ca-31f0-4b68-a68c-67ad3ff0e259",
+          "input": "@seqin"
+        },
+        {
+          "objID": "4be694cf-8e68-470a-d827-4075bb5445bf",
+          "source": "7c4c68ca-31f0-4b68-a68c-67ad3ff0e259",
           "output": "@seqout",
           "target": "16000890-bca1-4246-9164-308e86d9e4e6",
           "input": "@seqin"
@@ -11202,6 +11229,13 @@
                       "handlerType": "action",
                       "action": "triggerStratagemUser",
                       "userData": 0
+                    },
+                    {
+                      "objID": "00f7075d-c857-473c-91c3-0a2de1a33b24",
+                      "eventName": "LONG_PRESSED",
+                      "handlerType": "action",
+                      "action": "ResetCooldown",
+                      "userData": 0
                     }
                   ],
                   "identifier": "CustomStratagem1",
@@ -11305,6 +11339,13 @@
                       "eventName": "CLICKED",
                       "handlerType": "action",
                       "action": "triggerStratagemUser",
+                      "userData": 1
+                    },
+                    {
+                      "objID": "56c441db-ebe7-4129-f505-b0406375e2fc",
+                      "eventName": "LONG_PRESSED",
+                      "handlerType": "action",
+                      "action": "ResetCooldown",
                       "userData": 1
                     }
                   ],
@@ -11410,6 +11451,13 @@
                       "handlerType": "action",
                       "action": "triggerStratagemUser",
                       "userData": 2
+                    },
+                    {
+                      "objID": "de1c6cfb-de4e-4a3d-8580-f4b5a0797e19",
+                      "eventName": "LONG_PRESSED",
+                      "handlerType": "action",
+                      "action": "ResetCooldown",
+                      "userData": 2
                     }
                   ],
                   "identifier": "CustomStratagem3",
@@ -11513,6 +11561,13 @@
                       "eventName": "CLICKED",
                       "handlerType": "action",
                       "action": "triggerStratagemUser",
+                      "userData": 3
+                    },
+                    {
+                      "objID": "6719ba2f-d1e8-4642-f787-00b3d6bcf2f1",
+                      "eventName": "LONG_PRESSED",
+                      "handlerType": "action",
+                      "action": "ResetCooldown",
                       "userData": 3
                     }
                   ],
@@ -11673,6 +11728,13 @@
                       "handlerType": "action",
                       "action": "triggerStratagemUser",
                       "userData": 4
+                    },
+                    {
+                      "objID": "7a131297-4b1e-4957-aa77-27bd63780252",
+                      "eventName": "LONG_PRESSED",
+                      "handlerType": "action",
+                      "action": "ResetCooldown",
+                      "userData": 4
                     }
                   ],
                   "identifier": "CustomStratagem5",
@@ -11776,6 +11838,13 @@
                       "eventName": "CLICKED",
                       "handlerType": "action",
                       "action": "triggerStratagemUser",
+                      "userData": 5
+                    },
+                    {
+                      "objID": "405b24cf-2816-4d1d-8682-df38f97916ea",
+                      "eventName": "LONG_PRESSED",
+                      "handlerType": "action",
+                      "action": "ResetCooldown",
                       "userData": 5
                     }
                   ],
@@ -12274,11 +12343,11 @@
           "type": "CallActionActionComponent",
           "left": 70,
           "top": 480,
-          "width": 130,
+          "width": 145,
           "height": 24,
           "customInputs": [],
           "customOutputs": [],
-          "action": "ResetCooldowns",
+          "action": "ResetAllCooldowns",
           "userPropertyValues": {
             "objID": "eeb36986-9458-46a9-ea34-56a6065a78da",
             "values": {}

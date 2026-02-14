@@ -94,7 +94,7 @@ void action_set_cooldown(lv_event_t *e)
 
 	if (!cooldown)
 	{
-		resetCooldowns();
+		resetAllCooldowns();
 	}
 }
 
@@ -103,10 +103,12 @@ void action_set_ship_modules(lv_event_t *e)
 	setShipModules(false);
 }
 
-void action_reset_cooldowns(lv_event_t *e){
-	resetCooldowns();
+void action_reset_all_cooldowns(lv_event_t *e)
+{
+	resetAllCooldowns();
 }
 
-void action_init_hid(lv_event_t *e){
+void action_init_hid(lv_event_t *e)
+{
 	initConnection();
 }

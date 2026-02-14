@@ -2203,6 +2203,10 @@ static void event_handler_cb_game_custom_stratagem1(lv_event_t *e) {
         e->user_data = (void *)0;
         action_trigger_stratagem_user(e);
     }
+    if (event == LV_EVENT_LONG_PRESSED) {
+        e->user_data = (void *)0;
+        action_reset_cooldown(e);
+    }
 }
 
 static void event_handler_cb_game_custom_stratagem2(lv_event_t *e) {
@@ -2213,6 +2217,10 @@ static void event_handler_cb_game_custom_stratagem2(lv_event_t *e) {
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)1;
         action_trigger_stratagem_user(e);
+    }
+    if (event == LV_EVENT_LONG_PRESSED) {
+        e->user_data = (void *)1;
+        action_reset_cooldown(e);
     }
 }
 
@@ -2225,6 +2233,10 @@ static void event_handler_cb_game_custom_stratagem3(lv_event_t *e) {
         e->user_data = (void *)2;
         action_trigger_stratagem_user(e);
     }
+    if (event == LV_EVENT_LONG_PRESSED) {
+        e->user_data = (void *)2;
+        action_reset_cooldown(e);
+    }
 }
 
 static void event_handler_cb_game_custom_stratagem4(lv_event_t *e) {
@@ -2235,6 +2247,10 @@ static void event_handler_cb_game_custom_stratagem4(lv_event_t *e) {
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)3;
         action_trigger_stratagem_user(e);
+    }
+    if (event == LV_EVENT_LONG_PRESSED) {
+        e->user_data = (void *)3;
+        action_reset_cooldown(e);
     }
 }
 
@@ -2247,6 +2263,10 @@ static void event_handler_cb_game_custom_stratagem5(lv_event_t *e) {
         e->user_data = (void *)4;
         action_trigger_stratagem_user(e);
     }
+    if (event == LV_EVENT_LONG_PRESSED) {
+        e->user_data = (void *)4;
+        action_reset_cooldown(e);
+    }
 }
 
 static void event_handler_cb_game_custom_stratagem6(lv_event_t *e) {
@@ -2257,6 +2277,10 @@ static void event_handler_cb_game_custom_stratagem6(lv_event_t *e) {
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)5;
         action_trigger_stratagem_user(e);
+    }
+    if (event == LV_EVENT_LONG_PRESSED) {
+        e->user_data = (void *)5;
+        action_reset_cooldown(e);
     }
 }
 

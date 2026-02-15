@@ -3,6 +3,9 @@
 #include "ui_events.h"
 #include "configuration.h"
 #include "screens.h"
+#include "usb/usb_controller.h"
+
+extern uint8_t connectionType;
 
 // Change HID input delay
 void action_change_delay(lv_event_t *e)
@@ -46,6 +49,15 @@ void action_flip_screen(lv_event_t *e)
 
 void action_restart_device(lv_event_t *e)
 {
+	switch (connectionType)
+	{
+	case CT_USB:
+		usb_controller_deinit();
+		break;
+	default:
+		break;
+	}
+
 	esp_restart();
 }
 

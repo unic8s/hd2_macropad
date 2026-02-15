@@ -58,7 +58,7 @@ bool showCooldowns = false;
 int screenRotation = LV_DISP_ROT_90;
 
 extern lv_obj_t *cooldownLabels[MAX_USER_STRATAGEMS];
-extern uint64_t cooldownValues[MAX_USER_STRATAGEMS];
+extern uint32_t cooldownValues[MAX_USER_STRATAGEMS];
 uint16_t lastCooldownDiffs[MAX_USER_STRATAGEMS];
 
 lv_timer_t *cooldownTimer;
@@ -249,7 +249,7 @@ void ui_update_task(lv_timer_t *timer)
 
   for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
   {
-    uint64_t cooldownValue = cooldownValues[c];
+    uint32_t cooldownValue = cooldownValues[c];
     lv_obj_t *cooldownLabel = cooldownLabels[c];
     int16_t diff = cooldownValue - getNow();
 

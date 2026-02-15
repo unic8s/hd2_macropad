@@ -29,7 +29,7 @@ int types[MAX_USER_STRATAGEMS];
 uint8_t strategemsAmount = 0;
 
 lv_obj_t *cooldownLabels[MAX_USER_STRATAGEMS];
-uint64_t cooldownValues[MAX_USER_STRATAGEMS];
+uint32_t cooldownValues[MAX_USER_STRATAGEMS];
 extern lv_timer_t *cooldownTimer;
 int cooldownResetIndex = -1;
 
@@ -937,7 +937,7 @@ void resetAllCooldowns()
 	}
 }
 
-uint64_t getNow()
+uint32_t getNow()
 {
 	return esp_timer_get_time() / 1000000;
 }

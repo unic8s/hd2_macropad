@@ -245,6 +245,11 @@ void flow_tick_task(lv_timer_t *timer)
 
 void ui_update_task(lv_timer_t *timer)
 {
+  if (!lvglReady)
+  {
+    return;
+  }
+
   bool activeTimer = false;
 
   for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
@@ -341,7 +346,7 @@ void app_main()
   bsp_display_backlight_on();
 
   // Setup cooldown timer
-  cooldownTimer = lv_timer_create(ui_update_task, 100, NULL);
+  cooldownTimer = lv_timer_create(ui_update_task, 1000, NULL);
   cooldownTimer->repeat_count = -1;
   lv_timer_pause(cooldownTimer);
 

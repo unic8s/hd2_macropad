@@ -347,6 +347,8 @@ void _executeUserStratagem(uint8_t index)
 		{
 			lv_timer_resume(cooldownTimer);
 		}
+
+		ui_update_task(cooldownTimer);
 	}
 
 	char *path = item.soundPath;
@@ -361,6 +363,8 @@ void action_reset_cooldown(lv_event_t *e)
 	lv_obj_add_flag(cooldownLabels[cooldownResetIndex], LV_OBJ_FLAG_HIDDEN);
 
 	cooldownValues[cooldownResetIndex] = 0;
+
+	ui_update_task(cooldownTimer);
 }
 
 // Trigger standard stratagem
@@ -935,6 +939,8 @@ void resetAllCooldowns()
 
 		cooldownValues[c] = 0;
 	}
+
+	ui_update_task(cooldownTimer);
 }
 
 uint32_t getNow()

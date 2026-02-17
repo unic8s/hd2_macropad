@@ -238,12 +238,12 @@ void hid_input_task(void *pvParameters)
 }
 
 // Task for exeuction of EEZ Flows
-void flow_tick_task(lv_timer_t *timer)
+void flow_tick_task()
 {
   ui_tick();
 }
 
-void ui_update_task(lv_timer_t *timer)
+void ui_update_task()
 {
   if (!lvglReady)
   {

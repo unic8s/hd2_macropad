@@ -87,7 +87,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // MLS-4X Commando
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_RIGHT, 0, 0, 0, 0},
-        480,
+        120,
         7.75,
         SHIP_MA | SHIP_SRP,
         SND_WEAPON,

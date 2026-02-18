@@ -75,7 +75,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // EAT-17 Expendable Anti-tank
     {
         {INPUT_DOWN, INPUT_DOWN, INPUT_LEFT, INPUT_UP, INPUT_RIGHT, 0, 0, 0, 0},
-        480,
+        70,
         7.75,
         SHIP_MA | SHIP_SRP,
         SND_WEAPON,

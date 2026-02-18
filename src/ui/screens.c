@@ -6089,7 +6089,7 @@ void create_screen_config() {
                                             objects.chb_ship_mod_rls = obj;
                                             lv_obj_set_pos(obj, 0, 0);
                                             lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
-                                            lv_checkbox_set_text(obj, "Synthetic Suppl.");
+                                            lv_checkbox_set_text(obj, "Rapid launch system");
                                             lv_obj_add_event_cb(obj, event_handler_cb_config_chb_ship_mod_rls, LV_EVENT_ALL, flowState);
                                             add_style_checkbox_config(obj);
                                         }

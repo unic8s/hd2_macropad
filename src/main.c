@@ -32,10 +32,6 @@ uint8_t connectionType = CT_NONE;
 // Flag for ready state of LVGL after init
 bool lvglReady = false;
 
-// Logging helper function for grouping
-#define logSection(section) \
-  ESP_LOGI(TAG, "\n\n************* %s **************\n", section);
-
 // Stratagem code sequence (buffer) for execution
 uint8_t stratagemCode[MAX_CMD_LENGTH];
 // Stratagem mask for modifier key combination (ctrl, alt, etc.)
@@ -316,7 +312,6 @@ void app_main()
   // Resolve screen rotation from config
   screenRotation = peekConfig("rotation", LV_DISP_ROT_90);
 
-  logSection("Initialize panel device");
   // Display configuration
   bsp_display_cfg_t cfg = {
       .lvgl_port_cfg = ESP_LVGL_PORT_INIT_CONFIG(),

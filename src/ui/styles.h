@@ -48,6 +48,7 @@ void remove_style_label_cooldown(lv_obj_t *obj);
 // Style: CheckboxConfig
 lv_style_t *get_style_checkbox_config_INDICATOR_DEFAULT();
 lv_style_t *get_style_checkbox_config_INDICATOR_CHECKED();
+lv_style_t *get_style_checkbox_config_MAIN_DEFAULT();
 void add_style_checkbox_config(lv_obj_t *obj);
 void remove_style_checkbox_config(lv_obj_t *obj);
 

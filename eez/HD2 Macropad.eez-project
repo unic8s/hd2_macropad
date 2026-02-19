@@ -15941,7 +15941,7 @@
                               "left": 0,
                               "top": 0,
                               "width": 100,
-                              "height": 20,
+                              "height": 28,
                               "customInputs": [],
                               "customOutputs": [],
                               "style": {
@@ -15992,7 +15992,7 @@
                               "left": 0,
                               "top": 0,
                               "width": 100,
-                              "height": 20,
+                              "height": 28,
                               "customInputs": [],
                               "customOutputs": [],
                               "style": {
@@ -16043,7 +16043,7 @@
                               "left": 0,
                               "top": 0,
                               "width": 100,
-                              "height": 20,
+                              "height": 28,
                               "customInputs": [],
                               "customOutputs": [],
                               "style": {
@@ -16094,7 +16094,7 @@
                               "left": 0,
                               "top": 0,
                               "width": 100,
-                              "height": 20,
+                              "height": 28,
                               "customInputs": [],
                               "customOutputs": [],
                               "style": {
@@ -16145,7 +16145,7 @@
                               "left": 0,
                               "top": 0,
                               "width": 100,
-                              "height": 20,
+                              "height": 28,
                               "customInputs": [],
                               "customOutputs": [],
                               "style": {
@@ -16196,7 +16196,7 @@
                               "left": 0,
                               "top": 0,
                               "width": 100,
-                              "height": 20,
+                              "height": 28,
                               "customInputs": [],
                               "customOutputs": [],
                               "style": {
@@ -16247,7 +16247,7 @@
                               "left": 0,
                               "top": 0,
                               "width": 100,
-                              "height": 20,
+                              "height": 28,
                               "customInputs": [],
                               "customOutputs": [],
                               "style": {
@@ -16298,7 +16298,7 @@
                               "left": 0,
                               "top": 0,
                               "width": 100,
-                              "height": 20,
+                              "height": 28,
                               "customInputs": [],
                               "customOutputs": [],
                               "style": {
@@ -16349,7 +16349,7 @@
                               "left": 0,
                               "top": 0,
                               "width": 100,
-                              "height": 20,
+                              "height": 28,
                               "customInputs": [],
                               "customOutputs": [],
                               "style": {
@@ -16412,16 +16412,16 @@
                               "MAIN": {
                                 "DEFAULT": {
                                   "pad_top": 8,
-                                  "pad_bottom": 8,
                                   "pad_left": 8,
                                   "pad_right": 8,
-                                  "pad_row": 16,
+                                  "pad_row": 8,
                                   "pad_column": 0,
                                   "layout": "FLEX",
                                   "flex_flow": "ROW_WRAP",
                                   "bg_opa": 255,
                                   "radius": 8,
-                                  "clip_corner": true
+                                  "clip_corner": true,
+                                  "pad_bottom": 8
                                 }
                               }
                             }
@@ -19601,12 +19601,24 @@
             "INDICATOR": {
               "DEFAULT": {
                 "border_width": 0,
-                "bg_color": "#000000"
+                "bg_color": "#000000",
+                "pad_top": 4,
+                "pad_bottom": 4,
+                "pad_left": 4,
+                "pad_right": 4
               },
               "CHECKED": {
                 "border_width": 0,
                 "text_color": "colorActive",
                 "bg_color": "#000000"
+              }
+            },
+            "MAIN": {
+              "DEFAULT": {
+                "pad_top": 2,
+                "pad_bottom": 2,
+                "pad_left": 2,
+                "pad_right": 2
               }
             }
           }

@@ -14760,7 +14760,14 @@
                           "states": "",
                           "useStyle": "SwitchConfig",
                           "localStyles": {
-                            "objID": "0ce70c9c-aa0c-4d69-e08c-ae4f00b9d28c"
+                            "objID": "0ce70c9c-aa0c-4d69-e08c-ae4f00b9d28c",
+                            "definition": {
+                              "INDICATOR": {
+                                "DEFAULT": {
+                                  "radius": 32767
+                                }
+                              }
+                            }
                           },
                           "group": "",
                           "groupIndex": 0
@@ -14900,6 +14907,7 @@
                           "flagScrollDirection": "",
                           "scrollSnapX": "",
                           "scrollSnapY": "",
+                          "checkedState": false,
                           "checkedStateType": "literal",
                           "disabledStateType": "literal",
                           "states": "",
@@ -15311,6 +15319,7 @@
                           "checkedStateType": "literal",
                           "disabledStateType": "literal",
                           "states": "",
+                          "useStyle": "DropdownConfig",
                           "localStyles": {
                             "objID": "91371fab-4477-4c4d-ef6f-ef47facc76e2"
                           },
@@ -15611,6 +15620,7 @@
                           "checkedStateType": "literal",
                           "disabledStateType": "literal",
                           "states": "",
+                          "useStyle": "DropdownConfig",
                           "localStyles": {
                             "objID": "8b3fc6e1-9c55-4cef-de2a-0444236f6bdf"
                           },
@@ -16419,7 +16429,7 @@
                                   "layout": "FLEX",
                                   "flex_flow": "ROW_WRAP",
                                   "bg_opa": 255,
-                                  "radius": 8,
+                                  "radius": 4,
                                   "clip_corner": true,
                                   "pad_bottom": 8
                                 }
@@ -19427,7 +19437,8 @@
               "DEFAULT": {
                 "bg_color": "#000000",
                 "border_color": "#ffffff",
-                "border_width": 2
+                "border_width": 2,
+                "radius": 8
               },
               "CHECKED": {
                 "bg_color": "#000000",
@@ -19501,27 +19512,26 @@
           "definition": {
             "MAIN": {
               "DEFAULT": {
-                "border_width": 2,
-                "border_color": "colorTheme",
-                "bg_color": "#000000"
+                "radius": 4,
+                "bg_color": "#282b30",
+                "bg_opa": 255
               }
             },
             "INDICATOR": {
               "DEFAULT": {
-                "bg_color": "#000000",
-                "border_color": "colorActive",
-                "border_width": 2
+                "radius": 4,
+                "bg_color": "colorActive",
+                "bg_opa": 127
               }
             },
             "KNOB": {
               "DEFAULT": {
-                "bg_color": "#000000",
-                "border_color": "colorActive",
-                "border_width": 2,
-                "pad_top": 8,
+                "bg_color": "colorActive",
                 "pad_bottom": 8,
                 "pad_left": 8,
-                "pad_right": 8
+                "pad_right": 8,
+                "radius": 8,
+                "pad_top": 8
               }
             }
           }
@@ -19537,9 +19547,8 @@
           "definition": {
             "MAIN": {
               "DEFAULT": {
-                "bg_color": "#000000",
-                "border_color": "colorTheme",
-                "border_width": 2
+                "bg_color": "#282b30",
+                "radius": 8
               },
               "CHECKED": {
                 "border_color": "colorActive"
@@ -19547,17 +19556,19 @@
             },
             "KNOB": {
               "DEFAULT": {
-                "bg_color": "#000000",
-                "border_color": "colorTheme",
-                "border_width": 2
+                "bg_color": "colorTheme",
+                "radius": 8
               },
               "CHECKED": {
-                "border_color": "colorActive"
+                "bg_color": "colorActive"
               }
             },
             "INDICATOR": {
               "CHECKED": {
                 "bg_opa": 0
+              },
+              "DEFAULT": {
+                "radius": 8
               }
             }
           }
@@ -19605,7 +19616,8 @@
                 "pad_top": 4,
                 "pad_bottom": 4,
                 "pad_left": 4,
-                "pad_right": 4
+                "pad_right": 4,
+                "radius": 4
               },
               "CHECKED": {
                 "border_width": 0,
@@ -19619,6 +19631,22 @@
                 "pad_bottom": 2,
                 "pad_left": 2,
                 "pad_right": 2
+              }
+            }
+          }
+        }
+      },
+      {
+        "objID": "2bfaa8bf-3855-45a4-e10e-9f53bd055afc",
+        "name": "DropdownConfig",
+        "forWidgetType": "LVGLDropdownWidget",
+        "childStyles": [],
+        "definition": {
+          "objID": "0149463a-aa3b-4ce7-eeef-46ae56c06b3a",
+          "definition": {
+            "MAIN": {
+              "DEFAULT": {
+                "radius": 4
               }
             }
           }

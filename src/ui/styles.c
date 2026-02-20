@@ -185,7 +185,7 @@ void init_style_slider_config_KNOB_DEFAULT(lv_style_t *style) {
     lv_style_set_pad_bottom(style, 8);
     lv_style_set_pad_left(style, 8);
     lv_style_set_pad_right(style, 8);
-    lv_style_set_radius(style, 8);
+    lv_style_set_radius(style, 4);
     lv_style_set_pad_top(style, 8);
 };
 
@@ -219,7 +219,7 @@ void remove_style_slider_config(lv_obj_t *obj) {
 
 void init_style_switch_config_MAIN_DEFAULT(lv_style_t *style) {
     lv_style_set_bg_color(style, lv_color_hex(0xff282b30));
-    lv_style_set_radius(style, 8);
+    lv_style_set_radius(style, 6);
 };
 
 lv_style_t *get_style_switch_config_MAIN_DEFAULT() {
@@ -248,7 +248,7 @@ lv_style_t *get_style_switch_config_MAIN_CHECKED() {
 
 void init_style_switch_config_KNOB_DEFAULT(lv_style_t *style) {
     lv_style_set_bg_color(style, lv_color_hex(theme_colors[eez_flow_get_selected_theme_index()][0]));
-    lv_style_set_radius(style, 8);
+    lv_style_set_radius(style, 4);
 };
 
 lv_style_t *get_style_switch_config_KNOB_DEFAULT() {
@@ -290,7 +290,7 @@ lv_style_t *get_style_switch_config_INDICATOR_CHECKED() {
 };
 
 void init_style_switch_config_INDICATOR_DEFAULT(lv_style_t *style) {
-    lv_style_set_radius(style, 8);
+    lv_style_set_radius(style, 6);
 };
 
 lv_style_t *get_style_switch_config_INDICATOR_DEFAULT() {
@@ -368,12 +368,13 @@ void remove_style_label_cooldown(lv_obj_t *obj) {
 
 void init_style_checkbox_config_INDICATOR_DEFAULT(lv_style_t *style) {
     lv_style_set_border_width(style, 0);
-    lv_style_set_bg_color(style, lv_color_hex(0xff000000));
     lv_style_set_pad_top(style, 4);
     lv_style_set_pad_bottom(style, 4);
     lv_style_set_pad_left(style, 4);
     lv_style_set_pad_right(style, 4);
     lv_style_set_radius(style, 4);
+    lv_style_set_bg_color(style, lv_color_hex(0xff000000));
+    lv_style_set_bg_opa(style, 91);
 };
 
 lv_style_t *get_style_checkbox_config_INDICATOR_DEFAULT() {
@@ -390,6 +391,7 @@ void init_style_checkbox_config_INDICATOR_CHECKED(lv_style_t *style) {
     lv_style_set_border_width(style, 0);
     lv_style_set_text_color(style, lv_color_hex(theme_colors[eez_flow_get_selected_theme_index()][1]));
     lv_style_set_bg_color(style, lv_color_hex(0xff000000));
+    lv_style_set_bg_opa(style, 91);
 };
 
 lv_style_t *get_style_checkbox_config_INDICATOR_CHECKED() {

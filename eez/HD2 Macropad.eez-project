@@ -14448,7 +14448,7 @@
                       "left": 0,
                       "top": 0,
                       "width": 100,
-                      "height": 64,
+                      "height": 60,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -14640,7 +14640,7 @@
                               "pad_bottom": 8,
                               "pad_left": 20,
                               "pad_right": 20,
-                              "pad_row": 16,
+                              "pad_row": 12,
                               "pad_column": 0,
                               "layout": "FLEX",
                               "flex_flow": "ROW_WRAP"
@@ -14657,7 +14657,7 @@
                       "left": 0,
                       "top": 0,
                       "width": 49,
-                      "height": 80,
+                      "height": 76,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -14793,7 +14793,7 @@
                               "pad_bottom": 8,
                               "pad_left": 20,
                               "pad_right": 20,
-                              "pad_row": 16,
+                              "pad_row": 12,
                               "pad_column": 0,
                               "layout": "FLEX",
                               "flex_flow": "ROW_WRAP"
@@ -14810,7 +14810,7 @@
                       "left": 0,
                       "top": 0,
                       "width": 49,
-                      "height": 80,
+                      "height": 76,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -14939,7 +14939,7 @@
                               "pad_bottom": 8,
                               "pad_left": 20,
                               "pad_right": 20,
-                              "pad_row": 16,
+                              "pad_row": 12,
                               "pad_column": 0,
                               "layout": "FLEX",
                               "flex_flow": "ROW_WRAP"
@@ -14969,7 +14969,8 @@
                       "MAIN": {
                         "DEFAULT": {
                           "border_color": "#000000",
-                          "flex_track_place": "START"
+                          "flex_track_place": "START",
+                          "pad_row": 16
                         }
                       }
                     }
@@ -15007,7 +15008,7 @@
                       "left": 0,
                       "top": 0,
                       "width": 100,
-                      "height": 64,
+                      "height": 60,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -15202,7 +15203,7 @@
                               "pad_bottom": 8,
                               "pad_left": 20,
                               "pad_right": 20,
-                              "pad_row": 16,
+                              "pad_row": 12,
                               "pad_column": 0,
                               "layout": "FLEX",
                               "flex_flow": "ROW_WRAP"
@@ -15219,7 +15220,7 @@
                       "left": 0,
                       "top": 0,
                       "width": 49,
-                      "height": 140,
+                      "height": 132,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -15503,7 +15504,7 @@
                               "pad_bottom": 8,
                               "pad_left": 20,
                               "pad_right": 20,
-                              "pad_row": 16,
+                              "pad_row": 12,
                               "pad_column": 8,
                               "layout": "FLEX",
                               "flex_flow": "ROW_WRAP"
@@ -15520,7 +15521,7 @@
                       "left": 0,
                       "top": 0,
                       "width": 49,
-                      "height": 86,
+                      "height": 82,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -15653,7 +15654,7 @@
                               "pad_bottom": 8,
                               "pad_left": 20,
                               "pad_right": 20,
-                              "pad_row": 16,
+                              "pad_row": 12,
                               "pad_column": 0,
                               "layout": "FLEX",
                               "flex_flow": "ROW_WRAP"
@@ -15678,7 +15679,14 @@
                   "states": "",
                   "useStyle": "TabConfig",
                   "localStyles": {
-                    "objID": "65d73b13-309c-41cb-cac5-8649affdaf12"
+                    "objID": "65d73b13-309c-41cb-cac5-8649affdaf12",
+                    "definition": {
+                      "MAIN": {
+                        "DEFAULT": {
+                          "pad_row": 16
+                        }
+                      }
+                    }
                   },
                   "group": "",
                   "groupIndex": 0,
@@ -15713,7 +15721,7 @@
                       "left": 0,
                       "top": 0,
                       "width": 47,
-                      "height": 80,
+                      "height": 76,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -15841,7 +15849,7 @@
                               "pad_bottom": 8,
                               "pad_left": 20,
                               "pad_right": 20,
-                              "pad_row": 16,
+                              "pad_row": 12,
                               "pad_column": 0,
                               "layout": "FLEX",
                               "flex_flow": "ROW_WRAP"
@@ -15929,7 +15937,7 @@
                           "left": 0,
                           "top": 0,
                           "width": 100,
-                          "height": 180,
+                          "height": 186,
                           "customInputs": [],
                           "customOutputs": [],
                           "style": {
@@ -16460,7 +16468,7 @@
                               "pad_bottom": 0,
                               "pad_left": 0,
                               "pad_right": 0,
-                              "pad_row": 16,
+                              "pad_row": 12,
                               "pad_column": 0,
                               "layout": "FLEX",
                               "flex_flow": "ROW_WRAP"
@@ -16485,7 +16493,14 @@
                   "states": "",
                   "useStyle": "TabConfig",
                   "localStyles": {
-                    "objID": "92b8817b-6fdb-471f-86d3-6a42788f63b9"
+                    "objID": "92b8817b-6fdb-471f-86d3-6a42788f63b9",
+                    "definition": {
+                      "MAIN": {
+                        "DEFAULT": {
+                          "pad_row": 16
+                        }
+                      }
+                    }
                   },
                   "group": "",
                   "groupIndex": 0,
@@ -16520,7 +16535,7 @@
                       "left": 0,
                       "top": 0,
                       "width": 49,
-                      "height": 80,
+                      "height": 76,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -16648,7 +16663,7 @@
                               "pad_bottom": 8,
                               "pad_left": 20,
                               "pad_right": 20,
-                              "pad_row": 16,
+                              "pad_row": 12,
                               "pad_column": 0,
                               "layout": "FLEX",
                               "flex_flow": "ROW_WRAP"
@@ -16673,7 +16688,14 @@
                   "states": "",
                   "useStyle": "TabConfig",
                   "localStyles": {
-                    "objID": "0e36b121-96dd-4251-b310-25fb820ab743"
+                    "objID": "0e36b121-96dd-4251-b310-25fb820ab743",
+                    "definition": {
+                      "MAIN": {
+                        "DEFAULT": {
+                          "pad_row": 16
+                        }
+                      }
+                    }
                   },
                   "group": "",
                   "groupIndex": 0,
@@ -19530,7 +19552,7 @@
                 "pad_bottom": 8,
                 "pad_left": 8,
                 "pad_right": 8,
-                "radius": 8,
+                "radius": 4,
                 "pad_top": 8
               }
             }
@@ -19548,7 +19570,7 @@
             "MAIN": {
               "DEFAULT": {
                 "bg_color": "#282b30",
-                "radius": 8
+                "radius": 6
               },
               "CHECKED": {
                 "border_color": "colorActive"
@@ -19557,7 +19579,7 @@
             "KNOB": {
               "DEFAULT": {
                 "bg_color": "colorTheme",
-                "radius": 8
+                "radius": 4
               },
               "CHECKED": {
                 "bg_color": "colorActive"
@@ -19568,7 +19590,7 @@
                 "bg_opa": 0
               },
               "DEFAULT": {
-                "radius": 8
+                "radius": 6
               }
             }
           }
@@ -19612,17 +19634,19 @@
             "INDICATOR": {
               "DEFAULT": {
                 "border_width": 0,
-                "bg_color": "#000000",
                 "pad_top": 4,
                 "pad_bottom": 4,
                 "pad_left": 4,
                 "pad_right": 4,
-                "radius": 4
+                "radius": 4,
+                "bg_color": "#000000",
+                "bg_opa": 91
               },
               "CHECKED": {
                 "border_width": 0,
                 "text_color": "colorActive",
-                "bg_color": "#000000"
+                "bg_color": "#000000",
+                "bg_opa": 91
               }
             },
             "MAIN": {

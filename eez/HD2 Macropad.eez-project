@@ -8032,13 +8032,15 @@
                         "definition": {
                           "INDICATOR": {
                             "DEFAULT": {
-                              "bg_color": "ffffff"
+                              "bg_color": "ffffff",
+                              "radius": 2
                             }
                           },
                           "MAIN": {
                             "DEFAULT": {
                               "bg_color": "ffffff",
-                              "bg_opa": 63
+                              "bg_opa": 63,
+                              "radius": 2
                             }
                           }
                         }

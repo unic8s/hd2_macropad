@@ -189,10 +189,13 @@ void hid_input_task(void *pvParameters)
         return;
       }
 
+      // Pre-calculate one time for further use
+      double inputDelayPeriod = inputDelay / portTICK_PERIOD_MS;
+
       // Send modifier keys (mask)
       fptr(stratagemMask, 0, 0);
 
-      vTaskDelay(inputDelay / portTICK_PERIOD_MS);
+      vTaskDelay(inputDelayPeriod);
 
       // Loop through command sequence from buffer
       while (stratagemCode[cmdIndex] > 0 && cmdIndex < MAX_CMD_LENGTH)
@@ -200,12 +203,12 @@ void hid_input_task(void *pvParameters)
         // Press key defined by the keycode
         fptr(stratagemMask, stratagemCode[cmdIndex], 1);
 
-        vTaskDelay(inputDelay / portTICK_PERIOD_MS);
+        vTaskDelay(inputDelayPeriod);
 
         // Release key defined by the keycode
         fptr(stratagemMask, stratagemCode[cmdIndex], 0);
 
-        vTaskDelay(inputDelay / portTICK_PERIOD_MS);
+        vTaskDelay(inputDelayPeriod);
 
         ESP_LOGI(TAG, "CMD Index: %c", (char)(cmdIndex + '0'));
         ESP_LOGI(TAG, "CMD Value: %d", stratagemCode[cmdIndex]);

@@ -4,11 +4,7 @@
 #include "ui_events.h"
 #include "version.h"
 
-
-#define ANIMATION_DURATION 100
-
 extern lv_obj_t *cooldownLabels[MAX_USER_STRATAGEMS];
-
 
 void ui_post()
 {

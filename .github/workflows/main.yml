@@ -59,7 +59,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.github_token }}
-          file: .pio/build/LVGL-320-480/firmware.bin.bin
+          file: .pio/build/LVGL-320-480/firmware.bin
           asset_name: hd2_macropad_update.bin
           tag: ${{ steps.tag_version.outputs.new_tag }}
           overwrite: true

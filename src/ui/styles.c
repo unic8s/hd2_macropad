@@ -149,7 +149,7 @@ void remove_style_tab_config(lv_obj_t *obj) {
 //
 
 void init_style_slider_config_MAIN_DEFAULT(lv_style_t *style) {
-    lv_style_set_radius(style, 4);
+    lv_style_set_radius(style, 2);
     lv_style_set_bg_color(style, lv_color_hex(0xff282b30));
     lv_style_set_bg_opa(style, 255);
 };
@@ -182,11 +182,11 @@ lv_style_t *get_style_slider_config_INDICATOR_DEFAULT() {
 
 void init_style_slider_config_KNOB_DEFAULT(lv_style_t *style) {
     lv_style_set_bg_color(style, lv_color_hex(theme_colors[eez_flow_get_selected_theme_index()][1]));
-    lv_style_set_pad_bottom(style, 8);
-    lv_style_set_pad_left(style, 8);
-    lv_style_set_pad_right(style, 8);
+    lv_style_set_pad_left(style, 6);
+    lv_style_set_pad_right(style, 6);
     lv_style_set_radius(style, 4);
-    lv_style_set_pad_top(style, 8);
+    lv_style_set_pad_bottom(style, 6);
+    lv_style_set_pad_top(style, 6);
 };
 
 lv_style_t *get_style_slider_config_KNOB_DEFAULT() {

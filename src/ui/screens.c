@@ -5705,7 +5705,7 @@ void create_screen_config() {
                                     lv_obj_t *obj = lv_slider_create(parent_obj);
                                     objects.sld_brightness = obj;
                                     lv_obj_set_pos(obj, 0, 0);
-                                    lv_obj_set_size(obj, LV_PCT(100), 16);
+                                    lv_obj_set_size(obj, LV_PCT(100), 12);
                                     lv_slider_set_range(obj, 1, 10);
                                     lv_slider_set_value(obj, 5, LV_ANIM_OFF);
                                     lv_obj_add_event_cb(obj, event_handler_cb_config_sld_brightness, LV_EVENT_ALL, flowState);
@@ -5830,7 +5830,7 @@ void create_screen_config() {
                                     lv_obj_t *obj = lv_slider_create(parent_obj);
                                     objects.sld_delay = obj;
                                     lv_obj_set_pos(obj, 0, 0);
-                                    lv_obj_set_size(obj, LV_PCT(100), 16);
+                                    lv_obj_set_size(obj, LV_PCT(100), 12);
                                     lv_slider_set_range(obj, 2, 20);
                                     lv_slider_set_value(obj, 10, LV_ANIM_OFF);
                                     lv_obj_add_event_cb(obj, event_handler_cb_config_sld_delay, LV_EVENT_ALL, flowState);

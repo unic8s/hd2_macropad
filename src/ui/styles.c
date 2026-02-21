@@ -249,6 +249,10 @@ lv_style_t *get_style_switch_config_MAIN_CHECKED() {
 void init_style_switch_config_KNOB_DEFAULT(lv_style_t *style) {
     lv_style_set_bg_color(style, lv_color_hex(theme_colors[eez_flow_get_selected_theme_index()][0]));
     lv_style_set_radius(style, 4);
+    lv_style_set_pad_top(style, -4);
+    lv_style_set_pad_bottom(style, -4);
+    lv_style_set_pad_left(style, -4);
+    lv_style_set_pad_right(style, -4);
 };
 
 lv_style_t *get_style_switch_config_KNOB_DEFAULT() {

@@ -19581,7 +19581,11 @@
             "KNOB": {
               "DEFAULT": {
                 "bg_color": "colorTheme",
-                "radius": 4
+                "radius": 4,
+                "pad_top": -4,
+                "pad_bottom": -4,
+                "pad_left": -4,
+                "pad_right": -4
               },
               "CHECKED": {
                 "bg_color": "colorActive"

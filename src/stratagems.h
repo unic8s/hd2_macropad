@@ -842,7 +842,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // 67
     // De-escalator
     {
-        {INPUT_LEFT, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
+        {INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0},
         480,
         7.75,
         SHIP_MA,

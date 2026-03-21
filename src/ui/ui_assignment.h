@@ -105,7 +105,10 @@ extern "C"
         SG_BMK,
         SG_BFGL,
         SG_EATL,
-        SG_CQC
+        SG_CQC,
+
+        SG_CRE,
+        SG_GMS
     };
 
     // Assign stratagems index to UI buttons
@@ -138,6 +141,7 @@ extern "C"
         objects.weapons_dt->user_data = (void *)SG_DT;
         objects.weapons_bfgl->user_data = (void *)SG_BFGL;
         objects.weapons_eatl->user_data = (void *)SG_EATL;
+        objects.weapons_cre->user_data = (void *)SG_CRE;
 
         // Backpacks
         objects.backpack_bsb->user_data = (void *)SG_BSB;
@@ -182,6 +186,7 @@ extern "C"
         objects.ground_gm->user_data = (void *)SG_GM;
         objects.ground_gb->user_data = (void *)SG_GB;
         objects.sentry_ls->user_data = (void *)SG_LS;
+        objects.sentry_gms->user_data = (void *)SG_GMS;
 
         // Strikes
         objects.strike120->user_data = (void *)SG_120;

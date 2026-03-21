@@ -56,7 +56,7 @@ enum styleColors
 
 #define MAX_CMD_LENGTH 9
 #define SG_BASE_AMOUNT 17
-#define SG_ITEM_AMOUNT 83
+#define SG_ITEM_AMOUNT 85
 
 void app_main();
 void playbackSound(char *path);

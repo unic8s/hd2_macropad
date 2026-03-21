@@ -1029,7 +1029,31 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
         SND_WEAPON,
         sgBlue,
         &img_bfgl2,
-        SG_BFGL}};
+        SG_BFGL},
+
+    // 83
+    // B/FLAM-80 Cremator
+    {
+        {INPUT_DOWN, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0, 0},
+        480,
+        7.75,
+        SHIP_MA | SHIP_SRP,
+        SND_WEAPON,
+        sgBlue,
+        &img_cre2,
+        SG_CRE},
+
+    // 84
+    // A/GM-17 Gas Mortar Sentry
+    {
+        {INPUT_DOWN, INPUT_UP, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, 0, 0, 0, 0},
+        180,
+        7.75,
+        SHIP_MA | SHIP_SS,
+        SND_WEAPON,
+        sgGreen,
+        &img_gms2,
+        SG_GMS}};
 
 const stratagemBase strategemBaseList[SG_BASE_AMOUNT] = {
     // 0

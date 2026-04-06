@@ -428,6 +428,15 @@
       "userProperties": [],
       "name": "ResetCooldown",
       "implementationType": "native"
+    },
+    {
+      "objID": "786b130d-9fb0-412b-adcc-26f4bf0b40a6",
+      "components": [],
+      "connectionLines": [],
+      "localVariables": [],
+      "userProperties": [],
+      "name": "GameAfterPreset",
+      "implementationType": "native"
     }
   ],
   "userPages": [
@@ -16680,8 +16689,8 @@
                       "type": "LVGLContainerWidget",
                       "left": 0,
                       "top": 0,
-                      "width": 49,
-                      "height": 76,
+                      "width": 100,
+                      "height": 40,
                       "customInputs": [],
                       "customOutputs": [],
                       "style": {
@@ -16702,7 +16711,7 @@
                           "type": "LVGLLabelWidget",
                           "left": 0,
                           "top": 0,
-                          "width": 100,
+                          "width": 193,
                           "height": 16,
                           "customInputs": [],
                           "customOutputs": [],
@@ -16716,7 +16725,7 @@
                           "eventHandlers": [],
                           "leftUnit": "px",
                           "topUnit": "px",
-                          "widthUnit": "%",
+                          "widthUnit": "content",
                           "heightUnit": "content",
                           "children": [],
                           "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
@@ -16805,14 +16814,161 @@
                         "definition": {
                           "MAIN": {
                             "DEFAULT": {
-                              "pad_top": 8,
-                              "pad_bottom": 8,
+                              "pad_top": 4,
+                              "pad_bottom": 4,
+                              "pad_left": 20,
+                              "pad_right": 20,
+                              "pad_column": 0,
+                              "layout": "FLEX",
+                              "flex_main_place": "SPACE_BETWEEN",
+                              "flex_cross_place": "CENTER",
+                              "pad_row": 12
+                            }
+                          }
+                        }
+                      },
+                      "group": "",
+                      "groupIndex": 0
+                    },
+                    {
+                      "objID": "da8e6008-d3d1-4a7e-cff5-9cbe5f589162",
+                      "type": "LVGLContainerWidget",
+                      "left": 0,
+                      "top": 0,
+                      "width": 100,
+                      "height": 40,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "style": {
+                        "objID": "877aa394-cd6f-42e4-a6da-5e5f619959a7",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": []
+                      },
+                      "timeline": [],
+                      "eventHandlers": [],
+                      "leftUnit": "px",
+                      "topUnit": "px",
+                      "widthUnit": "%",
+                      "heightUnit": "content",
+                      "children": [
+                        {
+                          "objID": "bfb0c2a4-5833-477b-b2c3-67ab72174460",
+                          "type": "LVGLLabelWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 293,
+                          "height": 16,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "4fd95c79-f9c3-4ae8-9a71-7f23c0aa0b13",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [],
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "content",
+                          "heightUnit": "content",
+                          "children": [],
+                          "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "localStyles": {
+                            "objID": "d94fe4a6-e0a3-4402-bba5-e39ecd65bb85"
+                          },
+                          "group": "",
+                          "groupIndex": 0,
+                          "text": "Goto game screen after preset selection",
+                          "textType": "literal",
+                          "longMode": "WRAP",
+                          "recolor": false
+                        },
+                        {
+                          "objID": "498e0d63-f729-46fc-be12-3dcbbc7ce8b1",
+                          "type": "LVGLSwitchWidget",
+                          "left": 0,
+                          "top": 0,
+                          "width": 64,
+                          "height": 32,
+                          "customInputs": [],
+                          "customOutputs": [],
+                          "style": {
+                            "objID": "1f7bbb11-968a-4f3f-c226-e21065a59887",
+                            "useStyle": "default",
+                            "conditionalStyles": [],
+                            "childStyles": []
+                          },
+                          "timeline": [],
+                          "eventHandlers": [
+                            {
+                              "objID": "84575e48-5326-410a-da4d-4595f17e5b1c",
+                              "eventName": "VALUE_CHANGED",
+                              "handlerType": "action",
+                              "action": "GameAfterPreset",
+                              "userData": 0
+                            }
+                          ],
+                          "identifier": "ChbGameAfterPreset",
+                          "leftUnit": "px",
+                          "topUnit": "px",
+                          "widthUnit": "px",
+                          "heightUnit": "px",
+                          "children": [],
+                          "widgetFlags": "CHECKABLE|CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_ON_FOCUS|SCROLL_WITH_ARROW|SNAPPABLE",
+                          "hiddenFlagType": "literal",
+                          "clickableFlag": true,
+                          "clickableFlagType": "literal",
+                          "flagScrollbarMode": "",
+                          "flagScrollDirection": "",
+                          "scrollSnapX": "",
+                          "scrollSnapY": "",
+                          "checkedStateType": "literal",
+                          "disabledStateType": "literal",
+                          "states": "",
+                          "useStyle": "SwitchConfig",
+                          "localStyles": {
+                            "objID": "847440f8-752f-4a9a-bb60-b2ba237ef83a"
+                          },
+                          "group": "",
+                          "groupIndex": 0
+                        }
+                      ],
+                      "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+                      "hiddenFlagType": "literal",
+                      "clickableFlag": true,
+                      "clickableFlagType": "literal",
+                      "flagScrollbarMode": "",
+                      "flagScrollDirection": "",
+                      "scrollSnapX": "",
+                      "scrollSnapY": "",
+                      "checkedStateType": "literal",
+                      "disabledStateType": "literal",
+                      "states": "",
+                      "localStyles": {
+                        "objID": "0d837ae3-b087-4ef8-e2bc-5a6bbc2ed53a",
+                        "definition": {
+                          "MAIN": {
+                            "DEFAULT": {
+                              "pad_top": 4,
+                              "pad_bottom": 4,
                               "pad_left": 20,
                               "pad_right": 20,
                               "pad_row": 12,
                               "pad_column": 0,
                               "layout": "FLEX",
-                              "flex_flow": "ROW_WRAP"
+                              "flex_main_place": "SPACE_BETWEEN",
+                              "flex_cross_place": "CENTER"
                             }
                           }
                         }
@@ -16838,7 +16994,8 @@
                     "definition": {
                       "MAIN": {
                         "DEFAULT": {
-                          "pad_row": 16
+                          "pad_row": 0,
+                          "pad_top": 4
                         }
                       }
                     }

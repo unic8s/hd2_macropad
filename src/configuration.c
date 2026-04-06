@@ -19,6 +19,7 @@ extern int screenRotation;
 extern uint8_t keymapIndex;
 extern uint8_t connectionType;
 extern bool manualAutoComplete;
+extern bool gameAfterPreset;
 extern bool showCooldowns;
 
 extern esp_err_t ble_controller_init();
@@ -35,6 +36,7 @@ extern esp_err_t usb_controller_deinit();
 #define CFG_KEY_AUTOCOMPLETE "autoComplete"
 #define CFG_KEY_COOLDOWN "showCooldown"
 #define CFG_KEY_SHIPMODULES "shipModules"
+#define CFG_KEY_GAMEAFTERPRESET  "gamePreset"
 
 // Init configuration from NVS
 esp_err_t initConfig()
@@ -336,6 +338,29 @@ void setAutoComplete(bool enable, bool restore)
     playbackSound(SND_SWITCH);
 }
 
+void setGameAfterPreset(bool enable, bool restore)
+{
+    gameAfterPreset = enable;
+
+    if (restore)
+    {
+        if (enable)
+        {
+            lv_obj_add_state(objects.chb_game_after_preset, LV_STATE_CHECKED);
+        }
+        else
+        {
+            lv_obj_clear_state(objects.chb_game_after_preset, LV_STATE_CHECKED);
+        }
+    }
+    else
+    {
+        setConfig(CFG_KEY_GAMEAFTERPRESET, gameAfterPreset ? 1 : 0);
+    }
+
+    playbackSound(SND_SWITCH);
+}
+
 void setCooldown(bool enable, bool restore)
 {
     showCooldowns = enable;
@@ -454,6 +479,9 @@ void loadConfig()
     uint8_t auto_complete = getConfig(CFG_KEY_AUTOCOMPLETE, 0);
     setAutoComplete(auto_complete == 1, true);
 
+    uint8_t game_after_preset = getConfig(CFG_KEY_GAMEAFTERPRESET, 0);
+    setGameAfterPreset(game_after_preset == 1, true);
+
     uint8_t show_cooldown = getConfig(CFG_KEY_COOLDOWN, 0);
     setCooldown(show_cooldown == 1, true);
 
@@ -507,6 +535,7 @@ void resetConfig()
     setMuted(0, true);
     setKeymap(0, true);
     setAutoComplete(1, true);
+    setGameAfterPreset(1, true);
     setCooldown(0, true);
     setShipModules(true);
 

@@ -44,6 +44,7 @@ lv_timer_t *timerManual = NULL;
 lv_timer_t *timerMsg = NULL;
 bool presetImageMode = false;
 char presetKey[3] = "p0i";
+extern bool gameAfterPreset;
 
 const lv_img_dsc_t *presetImageList[] = {
 	&img_icon1,
@@ -77,8 +78,7 @@ const lv_img_dsc_t *manualArrowList[] = {
 // HID input mask for special keys
 #define INPUT_CTRL_MASK 1 // 1 CTRL left
 
-// Goto game screen
-void action_goto_game(lv_event_t *e)
+void initGame()
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
@@ -125,6 +125,12 @@ void action_goto_game(lv_event_t *e)
 			lv_obj_add_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
 		}
 	}
+}
+
+// Goto game screen
+void action_goto_game(lv_event_t *e)
+{
+	initGame();
 
 	lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 0, false);
 }
@@ -579,7 +585,18 @@ void action_get_preset(lv_event_t *e)
 	}
 	else
 	{
-		showMsgBox("Preset\nloaded");
+		if (gameAfterPreset)
+		{
+			initGame();
+
+			lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
+
+			return;
+		}
+		else
+		{
+			showMsgBox("Preset\nloaded");
+		}
 	}
 
 	lv_scr_load_anim(objects.setup, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);

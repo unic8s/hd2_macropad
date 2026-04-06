@@ -19,6 +19,7 @@ extern "C"
 	void setConnectivity(uint8_t index, bool restore);
 	void setKeymap(uint8_t index, bool restore);
 	void setAutoComplete(bool enable, bool restore);
+	void setGameAfterPreset(bool enable, bool restore);
 	void setCooldown(bool enable, bool restore);
 	void setShipModules(bool restore);
 	void loadConfig();

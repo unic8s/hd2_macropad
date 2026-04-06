@@ -208,6 +208,7 @@ typedef struct _objects_t {
     lv_obj_t *chb_ship_mod_rls;
     lv_obj_t *chb_ship_mod_dt;
     lv_obj_t *chb_auto_complete;
+    lv_obj_t *chb_game_after_preset;
     lv_obj_t *obj46;
     lv_obj_t *obj47;
     lv_obj_t *obj48;

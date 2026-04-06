@@ -124,3 +124,10 @@ void action_init_hid(lv_event_t *e)
 {
 	initConnection();
 }
+
+void action_game_after_preset(lv_event_t *e)
+{
+	bool gameAfterPreset = lv_obj_get_state(e->current_target) & LV_STATE_CHECKED ? true : false;
+
+	setGameAfterPreset(gameAfterPreset, false);
+}

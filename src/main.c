@@ -49,6 +49,7 @@ int inputDelay = 100;
 
 bool manualAutoComplete = true;
 bool showCooldowns = false;
+bool gameAfterPreset = false;
 
 // Rotation of screen (default: 90)
 int screenRotation = LV_DISP_ROT_90;

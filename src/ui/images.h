@@ -257,6 +257,12 @@ extern const lv_img_dsc_t img_gms2;
 extern const lv_img_dsc_t img_cre2;
 extern const lv_img_dsc_t img_gms1;
 extern const lv_img_dsc_t img_cre1;
+extern const lv_img_dsc_t img_bs1;
+extern const lv_img_dsc_t img_les1;
+extern const lv_img_dsc_t img_btes1;
+extern const lv_img_dsc_t img_bs2;
+extern const lv_img_dsc_t img_les2;
+extern const lv_img_dsc_t img_btes2;
 
 #ifndef EXT_IMG_DESC_T
 #define EXT_IMG_DESC_T
@@ -266,7 +272,7 @@ typedef struct _ext_img_desc_t {
 } ext_img_desc_t;
 #endif
 
-extern const ext_img_desc_t images[250];
+extern const ext_img_desc_t images[256];
 
 
 #ifdef __cplusplus

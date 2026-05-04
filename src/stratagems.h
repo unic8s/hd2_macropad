@@ -1050,10 +1050,46 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
         180,
         7.75,
         SHIP_MA | SHIP_SS,
-        SND_WEAPON,
+        SND_SENTRY,
         sgGreen,
         &img_gms2,
-        SG_GMS}};
+        SG_GMS},
+
+    // 85
+    // MGX-42 Bullet Storm
+    {
+        {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, 0, 0, 0},
+        480,
+        7.75,
+        SHIP_MA,
+        SND_WEAPON,
+        sgBlue,
+        &img_bs2,
+        SG_BS},
+
+    // 86
+    // EXO-51 Lumberer Exosuit
+    {
+        {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_RIGHT, INPUT_LEFT, INPUT_UP, 0, 0},
+        600,
+        10.5,
+        SHIP_MA,
+        SND_SUPPLY,
+        sgBlue,
+        &img_les2,
+        SG_LES},
+
+    // 87
+    // EXO-55 Breakthrough Exosuit
+    {
+        {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_UP, 0, 0},
+        600,
+        10.5,
+        SHIP_MA,
+        SND_SUPPLY,
+        sgBlue,
+        &img_btes2,
+        SG_BTES}};
 
 const stratagemBase strategemBaseList[SG_BASE_AMOUNT] = {
     // 0

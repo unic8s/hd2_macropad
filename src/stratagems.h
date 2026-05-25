@@ -1059,8 +1059,8 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // MGX-42 Bullet Storm
     {
         {INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_UP, INPUT_LEFT, 0, 0, 0},
-        480,
-        7.75,
+        70,
+        6.75,
         SHIP_MA,
         SND_WEAPON,
         sgBlue,

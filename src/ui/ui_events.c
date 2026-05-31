@@ -20,7 +20,7 @@
 const char *TAG_EVT = "Events";
 
 // User button list
-lv_obj_t *buttons[MAX_USER_STRATAGEMS];
+lv_obj_t *gameButtons[MAX_USER_STRATAGEMS];
 // Stratagem list index of user buttons
 int indices[MAX_USER_STRATAGEMS];
 // Stratagem list index of user buttons
@@ -39,6 +39,7 @@ int manualSequence[MAX_CMD_LENGTH] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 int manualMatch = -1;
 extern bool manualAutoComplete;
 extern bool showCooldowns;
+bool userSGautoComplete = false;
 lv_timer_t *timerManual = NULL;
 
 lv_timer_t *timerMsg = NULL;
@@ -82,9 +83,7 @@ void initGame()
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		const lv_obj_t *button = buttons[c];
-		const lv_img_dsc_t *bgImg = lv_obj_get_style_bg_img_src(button, LV_PART_MAIN | LV_STATE_DEFAULT);
-		const bool configured = buttons[c] != NULL;
+		const bool configured = gameButtons[c] != NULL;
 		lv_obj_t *targetButton = objects.custom_stratagem1;
 
 		bool useHiResIcon = true;
@@ -112,12 +111,12 @@ void initGame()
 
 		uint8_t itemIndex = indices[c];
 		stratagemItem item = strategemItemList[itemIndex];
-		const lv_img_dsc_t *hires = useHiResIcon ? item.imgHiRes : bgImg;
+		const lv_img_dsc_t *imgSrc = useHiResIcon ? item.imgHiRes : item.imgMeRes;
 
 		if (configured)
 		{
 			lv_obj_set_style_border_color(targetButton, lv_color_hex(item.color), LV_PART_MAIN | LV_STATE_DEFAULT);
-			lv_obj_set_style_bg_img_src(targetButton, hires, LV_PART_MAIN | LV_STATE_DEFAULT);
+			lv_obj_set_style_bg_img_src(targetButton, imgSrc, LV_PART_MAIN | LV_STATE_DEFAULT);
 			lv_obj_clear_flag(targetButton, LV_OBJ_FLAG_HIDDEN);
 		}
 		else
@@ -131,8 +130,130 @@ void initGame()
 void action_goto_game(lv_event_t *e)
 {
 	initGame();
+}
 
-	lv_scr_load_anim(objects.game, LV_SCR_LOAD_ANIM_MOVE_LEFT, 1000, 0, false);
+void action_goto_manual(lv_event_t *e)
+{
+	const lv_obj_t *manualSeqs[] = {
+		objects.cnt_usr_stg_seq1,
+		objects.cnt_usr_stg_seq2,
+		objects.cnt_usr_stg_seq3,
+		objects.cnt_usr_stg_seq4,
+		objects.cnt_usr_stg_seq5,
+		objects.cnt_usr_stg_seq6};
+
+	const lv_obj_t *manualImages[] = {
+		objects.seq_ico1,
+		objects.seq_ico2,
+		objects.seq_ico3,
+		objects.seq_ico4,
+		objects.seq_ico5,
+		objects.seq_ico6};
+
+	lv_obj_t *manualCmdSeq1[] = {objects.seq_cmd1_1, objects.seq_cmd1_2, objects.seq_cmd1_3, objects.seq_cmd1_4, objects.seq_cmd1_5, objects.seq_cmd1_6, objects.seq_cmd1_7, objects.seq_cmd1_8, objects.seq_cmd1_9};
+	lv_obj_t *manualCmdSeq2[] = {objects.seq_cmd2_1, objects.seq_cmd2_2, objects.seq_cmd2_3, objects.seq_cmd2_4, objects.seq_cmd2_5, objects.seq_cmd2_6, objects.seq_cmd2_7, objects.seq_cmd2_8, objects.seq_cmd2_9};
+	lv_obj_t *manualCmdSeq3[] = {objects.seq_cmd3_1, objects.seq_cmd3_2, objects.seq_cmd3_3, objects.seq_cmd3_4, objects.seq_cmd3_5, objects.seq_cmd3_6, objects.seq_cmd3_7, objects.seq_cmd3_8, objects.seq_cmd3_9};
+	lv_obj_t *manualCmdSeq4[] = {objects.seq_cmd4_1, objects.seq_cmd4_2, objects.seq_cmd4_3, objects.seq_cmd4_4, objects.seq_cmd4_5, objects.seq_cmd4_6, objects.seq_cmd4_7, objects.seq_cmd4_8, objects.seq_cmd4_9};
+	lv_obj_t *manualCmdSeq5[] = {objects.seq_cmd5_1, objects.seq_cmd5_2, objects.seq_cmd5_3, objects.seq_cmd5_4, objects.seq_cmd5_5, objects.seq_cmd5_6, objects.seq_cmd5_7, objects.seq_cmd5_8, objects.seq_cmd5_9};
+	lv_obj_t *manualCmdSeq6[] = {objects.seq_cmd6_1, objects.seq_cmd6_2, objects.seq_cmd6_3, objects.seq_cmd6_4, objects.seq_cmd6_5, objects.seq_cmd6_6, objects.seq_cmd6_7, objects.seq_cmd6_8, objects.seq_cmd6_9};
+
+	uint8_t configureCount = 0;
+
+	for (uint8_t c1 = 0; c1 < MAX_USER_STRATAGEMS; c1++)
+	{
+		lv_obj_t *cntSeq = manualSeqs[c1];
+		lv_obj_t *imgSeq = manualImages[c1];
+
+		const bool configured = gameButtons[c1] != NULL;
+
+		if (configured)
+		{
+			configureCount++;
+
+			const uint8_t itemIndex = indices[c1];
+			const stratagemItem item = strategemItemList[itemIndex];
+
+			lv_img_set_src(imgSeq, item.imgLoRes);
+
+			lv_obj_clear_flag(cntSeq, LV_OBJ_FLAG_HIDDEN);
+
+			lv_obj_t **targetCmdSeq = manualCmdSeq1;
+
+			switch (c1)
+			{
+			case 1:
+				targetCmdSeq = manualCmdSeq2;
+				break;
+			case 2:
+				targetCmdSeq = manualCmdSeq3;
+				break;
+			case 3:
+				targetCmdSeq = manualCmdSeq4;
+				break;
+			case 4:
+				targetCmdSeq = manualCmdSeq5;
+				break;
+			case 5:
+				targetCmdSeq = manualCmdSeq6;
+				break;
+			}
+
+			for (uint8_t c2 = 0; c2 < MAX_CMD_LENGTH; c2++)
+			{
+				const uint8_t dirCmd = item.sequence[c2];
+				lv_obj_t *seqArrowImg = targetCmdSeq[c2];
+
+				if (dirCmd == 0)
+				{
+					lv_obj_add_flag(seqArrowImg, LV_OBJ_FLAG_HIDDEN);
+				}
+				else
+				{
+					const lv_img_dsc_t *arrowImg = &img_stratagem_arrow_up3;
+
+					switch (dirCmd)
+					{
+					case INPUT_DOWN:
+						arrowImg = &img_stratagem_arrow_down3;
+						break;
+					case INPUT_LEFT:
+						arrowImg = &img_stratagem_arrow_left3;
+						break;
+					case INPUT_RIGHT:
+						arrowImg = &img_stratagem_arrow_right3;
+						break;
+					}
+
+					lv_img_set_src(seqArrowImg, arrowImg);
+
+					lv_obj_clear_flag(seqArrowImg, LV_OBJ_FLAG_HIDDEN);
+				}
+			}
+		}
+		else
+		{
+			lv_obj_add_flag(cntSeq, LV_OBJ_FLAG_HIDDEN);
+		}
+	}
+
+	if (configureCount > 0)
+	{
+		userSGautoComplete = true;
+
+		lv_obj_add_flag(objects.manual_preview_item, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(objects.input_seq, LV_OBJ_FLAG_HIDDEN);
+
+		lv_obj_clear_flag(objects.cnt_usr_stg_lst, LV_OBJ_FLAG_HIDDEN);
+	}
+	else
+	{
+		userSGautoComplete = false;
+
+		lv_obj_clear_flag(objects.manual_preview_item, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(objects.input_seq, LV_OBJ_FLAG_HIDDEN);
+
+		lv_obj_add_flag(objects.cnt_usr_stg_lst, LV_OBJ_FLAG_HIDDEN);
+	}
 }
 
 void action_goto_setup(lv_event_t *e)
@@ -149,13 +270,13 @@ void updateStratagemSelection()
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS - 1; c++)
 	{
-		if (buttons[c] == NULL)
+		if (gameButtons[c] == NULL)
 		{
-			buttons[c] = buttons[c + 1];
+			gameButtons[c] = gameButtons[c + 1];
 			indices[c] = indices[c + 1];
 			types[c] = types[c + 1];
 
-			buttons[c + 1] = NULL;
+			gameButtons[c + 1] = NULL;
 			indices[c + 1] = -1;
 			types[c + 1] = -1;
 		}
@@ -163,7 +284,7 @@ void updateStratagemSelection()
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		if (buttons[c] != NULL)
+		if (gameButtons[c] != NULL)
 		{
 			strategemsAmount++;
 		}
@@ -206,9 +327,9 @@ void action_deselect_stratagem(lv_event_t *e)
 {
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		if (buttons[c] == e->current_target)
+		if (gameButtons[c] == e->current_target)
 		{
-			buttons[c] = NULL;
+			gameButtons[c] = NULL;
 			indices[c] = -1;
 			types[c] = -1;
 		}
@@ -226,7 +347,7 @@ void action_select_stratagem(lv_event_t *e)
 	{
 		for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 		{
-			if (buttons[c] == NULL)
+			if (gameButtons[c] == NULL)
 			{
 				enum stratagemType type = (enum stratagemType)lv_obj_get_user_data(e->current_target);
 				int index = -1;
@@ -242,7 +363,7 @@ void action_select_stratagem(lv_event_t *e)
 					}
 				}
 
-				buttons[c] = e->current_target;
+				gameButtons[c] = e->current_target;
 				indices[c] = index;
 				types[c] = type;
 				break;
@@ -271,10 +392,10 @@ void action_reset_stratagems(lv_event_t *e)
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
-		if (buttons[c] != NULL)
+		if (gameButtons[c] != NULL)
 		{
-			lv_obj_clear_state(buttons[c], LV_STATE_CHECKED);
-			buttons[c] = NULL;
+			lv_obj_clear_state(gameButtons[c], LV_STATE_CHECKED);
+			gameButtons[c] = NULL;
 			indices[c] = -1;
 			types[c] = -1;
 		}
@@ -320,7 +441,7 @@ void _executeUserStratagem(uint8_t index)
 
 	if (showCooldowns)
 	{
-		shipModuleDetails shipModuleList[MAX_SHIP_MODULES] = {
+		const shipModuleDetails shipModuleList[MAX_SHIP_MODULES] = {
 			{SHIP_LVC, objects.chb_ship_mod_lvc, 0, 0.5, 0.0},
 			{SHIP_ZBL, objects.chb_ship_mod_zbl, 1, 0.1, 0.0},
 			{SHIP_HC, objects.chb_ship_mod_hc, 2, 0.1, 0.0},
@@ -504,6 +625,16 @@ void action_get_preset(lv_event_t *e)
 
 	action_reset_stratagems(NULL);
 
+	lv_obj_t *lists[8] = {
+			objects.tab_rifle,
+			objects.tab_special,
+			objects.tab_backpack,
+			objects.tab_supply,
+			objects.tab_sentry,
+			objects.tab_ground,
+			objects.tab_strike,
+			objects.tab_eagle};
+
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
 		char *key = resolvePresetKey(presetKey[1], c);
@@ -518,16 +649,6 @@ void action_get_preset(lv_event_t *e)
 
 		uint8_t listIndex = 0;
 		uint16_t childIndex = 0;
-
-		lv_obj_t *lists[8] = {
-			objects.tab_rifle,
-			objects.tab_special,
-			objects.tab_backpack,
-			objects.tab_supply,
-			objects.tab_sentry,
-			objects.tab_ground,
-			objects.tab_strike,
-			objects.tab_eagle};
 
 		while (1)
 		{
@@ -564,7 +685,7 @@ void action_get_preset(lv_event_t *e)
 					}
 				}
 
-				buttons[c] = child;
+				gameButtons[c] = child;
 				indices[c] = index;
 
 				lv_obj_add_state(child, LV_STATE_CHECKED);
@@ -772,8 +893,15 @@ void action_manual_execute(lv_event_t *e)
 	{
 		manualIndex++;
 
-		lookupManualSequence();
-		updateManualSequence();
+		if (!userSGautoComplete)
+		{
+			lookupManualSequence();
+			updateManualSequence();
+		}
+		else
+		{
+			mapManualSequence();
+		}
 	}
 	else
 	{
@@ -801,12 +929,22 @@ void finalizeManualExecution()
 		if (manualList == 0)
 		{
 			stratagemItem item = strategemItemList[manualMatch];
+
 			sequence = item.sequence;
 			soundPath = item.soundPath;
 		}
-		else
+		else if (manualList == 1)
 		{
 			stratagemBase item = strategemBaseList[manualMatch];
+
+			sequence = item.sequence;
+			soundPath = item.soundPath;
+		}
+		else if (manualList == 2)
+		{
+			const uint8_t itemIndex = indices[manualMatch];
+			const stratagemItem item = strategemItemList[itemIndex];
+
 			sequence = item.sequence;
 			soundPath = item.soundPath;
 		}
@@ -824,7 +962,14 @@ void finalizeManualExecution()
 
 	lv_obj_set_style_bg_img_src(objects.manual_preview_item, "", LV_PART_MAIN | LV_STATE_DEFAULT);
 
-	updateManualSequence();
+	if (!userSGautoComplete)
+	{
+		updateManualSequence();
+	}
+	else
+	{
+		resetAllManSeqs();
+	}
 }
 
 void updateManualSequence()
@@ -945,6 +1090,140 @@ void lookupManualSequence()
 		manualMatch = -1;
 
 		lv_obj_set_style_bg_img_src(objects.manual_preview_item, "", LV_PART_MAIN | LV_STATE_DEFAULT);
+	}
+}
+
+void mapManualSequence()
+{
+	lv_obj_t *manualCmdSeq1[] = {objects.seq_cmd1_1, objects.seq_cmd1_2, objects.seq_cmd1_3, objects.seq_cmd1_4, objects.seq_cmd1_5, objects.seq_cmd1_6, objects.seq_cmd1_7, objects.seq_cmd1_8, objects.seq_cmd1_9};
+	lv_obj_t *manualCmdSeq2[] = {objects.seq_cmd2_1, objects.seq_cmd2_2, objects.seq_cmd2_3, objects.seq_cmd2_4, objects.seq_cmd2_5, objects.seq_cmd2_6, objects.seq_cmd2_7, objects.seq_cmd2_8, objects.seq_cmd2_9};
+	lv_obj_t *manualCmdSeq3[] = {objects.seq_cmd3_1, objects.seq_cmd3_2, objects.seq_cmd3_3, objects.seq_cmd3_4, objects.seq_cmd3_5, objects.seq_cmd3_6, objects.seq_cmd3_7, objects.seq_cmd3_8, objects.seq_cmd3_9};
+	lv_obj_t *manualCmdSeq4[] = {objects.seq_cmd4_1, objects.seq_cmd4_2, objects.seq_cmd4_3, objects.seq_cmd4_4, objects.seq_cmd4_5, objects.seq_cmd4_6, objects.seq_cmd4_7, objects.seq_cmd4_8, objects.seq_cmd4_9};
+	lv_obj_t *manualCmdSeq5[] = {objects.seq_cmd5_1, objects.seq_cmd5_2, objects.seq_cmd5_3, objects.seq_cmd5_4, objects.seq_cmd5_5, objects.seq_cmd5_6, objects.seq_cmd5_7, objects.seq_cmd5_8, objects.seq_cmd5_9};
+	lv_obj_t *manualCmdSeq6[] = {objects.seq_cmd6_1, objects.seq_cmd6_2, objects.seq_cmd6_3, objects.seq_cmd6_4, objects.seq_cmd6_5, objects.seq_cmd6_6, objects.seq_cmd6_7, objects.seq_cmd6_8, objects.seq_cmd6_9};
+
+	const lv_obj_t *manualImages[] = {
+		objects.seq_ico1,
+		objects.seq_ico2,
+		objects.seq_ico3,
+		objects.seq_ico4,
+		objects.seq_ico5,
+		objects.seq_ico6};
+
+	resetAllManSeqs();
+
+	for (uint8_t c1 = 0; c1 < MAX_USER_STRATAGEMS; c1++)
+	{
+		const bool configured = gameButtons[c1] != NULL;
+
+		if (!configured)
+		{
+			return;
+		}
+
+		const uint8_t itemIndex = indices[c1];
+		const stratagemItem item = strategemItemList[itemIndex];
+
+		lv_obj_t **targetCmdSeq = manualCmdSeq1;
+
+		switch (c1)
+		{
+		case 1:
+			targetCmdSeq = manualCmdSeq2;
+			break;
+		case 2:
+			targetCmdSeq = manualCmdSeq3;
+			break;
+		case 3:
+			targetCmdSeq = manualCmdSeq4;
+			break;
+		case 4:
+			targetCmdSeq = manualCmdSeq5;
+			break;
+		case 5:
+			targetCmdSeq = manualCmdSeq6;
+			break;
+		}
+
+		bool match = true;
+		bool matchComplete = false;
+
+		setManualSequence(targetCmdSeq, 91);
+
+		for (uint8_t c2 = 0; c2 < manualIndex; c2++)
+		{
+			const uint8_t manualStep = manualSequence[c2];
+			matchComplete = c2 < MAX_CMD_LENGTH && item.sequence[c2 + 1] == 0;
+
+			if (item.sequence[c2] != manualStep)
+			{
+				match = false;
+
+				lv_obj_t *imgIco = manualImages[c1];
+
+				lv_obj_set_style_opa(imgIco, 91, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+				setManualSequence(targetCmdSeq, 91);
+				break;
+			}
+
+			lv_obj_t *imgArrow = targetCmdSeq[c2];
+
+			lv_obj_set_style_opa(imgArrow, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+		}
+
+		if (!manualAutoComplete && !matchComplete)
+		{
+			match = false;
+		}
+
+		if (match)
+		{
+			manualList = 2;
+			manualMatch = c1;
+		}
+	}
+}
+
+void resetAllManSeqs()
+{
+	lv_obj_t *manualCmdSeq1[] = {objects.seq_cmd1_1, objects.seq_cmd1_2, objects.seq_cmd1_3, objects.seq_cmd1_4, objects.seq_cmd1_5, objects.seq_cmd1_6, objects.seq_cmd1_7, objects.seq_cmd1_8, objects.seq_cmd1_9};
+	lv_obj_t *manualCmdSeq2[] = {objects.seq_cmd2_1, objects.seq_cmd2_2, objects.seq_cmd2_3, objects.seq_cmd2_4, objects.seq_cmd2_5, objects.seq_cmd2_6, objects.seq_cmd2_7, objects.seq_cmd2_8, objects.seq_cmd2_9};
+	lv_obj_t *manualCmdSeq3[] = {objects.seq_cmd3_1, objects.seq_cmd3_2, objects.seq_cmd3_3, objects.seq_cmd3_4, objects.seq_cmd3_5, objects.seq_cmd3_6, objects.seq_cmd3_7, objects.seq_cmd3_8, objects.seq_cmd3_9};
+	lv_obj_t *manualCmdSeq4[] = {objects.seq_cmd4_1, objects.seq_cmd4_2, objects.seq_cmd4_3, objects.seq_cmd4_4, objects.seq_cmd4_5, objects.seq_cmd4_6, objects.seq_cmd4_7, objects.seq_cmd4_8, objects.seq_cmd4_9};
+	lv_obj_t *manualCmdSeq5[] = {objects.seq_cmd5_1, objects.seq_cmd5_2, objects.seq_cmd5_3, objects.seq_cmd5_4, objects.seq_cmd5_5, objects.seq_cmd5_6, objects.seq_cmd5_7, objects.seq_cmd5_8, objects.seq_cmd5_9};
+	lv_obj_t *manualCmdSeq6[] = {objects.seq_cmd6_1, objects.seq_cmd6_2, objects.seq_cmd6_3, objects.seq_cmd6_4, objects.seq_cmd6_5, objects.seq_cmd6_6, objects.seq_cmd6_7, objects.seq_cmd6_8, objects.seq_cmd6_9};
+
+	setManualSequence(manualCmdSeq1, 255);
+	setManualSequence(manualCmdSeq2, 255);
+	setManualSequence(manualCmdSeq3, 255);
+	setManualSequence(manualCmdSeq4, 255);
+	setManualSequence(manualCmdSeq5, 255);
+	setManualSequence(manualCmdSeq6, 255);
+
+	const lv_obj_t *manualImages[] = {
+		objects.seq_ico1,
+		objects.seq_ico2,
+		objects.seq_ico3,
+		objects.seq_ico4,
+		objects.seq_ico5,
+		objects.seq_ico6};
+
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
+	{
+		lv_obj_t *imgIco = manualImages[c];
+
+		lv_obj_set_style_opa(imgIco, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+	}
+}
+
+void setManualSequence(lv_obj_t *manualCmdSeq[], uint8_t opacity)
+{
+	for (uint8_t c = 0; c < MAX_CMD_LENGTH; c++)
+	{
+		lv_obj_t *imgArrow = manualCmdSeq[c];
+
+		lv_obj_set_style_opa(imgArrow, opacity, LV_PART_MAIN | LV_STATE_DEFAULT);
 	}
 }
 

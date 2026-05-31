@@ -468,6 +468,34 @@ void remove_style_dropdown_config(lv_obj_t *obj) {
 };
 
 //
+// Style: ArrowSequence
+//
+
+void init_style_arrow_sequence_MAIN_DEFAULT(lv_style_t *style) {
+    lv_style_set_opa(style, 255);
+};
+
+lv_style_t *get_style_arrow_sequence_MAIN_DEFAULT() {
+    static lv_style_t *style;
+    if (!style) {
+        style = lv_mem_alloc(sizeof(lv_style_t));
+        lv_style_init(style);
+        init_style_arrow_sequence_MAIN_DEFAULT(style);
+    }
+    return style;
+};
+
+void add_style_arrow_sequence(lv_obj_t *obj) {
+    (void)obj;
+    lv_obj_add_style(obj, get_style_arrow_sequence_MAIN_DEFAULT(), LV_PART_MAIN | LV_STATE_DEFAULT);
+};
+
+void remove_style_arrow_sequence(lv_obj_t *obj) {
+    (void)obj;
+    lv_obj_remove_style(obj, get_style_arrow_sequence_MAIN_DEFAULT(), LV_PART_MAIN | LV_STATE_DEFAULT);
+};
+
+//
 //
 //
 
@@ -482,6 +510,7 @@ void add_style(lv_obj_t *obj, int32_t styleIndex) {
         add_style_label_cooldown,
         add_style_checkbox_config,
         add_style_dropdown_config,
+        add_style_arrow_sequence,
     };
     add_style_funcs[styleIndex](obj);
 }
@@ -497,6 +526,7 @@ void remove_style(lv_obj_t *obj, int32_t styleIndex) {
         remove_style_label_cooldown,
         remove_style_checkbox_config,
         remove_style_dropdown_config,
+        remove_style_arrow_sequence,
     };
     remove_style_funcs[styleIndex](obj);
 }

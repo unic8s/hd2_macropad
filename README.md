@@ -71,7 +71,13 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ### Manual input - if you want to put it on your wrist for cosplayers or more intense experience while diving
 
-![](screens/manual.png)
+#### Simple for a clean loook
+
+![](screens/manual_simple.png)
+
+#### List you selected stratagems and see your inputs get resolved instantly
+
+![](screens/manual_selection.png)
 
 ## Credits and special thanks
 

@@ -1920,7 +1920,7 @@ static void event_handler_cb_setup_obj21(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 121, 0, e);
+        action_reset_stratagems(e);
     }
 }
 
@@ -1931,7 +1931,7 @@ static void event_handler_cb_setup_obj22(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        action_reset_stratagems(e);
+        flowPropagateValueLVGLEvent(flowState, 122, 0, e);
     }
 }
 
@@ -1942,7 +1942,7 @@ static void event_handler_cb_setup_obj23(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 123, 0, e);
+        flowPropagateValueLVGLEvent(flowState, 126, 0, e);
     }
 }
 
@@ -4514,11 +4514,12 @@ void create_screen_setup() {
                 {
                     lv_obj_t *obj = lv_btn_create(parent_obj);
                     objects.obj21 = obj;
-                    lv_obj_set_pos(obj, 41, -138);
+                    lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 76, LV_PCT(100));
                     lv_obj_add_event_cb(obj, event_handler_cb_setup_obj21, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
-                    lv_obj_set_style_bg_img_src(obj, &img_icon_arrow_keys, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_MID, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_bg_img_src(obj, &img_icon_clear, LV_PART_MAIN | LV_STATE_DEFAULT);
                 }
                 {
                     lv_obj_t *obj = lv_btn_create(parent_obj);
@@ -4526,16 +4527,6 @@ void create_screen_setup() {
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, 76, LV_PCT(100));
                     lv_obj_add_event_cb(obj, event_handler_cb_setup_obj22, LV_EVENT_ALL, flowState);
-                    add_style_button_std(obj);
-                    lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_MID, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_obj_set_style_bg_img_src(obj, &img_icon_clear, LV_PART_MAIN | LV_STATE_DEFAULT);
-                }
-                {
-                    lv_obj_t *obj = lv_btn_create(parent_obj);
-                    objects.obj23 = obj;
-                    lv_obj_set_pos(obj, 0, 0);
-                    lv_obj_set_size(obj, 76, LV_PCT(100));
-                    lv_obj_add_event_cb(obj, event_handler_cb_setup_obj23, LV_EVENT_ALL, flowState);
                     add_style_button_std(obj);
                     lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_MID, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_bg_img_src(obj, &img_icon_selection, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -4580,6 +4571,15 @@ void create_screen_setup() {
                             lv_label_set_text(obj, "0 / 6");
                         }
                     }
+                }
+                {
+                    lv_obj_t *obj = lv_btn_create(parent_obj);
+                    objects.obj23 = obj;
+                    lv_obj_set_pos(obj, 41, -138);
+                    lv_obj_set_size(obj, 76, LV_PCT(100));
+                    lv_obj_add_event_cb(obj, event_handler_cb_setup_obj23, LV_EVENT_ALL, flowState);
+                    add_style_button_std(obj);
+                    lv_obj_set_style_bg_img_src(obj, &img_icon_arrow_keys, LV_PART_MAIN | LV_STATE_DEFAULT);
                 }
                 {
                     lv_obj_t *obj = lv_btn_create(parent_obj);
@@ -6816,21 +6816,24 @@ void create_screen_manual() {
             // manualPreviewItem
             lv_obj_t *obj = lv_obj_create(parent_obj);
             objects.manual_preview_item = obj;
-            lv_obj_set_pos(obj, -4, 4);
+            lv_obj_set_pos(obj, 68, 0);
             lv_obj_set_size(obj, 116, 116);
             lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_add_flag(obj, LV_OBJ_FLAG_HIDDEN);
             lv_obj_clear_flag(obj, LV_OBJ_FLAG_CLICKABLE);
-            lv_obj_set_style_align(obj, LV_ALIGN_TOP_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_align(obj, LV_ALIGN_LEFT_MID, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_border_color(obj, lv_color_hex(0xff333333), LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_border_opa(obj, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_border_width(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
         }
         {
             lv_obj_t *obj = lv_obj_create(parent_obj);
-            lv_obj_set_pos(obj, 0, 0);
+            lv_obj_set_pos(obj, -8, 0);
             lv_obj_set_size(obj, 220, LV_SIZE_CONTENT);
             lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6845,7 +6848,7 @@ void create_screen_manual() {
             lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW_WRAP, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_row(obj, -4, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_pad_column(obj, -4, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_align(obj, LV_ALIGN_RIGHT_MID, LV_PART_MAIN | LV_STATE_DEFAULT);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -6943,7 +6946,9 @@ void create_screen_manual() {
             }
         }
         {
+            // InputSeq
             lv_obj_t *obj = lv_obj_create(parent_obj);
+            objects.input_seq = obj;
             lv_obj_set_pos(obj, 8, 8);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, 32);
             lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -6953,12 +6958,13 @@ void create_screen_manual() {
             lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_add_flag(obj, LV_OBJ_FLAG_OVERFLOW_VISIBLE);
+            lv_obj_add_flag(obj, LV_OBJ_FLAG_OVERFLOW_VISIBLE|LV_OBJ_FLAG_HIDDEN);
+            lv_obj_clear_flag(obj, LV_OBJ_FLAG_CLICKABLE);
             lv_obj_set_style_align(obj, LV_ALIGN_TOP_LEFT, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_flex_main_place(obj, LV_FLEX_ALIGN_START, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_flex_track_place(obj, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_pad_column(obj, 8, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_column(obj, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -7040,12 +7046,698 @@ void create_screen_manual() {
         {
             lv_obj_t *obj = lv_btn_create(parent_obj);
             objects.obj57 = obj;
-            lv_obj_set_pos(obj, 2, -2);
+            lv_obj_set_pos(obj, -2, -2);
             lv_obj_set_size(obj, 76, 38);
             lv_obj_add_event_cb(obj, event_handler_cb_manual_obj57, LV_EVENT_ALL, flowState);
             add_style_button_std(obj);
-            lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_LEFT, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_align(obj, LV_ALIGN_BOTTOM_RIGHT, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_bg_img_src(obj, &img_icon_back, LV_PART_MAIN | LV_STATE_DEFAULT);
+        }
+        {
+            // CntUsrStgLst
+            lv_obj_t *obj = lv_obj_create(parent_obj);
+            objects.cnt_usr_stg_lst = obj;
+            lv_obj_set_pos(obj, 0, 0);
+            lv_obj_set_size(obj, 252, LV_PCT(100));
+            lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_top(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_bottom(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_left(obj, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_right(obj, 2, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_COLUMN, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_pad_row(obj, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    // CntUsrStgSeq1
+                    lv_obj_t *obj = lv_obj_create(parent_obj);
+                    objects.cnt_usr_stg_seq1 = obj;
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
+                    lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_cross_place(obj, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_column(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // SeqIco1
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_ico1 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, 48, 48);
+                            lv_img_set_src(obj, &img_1203);
+                        }
+                        {
+                            // SeqCmd1_1
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd1_1 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                            lv_obj_set_style_pad_left(obj, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+                        }
+                        {
+                            // SeqCmd1_2
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd1_2 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd1_3
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd1_3 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd1_4
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd1_4 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd1_5
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd1_5 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd1_6
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd1_6 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd1_7
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd1_7 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd1_8
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd1_8 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd1_9
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd1_9 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                    }
+                }
+                {
+                    // CntUsrStgSeq2
+                    lv_obj_t *obj = lv_obj_create(parent_obj);
+                    objects.cnt_usr_stg_seq2 = obj;
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
+                    lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_cross_place(obj, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_column(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // SeqIco2
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_ico2 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, 48, 48);
+                            lv_img_set_src(obj, &img_3803);
+                        }
+                        {
+                            // SeqCmd2_1
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd2_1 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                            lv_obj_set_style_pad_left(obj, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+                        }
+                        {
+                            // SeqCmd2_2
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd2_2 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd2_3
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd2_3 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd2_4
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd2_4 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd2_5
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd2_5 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd2_6
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd2_6 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd2_7
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd2_7 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd2_8
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd2_8 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd2_9
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd2_9 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                    }
+                }
+                {
+                    // CntUsrStgSeq3
+                    lv_obj_t *obj = lv_obj_create(parent_obj);
+                    objects.cnt_usr_stg_seq3 = obj;
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
+                    lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_cross_place(obj, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_column(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // SeqIco3
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_ico3 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, 48, 48);
+                            lv_img_set_src(obj, &img_ac3);
+                        }
+                        {
+                            // SeqCmd3_1
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd3_1 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                            lv_obj_set_style_pad_left(obj, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+                        }
+                        {
+                            // SeqCmd3_2
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd3_2 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd3_3
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd3_3 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd3_4
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd3_4 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd3_5
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd3_5 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd3_6
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd3_6 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd3_7
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd3_7 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd3_8
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd3_8 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd3_9
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd3_9 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                    }
+                }
+                {
+                    // CntUsrStgSeq4
+                    lv_obj_t *obj = lv_obj_create(parent_obj);
+                    objects.cnt_usr_stg_seq4 = obj;
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
+                    lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_cross_place(obj, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_column(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // SeqIco4
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_ico4 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, 48, 48);
+                            lv_img_set_src(obj, &img_acs3);
+                        }
+                        {
+                            // SeqCmd4_1
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd4_1 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                            lv_obj_set_style_pad_left(obj, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+                        }
+                        {
+                            // SeqCmd4_2
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd4_2 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd4_3
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd4_3 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd4_4
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd4_4 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd4_5
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd4_5 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd4_6
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd4_6 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd4_7
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd4_7 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd4_8
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd4_8 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd4_9
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd4_9 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                    }
+                }
+                {
+                    // CntUsrStgSeq5
+                    lv_obj_t *obj = lv_obj_create(parent_obj);
+                    objects.cnt_usr_stg_seq5 = obj;
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
+                    lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_cross_place(obj, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_column(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // SeqIco5
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_ico5 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, 48, 48);
+                            lv_img_set_src(obj, &img_amr3);
+                        }
+                        {
+                            // SeqCmd5_1
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd5_1 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                            lv_obj_set_style_pad_left(obj, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+                        }
+                        {
+                            // SeqCmd5_2
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd5_2 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd5_3
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd5_3 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd5_4
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd5_4 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd5_5
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd5_5 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd5_6
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd5_6 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd5_7
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd5_7 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd5_8
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd5_8 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd5_9
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd5_9 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                    }
+                }
+                {
+                    // CntUsrStgSeq6
+                    lv_obj_t *obj = lv_obj_create(parent_obj);
+                    objects.cnt_usr_stg_seq6 = obj;
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
+                    lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_layout(obj, LV_LAYOUT_FLEX, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_flow(obj, LV_FLEX_FLOW_ROW, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_flex_cross_place(obj, LV_FLEX_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_column(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    {
+                        lv_obj_t *parent_obj = obj;
+                        {
+                            // SeqIco6
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_ico6 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, 48, 48);
+                            lv_img_set_src(obj, &img_apm3);
+                        }
+                        {
+                            // SeqCmd6_1
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd6_1 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                            lv_obj_set_style_pad_left(obj, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
+                        }
+                        {
+                            // SeqCmd6_2
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd6_2 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd6_3
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd6_3 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd6_4
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd6_4 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd6_5
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd6_5 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd6_6
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd6_6 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd6_7
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd6_7 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd6_8
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd6_8 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                        {
+                            // SeqCmd6_9
+                            lv_obj_t *obj = lv_img_create(parent_obj);
+                            objects.seq_cmd6_9 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                            lv_img_set_src(obj, &img_stratagem_arrow_up3);
+                            add_style_arrow_sequence(obj);
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -7331,8 +8023,8 @@ extern void add_style(lv_obj_t *obj, int32_t styleIndex);
 extern void remove_style(lv_obj_t *obj, int32_t styleIndex);
 
 static const char *screen_names[] = { "Intro", "Setup", "Preset", "ResetPreset", "Image", "Game", "Mission", "Config", "ResetConfig", "About", "Manual" };
-static const char *object_names[] = { "intro", "setup", "preset", "reset_preset", "image", "game", "mission", "config", "reset_config", "about", "manual", "img_splash", "tab_view_setup", "tab_rifle", "obj0", "weapons_mg", "weapons_hmg", "weapons_sw", "weapons_ac", "obj1", "obj2", "weapons_amr", "weapons_rg", "weapons_lc", "weapons_qc", "weapons_at", "obj3", "weapons_e", "weapons_sg", "weapons_mxg", "weapons_bs", "tab_special", "obj4", "weapons_arl", "weapons_c", "weapons_eat", "weapons_en", "weapons_rr", "obj5", "obj6", "weapons_eatl", "weapons_spr", "weapons_wsp", "weapons_gl", "weapons_bfgl", "obj7", "weapons_de", "weapons_ste", "weapons_ft", "weapons_dt", "weapons_cre", "tab_backpack", "obj8", "backpack_bsb", "backpack_sgp", "backpack_ds", "backpack_gd", "backpack_gdb", "obj9", "obj10", "backpack_gdr", "backpack_gdk", "backpack_gdhd", "backpack_sup", "obj11", "backpack_ph", "backpack_c4_p", "backpack_jp", "backpack_hp", "backpack_wp", "tab_supply", "obj12", "supply_frv", "supply_bmk", "supply_otf", "supply_cqc", "supply_ss", "obj13", "supply_pe", "supply_ee", "supply_btes", "supply_les", "tab_sentry", "sentry_mgs", "sentry_gs", "sentry_acs", "sentry_hmge", "sentry_ate", "sentry_fs", "obj14", "sentry_ms", "sentry_rs", "sentry_ems", "sentry_ls", "sentry_gms", "obj15", "tab_ground", "obj16", "ground_gm", "ground_tt", "ground_sgr", "ground_apm", "obj17", "ground_atm", "ground_im", "ground_gb", "tab_strike", "strike120", "strike380", "strike_ors", "strike_ogb", "strike_oas", "strike_ol", "strike_ops", "strike_owb", "strike_oes", "strike_onb", "strike_ogs", "strike_oss", "tab_eagle", "obj18", "eagle110", "eagle500", "eagle_a", "eagle_cb", "obj19", "eagle_sr", "eagle_na", "eagle_ss", "obj20", "obj21", "obj22", "obj23", "obj24", "btn_preset1", "btn_preset2", "btn_preset3", "btn_preset4", "btn_preset5", "btn_preset6", "obj25", "btn_preset_image", "obj26", "obj27", "obj28", "obj29", "obj30", "obj31", "obj32", "obj33", "obj34", "obj35", "obj36", "obj37", "obj38", "obj39", "obj40", "obj41", "obj42", "obj43", "obj44", "obj45", "btn_reinforce", "btn_resupply", "btn_sos", "btn_rearm", "custom_stratagem1", "custom_stratagem2", "custom_stratagem3", "custom_stratagem4", "custom_stratagem5", "custom_stratagem6", "btn_seaf", "btn_hellbomb", "obj46", "obj47", "btn_sssd", "btn_ud", "btn_hbd", "btn_pd", "btn_sef", "btn_td", "btn_sp", "btn_oif", "btn_dfv", "btn_cc", "btn_csd", "obj48", "tab_view_config", "sld_brightness", "chb_flip", "chb_mute", "sld_delay", "dd_connectivity", "obj49", "dd_keymap", "chb_cooldowns", "chb_ship_mod_srp", "chb_ship_mod_ma", "chb_ship_mod_hc", "chb_ship_mod_zbl", "chb_ship_mod_lvc", "chb_ship_mod_ss", "chb_ship_mod_tsu", "chb_ship_mod_rls", "chb_ship_mod_dt", "chb_auto_complete", "chb_game_after_preset", "obj50", "obj51", "obj52", "obj53", "obj54", "obj55", "obj56", "manual_arrow_up", "manual_arrow_left", "manual_arrow_right", "manual_arrow_down", "obj57", "cnt_progress", "bar_amount", "label_amount", "msg_box", "msg_label", "label_cooldown1", "label_cooldown2", "label_cooldown3", "label_cooldown4", "label_cooldown5", "label_cooldown6", "img_connection2", "obj58", "obj59", "obj60", "obj61", "obj62", "obj63", "obj64", "obj65", "obj66", "lbl_brightness", "lbl_delay", "img_connection1", "obj67", "lbl_version", "obj68", "obj69", "obj70", "manual_preview_item", "manual_cmd1", "manual_cmd2", "manual_cmd3", "manual_cmd4", "manual_cmd5", "manual_cmd6", "manual_cmd7", "manual_cmd8", "manual_cmd9" };
-static const char *style_names[] = { "ButtonStd", "TabStratagem", "TabConfig", "SliderConfig", "SwitchConfig", "LabelCooldown", "CheckboxConfig", "DropdownConfig" };
+static const char *object_names[] = { "intro", "setup", "preset", "reset_preset", "image", "game", "mission", "config", "reset_config", "about", "manual", "img_splash", "tab_view_setup", "tab_rifle", "obj0", "weapons_mg", "weapons_hmg", "weapons_sw", "weapons_ac", "obj1", "obj2", "weapons_amr", "weapons_rg", "weapons_lc", "weapons_qc", "weapons_at", "obj3", "weapons_e", "weapons_sg", "weapons_mxg", "weapons_bs", "tab_special", "obj4", "weapons_arl", "weapons_c", "weapons_eat", "weapons_en", "weapons_rr", "obj5", "obj6", "weapons_eatl", "weapons_spr", "weapons_wsp", "weapons_gl", "weapons_bfgl", "obj7", "weapons_de", "weapons_ste", "weapons_ft", "weapons_dt", "weapons_cre", "tab_backpack", "obj8", "backpack_bsb", "backpack_sgp", "backpack_ds", "backpack_gd", "backpack_gdb", "obj9", "obj10", "backpack_gdr", "backpack_gdk", "backpack_gdhd", "backpack_sup", "obj11", "backpack_ph", "backpack_c4_p", "backpack_jp", "backpack_hp", "backpack_wp", "tab_supply", "obj12", "supply_frv", "supply_bmk", "supply_otf", "supply_cqc", "supply_ss", "obj13", "supply_pe", "supply_ee", "supply_btes", "supply_les", "tab_sentry", "sentry_mgs", "sentry_gs", "sentry_acs", "sentry_hmge", "sentry_ate", "sentry_fs", "obj14", "sentry_ms", "sentry_rs", "sentry_ems", "sentry_ls", "sentry_gms", "obj15", "tab_ground", "obj16", "ground_gm", "ground_tt", "ground_sgr", "ground_apm", "obj17", "ground_atm", "ground_im", "ground_gb", "tab_strike", "strike120", "strike380", "strike_ors", "strike_ogb", "strike_oas", "strike_ol", "strike_ops", "strike_owb", "strike_oes", "strike_onb", "strike_ogs", "strike_oss", "tab_eagle", "obj18", "eagle110", "eagle500", "eagle_a", "eagle_cb", "obj19", "eagle_sr", "eagle_na", "eagle_ss", "obj20", "obj21", "obj22", "obj23", "obj24", "btn_preset1", "btn_preset2", "btn_preset3", "btn_preset4", "btn_preset5", "btn_preset6", "obj25", "btn_preset_image", "obj26", "obj27", "obj28", "obj29", "obj30", "obj31", "obj32", "obj33", "obj34", "obj35", "obj36", "obj37", "obj38", "obj39", "obj40", "obj41", "obj42", "obj43", "obj44", "obj45", "btn_reinforce", "btn_resupply", "btn_sos", "btn_rearm", "custom_stratagem1", "custom_stratagem2", "custom_stratagem3", "custom_stratagem4", "custom_stratagem5", "custom_stratagem6", "btn_seaf", "btn_hellbomb", "obj46", "obj47", "btn_sssd", "btn_ud", "btn_hbd", "btn_pd", "btn_sef", "btn_td", "btn_sp", "btn_oif", "btn_dfv", "btn_cc", "btn_csd", "obj48", "tab_view_config", "sld_brightness", "chb_flip", "chb_mute", "sld_delay", "dd_connectivity", "obj49", "dd_keymap", "chb_cooldowns", "chb_ship_mod_srp", "chb_ship_mod_ma", "chb_ship_mod_hc", "chb_ship_mod_zbl", "chb_ship_mod_lvc", "chb_ship_mod_ss", "chb_ship_mod_tsu", "chb_ship_mod_rls", "chb_ship_mod_dt", "chb_auto_complete", "chb_game_after_preset", "obj50", "obj51", "obj52", "obj53", "obj54", "obj55", "obj56", "manual_arrow_up", "manual_arrow_left", "manual_arrow_right", "manual_arrow_down", "obj57", "cnt_progress", "bar_amount", "label_amount", "msg_box", "msg_label", "label_cooldown1", "label_cooldown2", "label_cooldown3", "label_cooldown4", "label_cooldown5", "label_cooldown6", "img_connection2", "obj58", "obj59", "obj60", "obj61", "obj62", "obj63", "obj64", "obj65", "obj66", "lbl_brightness", "lbl_delay", "img_connection1", "obj67", "lbl_version", "obj68", "obj69", "obj70", "manual_preview_item", "input_seq", "manual_cmd1", "manual_cmd2", "manual_cmd3", "manual_cmd4", "manual_cmd5", "manual_cmd6", "manual_cmd7", "manual_cmd8", "manual_cmd9", "cnt_usr_stg_lst", "cnt_usr_stg_seq1", "seq_ico1", "seq_cmd1_1", "seq_cmd1_2", "seq_cmd1_3", "seq_cmd1_4", "seq_cmd1_5", "seq_cmd1_6", "seq_cmd1_7", "seq_cmd1_8", "seq_cmd1_9", "cnt_usr_stg_seq2", "seq_ico2", "seq_cmd2_1", "seq_cmd2_2", "seq_cmd2_3", "seq_cmd2_4", "seq_cmd2_5", "seq_cmd2_6", "seq_cmd2_7", "seq_cmd2_8", "seq_cmd2_9", "cnt_usr_stg_seq3", "seq_ico3", "seq_cmd3_1", "seq_cmd3_2", "seq_cmd3_3", "seq_cmd3_4", "seq_cmd3_5", "seq_cmd3_6", "seq_cmd3_7", "seq_cmd3_8", "seq_cmd3_9", "cnt_usr_stg_seq4", "seq_ico4", "seq_cmd4_1", "seq_cmd4_2", "seq_cmd4_3", "seq_cmd4_4", "seq_cmd4_5", "seq_cmd4_6", "seq_cmd4_7", "seq_cmd4_8", "seq_cmd4_9", "cnt_usr_stg_seq5", "seq_ico5", "seq_cmd5_1", "seq_cmd5_2", "seq_cmd5_3", "seq_cmd5_4", "seq_cmd5_5", "seq_cmd5_6", "seq_cmd5_7", "seq_cmd5_8", "seq_cmd5_9", "cnt_usr_stg_seq6", "seq_ico6", "seq_cmd6_1", "seq_cmd6_2", "seq_cmd6_3", "seq_cmd6_4", "seq_cmd6_5", "seq_cmd6_6", "seq_cmd6_7", "seq_cmd6_8", "seq_cmd6_9" };
+static const char *style_names[] = { "ButtonStd", "TabStratagem", "TabConfig", "SliderConfig", "SwitchConfig", "LabelCooldown", "CheckboxConfig", "DropdownConfig", "ArrowSequence" };
 static const char *theme_names[] = { "Default" };
 
 uint32_t theme_colors[1][6] = {

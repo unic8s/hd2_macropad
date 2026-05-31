@@ -58,6 +58,11 @@ lv_style_t *get_style_dropdown_config_MAIN_DEFAULT();
 void add_style_dropdown_config(lv_obj_t *obj);
 void remove_style_dropdown_config(lv_obj_t *obj);
 
+// Style: ArrowSequence
+lv_style_t *get_style_arrow_sequence_MAIN_DEFAULT();
+void add_style_arrow_sequence(lv_obj_t *obj);
+void remove_style_arrow_sequence(lv_obj_t *obj);
+
 
 
 #ifdef __cplusplus

@@ -19120,6 +19120,7 @@
                 "conditionalStyles": [],
                 "childStyles": []
               },
+              "hiddenInEditor": false,
               "timeline": [],
               "eventHandlers": [],
               "identifier": "manualPreviewItem",
@@ -19129,6 +19130,7 @@
               "heightUnit": "px",
               "children": [],
               "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE",
+              "hiddenFlag": true,
               "hiddenFlagType": "literal",
               "clickableFlag": false,
               "clickableFlagType": "literal",
@@ -19602,7 +19604,7 @@
                 "conditionalStyles": [],
                 "childStyles": []
               },
-              "hiddenInEditor": true,
+              "hiddenInEditor": false,
               "timeline": [],
               "eventHandlers": [],
               "identifier": "InputSeq",
@@ -19626,7 +19628,7 @@
                     "conditionalStyles": [],
                     "childStyles": []
                   },
-                  "hiddenInEditor": true,
+                  "hiddenInEditor": false,
                   "timeline": [],
                   "eventHandlers": [],
                   "identifier": "ManualCmd1",
@@ -19673,7 +19675,7 @@
                     "conditionalStyles": [],
                     "childStyles": []
                   },
-                  "hiddenInEditor": true,
+                  "hiddenInEditor": false,
                   "timeline": [],
                   "eventHandlers": [],
                   "identifier": "ManualCmd2",
@@ -19720,7 +19722,7 @@
                     "conditionalStyles": [],
                     "childStyles": []
                   },
-                  "hiddenInEditor": true,
+                  "hiddenInEditor": false,
                   "timeline": [],
                   "eventHandlers": [],
                   "identifier": "ManualCmd3",
@@ -19767,7 +19769,7 @@
                     "conditionalStyles": [],
                     "childStyles": []
                   },
-                  "hiddenInEditor": true,
+                  "hiddenInEditor": false,
                   "timeline": [],
                   "eventHandlers": [],
                   "identifier": "ManualCmd4",
@@ -19814,7 +19816,7 @@
                     "conditionalStyles": [],
                     "childStyles": []
                   },
-                  "hiddenInEditor": true,
+                  "hiddenInEditor": false,
                   "timeline": [],
                   "eventHandlers": [],
                   "identifier": "ManualCmd5",
@@ -19861,7 +19863,7 @@
                     "conditionalStyles": [],
                     "childStyles": []
                   },
-                  "hiddenInEditor": true,
+                  "hiddenInEditor": false,
                   "timeline": [],
                   "eventHandlers": [],
                   "identifier": "ManualCmd6",
@@ -19908,7 +19910,7 @@
                     "conditionalStyles": [],
                     "childStyles": []
                   },
-                  "hiddenInEditor": true,
+                  "hiddenInEditor": false,
                   "timeline": [],
                   "eventHandlers": [],
                   "identifier": "ManualCmd7",
@@ -19955,7 +19957,7 @@
                     "conditionalStyles": [],
                     "childStyles": []
                   },
-                  "hiddenInEditor": true,
+                  "hiddenInEditor": false,
                   "timeline": [],
                   "eventHandlers": [],
                   "identifier": "ManualCmd8",
@@ -20009,7 +20011,7 @@
                     "conditionalStyles": [],
                     "childStyles": []
                   },
-                  "hiddenInEditor": true,
+                  "hiddenInEditor": false,
                   "timeline": [],
                   "eventHandlers": [],
                   "identifier": "ManualCmd9",
@@ -20050,8 +20052,9 @@
                 }
               ],
               "widgetFlags": "CLICK_FOCUSABLE|GESTURE_BUBBLE|PRESS_LOCK|SCROLLABLE|SCROLL_CHAIN_HOR|SCROLL_CHAIN_VER|SCROLL_ELASTIC|SCROLL_MOMENTUM|SCROLL_WITH_ARROW|SNAPPABLE|OVERFLOW_VISIBLE",
+              "hiddenFlag": true,
               "hiddenFlagType": "literal",
-              "clickableFlag": true,
+              "clickableFlag": false,
               "clickableFlagType": "literal",
               "flagScrollbarMode": "",
               "flagScrollDirection": "",
@@ -26054,7 +26057,7 @@
     {
       "objID": "4c79a0c4-150b-484d-9728-acfbde9110ec",
       "name": "Stratagem_Arrow_Down3",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAiElEQVQokeWRsQ0DIQwATZSKAjZgGw8JjSWG8FwG5NopKPIKhFfqXGnuZCQDXEBEW0DEq/OAH/nL4JlSaq2ZWe/de78acxhCcM7FGCHnbGZjDBFR1fUOqioiYwwzyzkDANRaV2+l1vreS0Rnm4g+/3poNvah+Wpvmxt7UkqZdinl3p4wMzNvn14DsOHXGd7lygAAAABJRU5ErkJggg==",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAmklEQVQ4je3SQQoDIQyF4SBdCp4ghzcb8RI5U6KuTRdCS2fGGYeuCv13wvtAQYDPELH3brt674i4GTv4oj/+GfxARFUdh9aa93429d47516DEALEGM2slKKqIlJr3X+vUa1VRFS1lGJmMUYAgJzzDMzKOb+vlFJalyml7ZMW/YFc9FN56S/kiV+Sh/6GHBHRkER0T46YmZlPBk8iSVJ/Zk8u/gAAAABJRU5ErkJggg==",
       "bpp": 43,
       "alwaysBuild": false,
       "lvglBinaryOutputFormat": 3,
@@ -26063,7 +26066,7 @@
     {
       "objID": "99236d7b-5fd3-4b8b-dd12-f955e64d2e23",
       "name": "Stratagem_Arrow_Left3",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAiklEQVQokZWSMRJEERBEZ5UqGTdwF9cQuRaJwBmcSxFIe4PdYOt/+40Ox5sxWhPdJISIMVpr70drlVIAGGNYdM4ZwBhDa82lAfTe/zXIXzqE8K1K6ZxrrSmlNrO3IiJKKTFpAFRr5dMABMu7i85WOn30a2nrnNN7/2Tr5Z6Hj1v3cKPx0Vn4aBfvN4RyHBI2s0EwAAAAAElFTkSuQmCC",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAnklEQVQ4jaWUMQrEIBBFZ0XQygsIHsOzeDytLHIFj2SjWOdvEZBld2OieZ3gY8T5M0QncM6998aYswsjtm0DoJSaNmOMAGqt0/JhAiilzMndvCPzL9M514+MMa21EEJKOVGzsw8ZmZcQEYUQFkwAlFJaMwGwiU78Zf3ZTz9suVWvQUhaa9banPN1SH7rT2ebngzGp78ykgfry4DuraE31rDUgOIi5C4AAAAASUVORK5CYII=",
       "bpp": 43,
       "alwaysBuild": false,
       "lvglBinaryOutputFormat": 3,
@@ -26072,7 +26075,7 @@
     {
       "objID": "19d36829-ffbf-4333-fe96-0b54a65dceb2",
       "name": "Stratagem_Arrow_Right3",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAlUlEQVQokZWSsQ3EIAxFHURFAWIBtskeMBY0ICFlhOxFOqqfIqeLdEci8ztjP2E+n2gk51yMUQgx7A5kjAFQa+UCWuvjOADknLlAaw3APyPXdf2Z7r1ba6WUV+m9J6IQwqcNnu57mACAlBIRLQC4VhDt+852+qvZlaYfvTzZum2bUuo6KaXctg718nGPwFw0psP3Eu8TsbPw8OMjowQAAAAASUVORK5CYII=",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAApElEQVQ4jaWUMQ7DIAxFHcSIMmWFc8HtYAoSZ+ACuQ1MTP2dmjRKAi280fgJZGwTPaOUstZyzis5j8zzDCCE0CnnnAGs69ojp5QA9Pjf8q3PpZS3ZillWRbG2B7RWhORMeZIelXBhdP91+Mmh98hA3DOEdEE4L8yfogxsnZWhZFnjxVs5KumepNs2yaE2IPe+1OTVGi2569yz2AMjSS6l0FzDb0B+ACgdrBPcEIAAAAASUVORK5CYII=",
       "bpp": 43,
       "alwaysBuild": false,
       "lvglBinaryOutputFormat": 3,
@@ -26971,7 +26974,7 @@
     },
     {
       "objID": "a920b173-6615-457d-8e18-a79bf877939a",
-      "name": "GL283",
+      "name": "BFGL3",
       "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAD9UlEQVRYhe2YT0wjVRzHf++9mc5M/6UtLQV2MbvNRohddnVXFmPAsBc8GMO6iQezJnJRYuQgctEgCRdDPOzGeDFwIBqMnjDxgIkhJh6WjQlZFtOygbgF7VIIfzoRmjKdMu89Dw0Ruvx5g5RE7ec2b77v9/vOm/n9+l4ByvzLIOJSjDFCqHRWCogmqKurm5ycdDqdo6OjnZ2dfr+/ME4ISaVSCKGamhpKadEsQoiu67qun6TlAtFolB9AW1tbe3v7QXcTiUQoFBJPhE/e+14ikcjIyIi4vuSGAMDtdouLT8OQLU7D0PLysri45Ibi8Xh/f7+4XrKbYGpqamBgwOv1Fi41TZuZmSGEdHV1GYaxW6koSjKZHBsbsxVftA9JkhQOhzHG2Wy2JH1lB9FOHQwGu7u7W1paNE2LxWKlMyS6QtFoNB6PA0A6nY7FYrIsF8YDgUBHR4eiKENDQ+l0umiW1+sdHx/v6ekRN2T7G6qoqGhtbd094vP5NE2rr6/fV9/Q0AAA4p5Oo+ybmprExf/LxmiL0zA0ODgoLrb9Ua+vr09PT++uMl3XVVWNxWJF/UlV1cXFxd7e3rm5OfH4omVfVVXV19enqurExMTw8LB4gjL/eWycOo5H7fWXn37zfWt+Kbu5IqK3XWW2wBhF3/kweOUlvGWu3vn1hAwdfBZDAJzzQ6ZGXn9bC5/NpH5f+W1SxA0cUvaVTdcD9Q0AUN3ShomDs+IzFyAka9rsl5+nJsZl555tPOeM5XIX3/04cvOt9Qd37w98kEkuHNOQ7PEFL1879+oblVebsUQ4pVZhH7ivc4QQIJrP7bOKCBHZQQ0DEfTo2y+SP/1grAntrBEAEIdKVC1wpfHC1dc8155TwpXMNC0jyy3rkPe1EwAjvP/vD6cWAAeE3WfOPRy+PTP4qYghSQkEGz/6zFd3Easqdkgsb1Fj62gff6dlnLJD/CJMtrcyyR9HBeNJWkU4cPl5ZpqYyOb62tZqipnm0t1xxrYvvdeX3/hT1Nm+dgihZm7h+2+YmZdUJ5Ydu++yfD7U+KKz+imWzwMAluXN+VmJWRbNGZSasdufrPzyc05fLajP37iF8D/tUpwxhHHgmWeb73yNJBn2liRnTPH5iapxxgBAdnkS330lIYJllwdMfKb1ldq2m5KiAQLOuFoR4pRhSeKU2niDexJyRCTi8miV1QgTeLJBIERzBjWMQnwmm5xakmVsrT24hxCWXS4A4Gy7IM0u/bE5P+uvvyS5PfyJ/1mOAgFwJMnbG/rGo4er9+9lkgniUIpENG/WvNDsPHuB5k0AIKqWSS4c8eju2vPSzpLaBWGynd3MLj0+xtwyZcqUKVNGmL8AtY6XkR+ptLkAAAAASUVORK5CYII=",
       "bpp": 43,
       "alwaysBuild": false,

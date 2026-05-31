@@ -25,6 +25,9 @@ void resetPresets();
 void finalizeManualExecution();
 void updateManualSequence();
 void lookupManualSequence();
+void mapManualSequence();
+void resetAllManSeqs();
+void setManualSequence(lv_obj_t *manualCmdSeq[], uint8_t opacity);
 void resetAllCooldowns();
 uint32_t getNow();
 

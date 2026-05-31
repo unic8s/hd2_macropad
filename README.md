@@ -75,7 +75,7 @@ If you enjoy the project and want to support our private work feel free to make 
 
 ![](screens/manual_simple.png)
 
-#### List you selected stratagems and see your inputs get resolved instantly
+#### List your selected stratagems and see your inputs get resolved instantly
 
 ![](screens/manual_selection.png)
 

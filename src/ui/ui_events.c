@@ -126,6 +126,40 @@ void initGame()
 	}
 }
 
+void getManualCmdSeq(uint8_t index, lv_obj_t *targetCmdSeq[])
+{
+	size_t arrSize = sizeof(lv_obj_t *) * MAX_CMD_LENGTH;
+
+	switch (index)
+	{
+	case 0:
+		memcpy(targetCmdSeq, (lv_obj_t *[]){objects.seq_cmd1_1, objects.seq_cmd1_2, objects.seq_cmd1_3, objects.seq_cmd1_4, objects.seq_cmd1_5, objects.seq_cmd1_6, objects.seq_cmd1_7, objects.seq_cmd1_8, objects.seq_cmd1_9}, arrSize);
+		break;
+	case 1:
+		memcpy(targetCmdSeq, (lv_obj_t *[]){objects.seq_cmd2_1, objects.seq_cmd2_2, objects.seq_cmd2_3, objects.seq_cmd2_4, objects.seq_cmd2_5, objects.seq_cmd2_6, objects.seq_cmd2_7, objects.seq_cmd2_8, objects.seq_cmd2_9}, arrSize);
+		break;
+	case 2:
+		memcpy(targetCmdSeq, (lv_obj_t *[]){objects.seq_cmd3_1, objects.seq_cmd3_2, objects.seq_cmd3_3, objects.seq_cmd3_4, objects.seq_cmd3_5, objects.seq_cmd3_6, objects.seq_cmd3_7, objects.seq_cmd3_8, objects.seq_cmd3_9}, arrSize);
+		break;
+	case 3:
+		memcpy(targetCmdSeq, (lv_obj_t *[]){objects.seq_cmd4_1, objects.seq_cmd4_2, objects.seq_cmd4_3, objects.seq_cmd4_4, objects.seq_cmd4_5, objects.seq_cmd4_6, objects.seq_cmd4_7, objects.seq_cmd4_8, objects.seq_cmd4_9}, arrSize);
+		break;
+	case 4:
+		memcpy(targetCmdSeq, (lv_obj_t *[]){objects.seq_cmd5_1, objects.seq_cmd5_2, objects.seq_cmd5_3, objects.seq_cmd5_4, objects.seq_cmd5_5, objects.seq_cmd5_6, objects.seq_cmd5_7, objects.seq_cmd5_8, objects.seq_cmd5_9}, arrSize);
+		break;
+	case 5:
+		memcpy(targetCmdSeq, (lv_obj_t *[]){objects.seq_cmd6_1, objects.seq_cmd6_2, objects.seq_cmd6_3, objects.seq_cmd6_4, objects.seq_cmd6_5, objects.seq_cmd6_6, objects.seq_cmd6_7, objects.seq_cmd6_8, objects.seq_cmd6_9}, arrSize);
+		break;
+	}
+}
+
+void getManualImages(lv_obj_t *manualImages[])
+{
+	size_t arrSize = sizeof(lv_obj_t *) * MAX_USER_STRATAGEMS;
+
+	memcpy(manualImages, (lv_obj_t *[]){objects.seq_ico1, objects.seq_ico2, objects.seq_ico3, objects.seq_ico4, objects.seq_ico5, objects.seq_ico6}, arrSize);
+}
+
 // Goto game screen
 void action_goto_game(lv_event_t *e)
 {
@@ -142,20 +176,8 @@ void action_goto_manual(lv_event_t *e)
 		objects.cnt_usr_stg_seq5,
 		objects.cnt_usr_stg_seq6};
 
-	const lv_obj_t *manualImages[] = {
-		objects.seq_ico1,
-		objects.seq_ico2,
-		objects.seq_ico3,
-		objects.seq_ico4,
-		objects.seq_ico5,
-		objects.seq_ico6};
-
-	lv_obj_t *manualCmdSeq1[] = {objects.seq_cmd1_1, objects.seq_cmd1_2, objects.seq_cmd1_3, objects.seq_cmd1_4, objects.seq_cmd1_5, objects.seq_cmd1_6, objects.seq_cmd1_7, objects.seq_cmd1_8, objects.seq_cmd1_9};
-	lv_obj_t *manualCmdSeq2[] = {objects.seq_cmd2_1, objects.seq_cmd2_2, objects.seq_cmd2_3, objects.seq_cmd2_4, objects.seq_cmd2_5, objects.seq_cmd2_6, objects.seq_cmd2_7, objects.seq_cmd2_8, objects.seq_cmd2_9};
-	lv_obj_t *manualCmdSeq3[] = {objects.seq_cmd3_1, objects.seq_cmd3_2, objects.seq_cmd3_3, objects.seq_cmd3_4, objects.seq_cmd3_5, objects.seq_cmd3_6, objects.seq_cmd3_7, objects.seq_cmd3_8, objects.seq_cmd3_9};
-	lv_obj_t *manualCmdSeq4[] = {objects.seq_cmd4_1, objects.seq_cmd4_2, objects.seq_cmd4_3, objects.seq_cmd4_4, objects.seq_cmd4_5, objects.seq_cmd4_6, objects.seq_cmd4_7, objects.seq_cmd4_8, objects.seq_cmd4_9};
-	lv_obj_t *manualCmdSeq5[] = {objects.seq_cmd5_1, objects.seq_cmd5_2, objects.seq_cmd5_3, objects.seq_cmd5_4, objects.seq_cmd5_5, objects.seq_cmd5_6, objects.seq_cmd5_7, objects.seq_cmd5_8, objects.seq_cmd5_9};
-	lv_obj_t *manualCmdSeq6[] = {objects.seq_cmd6_1, objects.seq_cmd6_2, objects.seq_cmd6_3, objects.seq_cmd6_4, objects.seq_cmd6_5, objects.seq_cmd6_6, objects.seq_cmd6_7, objects.seq_cmd6_8, objects.seq_cmd6_9};
+	const lv_obj_t *manualImages[MAX_USER_STRATAGEMS];
+	getManualImages(manualImages);
 
 	uint8_t configureCount = 0;
 
@@ -177,26 +199,8 @@ void action_goto_manual(lv_event_t *e)
 
 			lv_obj_clear_flag(cntSeq, LV_OBJ_FLAG_HIDDEN);
 
-			lv_obj_t **targetCmdSeq = manualCmdSeq1;
-
-			switch (c1)
-			{
-			case 1:
-				targetCmdSeq = manualCmdSeq2;
-				break;
-			case 2:
-				targetCmdSeq = manualCmdSeq3;
-				break;
-			case 3:
-				targetCmdSeq = manualCmdSeq4;
-				break;
-			case 4:
-				targetCmdSeq = manualCmdSeq5;
-				break;
-			case 5:
-				targetCmdSeq = manualCmdSeq6;
-				break;
-			}
+			lv_obj_t *targetCmdSeq[MAX_CMD_LENGTH];
+			getManualCmdSeq(c1, targetCmdSeq);
 
 			for (uint8_t c2 = 0; c2 < MAX_CMD_LENGTH; c2++)
 			{
@@ -626,14 +630,14 @@ void action_get_preset(lv_event_t *e)
 	action_reset_stratagems(NULL);
 
 	lv_obj_t *lists[8] = {
-			objects.tab_rifle,
-			objects.tab_special,
-			objects.tab_backpack,
-			objects.tab_supply,
-			objects.tab_sentry,
-			objects.tab_ground,
-			objects.tab_strike,
-			objects.tab_eagle};
+		objects.tab_rifle,
+		objects.tab_special,
+		objects.tab_backpack,
+		objects.tab_supply,
+		objects.tab_sentry,
+		objects.tab_ground,
+		objects.tab_strike,
+		objects.tab_eagle};
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{
@@ -1095,20 +1099,8 @@ void lookupManualSequence()
 
 void mapManualSequence()
 {
-	lv_obj_t *manualCmdSeq1[] = {objects.seq_cmd1_1, objects.seq_cmd1_2, objects.seq_cmd1_3, objects.seq_cmd1_4, objects.seq_cmd1_5, objects.seq_cmd1_6, objects.seq_cmd1_7, objects.seq_cmd1_8, objects.seq_cmd1_9};
-	lv_obj_t *manualCmdSeq2[] = {objects.seq_cmd2_1, objects.seq_cmd2_2, objects.seq_cmd2_3, objects.seq_cmd2_4, objects.seq_cmd2_5, objects.seq_cmd2_6, objects.seq_cmd2_7, objects.seq_cmd2_8, objects.seq_cmd2_9};
-	lv_obj_t *manualCmdSeq3[] = {objects.seq_cmd3_1, objects.seq_cmd3_2, objects.seq_cmd3_3, objects.seq_cmd3_4, objects.seq_cmd3_5, objects.seq_cmd3_6, objects.seq_cmd3_7, objects.seq_cmd3_8, objects.seq_cmd3_9};
-	lv_obj_t *manualCmdSeq4[] = {objects.seq_cmd4_1, objects.seq_cmd4_2, objects.seq_cmd4_3, objects.seq_cmd4_4, objects.seq_cmd4_5, objects.seq_cmd4_6, objects.seq_cmd4_7, objects.seq_cmd4_8, objects.seq_cmd4_9};
-	lv_obj_t *manualCmdSeq5[] = {objects.seq_cmd5_1, objects.seq_cmd5_2, objects.seq_cmd5_3, objects.seq_cmd5_4, objects.seq_cmd5_5, objects.seq_cmd5_6, objects.seq_cmd5_7, objects.seq_cmd5_8, objects.seq_cmd5_9};
-	lv_obj_t *manualCmdSeq6[] = {objects.seq_cmd6_1, objects.seq_cmd6_2, objects.seq_cmd6_3, objects.seq_cmd6_4, objects.seq_cmd6_5, objects.seq_cmd6_6, objects.seq_cmd6_7, objects.seq_cmd6_8, objects.seq_cmd6_9};
-
-	const lv_obj_t *manualImages[] = {
-		objects.seq_ico1,
-		objects.seq_ico2,
-		objects.seq_ico3,
-		objects.seq_ico4,
-		objects.seq_ico5,
-		objects.seq_ico6};
+	const lv_obj_t *manualImages[MAX_USER_STRATAGEMS];
+	getManualImages(manualImages);
 
 	resetAllManSeqs();
 
@@ -1124,26 +1116,8 @@ void mapManualSequence()
 		const uint8_t itemIndex = indices[c1];
 		const stratagemItem item = strategemItemList[itemIndex];
 
-		lv_obj_t **targetCmdSeq = manualCmdSeq1;
-
-		switch (c1)
-		{
-		case 1:
-			targetCmdSeq = manualCmdSeq2;
-			break;
-		case 2:
-			targetCmdSeq = manualCmdSeq3;
-			break;
-		case 3:
-			targetCmdSeq = manualCmdSeq4;
-			break;
-		case 4:
-			targetCmdSeq = manualCmdSeq5;
-			break;
-		case 5:
-			targetCmdSeq = manualCmdSeq6;
-			break;
-		}
+		lv_obj_t *targetCmdSeq[MAX_CMD_LENGTH];
+		getManualCmdSeq(c1, targetCmdSeq);
 
 		bool match = true;
 		bool matchComplete = false;
@@ -1187,27 +1161,15 @@ void mapManualSequence()
 
 void resetAllManSeqs()
 {
-	lv_obj_t *manualCmdSeq1[] = {objects.seq_cmd1_1, objects.seq_cmd1_2, objects.seq_cmd1_3, objects.seq_cmd1_4, objects.seq_cmd1_5, objects.seq_cmd1_6, objects.seq_cmd1_7, objects.seq_cmd1_8, objects.seq_cmd1_9};
-	lv_obj_t *manualCmdSeq2[] = {objects.seq_cmd2_1, objects.seq_cmd2_2, objects.seq_cmd2_3, objects.seq_cmd2_4, objects.seq_cmd2_5, objects.seq_cmd2_6, objects.seq_cmd2_7, objects.seq_cmd2_8, objects.seq_cmd2_9};
-	lv_obj_t *manualCmdSeq3[] = {objects.seq_cmd3_1, objects.seq_cmd3_2, objects.seq_cmd3_3, objects.seq_cmd3_4, objects.seq_cmd3_5, objects.seq_cmd3_6, objects.seq_cmd3_7, objects.seq_cmd3_8, objects.seq_cmd3_9};
-	lv_obj_t *manualCmdSeq4[] = {objects.seq_cmd4_1, objects.seq_cmd4_2, objects.seq_cmd4_3, objects.seq_cmd4_4, objects.seq_cmd4_5, objects.seq_cmd4_6, objects.seq_cmd4_7, objects.seq_cmd4_8, objects.seq_cmd4_9};
-	lv_obj_t *manualCmdSeq5[] = {objects.seq_cmd5_1, objects.seq_cmd5_2, objects.seq_cmd5_3, objects.seq_cmd5_4, objects.seq_cmd5_5, objects.seq_cmd5_6, objects.seq_cmd5_7, objects.seq_cmd5_8, objects.seq_cmd5_9};
-	lv_obj_t *manualCmdSeq6[] = {objects.seq_cmd6_1, objects.seq_cmd6_2, objects.seq_cmd6_3, objects.seq_cmd6_4, objects.seq_cmd6_5, objects.seq_cmd6_6, objects.seq_cmd6_7, objects.seq_cmd6_8, objects.seq_cmd6_9};
+	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
+	{
+		lv_obj_t *targetCmdSeq[MAX_CMD_LENGTH];
+		getManualCmdSeq(c, targetCmdSeq);
+		setManualSequence(targetCmdSeq, 255);
+	}
 
-	setManualSequence(manualCmdSeq1, 255);
-	setManualSequence(manualCmdSeq2, 255);
-	setManualSequence(manualCmdSeq3, 255);
-	setManualSequence(manualCmdSeq4, 255);
-	setManualSequence(manualCmdSeq5, 255);
-	setManualSequence(manualCmdSeq6, 255);
-
-	const lv_obj_t *manualImages[] = {
-		objects.seq_ico1,
-		objects.seq_ico2,
-		objects.seq_ico3,
-		objects.seq_ico4,
-		objects.seq_ico5,
-		objects.seq_ico6};
+	const lv_obj_t *manualImages[MAX_USER_STRATAGEMS];
+	getManualImages(manualImages);
 
 	for (uint8_t c = 0; c < MAX_USER_STRATAGEMS; c++)
 	{

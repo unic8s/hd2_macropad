@@ -27,6 +27,8 @@ void updateManualSequence();
 void lookupManualSequence();
 void mapManualSequence();
 void resetAllManSeqs();
+void getManualCmdSeq(uint8_t index, lv_obj_t *targetCmdSeq[]);
+void getManualImages(lv_obj_t *manualImages[]);
 void setManualSequence(lv_obj_t *manualCmdSeq[], uint8_t opacity);
 void resetAllCooldowns();
 uint32_t getNow();

@@ -1,0 +1,23 @@
+{
+    "name": "esp-usb",
+    "version": "1.7.2",
+    "description": "Espressif's Additions to TinyUSB",
+    "keywords": "usb, host, device",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/espressif/esp-usb.git"
+    },
+    "authors":
+    [
+      {
+        "name": "Espressif",
+        "email": "",
+        "maintainer": true
+      }
+    ],
+    "license": "",
+    "homepage": "https://github.com/espressif",
+    "frameworks": "*",
+    "platforms": "*"
+}

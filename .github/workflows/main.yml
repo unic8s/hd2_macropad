@@ -36,20 +36,36 @@ jobs:
       - name: Generate version
         run: python utils/write-version.py ${{ steps.tag_version.outputs.new_tag }}
 
-      - name: Build PlatformIO Project
-        run: pio run -t mergebin
+      - name: Build project for JC3248W535N
+        run: pio run -e JC3248W535N -t mergebin
         env:  
-          MERGED_BIN_PATH: ./hd2_macropad_install.bin
+          MERGED_BIN_PATH: ./hd2_macropad_JC3248W535N_install.bin
+
+      - name: Build project for ESP32-3248S035C
+        run: pio run -e ESP32-3248S035C -t mergebin
+        env:  
+          MERGED_BIN_PATH: ./hd2_macropad_ESP32-3248S035C_install.bin
 
       - name: Pack assets
         run: python utils/pack-assets.py
         
-      - name: Upload install binary to release
+      - name: Upload JC3248W535N install binary to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.github_token }}
-          file: ./hd2_macropad_install.bin
-          asset_name: hd2_macropad_install.bin
+          file: ./hd2_macropad_JC3248W535N_install.bin
+          asset_name: hd2_macropad_JC3248W535N_install.bin
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          overwrite: true
+          prerelease: true
+          body: ${{ steps.tag_version.outputs.changelog }}
+
+      - name: Upload ESP32-3248S035C install binary to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.github_token }}
+          file: ./hd2_macropad_ESP32-3248S035C_install.bin
+          asset_name: hd2_macropad_ESP32-3248S035C_install.bin
           tag: ${{ steps.tag_version.outputs.new_tag }}
           overwrite: true
           prerelease: true
@@ -59,8 +75,19 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.github_token }}
-          file: .pio/build/LVGL-320-480/firmware.bin
-          asset_name: hd2_macropad_update.bin
+          file: .pio/build/JC3248W535N/firmware.bin
+          asset_name: hd2_macropad_JC3248W535N_update.bin
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          overwrite: true
+          prerelease: true
+          body: ${{ steps.tag_version.outputs.changelog }}
+
+      - name: Upload update binary to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.github_token }}
+          file: .pio/build/ESP32-3248S035C/firmware.bin
+          asset_name: hd2_macropad_ESP32-3248S035C_update.bin
           tag: ${{ steps.tag_version.outputs.new_tag }}
           overwrite: true
           prerelease: true

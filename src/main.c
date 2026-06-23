@@ -18,7 +18,9 @@
 #include "hid_dev.h"
 #include "i2s_player.h"
 #include "ble/ble_controller.h"
-#include "usb/usb_controller.h"
+#ifdef FEAT_TUSB
+  #include "usb/usb_controller.h"
+#endif
 #include "configuration.h"
 #include "keymaps.h"
 #include "main.h"

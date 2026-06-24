@@ -16,10 +16,12 @@
 #include <ui/ui_post.h>
 #include "driver/gpio.h"
 #include "hid_dev.h"
+#ifdef FEAT_SD
 #include "i2s_player.h"
+#endif
 #include "ble/ble_controller.h"
 #ifdef FEAT_TUSB
-  #include "usb/usb_controller.h"
+#include "usb/usb_controller.h"
 #endif
 #include "configuration.h"
 #include "keymaps.h"
@@ -39,12 +41,14 @@ uint8_t stratagemCode[MAX_CMD_LENGTH];
 // Stratagem mask for modifier key combination (ctrl, alt, etc.)
 uint8_t stratagemMask;
 
+#ifdef FEAT_SD
 // Flag for sound playback state
 bool soundPlayback = false;
 // Path to sound file which should be played
 char *soundFile;
 // Flag for muting sound playback
 bool playerMuted;
+#endif
 
 // Delay for HID input execution in milliseconds (default: 100)
 int inputDelay = 100;
@@ -76,12 +80,14 @@ void setStratagemCode(uint8_t sequence[MAX_CMD_LENGTH], uint8_t mask, bool plain
       return;
     }
     break;
+#ifdef FEAT_TUSB
   case CT_USB:
     if (!usb_connected())
     {
       return;
     }
     break;
+#endif
   default:
     return;
   }
@@ -105,6 +111,7 @@ void setStratagemCode(uint8_t sequence[MAX_CMD_LENGTH], uint8_t mask, bool plain
   stratagemMask = mask;
 }
 
+#ifdef FEAT_SD
 // Playback sound file from specified path
 // path - path to the sound file
 void playbackSound(char *path)
@@ -112,6 +119,7 @@ void playbackSound(char *path)
   soundPlayback = true;
   soundFile = path;
 }
+#endif
 
 // Dim the screen to a specific value
 // brightness - A brightness value between 0 and 100 (percent)
@@ -225,6 +233,7 @@ void hid_input_task(void *pvParameters)
       ESP_LOGI(TAG, "Finish command");
     }
 
+    #ifdef FEAT_SD
     // Check if a sound playback is ongoing
     if (soundPlayback && lvglReady)
     {
@@ -236,6 +245,7 @@ void hid_input_task(void *pvParameters)
         play_wav(soundFile);
       }
     }
+    #endif
   }
 }
 

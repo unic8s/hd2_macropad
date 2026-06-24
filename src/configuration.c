@@ -1,12 +1,16 @@
 #include <esp_system.h>
 #include "esp_log.h"
 #include "nvs_flash.h"
+#ifdef FEAT_SD
 #include "i2s_sdcard.h"
+#endif
 #include <lvgl.h>
 #include "ui/ui.h"
 #include "ui/screens.h"
 #include "main.h"
 #include "configuration.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 const char *TAG_CFG = "Configuration";
 
@@ -24,8 +28,10 @@ extern bool showCooldowns;
 
 extern esp_err_t ble_controller_init();
 extern esp_err_t ble_controller_deinit();
+#ifdef FEAT_USB
 extern esp_err_t usb_controller_init();
 extern esp_err_t usb_controller_deinit();
+#endif
 
 #define CFG_KEY_DELAY "delay"
 #define CFG_KEY_ROTATION "rotation"
@@ -50,8 +56,10 @@ esp_err_t initConfig()
     }
     ESP_ERROR_CHECK(ret);
 
+    #ifdef FEAT_SD
     ESP_ERROR_CHECK(init_sdcard());
     lv_fs_fatfs_init();
+    #endif
 
     return ret;
 }
@@ -269,10 +277,12 @@ void setConnectivity(uint8_t index, bool restore)
         // Deinit Bluetooth controller
         ble_controller_deinit();
         break;
+#ifdef FEAT_USB
     case CT_USB:
         // Deinit USB controller
         usb_controller_deinit();
         break;
+#endif
     default:
         break;
     }
@@ -285,10 +295,12 @@ void setConnectivity(uint8_t index, bool restore)
         // Init Bluetooth controller
         ble_controller_init();
         break;
+#ifdef FEAT_USB
     case CT_USB:
         // Init USB controller
         usb_controller_init();
         break;
+#endif
     default:
         break;
     }

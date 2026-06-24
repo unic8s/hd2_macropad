@@ -9,7 +9,9 @@
 #include "hid_dev.h"
 #include "esp_log.h"
 #include "stratagems.h"
+#ifdef FEAT_SD
 #include "i2s_player.h"
+#endif
 #include "main.h"
 #include "ui_post.h"
 #include "configuration.h"
@@ -341,7 +343,9 @@ void action_deselect_stratagem(lv_event_t *e)
 
 	updateStratagemSelection();
 
+	#ifdef FEAT_SD
 	playbackSound(SND_DESELECT);
+	#endif
 }
 
 // Assign stratagem item from button
@@ -376,13 +380,17 @@ void action_select_stratagem(lv_event_t *e)
 
 		updateStratagemSelection();
 
+		#ifdef FEAT_SD
 		playbackSound(SND_SELECT);
+		#endif
 	}
 	else
 	{
 		lv_obj_clear_state(e->current_target, LV_STATE_CHECKED);
 
+		#ifdef FEAT_SD
 		playbackSound(SND_DESELECT);
+		#endif
 	}
 }
 
@@ -407,7 +415,9 @@ void action_reset_stratagems(lv_event_t *e)
 
 	updateStratagemSelection();
 
+	#ifdef FEAT_SD
 	playbackSound(SND_RESET);
+	#endif
 }
 
 // Change connectivity (Bluetooth/USB)
@@ -430,10 +440,12 @@ void _executeStdStratagem(uint8_t *sequence, char *path)
 {
 	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
 
+	#ifdef FEAT_SD
 	if (path != NULL)
 	{
 		playbackSound(path);
 	}
+	#endif
 }
 
 void _executeUserStratagem(uint8_t index)
@@ -482,9 +494,11 @@ void _executeUserStratagem(uint8_t index)
 		ui_update_task();
 	}
 
+	#ifdef FEAT_SD
 	char *path = item.soundPath;
 
 	playbackSound(path);
+	#endif
 }
 
 void action_reset_cooldown(lv_event_t *e)
@@ -750,7 +764,9 @@ void action_set_preset(lv_event_t *e)
 
 	updatePresets();
 
+	#ifdef FEAT_SD
 	playbackSound(SND_DESELECT);
+	#endif
 
 	if (strategemsAmount == 0)
 	{

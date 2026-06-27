@@ -365,10 +365,10 @@ const ext_img_desc_t images[370] = {
     { "BTES3", &img_btes3 },
     { "BS3", &img_bs3 },
     { "LES3", &img_les3 },
-    { "FRVS1", &img_frvs1 },
     { "FRVI1", &img_frvi1 },
-    { "FRVS2", &img_frvs2 },
     { "FRVI2", &img_frvi2 },
     { "FRVI3", &img_frvi3 },
+    { "FRVS1", &img_frvs1 },
+    { "FRVS2", &img_frvs2 },
     { "FRVS3", &img_frvs3 },
 };

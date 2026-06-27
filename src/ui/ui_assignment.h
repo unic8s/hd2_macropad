@@ -112,7 +112,10 @@ extern "C"
 
         SG_BS,
         SG_LES,
-        SG_BTES
+        SG_BTES,
+
+        SG_FRVS,
+        SG_FRVI
     };
 
     // Assign stratagems index to UI buttons
@@ -167,6 +170,8 @@ extern "C"
         // Supply
         objects.supply_ee->user_data = (void *)SG_EE;
         objects.supply_frv->user_data = (void *)SG_FRV;
+        objects.supply_frvs->user_data = (void *)SG_FRVS;
+        objects.supply_frvi->user_data = (void *)SG_FRVI;
         objects.supply_otf->user_data = (void *)SG_OTF;
         objects.supply_pe->user_data = (void *)SG_PE;
         objects.supply_cqc->user_data = (void *)SG_CQC;

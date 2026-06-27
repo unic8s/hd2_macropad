@@ -974,7 +974,7 @@ static void event_handler_cb_setup_tab_supply(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_setup_obj12(lv_event_t *e) {
+static void event_handler_cb_setup_supply_frv(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -990,7 +990,23 @@ static void event_handler_cb_setup_obj12(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_setup_supply_frv(lv_event_t *e) {
+static void event_handler_cb_setup_supply_frvs(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    lv_obj_t *ta = lv_event_get_target(e);
+    if (event == LV_EVENT_VALUE_CHANGED && lv_obj_has_state(ta, LV_STATE_CHECKED)) {
+        e->user_data = (void *)0;
+        action_select_stratagem(e);
+    }
+    if (event == LV_EVENT_VALUE_CHANGED && !lv_obj_has_state(ta, LV_STATE_CHECKED)) {
+        e->user_data = (void *)0;
+        action_deselect_stratagem(e);
+    }
+}
+
+static void event_handler_cb_setup_supply_frvi(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -1054,7 +1070,7 @@ static void event_handler_cb_setup_supply_cqc(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_setup_supply_ss(lv_event_t *e) {
+static void event_handler_cb_setup_obj12(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -1070,7 +1086,7 @@ static void event_handler_cb_setup_supply_ss(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_setup_obj13(lv_event_t *e) {
+static void event_handler_cb_setup_supply_ss(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -1135,6 +1151,22 @@ static void event_handler_cb_setup_supply_btes(lv_event_t *e) {
 }
 
 static void event_handler_cb_setup_supply_les(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    lv_obj_t *ta = lv_event_get_target(e);
+    if (event == LV_EVENT_VALUE_CHANGED && lv_obj_has_state(ta, LV_STATE_CHECKED)) {
+        e->user_data = (void *)0;
+        action_select_stratagem(e);
+    }
+    if (event == LV_EVENT_VALUE_CHANGED && !lv_obj_has_state(ta, LV_STATE_CHECKED)) {
+        e->user_data = (void *)0;
+        action_deselect_stratagem(e);
+    }
+}
+
+static void event_handler_cb_setup_obj13(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -1909,7 +1941,7 @@ static void event_handler_cb_setup_obj20(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 120, 0, e);
+        flowPropagateValueLVGLEvent(flowState, 122, 0, e);
     }
 }
 
@@ -1931,7 +1963,7 @@ static void event_handler_cb_setup_obj22(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 122, 0, e);
+        flowPropagateValueLVGLEvent(flowState, 124, 0, e);
     }
 }
 
@@ -1942,7 +1974,7 @@ static void event_handler_cb_setup_obj23(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 126, 0, e);
+        flowPropagateValueLVGLEvent(flowState, 128, 0, e);
     }
 }
 
@@ -1953,7 +1985,7 @@ static void event_handler_cb_setup_obj24(lv_event_t *e) {
     
     if (event == LV_EVENT_CLICKED) {
         e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 127, 0, e);
+        flowPropagateValueLVGLEvent(flowState, 129, 0, e);
     }
 }
 
@@ -3756,21 +3788,6 @@ void create_screen_setup() {
                     {
                         lv_obj_t *parent_obj = obj;
                         {
-                            lv_obj_t *obj = lv_obj_create(parent_obj);
-                            objects.obj12 = obj;
-                            lv_obj_set_pos(obj, 0, 0);
-                            lv_obj_set_size(obj, 28, 76);
-                            lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_add_event_cb(obj, event_handler_cb_setup_obj12, LV_EVENT_ALL, flowState);
-                            lv_obj_clear_flag(obj, LV_OBJ_FLAG_CLICKABLE);
-                        }
-                        {
                             // SupplyFRV
                             lv_obj_t *obj = lv_btn_create(parent_obj);
                             objects.supply_frv = obj;
@@ -3781,6 +3798,30 @@ void create_screen_setup() {
                             add_style_button_std(obj);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[eez_flow_get_selected_theme_index()][3]), LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_bg_img_src(obj, &img_frv1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                        }
+                        {
+                            // SupplyFRVS
+                            lv_obj_t *obj = lv_btn_create(parent_obj);
+                            objects.supply_frvs = obj;
+                            lv_obj_set_pos(obj, 203, 122);
+                            lv_obj_set_size(obj, 76, 76);
+                            lv_obj_add_event_cb(obj, event_handler_cb_setup_supply_frvs, LV_EVENT_ALL, flowState);
+                            lv_obj_add_flag(obj, LV_OBJ_FLAG_CHECKABLE);
+                            add_style_button_std(obj);
+                            lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[eez_flow_get_selected_theme_index()][3]), LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_bg_img_src(obj, &img_frvs1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                        }
+                        {
+                            // SupplyFRVI
+                            lv_obj_t *obj = lv_btn_create(parent_obj);
+                            objects.supply_frvi = obj;
+                            lv_obj_set_pos(obj, 203, 122);
+                            lv_obj_set_size(obj, 76, 76);
+                            lv_obj_add_event_cb(obj, event_handler_cb_setup_supply_frvi, LV_EVENT_ALL, flowState);
+                            lv_obj_add_flag(obj, LV_OBJ_FLAG_CHECKABLE);
+                            add_style_button_std(obj);
+                            lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[eez_flow_get_selected_theme_index()][3]), LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_bg_img_src(obj, &img_frvi1, LV_PART_MAIN | LV_STATE_DEFAULT);
                         }
                         {
                             // SupplyBMK
@@ -3819,6 +3860,21 @@ void create_screen_setup() {
                             lv_obj_set_style_bg_img_src(obj, &img_cqc1, LV_PART_MAIN | LV_STATE_DEFAULT);
                         }
                         {
+                            lv_obj_t *obj = lv_obj_create(parent_obj);
+                            objects.obj12 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, 28, 76);
+                            lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_add_event_cb(obj, event_handler_cb_setup_obj12, LV_EVENT_ALL, flowState);
+                            lv_obj_clear_flag(obj, LV_OBJ_FLAG_CLICKABLE);
+                        }
+                        {
                             // SupplySS
                             lv_obj_t *obj = lv_btn_create(parent_obj);
                             objects.supply_ss = obj;
@@ -3829,21 +3885,6 @@ void create_screen_setup() {
                             add_style_button_std(obj);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[eez_flow_get_selected_theme_index()][3]), LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_bg_img_src(obj, &img_ss1, LV_PART_MAIN | LV_STATE_DEFAULT);
-                        }
-                        {
-                            lv_obj_t *obj = lv_obj_create(parent_obj);
-                            objects.obj13 = obj;
-                            lv_obj_set_pos(obj, 0, 0);
-                            lv_obj_set_size(obj, 28, 76);
-                            lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-                            lv_obj_add_event_cb(obj, event_handler_cb_setup_obj13, LV_EVENT_ALL, flowState);
-                            lv_obj_clear_flag(obj, LV_OBJ_FLAG_CLICKABLE);
                         }
                         {
                             // SupplyPE
@@ -3892,6 +3933,21 @@ void create_screen_setup() {
                             add_style_button_std(obj);
                             lv_obj_set_style_border_color(obj, lv_color_hex(theme_colors[eez_flow_get_selected_theme_index()][3]), LV_PART_MAIN | LV_STATE_DEFAULT);
                             lv_obj_set_style_bg_img_src(obj, &img_les1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                        }
+                        {
+                            lv_obj_t *obj = lv_obj_create(parent_obj);
+                            objects.obj13 = obj;
+                            lv_obj_set_pos(obj, 0, 0);
+                            lv_obj_set_size(obj, 28, 76);
+                            lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                            lv_obj_add_event_cb(obj, event_handler_cb_setup_obj13, LV_EVENT_ALL, flowState);
+                            lv_obj_clear_flag(obj, LV_OBJ_FLAG_CLICKABLE);
                         }
                     }
                 }
@@ -7850,6 +7906,10 @@ void change_color_theme(uint32_t theme_index) {
     
     lv_obj_set_style_border_color(objects.supply_frv, lv_color_hex(theme_colors[theme_index][3]), LV_PART_MAIN | LV_STATE_DEFAULT);
     
+    lv_obj_set_style_border_color(objects.supply_frvs, lv_color_hex(theme_colors[theme_index][3]), LV_PART_MAIN | LV_STATE_DEFAULT);
+    
+    lv_obj_set_style_border_color(objects.supply_frvi, lv_color_hex(theme_colors[theme_index][3]), LV_PART_MAIN | LV_STATE_DEFAULT);
+    
     lv_obj_set_style_border_color(objects.supply_bmk, lv_color_hex(theme_colors[theme_index][3]), LV_PART_MAIN | LV_STATE_DEFAULT);
     
     lv_obj_set_style_border_color(objects.supply_otf, lv_color_hex(theme_colors[theme_index][3]), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -8023,7 +8083,7 @@ extern void add_style(lv_obj_t *obj, int32_t styleIndex);
 extern void remove_style(lv_obj_t *obj, int32_t styleIndex);
 
 static const char *screen_names[] = { "Intro", "Setup", "Preset", "ResetPreset", "Image", "Game", "Mission", "Config", "ResetConfig", "About", "Manual" };
-static const char *object_names[] = { "intro", "setup", "preset", "reset_preset", "image", "game", "mission", "config", "reset_config", "about", "manual", "img_splash", "tab_view_setup", "tab_rifle", "obj0", "weapons_mg", "weapons_hmg", "weapons_sw", "weapons_ac", "obj1", "obj2", "weapons_amr", "weapons_rg", "weapons_lc", "weapons_qc", "weapons_at", "obj3", "weapons_e", "weapons_sg", "weapons_mxg", "weapons_bs", "tab_special", "obj4", "weapons_arl", "weapons_c", "weapons_eat", "weapons_en", "weapons_rr", "obj5", "obj6", "weapons_eatl", "weapons_spr", "weapons_wsp", "weapons_gl", "weapons_bfgl", "obj7", "weapons_de", "weapons_ste", "weapons_ft", "weapons_dt", "weapons_cre", "tab_backpack", "obj8", "backpack_bsb", "backpack_sgp", "backpack_ds", "backpack_gd", "backpack_gdb", "obj9", "obj10", "backpack_gdr", "backpack_gdk", "backpack_gdhd", "backpack_sup", "obj11", "backpack_ph", "backpack_c4_p", "backpack_jp", "backpack_hp", "backpack_wp", "tab_supply", "obj12", "supply_frv", "supply_bmk", "supply_otf", "supply_cqc", "supply_ss", "obj13", "supply_pe", "supply_ee", "supply_btes", "supply_les", "tab_sentry", "sentry_mgs", "sentry_gs", "sentry_acs", "sentry_hmge", "sentry_ate", "sentry_fs", "obj14", "sentry_ms", "sentry_rs", "sentry_ems", "sentry_ls", "sentry_gms", "obj15", "tab_ground", "obj16", "ground_gm", "ground_tt", "ground_sgr", "ground_apm", "obj17", "ground_atm", "ground_im", "ground_gb", "tab_strike", "strike120", "strike380", "strike_ors", "strike_ogb", "strike_oas", "strike_ol", "strike_ops", "strike_owb", "strike_oes", "strike_onb", "strike_ogs", "strike_oss", "tab_eagle", "obj18", "eagle110", "eagle500", "eagle_a", "eagle_cb", "obj19", "eagle_sr", "eagle_na", "eagle_ss", "obj20", "obj21", "obj22", "obj23", "obj24", "btn_preset1", "btn_preset2", "btn_preset3", "btn_preset4", "btn_preset5", "btn_preset6", "obj25", "btn_preset_image", "obj26", "obj27", "obj28", "obj29", "obj30", "obj31", "obj32", "obj33", "obj34", "obj35", "obj36", "obj37", "obj38", "obj39", "obj40", "obj41", "obj42", "obj43", "obj44", "obj45", "btn_reinforce", "btn_resupply", "btn_sos", "btn_rearm", "custom_stratagem1", "custom_stratagem2", "custom_stratagem3", "custom_stratagem4", "custom_stratagem5", "custom_stratagem6", "btn_seaf", "btn_hellbomb", "obj46", "obj47", "btn_sssd", "btn_ud", "btn_hbd", "btn_pd", "btn_sef", "btn_td", "btn_sp", "btn_oif", "btn_dfv", "btn_cc", "btn_csd", "obj48", "tab_view_config", "sld_brightness", "chb_flip", "chb_mute", "sld_delay", "dd_connectivity", "obj49", "dd_keymap", "chb_cooldowns", "chb_ship_mod_srp", "chb_ship_mod_ma", "chb_ship_mod_hc", "chb_ship_mod_zbl", "chb_ship_mod_lvc", "chb_ship_mod_ss", "chb_ship_mod_tsu", "chb_ship_mod_rls", "chb_ship_mod_dt", "chb_auto_complete", "chb_game_after_preset", "obj50", "obj51", "obj52", "obj53", "obj54", "obj55", "obj56", "manual_arrow_up", "manual_arrow_left", "manual_arrow_right", "manual_arrow_down", "obj57", "cnt_progress", "bar_amount", "label_amount", "msg_box", "msg_label", "label_cooldown1", "label_cooldown2", "label_cooldown3", "label_cooldown4", "label_cooldown5", "label_cooldown6", "img_connection2", "obj58", "obj59", "obj60", "obj61", "obj62", "obj63", "obj64", "obj65", "obj66", "lbl_brightness", "lbl_delay", "img_connection1", "obj67", "lbl_version", "obj68", "obj69", "obj70", "manual_preview_item", "input_seq", "manual_cmd1", "manual_cmd2", "manual_cmd3", "manual_cmd4", "manual_cmd5", "manual_cmd6", "manual_cmd7", "manual_cmd8", "manual_cmd9", "cnt_usr_stg_lst", "cnt_usr_stg_seq1", "seq_ico1", "seq_cmd1_1", "seq_cmd1_2", "seq_cmd1_3", "seq_cmd1_4", "seq_cmd1_5", "seq_cmd1_6", "seq_cmd1_7", "seq_cmd1_8", "seq_cmd1_9", "cnt_usr_stg_seq2", "seq_ico2", "seq_cmd2_1", "seq_cmd2_2", "seq_cmd2_3", "seq_cmd2_4", "seq_cmd2_5", "seq_cmd2_6", "seq_cmd2_7", "seq_cmd2_8", "seq_cmd2_9", "cnt_usr_stg_seq3", "seq_ico3", "seq_cmd3_1", "seq_cmd3_2", "seq_cmd3_3", "seq_cmd3_4", "seq_cmd3_5", "seq_cmd3_6", "seq_cmd3_7", "seq_cmd3_8", "seq_cmd3_9", "cnt_usr_stg_seq4", "seq_ico4", "seq_cmd4_1", "seq_cmd4_2", "seq_cmd4_3", "seq_cmd4_4", "seq_cmd4_5", "seq_cmd4_6", "seq_cmd4_7", "seq_cmd4_8", "seq_cmd4_9", "cnt_usr_stg_seq5", "seq_ico5", "seq_cmd5_1", "seq_cmd5_2", "seq_cmd5_3", "seq_cmd5_4", "seq_cmd5_5", "seq_cmd5_6", "seq_cmd5_7", "seq_cmd5_8", "seq_cmd5_9", "cnt_usr_stg_seq6", "seq_ico6", "seq_cmd6_1", "seq_cmd6_2", "seq_cmd6_3", "seq_cmd6_4", "seq_cmd6_5", "seq_cmd6_6", "seq_cmd6_7", "seq_cmd6_8", "seq_cmd6_9" };
+static const char *object_names[] = { "intro", "setup", "preset", "reset_preset", "image", "game", "mission", "config", "reset_config", "about", "manual", "img_splash", "tab_view_setup", "tab_rifle", "obj0", "weapons_mg", "weapons_hmg", "weapons_sw", "weapons_ac", "obj1", "obj2", "weapons_amr", "weapons_rg", "weapons_lc", "weapons_qc", "weapons_at", "obj3", "weapons_e", "weapons_sg", "weapons_mxg", "weapons_bs", "tab_special", "obj4", "weapons_arl", "weapons_c", "weapons_eat", "weapons_en", "weapons_rr", "obj5", "obj6", "weapons_eatl", "weapons_spr", "weapons_wsp", "weapons_gl", "weapons_bfgl", "obj7", "weapons_de", "weapons_ste", "weapons_ft", "weapons_dt", "weapons_cre", "tab_backpack", "obj8", "backpack_bsb", "backpack_sgp", "backpack_ds", "backpack_gd", "backpack_gdb", "obj9", "obj10", "backpack_gdr", "backpack_gdk", "backpack_gdhd", "backpack_sup", "obj11", "backpack_ph", "backpack_c4_p", "backpack_jp", "backpack_hp", "backpack_wp", "tab_supply", "supply_frv", "supply_frvs", "supply_frvi", "supply_bmk", "supply_otf", "supply_cqc", "obj12", "supply_ss", "supply_pe", "supply_ee", "supply_btes", "supply_les", "obj13", "tab_sentry", "sentry_mgs", "sentry_gs", "sentry_acs", "sentry_hmge", "sentry_ate", "sentry_fs", "obj14", "sentry_ms", "sentry_rs", "sentry_ems", "sentry_ls", "sentry_gms", "obj15", "tab_ground", "obj16", "ground_gm", "ground_tt", "ground_sgr", "ground_apm", "obj17", "ground_atm", "ground_im", "ground_gb", "tab_strike", "strike120", "strike380", "strike_ors", "strike_ogb", "strike_oas", "strike_ol", "strike_ops", "strike_owb", "strike_oes", "strike_onb", "strike_ogs", "strike_oss", "tab_eagle", "obj18", "eagle110", "eagle500", "eagle_a", "eagle_cb", "obj19", "eagle_sr", "eagle_na", "eagle_ss", "obj20", "obj21", "obj22", "obj23", "obj24", "btn_preset1", "btn_preset2", "btn_preset3", "btn_preset4", "btn_preset5", "btn_preset6", "obj25", "btn_preset_image", "obj26", "obj27", "obj28", "obj29", "obj30", "obj31", "obj32", "obj33", "obj34", "obj35", "obj36", "obj37", "obj38", "obj39", "obj40", "obj41", "obj42", "obj43", "obj44", "obj45", "btn_reinforce", "btn_resupply", "btn_sos", "btn_rearm", "custom_stratagem1", "custom_stratagem2", "custom_stratagem3", "custom_stratagem4", "custom_stratagem5", "custom_stratagem6", "btn_seaf", "btn_hellbomb", "obj46", "obj47", "btn_sssd", "btn_ud", "btn_hbd", "btn_pd", "btn_sef", "btn_td", "btn_sp", "btn_oif", "btn_dfv", "btn_cc", "btn_csd", "obj48", "tab_view_config", "sld_brightness", "chb_flip", "chb_mute", "sld_delay", "dd_connectivity", "obj49", "dd_keymap", "chb_cooldowns", "chb_ship_mod_srp", "chb_ship_mod_ma", "chb_ship_mod_hc", "chb_ship_mod_zbl", "chb_ship_mod_lvc", "chb_ship_mod_ss", "chb_ship_mod_tsu", "chb_ship_mod_rls", "chb_ship_mod_dt", "chb_auto_complete", "chb_game_after_preset", "obj50", "obj51", "obj52", "obj53", "obj54", "obj55", "obj56", "manual_arrow_up", "manual_arrow_left", "manual_arrow_right", "manual_arrow_down", "obj57", "cnt_progress", "bar_amount", "label_amount", "msg_box", "msg_label", "label_cooldown1", "label_cooldown2", "label_cooldown3", "label_cooldown4", "label_cooldown5", "label_cooldown6", "img_connection2", "obj58", "obj59", "obj60", "obj61", "obj62", "obj63", "obj64", "obj65", "obj66", "lbl_brightness", "lbl_delay", "img_connection1", "obj67", "lbl_version", "obj68", "obj69", "obj70", "manual_preview_item", "input_seq", "manual_cmd1", "manual_cmd2", "manual_cmd3", "manual_cmd4", "manual_cmd5", "manual_cmd6", "manual_cmd7", "manual_cmd8", "manual_cmd9", "cnt_usr_stg_lst", "cnt_usr_stg_seq1", "seq_ico1", "seq_cmd1_1", "seq_cmd1_2", "seq_cmd1_3", "seq_cmd1_4", "seq_cmd1_5", "seq_cmd1_6", "seq_cmd1_7", "seq_cmd1_8", "seq_cmd1_9", "cnt_usr_stg_seq2", "seq_ico2", "seq_cmd2_1", "seq_cmd2_2", "seq_cmd2_3", "seq_cmd2_4", "seq_cmd2_5", "seq_cmd2_6", "seq_cmd2_7", "seq_cmd2_8", "seq_cmd2_9", "cnt_usr_stg_seq3", "seq_ico3", "seq_cmd3_1", "seq_cmd3_2", "seq_cmd3_3", "seq_cmd3_4", "seq_cmd3_5", "seq_cmd3_6", "seq_cmd3_7", "seq_cmd3_8", "seq_cmd3_9", "cnt_usr_stg_seq4", "seq_ico4", "seq_cmd4_1", "seq_cmd4_2", "seq_cmd4_3", "seq_cmd4_4", "seq_cmd4_5", "seq_cmd4_6", "seq_cmd4_7", "seq_cmd4_8", "seq_cmd4_9", "cnt_usr_stg_seq5", "seq_ico5", "seq_cmd5_1", "seq_cmd5_2", "seq_cmd5_3", "seq_cmd5_4", "seq_cmd5_5", "seq_cmd5_6", "seq_cmd5_7", "seq_cmd5_8", "seq_cmd5_9", "cnt_usr_stg_seq6", "seq_ico6", "seq_cmd6_1", "seq_cmd6_2", "seq_cmd6_3", "seq_cmd6_4", "seq_cmd6_5", "seq_cmd6_6", "seq_cmd6_7", "seq_cmd6_8", "seq_cmd6_9" };
 static const char *style_names[] = { "ButtonStd", "TabStratagem", "TabConfig", "SliderConfig", "SwitchConfig", "LabelCooldown", "CheckboxConfig", "DropdownConfig", "ArrowSequence" };
 static const char *theme_names[] = { "Default" };
 

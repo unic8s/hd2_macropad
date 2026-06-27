@@ -884,7 +884,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
         480,
         9.75,
         SHIP_MA | SHIP_HC,
-        SND_BACKPACK,
+        SND_SUPPLY,
         sgBlue,
         &img_frv3,
         &img_frv1,
@@ -1267,7 +1267,35 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
         &img_btes3,
         &img_btes1,
         &img_btes2,
-        SG_BTES}};
+        SG_BTES},
+    
+    // 88
+    // M-103 Supply FRV
+    {
+        {INPUT_LEFT, INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT, 0, 0},
+        480,
+        10.5,
+        SHIP_MA,
+        SND_SUPPLY,
+        sgBlue,
+        &img_frvs3,
+        &img_frvs1,
+        &img_frvs2,
+        SG_FRVS},
+    
+    // 89
+    // M-104 Incinerator FRV
+    {
+        {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_UP, 0, 0},
+        480,
+        10.5,
+        SHIP_MA,
+        SND_SUPPLY,
+        sgBlue,
+        &img_frvi3,
+        &img_frvi1,
+        &img_frvi2,
+        SG_FRVI}};
 
 const stratagemBase strategemBaseList[SG_BASE_AMOUNT] = {
     // 0

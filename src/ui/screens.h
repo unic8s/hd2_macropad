@@ -19,7 +19,7 @@ typedef struct _objects_t {
     lv_obj_t *reset_config;
     lv_obj_t *about;
     lv_obj_t *manual;
-    lv_obj_t *img_splash;
+    lv_obj_t *update;
     lv_obj_t *tab_view_setup;
     lv_obj_t *tab_rifle;
     lv_obj_t *obj0;
@@ -225,11 +225,14 @@ typedef struct _objects_t {
     lv_obj_t *obj54;
     lv_obj_t *obj55;
     lv_obj_t *obj56;
+    lv_obj_t *obj57;
     lv_obj_t *manual_arrow_up;
     lv_obj_t *manual_arrow_left;
     lv_obj_t *manual_arrow_right;
     lv_obj_t *manual_arrow_down;
-    lv_obj_t *obj57;
+    lv_obj_t *obj58;
+    lv_obj_t *obj59;
+    lv_obj_t *img_splash;
     lv_obj_t *cnt_progress;
     lv_obj_t *bar_amount;
     lv_obj_t *label_amount;
@@ -242,8 +245,6 @@ typedef struct _objects_t {
     lv_obj_t *label_cooldown5;
     lv_obj_t *label_cooldown6;
     lv_obj_t *img_connection2;
-    lv_obj_t *obj58;
-    lv_obj_t *obj59;
     lv_obj_t *obj60;
     lv_obj_t *obj61;
     lv_obj_t *obj62;
@@ -251,14 +252,16 @@ typedef struct _objects_t {
     lv_obj_t *obj64;
     lv_obj_t *obj65;
     lv_obj_t *obj66;
+    lv_obj_t *obj67;
+    lv_obj_t *obj68;
     lv_obj_t *lbl_brightness;
     lv_obj_t *lbl_delay;
     lv_obj_t *img_connection1;
-    lv_obj_t *obj67;
-    lv_obj_t *lbl_version;
-    lv_obj_t *obj68;
     lv_obj_t *obj69;
+    lv_obj_t *lbl_version;
     lv_obj_t *obj70;
+    lv_obj_t *obj71;
+    lv_obj_t *obj72;
     lv_obj_t *manual_preview_item;
     lv_obj_t *input_seq;
     lv_obj_t *manual_cmd1;
@@ -353,6 +356,7 @@ enum ScreensEnum {
     SCREEN_ID_RESET_CONFIG = 9,
     SCREEN_ID_ABOUT = 10,
     SCREEN_ID_MANUAL = 11,
+    SCREEN_ID_UPDATE = 12,
 };
 
 void create_screen_intro();
@@ -387,6 +391,9 @@ void tick_screen_about();
 
 void create_screen_manual();
 void tick_screen_manual();
+
+void create_screen_update();
+void tick_screen_update();
 
 enum Themes {
     THEME_ID_DEFAULT,

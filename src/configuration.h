@@ -24,6 +24,7 @@ extern "C"
 	void setShipModules(bool restore);
 	void loadConfig();
 	void initConnection();
+	void deinitConnection();
 	esp_err_t openConfig();
 	void closeConfig();
 	void resetConfig();

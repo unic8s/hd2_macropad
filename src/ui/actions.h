@@ -42,6 +42,7 @@ extern void action_init_hid(lv_event_t * e);
 extern void action_reset_cooldown(lv_event_t * e);
 extern void action_game_after_preset(lv_event_t * e);
 extern void action_goto_manual(lv_event_t * e);
+extern void action_deinit_hid(lv_event_t * e);
 
 
 #ifdef __cplusplus

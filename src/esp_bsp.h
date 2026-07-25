@@ -30,6 +30,7 @@
 /////////////////////////////////////////// LCD spec of QSPI /////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#ifdef ESP32S3
 #define EXAMPLE_PIN_NUM_QSPI_CS         (GPIO_NUM_45)
 #define EXAMPLE_PIN_NUM_QSPI_PCLK       (GPIO_NUM_47)
 #define EXAMPLE_PIN_NUM_QSPI_DATA0      (GPIO_NUM_21)
@@ -40,6 +41,20 @@
 #define EXAMPLE_PIN_NUM_QSPI_DC         (GPIO_NUM_8)
 #define EXAMPLE_PIN_NUM_QSPI_TE         (GPIO_NUM_38)
 #define EXAMPLE_PIN_NUM_QSPI_BL         (GPIO_NUM_1)
+#endif
+
+#ifdef ARDUINO_ESP32_DEV
+#define EXAMPLE_PIN_NUM_QSPI_CS         (15)
+#define EXAMPLE_PIN_NUM_QSPI_PCLK       (14)
+#define EXAMPLE_PIN_NUM_QSPI_DATA0      (GPIO_NUM_21)
+#define EXAMPLE_PIN_NUM_QSPI_DATA1      (0)
+#define EXAMPLE_PIN_NUM_QSPI_DATA2      (0)
+#define EXAMPLE_PIN_NUM_QSPI_DATA3      (GPIO_NUM_39)
+#define EXAMPLE_PIN_NUM_QSPI_RST        (GPIO_NUM_NC)
+#define EXAMPLE_PIN_NUM_QSPI_DC         (2)
+#define EXAMPLE_PIN_NUM_QSPI_TE         (GPIO_NUM_38)
+#define EXAMPLE_PIN_NUM_QSPI_BL         (GPIO_NUM_1)
+#endif
 
 #define EXAMPLE_PIN_NUM_QSPI_TOUCH_SCL  (GPIO_NUM_8)
 #define EXAMPLE_PIN_NUM_QSPI_TOUCH_SDA  (GPIO_NUM_4)

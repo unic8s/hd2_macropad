@@ -1,3 +1,5 @@
+#ifdef FEAT_TUSB
+
 #include <stdlib.h>
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
@@ -146,3 +148,5 @@ esp_err_t usb_controller_deinit()
 
     return ret;
 }
+
+#endif

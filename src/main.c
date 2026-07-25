@@ -41,14 +41,12 @@ uint8_t stratagemCode[MAX_CMD_LENGTH];
 // Stratagem mask for modifier key combination (ctrl, alt, etc.)
 uint8_t stratagemMask;
 
-#ifdef FEAT_SD
 // Flag for sound playback state
 bool soundPlayback = false;
 // Path to sound file which should be played
 char *soundFile;
 // Flag for muting sound playback
 bool playerMuted;
-#endif
 
 // Delay for HID input execution in milliseconds (default: 100)
 int inputDelay = 100;
@@ -111,7 +109,6 @@ void setStratagemCode(uint8_t sequence[MAX_CMD_LENGTH], uint8_t mask, bool plain
   stratagemMask = mask;
 }
 
-#ifdef FEAT_SD
 // Playback sound file from specified path
 // path - path to the sound file
 void playbackSound(char *path)
@@ -119,7 +116,6 @@ void playbackSound(char *path)
   soundPlayback = true;
   soundFile = path;
 }
-#endif
 
 // Dim the screen to a specific value
 // brightness - A brightness value between 0 and 100 (percent)
@@ -151,6 +147,7 @@ void updateConnection()
       imgConnection = (lv_img_dsc_t *)&img_btdis;
     }
     break;
+#ifdef FEAT_TUSB
   case CT_USB:
     // Check USB connection state
     if (usb_connected())
@@ -162,6 +159,7 @@ void updateConnection()
       imgConnection = (lv_img_dsc_t *)&img_us_bdis;
     }
     break;
+#endif
   default:
     return;
   }
@@ -193,9 +191,11 @@ void hid_input_task(void *pvParameters)
       case CT_BLUETOOTH:
         fptr = &ble_keyboard_send;
         break;
+#ifdef FEAT_TUSB
       case CT_USB:
         fptr = &usb_keyboard_send;
         break;
+#endif
       default:
         return;
       }

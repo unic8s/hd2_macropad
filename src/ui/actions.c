@@ -3,7 +3,9 @@
 #include "ui_events.h"
 #include "configuration.h"
 #include "screens.h"
+#ifdef FEAT_TUSB
 #include "usb/usb_controller.h"
+#endif
 
 extern uint8_t connectionType;
 
@@ -51,9 +53,11 @@ void action_restart_device(lv_event_t *e)
 {
 	switch (connectionType)
 	{
+#ifdef FEAT_TUSB
 	case CT_USB:
 		usb_controller_deinit();
 		break;
+#endif
 	default:
 		break;
 	}

@@ -42,7 +42,7 @@ extern esp_err_t usb_controller_deinit();
 #define CFG_KEY_AUTOCOMPLETE "autoComplete"
 #define CFG_KEY_COOLDOWN "showCooldown"
 #define CFG_KEY_SHIPMODULES "shipModules"
-#define CFG_KEY_GAMEAFTERPRESET  "gamePreset"
+#define CFG_KEY_GAMEAFTERPRESET "gamePreset"
 
 // Init configuration from NVS
 esp_err_t initConfig()
@@ -271,21 +271,7 @@ void setConnectivity(uint8_t index, bool restore)
 
     playbackSound(SND_SWITCH);
 
-    switch (connectionType)
-    {
-    case CT_BLUETOOTH:
-        // Deinit Bluetooth controller
-        ble_controller_deinit();
-        break;
-#ifdef FEAT_USB
-    case CT_USB:
-        // Deinit USB controller
-        usb_controller_deinit();
-        break;
-#endif
-    default:
-        break;
-    }
+    deinitConnection();
 
     connectionType = index;
 
@@ -513,6 +499,25 @@ void initConnection()
     setConnectivity(connectivity_index, true);
 
     closeConfig();
+}
+
+void deinitConnection()
+{
+    switch (connectionType)
+    {
+    case CT_BLUETOOTH:
+        // Deinit Bluetooth controller
+        ble_controller_deinit();
+        break;
+#ifdef FEAT_USB
+    case CT_USB:
+        // Deinit USB controller
+        usb_controller_deinit();
+        break;
+#endif
+    default:
+        break;
+    }
 }
 
 // Load single configuration of a key/value from NVS

@@ -950,14 +950,14 @@ void finalizeManualExecution()
 		{
 			stratagemItem item = strategemItemList[manualMatch];
 
-			sequence = item.sequence;
+			sequence = &item.sequence;
 			soundPath = item.soundPath;
 		}
 		else if (manualList == 1)
 		{
 			stratagemBase item = strategemBaseList[manualMatch];
 
-			sequence = item.sequence;
+			sequence = &item.sequence;
 			soundPath = item.soundPath;
 		}
 		else if (manualList == 2)
@@ -965,7 +965,7 @@ void finalizeManualExecution()
 			const uint8_t itemIndex = indices[manualMatch];
 			const stratagemItem item = strategemItemList[itemIndex];
 
-			sequence = item.sequence;
+			sequence = &item.sequence;
 			soundPath = item.soundPath;
 		}
 

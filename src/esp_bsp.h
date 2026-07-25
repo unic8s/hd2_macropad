@@ -24,42 +24,42 @@
 #define BSP_I2C_NUM                     (I2C_NUM_0)
 #define BSP_I2C_CLK_SPEED_HZ            400000
 
-#define EXAMPLE_LCD_QSPI_HOST           (SPI2_HOST)
+#define HD2MP_LCD_QSPI_HOST           (SPI2_HOST)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////// LCD spec of QSPI /////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #ifdef ESP32S3
-#define EXAMPLE_PIN_NUM_QSPI_CS         (GPIO_NUM_45)
-#define EXAMPLE_PIN_NUM_QSPI_PCLK       (GPIO_NUM_47)
-#define EXAMPLE_PIN_NUM_QSPI_DATA0      (GPIO_NUM_21)
-#define EXAMPLE_PIN_NUM_QSPI_DATA1      (GPIO_NUM_48)
-#define EXAMPLE_PIN_NUM_QSPI_DATA2      (GPIO_NUM_40)
-#define EXAMPLE_PIN_NUM_QSPI_DATA3      (GPIO_NUM_39)
-#define EXAMPLE_PIN_NUM_QSPI_RST        (GPIO_NUM_NC)
-#define EXAMPLE_PIN_NUM_QSPI_DC         (GPIO_NUM_8)
-#define EXAMPLE_PIN_NUM_QSPI_TE         (GPIO_NUM_38)
-#define EXAMPLE_PIN_NUM_QSPI_BL         (GPIO_NUM_1)
+#define HD2MP_PIN_NUM_QSPI_CS         (GPIO_NUM_45)
+#define HD2MP_PIN_NUM_QSPI_PCLK       (GPIO_NUM_47)
+#define HD2MP_PIN_NUM_QSPI_DATA0      (GPIO_NUM_21)
+#define HD2MP_PIN_NUM_QSPI_DATA1      (GPIO_NUM_48)
+#define HD2MP_PIN_NUM_QSPI_DATA2      (GPIO_NUM_40)
+#define HD2MP_PIN_NUM_QSPI_DATA3      (GPIO_NUM_39)
+#define HD2MP_PIN_NUM_QSPI_RST        (GPIO_NUM_NC)
+#define HD2MP_PIN_NUM_QSPI_DC         (GPIO_NUM_8)
+#define HD2MP_PIN_NUM_QSPI_TE         (GPIO_NUM_38)
+#define HD2MP_PIN_NUM_QSPI_BL         (GPIO_NUM_1)
 #endif
 
 #ifdef ARDUINO_ESP32_DEV
-#define EXAMPLE_PIN_NUM_QSPI_CS         (15)
-#define EXAMPLE_PIN_NUM_QSPI_PCLK       (14)
-#define EXAMPLE_PIN_NUM_QSPI_DATA0      (GPIO_NUM_21)
-#define EXAMPLE_PIN_NUM_QSPI_DATA1      (0)
-#define EXAMPLE_PIN_NUM_QSPI_DATA2      (0)
-#define EXAMPLE_PIN_NUM_QSPI_DATA3      (GPIO_NUM_39)
-#define EXAMPLE_PIN_NUM_QSPI_RST        (GPIO_NUM_NC)
-#define EXAMPLE_PIN_NUM_QSPI_DC         (2)
-#define EXAMPLE_PIN_NUM_QSPI_TE         (GPIO_NUM_38)
-#define EXAMPLE_PIN_NUM_QSPI_BL         (GPIO_NUM_1)
+#define HD2MP_PIN_NUM_QSPI_CS         (15)
+#define HD2MP_PIN_NUM_QSPI_PCLK       (14)
+#define HD2MP_PIN_NUM_QSPI_DATA0      (GPIO_NUM_21)
+#define HD2MP_PIN_NUM_QSPI_DATA1      (0)
+#define HD2MP_PIN_NUM_QSPI_DATA2      (0)
+#define HD2MP_PIN_NUM_QSPI_DATA3      (GPIO_NUM_39)
+#define HD2MP_PIN_NUM_QSPI_RST        (GPIO_NUM_NC)
+#define HD2MP_PIN_NUM_QSPI_DC         (2)
+#define HD2MP_PIN_NUM_QSPI_TE         (GPIO_NUM_38)
+#define HD2MP_PIN_NUM_QSPI_BL         (GPIO_NUM_1)
 #endif
 
-#define EXAMPLE_PIN_NUM_QSPI_TOUCH_SCL  (GPIO_NUM_8)
-#define EXAMPLE_PIN_NUM_QSPI_TOUCH_SDA  (GPIO_NUM_4)
-#define EXAMPLE_PIN_NUM_QSPI_TOUCH_RST  (-1)
-#define EXAMPLE_PIN_NUM_QSPI_TOUCH_INT  (-1)
+#define HD2MP_PIN_NUM_QSPI_TOUCH_SCL  (GPIO_NUM_8)
+#define HD2MP_PIN_NUM_QSPI_TOUCH_SDA  (GPIO_NUM_4)
+#define HD2MP_PIN_NUM_QSPI_TOUCH_RST  (-1)
+#define HD2MP_PIN_NUM_QSPI_TOUCH_INT  (-1)
 
 #ifdef __cplusplus
 extern "C" {

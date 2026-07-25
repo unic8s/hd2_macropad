@@ -331,7 +331,7 @@ void app_main()
   // Display configuration
   bsp_display_cfg_t cfg = {
       .lvgl_port_cfg = ESP_LVGL_PORT_INIT_CONFIG(),
-      .buffer_size = EXAMPLE_LCD_QSPI_H_RES * EXAMPLE_LCD_QSPI_V_RES,
+      .buffer_size = HD2MP_LCD_QSPI_H_RES * HD2MP_LCD_QSPI_V_RES,
       .rotate = screenRotation,
   };
 

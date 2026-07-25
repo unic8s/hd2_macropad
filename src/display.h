@@ -31,11 +31,11 @@
 /* LCD display color space */
 #define BSP_LCD_COLOR_SPACE         (ESP_LCD_COLOR_SPACE_RGB)
 /* LCD definition */
-#define EXAMPLE_LCD_I80_H_RES       (170)
-#define EXAMPLE_LCD_I80_V_RES       (560)
+#define HD2MP_LCD_I80_H_RES       (170)
+#define HD2MP_LCD_I80_V_RES       (560)
 
-#define EXAMPLE_LCD_QSPI_H_RES      (320)
-#define EXAMPLE_LCD_QSPI_V_RES      (480)
+#define HD2MP_LCD_QSPI_H_RES      (320)
+#define HD2MP_LCD_QSPI_V_RES      (480)
 
 /**
  * @brief Tear configuration structure

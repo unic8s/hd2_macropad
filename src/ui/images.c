@@ -1,6 +1,6 @@
 #include "images.h"
 
-const ext_img_desc_t images[364] = {
+const ext_img_desc_t images[371] = {
     { "splash", &img_splash },
     { "tabIcons", &img_tab_icons },
     { "IconBack", &img_icon_back },
@@ -22,6 +22,7 @@ const ext_img_desc_t images[364] = {
     { "IconSelection", &img_icon_selection },
     { "IconImage", &img_icon_image },
     { "IconArrowKeys", &img_icon_arrow_keys },
+    { "IconUpdate", &img_icon_update },
     { "BTcon", &img_btcon },
     { "BTdis", &img_btdis },
     { "USBcon", &img_us_bcon },
@@ -365,4 +366,10 @@ const ext_img_desc_t images[364] = {
     { "BTES3", &img_btes3 },
     { "BS3", &img_bs3 },
     { "LES3", &img_les3 },
+    { "FRVI3", &img_frvi3 },
+    { "FRVS3", &img_frvs3 },
+    { "FRVI2", &img_frvi2 },
+    { "FRVS2", &img_frvs2 },
+    { "FRVI1", &img_frvi1 },
+    { "FRVS1", &img_frvs1 },
 };

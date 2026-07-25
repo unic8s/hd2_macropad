@@ -95,9 +95,9 @@ esp_err_t bsp_i2c_init(void)
 
     const i2c_config_t i2c_conf = {
         .mode = I2C_MODE_MASTER,
-        .sda_io_num = EXAMPLE_PIN_NUM_QSPI_TOUCH_SDA,
+        .sda_io_num = HD2MP_PIN_NUM_QSPI_TOUCH_SDA,
         .sda_pullup_en = GPIO_PULLUP_DISABLE,
-        .scl_io_num = EXAMPLE_PIN_NUM_QSPI_TOUCH_SCL,
+        .scl_io_num = HD2MP_PIN_NUM_QSPI_TOUCH_SCL,
         .scl_pullup_en = GPIO_PULLUP_DISABLE,
         .master.clk_speed = BSP_I2C_CLK_SPEED_HZ
     };
@@ -123,7 +123,7 @@ static esp_err_t bsp_display_brightness_init(void)
 {
     // Setup LEDC peripheral for PWM backlight control
     const ledc_channel_config_t LCD_backlight_channel = {
-        .gpio_num = EXAMPLE_PIN_NUM_QSPI_BL,
+        .gpio_num = HD2MP_PIN_NUM_QSPI_BL,
         .speed_mode = LEDC_LOW_SPEED_MODE,
         .channel = LCD_LEDC_CH,
         .intr_type = LEDC_INTR_DISABLE,
@@ -230,18 +230,18 @@ esp_err_t bsp_display_new(const bsp_display_config_t *config, esp_lcd_panel_hand
 
     ESP_LOGI(TAG, "Initialize SPI bus");
     const spi_bus_config_t buscfg = AXS15231B_PANEL_BUS_QSPI_CONFIG(
-                                        EXAMPLE_PIN_NUM_QSPI_PCLK,
-                                        EXAMPLE_PIN_NUM_QSPI_DATA0,
-                                        EXAMPLE_PIN_NUM_QSPI_DATA1,
-                                        EXAMPLE_PIN_NUM_QSPI_DATA2,
-                                        EXAMPLE_PIN_NUM_QSPI_DATA3,
+                                        HD2MP_PIN_NUM_QSPI_PCLK,
+                                        HD2MP_PIN_NUM_QSPI_DATA0,
+                                        HD2MP_PIN_NUM_QSPI_DATA1,
+                                        HD2MP_PIN_NUM_QSPI_DATA2,
+                                        HD2MP_PIN_NUM_QSPI_DATA3,
                                         config->max_transfer_sz);
-    ESP_ERROR_CHECK(spi_bus_initialize(EXAMPLE_LCD_QSPI_HOST, &buscfg, SPI_DMA_CH_AUTO));
+    ESP_ERROR_CHECK(spi_bus_initialize(HD2MP_LCD_QSPI_HOST, &buscfg, SPI_DMA_CH_AUTO));
 
     ESP_LOGI(TAG, "Install panel IO");
-    const esp_lcd_panel_io_spi_config_t io_config = AXS15231B_PANEL_IO_QSPI_CONFIG(EXAMPLE_PIN_NUM_QSPI_CS, NULL, NULL);
+    const esp_lcd_panel_io_spi_config_t io_config = AXS15231B_PANEL_IO_QSPI_CONFIG(HD2MP_PIN_NUM_QSPI_CS, NULL, NULL);
     // Attach the LCD to the SPI bus
-    ESP_ERROR_CHECK(esp_lcd_new_panel_io_spi((esp_lcd_spi_bus_handle_t)EXAMPLE_LCD_QSPI_HOST, &io_config, ret_io));
+    ESP_ERROR_CHECK(esp_lcd_new_panel_io_spi((esp_lcd_spi_bus_handle_t)HD2MP_LCD_QSPI_HOST, &io_config, ret_io));
 
     ESP_LOGI(TAG, "Install LCD driver of axs15231b");
     const axs15231b_vendor_config_t vendor_config = {
@@ -252,7 +252,7 @@ esp_err_t bsp_display_new(const bsp_display_config_t *config, esp_lcd_panel_hand
         },
     };
     const esp_lcd_panel_dev_config_t panel_config = {
-        .reset_gpio_num = EXAMPLE_PIN_NUM_QSPI_RST,
+        .reset_gpio_num = HD2MP_PIN_NUM_QSPI_RST,
         .rgb_ele_order = LCD_RGB_ELEMENT_ORDER_RGB,
         .bits_per_pixel = BSP_LCD_BITS_PER_PIXEL,
         .vendor_config = (void *) &vendor_config,
@@ -323,7 +323,7 @@ err:
     if (*ret_io) {
         esp_lcd_panel_io_del(*ret_io);
     }
-    spi_bus_free(EXAMPLE_LCD_QSPI_HOST);
+    spi_bus_free(HD2MP_LCD_QSPI_HOST);
     return ret;
 }
 
@@ -339,11 +339,11 @@ static lv_disp_t *bsp_display_lcd_init(const bsp_display_cfg_t *cfg)
     * If the transmission time exceeds the refresh period (time_Tvdl), adopt a 2x period,
     * and start data transmission at the falling edge.
     */
-    hres = EXAMPLE_LCD_QSPI_H_RES;
-    vres = EXAMPLE_LCD_QSPI_V_RES;
+    hres = HD2MP_LCD_QSPI_H_RES;
+    vres = HD2MP_LCD_QSPI_V_RES;
     const bsp_display_config_t bsp_disp_cfg = {
         .max_transfer_sz = hres * vres * sizeof(uint16_t),
-        .tear_cfg = BSP_SYNC_TASK_CONFIG(EXAMPLE_PIN_NUM_QSPI_TE, GPIO_INTR_NEGEDGE),
+        .tear_cfg = BSP_SYNC_TASK_CONFIG(HD2MP_PIN_NUM_QSPI_TE, GPIO_INTR_NEGEDGE),
     };
     bsp_display_new(&bsp_disp_cfg, &panel_handle, &io_handle);
 
@@ -438,10 +438,10 @@ esp_err_t bsp_touch_new(const bsp_display_cfg_t *config, esp_lcd_touch_handle_t 
 
     /* Initialize touch */
     esp_lcd_touch_config_t tp_cfg = {
-        .x_max = EXAMPLE_LCD_QSPI_H_RES,
-        .y_max = EXAMPLE_LCD_QSPI_V_RES,
-        .rst_gpio_num = EXAMPLE_PIN_NUM_QSPI_TOUCH_RST, // Shared with LCD reset
-        .int_gpio_num = EXAMPLE_PIN_NUM_QSPI_TOUCH_INT,
+        .x_max = HD2MP_LCD_QSPI_H_RES,
+        .y_max = HD2MP_LCD_QSPI_V_RES,
+        .rst_gpio_num = HD2MP_PIN_NUM_QSPI_TOUCH_RST, // Shared with LCD reset
+        .int_gpio_num = HD2MP_PIN_NUM_QSPI_TOUCH_INT,
         .process_coordinates = bsp_touch_process_points_cb,
         .levels = {
             .reset = 0,

@@ -921,6 +921,8 @@ void action_manual_execute(lv_event_t *e)
 	int timeout = manualMatch >= 0 ? 1000 : 1500;
 
 	timerManual = lv_timer_create(finalizeManualExecution, timeout, NULL);
+
+	playbackSound(SND_MANUAL);
 }
 
 void finalizeManualExecution()

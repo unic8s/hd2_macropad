@@ -27,6 +27,7 @@ extern "C"
 #define SND_DESELECT "S:assets/sound/_des.wav"
 #define SND_RESET "S:assets/sound/_rst.wav"
 #define SND_SWIPE "S:assets/sound/_swp.wav"
+#define SND_MANUAL "S:assets/sound/_man.wav"
 
 // Default stratagems
 #define SND_REINFORCE "S:assets/sound/reinf.wav"

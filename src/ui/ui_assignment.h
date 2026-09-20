@@ -115,7 +115,11 @@ extern "C"
         SG_BTES,
 
         SG_FRVS,
-        SG_FRVI
+        SG_FRVI,
+
+        SG_EGS,
+
+        SG_CUSTOM
     };
 
     // Assign stratagems index to UI buttons
@@ -222,6 +226,7 @@ extern "C"
         objects.eagle_na->user_data = (void *)SG_NA;
         objects.eagle_sr->user_data = (void *)SG_SR;
         objects.eagle_ss->user_data = (void *)SG_ESS;
+        objects.eagle_gs->user_data = (void *)SG_EGS;
     }
 
 #ifdef __cplusplus

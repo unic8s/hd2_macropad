@@ -36,6 +36,18 @@ typedef struct
     const lv_img_dsc_t *imgHiRes;
 } stratagemBase;
 
+const stratagemItem customSeqItem = {
+    {0, 0, 0, 0, 0, 0, 0, 0, 0},
+    0,
+    0,
+    SHIP_NONE,
+    SND_NULL,
+    colorTheme,
+    NULL,
+    NULL,
+    NULL,
+    SG_CUSTOM};
+
 // List of all available stratagems and corresponding data
 const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // 0
@@ -1268,7 +1280,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
         &img_btes1,
         &img_btes2,
         SG_BTES},
-    
+
     // 88
     // M-103 Supply FRV
     {
@@ -1282,7 +1294,7 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
         &img_frvs1,
         &img_frvs2,
         SG_FRVS},
-    
+
     // 89
     // M-104 Incinerator FRV
     {
@@ -1295,7 +1307,20 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
         &img_frvi3,
         &img_frvi1,
         &img_frvi2,
-        SG_FRVI}};
+        SG_FRVI},
+    // 90
+    // Eagle Gas Airstrike
+    {
+        {INPUT_UP, INPUT_RIGHT, INPUT_LEFT, INPUT_RIGHT, 0, 0, 0, 0, 0},
+        150,
+        15,
+        SHIP_MA | SHIP_LVC,
+        SND_EAGLE,
+        sgRed,
+        &img_egs3,
+        &img_egs1,
+        &img_egs2,
+        SG_EGS}};
 
 const stratagemBase strategemBaseList[SG_BASE_AMOUNT] = {
     // 0

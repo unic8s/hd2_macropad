@@ -139,6 +139,7 @@ typedef struct _objects_t {
     lv_obj_t *eagle_sr;
     lv_obj_t *eagle_na;
     lv_obj_t *eagle_ss;
+    lv_obj_t *eagle_gs;
     lv_obj_t *obj20;
     lv_obj_t *obj21;
     lv_obj_t *obj22;

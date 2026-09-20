@@ -1,6 +1,6 @@
 #pragma once
 
-#include "i2s_configuration.h"
+#include "sd_config.h"
 #include "driver/sdmmc_host.h"
 #include "sdmmc_cmd.h"
 #include "esp_vfs_fat.h"

@@ -1,7 +1,7 @@
 #include <esp_system.h>
 #include "esp_log.h"
 #include "nvs_flash.h"
-#include "i2s_sdcard.h"
+#include "sd_card.h"
 #include <lvgl.h>
 #include "ui/ui.h"
 #include "ui/screens.h"

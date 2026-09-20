@@ -1,4 +1,4 @@
-#include "i2s_configuration.h" // basic sysetm includes and pin setup
+#include "i2s_config.h" // basic sysetm includes and pin setup
 #include "driver/i2s_std.h"    // i2s setup
 #include "lvgl.h"
 

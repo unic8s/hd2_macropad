@@ -36,18 +36,6 @@ typedef struct
     const lv_img_dsc_t *imgHiRes;
 } stratagemBase;
 
-const stratagemItem customSeqItem = {
-    {0, 0, 0, 0, 0, 0, 0, 0, 0},
-    0,
-    0,
-    SHIP_NONE,
-    SND_NULL,
-    colorTheme,
-    NULL,
-    NULL,
-    NULL,
-    SG_CUSTOM};
-
 // List of all available stratagems and corresponding data
 const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
     // 0

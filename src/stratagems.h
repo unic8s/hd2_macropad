@@ -1308,7 +1308,20 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
         &img_egs3,
         &img_egs1,
         &img_egs2,
-        SG_EGS}};
+        SG_EGS},
+    // 91
+    // TD-110 Maelstrom
+    {
+        {INPUT_LEFT, INPUT_DOWN, INPUT_RIGHT, INPUT_DOWN, INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_LEFT, INPUT_RIGHT},
+        780,
+        10.5,
+        SHIP_MA,
+        SND_SUPPLY,
+        sgBlue,
+        &img_tdm3,
+        &img_tdm1,
+        &img_tdm2,
+        SG_TDM}};
 
 const stratagemBase strategemBaseList[SG_BASE_AMOUNT] = {
     // 0

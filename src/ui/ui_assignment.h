@@ -118,8 +118,8 @@ extern "C"
         SG_FRVI,
 
         SG_EGS,
-
-        SG_CUSTOM
+        
+        SG_TDM
     };
 
     // Assign stratagems index to UI buttons

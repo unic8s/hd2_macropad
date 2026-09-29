@@ -1,6 +1,6 @@
 #include "images.h"
 
-const ext_img_desc_t images[374] = {
+const ext_img_desc_t images[377] = {
     { "splash", &img_splash },
     { "tabIcons", &img_tab_icons },
     { "IconBack", &img_icon_back },
@@ -375,4 +375,7 @@ const ext_img_desc_t images[374] = {
     { "EGS1", &img_egs1 },
     { "EGS2", &img_egs2 },
     { "EGS3", &img_egs3 },
+    { "TDM1", &img_tdm1 },
+    { "TDM2", &img_tdm2 },
+    { "TDM3", &img_tdm3 },
 };

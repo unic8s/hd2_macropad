@@ -183,6 +183,7 @@ extern "C"
         objects.supply_ss->user_data = (void *)SG_SS;
         objects.supply_les->user_data = (void *)SG_LES;
         objects.supply_btes->user_data = (void *)SG_BTES;
+        objects.supply_tdm->user_data = (void *)SG_TDM;
 
         // Stationary
         objects.sentry_acs->user_data = (void *)SG_ACS;

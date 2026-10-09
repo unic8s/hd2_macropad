@@ -46,8 +46,6 @@ extern "C"
 #define SND_SENTRY "S:assets/sound/snt.wav"
 #define SND_WEAPON "S:assets/sound/weap.wav"
 
-#define SEQ_USER "S:assets/seq.txt"
-
 enum styleColors
 {
     colorTheme = 0xFFFFFF,

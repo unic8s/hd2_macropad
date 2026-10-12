@@ -26,6 +26,7 @@ void ui_post()
 
   lv_obj_t *dropDownList[] = {
       lv_dropdown_get_list(objects.dd_connectivity),
+      lv_dropdown_get_list(objects.dd_trigger),
       lv_dropdown_get_list(objects.dd_keymap)};
 
   for (uint8_t c = 0; c < 2; c++)

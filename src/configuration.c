@@ -16,6 +16,7 @@ nvs_handle_t nvsConfig;
 extern bool playerMuted;
 extern int inputDelay;
 extern int screenRotation;
+extern uint8_t triggerIndex;
 extern uint8_t keymapIndex;
 extern uint8_t connectionType;
 extern bool manualAutoComplete;
@@ -32,6 +33,7 @@ extern esp_err_t usb_controller_deinit();
 #define CFG_KEY_BRIGHTNESS "brightness"
 #define CFG_KEY_MUTED "muted"
 #define CFG_KEY_CONNECTIVITY "connectivity"
+#define CFG_KEY_TRIGGER "trigger"
 #define CFG_KEY_KEYMAP "keymap"
 #define CFG_KEY_AUTOCOMPLETE "autoComplete"
 #define CFG_KEY_COOLDOWN "showCooldown"
@@ -286,6 +288,23 @@ void setConnectivity(uint8_t index, bool restore)
     updateConnection();
 }
 
+// Write the trigger assignment to configuration
+void setTrigger(uint8_t index, bool restore)
+{
+    triggerIndex = index;
+
+    if (restore)
+    {
+        lv_dropdown_set_selected(objects.dd_trigger, index);
+    }
+    else
+    {
+        setConfig(CFG_KEY_TRIGGER, index);
+    }
+
+    playbackSound(SND_SWITCH);
+}
+
 // Write the keymap assignment to configuration
 void setKeymap(uint8_t index, bool restore)
 {
@@ -461,6 +480,9 @@ void loadConfig()
     uint8_t sound_muted = getConfig(CFG_KEY_MUTED, 0);
     setMuted(sound_muted == 1, true);
 
+    uint8_t trigger_index = getConfig(CFG_KEY_TRIGGER, 0);
+    setTrigger(trigger_index, true);
+    
     uint8_t keymap_index = getConfig(CFG_KEY_KEYMAP, 0);
     setKeymap(keymap_index, true);
 
@@ -538,6 +560,7 @@ void resetConfig()
     setDelay(100, true);
     setBrightness(50, true);
     setMuted(0, true);
+    setTrigger(0, true);
     setKeymap(0, true);
     setAutoComplete(1, true);
     setGameAfterPreset(1, true);

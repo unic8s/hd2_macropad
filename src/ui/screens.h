@@ -205,6 +205,7 @@ typedef struct _objects_t {
     lv_obj_t *sld_delay;
     lv_obj_t *dd_connectivity;
     lv_obj_t *obj47;
+    lv_obj_t *dd_trigger;
     lv_obj_t *dd_keymap;
     lv_obj_t *chb_cooldowns;
     lv_obj_t *chb_ship_mod_srp;

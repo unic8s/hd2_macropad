@@ -77,7 +77,10 @@ const lv_img_dsc_t *manualArrowList[] = {
 	&img_stratagem_arrow_right1};
 
 // HID input mask for special keys
-#define INPUT_CTRL_MASK 1 // 1 CTRL left
+uint8_t triggerIndex;
+#define INPUT_NONE_MASK 0	// none
+#define INPUT_CTRL_MASK 1	// CTRL left
+#define INPUT_ALT_MASK 4	// ALT left
 
 void initGame()
 {
@@ -418,6 +421,14 @@ void action_change_connectivity(lv_event_t *e)
 	setConnectivity(connectionType + 1, false);
 }
 
+// Change assigned trigger
+void action_change_trigger(lv_event_t *e)
+{
+	uint8_t triggerIndex = lv_dropdown_get_selected(objects.dd_trigger);
+
+	setTrigger(triggerIndex, false);
+}
+
 // Change assigned keymap
 void action_change_keymap(lv_event_t *e)
 {
@@ -428,7 +439,7 @@ void action_change_keymap(lv_event_t *e)
 
 void _executeStdStratagem(uint8_t *sequence, char *path)
 {
-	setStratagemCode(sequence, INPUT_CTRL_MASK, false);
+	setStratagemCode(sequence, triggerIndex == 0 ? INPUT_CTRL_MASK : INPUT_ALT_MASK, false);
 
 	if (path != NULL)
 	{
@@ -441,7 +452,7 @@ void _executeUserStratagem(uint8_t index)
 	uint8_t itemIndex = indices[index];
 	stratagemItem item = strategemItemList[itemIndex];
 
-	setStratagemCode(item.sequence, INPUT_CTRL_MASK, false);
+	setStratagemCode(item.sequence, triggerIndex == 0 ? INPUT_CTRL_MASK : INPUT_ALT_MASK, false);
 
 	if (showCooldowns)
 	{
@@ -540,7 +551,7 @@ void action_keyboard_demo(lv_event_t *e)
 										0,
 										0};
 
-	setStratagemCode(sequence, 0, true);
+	setStratagemCode(sequence, INPUT_NONE_MASK, true);
 }
 
 char *resolvePresetKey(char presetIndex, int8_t itemIndex)

@@ -17,6 +17,7 @@ extern "C"
 	void setBrightness(int brightness, bool restore);
 	void setMuted(bool muted, bool restore);
 	void setConnectivity(uint8_t index, bool restore);
+	void setTrigger(uint8_t index, bool restore);
 	void setKeymap(uint8_t index, bool restore);
 	void setAutoComplete(bool enable, bool restore);
 	void setGameAfterPreset(bool enable, bool restore);

@@ -29,7 +29,7 @@ void ui_post()
       lv_dropdown_get_list(objects.dd_trigger),
       lv_dropdown_get_list(objects.dd_keymap)};
 
-  for (uint8_t c = 0; c < 2; c++)
+  for (uint8_t c = 0; c < 3; c++)
   {
     lv_obj_t *dropDownItem = dropDownList[c];
 

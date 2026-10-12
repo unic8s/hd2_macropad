@@ -163,6 +163,11 @@ void getManualImages(lv_obj_t *manualImages[])
 	memcpy(manualImages, (lv_obj_t *[]){objects.seq_ico1, objects.seq_ico2, objects.seq_ico3, objects.seq_ico4, objects.seq_ico5, objects.seq_ico6}, arrSize);
 }
 
+uint8_t getTriggerMask()
+{
+	return triggerIndex == 0 ? INPUT_CTRL_MASK : INPUT_ALT_MASK;
+}
+
 // Goto game screen
 void action_goto_game(lv_event_t *e)
 {
@@ -439,7 +444,7 @@ void action_change_keymap(lv_event_t *e)
 
 void _executeStdStratagem(uint8_t *sequence, char *path)
 {
-	setStratagemCode(sequence, triggerIndex == 0 ? INPUT_CTRL_MASK : INPUT_ALT_MASK, false);
+	setStratagemCode(sequence, getTriggerMask(), false);
 
 	if (path != NULL)
 	{
@@ -452,7 +457,7 @@ void _executeUserStratagem(uint8_t index)
 	uint8_t itemIndex = indices[index];
 	stratagemItem item = strategemItemList[itemIndex];
 
-	setStratagemCode(item.sequence, triggerIndex == 0 ? INPUT_CTRL_MASK : INPUT_ALT_MASK, false);
+	setStratagemCode(item.sequence, getTriggerMask(), false);
 
 	if (showCooldowns)
 	{

@@ -7,7 +7,7 @@ A very flexible and easy-to-use macropad for HELLDIVERS&trade; 2 for live config
 > [!NOTE]
 > **The software requires this specific device [JC3248W535](https://s.click.aliexpress.com/e/_DneMCLR)**
 > 
-> **[@damageu](https://github.com/damageu/hd2_macropad-crowpanel7) maintains a fork which supports a [device with a 7" display from Elecrow](https://github.com/wokka1/hd2_macropad)**
+> **[@damageu](https://github.com/damageu) maintains a fork which supports a [device with a 7" display from Elecrow](https://github.com/damageu/hd2_macropad-crowpanel7)**
 >
 > _He put a lot of effort into making a port possible which also container a host software to support all the features_
 

@@ -119,7 +119,10 @@ extern "C"
 
         SG_EGS,
         
-        SG_TDM
+        SG_TDM,
+
+        SG_LAS,
+        SG_AMW
     };
 
     // Assign stratagems index to UI buttons
@@ -154,6 +157,8 @@ extern "C"
         objects.weapons_eatl->user_data = (void *)SG_EATL;
         objects.weapons_cre->user_data = (void *)SG_CRE;
         objects.weapons_bs->user_data = (void *)SG_BS;
+        objects.weapons_las->user_data = (void *)SG_LAS;
+        objects.weapons_amw->user_data = (void *)SG_AMW;
 
         // Backpacks
         objects.backpack_bsb->user_data = (void *)SG_BSB;

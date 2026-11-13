@@ -1321,7 +1321,33 @@ const stratagemItem strategemItemList[SG_ITEM_AMOUNT] = {
         &img_tdm3,
         &img_tdm1,
         &img_tdm2,
-        SG_TDM}};
+        SG_TDM},
+    // 92
+    // AMW-20 Apex
+    {
+        {INPUT_DOWN, INPUT_LEFT, INPUT_LEFT, INPUT_UP, INPUT_DOWN, INPUT_LEFT, 0, 0, 0},
+        480,
+        7.75,
+        SHIP_MA | SHIP_SRP,
+        SND_WEAPON,
+        sgBlue,
+        &img_amw3,
+        &img_amw1,
+        &img_amw2,
+        SG_AMW},
+    // 93
+    // LAS-44 Nova
+    {
+        {INPUT_DOWN, INPUT_LEFT, INPUT_RIGHT, INPUT_DOWN, INPUT_DOWN, 0, 0, 0, 0},
+        480,
+        7.75,
+        SHIP_MA | SHIP_SRP,
+        SND_WEAPON,
+        sgBlue,
+        &img_las3,
+        &img_las1,
+        &img_las2,
+        SG_LAS}};
 
 const stratagemBase strategemBaseList[SG_BASE_AMOUNT] = {
     // 0

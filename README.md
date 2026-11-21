@@ -9,7 +9,7 @@ A very flexible and easy-to-use macropad for HELLDIVERS&trade; 2 for live config
 > 
 > **[@damageu](https://github.com/damageu) maintains a fork which supports a [device with a 7" display from Elecrow](https://github.com/damageu/hd2_macropad-crowpanel7)**
 >
-> _He put a lot of effort into making a port possible which also container a host software to support all the features_
+> _He put a lot of effort into making a port possible which also inlcudes a host software to support all the features_
 
 Get the game on [PC](https://store.steampowered.com/app/553850/HELLDIVERS_2/), [Playstation&trade;](https://www.playstation.com/games/helldivers-2/)
 
